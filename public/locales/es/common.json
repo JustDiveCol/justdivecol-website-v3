@@ -1,0 +1,52 @@
+{
+  "mainLogoAlt": "Logo de la empresa",
+  "photoCreditPrefix": "Foto por:",
+  "more_label": "Más",
+
+  "nav": {
+    "home": "Inicio",
+    "diveExperiences": "Experiencias",
+    "divesites": "Sitios de Buceo",
+    "aboutUs": "Nosotros",
+    "principles": "Principios",
+    "contact": "Contacto",
+    "policy": "Política",
+    "terms": "Términos",
+    "privacy": "Privacidad",
+    "faqs": "Preguntas Frecuentes"
+  },
+
+  "hero": {
+    "homeHeroTitle": "Explora un Mundo Submarino",
+    "homeHeroSubtitle": "Descubre las maravillas del océano con nuestras experiencias de buceo personalizadas y seguras.",
+    "experiencesButton": "Ver Experiencias"
+  },
+
+  "featured": {
+    "homeFeaturedTitle": "Experiencias Destacadas",
+    "featuredCard1Title": "Buceo en el Paraíso",
+    "featuredCard1Category": "Naufragios y Arrecifes",
+    "featuredCard2Title": "Certificación PADI",
+    "featuredCard2Category": "Aprende a Bucear",
+    "featuredCard3Title": "Fotografía Submarina",
+    "featuredCard3Category": "Cursos de Especialidad"
+  },
+
+  "cta": {
+    "homeCtaTitle": "¿Listo para tu próxima aventura?",
+    "homeCtaSubtitle": "Contáctanos hoy y planeemos juntos tu inmersión. Resolvemos todas tus dudas sin compromiso.",
+    "formTitle": "Déjanos un mensaje",
+    "contactButton": "Hablemos por WhatsApp"
+  },
+
+  "whatsapp_message": "Hola, estoy interesado en las experiencias de buceo.",
+  "generalWhatsappMessage": "Hola, estoy interesado en las experiencias de buceo.",
+
+  "footer": {
+    "footerSlogan": "Tu aventura submarina comienza aquí. Sumérgete con seguridad, aprende con pasión.",
+    "footerClosingMessage": "Vive la experiencia.",
+    "footerCopyright": "Todos los derechos reservados.",
+    "footerCredits": "Diseñado y desarrollado con pasión.",
+    "footerLinksTitle": "Enlaces Importantes"
+  }
+}
