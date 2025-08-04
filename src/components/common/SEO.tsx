@@ -2,22 +2,25 @@ import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
 // --- Tipado de Props ---
-interface SEOProps {
+
+export type SEOProps = {
   titleKey: string;
   descriptionKey: string;
-  keywords?: string;
-  imageUrl?: string;
-  urlPath?: string;
-}
+  keywordsKey: string;
+  imageUrl: string;
+  urlPath: string;
+  translationNS: string;
+};
 
 export const SEO = ({
   titleKey,
   descriptionKey,
-  keywords,
+  keywordsKey,
   imageUrl,
   urlPath,
+  translationNS,
 }: SEOProps) => {
-  const { t } = useTranslation('common'); // Asumimos que las claves SEO están en common.json
+  const { t } = useTranslation([translationNS, 'common']);
 
   const title = t(titleKey);
   const description = t(descriptionKey);
@@ -39,10 +42,10 @@ export const SEO = ({
         name='description'
         content={description}
       />
-      {keywords && (
+      {keywordsKey && (
         <meta
           name='keywords'
-          content={keywords}
+          content={keywordsKey}
         />
       )}
 

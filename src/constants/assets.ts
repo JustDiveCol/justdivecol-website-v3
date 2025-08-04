@@ -2,14 +2,21 @@
 
 export const BRAND_ASSETS = {
   mainLogo: {
-    url: '/images/logos/logo.png', // Ruta al logo principal en /public
-    altKey: 'mainLogoAlt', // Clave de traducción del alt text
+    url: '/images/logos/logo.png',
+    altKey: 'mainLogoAlt',
   },
-  // Aquí podemos definir los logos complementarios para fácil acceso
+
   complementaryLogos: {
     padi: {
       url: '/images/logos/padi-logo.png',
       altKey: 'padiLogoAlt',
+    },
+  },
+
+  seals: {
+    soldOut: {
+      url: '/images/logos/sold-out-logo.png',
+      altKey: 'soldOutSealAlt',
     },
   },
 };

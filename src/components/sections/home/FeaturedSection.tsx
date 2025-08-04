@@ -1,20 +1,43 @@
 import { useTranslation } from 'react-i18next';
-import { homePageData } from '../../../data/homePageData';
 import { FeaturedCard } from '../shared/FeaturedCard';
 
-export const FeaturedSection = () => {
-  const { t } = useTranslation('common');
-  const { featured } = homePageData;
+export type ImageInfo = {
+  backgroundImageUrl: string;
+  complementaryLogo?: {
+    url: string;
+    altKey: string;
+  };
+  photoCredit?: string;
+};
 
-  const cardsToDisplay = [...featured.cards];
+export type CardData = {
+  id: string;
+  link: string;
+  titleKey: string;
+  subtitleKey?: string;
+  imageData: ImageInfo;
+};
+
+export type FeaturedSectionProps = {
+  titleKey: string;
+  translationNS: string;
+  cards: CardData[];
+};
+
+export const FeaturedSection = ({
+  titleKey,
+  translationNS,
+  cards,
+}: FeaturedSectionProps) => {
+  const { t } = useTranslation([translationNS, 'common']);
+
+  const cardsToDisplay = [...cards];
 
   return (
     <section className='bg-brand-primary-medium py-20 px-4'>
       <div className='container mx-auto'>
-        <div className='mx-auto max-w-3xl text-center mb-16'>
-          <h2 className='heading-2 text-white'>
-            {t(`featured.${featured.titleKey}`)}
-          </h2>
+        <div className='mx-auto max-w-max text-center mb-16'>
+          <h2 className='heading-2 text-white'>{t(titleKey)}</h2>
         </div>
 
         <div className='flex flex-wrap justify-center gap-8'>
@@ -22,9 +45,8 @@ export const FeaturedSection = () => {
             <FeaturedCard
               key={`${card.id}-${index}`}
               cardData={card}
-              // Ahora definimos el ancho de cada tarjeta para diferentes pantallas.
-              // Usamos 'flex-shrink-0' para que no se encojan.
-              className='aspect-[4/5] w-full flex-shrink-0 sm:w-5/12 md:w-4/12 lg:w-[30%] xl:w-[22%]'
+              className='aspect-[4/5] w-[calc(50%-1rem)] flex-shrink-0 sm:w-5/12 md:w-4/12 lg:w-[30%] xl:w-[22%]'
+              translationNS={translationNS}
             />
           ))}
         </div>

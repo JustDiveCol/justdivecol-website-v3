@@ -1,5 +1,71 @@
 import type { SVGProps } from 'react';
 
+export const ArrowDownIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='1em'
+    height='1em'
+    viewBox='0 0 20 20'
+    {...props}>
+    <path
+      fill='currentColor'
+      d='m9 16.172l-6.071-6.071l-1.414 1.414L10 20l.707-.707l7.778-7.778l-1.414-1.414L11 16.172V0H9z'></path>
+  </svg>
+);
+
+export const ChevronDoubleLeftIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='1em'
+    height='1em'
+    viewBox='0 0 24 24'
+    {...props}>
+    <path
+      fill='currentColor'
+      d='M17.707 5.293a1 1 0 0 1 0 1.414L12.414 12l5.293 5.293a1 1 0 0 1-1.414 1.414l-6-6a1 1 0 0 1 0-1.414l6-6a1 1 0 0 1 1.414 0zm-6 0a1 1 0 0 1 0 1.414L6.414 12l5.293 5.293a1 1 0 0 1-1.414 1.414l-6-6a1 1 0 0 1 0-1.414l6-6a1 1 0 0 1 1.414 0z'></path>
+  </svg>
+);
+
+export const ChevronDoubleRightIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='1em'
+    height='1em'
+    viewBox='0 0 24 24'
+    {...props}>
+    <path
+      fill='currentColor'
+      d='M12.293 5.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L17.586 12l-5.293-5.293a1 1 0 0 1 0-1.414zm-6 0a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L11.586 12L6.293 6.707a1 1 0 0 1 0-1.414z'></path>
+  </svg>
+);
+
+export const FilterIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='1em'
+    height='1em'
+    viewBox='0 0 20 20'
+    {...props}>
+    <path
+      fill='currentColor'
+      d='m8.398 14.605l1.323 1.143c.29.251.323.691.075.984a.688.688 0 0 1-.976.075l-1.565-1.352a.7.7 0 0 1-.242-.53V7.938L1.171 1.155C.78.703 1.1 0 1.694 0h16.612c.594 0 .912.704.523 1.155l-5.85 6.784v11.363c0 .386-.31.698-.692.698a.695.695 0 0 1-.692-.698V7.678a.7.7 0 0 1 .17-.458l5.023-5.825H3.21L8.228 7.22a.7.7 0 0 1 .17.458v6.927Z'></path>
+  </svg>
+);
+
+// ========== Barchart Icon ==========
+export const BarChartIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='1em'
+    height='1em'
+    viewBox='0 0 1024 1024'
+    {...props}>
+    <path
+      fill='currentColor'
+      d='M1024 959.5q0 26.5-19 45.5t-45 19H64q-27 0-45.5-18.5T0 960t18.5-45.5T64 896V576q0-27 18.5-45.5T128 512h128q26 0 45 18.5t19 45.5v320h64V64q0-27 18.5-45.5T448 0h128q27 0 45.5 18.5T640 64v832h64V320q0-27 19-45.5t45-18.5h128q27 0 45.5 18.5T960 320v576q27 0 45.5 18.5t18.5 45z'></path>
+  </svg>
+);
+
 // ========== Chevron Left Icon ==========
 export const ChevronLeftIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg

@@ -1,20 +1,20 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { BRAND_ASSETS } from '../../constants/assets';
-
-// --- Tipado de Props (simplificado, sin 'variant') ---
-interface ImageComponentData {
-  backgroundImage: string;
-  complementaryLogo?: { url: string; altKey: string };
-  photoCredit?: string;
-  textOverlayKey?: string;
-}
-
+import type { ImageComponentData } from '../../types/data';
 interface ImageComponentProps {
   className?: string;
   imageData: ImageComponentData;
+  variant?: string;
   translationNS?: string;
 }
+
+const variantStyles = {
+  fullscreen: 'h-full',
+  header: 'h-[600px]',
+  horizontal: 'aspect-[4/3]',
+  vertical: 'aspect-[3/4]',
+  square: 'aspect-square',
+};
 
 export const ImageComponent = ({
   className = '',
@@ -22,13 +22,19 @@ export const ImageComponent = ({
   translationNS,
 }: ImageComponentProps) => {
   const { t } = useTranslation(translationNS);
+  const {
+    backgroundImage,
+    complementaryLogo,
+    textOverlayKey,
+    photoCredit,
+    variant,
+  } = imageData;
 
-  const { backgroundImage, complementaryLogo, textOverlayKey, photoCredit } =
-    imageData;
   const mainLogo = BRAND_ASSETS.mainLogo;
 
-  // El wrapper ahora siempre es w-full h-full para llenar a su padre
-  const wrapperClass = `group relative w-full h-full select-none bg-cover bg-center ${className}`;
+  const variantClass = variantStyles[variant] || 'h-full';
+
+  const wrapperClass = `select-none relative group w-full h-full bg-cover bg-center ${variantClass} ${className}`;
 
   return (
     <div
@@ -56,8 +62,8 @@ export const ImageComponent = ({
         />
       </div>
       {photoCredit && (
-        <div className='pointer-events-none absolute bottom-0 left-0 w-full select-none bg-brand-primary-dark/50 px-2 py-1 text-xs text-brand-white opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
-          {t('photoCreditPrefix', { ns: 'common' })} {photoCredit}
+        <div className='select-none absolute bottom-0 left-0 w-full bg-brand-primary-dark/50 px-2 py-1 text-xs text-brand-neutral opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+          {t('common:photoCreditPrefix')} {t(photoCredit)}
         </div>
       )}
     </div>

@@ -12,10 +12,19 @@ i18n
     debug: process.env.NODE_ENV === 'development',
 
     // Idioma de respaldo si el detectado no está disponible
-    fallbackLng: 'en',
+    fallbackLng: 'es',
 
     // Namespaces (archivos de traducción) que usaremos
-    ns: ['common', 'home'],
+    ns: [
+      'common',
+      'home',
+      'experiences',
+      'about',
+      'contact',
+      'faqs',
+      'principles',
+      'legal',
+    ],
     defaultNS: 'common',
 
     interpolation: {

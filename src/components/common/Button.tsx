@@ -1,14 +1,15 @@
 // src/components/common/Button.tsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, type LinkProps } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { cva, type VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
 import { twMerge } from 'tailwind-merge';
-import { contactPageData } from '../../data/contactData'; // Mantenemos esto temporalmente para el teléfono
 
-// 1. Definimos todas las variantes y estilos del botón con CVA
+import { contactPageData } from '../../data/contactData';
+import type { ButtonProps } from '../../types/data';
+
+// 1️⃣ Definimos variantes con CVA
 const buttonVariants = cva(
-  // Clases base aplicadas a todas las variantes
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold uppercase tracking-wider transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-cta-yellow',
   {
     variants: {
@@ -26,7 +27,6 @@ const buttonVariants = cva(
         lg: 'px-10 py-5 text-lg',
       },
     },
-    // Estilos por defecto
     defaultVariants: {
       variant: 'primary',
       size: 'default',
@@ -34,68 +34,53 @@ const buttonVariants = cva(
   }
 );
 
-// 2. Definimos las props del componente usando los tipos de CVA
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLElement>,
-    VariantProps<typeof buttonVariants> {
-  action: {
-    type: 'internal' | 'external' | 'whatsapp';
-    path?: string;
-    whatsAppMessageKey?: string;
-  };
-  children: React.ReactNode;
-  className?: string;
-}
-
-export const Button = React.forwardRef<HTMLElement, ButtonProps>(
-  ({ className, children, action, variant, size, ...props }, ref) => {
+export const Button = React.forwardRef<HTMLAnchorElement, ButtonProps>(
+  function Button(
+    { action, children, className, variant, size, ...props },
+    ref
+  ) {
     const { t } = useTranslation('common');
 
+    // 2️⃣ Calculamos la URL final según tipo de acción
     const finalLink = React.useMemo(() => {
-      if (!action) return '/';
-      switch (action.type) {
-        case 'whatsapp': {
-          const prefilledText = t(
-            action.whatsAppMessageKey || 'whatsapp_message'
-          );
-          const phoneNumber = contactPageData.contactInfo.phone.replace(
-            /\s/g,
-            ''
-          );
-          return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-            prefilledText
-          )}`;
-        }
-        case 'external':
-          return action.path || '#';
-        case 'internal':
-        default:
-          return action.path || '/';
+      if (action.type === 'whatsapp') {
+        const text = t(action.whatsAppMessageKey || 'whatsapp_message');
+        const phone = contactPageData.contactInfo.phone.replace(/\s/g, '');
+        return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
       }
+      if (action.type === 'external') {
+        return action.path || '#';
+      }
+      // internal (o cuando action.type es 'internal')
+      return action.path || '/';
     }, [action, t]);
 
-    const buttonClasses = twMerge(buttonVariants({ variant, size, className }));
+    // 3️⃣ Unimos las clases de CVA + cualquier className extra
+    const classes = twMerge(buttonVariants({ variant, size, className }));
 
+    // 4️⃣ Renderizamos <Link> o <a> según corresponda
     if (action.type === 'internal') {
+      const linkProps = props as Omit<LinkProps, 'to'>;
       return (
         <Link
           to={finalLink}
-          className={buttonClasses}
-          {...props}
-          ref={ref as React.Ref<HTMLAnchorElement>}>
+          className={classes}
+          ref={ref}
+          {...linkProps}>
           {children}
         </Link>
       );
     }
 
+    // external o whatsapp → <a> con target blank
     return (
       <a
         href={finalLink}
+        className={classes}
+        ref={ref}
         target='_blank'
         rel='noopener noreferrer'
-        className={buttonClasses}
-        {...props}
-        ref={ref as React.Ref<HTMLAnchorElement>}>
+        {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
         {children}
       </a>
     );

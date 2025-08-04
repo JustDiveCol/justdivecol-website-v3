@@ -6,18 +6,22 @@ type TestimonialData = {
   id: number;
   quoteKey: string;
   name: string;
-  origin: string;
+  originKey: string;
   rating: number;
   avatarUrl: string;
 };
 
 interface TestimonialCardProps {
   cardData: TestimonialData;
+  translationNS?: string;
 }
 
-export const TestimonialCard = ({ cardData }: TestimonialCardProps) => {
-  const { t } = useTranslation('common');
-  const { quoteKey, name, origin, rating, avatarUrl } = cardData;
+export const TestimonialCard = ({
+  cardData,
+  translationNS,
+}: TestimonialCardProps) => {
+  const { t } = useTranslation([translationNS, 'common']);
+  const { quoteKey, name, originKey, rating, avatarUrl } = cardData;
 
   return (
     <div className='relative flex h-full flex-col rounded-lg border border-white/10 bg-white/5 p-8 backdrop-blur-sm'>
@@ -27,8 +31,8 @@ export const TestimonialCard = ({ cardData }: TestimonialCardProps) => {
       {/* Contenido principal */}
       <div className='relative z-10 flex flex-grow flex-col'>
         <StarRating rating={rating} />
-        <p className='mt-4 flex-grow text-left font-serif text-base text-brand-neutral/90'>
-          "{t(`testimonials.${quoteKey}`)}"
+        <p className='mt-4 flex-grow font-serif text-base text-brand-neutral/90 text-justify'>
+          "{t(quoteKey)}"
         </p>
 
         {/* Separador y autor */}
@@ -41,7 +45,7 @@ export const TestimonialCard = ({ cardData }: TestimonialCardProps) => {
           />
           <div className='text-left'>
             <h4 className='font-bold text-brand-white'>{name}</h4>
-            <p className='text-sm text-brand-neutral/80'>{origin}</p>
+            <p className='text-sm text-brand-neutral/80'>{t(originKey)}</p>
           </div>
         </div>
       </div>

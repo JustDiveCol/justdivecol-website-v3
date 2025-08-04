@@ -1,0 +1,63 @@
+import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+import { experiencesPageData } from '../../../data/experiencesPageData';
+import { allCertifications } from '../../../data/certifications';
+import { CertificationCard } from '../shared/CertificationCard';
+import { getCertificationAvailability } from '../../../data/dataService';
+
+interface CertificationsSectionProps {
+  translationNS?: string;
+}
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+export const CertificationsSection = ({
+  translationNS,
+}: CertificationsSectionProps) => {
+  const { t } = useTranslation([translationNS, 'common']);
+  const { certifications: sectionData } = experiencesPageData;
+
+  const featuredCertifications = allCertifications.filter((cert) =>
+    sectionData.certificationIds.includes(cert.id)
+  );
+
+  return (
+    <section
+      className='bg-brand-primary-medium py-20 px-4'
+      id='certifications-section'>
+      <div className='container mx-auto'>
+        <div className='max-w-3xl mx-auto text-center mb-16'>
+          <h2 className='heading-2 text-white'>{t(sectionData.titleKey)}</h2>
+          <p className='text-subtitle mt-4'>{t(sectionData.subtitleKey)}</p>
+        </div>
+
+        <motion.div
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+          className='flex flex-wrap justify-center gap-8 max-w-6xl mx-auto'>
+          {featuredCertifications.map((cert) => {
+            const status = getCertificationAvailability(cert.id);
+            return (
+              <CertificationCard
+                key={cert.id}
+                certificationData={cert}
+                availabilityStatus={status}
+                className='w-full sm:w-1/2 lg:w-[30%]'
+              />
+            );
+          })}
+        </motion.div>
+      </div>
+    </section>
+  );
+};

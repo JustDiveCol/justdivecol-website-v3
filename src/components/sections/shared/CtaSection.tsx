@@ -5,9 +5,11 @@ import { Button } from '../../common/Button';
 
 // --- Tipado de Props ---
 interface CtaSectionProps {
+  translationNS?: string;
   titleKey: string;
   subtitleKey: string;
   backgroundImageUrl: string;
+  contactButtonKey: string;
   buttonAction: {
     type: 'internal' | 'external' | 'whatsapp';
     path?: string;
@@ -21,11 +23,12 @@ interface CtaSectionProps {
 }
 
 export const CtaSection = (props: CtaSectionProps) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation([props.translationNS, 'common']);
   const {
     titleKey,
     subtitleKey,
     backgroundImageUrl,
+    contactButtonKey,
     buttonAction,
     hubspotForm,
   } = props;
@@ -63,7 +66,7 @@ export const CtaSection = (props: CtaSectionProps) => {
                 show: { opacity: 1, y: 0 },
               }}
               className='heading-2 uppercase'>
-              {t(`cta.${titleKey}`)}
+              {t(titleKey)}
             </motion.h2>
             <motion.p
               variants={{
@@ -71,7 +74,7 @@ export const CtaSection = (props: CtaSectionProps) => {
                 show: { opacity: 1, y: 0 },
               }}
               className='text-subtitle mt-4'>
-              {t(`cta.${subtitleKey}`)}
+              {t(subtitleKey)}
             </motion.p>
             <motion.div
               variants={{
@@ -83,7 +86,7 @@ export const CtaSection = (props: CtaSectionProps) => {
                 action={buttonAction}
                 variant='primary'
                 size='default'>
-                {t(`cta.contactButton`)}
+                {t(contactButtonKey)}
               </Button>
             </motion.div>
           </motion.div>
@@ -93,7 +96,7 @@ export const CtaSection = (props: CtaSectionProps) => {
             // ===== CAMBIO 2: Esta columna también centra su PROPIO contenido =====
             className='w-full md:w-1/2 flex flex-col justify-center items-center'>
             <h3 className='heading-5 text-brand-cta-orange mb-4 font-bold'>
-              {t(`cta.${hubspotForm.titleKey}`)}
+              {t(hubspotForm.titleKey)}
             </h3>
             <div
               id={formTargetId}

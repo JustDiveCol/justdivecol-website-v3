@@ -1,8 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { homePageData } from '../../../data/homePageData';
 
-export const AlliesSection = () => {
-  const { t } = useTranslation('common');
+interface AlliesSectionProps {
+  translationNS?: string;
+}
+
+export const AlliesSection = ({ translationNS }: AlliesSectionProps) => {
+  const { t } = useTranslation([translationNS, 'common']);
   const { allies } = homePageData;
 
   const logoCount = allies.logos.length;
@@ -47,7 +51,7 @@ export const AlliesSection = () => {
     <section className='bg-brand-primary-dark py-20'>
       <div className='container mx-auto text-center'>
         <h2 className='heading-3 mb-16 text-brand-white'>
-          {t(`allies.${allies.titleKey}`)}
+          {t(allies.titleKey)}
         </h2>
 
         {logoCount < marqueeThreshold ? (

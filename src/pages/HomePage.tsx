@@ -14,12 +14,15 @@ export const HomePage = () => {
     <>
       <SEO {...homePageData.seo} />
 
-      <HeroSection />
-      <FeaturedSection />
-      <PrinciplesSection />
-      <TestimonialsSection />
-      <AlliesSection />
-      <CtaSection {...homePageData.cta} />
+      <HeroSection {...homePageData.hero} />
+      <FeaturedSection {...homePageData.featured} />
+      <PrinciplesSection translationNS='home' />
+      <TestimonialsSection translationNS='home' />
+      <AlliesSection translationNS='home' />
+      <CtaSection
+        {...homePageData.cta}
+        translationNS='home'
+      />
     </>
   );
 };
