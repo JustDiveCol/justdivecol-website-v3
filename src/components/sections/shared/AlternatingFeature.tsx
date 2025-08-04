@@ -1,24 +1,29 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ImageComponent } from '../../common/ImageComponent';
+import type { I18NNamespace } from '../../../constants/i18n';
+import type { ImageComponentData } from '../../../types/data';
 
-type PrincipleDetail = {
+export type PrincipleDetail = {
+  id: string;
   titleKey: string;
   textKey: string;
-  imageUrl: string;
+  imageData: ImageComponentData;
   imagePosition: 'left' | 'right';
 };
 
 interface AlternatingFeatureProps {
   featureData: PrincipleDetail;
+  translationNS: I18NNamespace;
 }
 
 export const AlternatingFeature = ({
   featureData,
+  translationNS,
 }: AlternatingFeatureProps) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation([translationNS, 'common']);
 
-  const { titleKey, textKey, imageUrl, imagePosition } = featureData;
+  const { titleKey, textKey, imageData, imagePosition } = featureData;
 
   const isImageLeft = imagePosition === 'left';
 
@@ -37,7 +42,7 @@ export const AlternatingFeature = ({
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className='w-full md:w-1/2'>
             <div className='rounded-lg shadow-2xl overflow-hidden aspect-[4/3]'>
-              <ImageComponent imageData={{ backgroundImage: imageUrl }} />
+              <ImageComponent imageData={imageData} />
             </div>
           </motion.div>
 
@@ -48,11 +53,9 @@ export const AlternatingFeature = ({
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className='w-full md:w-1/2'>
-            <h2 className='heading-3 mb-4 text-brand-white'>
-              {t(`principles.${titleKey}`)}
-            </h2>
+            <h2 className='heading-3 mb-4 text-brand-white'>{t(titleKey)}</h2>
             <p className='text-base-md font-serif text-brand-neutral/90 whitespace-pre-line'>
-              {t(`principles.${textKey}`)}
+              {t(textKey)}
             </p>
           </motion.div>
         </div>

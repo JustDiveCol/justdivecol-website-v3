@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { twMerge } from 'tailwind-merge'; // Importamos la utilidad para unir clases
+import { twMerge } from 'tailwind-merge';
+import type { I18NNamespace } from '../../../constants/i18n';
 
-// --- Tipado de Props ---
-type TeamMember = {
+export type TeamMember = {
   id: string;
   name: string;
   roleKey: string;
@@ -13,21 +13,25 @@ type TeamMember = {
 
 interface TeamCardProps {
   memberData: TeamMember;
-  className?: string; // <-- Añadimos la prop className
+  className?: string;
+  translationNS: I18NNamespace;
 }
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 }, // Corregido: y: 0 para que suba
+  visible: { opacity: 1, y: 0 },
 };
 
-export const TeamCard = ({ memberData, className }: TeamCardProps) => {
-  const { t } = useTranslation('common');
+export const TeamCard = ({
+  memberData,
+  className,
+  translationNS,
+}: TeamCardProps) => {
+  const { t } = useTranslation([translationNS, 'common']);
 
   return (
     <motion.div
       variants={cardVariants}
-      // Unimos las clases base con las que vengan del padre
       className={twMerge('flex flex-col items-center text-center', className)}>
       <div className='relative'>
         <img
@@ -42,10 +46,10 @@ export const TeamCard = ({ memberData, className }: TeamCardProps) => {
           {memberData.name}
         </h3>
         <p className='text-base font-semibold text-brand-cta-orange'>
-          {t(`about.${memberData.roleKey}`)}
+          {t(memberData.roleKey)}
         </p>
         <p className='mt-2 text-sm text-brand-neutral/80 font-serif'>
-          {t(`about.${memberData.bioKey}`)}
+          {t(memberData.bioKey)}
         </p>
       </div>
     </motion.div>

@@ -1,82 +1,83 @@
 import { ROUTES } from '../constants/routes';
-import type { ImageComponentData } from '../types/data'; // Importamos el tipo central
+import type { AboutUsPageData } from '../types/data'; // Importamos el tipo central
 
 // Definimos la estructura de un miembro del equipo
-interface TeamMember {
-  id: string;
-  name: string;
-  roleKey: string;
-  bioKey: string;
-  imageUrl: string;
-}
 
-export const aboutUsPageData = {
+export const aboutUsPageData: AboutUsPageData = {
   seo: {
-    titleKey: 'aboutSeoTitle',
-    descriptionKey: 'aboutSeoDesc',
+    titleKey: 'seo.aboutUsSeoTitle',
+    descriptionKey: 'seo.aboutUsSeoDesc',
+    keywordsKey: 'seo.aboutUsSeoKeywords',
     urlPath: ROUTES.aboutUs,
-    imageUrl: '/images/about/header-background.webp',
+    imageUrl: '/images/social/about-us-social-card.webp',
+    translationNS: 'aboutUs',
   },
+
   header: {
-    titleKey: 'aboutHeaderTitle',
-    subtitleKey: 'aboutHeaderSubtitle',
+    titleKey: 'header.aboutHeaderTitle',
+    subtitleKey: 'header.aboutHeaderSubtitle',
+    translationNS: 'aboutUs',
     imageData: {
       backgroundImage: '/images/about/header-background.webp',
+      photoCredit: 'Camilo Beltran @JustDiveCol',
+      variant: 'header',
     },
   },
 
   mission: {
-    titleKey: 'aboutMissionTitle',
-    textKey: 'aboutMissionText',
-    // La data de la imagen ahora cumple con el tipo 'ImageComponentData'
+    titleKey: 'mission.aboutMissionTitle',
+    textKey: 'mission.aboutMissionText',
+    translationNS: 'aboutUs',
     imageData: {
       backgroundImage: '/images/about/mission-image.webp',
-      photoCredit: {
-        prefixKey: 'photoCreditPrefix',
-        text: 'Tu Nombre Aquí',
-      },
-    } as ImageComponentData,
+      photoCredit: 'Camilo Beltran @JustDiveCol',
+      variant: 'horizontal',
+    },
   },
 
   team: {
-    titleKey: 'aboutTeamTitle',
+    titleKey: 'team.aboutTeamTitle',
+    translationNS: 'aboutUs',
     members: [
       {
         id: 'member-1',
         name: 'Camilo Beltrán',
-        roleKey: 'teamRoleInstructor',
-        bioKey: 'teamBioCamilo',
+        roleKey: 'team.teamRoleInstructor',
+        bioKey: 'team.teamBioCamilo',
         imageUrl: '/images/team/camilo.webp',
       },
       {
         id: 'member-2',
         name: 'Alejandra Vargas',
-        roleKey: 'teamRoleDivemaster',
-        bioKey: 'teamBioAlejandra',
+        roleKey: 'team.teamRoleDivemaster',
+        bioKey: 'team.teamBioAlejandra',
         imageUrl: '/images/team/alejandra.webp',
       },
       {
         id: 'member-3',
         name: 'Pablo Orjuela',
-        roleKey: 'teamRoleInstructor',
-        bioKey: 'teamBioPablo',
+        roleKey: 'team.teamRoleInstructor',
+        bioKey: 'team.teamBioPablo',
         imageUrl: '/images/team/pablo.webp',
       },
-    ] as TeamMember[],
+    ],
   },
 
   cta: {
-    titleKey: 'aboutCtaTitle',
-    subtitleKey: 'aboutCtaSubtitle',
+    translationNS: 'aboutUs',
+    titleKey: 'cta.aboutCtaTitle',
+    subtitleKey: 'cta.aboutCtaSubtitle',
     backgroundImageUrl: '/images/about/cta-background.webp',
-    buttonAction: {
-      type: 'internal' as const,
-      path: ROUTES.experiences,
+    button: {
+      textKey: 'cta.contactButton',
+      action: {
+        type: 'whatsapp',
+        whatsAppMessageKey: 'common:generalWhatsappMessage',
+      },
+      variant: 'primary',
+      size: 'default',
     },
-    hubspotForm: {
-      portalId: '50063006',
-      formId: '5fe58871-a1b6-4462-8a3e-ebcb21936a72',
-      titleKey: 'formTitle',
-    },
+
+    hubspotFormTitle: 'cta.formTitle',
   },
 };

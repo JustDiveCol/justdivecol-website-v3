@@ -5,7 +5,7 @@ export const I18N_NAMESPACES = [
   'common',
   'home',
   'experiences',
-  'about',
+  'aboutUs',
   'contact',
   'faqs',
   'principles',

@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { BRAND_ASSETS } from '../../constants/assets';
 import type { ImageComponentData } from '../../types/data';
+import type { I18NNamespace } from '../../constants/i18n';
 interface ImageComponentProps {
   className?: string;
   imageData: ImageComponentData;
-  variant?: string;
-  translationNS?: string;
+  translationNS?: I18NNamespace;
 }
 
 const variantStyles = {
@@ -21,7 +21,7 @@ export const ImageComponent = ({
   imageData,
   translationNS,
 }: ImageComponentProps) => {
-  const { t } = useTranslation(translationNS);
+  const { t } = useTranslation([translationNS, 'common']);
   const {
     backgroundImage,
     complementaryLogo,
@@ -35,6 +35,12 @@ export const ImageComponent = ({
   const variantClass = variantStyles[variant] || 'h-full';
 
   const wrapperClass = `select-none relative group w-full h-full bg-cover bg-center ${variantClass} ${className}`;
+
+  const photoCreditOpacityClass =
+    variant === 'header' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100';
+
+  const photoCreditBgClass =
+    variant === 'header' ? '' : 'bg-brand-primary-dark/50';
 
   return (
     <div
@@ -64,7 +70,8 @@ export const ImageComponent = ({
         />
       </div>
       {photoCredit && (
-        <div className='select-none absolute bottom-0 left-0 w-full bg-brand-primary-dark/50 px-2 py-1 text-xs text-brand-neutral opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+        <div
+          className={`select-none absolute bottom-0 left-0 w-full ${photoCreditBgClass} px-2 py-1 text-xs text-brand-neutral transition-opacity duration-300 ${photoCreditOpacityClass}`}>
           {t('common:photoCreditPrefix')} {t(photoCredit)}
         </div>
       )}

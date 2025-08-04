@@ -1,11 +1,23 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { aboutUsPageData } from '../../../data/aboutUsPageData';
 import { ImageComponent } from '../../common/ImageComponent';
+import type { I18NNamespace } from '../../../constants/i18n';
+import type { ImageComponentData } from '../../../types/data';
 
-export const MissionSection = () => {
-  const { t } = useTranslation('common');
-  const { mission } = aboutUsPageData;
+export type MissionSectionProps = {
+  titleKey: string;
+  textKey: string;
+  translationNS: I18NNamespace;
+  imageData: ImageComponentData;
+};
+
+export const MissionSection = ({
+  titleKey,
+  textKey,
+  translationNS,
+  imageData,
+}: MissionSectionProps) => {
+  const { t } = useTranslation([translationNS, 'common']);
 
   const textVariants = {
     hidden: { opacity: 0, x: 50 },
@@ -27,10 +39,10 @@ export const MissionSection = () => {
             viewport={{ once: true, amount: 0.3 }}
             variants={imageVariants}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className='rounded-lg shadow-2xl overflow-hidden aspect-[4/3]'>
+            className='rounded-lg shadow-2xl overflow-hidden'>
             <ImageComponent
-              imageData={mission.imageData}
-              translationNS='common'
+              imageData={imageData}
+              translationNS={translationNS}
             />
           </motion.div>
 
@@ -40,9 +52,9 @@ export const MissionSection = () => {
             viewport={{ once: true, amount: 0.3 }}
             variants={textVariants}
             transition={{ duration: 0.8, ease: 'easeOut' }}>
-            <h2 className='heading-2 mb-6'>{t(`about.${mission.titleKey}`)}</h2>
+            <h2 className='heading-2 mb-6'>{t(titleKey)}</h2>
             <p className='text-base-md font-serif text-brand-neutral/90 whitespace-pre-line'>
-              {t(`about.${mission.textKey}`)}
+              {t(textKey)}
             </p>
           </motion.div>
         </div>

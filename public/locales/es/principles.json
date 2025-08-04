@@ -1,0 +1,32 @@
+{
+  "seo": {
+    "principlesSeoTitle": "Principios y valores",
+    "principlesSeoDesc": "Descubre los pilares de JustDiveCol: nuestro compromiso con la seguridad inquebrantable, la conservación del océano y el fomento de una comunidad de buzos responsable. Conoce los valores que guían cada una de nuestras experiencias.",
+    "principlesSeoKeywords": "principios JustDiveCol, valores buceo, seguridad en buceo, conservación marina, comunidad de buzos, turismo responsable, buceo sostenible, pilares de JustDiveCol"
+  },
+
+  "header": {
+    "principlesHeaderTitle": "Nuestros principios: el corazón de JustDiveCol",
+    "principlesHeaderSubtitle": "Descubre los pilares que guían cada una de nuestras experiencias, desde la seguridad hasta la conexión con el océano y entre exploradores."
+  },
+
+  "principles": {
+    "principlesSafetyTitle": "Seguridad inquebrantable",
+    "principlesSafetyDetailText": "Tu bienestar es nuestra máxima prioridad. Nos adherimos a los más altos estándares PADI y DAN, utilizando equipo de vanguardia con un mantenimiento riguroso. Queremos que tu única misión sea disfrutar del océano con total paz mental.",
+
+    "principlesConservationTitle": "Conexión con el océano",
+    "principlesConservationDetailText": "Creemos que la exploración conlleva la responsabilidad de proteger. Promovemos activamente prácticas de bajo impacto, apoyamos iniciativas de conservación marina y educamos a nuestros buzos para que se conviertan en guardianes del mar, cuidando cada ecosistema que visitamos.",
+
+    "principlesCommunityTitle": "Comunidad y confianza",
+    "principlesCommunityDetailText": "Somos más que un operador de buceo; somos una familia. Fomentamos la camaradería y creamos un ambiente de confianza donde cada buzo, sin importar su nivel, se siente parte de un grupo apasionado. Nuestro equipo te guiará y apoyará en cada paso de tu aventura."
+  },
+
+  "cta": {
+    "principlesCtaTitle": "¿Listo para tu próxima aventura?",
+    "principlesCtaSubtitle": "Contáctanos hoy y planeemos juntos tu inmersión. Resolvemos todas tus dudas sin compromiso.",
+
+    "contactButton": "Hablemos por WhatsApp",
+
+    "formTitle": "O déjanos un mensaje"
+  }
+}

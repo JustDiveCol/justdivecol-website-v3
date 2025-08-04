@@ -1,64 +1,84 @@
 // src/data/principlesPageData.ts
+import { BRAND_ASSETS } from '../constants/assets';
 import { ROUTES } from '../constants/routes';
+import type { PrinciplesPageData } from '../types/data';
 
-interface PrincipleDetail {
-  id: string;
-  titleKey: string;
-  textKey: string; // Usaremos una key para un texto más largo y detallado
-  imageUrl: string;
-  imagePosition: 'left' | 'right'; // Para controlar el layout alternado
-}
-
-export const principlesPageData = {
+export const principlesPageData: PrinciplesPageData = {
   seo: {
-    titleKey: 'principlesSeoTitle',
-    descriptionKey: 'principlesSeoDesc',
+    titleKey: 'seo.principlesSeoTitle',
+    descriptionKey: 'seo.principlesSeoDesc',
+    keywordsKey: 'seo.principlesSeoKeywords',
     urlPath: ROUTES.principles,
+    imageUrl: '/images/social/principles-social-card.webp',
+    translationNS: 'principles',
   },
+
   header: {
-    titleKey: 'principlesHeaderTitle',
-    subtitleKey: 'principlesHeaderSubtitle',
+    titleKey: 'header.principlesHeaderTitle',
+    subtitleKey: 'header.principlesHeaderSubtitle',
+    translationNS: 'principles',
     imageData: {
       backgroundImage: '/images/principles/header-background.webp',
+      photoCredit: 'PADI®',
+      complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
+      variant: 'header',
     },
   },
+
   principles: [
     {
       id: 'safety',
-      titleKey: 'principlesSafetyTitle',
-      textKey: 'principlesSafetyDetailText',
-      imageUrl: '/images/principles/safety-detail.webp',
+      titleKey: 'principles.principlesSafetyTitle',
+      textKey: 'principles.principlesSafetyDetailText',
+      imageData: {
+        backgroundImage: '/images/principles/sustainability.webp',
+        photoCredit: 'PADI®',
+        complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
+        variant: 'horizontal',
+      },
       imagePosition: 'left',
     },
     {
       id: 'conservation',
-      titleKey: 'principlesConservationTitle',
-      textKey: 'principlesConservationDetailText',
-      imageUrl: '/images/principles/conservation-detail.webp',
+      titleKey: 'principles.principlesConservationTitle',
+      textKey: 'principles.principlesConservationDetailText',
+      imageData: {
+        backgroundImage: '/images/principles/ocean-conservation.webp',
+        photoCredit: 'PADI®',
+        complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
+        variant: 'horizontal',
+      },
       imagePosition: 'right',
     },
     {
       id: 'community',
-      titleKey: 'principlesCommunityTitle',
-      textKey: 'principlesCommunityDetailText',
-      imageUrl: '/images/principles/community-detail.webp',
+      titleKey: 'principles.principlesCommunityTitle',
+      textKey: 'principles.principlesCommunityDetailText',
+      imageData: {
+        backgroundImage: '/images/principles/people-and-humanity.webp',
+        photoCredit: 'PADI®',
+        complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
+        variant: 'horizontal',
+      },
       imagePosition: 'left',
     },
-  ] as PrincipleDetail[],
+  ],
 
   cta: {
-    titleKey: 'principlesCtaTitle',
-    subtitleKey: 'principlesCtaSubtitle',
+    translationNS: 'principles',
+    titleKey: 'cta.principlesCtaTitle',
+    subtitleKey: 'cta.principlesCtaSubtitle',
     backgroundImageUrl: '/images/principles/cta-background.webp',
-    contactButtonKey: '',
-    buttonAction: {
-      type: 'internal' as const,
-      path: ROUTES.experiences,
+    button: {
+      textKey: 'cta.contactButton',
+      action: {
+        type: 'whatsapp',
+        whatsAppMessageKey: 'common:generalWhatsappMessage',
+      },
+      variant: 'primary',
+      size: 'default',
     },
-    hubspotForm: {
-      portalId: '50063006',
-      formId: '5fe58871-a1b6-4462-8a3e-ebcb21936a72',
-      titleKey: 'formTitle',
-    },
+
+    hubspotFormTitle: 'cta.formTitle',
   },
 };

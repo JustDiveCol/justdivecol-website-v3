@@ -7,6 +7,10 @@ import type { TestimonialsSectionProps } from '../components/sections/home/Testi
 import type { AlliesSectionProps } from '../components/sections/home/AlliesSection';
 import type { CtaSectionProps } from '../components/sections/shared/CtaSection';
 import type { RoutePath } from '../constants/routes';
+import type { PageHeaderProps } from '../components/sections/shared/PageHeader';
+import type { MissionSectionProps } from '../components/sections/about/MissionSection';
+import type { TeamSectionProps } from '../components/sections/about/TeamSection';
+import type { PrincipleDetail } from '../components/sections/shared/AlternatingFeature';
 
 // --- Types ---
 export type ActionType = 'internal' | 'external' | 'whatsapp';
@@ -51,6 +55,21 @@ export interface HomePageData {
   cta: CtaSectionProps;
 }
 
+export interface AboutUsPageData {
+  seo: SEOProps;
+  header: PageHeaderProps;
+  mission: MissionSectionProps;
+  team: TeamSectionProps;
+  cta: CtaSectionProps;
+}
+
+export interface PrinciplesPageData {
+  seo: SEOProps;
+  header: PageHeaderProps;
+  principles: PrincipleDetail[];
+  cta: CtaSectionProps;
+}
+
 // --- Props ---
 
 // --- TIPOS GENÉRICOS Y REUTILIZABLES ---
@@ -74,7 +93,7 @@ export interface PhotoCreditData {
 export interface ImageComponentData {
   backgroundImage: string;
   complementaryLogo?: { url: string; altKey: string };
-  photoCredit?: string;
+  photoCredit: string;
   textOverlayKey?: string;
   variant: ImageVariant;
 }
