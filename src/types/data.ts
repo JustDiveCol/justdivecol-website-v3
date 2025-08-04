@@ -11,6 +11,13 @@ import type { PageHeaderProps } from '../components/sections/shared/PageHeader';
 import type { MissionSectionProps } from '../components/sections/about/MissionSection';
 import type { TeamSectionProps } from '../components/sections/about/TeamSection';
 import type { PrincipleDetail } from '../components/sections/shared/AlternatingFeature';
+import type { FaqCategory } from '../data/faqData';
+import type { LegalContentProps } from '../components/sections/shared/LegalContent';
+import type { UpcomingTripsSectionProps } from '../components/sections/experiences/UpcomingTripsSection';
+import type { CertificationsSectionProps } from '../components/sections/experiences/CertificationsSection';
+import type { DestinationsSectionProps } from '../components/sections/experiences/DestinationsSection';
+import type { CustomTripsSectionProps } from '../components/sections/experiences/CustomTripsSection';
+import type { ContactSectionProps } from '../components/sections/contact/ContactSection';
 
 // --- Types ---
 export type ActionType = 'internal' | 'external' | 'whatsapp';
@@ -22,6 +29,8 @@ export type ButtonSize = 'default' | 'sm' | 'lg';
 export type StatusType = 'published' | 'draft';
 
 export type AvailableType = 'available' | 'few_spots' | 'sold_out';
+
+export type SocialType = 'instagram' | 'youtube' | 'tiktok';
 
 export type CategoryType =
   | 'marine-life'
@@ -44,6 +53,12 @@ export type Action = {
   whatsAppMessageKey?: string;
 };
 
+export type SocialsData = {
+  name: string;
+  link: string;
+  icon: SocialType;
+};
+
 // --- Data ---
 export interface HomePageData {
   seo: SEOProps;
@@ -60,14 +75,57 @@ export interface AboutUsPageData {
   header: PageHeaderProps;
   mission: MissionSectionProps;
   team: TeamSectionProps;
-  cta: CtaSectionProps;
 }
 
 export interface PrinciplesPageData {
   seo: SEOProps;
   header: PageHeaderProps;
   principles: PrincipleDetail[];
-  cta: CtaSectionProps;
+}
+
+export interface ContactPageData {
+  seo: SEOProps;
+  header: PageHeaderProps;
+}
+
+export interface ContactData {
+  contactInfo: ContactSectionProps;
+}
+
+export interface FaqPageData {
+  seo: SEOProps;
+  header: PageHeaderProps;
+}
+
+export interface FaqData {
+  topFaqIds: string[];
+  categories: FaqCategory[];
+}
+
+export interface PolicyPageData {
+  seo: SEOProps;
+  header: PageHeaderProps;
+  content: LegalContentProps;
+}
+
+export interface TermsPageData {
+  seo: SEOProps;
+  header: PageHeaderProps;
+  content: LegalContentProps;
+}
+
+export interface PrivacyPageData {
+  seo: SEOProps;
+  header: PageHeaderProps;
+  content: LegalContentProps;
+}
+
+export interface ExperiencesPageData {
+  seo: SEOProps;
+  upcomingTrips: UpcomingTripsSectionProps;
+  certifications: CertificationsSectionProps;
+  destinations: DestinationsSectionProps;
+  customTrips: CustomTripsSectionProps;
 }
 
 // --- Props ---
@@ -84,10 +142,6 @@ export interface HeaderData {
 }
 
 // --- TIPOS GENÉRICOS ---
-export interface PhotoCreditData {
-  prefixKey: string;
-  text: string;
-}
 
 // Lo que el COMPONENTE ImageComponent espera recibir
 export interface ImageComponentData {
@@ -97,13 +151,6 @@ export interface ImageComponentData {
   textOverlayKey?: string;
   variant: ImageVariant;
 }
-
-// Lo que definimos para una IMAGEN en una GALERÍA
-export type GalleryImage = {
-  backgroundImage: string;
-  altTextKey: string;
-  photoCredit?: string;
-};
 
 export interface CTAData {
   textKey: string;

@@ -3,9 +3,14 @@ import { faqData } from '../../../data/faqData';
 import { AccordionItem } from '../../common/AccordionItem';
 import { ROUTES } from '../../../constants/routes';
 import { Button } from '../../common/Button';
+import type { I18NNamespace } from '../../../constants/i18n';
 
-export const FaqSection = () => {
-  const { t } = useTranslation('faqs');
+export type FaqSectionProps = {
+  translationNS: I18NNamespace;
+};
+
+export const FaqSection = ({ translationNS }: FaqSectionProps) => {
+  const { t } = useTranslation([translationNS, 'common']);
   const topFaqs = faqData.categories
     .flatMap((category) => category.faqs)
     .filter((faq) => faqData.topFaqIds.includes(faq.id));
@@ -17,7 +22,6 @@ export const FaqSection = () => {
           <h2 className='heading-2 text-white'>
             {t('header.faqsHeaderTitle')}
           </h2>{' '}
-          {/* Asumiendo que tienes un título general */}
         </div>
 
         <div className='space-y-2'>
@@ -35,7 +39,6 @@ export const FaqSection = () => {
             action={{ type: 'internal', path: ROUTES.faq }}
             variant='outline'
             size='sm'>
-            {/* ===== CAMBIO AQUÍ: Usamos la función t() ===== */}
             {t('faqs.seeAllFaqsButton')}
           </Button>
         </div>

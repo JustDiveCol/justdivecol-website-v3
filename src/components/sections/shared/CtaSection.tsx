@@ -32,7 +32,7 @@ export const CtaSection = ({
 
   const { textKey, ...buttonProps } = button;
 
-  const formTargetId = `hubspot-form-5fe58871-a1b6-4462-8a3e-ebcb21936a72`;
+  const formTargetId = 'hubspot-form-5fe58871-a1b6-4462-8a3e-ebcb21936a72';
   useHubSpotForm({
     portalId: '50063006',
     formId: '5fe58871-a1b6-4462-8a3e-ebcb21936a72',

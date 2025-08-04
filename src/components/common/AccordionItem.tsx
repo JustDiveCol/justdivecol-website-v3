@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDownIcon } from '../ui/Icons'; // Asegúrate de tener este icono
 
-interface AccordionItemProps {
+export type AccordionItemProps = {
   question: string;
   answer: string;
-}
+};
 
 export const AccordionItem = ({ question, answer }: AccordionItemProps) => {
   const [isOpen, setIsOpen] = useState(false);

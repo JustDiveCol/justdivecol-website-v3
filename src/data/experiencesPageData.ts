@@ -1,34 +1,47 @@
 // src/data/experiencesPageData.ts
 import { ROUTES } from '../constants/routes';
+import type { ExperiencesPageData } from '../types/data';
 
-export const experiencesPageData = {
+export const experiencesPageData: ExperiencesPageData = {
   seo: {
     titleKey: 'seo.experiencesSeoTitle',
     descriptionKey: 'seo.experiencesSeoDesc',
     keywordsKey: 'seo.experiencesSeoKeywords',
     urlPath: ROUTES.experiences,
-    imageUrl: '/images/social/experiences-social-card.jpg',
+    imageUrl: '/images/social/experiences-social-card.webp',
+    translationNS: 'experiences',
   },
+
   upcomingTrips: {
     titleKey: 'upcomingTrips.upcomingTripsTitle',
     subtitleKey: 'upcomingTrips.upcomingTripsSubtitle',
     backgroundImageUrl: '/images/experiences/upcoming-trips-background.webp',
+    translationNS: 'experiences',
+    filtersAllDestinationsKey: 'upcomingTrips.filters.allDestinations',
+    filtersAllMonthsKey: 'upcomingTrips.filters.allMonths',
+    filtersNoResultsKey: 'upcomingTrips.filters.noResults',
   },
+
   certifications: {
     titleKey: 'certifications.certificationsSectionTitle',
     subtitleKey: 'certifications.certificationsSectionSubtitle',
-    certificationIds: ['padi-open-water', 'padi-advanced'],
+    translationNS: 'experiences',
   },
+
   destinations: {
     titleKey: 'destinations.destinationsSectionTitle',
     otherTitleKey: 'destinations.destinationsSectionOtherTitle',
+    translationNS: 'experiences',
   },
+
   customTrips: {
     titleKey: 'customTrips.customTripsTitle',
     textKey: 'customTrips.customTripsText',
+    translationNS: 'experiences',
     imageData: {
       backgroundImage: '/images/experiences/custom-trip.webp',
       photoCredit: 'Camilo Beltran @JustDiveCol',
+      variant: 'vertical',
     },
     buttonTextKey: 'customTrips.customTripsButton',
     benefits: [

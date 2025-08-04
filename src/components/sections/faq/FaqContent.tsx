@@ -3,7 +3,7 @@ import { faqData } from '../../../data/faqData';
 import { AccordionItem } from '../../common/AccordionItem';
 
 export const FaqContent = () => {
-  const { t } = useTranslation('faqs'); // Usaremos el namespace 'faq'
+  const { t } = useTranslation(['faqs', 'common']); // Usaremos el namespace 'faq'
 
   return (
     <section className='bg-brand-primary-dark py-20 px-4'>

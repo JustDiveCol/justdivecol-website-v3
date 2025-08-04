@@ -1,34 +1,27 @@
 // src/data/contactPageData.ts
+import { BRAND_ASSETS } from '../constants/assets';
 import { ROUTES } from '../constants/routes';
+import type { ContactPageData } from '../types/data';
 
-export const contactPageData = {
+export const contactPageData: ContactPageData = {
   seo: {
-    titleKey: 'contactSeoTitle',
-    descriptionKey: 'contactSeoDesc',
+    titleKey: 'seo.contactSeoTitle',
+    descriptionKey: 'seo.contactSeoDesc',
+    keywordsKey: 'seo.contactSeoKeywords',
     urlPath: ROUTES.contact,
+    imageUrl: '/images/social/contact-social-card.webp',
+    translationNS: 'contact',
   },
+
   header: {
-    titleKey: 'contactHeaderTitle',
-    subtitleKey: 'contactHeaderSubtitle',
+    titleKey: 'header.contactHeaderTitle',
+    subtitleKey: 'header.contactHeaderSubtitle',
+    translationNS: 'contact',
     imageData: {
       backgroundImage: '/images/contact/header-background.webp',
+      photoCredit: 'PADI®',
+      complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
+      variant: 'header',
     },
-  },
-  contactInfo: {
-    titleKey: 'contactInfoTitle',
-    email: 'info@justdivecol.com',
-    phone: '+57 311 522 0316',
-    socials: [
-      {
-        name: 'Instagram',
-        link: 'https://www.instagram.com/justdivecol/',
-        icon: 'instagram',
-      },
-    ],
-  },
-  hubspotForm: {
-    portalId: '50063006',
-    formId: '5fe58871-a1b6-4462-8a3e-ebcb21936a72',
-    titleKey: 'formTitle',
   },
 };

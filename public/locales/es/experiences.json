@@ -6,8 +6,8 @@
   },
 
   "upcomingTrips": {
-    "pageTitle": "Próximos viajes",
-    "pageSubtitle": "Explora nuestro calendario de emocionantes aventuras y cursos programados. ¡Tu gran inmersión te espera!",
+    "upcomingTripsTitle": "Próximos viajes",
+    "upcomingTripsSubtitle": "Explora nuestro calendario de emocionantes aventuras y cursos programados. ¡Tu gran inmersión te espera!",
     "filters": {
       "allDestinations": "Todos los destinos",
       "allMonths": "Todos los meses",
@@ -33,5 +33,12 @@
     "customTripsBenefit2": "Itinerario diseñado para tus intereses.",
     "customTripsBenefit3": "Destinos soñados, locales o internacionales.",
     "customTripsBenefit4": "Guías expertos y exclusivos para tu grupo."
+  },
+
+  "cta": {
+    "experiencesCtaTitle": "¿Listo para tu próxima aventura?",
+    "experiencesCtaSubtitle": "Contáctanos hoy y planeemos juntos tu inmersión. Resolvemos todas tus dudas sin compromiso.",
+    "formTitle": "O déjanos un mensaje",
+    "contactButton": "Hablemos por WhatsApp"
   }
 }

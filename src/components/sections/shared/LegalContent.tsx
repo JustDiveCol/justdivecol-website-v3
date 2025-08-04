@@ -1,21 +1,21 @@
 import { useTranslation } from 'react-i18next';
 
-type Point = {
+export type Point = {
   textKey?: string;
   titleKey?: string;
   subpoints?: string[];
 };
 
-type Section = {
+export type Section = {
   id: string;
   titleKey: string;
   points: Point[];
 };
 
-interface LegalContentProps {
+export type LegalContentProps = {
   sections: Section[];
   translationNS: string;
-}
+};
 
 export const LegalContent = ({
   sections,

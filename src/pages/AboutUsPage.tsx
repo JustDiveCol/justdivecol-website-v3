@@ -18,7 +18,7 @@ export const AboutUsPage = () => {
       <MissionSection {...aboutUsPageData.mission} />
       <TeamSection {...aboutUsPageData.team} />
       <PrinciplesSection {...homePageData.principles} />
-      <CtaSection {...aboutUsPageData.cta} />
+      <CtaSection {...homePageData.cta} />
     </>
   );
 };

@@ -63,22 +63,4 @@ export const principlesPageData: PrinciplesPageData = {
       imagePosition: 'left',
     },
   ],
-
-  cta: {
-    translationNS: 'principles',
-    titleKey: 'cta.principlesCtaTitle',
-    subtitleKey: 'cta.principlesCtaSubtitle',
-    backgroundImageUrl: '/images/principles/cta-background.webp',
-    button: {
-      textKey: 'cta.contactButton',
-      action: {
-        type: 'whatsapp',
-        whatsAppMessageKey: 'common:generalWhatsappMessage',
-      },
-      variant: 'primary',
-      size: 'default',
-    },
-
-    hubspotFormTitle: 'cta.formTitle',
-  },
 };

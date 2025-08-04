@@ -1,86 +1,143 @@
 import { ROUTES } from '../constants/routes';
+import type { PolicyPageData } from '../types/data';
 
-export const policyPageData = {
+export const policyPageData: PolicyPageData = {
   seo: {
-    titleKey: 'policy.policySeoTitle',
-    descriptionKey: 'policy.policySeoDesc',
-    keywordsKey: 'policy.policySeoKeywords',
+    titleKey: 'policy.seo.policySeoTitle',
+    descriptionKey: 'policy.seo.policySeoDesc',
+    keywordsKey: 'policy.seo.policySeoKeywords',
     urlPath: ROUTES.policy,
+    imageUrl: '/images/social/policy-social-card.webp',
+    translationNS: 'legal',
   },
+
   header: {
-    titleKey: 'policy.policyHeaderTitle',
-    subtitleKey: 'policy.policyHeaderSubtitle',
+    titleKey: 'policy.header.policyHeaderTitle',
+    subtitleKey: 'policy.header.policyHeaderSubtitle',
+    translationNS: 'legal',
     imageData: {
       backgroundImage: '/images/legal/header-background.webp',
+      photoCredit: 'Camilo Beltran @JustDiveCol',
+      variant: 'header',
     },
   },
+
   content: {
+    translationNS: 'legal',
     sections: [
       {
         id: 'reservas-pagos',
-        titleKey: 'policy.policySection1Title',
+        titleKey: 'policy.content.policySection1Title',
         points: [
-          { textKey: 'policy.policySection1Content.policiesSection1Point1' },
-          { textKey: 'policy.policySection1Content.policiesSection1Point2' },
-          { textKey: 'policy.policySection1Content.policiesSection1Point3' },
+          {
+            textKey:
+              'policy.content.policySection1Content.policiesSection1Point1',
+          },
+          {
+            textKey:
+              'policy.content.policySection1Content.policiesSection1Point2',
+          },
+          {
+            textKey:
+              'policy.content.policySection1Content.policiesSection1Point3',
+          },
         ],
       },
       {
         id: 'cancelaciones-reembolsos',
-        titleKey: 'policy.policySection2Title',
+        titleKey: 'policy.content.policySection2Title',
         points: [
           {
-            titleKey: 'policy.policySection2Content.policiesSection2Point1',
+            titleKey:
+              'policy.content.policySection2Content.policiesSection2Point1',
             subpoints: [
-              'policy.policySection2Content.policiesSection2Point1Content.policiesSection2Point1a',
-              'policy.policySection2Content.policiesSection2Point1Content.policiesSection2Point1b',
-              'policy.policySection2Content.policiesSection2Point1Content.policiesSection2Point1c',
-              'policy.policySection2Content.policiesSection2Point1Content.policiesSection2Point1d',
+              'policy.content.policySection2Content.policiesSection2Point1Content.policiesSection2Point1a',
+              'policy.content.policySection2Content.policiesSection2Point1Content.policiesSection2Point1b',
+              'policy.content.policySection2Content.policiesSection2Point1Content.policiesSection2Point1c',
+              'policy.content.policySection2Content.policiesSection2Point1Content.policiesSection2Point1d',
             ],
           },
           {
-            titleKey: 'policy.policySection2Content.policiesSection2Point2',
+            titleKey:
+              'policy.content.policySection2Content.policiesSection2Point2',
             subpoints: [
-              'policy.policySection2Content.policiesSection2Point2Content.policiesSection2Point2a',
-              'policy.policySection2Content.policiesSection2Point2Content.policiesSection2Point2b',
+              'policy.content.policySection2Content.policiesSection2Point2Content.policiesSection2Point2a',
+              'policy.content.policySection2Content.policiesSection2Point2Content.policiesSection2Point2b',
             ],
           },
           {
-            titleKey: 'policy.policySection2Content.policiesSection2Point3',
+            titleKey:
+              'policy.content.policySection2Content.policiesSection2Point3',
             subpoints: [
-              'policy.policySection2Content.policiesSection2Point3Content.policiesSection2Point3a',
+              'policy.content.policySection2Content.policiesSection2Point3Content.policiesSection2Point3a',
             ],
           },
         ],
       },
       {
         id: 'normativas-seguridad',
-        titleKey: 'policy.policySection3Title',
+        titleKey: 'policy.content.policySection3Title',
         points: [
-          { textKey: 'policy.policySection3Content.policiesSection3Point1' },
-          { textKey: 'policy.policySection3Content.policiesSection3Point2' },
-          { textKey: 'policy.policySection3Content.policiesSection3Point3' },
-          { textKey: 'policy.policySection3Content.policiesSection3Point4' },
-          { textKey: 'policy.policySection3Content.policiesSection3Point5' },
+          {
+            textKey:
+              'policy.content.policySection3Content.policiesSection3Point1',
+          },
+          {
+            textKey:
+              'policy.content.policySection3Content.policiesSection3Point2',
+          },
+          {
+            textKey:
+              'policy.content.policySection3Content.policiesSection3Point3',
+          },
+          {
+            textKey:
+              'policy.content.policySection3Content.policiesSection3Point4',
+          },
+          {
+            textKey:
+              'policy.content.policySection3Content.policiesSection3Point5',
+          },
         ],
       },
       {
         id: 'alquiler-equipos',
-        titleKey: 'policy.policySection4Title',
+        titleKey: 'policy.content.policySection4Title',
         points: [
-          { textKey: 'policy.policySection4Content.policiesSection4Point1' },
-          { textKey: 'policy.policySection4Content.policiesSection4Point2' },
-          { textKey: 'policy.policySection4Content.policiesSection4Point3' },
-          { textKey: 'policy.policySection4Content.policiesSection4Point4' },
+          {
+            textKey:
+              'policy.content.policySection4Content.policiesSection4Point1',
+          },
+          {
+            textKey:
+              'policy.content.policySection4Content.policiesSection4Point2',
+          },
+          {
+            textKey:
+              'policy.content.policySection4Content.policiesSection4Point3',
+          },
+          {
+            textKey:
+              'policy.content.policySection4Content.policiesSection4Point4',
+          },
         ],
       },
       {
         id: 'responsabilidad-riesgos',
-        titleKey: 'policy.policySection5Title',
+        titleKey: 'policy.content.policySection5Title',
         points: [
-          { textKey: 'policy.policySection5Content.policiesSection5Point1' },
-          { textKey: 'policy.policySection5Content.policiesSection5Point2' },
-          { textKey: 'policy.policySection5Content.policiesSection5Point3' },
+          {
+            textKey:
+              'policy.content.policySection5Content.policiesSection5Point1',
+          },
+          {
+            textKey:
+              'policy.content.policySection5Content.policiesSection5Point2',
+          },
+          {
+            textKey:
+              'policy.content.policySection5Content.policiesSection5Point3',
+          },
         ],
       },
     ],

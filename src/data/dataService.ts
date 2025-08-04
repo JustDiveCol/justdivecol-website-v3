@@ -10,6 +10,7 @@ import { diveTags } from './dive-filters/tags';
 
 export const getExperiences = () => allExperiences;
 export const getDestinations = () => allDestinations;
+export const getCertifications = () => allCertifications;
 
 /**
  * Encuentra una experiencia y le adjunta sus datos relacionados
@@ -21,9 +22,11 @@ export const getExperienceDetails = (slug: string) => {
   const destination = allDestinations.find(
     (dest) => dest.id === experience.destinationId
   );
+
   const certifications = allCertifications.filter((cert) =>
     experience.certificationIds.includes(cert.id)
   );
+
   const sessions = allSessions.filter((session) =>
     experience.sessionIds.includes(session.id)
   );

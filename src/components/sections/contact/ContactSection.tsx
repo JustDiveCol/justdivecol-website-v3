@@ -1,14 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useHubSpotForm } from '../../../hooks/useHubSpotForm';
-import { contactPageData } from '../../../data/contactPageData';
+
 import {
   WhatsappIcon,
   MailIcon,
   InstagramIcon,
   TikTokIcon,
   YouTubeIcon,
-} from '../../ui/Icons'; // Asegúrate de tener todos los iconos
+} from '../../ui/Icons';
+
+import type { I18NNamespace } from '../../../constants/i18n';
+import type { SocialsData } from '../../../types/data';
 
 const socialIconMap: { [key: string]: React.ReactNode } = {
   instagram: <InstagramIcon className='h-7 w-7' />,
@@ -16,17 +19,44 @@ const socialIconMap: { [key: string]: React.ReactNode } = {
   youtube: <YouTubeIcon className='h-7 w-7' />,
 };
 
-export const ContactSection = () => {
-  const { t } = useTranslation('common');
-  const { contactInfo, hubspotForm } = contactPageData;
+export type ContactSectionProps = {
+  titleKey: string;
+  phone: string;
+  email: string;
+  emailSubjectKey: string;
+  emailBodyKey: string;
+  socials: SocialsData[];
+  translationNS: I18NNamespace;
+  hubspotFormTitleKey: string;
+};
 
-  const formTargetId = `hubspot-form-${hubspotForm.formId}`;
-  useHubSpotForm({ ...hubspotForm, target: `#${formTargetId}` });
+export const ContactSection = ({
+  titleKey,
+  phone,
+  email,
+  emailSubjectKey,
+  emailBodyKey,
+  socials,
+  translationNS,
+  hubspotFormTitleKey,
+}: ContactSectionProps) => {
+  const { t } = useTranslation([translationNS, 'common']);
 
-  const whatsappUrl = `https://wa.me/${contactInfo.phone.replace(
+  const subject = encodeURIComponent(t(emailSubjectKey, { ns: 'contact' }));
+  const body = encodeURIComponent(t(emailBodyKey, { ns: 'contact' }));
+  const emailLink = `mailto:${email}?subject=${subject}&body=${body}`;
+
+  const formTargetId = 'hubspot-form-5fe58871-a1b6-4462-8a3e-ebcb21936a72';
+  useHubSpotForm({
+    portalId: '50063006',
+    formId: '5fe58871-a1b6-4462-8a3e-ebcb21936a72',
+    target: `#${formTargetId}`,
+  });
+
+  const whatsappUrl = `https://wa.me/${phone.replace(
     /\s/g,
     ''
-  )}?text=${encodeURIComponent(t('generalWhatsappMessage'))}`;
+  )}?text=${encodeURIComponent(t('common:generalWhatsappMessage'))}`;
 
   return (
     <section className='bg-brand-primary-dark py-20 px-4 text-white'>
@@ -38,31 +68,29 @@ export const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}>
-            <h2 className='heading-3 mb-6 text-brand-white'>
-              {t(`contact.${contactInfo.titleKey}`)}
-            </h2>
+            <h2 className='heading-3 mb-6 text-brand-white'>{t(titleKey)}</h2>
             <div className='space-y-6'>
               <a
                 href={whatsappUrl}
                 target='_blank'
                 rel='noopener noreferrer'
                 className='flex items-center gap-4 group'>
-                <WhatsappIcon className='h-8 w-8 text-brand-cta-green' />
+                <WhatsappIcon className='h-8 w-8 text-brand-cta-orange' />
                 <span className='font-serif text-lg text-brand-neutral group-hover:text-brand-cta-orange transition-colors'>
-                  {contactInfo.phone}
+                  {phone}
                 </span>
               </a>
               <a
-                href={`mailto:${contactInfo.email}`}
+                href={emailLink}
                 className='flex items-center gap-4 group'>
                 <MailIcon className='h-8 w-8 text-brand-cta-orange' />
                 <span className='font-serif text-lg text-brand-neutral group-hover:text-brand-cta-orange transition-colors'>
-                  {contactInfo.email}
+                  {email}
                 </span>
               </a>
             </div>
             <div className='mt-8 pt-6 border-t border-white/10 flex items-center gap-6'>
-              {contactInfo.socials.map((social) => (
+              {socials.map((social) => (
                 <a
                   key={social.name}
                   href={social.link}
@@ -84,7 +112,7 @@ export const ContactSection = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className='w-full flex flex-col justify-center items-center'>
             <h3 className='heading-5 text-brand-cta-orange mb-4 font-bold'>
-              {t(`cta.${hubspotForm.titleKey}`)}
+              {t(hubspotFormTitleKey)}
             </h3>
             <div
               id={formTargetId}

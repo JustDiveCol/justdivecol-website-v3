@@ -1,10 +1,15 @@
+import type { ContactData } from '../types/data';
+
 // src/data/contactData.ts
-export const contactPageData = {
+export const contactData: ContactData = {
   contactInfo: {
+    titleKey: 'contactInfo.contactInfoTitle',
     email: 'info@justdivecol.com',
-    emailSubjectKey: 'contactEmailSubject',
-    emailBodyKey: 'contactEmailBody',
+    emailSubjectKey: 'contactInfo.contactEmailSubject',
+    emailBodyKey: 'contactInfo.contactEmailBody',
     phone: '+57 311 522 0316',
+    translationNS: 'contact',
+    hubspotFormTitleKey: 'contactInfo.formTitle',
     socials: [
       {
         name: 'Instagram',

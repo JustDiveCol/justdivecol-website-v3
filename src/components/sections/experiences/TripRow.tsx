@@ -5,7 +5,6 @@ import { Button } from '../../common/Button';
 import type { ExperienceSession } from '../../../types/data';
 import { BRAND_ASSETS } from '../../../constants/assets';
 
-// Componente para la "pastilla" de disponibilidad
 const AvailabilityBadge = ({ status }: { status: string }) => {
   const { t } = useTranslation('common');
   const baseClasses = 'px-3 py-1 text-xs font-bold rounded-full';

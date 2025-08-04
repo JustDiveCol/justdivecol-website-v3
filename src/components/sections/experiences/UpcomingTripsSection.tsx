@@ -1,7 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { experiencesPageData } from '../../../data/experiencesPageData';
 import { TripRow } from './TripRow';
 import { allSessions } from '../../../data/sessions';
 import { allExperiences } from '../../../data/experiences';
@@ -9,18 +8,30 @@ import { allDestinations } from '../../../data/destinations';
 import { PaginationControls } from '../../common/PaginationControls';
 import { ChevronDownIcon } from '../../ui/Icons';
 import { BRAND_ASSETS } from '../../../constants/assets';
+import type { I18NNamespace } from '../../../constants/i18n';
 
 const ITEMS_PER_PAGE = 10;
 
-interface UpcomingTripsSectionProps {
-  translationNS?: string;
-}
+export type UpcomingTripsSectionProps = {
+  titleKey: string;
+  subtitleKey: string;
+  backgroundImageUrl: string;
+  translationNS: I18NNamespace;
+  filtersAllDestinationsKey: string;
+  filtersAllMonthsKey: string;
+  filtersNoResultsKey: string;
+};
 
 export const UpcomingTripsSection = ({
+  titleKey,
+  subtitleKey,
+  backgroundImageUrl,
   translationNS,
+  filtersAllDestinationsKey,
+  filtersAllMonthsKey,
+  filtersNoResultsKey,
 }: UpcomingTripsSectionProps) => {
   const { t, i18n } = useTranslation([translationNS, 'common']);
-  const { upcomingTrips } = experiencesPageData;
 
   const [selectedMonth, setSelectedMonth] = useState('all');
   const [selectedDestination, setSelectedDestination] = useState('all');
@@ -88,31 +99,21 @@ export const UpcomingTripsSection = ({
   return (
     <section
       id='upcoming-trips-section'
-      // ===== CAMBIO 1: Añadimos 'min-h-screen' y 'flex' para la altura y alineación =====
       className='relative min-h-screen flex items-center bg-cover bg-center py-20 px-4'
-      style={{ backgroundImage: `url(${upcomingTrips.backgroundImageUrl})` }}>
+      style={{ backgroundImage: `url(${backgroundImageUrl})` }}>
       <div className='absolute inset-0 bg-brand-primary-dark/80' />
 
-      {/* ===== CAMBIO 2: Hacemos el contenedor relativo para el z-index ===== */}
       <div className='container mx-auto relative z-10'>
         <div className='max-w-3xl mx-auto text-center mb-12'>
-          <h1 className='heading-1 text-white'>
-            {t('upcomingTrips.pageTitle', { ns: 'experiences' })}
-          </h1>
-          <p className='text-subtitle mt-4'>
-            {t('upcomingTrips.pageSubtitle', { ns: 'experiences' })}
-          </p>
+          <h1 className='heading-1 text-white'>{t(titleKey)}</h1>
+          <p className='text-subtitle mt-4'>{t(subtitleKey)}</p>
         </div>
         <div className='flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto mb-12'>
           <select
             value={selectedDestination}
             onChange={(e) => setSelectedDestination(e.target.value)}
             className='form-input w-full'>
-            <option value='all'>
-              {t('upcomingTrips.filters.allDestinations', {
-                ns: 'experiences',
-              })}
-            </option>
+            <option value='all'>{t(filtersAllDestinationsKey)}</option>
             {destinationOptions.map((dest) => (
               <option
                 key={dest.id}
@@ -125,9 +126,7 @@ export const UpcomingTripsSection = ({
             value={selectedMonth}
             onChange={(e) => setSelectedMonth(e.target.value)}
             className='form-input w-full'>
-            <option value='all'>
-              {t('upcomingTrips.filters.allMonths', { ns: 'experiences' })}
-            </option>
+            <option value='all'>{t(filtersAllMonthsKey)}</option>
             {monthOptions.map((month) => (
               <option
                 key={month}
@@ -138,7 +137,6 @@ export const UpcomingTripsSection = ({
           </select>
         </div>
         <div className='max-w-4xl mx-auto flex flex-col gap-4'>
-          {/* Eliminamos el min-h de aquí para que el centrado funcione bien */}
           {paginatedSessions.length > 0 ? (
             paginatedSessions.map((session) => {
               const experience = allExperiences.find(
@@ -158,7 +156,7 @@ export const UpcomingTripsSection = ({
           ) : (
             <div className='flex items-center justify-center h-full pt-16'>
               <p className='text-center text-brand-neutral/80 font-serif'>
-                {t('upcomingTrips.filters.noResults', { ns: 'common' })}
+                {t(filtersNoResultsKey)}
               </p>
             </div>
           )}

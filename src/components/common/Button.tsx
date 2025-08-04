@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { cva } from 'class-variance-authority';
 import { twMerge } from 'tailwind-merge';
 
-import { contactPageData } from '../../data/contactData';
+import { contactData } from '../../data/contactData';
 import type { Action, ButtonSize, ButtonVariant } from '../../types/data';
 
 export type ButtonProps = {
@@ -53,7 +53,7 @@ export const Button = React.forwardRef<HTMLAnchorElement, ButtonProps>(
     const finalLink = React.useMemo(() => {
       if (action.type === 'whatsapp') {
         const text = t(action.whatsAppMessageKey || 'whatsapp_message');
-        const phone = contactPageData.contactInfo.phone.replace(/\s/g, '');
+        const phone = contactData.contactInfo.phone.replace(/\s/g, '');
         return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
       }
       if (action.type === 'external') {

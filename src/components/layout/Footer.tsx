@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 // Data Imports (rutas corregidas)
 import { footerData } from '../../data/footerData';
-import { contactPageData } from '../../data/contactData';
+import { contactData } from '../../data/contactData';
 
 // Asset Imports (rutas corregidas)
 import logo from '../../assets/images/logo.png';
@@ -46,18 +46,18 @@ const Footer = () => {
 
   // Construcción de URLs
   const prefilledText = t('whatsapp_message', { ns: 'common' });
-  const whatsappUrl = `https://wa.me/${contactPageData.contactInfo.phone.replace(
+  const whatsappUrl = `https://wa.me/${contactData.contactInfo.phone.replace(
     /\s/g,
     ''
   )}?text=${encodeURIComponent(prefilledText)}`;
 
   const subject = encodeURIComponent(
-    t(contactPageData.contactInfo.emailSubjectKey, { ns: 'contact' })
+    t(contactData.contactInfo.emailSubjectKey, { ns: 'contact' })
   );
   const body = encodeURIComponent(
-    t(contactPageData.contactInfo.emailBodyKey, { ns: 'contact' })
+    t(contactData.contactInfo.emailBodyKey, { ns: 'contact' })
   );
-  const emailLink = `mailto:${contactPageData.contactInfo.email}?subject=${subject}&body=${body}`;
+  const emailLink = `mailto:${contactData.contactInfo.email}?subject=${subject}&body=${body}`;
 
   return (
     <footer className='bg-gradient-to-t from-brand-primary-dark to-brand-primary-medium text-brand-neutral/80 relative select-none'>
@@ -93,7 +93,7 @@ const Footer = () => {
               className='text-brand-neutral/70 hover:text-brand-cta-orange transition-all duration-300 hover:scale-110 inline-block'>
               <MailIcon className='w-6 h-6' />
             </a>
-            {contactPageData.contactInfo.socials.map((social) => (
+            {contactData.contactInfo.socials.map((social) => (
               <a
                 key={social.name}
                 href={social.link}

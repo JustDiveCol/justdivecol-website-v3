@@ -9,12 +9,20 @@ import { allExperiences } from '../../../data/experiences';
 import { ActiveDestinationCard } from '../shared/ActiveDestinationCard';
 import { DestinationPill } from '../shared/DestinationPill';
 import { ChevronLeftIcon, ChevronRightIcon } from '../../ui/Icons';
-import { experiencesPageData } from '../../../data/experiencesPageData';
+import type { I18NNamespace } from '../../../constants/i18n';
 
-export const DestinationsSection = () => {
-  const { t } = useTranslation(['experiences', 'destinations']);
+export interface DestinationsSectionProps {
+  titleKey: string;
+  otherTitleKey: string;
+  translationNS: I18NNamespace;
+}
 
-  const { titleKey, otherTitleKey } = experiencesPageData.destinations;
+export const DestinationsSection = ({
+  titleKey,
+  otherTitleKey,
+  translationNS,
+}: DestinationsSectionProps) => {
+  const { t } = useTranslation([translationNS, 'destinations']);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'center',
@@ -45,9 +53,7 @@ export const DestinationsSection = () => {
       {activeDestinations.length > 0 && (
         <div className='container mx-auto mb-20'>
           <div className='max-w-3xl mx-auto text-center mb-12'>
-            <h2 className='heading-2 text-white'>
-              {t(titleKey, { ns: 'experiences' })}
-            </h2>
+            <h2 className='heading-2 text-white'>{t(titleKey)}</h2>
           </div>
 
           {shouldUseCarousel ? (
@@ -112,9 +118,7 @@ export const DestinationsSection = () => {
       {otherDestinations.length > 0 && (
         <div className='container mx-auto'>
           <div className='max-w-3xl mx-auto text-center mb-12'>
-            <h2 className='heading-3 text-white'>
-              {t(otherTitleKey, { ns: 'experiences' })}
-            </h2>
+            <h2 className='heading-3 text-white'>{t(otherTitleKey)}</h2>
           </div>
           {/* 2. Reemplazamos la rejilla de tarjetas por una nube de píldoras centrada */}
           <div className='flex flex-wrap justify-center items-center gap-4 max-w-4xl mx-auto'>

@@ -62,22 +62,4 @@ export const aboutUsPageData: AboutUsPageData = {
       },
     ],
   },
-
-  cta: {
-    translationNS: 'aboutUs',
-    titleKey: 'cta.aboutCtaTitle',
-    subtitleKey: 'cta.aboutCtaSubtitle',
-    backgroundImageUrl: '/images/about/cta-background.webp',
-    button: {
-      textKey: 'cta.contactButton',
-      action: {
-        type: 'whatsapp',
-        whatsAppMessageKey: 'common:generalWhatsappMessage',
-      },
-      variant: 'primary',
-      size: 'default',
-    },
-
-    hubspotFormTitle: 'cta.formTitle',
-  },
 };

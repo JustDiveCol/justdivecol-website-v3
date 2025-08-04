@@ -1,23 +1,23 @@
-interface FaqItem {
+import type { FaqData } from '../types/data';
+
+export interface FaqItem {
   id: string;
   questionKey: string;
   answerKey: string;
 }
-interface FaqCategory {
+export interface FaqCategory {
   id: string;
   sectionTitleKey: string;
   faqs: FaqItem[];
 }
 
-export const faqData = {
-  // ESTA LISTA CONTROLA QUÉ SALE EN LA PÁGINA DE CONTACTO
+export const faqData: FaqData = {
   topFaqIds: [
     'certifications-01',
     'trips-and-experiences-01',
     'booking-and-payment-01',
   ],
 
-  // ESTA LISTA CONTIENE TODAS LAS PREGUNTAS PARA LA PÁGINA COMPLETA DE FAQS
   categories: [
     {
       id: 'certifications',
@@ -180,5 +180,5 @@ export const faqData = {
       ],
     },
     // ... más categorías
-  ] as FaqCategory[],
+  ],
 };

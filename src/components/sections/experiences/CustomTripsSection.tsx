@@ -1,13 +1,35 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { experiencesPageData } from '../../../data/experiencesPageData';
 import { Button } from '../../common/Button';
 import { CheckIcon } from '../../ui/Icons';
 import { ImageComponent } from '../../common/ImageComponent';
+import type { I18NNamespace } from '../../../constants/i18n';
+import type { ImageComponentData } from '../../../types/data';
 
-export const CustomTripsSection = () => {
-  const { t } = useTranslation(['experiences', 'common']);
-  const { customTrips } = experiencesPageData;
+interface Benefits {
+  id: string;
+  textKey: string;
+  icon: string;
+}
+
+export interface CustomTripsSectionProps {
+  titleKey: string;
+  textKey: string;
+  translationNS: I18NNamespace;
+  imageData: ImageComponentData;
+  buttonTextKey: string;
+  benefits: Benefits[];
+}
+
+export const CustomTripsSection = ({
+  titleKey,
+  textKey,
+  translationNS,
+  imageData,
+  buttonTextKey,
+  benefits,
+}: CustomTripsSectionProps) => {
+  const { t } = useTranslation([translationNS, 'common']);
 
   return (
     <section
@@ -21,7 +43,10 @@ export const CustomTripsSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}>
-            <ImageComponent imageData={customTrips.imageData} />
+            <ImageComponent
+              imageData={imageData}
+              className='rounded-2xl'
+            />
           </motion.div>
 
           {/* Columna del Texto */}
@@ -30,14 +55,14 @@ export const CustomTripsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}>
-            <h2 className='heading-2 mb-6'>{t(customTrips.titleKey)}</h2>
+            <h2 className='heading-2 mb-6'>{t(titleKey)}</h2>
             <p className='text-base-md font-serif text-brand-neutral/90 mb-8'>
-              {t(customTrips.textKey)}
+              {t(textKey)}
             </p>
 
             {/* Lista de Beneficios */}
             <ul className='space-y-4 mb-8'>
-              {customTrips.benefits.map((benefit) => (
+              {benefits.map((benefit) => (
                 <li
                   key={benefit.id}
                   className='flex items-center gap-3'>
@@ -56,7 +81,7 @@ export const CustomTripsSection = () => {
               }}
               variant='primary'
               size='lg'>
-              {t(customTrips.buttonTextKey)}
+              {t(buttonTextKey)}
             </Button>
           </motion.div>
         </div>

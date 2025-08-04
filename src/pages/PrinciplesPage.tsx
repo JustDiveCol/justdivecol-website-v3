@@ -5,6 +5,7 @@ import { AlternatingFeature } from '../components/sections/shared/AlternatingFea
 import { CtaSection } from '../components/sections/shared/CtaSection';
 
 import { principlesPageData } from '../data/principlesPageData';
+import { homePageData } from '../data/homePageData';
 
 export const PrinciplesPage = () => {
   return (
@@ -20,7 +21,7 @@ export const PrinciplesPage = () => {
           />
         ))}
       </div>
-      <CtaSection {...principlesPageData.cta} />
+      <CtaSection {...homePageData.cta} />
     </>
   );
 };
