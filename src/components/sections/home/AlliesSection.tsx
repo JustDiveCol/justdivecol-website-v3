@@ -1,28 +1,39 @@
 import { useTranslation } from 'react-i18next';
-import { homePageData } from '../../../data/homePageData';
+import type { I18NNamespace } from '../../../constants/i18n';
 
-interface AlliesSectionProps {
-  translationNS?: string;
-}
+export type Ally = {
+  id: string;
+  name: string; // Para el texto 'alt' de la imagen
+  logoUrl: string; // Ruta al logo en /public/images/allies/
+  link?: string; // Enlace opcional a la web del aliado
+};
 
-export const AlliesSection = ({ translationNS }: AlliesSectionProps) => {
+export type AlliesSectionProps = {
+  titleKey: string;
+  translationNS: I18NNamespace;
+  logos: Ally[];
+};
+
+export const AlliesSection = ({
+  titleKey,
+  translationNS,
+  logos,
+}: AlliesSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
-  const { allies } = homePageData;
 
-  const logoCount = allies.logos.length;
+  const logoCount = logos.length;
   const marqueeThreshold = 6;
   const animationDuration = `${logoCount * 7}s`;
 
-  // Creamos un componente interno para no repetir el código del logo
-  const AllyLogo = ({ ally }: { ally: (typeof allies.logos)[0] }) => (
+  // Logo Component
+  const AllyLogo = ({ ally }: { ally: (typeof logos)[0] }) => (
     <a
       href={ally.link || '#'}
       target='_blank'
       rel='noopener noreferrer'
-      // El 'group' es clave para los efectos hover
       className='group relative flex-shrink-0'
       aria-label={`Visitar a ${ally.name}`}>
-      {/* Estado Hover: La imagen real a color. Inicia invisible, aparece en hover. */}
+      {/* Hover Status */}
       <img
         src={ally.logoUrl}
         alt={ally.name}
@@ -30,7 +41,7 @@ export const AlliesSection = ({ translationNS }: AlliesSectionProps) => {
         loading='lazy'
       />
 
-      {/* Estado por Defecto: La silueta de color (la máscara). Inicia visible, desaparece en hover. */}
+      {/* Default Status */}
       <div
         className='absolute inset-0 h-16 w-full bg-brand-neutral opacity-100 transition-opacity duration-300 group-hover:opacity-0'
         style={{
@@ -50,14 +61,12 @@ export const AlliesSection = ({ translationNS }: AlliesSectionProps) => {
   return (
     <section className='bg-brand-primary-dark py-20'>
       <div className='container mx-auto text-center'>
-        <h2 className='heading-3 mb-16 text-brand-white'>
-          {t(allies.titleKey)}
-        </h2>
+        <h2 className='heading-3 mb-16 text-brand-white'>{t(titleKey)}</h2>
 
         {logoCount < marqueeThreshold ? (
-          // --- MODO ESTÁTICO (Pocos Logos) ---
+          // Static Mode
           <div className='flex flex-wrap justify-center items-center gap-x-16 gap-y-8'>
-            {allies.logos.map((ally) => (
+            {logos.map((ally) => (
               <AllyLogo
                 key={ally.id}
                 ally={ally}
@@ -65,7 +74,7 @@ export const AlliesSection = ({ translationNS }: AlliesSectionProps) => {
             ))}
           </div>
         ) : (
-          // --- MODO CARRUSEL (Muchos Logos) ---
+          // Carrusel Mode
           <div
             className='relative w-full overflow-hidden'
             style={{
@@ -75,7 +84,7 @@ export const AlliesSection = ({ translationNS }: AlliesSectionProps) => {
             <div
               className='flex w-max animate-infinite-scroll'
               style={{ animationDuration }}>
-              {[...allies.logos, ...allies.logos].map((ally, index) => (
+              {[...logos, ...logos].map((ally, index) => (
                 <div
                   key={`${ally.id}-${index}`}
                   className='mx-8'>

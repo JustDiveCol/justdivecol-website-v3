@@ -42,6 +42,7 @@ export const PrincipleCard = ({
             src={cardData.imageUrl}
             alt={t(cardData.titleKey)}
             className='h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110'
+            loading='lazy'
           />
         </div>
 
@@ -51,28 +52,30 @@ export const PrincipleCard = ({
         {/* Logos and Credits */}
         <div className='absolute inset-0'>
           {/* Main Logo */}
-          <div className='absolute top-3 right-3 drop-shadow-md opacity-80 w-14 md:w-20'>
+          <div className='absolute top-3 right-3 opacity-80 w-14 md:w-20 filter drop-shadow-lg'>
             <img
               src={mainLogo.url}
               alt={t(mainLogo.altKey)}
               className='h-auto w-full'
+              loading='lazy'
             />
           </div>
 
           {/* Complementary Logo */}
           {cardData.complementaryLogo && (
-            <div className='absolute top-3 left-3 drop-shadow-md opacity-80 w-8 md:w-12'>
+            <div className='absolute top-3 left-3 opacity-80 w-8 md:w-12 filter drop-shadow-lg'>
               <img
                 src={cardData.complementaryLogo.url}
                 alt={t(cardData.complementaryLogo.altKey)}
                 className='h-auto w-full'
+                loading='lazy'
               />
             </div>
           )}
 
           {/* Photo Credit */}
           {cardData.photoCredit && (
-            <div className='pointer-events-none absolute bottom-0 left-0 w-full select-none bg-black/50 px-3 py-1 text-left text-xs text-white/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+            <div className='pointer-events-none absolute bottom-0 left-0 w-full select-none bg-brand-primary-dark/80 px-3 py-1 text-left text-xs text-white/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
               {t('common:photoCreditPrefix')} {cardData.photoCredit}
             </div>
           )}
@@ -80,7 +83,7 @@ export const PrincipleCard = ({
 
         {/* Title Over the Image */}
         <div className='relative flex h-full items-end p-6'>
-          <h3 className='heading-6 text-brand-white w-full text-center font-bold'>
+          <h3 className='heading-6 text-brand-white w-full text-center font-bold filter drop-shadow-lg'>
             {t(cardData.titleKey)}
           </h3>
         </div>

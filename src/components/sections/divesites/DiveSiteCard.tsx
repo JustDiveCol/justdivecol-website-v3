@@ -29,6 +29,7 @@ export const DiveSiteCard = ({
         src={site.photos[0]?.backgroundImage || '/images/placeholder.webp'}
         alt={t(site.nameKey)}
         className='w-full h-32 object-cover rounded-md mb-3'
+        loading='lazy'
       />
       <h3 className='font-bold text-brand-white'>{t(site.nameKey)}</h3>
       <div className='flex items-center gap-4 mt-2 text-sm text-brand-neutral/80'>

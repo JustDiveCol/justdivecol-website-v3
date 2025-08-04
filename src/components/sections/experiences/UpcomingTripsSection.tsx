@@ -178,6 +178,7 @@ export const UpcomingTripsSection = ({
           src={BRAND_ASSETS.mainLogo.url}
           alt={t(BRAND_ASSETS.mainLogo.altKey)}
           className='h-auto w-full'
+          loading='lazy'
         />
       </div>
 

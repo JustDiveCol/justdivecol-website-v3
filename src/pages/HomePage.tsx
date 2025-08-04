@@ -16,13 +16,10 @@ export const HomePage = () => {
 
       <HeroSection {...homePageData.hero} />
       <FeaturedSection {...homePageData.featured} />
-      <PrinciplesSection translationNS='home' />
-      <TestimonialsSection translationNS='home' />
-      <AlliesSection translationNS='home' />
-      <CtaSection
-        {...homePageData.cta}
-        translationNS='home'
-      />
+      <PrinciplesSection {...homePageData.principles} />
+      <TestimonialsSection {...homePageData.testimonials} />
+      <AlliesSection {...homePageData.allies} />
+      <CtaSection {...homePageData.cta} />
     </>
   );
 };

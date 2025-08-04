@@ -34,6 +34,7 @@ export const TeamCard = ({ memberData, className }: TeamCardProps) => {
           src={memberData.imageUrl}
           alt={memberData.name}
           className='h-48 w-48 rounded-full object-cover shadow-lg'
+          loading='lazy'
         />
       </div>
       <div className='mt-4'>

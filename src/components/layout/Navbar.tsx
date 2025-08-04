@@ -64,6 +64,7 @@ const Navbar = () => {
             src={logo}
             alt='Logo'
             className='h-12 w-auto'
+            loading='lazy'
           />
         </NavLink>
 

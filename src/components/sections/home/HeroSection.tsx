@@ -1,55 +1,45 @@
+// src/components/sections/home/HeroSection.tsx
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
 import { BRAND_ASSETS } from '../../../constants/assets';
-import { Button } from '../../common/Button';
+import { Button, type ButtonProps } from '../../common/Button';
+import type { GalleryImage } from '../../../types/data';
 import { ChevronDownIcon } from '../../ui/Icons';
-import type {
-  ActionType,
-  ButtonSize,
-  ButtonVariant,
-  GalleryImage,
-} from '../../../types/data';
+import type { I18NNamespace } from '../../../constants/i18n';
 
-export type HeroButtonData = {
-  textKey: string;
-  path: string;
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  actionType?: ActionType;
-};
-
-export type HeroSectionProps = {
+/**
+ * Props de HeroSection
+ */
+export interface HeroSectionProps {
   titleKey: string;
   subtitleKey: string;
-  translationNS: string;
-  button: HeroButtonData;
+  translationNS: I18NNamespace;
+  button: Omit<ButtonProps, 'children'> & { textKey: string };
   imageData: GalleryImage;
-};
+}
 
-export const HeroSection = ({
+export const HeroSection: React.FC<HeroSectionProps> = ({
   titleKey,
   subtitleKey,
+  translationNS,
   button,
   imageData,
-  translationNS,
-}: HeroSectionProps) => {
+}) => {
   const { t } = useTranslation([translationNS, 'common']);
 
-  const buttonAction = {
-    type: button.actionType ?? 'internal',
-    path: button.path,
-  };
+  const { textKey, ...buttonProps } = button;
 
   return (
     <section
       className='relative flex items-center justify-center min-h-screen py-24 bg-cover bg-center text-white'
       style={{ backgroundImage: `url(${imageData.backgroundImage})` }}>
-      {/* Overlay over image */}
+      {/* Overlay oscuro */}
       <div className='absolute inset-0 bg-black/60 z-10' />
 
       <div className='relative z-20 text-center px-4'>
-        {/* Title */}
+        {/* Título */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,7 +48,7 @@ export const HeroSection = ({
           {t(titleKey)}
         </motion.h1>
 
-        {/* Subtitle */}
+        {/* Subtítulo */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,30 +57,28 @@ export const HeroSection = ({
           {t(subtitleKey)}
         </motion.p>
 
-        {/* Button */}
-        {button.path && (
-          <motion.div className='mt-8'>
-            <Button
-              action={buttonAction}
-              variant={button.variant}
-              size={button.size}>
-              {t(button.textKey)}
-            </Button>
+        {/* Botón */}
+        {buttonProps.action.path && (
+          <motion.div
+            className='mt-8'
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: 'easeInOut' }}>
+            <Button {...buttonProps}>{t(textKey)}</Button>
           </motion.div>
         )}
       </div>
 
+      {/* Logos y créditos */}
       <div className='pointer-events-none absolute inset-0 z-20'>
-        {/* Main Logo */}
         <div className='absolute bottom-6 right-4 select-none w-24 h-auto md:w-28 opacity-70'>
           <img
             src={BRAND_ASSETS.mainLogo.url}
             alt={t(BRAND_ASSETS.mainLogo.altKey)}
             className='h-auto w-full'
+            loading='lazy'
           />
         </div>
-
-        {/* Credits */}
         {imageData.photoCredit && (
           <div className='absolute bottom-2 left-2 select-none text-xs text-white/70'>
             {t('photoCreditPrefix', { ns: 'common' })} {imageData.photoCredit}
@@ -98,7 +86,7 @@ export const HeroSection = ({
         )}
       </div>
 
-      {/* Chevron Icon */}
+      {/* Chevron */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

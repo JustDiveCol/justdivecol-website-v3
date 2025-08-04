@@ -1,38 +1,9 @@
 import { ROUTES } from '../constants/routes';
 import { BRAND_ASSETS } from '../constants/assets';
-import type { SEOProps } from '../components/common/SEO';
-import type {
-  HeroButtonData,
-  HeroSectionProps,
-} from '../components/sections/home/HeroSection';
-import type { GalleryImage } from '../types/data';
-import type {
-  CardData,
-  FeaturedSectionProps,
-} from '../components/sections/home/FeaturedSection';
-import type { PrincipleCardData } from '../components/sections/shared/PrincipleCard';
-import type { PrinciplesSectionProps } from '../components/sections/home/PrinciplesSection';
+import type { HomePageData } from '../types/data';
 
-// --- Interfaces de Tipado ---
-
-interface TestimonialItem {
-  id: number;
-  quoteKey: string;
-  name: string; // Usamos el nombre directamente
-  originKey: string;
-  rating: number;
-  avatarUrl: string;
-}
-
-interface Ally {
-  id: string;
-  name: string; // Para el texto 'alt' de la imagen
-  logoUrl: string; // Ruta al logo en /public/images/allies/
-  link?: string; // Enlace opcional a la web del aliado
-}
-
-// --- Objeto de Datos ---
-export const homePageData = {
+export const homePageData: HomePageData = {
+  // SEO
   seo: {
     titleKey: 'seo.homeSeoTitle',
     descriptionKey: 'seo.homeSeoDesc',
@@ -40,8 +11,9 @@ export const homePageData = {
     urlPath: ROUTES.home,
     imageUrl: '/images/social/home-social-card.webp',
     translationNS: 'home',
-  } as SEOProps,
+  },
 
+  // Hero
   hero: {
     titleKey: 'hero.homeHeroTitle',
     subtitleKey: 'hero.homeHeroSubtitle',
@@ -49,19 +21,22 @@ export const homePageData = {
 
     button: {
       textKey: 'hero.experiencesButton',
-      path: ROUTES.experiences,
+      action: {
+        type: 'internal',
+        path: ROUTES.experiences,
+      },
       variant: 'primary',
       size: 'default',
-      actionType: 'internal',
-    } as HeroButtonData,
+    },
 
     imageData: {
       backgroundImage: '/images/home/hero-background.webp',
       altTextKey: '',
       photoCredit: 'Camilo Beltran @JustDiveCol',
-    } as GalleryImage,
-  } as HeroSectionProps,
+    },
+  },
 
+  // Featured
   featured: {
     titleKey: 'featured.homeFeaturedTitle',
     translationNS: 'home',
@@ -107,9 +82,10 @@ export const homePageData = {
           photoCredit: '@parche_de_buceo',
         },
       },
-    ] as CardData[],
-  } as FeaturedSectionProps,
+    ],
+  },
 
+  // Principles
   principles: {
     titleKey: 'principles.homePrinciplesTitle',
     subtitleKey: 'principles.homePrinciplesSubtitle',
@@ -139,11 +115,13 @@ export const homePageData = {
         photoCredit: 'PADI®',
         complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
       },
-    ] as PrincipleCardData[],
-  } as PrinciplesSectionProps,
+    ],
+  },
 
+  // Testimonials
   testimonials: {
     titleKey: 'testimonials.homeTestimonialsTitle',
+    translationNS: 'home',
     items: [
       {
         id: 1,
@@ -153,11 +131,13 @@ export const homePageData = {
         rating: 5,
         avatarUrl: '/images/avatars/avatar1.webp',
       },
-    ] as TestimonialItem[],
+    ],
   },
 
+  // Allies
   allies: {
     titleKey: 'allies.homeAlliesTitle',
+    translationNS: 'home',
     logos: [
       {
         id: 'divers-alert-network',
@@ -177,23 +157,26 @@ export const homePageData = {
         logoUrl: '/images/allies/atlantida-logo.png',
         link: 'https://www.atlantidabucea.com/',
       },
-    ] as Ally[],
+    ],
   },
 
+  // CTA
   cta: {
+    translationNS: 'home',
     titleKey: 'cta.homeCtaTitle',
     subtitleKey: 'cta.homeCtaSubtitle',
     backgroundImageUrl: '/images/home/cta-background.webp',
-    contactButtonKey: 'cta.contactButton',
-    buttonAction: {
-      type: 'whatsapp' as const,
-      whatsAppMessageKey: 'generalWhatsappMessage',
+
+    button: {
+      textKey: 'cta.contactButton',
+      action: {
+        type: 'whatsapp',
+        whatsAppMessageKey: 'common:generalWhatsappMessage',
+      },
+      variant: 'primary',
+      size: 'default',
     },
-    // Objeto de configuración para el formulario
-    hubspotForm: {
-      portalId: '50063006',
-      formId: '5fe58871-a1b6-4462-8a3e-ebcb21936a72',
-      titleKey: 'cta.formTitle',
-    },
+
+    hubspotFormTitle: 'cta.formTitle',
   },
 };

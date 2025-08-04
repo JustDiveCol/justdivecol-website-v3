@@ -1,42 +1,41 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useHubSpotForm } from '../../../hooks/useHubSpotForm';
-import { Button } from '../../common/Button';
+import { Button, type ButtonProps } from '../../common/Button';
+import type { I18NNamespace } from '../../../constants/i18n';
 
-// --- Tipado de Props ---
-interface CtaSectionProps {
-  translationNS?: string;
+export type CtaButtonData = Omit<
+  import('../../common/Button').ButtonProps,
+  'children'
+> & {
+  textKey: string;
+};
+
+export type CtaSectionProps = {
   titleKey: string;
   subtitleKey: string;
+  translationNS: I18NNamespace;
   backgroundImageUrl: string;
-  contactButtonKey: string;
-  buttonAction: {
-    type: 'internal' | 'external' | 'whatsapp';
-    path?: string;
-    whatsAppMessageKey?: string;
-  };
-  hubspotForm: {
-    portalId: string;
-    formId: string;
-    titleKey: string;
-  };
-}
+  button: Omit<ButtonProps, 'children'> & { textKey: string };
+  hubspotFormTitle: string;
+};
 
-export const CtaSection = (props: CtaSectionProps) => {
-  const { t } = useTranslation([props.translationNS, 'common']);
-  const {
-    titleKey,
-    subtitleKey,
-    backgroundImageUrl,
-    contactButtonKey,
-    buttonAction,
-    hubspotForm,
-  } = props;
+export const CtaSection = ({
+  translationNS,
+  titleKey,
+  subtitleKey,
+  backgroundImageUrl,
+  button,
+  hubspotFormTitle,
+}: CtaSectionProps) => {
+  const { t } = useTranslation([translationNS, 'common']);
 
-  const formTargetId = `hubspot-form-${hubspotForm.formId}`;
+  const { textKey, ...buttonProps } = button;
+
+  const formTargetId = `hubspot-form-5fe58871-a1b6-4462-8a3e-ebcb21936a72`;
   useHubSpotForm({
-    portalId: hubspotForm.portalId,
-    formId: hubspotForm.formId,
+    portalId: '50063006',
+    formId: '5fe58871-a1b6-4462-8a3e-ebcb21936a72',
     target: `#${formTargetId}`,
   });
 
@@ -47,9 +46,8 @@ export const CtaSection = (props: CtaSectionProps) => {
       <div className='absolute inset-0 bg-brand-primary-dark/80' />
 
       <div className='relative container mx-auto z-10'>
-        {/* El contenedor principal ya NO controla la alineación vertical con 'items-*' */}
         <div className='flex flex-col md:flex-row gap-12'>
-          {/* Mitad Izquierda: Texto y Botón */}
+          {/* Left Side */}
           <motion.div
             initial='hidden'
             whileInView='show'
@@ -58,7 +56,6 @@ export const CtaSection = (props: CtaSectionProps) => {
               show: { transition: { staggerChildren: 0.2 } },
               hidden: {},
             }}
-            // ===== CAMBIO 1: Esta columna ahora centra su PROPIO contenido verticalmente =====
             className='w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left'>
             <motion.h2
               variants={{
@@ -76,31 +73,24 @@ export const CtaSection = (props: CtaSectionProps) => {
               className='text-subtitle mt-4'>
               {t(subtitleKey)}
             </motion.p>
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                show: { opacity: 1, y: 0 },
-              }}
-              className='mt-8'>
-              <Button
-                action={buttonAction}
-                variant='primary'
-                size='default'>
-                {t(contactButtonKey)}
-              </Button>
-            </motion.div>
+            {buttonProps.action && (
+              <motion.div
+                className='mt-8'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: 'easeInOut' }}>
+                <Button {...buttonProps}>{t(textKey)}</Button>
+              </motion.div>
+            )}
           </motion.div>
 
-          {/* Mitad Derecha: Formulario HubSpot */}
-          <div
-            // ===== CAMBIO 2: Esta columna también centra su PROPIO contenido =====
-            className='w-full md:w-1/2 flex flex-col justify-center items-center'>
+          {/* Right Side */}
+          <div className='w-full md:w-1/2 flex flex-col justify-center items-center'>
             <h3 className='heading-5 text-brand-cta-orange mb-4 font-bold'>
-              {t(hubspotForm.titleKey)}
+              {t(hubspotFormTitle)}
             </h3>
             <div
               id={formTargetId}
-              // El formulario ahora ocupa el ancho completo de esta columna
               className='w-full p-6 sm:p-8 rounded-lg shadow-2xl bg-white'
             />
           </div>

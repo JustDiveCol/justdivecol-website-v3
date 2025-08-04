@@ -68,6 +68,7 @@ const Footer = () => {
               src={logo}
               alt='Logo'
               className='h-10 w-auto'
+              loading='lazy'
             />
           </Link>
           <p className='mt-4 max-w-xl text-base'>

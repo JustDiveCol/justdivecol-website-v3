@@ -1,29 +1,57 @@
 // src/types/data.ts
-import type { LinkProps } from 'react-router-dom';
-import type { AnchorHTMLAttributes } from 'react';
 import type { SEOProps } from '../components/common/SEO';
+import type { HeroSectionProps } from '../components/sections/home/HeroSection';
+import type { FeaturedSectionProps } from '../components/sections/home/FeaturedSection';
+import type { PrinciplesSectionProps } from '../components/sections/home/PrinciplesSection';
+import type { TestimonialsSectionProps } from '../components/sections/home/TestimonialsSection';
+import type { AlliesSectionProps } from '../components/sections/home/AlliesSection';
+import type { CtaSectionProps } from '../components/sections/shared/CtaSection';
+import type { RoutePath } from '../constants/routes';
 
 // --- Types ---
 export type ActionType = 'internal' | 'external' | 'whatsapp';
-
-export type Action = {
-  type: ActionType;
-  path?: string;
-  whatsAppMessageKey?: string;
-};
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
 
 export type ButtonSize = 'default' | 'sm' | 'lg';
 
+export type StatusType = 'published' | 'draft';
+
+export type AvailableType = 'available' | 'few_spots' | 'sold_out';
+
+export type CategoryType =
+  | 'marine-life'
+  | 'dive-characteristics'
+  | 'features'
+  | 'location';
+
+export type ImageVariant =
+  | 'fullscreen'
+  | 'header'
+  | 'horizontal'
+  | 'vertical'
+  | 'square';
+
+export type AgencyType = 'PADI' | 'SSI';
+
+export type Action = {
+  type: ActionType;
+  path?: RoutePath;
+  whatsAppMessageKey?: string;
+};
+
+// --- Data ---
+export interface HomePageData {
+  seo: SEOProps;
+  hero: HeroSectionProps;
+  featured: FeaturedSectionProps;
+  principles: PrinciplesSectionProps;
+  testimonials: TestimonialsSectionProps;
+  allies: AlliesSectionProps;
+  cta: CtaSectionProps;
+}
+
 // --- Props ---
-export type ButtonProps = {
-  action: Action;
-  children: React.ReactNode;
-  className?: string;
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-} & (Omit<LinkProps, 'to'> | AnchorHTMLAttributes<HTMLAnchorElement>);
 
 // --- TIPOS GENÉRICOS Y REUTILIZABLES ---
 export interface HeaderData {
@@ -48,7 +76,7 @@ export interface ImageComponentData {
   complementaryLogo?: { url: string; altKey: string };
   photoCredit?: string;
   textOverlayKey?: string;
-  variant: 'fullscreen' | 'header' | 'horizontal' | 'vertical' | 'square';
+  variant: ImageVariant;
 }
 
 // Lo que definimos para una IMAGEN en una GALERÍA
@@ -61,7 +89,7 @@ export type GalleryImage = {
 export interface CTAData {
   textKey: string;
   action: {
-    type: 'internal' | 'external' | 'whatsapp';
+    type: ActionType;
     path?: string;
     whatsAppMessageKey?: string;
     whatsAppMessageNS?: string;
@@ -71,7 +99,7 @@ export interface CTAData {
 export interface DiveTag {
   id: string;
   nameKey: string;
-  categoryId: 'marine-life' | 'dive-characteristics' | 'features' | 'location';
+  categoryId: CategoryType;
 }
 
 // Interfaz base para contenido que genera una página propia
@@ -80,7 +108,7 @@ export interface PageContent {
   slug: string;
   nameKey: string; // El nombre principal del contenido (ej. "Santa Marta")
   subtitleKey?: string; // Un subtítulo o descripción corta
-  status: 'published' | 'draft';
+  status: StatusType;
   seo: SEOProps;
   header: HeaderData;
   description: {
@@ -97,7 +125,7 @@ export interface PageContent {
 // --- TIPOS DE CONTENIDO PRINCIPAL ---
 
 export interface Certification extends PageContent {
-  agency: 'PADI' | 'SSI';
+  agency: AgencyType;
   prerequisiteIds: string[];
   card: {
     imageData: Omit<ImageComponentData, 'variant'>;
@@ -134,8 +162,8 @@ export interface DiveSite {
   conditionsIds: string[];
   descriptionP1Key: string;
   tagsIds: string[];
-  featuredImage: GalleryImage; // Imagen principal obligatoria
-  photos: GalleryImage[]; // Galería de imágenes adicional
+  featuredImage: GalleryImage;
+  photos: GalleryImage[];
 }
 
 export interface Destination extends PageContent {
@@ -157,7 +185,7 @@ export interface Destination extends PageContent {
 
 export interface PricingOption {
   id: string;
-  titleKey: string; // Usaremos titleKey para consistencia
+  titleKey: string;
   descriptionKey: string;
   price: number;
   currency: string;
@@ -169,13 +197,12 @@ export interface ExperienceSession {
   startDate: string;
   endDate: string;
   imageUrl: string;
-  availability: 'available' | 'few_spots' | 'sold_out';
+  availability: AvailableType;
   seatsAvailable: number;
   capacity: number;
   creyentes?: boolean;
   certificationIds: string[];
 
-  // ===== CORRECCIÓN AQUÍ: Se añade la propiedad que faltaba =====
   pricingOptions: PricingOption[];
 
   paymentPlan?: {

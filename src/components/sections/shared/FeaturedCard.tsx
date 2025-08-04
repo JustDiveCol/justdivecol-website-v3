@@ -50,6 +50,7 @@ export const FeaturedCard = ({
               src={mainLogo.url}
               alt={t(mainLogo.altKey)}
               className='h-auto w-full'
+              loading='lazy'
             />
           </div>
 
@@ -60,6 +61,7 @@ export const FeaturedCard = ({
                 src={imageData.complementaryLogo.url}
                 alt={t(imageData.complementaryLogo.altKey)}
                 className='h-auto w-full'
+                loading='lazy'
               />
             </div>
           )}

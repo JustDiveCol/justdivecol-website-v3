@@ -112,6 +112,7 @@ export const TripRow = ({
           src={session.imageUrl}
           alt={t(experience.nameKey)}
           className='w-full h-full object-contain'
+          loading='lazy'
         />
 
         {session.creyentes && (
@@ -120,6 +121,7 @@ export const TripRow = ({
             alt={t('creyentesTripSealAlt')}
             className='absolute -top-3 -right-3 w-16 h-16 transform pointer-events-none'
             aria-hidden='true'
+            loading='lazy'
           />
         )}
       </div>
@@ -139,6 +141,7 @@ export const TripRow = ({
               src={soldOutLogo.url}
               alt={t(soldOutLogo.altKey)}
               className='h-20 w-auto'
+              loading='lazy'
             />
           </div>
         ) : (

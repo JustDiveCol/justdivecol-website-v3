@@ -16,4 +16,8 @@ export const ROUTES = {
   certificationsSection: '/dive-experiences#certifications-section',
   destinationsSection: '/dive-experiences#destinations-section',
   customExperiencesSection: '/dive-experiences#customs-trips-section',
-};
+} as const;
+
+export type RouteName = keyof typeof ROUTES;
+
+export type RoutePath = (typeof ROUTES)[RouteName];

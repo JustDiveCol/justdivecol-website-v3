@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { QuoteIcon, StarRating } from '../../ui/Icons';
 
 // --- Tipado de Props ---
-type TestimonialData = {
+export type TestimonialData = {
   id: number;
   quoteKey: string;
   name: string;
@@ -13,7 +13,7 @@ type TestimonialData = {
 
 interface TestimonialCardProps {
   cardData: TestimonialData;
-  translationNS?: string;
+  translationNS: string;
 }
 
 export const TestimonialCard = ({
@@ -25,17 +25,17 @@ export const TestimonialCard = ({
 
   return (
     <div className='relative flex h-full flex-col rounded-lg border border-white/10 bg-white/5 p-8 backdrop-blur-sm'>
-      {/* Icono de comillas como fondo decorativo */}
+      {/* Citation Icon */}
       <QuoteIcon className='absolute top-4 right-4 h-24 w-24 text-white/5' />
 
-      {/* Contenido principal */}
+      {/* Main Content */}
       <div className='relative z-10 flex flex-grow flex-col'>
         <StarRating rating={rating} />
         <p className='mt-4 flex-grow font-serif text-base text-brand-neutral/90 text-justify'>
           "{t(quoteKey)}"
         </p>
 
-        {/* Separador y autor */}
+        {/* Separation */}
         <div className='mt-6 border-t border-white/10 pt-6 flex items-center gap-4'>
           <img
             src={avatarUrl}

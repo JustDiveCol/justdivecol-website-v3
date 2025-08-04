@@ -1,5 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import type { I18NNamespace } from '../../constants/i18n';
+import type { RoutePath } from '../../constants/routes';
 
 // --- Tipado de Props ---
 
@@ -8,8 +10,8 @@ export type SEOProps = {
   descriptionKey: string;
   keywordsKey: string;
   imageUrl: string;
-  urlPath: string;
-  translationNS: string;
+  urlPath: RoutePath;
+  translationNS: I18NNamespace;
 };
 
 export const SEO = ({

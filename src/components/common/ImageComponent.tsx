@@ -51,6 +51,7 @@ export const ImageComponent = ({
             src={complementaryLogo.url}
             alt={t(complementaryLogo.altKey)}
             className='h-auto w-full'
+            loading='lazy'
           />
         </div>
       )}
@@ -59,6 +60,7 @@ export const ImageComponent = ({
           src={mainLogo.url}
           alt={t(mainLogo.altKey)}
           className='h-auto w-full'
+          loading='lazy'
         />
       </div>
       {photoCredit && (

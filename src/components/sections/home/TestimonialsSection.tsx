@@ -1,30 +1,33 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import useEmblaCarousel from 'embla-carousel-react';
-import { homePageData } from '../../../data/homePageData';
-import { TestimonialCard } from '../shared/TestimonialCard';
-import { ChevronLeftIcon, ChevronRightIcon } from '../../ui/Icons';
 
-interface TestimonialsSectionProps {
-  translationNS?: string;
-}
+import {
+  TestimonialCard,
+  type TestimonialData,
+} from '../shared/TestimonialCard';
+import { ChevronLeftIcon, ChevronRightIcon } from '../../ui/Icons';
+import type { I18NNamespace } from '../../../constants/i18n';
+
+export type TestimonialsSectionProps = {
+  titleKey: string;
+  translationNS: I18NNamespace;
+  items: TestimonialData[];
+};
 
 export const TestimonialsSection = ({
+  titleKey,
   translationNS,
+  items,
 }: TestimonialsSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
-  const { testimonials } = homePageData;
-  const items = testimonials.items;
 
-  // 1. Ref para el layout estático
   const staticRef = React.useRef<HTMLDivElement>(null);
-  // 2. State para saber si debemos activar el carrusel
+
   const [showCarousel, setShowCarousel] = React.useState(false);
 
-  // 3. Instancia Embla (siempre inicializada)
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
 
-  // 4. Handlers de navegación
   const scrollPrev = React.useCallback(
     () => emblaApi?.scrollPrev(),
     [emblaApi]
@@ -34,7 +37,6 @@ export const TestimonialsSection = ({
     [emblaApi]
   );
 
-  // 5. Medir “wrap” de flex: si algún hijo se mueve de fila, activamos carousel
   React.useEffect(() => {
     const measureWrap = () => {
       const el = staticRef.current;
@@ -58,13 +60,13 @@ export const TestimonialsSection = ({
     <section className='bg-brand-primary-medium py-20 px-4'>
       <div className='container mx-auto'>
         <div className='max-w-max mx-auto text-center mb-12'>
-          <h2 className='heading-2 text-white'>{t(testimonials.titleKey)}</h2>
+          <h2 className='heading-2 text-white'>{t(titleKey)}</h2>
         </div>
 
         <div className='relative'>
           {showCarousel ? (
             <>
-              {/* ─── Carrusel Embla ─── */}
+              {/* Carrusel */}
               <div
                 className='overflow-hidden'
                 ref={emblaRef}>
@@ -95,7 +97,7 @@ export const TestimonialsSection = ({
               </button>
             </>
           ) : (
-            /* ─── Layout estático centrado ─── */
+            // Static Layout
             <div
               className='flex flex-wrap justify-center gap-6'
               ref={staticRef}>

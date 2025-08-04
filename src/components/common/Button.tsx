@@ -1,12 +1,20 @@
 // src/components/common/Button.tsx
-import React from 'react';
+import React, { type AnchorHTMLAttributes } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { cva } from 'class-variance-authority';
 import { twMerge } from 'tailwind-merge';
 
 import { contactPageData } from '../../data/contactData';
-import type { ButtonProps } from '../../types/data';
+import type { Action, ButtonSize, ButtonVariant } from '../../types/data';
+
+export type ButtonProps = {
+  action: Action;
+  children: React.ReactNode;
+  className?: string;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+} & (Omit<LinkProps, 'to'> | AnchorHTMLAttributes<HTMLAnchorElement>);
 
 // 1️⃣ Definimos variantes con CVA
 const buttonVariants = cva(

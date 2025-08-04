@@ -3,36 +3,28 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
 
+import { I18N_LANGUAGES, I18N_NAMESPACES } from '../constants/i18n';
+
 i18n
   .use(HttpApi) // Usa el backend para cargar archivos JSON
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    // Activa logs en la consola para depuración
-    debug: process.env.NODE_ENV === 'development',
+    // debug: process.env.NODE_ENV === 'development',
 
-    // Idioma de respaldo si el detectado no está disponible
     fallbackLng: 'es',
 
-    // Namespaces (archivos de traducción) que usaremos
-    ns: [
-      'common',
-      'home',
-      'experiences',
-      'about',
-      'contact',
-      'faqs',
-      'principles',
-      'legal',
-    ],
+    ns: I18N_NAMESPACES as readonly string[],
+
+    supportedLngs: I18N_LANGUAGES as readonly string[],
+
     defaultNS: 'common',
 
     interpolation: {
-      escapeValue: false, // React ya se encarga de la sanitización
+      escapeValue: false,
     },
 
     backend: {
-      // Ruta a nuestros archivos de traducción en la carpeta `public`
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
   });
