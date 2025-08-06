@@ -1,3 +1,4 @@
+// src/components/sections/experiences/CertificationsSection.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { CertificationCard } from '../shared/CertificationCard';
@@ -5,23 +6,8 @@ import {
   getCertificationAvailability,
   getCertifications,
 } from '../../../data/dataService';
-import type { I18NNamespace } from '../../../constants/i18n';
-
-export interface CertificationsSectionProps {
-  titleKey: string;
-  subtitleKey: string;
-  translationNS: I18NNamespace;
-}
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
+import type { CertificationsSectionProps } from './types';
+import { containerVariants } from '../../../hooks/animations';
 
 export const CertificationsSection = ({
   titleKey,

@@ -1,15 +1,15 @@
 // src/data/destinations/santa-marta.ts
-import type { Destination } from '../../types/data';
+import { DEST_COUNTRIES } from '../../constants/destinations';
 import { ROUTES } from '../../constants/routes';
-import { santaMartaDiveSites } from '../dive-sites/santa-marta';
+import type { Destination } from './style';
 
-const santaMarta: Destination = {
+const santaMarta = {
   id: 'santa-marta',
   slug: 'santa-marta',
   status: 'published',
   nameKey: 'destSmName',
   subtitleKey: 'destSmSubtitle',
-  country: 'CO',
+  country: DEST_COUNTRIES['santa-marta'],
   coords: [11.232, -74.195],
   minZoom: 10.5,
   maxZoom: 16,
@@ -81,10 +81,8 @@ const santaMarta: Destination = {
       },
     ],
   },
-
-  // Relaciones
-  experienceIds: ['exp-santa-marta-fun-dive'],
-  diveSiteIds: santaMartaDiveSites.map((site) => site.id),
-};
+  experienceIds: [],
+  diveSiteIds: [],
+} as const satisfies Destination;
 
 export default santaMarta;

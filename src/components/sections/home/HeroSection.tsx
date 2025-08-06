@@ -4,21 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
 import { BRAND_ASSETS } from '../../../constants/assets';
-import { Button, type ButtonProps } from '../../common/Button';
-import type { GalleryImage } from '../../../types/data';
+import { Button } from '../../common/Button';
 import { ChevronDownIcon } from '../../ui/Icons';
-import type { I18NNamespace } from '../../../constants/i18n';
-
-/**
- * Props de HeroSection
- */
-export interface HeroSectionProps {
-  titleKey: string;
-  subtitleKey: string;
-  translationNS: I18NNamespace;
-  button: Omit<ButtonProps, 'children'> & { textKey: string };
-  imageData: GalleryImage;
-}
+import type { HeroSectionProps } from './types';
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   titleKey,

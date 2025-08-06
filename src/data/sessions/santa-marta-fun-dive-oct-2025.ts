@@ -1,5 +1,6 @@
 // src/data/sessions/santa-marta-fun-dive-oct-2025.ts
-import type { ExperienceSession, PricingOption } from '../../types/data';
+
+import type { ExperienceSession, PricingOption } from './styles';
 
 const pricingOptions: PricingOption[] = [
   {
@@ -16,11 +17,11 @@ const pricingOptions: PricingOption[] = [
     price: 420000,
     currency: 'COP',
   },
-];
+] as const;
 
-const santaMartaFunDiveOct2025: ExperienceSession = {
+const santaMartaFunDiveOct2025 = {
   id: 'sm-fun-dive-oct-2025',
-  experienceId: 'exp-santa-marta-fun-dive',
+  experienceId: 'exp-santa-marta',
   startDate: '2025-10-15',
   endDate: '2025-10-17',
   imageUrl: '/images/sessions/sm-fun-dive.png',
@@ -43,6 +44,6 @@ const santaMartaFunDiveOct2025: ExperienceSession = {
     ],
     notes: ['experiencesDefaultPaymentNote'],
   },
-};
+} as const satisfies ExperienceSession;
 
 export default santaMartaFunDiveOct2025;

@@ -1,3 +1,4 @@
+// src/components/layout/Navbar.tsx
 import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -9,7 +10,7 @@ import logo from '../../assets/images/logo.png';
 import { MenuIcon, CloseIcon, ChevronDownIcon } from '../ui/Icons';
 
 const Navbar = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation(['common', 'navigation']);
   const location = useLocation();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -1,9 +1,6 @@
+// src/components/sections/divesites/MotionMarker.tsx
 import { motion } from 'framer-motion';
-
-interface MotionMarkerProps {
-  IconComponent: React.ElementType;
-  isSelected: boolean;
-}
+import type { MotionMarkerProps } from './types';
 
 export const MotionMarker = ({
   IconComponent,

@@ -1,3 +1,4 @@
+// src/pages/FaqPage.tsx
 import { SEO } from '../components/common/SEO';
 import { PageHeader } from '../components/sections/shared/PageHeader';
 import { FaqContent } from '../components/sections/faq/FaqContent';

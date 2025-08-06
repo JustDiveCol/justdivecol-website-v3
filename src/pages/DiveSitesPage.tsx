@@ -1,27 +1,28 @@
+// src/pages/DiveSitesPage.tsx
 import { useState, useMemo, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import type { DiveSite } from '../types/data';
 import { SEO } from '../components/common/SEO';
-import {
-  DiveSiteFilters,
-  type Filters,
-} from '../components/sections/divesites/DiveSiteFilters';
+import { DiveSiteFilters } from '../components/sections/divesites/DiveSiteFilters';
 import { DiveSiteList } from '../components/sections/divesites/DiveSiteList';
 import { DiveSiteMap } from '../components/sections/divesites/DiveSiteMap';
 import { DiveSiteModal } from '../components/sections/divesites/DiveSiteModal';
 import { allDiveSites } from '../data/dive-sites';
-import { diveDifficulties } from '../data/dive-filters/difficulties';
-import { diveTypes } from '../data/dive-filters/types';
-import { diveConditions } from '../data/dive-filters/conditions';
-import { diveTags } from '../data/dive-filters/tags';
 import {
   FilterIcon,
   CloseIcon,
   ChevronDoubleLeftIcon,
 } from '../components/ui/Icons';
 import { useTranslation } from 'react-i18next';
+import type { FiltersData } from '../components/sections/divesites/types';
+import type { DiveSite } from '../data/dive-sites/style';
+import {
+  DIVE_CONDITIONS,
+  DIVE_DIFFICULTIES,
+  DIVE_TAG_CATEGORIES,
+  DIVE_TYPES,
+} from '../constants/dive-sites';
 
-const initialFilters: Filters = {
+const initialFilters: FiltersData = {
   searchQuery: '',
   destinationId: 'all',
   difficulty: 'all',
@@ -33,7 +34,7 @@ const initialFilters: Filters = {
 
 export const DiveSitesPage = () => {
   const { t } = useTranslation(['dive-sites', 'common']);
-  const [filters, setFilters] = useState<Filters>(initialFilters);
+  const [filters, setFilters] = useState<FiltersData>(initialFilters);
   const [selectedSite, setSelectedSite] = useState<DiveSite | null>(null);
   const [focusedSite, setFocusedSite] = useState<DiveSite | null>(null);
   const [hoveredSiteId, setHoveredSiteId] = useState<string | null>(null);
@@ -101,14 +102,22 @@ export const DiveSitesPage = () => {
 
     return {
       filteredSites: finalFilteredSites,
-      availableDifficulties: diveDifficulties.filter((d) =>
+
+      availableDifficulties: DIVE_DIFFICULTIES.filter((d) =>
         availableDifficultyIds.has(d.id)
+      ).map(({ id, translationKey }) => ({ id, nameKey: translationKey })),
+
+      availableTypes: DIVE_TYPES.filter((t) => availableTypeIds.has(t.id)).map(
+        ({ id, translationKey }) => ({ id, nameKey: translationKey })
       ),
-      availableTypes: diveTypes.filter((t) => availableTypeIds.has(t.id)),
-      availableConditions: diveConditions.filter((c) =>
+
+      availableConditions: DIVE_CONDITIONS.filter((c) =>
         availableConditionIds.has(c.id)
-      ),
-      availableTags: diveTags.filter((t) => availableTagIds.has(t.id)),
+      ).map(({ id, translationKey }) => ({ id, nameKey: translationKey })),
+
+      availableTags: DIVE_TAG_CATEGORIES.flatMap((cat) => [...cat.tags])
+        .filter((tag) => availableTagIds.has(tag.id))
+        .map(({ id, translationKey }) => ({ id, nameKey: translationKey })),
     };
   }, [filters, t]);
 
@@ -152,7 +161,11 @@ export const DiveSitesPage = () => {
     <>
       <SEO
         titleKey='diveSitesSeoTitle'
+        keywordsKey=''
         descriptionKey='diveSitesSeoDesc'
+        imageUrl={''}
+        urlPath={'/'}
+        translationNS={'dive-sites'}
       />
 
       <div className='relative flex h-[calc(100vh-5rem)] mt-20 overflow-hidden'>
@@ -216,6 +229,7 @@ export const DiveSitesPage = () => {
                   availableTypes={availableTypes}
                   availableConditions={availableConditions}
                   availableTags={availableTags}
+                  translationNS={'dive-sites'}
                 />
               </div>
               <div className='flex-grow overflow-y-auto border-t border-white/10 mt-4'>
@@ -223,6 +237,7 @@ export const DiveSitesPage = () => {
                   sites={filteredSites}
                   onSelect={handleSelectSite}
                   onHover={handleHoverSite}
+                  translationNS={'dive-sites'}
                 />
               </div>
             </div>
@@ -263,6 +278,7 @@ export const DiveSitesPage = () => {
             focusedSite={focusedSite}
             onSelect={handleSelectSite}
             onHover={handleHoverSite}
+            translationNS={'dive-sites'}
           />
         </main>
       </div>
@@ -278,6 +294,7 @@ export const DiveSitesPage = () => {
         <DiveSiteModal
           site={selectedSite}
           onClose={handleCloseModal}
+          translationNS={'dive-sites'}
         />
       )}
     </>

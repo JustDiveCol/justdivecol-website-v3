@@ -1,7 +1,8 @@
+// src/components/sections/contact/ContactSection.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useHubSpotForm } from '../../../hooks/useHubSpotForm';
-
+import type { ContactSectionProps } from './types';
 import {
   WhatsappIcon,
   MailIcon,
@@ -10,24 +11,10 @@ import {
   YouTubeIcon,
 } from '../../ui/Icons';
 
-import type { I18NNamespace } from '../../../constants/i18n';
-import type { SocialsData } from '../../../types/data';
-
 const socialIconMap: { [key: string]: React.ReactNode } = {
   instagram: <InstagramIcon className='h-7 w-7' />,
   tiktok: <TikTokIcon className='h-7 w-7' />,
   youtube: <YouTubeIcon className='h-7 w-7' />,
-};
-
-export type ContactSectionProps = {
-  titleKey: string;
-  phone: string;
-  email: string;
-  emailSubjectKey: string;
-  emailBodyKey: string;
-  socials: SocialsData[];
-  translationNS: I18NNamespace;
-  hubspotFormTitleKey: string;
 };
 
 export const ContactSection = ({
@@ -62,7 +49,7 @@ export const ContactSection = ({
     <section className='bg-brand-primary-dark py-20 px-4 text-white'>
       <div className='container mx-auto'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-start'>
-          {/* Columna Izquierda: Contacto Rápido */}
+          {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -104,7 +91,7 @@ export const ContactSection = ({
             </div>
           </motion.div>
 
-          {/* Columna Derecha: Formulario HubSpot */}
+          {/* Right Column */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}

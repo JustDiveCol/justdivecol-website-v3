@@ -1,20 +1,12 @@
 // src/components/common/Button.tsx
-import React, { type AnchorHTMLAttributes } from 'react';
+import React from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { cva } from 'class-variance-authority';
 import { twMerge } from 'tailwind-merge';
 
 import { contactData } from '../../data/contactData';
-import type { Action, ButtonSize, ButtonVariant } from '../../types/data';
-
-export type ButtonProps = {
-  action: Action;
-  children: React.ReactNode;
-  className?: string;
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-} & (Omit<LinkProps, 'to'> | AnchorHTMLAttributes<HTMLAnchorElement>);
+import type { ButtonProps } from './types';
 
 const buttonVariants = cva(
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold uppercase tracking-wider transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-cta-yellow',

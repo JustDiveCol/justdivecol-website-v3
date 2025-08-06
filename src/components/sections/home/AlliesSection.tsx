@@ -1,18 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import type { I18NNamespace } from '../../../constants/i18n';
-
-export type Ally = {
-  id: string;
-  name: string; // Para el texto 'alt' de la imagen
-  logoUrl: string; // Ruta al logo en /public/images/allies/
-  link?: string; // Enlace opcional a la web del aliado
-};
-
-export type AlliesSectionProps = {
-  titleKey: string;
-  translationNS: I18NNamespace;
-  logos: Ally[];
-};
+import type { AlliesSectionProps } from './types';
 
 export const AlliesSection = ({
   titleKey,

@@ -1,9 +1,9 @@
 // src/data/certifications/padi-open-water.ts
 import { BRAND_ASSETS } from '../../constants/assets';
 import { ROUTES } from '../../constants/routes';
-import type { Certification } from '../../types/data';
+import type { Certification } from './types';
 
-const padiOpenWaterDiver: Certification = {
+const padiOpenWaterDiver = {
   // Metadata
   id: 'padi-open-water',
   slug: 'open-water-diver',
@@ -111,6 +111,6 @@ const padiOpenWaterDiver: Certification = {
       whatsAppMessageKey: 'certificationWhatsappMessage',
     },
   },
-};
+} as const satisfies Certification;
 
 export default padiOpenWaterDiver;

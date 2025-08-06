@@ -1,7 +1,7 @@
 // src/data/certifications/padi-advanced.ts
 import { BRAND_ASSETS } from '../../constants/assets';
 import { ROUTES } from '../../constants/routes';
-import type { Certification } from '../../types/data';
+import type { Certification } from './types';
 
 const padiAdvanced = {
   // Metadata

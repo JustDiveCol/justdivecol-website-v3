@@ -1,18 +1,7 @@
+// src/components/common/SEO.tsx
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import type { I18NNamespace } from '../../constants/i18n';
-import type { DinamicUrlPath } from '../../constants/routes';
-
-// --- Tipado de Props ---
-
-export type SEOProps = {
-  titleKey: string;
-  descriptionKey: string;
-  keywordsKey: string;
-  imageUrl: string;
-  urlPath: DinamicUrlPath;
-  translationNS: I18NNamespace;
-};
+import type { SEOProps } from './types';
 
 export const SEO = ({
   titleKey,

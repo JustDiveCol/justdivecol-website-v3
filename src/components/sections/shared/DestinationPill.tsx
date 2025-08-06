@@ -1,13 +1,13 @@
+// src/components/sections/shared/DestinationPill.tsx
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import type { Destination } from '../../../types/data';
+import type { DestinationPillProps } from './types';
 
-interface DestinationPillProps {
-  destination: Destination;
-}
-
-export const DestinationPill = ({ destination }: DestinationPillProps) => {
-  const { t } = useTranslation('destinations');
+export const DestinationPill = ({
+  destination,
+  translationNS,
+}: DestinationPillProps) => {
+  const { t } = useTranslation([translationNS, 'common']);
 
   return (
     <Link

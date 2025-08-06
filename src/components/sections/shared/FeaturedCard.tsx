@@ -1,16 +1,10 @@
+// src/components/sections/shared/FeaturedCard.tsx
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
 import { BRAND_ASSETS } from '../../../constants/assets';
-import type { CardData } from '../home/FeaturedSection';
-import type { I18NNamespace } from '../../../constants/i18n';
-
-export type FeaturedCardProps = {
-  cardData: CardData;
-  className?: string;
-  translationNS?: I18NNamespace;
-};
+import type { FeaturedCardProps } from './types';
 
 export const FeaturedCard = ({
   cardData,
@@ -37,7 +31,7 @@ export const FeaturedCard = ({
         {/* Background Image with Zoom on hover */}
         <div
           className='absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out group-hover:scale-110'
-          style={{ backgroundImage: `url(${imageData.backgroundImageUrl})` }}
+          style={{ backgroundImage: `url(${imageData.backgroundImage})` }}
         />
 
         {/* Gradient */}

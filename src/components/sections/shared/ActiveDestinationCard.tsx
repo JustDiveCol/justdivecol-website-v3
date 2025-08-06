@@ -1,15 +1,10 @@
+// src/components/sections/shared/ActiveDestinationCard.tsx
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import type { Destination, Experience } from '../../../types/data';
 import { ImageComponent } from '../../common/ImageComponent';
 import { twMerge } from 'tailwind-merge';
 import { ROUTES } from '../../../constants/routes';
-
-interface ActiveDestinationCardProps {
-  destination: Destination;
-  activeExperiences: Experience[];
-  className?: string;
-}
+import type { ActiveDestinationCardProps } from './types';
 
 export const ActiveDestinationCard = ({
   destination,
@@ -19,7 +14,6 @@ export const ActiveDestinationCard = ({
   const { t } = useTranslation(['destinations', 'common']);
 
   return (
-    // Unimos las clases base con las que vienen del padre
     <Link
       to={`${ROUTES.destinations}/${destination.slug}`}
       className={twMerge(

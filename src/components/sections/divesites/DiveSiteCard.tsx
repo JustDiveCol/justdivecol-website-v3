@@ -1,23 +1,18 @@
-import { useTranslation } from 'react-i18next'; // <-- CORRECCIÓN 1: Nombre correcto
-import type { DiveSite } from '../../../types/data';
+// src/components/sections/divesites/DiveSiteCard.tsx
+import { useTranslation } from 'react-i18next';
 import { BarChartIcon, ChevronDownIcon } from '../../ui/Icons';
-import { diveDifficulties } from '../../../data/dive-filters/difficulties'; // Importamos la lista de dificultades
-
-interface DiveSiteCardProps {
-  site: DiveSite;
-  onSelect: (siteId: string) => void;
-  onHover: (siteId: string | null) => void;
-}
+import type { DiveSiteCardProps } from './types';
+import { DIVE_DIFFICULTIES } from '../../../constants/dive-sites';
 
 export const DiveSiteCard = ({
   site,
   onSelect,
   onHover,
+  translationNS,
 }: DiveSiteCardProps) => {
-  const { t } = useTranslation(['dive-sites', 'common']);
+  const { t } = useTranslation([translationNS, 'common']);
 
-  // --- CORRECCIÓN 2: Lógica para encontrar el nombre de la dificultad ---
-  const difficulty = diveDifficulties.find((d) => d.id === site.difficultyId);
+  const difficulty = DIVE_DIFFICULTIES.find((d) => d.id === site.difficultyId);
 
   return (
     <div
@@ -39,11 +34,8 @@ export const DiveSiteCard = ({
         </div>
         <div className='flex items-center gap-1'>
           <BarChartIcon className='h-4 w-4' />
-          {/* Usamos la 'nameKey' que encontramos para la traducción correcta */}
           <span>
-            {difficulty
-              ? t(difficulty.nameKey, { ns: 'dive-sites' })
-              : site.difficultyId}
+            {difficulty ? t(difficulty.translationKey) : site.difficultyId}
           </span>
         </div>
       </div>

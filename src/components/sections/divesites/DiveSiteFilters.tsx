@@ -1,51 +1,39 @@
+// src/components/sections/divesites/DiveSiteFilters.tsx
 import { useTranslation } from 'react-i18next';
 import { allDestinations } from '../../../data/destinations';
+import type { DiveSiteFiltersProps, FiltersData } from './types';
+import type {
+  DiveTypeId,
+  DiveConditionId,
+  DiveTagId,
+} from '../../../constants/dive-sites';
 
-// Tipos para los datos de las opciones
-type Option = { id: string; nameKey: string };
+export const DiveSiteFilters = ({
+  filters,
+  onFiltersChange,
+  availableDifficulties,
+  availableTypes,
+  availableConditions,
+  availableTags,
+  translationNS,
+}: DiveSiteFiltersProps) => {
+  const { t } = useTranslation([translationNS, 'destinations', 'common']);
 
-// Tipado para el objeto de filtros
-export interface Filters {
-  searchQuery: string;
-  destinationId: string;
-  difficulty: string;
-  types: string[];
-  maxDepth: number;
-  conditions: string[];
-  tags: string[];
-}
-
-interface DiveSiteFiltersProps {
-  filters: Filters;
-  onFiltersChange: (newFilters: Filters) => void;
-  availableDifficulties: Option[];
-  availableTypes: Option[];
-  availableConditions: Option[];
-  availableTags: Option[];
-}
-
-export const DiveSiteFilters = (props: DiveSiteFiltersProps) => {
-  const {
-    filters,
-    onFiltersChange,
-    availableDifficulties,
-    availableTypes,
-    availableConditions,
-    availableTags,
-  } = props;
-  const { t } = useTranslation(['dive-sites', 'destinations', 'common']);
-
-  const handleFilterChange = (key: keyof Filters, value: string | number) => {
+  const handleFilterChange = <K extends keyof FiltersData>(
+    key: K,
+    value: FiltersData[K]
+  ) => {
     onFiltersChange({ ...filters, [key]: value });
   };
 
-  const handleMultiSelectToggle = (
-    key: 'types' | 'conditions' | 'tags',
-    value: string
+  const handleMultiSelectToggle = <K extends 'types' | 'conditions' | 'tags'>(
+    key: K,
+    value: FiltersData[K] extends Array<infer U> ? U : never
   ) => {
-    const currentValues = filters[key];
-    const newValues = currentValues.includes(value)
-      ? currentValues.filter((id) => id !== value)
+    const currentValues = filters[key] as Array<typeof value>;
+    const isSelected = currentValues.includes(value);
+    const newValues = isSelected
+      ? currentValues.filter((v) => v !== value)
       : [...currentValues, value];
     onFiltersChange({ ...filters, [key]: newValues });
   };
@@ -76,7 +64,12 @@ export const DiveSiteFilters = (props: DiveSiteFiltersProps) => {
         </label>
         <select
           value={filters.destinationId}
-          onChange={(e) => handleFilterChange('destinationId', e.target.value)}
+          onChange={(e) =>
+            handleFilterChange(
+              'destinationId',
+              e.target.value as FiltersData['destinationId']
+            )
+          }
           className='form-input w-full'>
           <option value='all'>{t('filterAllDestinations')}</option>
           {allDestinations.map((d) => (
@@ -96,7 +89,12 @@ export const DiveSiteFilters = (props: DiveSiteFiltersProps) => {
         </label>
         <select
           value={filters.difficulty}
-          onChange={(e) => handleFilterChange('difficulty', e.target.value)}
+          onChange={(e) =>
+            handleFilterChange(
+              'difficulty',
+              e.target.value as FiltersData['difficulty']
+            )
+          }
           className='form-input w-full'>
           <option value='all'>{t('filterAllDifficulties')}</option>
           {availableDifficulties.map((d) => (
@@ -139,9 +137,11 @@ export const DiveSiteFilters = (props: DiveSiteFiltersProps) => {
           {availableTypes.map((type) => (
             <button
               key={type.id}
-              onClick={() => handleMultiSelectToggle('types', type.id)}
+              onClick={() =>
+                handleMultiSelectToggle('types', type.id as DiveTypeId)
+              }
               className={`px-3 py-1 text-sm rounded-full transition-colors ${
-                filters.types.includes(type.id)
+                filters.types.includes(type.id as DiveTypeId)
                   ? 'bg-brand-cta-orange text-white'
                   : 'bg-white/10 text-brand-neutral hover:bg-white/20'
               }`}>
@@ -160,9 +160,14 @@ export const DiveSiteFilters = (props: DiveSiteFiltersProps) => {
           {availableConditions.map((cond) => (
             <button
               key={cond.id}
-              onClick={() => handleMultiSelectToggle('conditions', cond.id)}
+              onClick={() =>
+                handleMultiSelectToggle(
+                  'conditions',
+                  cond.id as DiveConditionId
+                )
+              }
               className={`px-3 py-1 text-sm rounded-full transition-colors ${
-                filters.conditions.includes(cond.id)
+                filters.conditions.includes(cond.id as DiveConditionId)
                   ? 'bg-brand-cta-orange text-white'
                   : 'bg-white/10 text-brand-neutral hover:bg-white/20'
               }`}>
@@ -181,9 +186,11 @@ export const DiveSiteFilters = (props: DiveSiteFiltersProps) => {
           {availableTags.map((tag) => (
             <button
               key={tag.id}
-              onClick={() => handleMultiSelectToggle('tags', tag.id)}
+              onClick={() =>
+                handleMultiSelectToggle('tags', tag.id as DiveTagId)
+              }
               className={`px-3 py-1 text-sm rounded-full transition-colors ${
-                filters.tags.includes(tag.id)
+                filters.tags.includes(tag.id as DiveTagId)
                   ? 'bg-brand-cta-orange text-white'
                   : 'bg-white/10 text-brand-neutral hover:bg-white/20'
               }`}>

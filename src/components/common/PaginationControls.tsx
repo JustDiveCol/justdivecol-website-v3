@@ -1,9 +1,5 @@
 // src/components/common/PaginationControls.tsx
-interface PaginationControlsProps {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
-}
+import type { PaginationControlsProps } from './types';
 
 export const PaginationControls = ({
   currentPage,
@@ -11,14 +7,14 @@ export const PaginationControls = ({
   onPageChange,
 }: PaginationControlsProps) => {
   if (totalPages <= 1) {
-    return null; // No mostrar nada si solo hay una página
+    return null;
   }
 
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
     <div className='flex justify-center items-center gap-2 mt-12'>
-      {/* Botón de Anterior */}
+      {/* Previous Button */}
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
@@ -26,7 +22,7 @@ export const PaginationControls = ({
         &laquo;
       </button>
 
-      {/* Números de Página */}
+      {/* Page Number */}
       {pageNumbers.map((number) => (
         <button
           key={number}
@@ -40,7 +36,7 @@ export const PaginationControls = ({
         </button>
       ))}
 
-      {/* Botón de Siguiente */}
+      {/* Next Button */}
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}

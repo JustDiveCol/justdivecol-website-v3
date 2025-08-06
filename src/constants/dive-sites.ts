@@ -1,6 +1,5 @@
 // src/constants/diveConstants.ts
 
-// 1) Listas de opciones “congeladas” para inferencia literal
 export const DIVE_LEVELS = [
   { id: 'none', translationKey: 'noneLevelKey' },
   { id: 'open-water-diver', translationKey: 'openWaterDiverLevelKey' },
@@ -152,12 +151,10 @@ export type DiveTagTranslationKey = DiveTag['translationKey'];
 export type DiveTagCategory = (typeof DIVE_TAG_CATEGORIES)[number];
 export type DiveTagCategoryId = DiveTagCategory['id'];
 
-// Intersección para devolver tag + categoría
 export type DiveTagWithCategory = DiveTag & {
   categoryId: DiveTagCategoryId;
 };
 
-// 3) Helpers tipados
 export function getDiveLevelById(id: DiveLevelId): DiveLevel | undefined {
   return DIVE_LEVELS.find((l) => l.id === id);
 }

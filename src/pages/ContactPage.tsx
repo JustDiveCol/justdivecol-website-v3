@@ -1,3 +1,4 @@
+// src/pages/ContactPage.tsx
 import { SEO } from '../components/common/SEO';
 import { PageHeader } from '../components/sections/shared/PageHeader';
 import { ContactSection } from '../components/sections/contact/ContactSection';

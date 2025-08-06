@@ -1,16 +1,13 @@
 import { ROUTES, type UrlPath } from '../constants/routes';
 import { BRAND_ASSETS } from '../constants/assets';
 import type { HomePageData } from '../types/data';
-import type {
-  CardData,
-  ImageInfo,
-} from '../components/sections/home/FeaturedSection';
+import type { CardData, ImageData } from '../components/sections/home/types';
 
 type RawCardData = {
   readonly id: string;
   readonly titleKey: string;
   readonly subtitleKey?: string;
-  readonly imageData: ImageInfo;
+  readonly imageData: ImageData;
 };
 
 const rawCards: ReadonlyArray<RawCardData> = [
@@ -19,7 +16,7 @@ const rawCards: ReadonlyArray<RawCardData> = [
     titleKey: 'featured.featuredCard1Title',
     subtitleKey: 'featured.featuredCard1Subtitle',
     imageData: {
-      backgroundImageUrl: '/images/featured/featured-1.webp',
+      backgroundImage: '/images/featured/featured-1.webp',
       photoCredit: 'Camilo Beltran @JustDiveCol',
     },
   },
@@ -28,7 +25,7 @@ const rawCards: ReadonlyArray<RawCardData> = [
     titleKey: 'featured.featuredCard2Title',
     subtitleKey: 'featured.featuredCard2Subtitle',
     imageData: {
-      backgroundImageUrl: '/images/featured/featured-2.webp',
+      backgroundImage: '/images/featured/featured-2.webp',
       photoCredit: 'Camilo Beltran @JustDiveCol',
     },
   },
@@ -37,7 +34,7 @@ const rawCards: ReadonlyArray<RawCardData> = [
     titleKey: 'featured.featuredCard3Title',
     subtitleKey: 'featured.featuredCard3Subtitle',
     imageData: {
-      backgroundImageUrl: '/images/featured/featured-3.webp',
+      backgroundImage: '/images/featured/featured-3.webp',
       photoCredit: 'Camilo Beltran @JustDiveCol',
     },
   },
@@ -46,7 +43,7 @@ const rawCards: ReadonlyArray<RawCardData> = [
     titleKey: 'featured.featuredCard4Title',
     subtitleKey: 'featured.featuredCard4Subtitle',
     imageData: {
-      backgroundImageUrl: '/images/featured/featured-4.webp',
+      backgroundImage: '/images/featured/featured-4.webp',
       photoCredit: '@parche_de_buceo',
     },
   },
@@ -86,7 +83,6 @@ export const homePageData: HomePageData = {
 
     imageData: {
       backgroundImage: '/images/home/hero-background.webp',
-      altTextKey: '',
       photoCredit: 'Camilo Beltran @JustDiveCol',
     },
   },
@@ -140,7 +136,7 @@ export const homePageData: HomePageData = {
         id: 1,
         quoteKey: 'testimonials.testimonial1Quote',
         name: 'Sunny Velez',
-        originKey: 'testimonials.testimonial1Origin',
+        originKey: 'exp-santa-marta',
         rating: 5,
         avatarUrl: '/images/avatars/avatar1.webp',
       },

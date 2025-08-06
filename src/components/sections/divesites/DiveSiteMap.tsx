@@ -1,16 +1,18 @@
+// src/components/sections/divesites/DiveSiteMap.tsx
 import React, { useRef, useEffect } from 'react';
 import maplibregl, { Marker, LngLatBounds, Popup } from 'maplibre-gl';
 import { createRoot } from 'react-dom/client';
 import type { Root } from 'react-dom/client';
 import { useTranslation } from 'react-i18next';
-import type { DiveSite } from '../../../types/data';
 
 import { MotionMarker } from './MotionMarker';
 import { FlagIcon, ReefIcon, WreckIcon, WallIcon } from '../../ui/Icons';
+import type { DiveSiteMapProps } from './types';
+import type { DiveTypeId } from '../../../constants/dive-sites';
 
 const MAPTILER_API_KEY = '97B6xeRDLNUfHdzle616';
 
-const getIconComponent = (typeIds: string[] = []) => {
+const getIconComponent = (typeIds: DiveTypeId[] = []) => {
   const primaryType = typeIds[0];
   switch (primaryType) {
     case 'reef':
@@ -24,20 +26,13 @@ const getIconComponent = (typeIds: string[] = []) => {
   }
 };
 
-interface DiveSiteMapProps {
-  sites: DiveSite[];
-  hoveredSiteId: string | null;
-  focusedSite: DiveSite | null;
-  onSelect: (siteId: string | null) => void;
-  onHover: (siteId: string | null) => void;
-}
-
 export const DiveSiteMap = ({
   sites,
   hoveredSiteId,
   focusedSite,
   onSelect,
   onHover,
+  translationNS,
 }: DiveSiteMapProps) => {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const mapInstance = useRef<maplibregl.Map | null>(null);
@@ -48,7 +43,7 @@ export const DiveSiteMap = ({
       IconComponent: React.ElementType;
     };
   }>({});
-  const { t } = useTranslation('dive-sites');
+  const { t } = useTranslation([translationNS, 'common']);
   const hoverPopup = useRef(
     new Popup({
       closeButton: false,

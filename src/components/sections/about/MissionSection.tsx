@@ -1,15 +1,8 @@
+// src/components/sections/about/MissionSection.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ImageComponent } from '../../common/ImageComponent';
-import type { I18NNamespace } from '../../../constants/i18n';
-import type { ImageComponentData } from '../../../types/data';
-
-export type MissionSectionProps = {
-  titleKey: string;
-  textKey: string;
-  translationNS: I18NNamespace;
-  imageData: ImageComponentData;
-};
+import type { MissionSectionProps } from './types';
 
 export const MissionSection = ({
   titleKey,

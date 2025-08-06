@@ -1,30 +1,7 @@
+// src/components/sections/home/FeaturedSection.tsx
 import { useTranslation } from 'react-i18next';
 import { FeaturedCard } from '../shared/FeaturedCard';
-import type { I18NNamespace } from '../../../constants/i18n';
-import type { UrlPath } from '../../../constants/routes';
-
-export type ImageInfo = {
-  backgroundImageUrl: string;
-  complementaryLogo?: {
-    url: string;
-    altKey: string;
-  };
-  photoCredit?: string;
-};
-
-export type CardData = {
-  id: string;
-  link: UrlPath;
-  titleKey: string;
-  subtitleKey?: string;
-  imageData: ImageInfo;
-};
-
-export type FeaturedSectionProps = {
-  titleKey: string;
-  translationNS: I18NNamespace;
-  cards: CardData[];
-};
+import type { FeaturedSectionProps } from './types';
 
 export const FeaturedSection = ({
   titleKey,

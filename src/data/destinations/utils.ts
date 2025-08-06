@@ -1,16 +1,19 @@
 // src/data/destinations/utils.ts
-import type { Destination } from '../../types/data';
-import { ROUTES } from '../../constants/routes';
-import santaMarta from './santa-marta';
+import { allDestinations } from './index';
+import { buildDestinationDetailRoute } from '../../constants/routes';
+import type { Destination } from './style';
+import type { DestinationId } from '../../constants/destinations';
 
-export function getDestinationsWithSeoUrl(): Destination[] {
-  const raw: Destination[] = [santaMarta];
-
-  return raw.map((cert) => ({
-    ...cert,
+export function getDestinationsWithSeoUrl(): readonly Destination[] {
+  return allDestinations.map((dest) => ({
+    ...dest,
     seo: {
-      ...cert.seo,
-      urlPath: `${ROUTES.destinations}/${cert.slug}`,
+      ...dest.seo,
+      urlPath: buildDestinationDetailRoute(dest.slug),
     },
   }));
+}
+
+export function getDestinationById(id: DestinationId): Destination | undefined {
+  return allDestinations.find((d) => d.id === id);
 }

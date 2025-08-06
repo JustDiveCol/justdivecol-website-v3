@@ -1,25 +1,8 @@
+// src/components/sections/shared/PrincipleCard.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { BRAND_ASSETS } from '../../../constants/assets';
-import type { I18NNamespace } from '../../../constants/i18n';
-
-// --- Tipado de Props ---
-export type PrincipleCardData = {
-  id: string;
-  imageUrl: string;
-  titleKey: string;
-  descriptionKey: string;
-  photoCredit?: string;
-  complementaryLogo?: {
-    url: string;
-    altKey: string;
-  };
-};
-
-interface PrincipleCardProps {
-  cardData: PrincipleCardData;
-  translationNS?: I18NNamespace;
-}
+import type { PrincipleCardProps } from './types';
 
 export const PrincipleCard = ({
   cardData,

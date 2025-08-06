@@ -1,6 +1,5 @@
 // src/constants/i18n.ts
 
-/** Todos los namespaces (archivos JSON) que cargas */
 export const I18N_NAMESPACES = [
   'common',
   'home',
@@ -12,21 +11,15 @@ export const I18N_NAMESPACES = [
   'legal',
   'certifications',
   'destinations',
+  'dive-sites',
 ] as const;
 
-/** Unión de todos los namespaces */
 export type I18NNamespace = (typeof I18N_NAMESPACES)[number];
 
-/** Todos los idiomas que soportas */
 export const I18N_LANGUAGES = ['es', 'en'] as const;
 
-/** Unión de todos los códigos de idioma */
 export type I18NLanguage = (typeof I18N_LANGUAGES)[number];
 
-/**
- * Mapea cada namespace a la ruta de su archivo JSON de traducciones.
- * Utiliza {{lng}} como marcador de posición para el código de idioma.
- */
 export const I18N_NAMESPACE_PATHS: Record<I18NNamespace, string> = {
   common: '/locales/{{lng}}/common.json',
   home: '/locales/{{lng}}/home.json',
@@ -38,14 +31,9 @@ export const I18N_NAMESPACE_PATHS: Record<I18NNamespace, string> = {
   legal: '/locales/{{lng}}/legal.json',
   certifications: '/locales/{{lng}}/certifications.json',
   destinations: '/locales/{{lng}}/destinations.json',
+  'dive-sites': '/locales/{{lng}}/dive-sites.json',
 } as const;
 
-/**
- * Devuelve la ruta del recurso JSON para un namespace e idioma dados.
- * @param namespace - Uno de los I18NNamespace válidos
- * @param language - Uno de los I18NLanguage válidos
- * @returns Ruta del archivo JSON traducido correspondiente
- */
 export function getI18nResourcePath(
   namespace: I18NNamespace,
   language: I18NLanguage

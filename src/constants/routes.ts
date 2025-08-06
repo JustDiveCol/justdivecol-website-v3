@@ -1,17 +1,11 @@
 // src/constants/routes.ts
 
-/**
- * Todas las rutas de la aplicación, definidas como literales constantes.
- * - Rutas estáticas
- * - Rutas con parámetros (detalle)
- * - Rutas con hash para secciones
- */
 export const ROUTES = {
   // Páginas principales
   home: '/',
   diveExperiences: '/dive-experiences',
   certifications: '/certifications',
-  diveSites: '/dive-sites',
+  'dive-sites': '/dive-sites',
   aboutUs: '/about-us',
   principles: '/principles',
   contact: '/contact',
@@ -38,42 +32,19 @@ export const ROUTES = {
   notFound: '/route-lost',
 } as const;
 
-/**
- * Nombre de las rutas (claves de ROUTES).
- * Ejemplo: 'home' | 'diveExperiences' | 'certificationDetail' | ...
- */
 export type RouteName = keyof typeof ROUTES;
 
-/**
- * Ruta estática definida en ROUTES.
- * Ejemplo: '/', '/about-us', '/certifications/:certificationSlug', '/dive-experiences#section'
- */
 export type RoutePath = (typeof ROUTES)[RouteName];
 
-/**
- * Ruta dinámica con parámetro extra, p.ej. '/certifications/:slug/anything'
- */
 export type DynamicRoute<Path extends string> = `${Path}/${string}`;
 
-/**
- * Ruta de sección con hash, p.ej. '/dive-experiences#section-id'
- */
 export type HashRoute<Path extends string> = `${Path}#${string}`;
 
-/**
- * Unión de todas las rutas válidas:
- * - Rutas estáticas (RoutePath)
- * - Rutas dinámicas (DynamicRoute<RoutePath>)
- * - Hash routes (HashRoute<RoutePath>)
- */
 export type UrlPath =
   | RoutePath
   | DynamicRoute<RoutePath>
   | HashRoute<RoutePath>;
 
-/**
- * Helpers para construir rutas de detalle reemplazando parámetros.
- */
 export function buildCertificationDetailRoute(
   certificationSlug: string
 ): UrlPath {

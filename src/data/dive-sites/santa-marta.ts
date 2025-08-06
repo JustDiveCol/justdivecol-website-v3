@@ -1,5 +1,6 @@
 // src/data/dive-sites/santa-marta.ts
-import type { DiveSite } from '../../types/data';
+
+import type { DiveSite } from './style';
 
 export const santaMartaDiveSites: DiveSite[] = [
   {
@@ -9,30 +10,28 @@ export const santaMartaDiveSites: DiveSite[] = [
     isTopSite: true,
     coordinates: [-74.195, 11.318],
     maxDepth: 30,
-    levelRequiredId: 'padi_advanced',
-    difficultyId: 'advanced',
+    levelRequiredId: 'advanced-open-water-diver',
+    difficultyId: 'medium',
     typeIds: ['reef', 'wall'],
-    conditionsIds: ['currents'],
-    descriptionP1Key: 'siteSmAgujaDesc',
-    tagsIds: ['coral', 'large-fish'],
+    conditionsIds: ['current'],
+    descriptionKey: 'siteSmAgujaDesc',
+    tagsIds: ['advanced-only'],
 
-    // ===== DATOS CON LA NUEVA ESTRUCTURA =====
     featuredImage: {
       backgroundImage: '/images/dive-sites/sm/aguja-featured.webp',
-      altTextKey: 'siteSmAgujaFeaturedAlt',
-      photoCredit: {
-        prefixKey: 'photoCreditPrefix',
-        text: 'Fotógrafo Principal',
-      },
+      photoCredit: '',
+      variant: 'horizontal',
     },
     photos: [
       {
         backgroundImage: '/images/dive-sites/sm/aguja-01.webp',
-        altTextKey: 'siteSmAgujaPhoto1Alt',
+        photoCredit: '',
+        variant: 'horizontal',
       },
       {
         backgroundImage: '/images/dive-sites/sm/aguja-02.webp',
-        altTextKey: 'siteSmAgujaPhoto2Alt',
+        photoCredit: '',
+        variant: 'horizontal',
       },
     ],
   },

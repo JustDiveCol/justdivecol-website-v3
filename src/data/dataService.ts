@@ -1,12 +1,8 @@
-import { allExperiences } from './experiences';
+import { allExperiences, type ExperienceId } from './experiences';
 import { allDestinations } from './destinations';
-import { allCertifications } from './certifications';
+import { allCertifications, type CertificationId } from './certifications';
 import { allSessions } from './sessions';
-import { allDiveSites } from './dive-sites';
-import { diveDifficulties } from './dive-filters/difficulties';
-import { diveTypes } from './dive-filters/types';
-import { diveConditions } from './dive-filters/conditions';
-import { diveTags } from './dive-filters/tags';
+import type { DestinationId } from '../constants/destinations';
 
 export const getExperiences = () => allExperiences;
 export { getDestinationsWithSeoUrl as getDestinations } from './destinations/utils';
@@ -42,7 +38,9 @@ export const getExperienceDetails = (slug: string) => {
 /**
  * Verifica si una certificación tiene sesiones futuras disponibles.
  */
-export const getCertificationAvailability = (certificationId: string) => {
+export const getCertificationAvailability = (
+  certificationId: CertificationId
+) => {
   const today = new Date();
 
   // 1. Encontrar todas las experiencias que otorgan esta certificación
@@ -91,11 +89,13 @@ export const getActiveDestinations = () => {
 
   const activeDestinationIds = new Set(
     allExperiences
-      .filter((exp) => activeExperienceIds.has(exp.id))
+      .filter((exp) => activeExperienceIds.has(exp.id as ExperienceId))
       .map((exp) => exp.destinationId)
   );
 
-  return allDestinations.filter((dest) => activeDestinationIds.has(dest.id));
+  return allDestinations.filter((dest) =>
+    activeDestinationIds.has(dest.id as DestinationId)
+  );
 };
 
 // Devuelve los destinos que NO están en la lista de activos
@@ -105,42 +105,3 @@ export const getOtherDestinations = () => {
   );
   return allDestinations.filter((dest) => !activeDestinationIds.has(dest.id));
 };
-
-/**
- * Encuentra un objeto de dificultad por su ID.
- */
-export const getDifficultyById = (id: string) => {
-  return diveDifficulties.find((d) => d.id === id);
-};
-
-/**
- * Encuentra un objeto de tipo de buceo por su ID.
- */
-export const getDiveTypeById = (id: string) => {
-  return diveTypes.find((t) => t.id === id);
-};
-
-// ... funciones similares para getDiveConditionById y getDiveTagById ...
-
-/**
- * Encuentra un sitio de buceo por su ID.
- */
-export const getDiveSiteById = (id: string) => {
-  return allDiveSites.find((site) => site.id === id);
-};
-
-/**
- * Encuentra un objeto de condición por su ID.
- */
-export const getDiveConditionById = (id: string) => {
-  return diveConditions.find((c) => c.id === id);
-};
-
-/**
- * Encuentra un objeto de etiqueta (tag) por su ID.
- */
-export const getDiveTagById = (id: string) => {
-  return diveTags.find((t) => t.id === id);
-};
-
-export const allDiveTags = diveTags;

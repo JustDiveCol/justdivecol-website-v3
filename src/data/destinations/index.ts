@@ -1,11 +1,20 @@
 // src/data/destinations/index.ts
-import santaMarta from './santa-marta';
-// ... importa otros destinos aquí (ej. 'import malpelo from ./malpelo';)
 
-import type { Destination } from '../../types/data';
+import baseSantaMarta from './santa-marta';
+import type { Destination } from './style';
+import { allExperiences } from '../experiences';
+import { allDiveSites } from '../dive-sites';
 
-const destinationsList = [santaMarta] as const;
+const rawDestinations = [baseSantaMarta] as const;
 
-export type DestinationId = (typeof destinationsList)[number]['id'];
-
-export const allDestinations: readonly Destination[] = destinationsList;
+export const allDestinations: readonly Destination[] = rawDestinations.map(
+  (d) => ({
+    ...d,
+    experienceIds: allExperiences
+      .filter((exp) => exp.destinationId === d.id)
+      .map((exp) => exp.id),
+    diveSiteIds: allDiveSites
+      .filter((site) => site.destinationId === d.id)
+      .map((site) => site.id),
+  })
+);

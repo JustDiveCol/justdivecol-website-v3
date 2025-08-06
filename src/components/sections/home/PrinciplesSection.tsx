@@ -1,13 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { PrincipleCard, type PrincipleCardData } from '../shared/PrincipleCard';
-import type { I18NNamespace } from '../../../constants/i18n';
-
-export type PrinciplesSectionProps = {
-  titleKey: string;
-  subtitleKey: string;
-  translationNS: I18NNamespace;
-  cards: PrincipleCardData[];
-};
+import type { PrinciplesSectionProps } from './types';
+import { PrincipleCard } from '../shared/PrincipleCard';
 
 export const PrinciplesSection = ({
   titleKey,

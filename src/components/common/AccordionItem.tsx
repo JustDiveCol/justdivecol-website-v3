@@ -1,11 +1,8 @@
+// src/components/common/AccordionItem.tsx
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDownIcon } from '../ui/Icons'; // Asegúrate de tener este icono
-
-export type AccordionItemProps = {
-  question: string;
-  answer: string;
-};
+import { ChevronDownIcon } from '../ui/Icons';
+import type { AccordionItemProps } from './types';
 
 export const AccordionItem = ({ question, answer }: AccordionItemProps) => {
   const [isOpen, setIsOpen] = useState(false);

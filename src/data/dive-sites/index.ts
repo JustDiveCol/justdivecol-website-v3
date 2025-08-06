@@ -1,8 +1,12 @@
 // src/data/dive-sites/index.ts
 import { santaMartaDiveSites } from './santa-marta';
-// ... importa los sitios de otros destinos aquí
+import type { DiveSite } from './style';
 
-import type { DiveSite } from '../../types/data';
+const rawDiveSites = [
+  ...santaMartaDiveSites,
+  // ... añade aquí otros arrays de sitios por destino
+] as const;
 
-// Creamos un array con TODOS los sitios de buceo de todas las localidades
-export const allDiveSites: DiveSite[] = [...santaMartaDiveSites];
+export type DiveSiteId = (typeof rawDiveSites)[number]['id'];
+
+export const allDiveSites = rawDiveSites as readonly DiveSite[];

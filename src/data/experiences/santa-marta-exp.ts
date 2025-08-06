@@ -1,10 +1,10 @@
-// src/data/experiences/santa-marta-fun-dive.ts
-import type { Experience } from '../../types/data';
+// src/data/experiences/santa-marta-exp.ts
 import { ROUTES } from '../../constants/routes';
+import type { Experience } from './styles';
 
-const santaMartaFunDive = {
+const santaMartaExp = {
   // Metadata
-  id: 'exp-santa-marta-fun-dive',
+  id: 'exp-santa-marta',
   slug: 'fun-dive-santa-marta',
   status: 'published',
   nameKey: 'expSmFunDiveName',
@@ -62,7 +62,7 @@ const santaMartaFunDive = {
   // Relaciones
   destinationId: 'santa-marta',
   certificationIds: [],
-  sessionIds: ['sm-fun-dive-oct-2025'],
+  sessionIds: [],
 } as const satisfies Experience;
 
-export default santaMartaFunDive;
+export default santaMartaExp;

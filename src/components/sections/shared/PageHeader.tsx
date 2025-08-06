@@ -1,17 +1,8 @@
+// src/components/sections/shared/PageHeader.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-// --- CORRECCIÓN EN LAS IMPORTACIONES ---
 import { ImageComponent } from '../../common/ImageComponent';
-import type { ImageComponentData } from '../../../types/data'; // Se importa desde el archivo de tipos central
-import type { I18NNamespace } from '../../../constants/i18n';
-
-// --- CORRECCIÓN EN LAS PROPS ---
-export type PageHeaderProps = {
-  titleKey: string;
-  subtitleKey: string;
-  translationNS: I18NNamespace;
-  imageData: ImageComponentData;
-};
+import type { PageHeaderProps } from './types';
 
 export const PageHeader = ({
   titleKey,

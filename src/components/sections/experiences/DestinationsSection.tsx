@@ -1,3 +1,4 @@
+// src/components/sections/experiences/DestinationsSection.tsx
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -9,13 +10,7 @@ import { allExperiences } from '../../../data/experiences';
 import { ActiveDestinationCard } from '../shared/ActiveDestinationCard';
 import { DestinationPill } from '../shared/DestinationPill';
 import { ChevronLeftIcon, ChevronRightIcon } from '../../ui/Icons';
-import type { I18NNamespace } from '../../../constants/i18n';
-
-export interface DestinationsSectionProps {
-  titleKey: string;
-  otherTitleKey: string;
-  translationNS: I18NNamespace;
-}
+import type { DestinationsSectionProps } from './types';
 
 export const DestinationsSection = ({
   titleKey,
@@ -126,6 +121,7 @@ export const DestinationsSection = ({
               <DestinationPill
                 key={dest.id}
                 destination={dest}
+                translationNS={'destinations'}
               />
             ))}
           </div>

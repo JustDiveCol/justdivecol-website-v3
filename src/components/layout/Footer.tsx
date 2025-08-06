@@ -1,13 +1,12 @@
+// src/components/layout/Footer.tsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence, motion } from 'framer-motion';
 
-// Data Imports (rutas corregidas)
 import { footerData } from '../../data/footerData';
 import { contactData } from '../../data/contactData';
 
-// Asset Imports (rutas corregidas)
 import logo from '../../assets/images/logo.png';
 import {
   WhatsappIcon,
@@ -17,11 +16,10 @@ import {
   YouTubeIcon,
   ChevronUpIcon,
   ScubaMaskIcon,
-} from '../ui/Icons'; // Asumimos que todos los iconos están en Icons.tsx
+} from '../ui/Icons';
 
 const Footer = () => {
-  // Usamos solo los namespaces que necesitamos para el footer
-  const { t } = useTranslation(['common', 'contact']);
+  const { t } = useTranslation(['common', 'navigation', 'contact']);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

@@ -1,9 +1,9 @@
 // src/data/certifications/padi-rescue.ts
 import { BRAND_ASSETS } from '../../constants/assets';
 import { ROUTES } from '../../constants/routes';
-import type { Certification } from '../../types/data';
+import type { Certification } from './types';
 
-const padiRescue: Certification = {
+const padiRescue = {
   // Metadata
   id: 'padi-rescue',
   slug: 'rescue-diver',
@@ -111,6 +111,6 @@ const padiRescue: Certification = {
       whatsAppMessageKey: 'certificationWhatsappMessage',
     },
   },
-};
+} as const satisfies Certification;
 
 export default padiRescue;

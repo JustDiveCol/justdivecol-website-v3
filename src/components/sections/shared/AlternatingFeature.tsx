@@ -1,21 +1,8 @@
+// src/components/sections/shared/AlternatingFeature.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ImageComponent } from '../../common/ImageComponent';
-import type { I18NNamespace } from '../../../constants/i18n';
-import type { ImageComponentData } from '../../../types/data';
-
-export type PrincipleDetail = {
-  id: string;
-  titleKey: string;
-  textKey: string;
-  imageData: ImageComponentData;
-  imagePosition: 'left' | 'right';
-};
-
-interface AlternatingFeatureProps {
-  featureData: PrincipleDetail;
-  translationNS: I18NNamespace;
-}
+import type { AlternatingFeatureProps } from './types';
 
 export const AlternatingFeature = ({
   featureData,
@@ -32,7 +19,7 @@ export const AlternatingFeature = ({
       <div className='container mx-auto'>
         <div
           className={`flex flex-col md:flex-row gap-12 items-center ${
-            !isImageLeft ? 'md:flex-row-reverse' : '' // Invierte el orden si la imagen va a la derecha
+            !isImageLeft ? 'md:flex-row-reverse' : ''
           }`}>
           {/* Columna de Imagen */}
           <motion.div

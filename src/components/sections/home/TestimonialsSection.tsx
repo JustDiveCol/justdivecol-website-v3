@@ -2,18 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import useEmblaCarousel from 'embla-carousel-react';
 
-import {
-  TestimonialCard,
-  type TestimonialData,
-} from '../shared/TestimonialCard';
 import { ChevronLeftIcon, ChevronRightIcon } from '../../ui/Icons';
-import type { I18NNamespace } from '../../../constants/i18n';
-
-export type TestimonialsSectionProps = {
-  titleKey: string;
-  translationNS: I18NNamespace;
-  items: TestimonialData[];
-};
+import type { TestimonialsSectionProps } from './types';
+import { TestimonialCard } from '../shared/TestimonialCard';
 
 export const TestimonialsSection = ({
   titleKey,

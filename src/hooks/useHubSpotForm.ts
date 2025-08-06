@@ -1,6 +1,6 @@
+// src/hooks/useHubSpotForm.ts
 import { useEffect } from 'react';
 
-// Hacemos que la 'window' de TypeScript conozca la propiedad 'hbspt'
 declare global {
   interface Window {
     hbspt?: {
@@ -19,7 +19,7 @@ declare global {
 interface HubSpotFormOptions {
   portalId: string;
   formId: string;
-  target: string; // Un selector CSS, ej. '#my-form'
+  target: string;
 }
 
 export const useHubSpotForm = ({
@@ -53,11 +53,10 @@ export const useHubSpotForm = ({
       document.body.appendChild(script);
 
       return () => {
-        // Opcional: limpiar el script al desmontar el componente
         document.body.removeChild(script);
       };
     } else {
       createForm();
     }
-  }, [portalId, formId, target]); // El efecto se re-ejecuta si cambian los IDs del formulario
+  }, [portalId, formId, target]);
 };

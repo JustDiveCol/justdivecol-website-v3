@@ -1,16 +1,13 @@
+// src/components/sections/shared/CertificationCard.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { twMerge } from 'tailwind-merge';
-import type { Certification } from '../../../types/data';
 import { ImageComponent } from '../../common/ImageComponent';
+import type { CertificationCardProps } from './types';
+import type { AvailableType } from '../../../constants/ui';
 
-// Sub-componente para el indicador de estado
-const AvailabilityStatus = ({
-  status,
-}: {
-  status: 'available' | 'coming_soon';
-}) => {
+const AvailabilityStatus = ({ status }: { status: AvailableType }) => {
   const { t } = useTranslation(['certifications', 'common']);
 
   if (status === 'available') {
@@ -37,13 +34,6 @@ const AvailabilityStatus = ({
     </div>
   );
 };
-
-// Props para la tarjeta principal
-interface CertificationCardProps {
-  certificationData: Certification;
-  availabilityStatus: 'available' | 'coming_soon';
-  className?: string;
-}
 
 export const CertificationCard = ({
   certificationData,

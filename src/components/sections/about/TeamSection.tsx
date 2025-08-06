@@ -1,23 +1,9 @@
+// src/components/sections/about/TeamSection.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { TeamCard, type TeamMember } from '../shared/TeamCard';
-import type { I18NNamespace } from '../../../constants/i18n';
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-export type TeamSectionProps = {
-  titleKey: string;
-  members: TeamMember[];
-  translationNS: I18NNamespace;
-};
+import { TeamCard } from '../shared/TeamCard';
+import { containerVariants } from '../../../hooks/animations';
+import type { TeamSectionProps } from './types';
 
 export const TeamSection = ({
   titleKey,

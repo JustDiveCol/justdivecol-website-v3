@@ -1,12 +1,7 @@
+// src/components/common/ImageComponent.tsx
 import { useTranslation } from 'react-i18next';
 import { BRAND_ASSETS } from '../../constants/assets';
-import type { ImageComponentData } from '../../types/data';
-import type { I18NNamespace } from '../../constants/i18n';
-interface ImageComponentProps {
-  className?: string;
-  imageData: ImageComponentData;
-  translationNS?: I18NNamespace;
-}
+import type { ImageComponentProps } from './types';
 
 const variantStyles = {
   fullscreen: 'h-full',

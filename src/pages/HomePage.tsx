@@ -1,4 +1,4 @@
-// src/pages/HomePage.tsx
+// src/pages/Home/HomePage.tsx
 import { SEO } from '../components/common/SEO';
 import { HeroSection } from '../components/sections/home/HeroSection';
 import { FeaturedSection } from '../components/sections/home/FeaturedSection';

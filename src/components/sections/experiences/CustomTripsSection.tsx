@@ -1,25 +1,10 @@
+// src/components/sections/experiences/CustomTripsSection.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Button } from '../../common/Button';
 import { CheckIcon } from '../../ui/Icons';
 import { ImageComponent } from '../../common/ImageComponent';
-import type { I18NNamespace } from '../../../constants/i18n';
-import type { ImageComponentData } from '../../../types/data';
-
-interface Benefits {
-  id: string;
-  textKey: string;
-  icon: string;
-}
-
-export interface CustomTripsSectionProps {
-  titleKey: string;
-  textKey: string;
-  translationNS: I18NNamespace;
-  imageData: ImageComponentData;
-  buttonTextKey: string;
-  benefits: Benefits[];
-}
+import type { CustomTripsSectionProps } from './types';
 
 export const CustomTripsSection = ({
   titleKey,

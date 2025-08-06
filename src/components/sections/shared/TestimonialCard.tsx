@@ -1,21 +1,7 @@
+// src/components/sections/shared/TestimonialCard.tsx
 import { useTranslation } from 'react-i18next';
 import { QuoteIcon, StarRating } from '../../ui/Icons';
-import type { I18NNamespace } from '../../../constants/i18n';
-
-// --- Tipado de Props ---
-export type TestimonialData = {
-  id: number;
-  quoteKey: string;
-  name: string;
-  originKey: string;
-  rating: number;
-  avatarUrl: string;
-};
-
-interface TestimonialCardProps {
-  cardData: TestimonialData;
-  translationNS: I18NNamespace;
-}
+import type { TestimonialCardProps } from './types';
 
 export const TestimonialCard = ({
   cardData,

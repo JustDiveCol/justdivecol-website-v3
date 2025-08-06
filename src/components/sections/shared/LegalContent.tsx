@@ -1,22 +1,6 @@
+// src/components/sections/shared/LegalContent.tsx
 import { useTranslation } from 'react-i18next';
-import type { I18NNamespace } from '../../../constants/i18n';
-
-export type Point = {
-  textKey?: string;
-  titleKey?: string;
-  subpoints?: string[];
-};
-
-export type Section = {
-  id: string;
-  titleKey: string;
-  points: Point[];
-};
-
-export type LegalContentProps = {
-  sections: Section[];
-  translationNS: I18NNamespace;
-};
+import type { LegalContentProps } from './types';
 
 export const LegalContent = ({
   sections,

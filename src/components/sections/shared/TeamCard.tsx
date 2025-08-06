@@ -1,26 +1,9 @@
+// src/components/sections/shared/TeamCard.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
-import type { I18NNamespace } from '../../../constants/i18n';
-
-export type TeamMember = {
-  id: string;
-  name: string;
-  roleKey: string;
-  bioKey: string;
-  imageUrl: string;
-};
-
-interface TeamCardProps {
-  memberData: TeamMember;
-  className?: string;
-  translationNS: I18NNamespace;
-}
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
-};
+import type { TeamCardProps } from '../about/types';
+import { cardVariants } from '../../../hooks/animations';
 
 export const TeamCard = ({
   memberData,

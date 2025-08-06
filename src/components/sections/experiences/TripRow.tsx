@@ -1,13 +1,15 @@
+// src/components/sections/experiences/TripRow.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useMemo } from 'react';
 import { Button } from '../../common/Button';
-import type { ExperienceSession } from '../../../types/data';
 import { BRAND_ASSETS } from '../../../constants/assets';
 import type { I18NNamespace } from '../../../constants/i18n';
 import { ROUTES } from '../../../constants/routes';
+import type { AvailableType } from '../../../constants/ui';
+import type { ExperienceSession } from '../../../data/sessions/styles';
 
-const AvailabilityBadge = ({ status }: { status: string }) => {
+const AvailabilityBadge = ({ status }: { status: AvailableType }) => {
   const { t } = useTranslation('common');
   const baseClasses = 'px-3 py-1 text-xs font-bold rounded-full';
 

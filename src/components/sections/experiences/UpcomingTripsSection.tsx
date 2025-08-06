@@ -1,3 +1,4 @@
+// src/components/sections/experiences/UpcomingTripsSection.tsx
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -8,19 +9,9 @@ import { allDestinations } from '../../../data/destinations';
 import { PaginationControls } from '../../common/PaginationControls';
 import { ChevronDownIcon } from '../../ui/Icons';
 import { BRAND_ASSETS } from '../../../constants/assets';
-import type { I18NNamespace } from '../../../constants/i18n';
+import type { UpcomingTripsSectionProps } from './types';
 
 const ITEMS_PER_PAGE = 10;
-
-export type UpcomingTripsSectionProps = {
-  titleKey: string;
-  subtitleKey: string;
-  backgroundImageUrl: string;
-  translationNS: I18NNamespace;
-  filtersAllDestinationsKey: string;
-  filtersAllMonthsKey: string;
-  filtersNoResultsKey: string;
-};
 
 export const UpcomingTripsSection = ({
   titleKey,

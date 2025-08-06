@@ -1,13 +1,10 @@
+// src/components/sections/contact/FaqSection.tsx
 import { useTranslation } from 'react-i18next';
 import { faqData } from '../../../data/faqData';
 import { AccordionItem } from '../../common/AccordionItem';
 import { ROUTES } from '../../../constants/routes';
 import { Button } from '../../common/Button';
-import type { I18NNamespace } from '../../../constants/i18n';
-
-export type FaqSectionProps = {
-  translationNS: I18NNamespace;
-};
+import type { FaqSectionProps } from './types';
 
 export const FaqSection = ({ translationNS }: FaqSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);

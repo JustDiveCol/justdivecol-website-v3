@@ -1,24 +1,9 @@
+// src/components/sections/shared/CtaSection.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useHubSpotForm } from '../../../hooks/useHubSpotForm';
-import { Button, type ButtonProps } from '../../common/Button';
-import type { I18NNamespace } from '../../../constants/i18n';
-
-export type CtaButtonData = Omit<
-  import('../../common/Button').ButtonProps,
-  'children'
-> & {
-  textKey: string;
-};
-
-export type CtaSectionProps = {
-  titleKey: string;
-  subtitleKey: string;
-  translationNS: I18NNamespace;
-  backgroundImageUrl: string;
-  button: Omit<ButtonProps, 'children'> & { textKey: string };
-  hubspotFormTitle: string;
-};
+import { Button } from '../../common/Button';
+import type { CtaSectionProps } from './types';
 
 export const CtaSection = ({
   translationNS,

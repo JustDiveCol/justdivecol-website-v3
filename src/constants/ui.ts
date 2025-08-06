@@ -10,7 +10,12 @@ export const BUTTON_VARIANTS = [
 ] as const;
 export const BUTTON_SIZES = ['default', 'sm', 'lg'] as const;
 export const STATUS_TYPES = ['published', 'draft'] as const;
-export const AVAILABILITY = ['available', 'few_spots', 'sold_out'] as const;
+export const AVAILABILITY = [
+  'available',
+  'few_spots',
+  'sold_out',
+  'coming_soon',
+] as const;
 export const SOCIAL_TYPES = ['instagram', 'youtube', 'tiktok'] as const;
 export const CATEGORY_TYPES = [
   'marine-life',
@@ -27,7 +32,6 @@ export const IMAGE_VARIANTS = [
 ] as const;
 export const AGENCY_TYPES = ['PADI', 'SSI'] as const;
 
-// 2) Deriva tus tipos de esos arrays
 export type ActionType = (typeof ACTION_TYPES)[number];
 export type ButtonVariant = (typeof BUTTON_VARIANTS)[number];
 export type ButtonSize = (typeof BUTTON_SIZES)[number];

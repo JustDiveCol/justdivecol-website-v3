@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from 'react';
+// src/components/sections/divesites/DiveSiteModal.tsx
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
-import type { DiveSite, ImageComponentData } from '../../../types/data';
+import { CloseIcon } from '../../ui/Icons';
+import { ImageComponent } from '../../common/ImageComponent';
+import type { DiveSiteModalProps } from './types';
+import type { ImageComponentData } from '../../common/types';
 import {
   getDifficultyById,
-  getDiveTypeById,
   getDiveConditionById,
-} from '../../../data/dataService';
-import { diveTags } from '../../../data/dive-filters/tags';
-import { CloseIcon, BarChartIcon, ArrowDownIcon } from '../../ui/Icons';
-import { ImageComponent } from '../../common/ImageComponent';
+  getDiveTagById,
+  getDiveTypeById,
+  type DiveTagCategoryId,
+  type DiveTagWithCategory,
+} from '../../../constants/dive-sites';
 
-interface DiveSiteModalProps {
-  site: DiveSite;
-  onClose: () => void;
-}
-
-const getTagColorClass = (categoryId?: string) => {
+const getTagColorClass = (categoryId?: DiveTagCategoryId) => {
   switch (categoryId) {
     case 'marine-life':
       return 'bg-green-100 text-green-800';
@@ -30,8 +29,12 @@ const getTagColorClass = (categoryId?: string) => {
   }
 };
 
-export const DiveSiteModal = ({ site, onClose }: DiveSiteModalProps) => {
-  const { t } = useTranslation(['dive-sites', 'common']);
+export const DiveSiteModal = ({
+  site,
+  onClose,
+  translationNS,
+}: DiveSiteModalProps) => {
+  const { t } = useTranslation([translationNS, 'common']);
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   useEffect(() => {
@@ -48,7 +51,7 @@ export const DiveSiteModal = ({ site, onClose }: DiveSiteModalProps) => {
 
   if (!site) return null;
 
-  const descriptionText = t(site.descriptionP1Key);
+  const descriptionText = t(site.descriptionKey);
   const isLong = descriptionText.length > 180;
   const displayedText =
     showFullDescription || !isLong
@@ -59,6 +62,7 @@ export const DiveSiteModal = ({ site, onClose }: DiveSiteModalProps) => {
   const mainImageData: ImageComponentData = {
     backgroundImage: site.featuredImage.backgroundImage,
     photoCredit: site.featuredImage.photoCredit,
+    variant: 'horizontal',
   };
 
   const modalContent = (
@@ -100,7 +104,7 @@ export const DiveSiteModal = ({ site, onClose }: DiveSiteModalProps) => {
                   const type = getDiveTypeById(typeId);
                   return (
                     <span key={typeId}>
-                      {type ? t(type.nameKey, { ns: 'dive-sites' }) : typeId}
+                      {type ? t(type.translationKey) : typeId}
                       {idx < site.typeIds.length - 1 && ' · '}
                     </span>
                   );
@@ -140,7 +144,7 @@ export const DiveSiteModal = ({ site, onClose }: DiveSiteModalProps) => {
                   </span>
                   <span className='text-brand-primary-medium'>
                     {' '}
-                    {t(difficulty.nameKey, { ns: 'dive-sites' })}
+                    {t(difficulty.translationKey, { ns: 'dive-sites' })}
                   </span>
                 </li>
               )}
@@ -155,9 +159,7 @@ export const DiveSiteModal = ({ site, onClose }: DiveSiteModalProps) => {
                       return (
                         <span key={condId}>
                           {' '}
-                          {condition
-                            ? t(condition.nameKey, { ns: 'dive-sites' })
-                            : condId}
+                          {condition ? t(condition.translationKey) : condId}
                           {idx < site.conditionsIds.length - 1 && ', '}
                         </span>
                       );
@@ -174,15 +176,21 @@ export const DiveSiteModal = ({ site, onClose }: DiveSiteModalProps) => {
                 </h4>
                 <div className='flex flex-wrap gap-2'>
                   {site.tagsIds.map((tagId) => {
-                    const tag = diveTags.find((t) => t.id === tagId);
+                    // Usamos el helper que ya devuelve el categoryId
+                    const tag = getDiveTagById(
+                      tagId
+                    ) as DiveTagWithCategory | null;
                     if (!tag) return null;
+
                     return (
                       <span
                         key={tag.id}
-                        className={`px-2 py-1 rounded-full text-xs font-medium ${getTagColorClass(
-                          tag.categoryId
-                        )}`}>
-                        {t(tag.nameKey, { ns: 'dive-sites' })}
+                        className={`
+              px-2 py-1 rounded-full text-xs font-medium
+              ${getTagColorClass(tag.categoryId)}
+            `}>
+                        {/* translationKey es el campo correcto en tu tipo DiveTag */}
+                        {t(tag.translationKey, { ns: 'dive-sites' })}
                       </span>
                     );
                   })}
@@ -200,6 +208,7 @@ export const DiveSiteModal = ({ site, onClose }: DiveSiteModalProps) => {
                     const imageDataForComponent: ImageComponentData = {
                       backgroundImage: photo.backgroundImage,
                       photoCredit: photo.photoCredit,
+                      variant: 'horizontal',
                     };
                     return (
                       <div
