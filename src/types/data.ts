@@ -6,7 +6,6 @@ import type { PrinciplesSectionProps } from '../components/sections/home/Princip
 import type { TestimonialsSectionProps } from '../components/sections/home/TestimonialsSection';
 import type { AlliesSectionProps } from '../components/sections/home/AlliesSection';
 import type { CtaSectionProps } from '../components/sections/shared/CtaSection';
-import type { RoutePath } from '../constants/routes';
 import type { PageHeaderProps } from '../components/sections/shared/PageHeader';
 import type { MissionSectionProps } from '../components/sections/about/MissionSection';
 import type { TeamSectionProps } from '../components/sections/about/TeamSection';
@@ -18,38 +17,23 @@ import type { CertificationsSectionProps } from '../components/sections/experien
 import type { DestinationsSectionProps } from '../components/sections/experiences/DestinationsSection';
 import type { CustomTripsSectionProps } from '../components/sections/experiences/CustomTripsSection';
 import type { ContactSectionProps } from '../components/sections/contact/ContactSection';
-
-// --- Types ---
-export type ActionType = 'internal' | 'external' | 'whatsapp';
-
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
-
-export type ButtonSize = 'default' | 'sm' | 'lg';
-
-export type StatusType = 'published' | 'draft';
-
-export type AvailableType = 'available' | 'few_spots' | 'sold_out';
-
-export type SocialType = 'instagram' | 'youtube' | 'tiktok';
-
-export type CategoryType =
-  | 'marine-life'
-  | 'dive-characteristics'
-  | 'features'
-  | 'location';
-
-export type ImageVariant =
-  | 'fullscreen'
-  | 'header'
-  | 'horizontal'
-  | 'vertical'
-  | 'square';
-
-export type AgencyType = 'PADI' | 'SSI';
+import type { NavLink } from '../constants/navigation';
+import type { UrlPath } from '../constants/routes';
+import type { ExperienceId } from '../data/experiences';
+import type { CertificationId } from '../data/certifications';
+import type {
+  ActionType,
+  AgencyType,
+  AvailableType,
+  CategoryType,
+  ImageVariant,
+  SocialType,
+  StatusType,
+} from '../constants/ui';
 
 export type Action = {
   type: ActionType;
-  path?: RoutePath;
+  path?: UrlPath;
   whatsAppMessageKey?: string;
 };
 
@@ -128,6 +112,16 @@ export interface ExperiencesPageData {
   customTrips: CustomTripsSectionProps;
 }
 
+export interface FooterData {
+  sloganKey: string;
+  closingMessageKey: string;
+  copyrightKey: string;
+  creditsKey: string;
+  importantLinksTitle: string;
+  navLinks: ReadonlyArray<NavLink>;
+  policiesLinkText: string;
+}
+
 // --- Props ---
 
 // --- TIPOS GENÉRICOS Y REUTILIZABLES ---
@@ -172,18 +166,18 @@ export interface DiveTag {
 export interface PageContent {
   id: string;
   slug: string;
-  nameKey: string; // El nombre principal del contenido (ej. "Santa Marta")
-  subtitleKey?: string; // Un subtítulo o descripción corta
+  nameKey: string;
+  subtitleKey?: string;
   status: StatusType;
   seo: SEOProps;
-  header: HeaderData;
+  header: PageHeaderProps;
   description: {
     titleKey: string;
     paragraphs: string[];
   };
   gallery?: {
     titleKey: string;
-    images: GalleryImage[];
+    images: ImageComponentData[];
   };
   cta?: CTAData;
 }
@@ -194,7 +188,7 @@ export interface Certification extends PageContent {
   agency: AgencyType;
   prerequisiteIds: string[];
   card: {
-    imageData: Omit<ImageComponentData, 'variant'>;
+    imageData: ImageComponentData;
   };
   details: {
     titleKey: string;
@@ -228,8 +222,8 @@ export interface DiveSite {
   conditionsIds: string[];
   descriptionP1Key: string;
   tagsIds: string[];
-  featuredImage: GalleryImage;
-  photos: GalleryImage[];
+  featuredImage: ImageComponentData;
+  photos: ImageComponentData[];
 }
 
 export interface Destination extends PageContent {
@@ -237,6 +231,9 @@ export interface Destination extends PageContent {
   coords: [number, number];
   minZoom: number;
   maxZoom: number;
+  card: {
+    imageData: ImageComponentData;
+  };
   details: {
     titleKey: string;
     items: { labelKey: string; valueKey: string }[];
@@ -245,21 +242,23 @@ export interface Destination extends PageContent {
     titleKey: string;
     items: string[];
   };
-  experienceIds: string[];
+  experienceIds: ExperienceId[];
   diveSiteIds: string[];
 }
+
+export type CurrencyType = 'USD' | 'COP';
 
 export interface PricingOption {
   id: string;
   titleKey: string;
   descriptionKey: string;
   price: number;
-  currency: string;
+  currency: CurrencyType;
 }
 
 export interface ExperienceSession {
   id: string;
-  experienceId: string;
+  experienceId: ExperienceId;
   startDate: string;
   endDate: string;
   imageUrl: string;
@@ -280,7 +279,7 @@ export interface ExperienceSession {
 
 export interface Experience extends PageContent {
   destinationId: string;
-  certificationIds: string[];
+  certificationIds: CertificationId[];
   sessionIds: string[];
   itinerary: {
     titleKey: string;

@@ -1,6 +1,61 @@
-import { ROUTES } from '../constants/routes';
+import { ROUTES, type UrlPath } from '../constants/routes';
 import { BRAND_ASSETS } from '../constants/assets';
 import type { HomePageData } from '../types/data';
+import type {
+  CardData,
+  ImageInfo,
+} from '../components/sections/home/FeaturedSection';
+
+type RawCardData = {
+  readonly id: string;
+  readonly titleKey: string;
+  readonly subtitleKey?: string;
+  readonly imageData: ImageInfo;
+};
+
+const rawCards: ReadonlyArray<RawCardData> = [
+  {
+    id: 'dive-experiences',
+    titleKey: 'featured.featuredCard1Title',
+    subtitleKey: 'featured.featuredCard1Subtitle',
+    imageData: {
+      backgroundImageUrl: '/images/featured/featured-1.webp',
+      photoCredit: 'Camilo Beltran @JustDiveCol',
+    },
+  },
+  {
+    id: 'certifications',
+    titleKey: 'featured.featuredCard2Title',
+    subtitleKey: 'featured.featuredCard2Subtitle',
+    imageData: {
+      backgroundImageUrl: '/images/featured/featured-2.webp',
+      photoCredit: 'Camilo Beltran @JustDiveCol',
+    },
+  },
+  {
+    id: 'destinations',
+    titleKey: 'featured.featuredCard3Title',
+    subtitleKey: 'featured.featuredCard3Subtitle',
+    imageData: {
+      backgroundImageUrl: '/images/featured/featured-3.webp',
+      photoCredit: 'Camilo Beltran @JustDiveCol',
+    },
+  },
+  {
+    id: 'custom-experiences',
+    titleKey: 'featured.featuredCard4Title',
+    subtitleKey: 'featured.featuredCard4Subtitle',
+    imageData: {
+      backgroundImageUrl: '/images/featured/featured-4.webp',
+      photoCredit: '@parche_de_buceo',
+    },
+  },
+] as const;
+
+export const featuredCards: CardData[] = rawCards.map((card) => ({
+  ...card,
+  link: `${ROUTES.diveExperiences}#${card.id}` as UrlPath,
+}));
 
 export const homePageData: HomePageData = {
   // SEO
@@ -23,7 +78,7 @@ export const homePageData: HomePageData = {
       textKey: 'hero.experiencesButton',
       action: {
         type: 'internal',
-        path: ROUTES.experiences,
+        path: ROUTES.diveExperiences,
       },
       variant: 'primary',
       size: 'default',
@@ -40,49 +95,7 @@ export const homePageData: HomePageData = {
   featured: {
     titleKey: 'featured.homeFeaturedTitle',
     translationNS: 'home',
-    cards: [
-      {
-        id: 'experiences',
-        link: ROUTES.experiences,
-        titleKey: 'featured.featuredCard1Title',
-        subtitleKey: 'featured.featuredCard1Subtitle',
-        imageData: {
-          backgroundImageUrl: '/images/featured/featured-1.webp',
-          photoCredit: 'Camilo Beltran @JustDiveCol',
-        },
-      },
-      {
-        id: 'certifications',
-        link: ROUTES.certificationsSection,
-        titleKey: 'featured.featuredCard2Title',
-        subtitleKey: 'featured.featuredCard2Subtitle',
-        imageData: {
-          backgroundImageUrl: '/images/featured/featured-2.webp',
-          photoCredit: 'Camilo Beltran @JustDiveCol',
-          complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
-        },
-      },
-      {
-        id: 'destinations',
-        link: ROUTES.destinationsSection,
-        titleKey: 'featured.featuredCard3Title',
-        subtitleKey: 'featured.featuredCard3Subtitle',
-        imageData: {
-          backgroundImageUrl: '/images/featured/featured-3.webp',
-          photoCredit: 'Camilo Beltran @JustDiveCol',
-        },
-      },
-      {
-        id: 'custom-experiences',
-        link: ROUTES.customExperiencesSection,
-        titleKey: 'featured.featuredCard4Title',
-        subtitleKey: 'featured.featuredCard4Subtitle',
-        imageData: {
-          backgroundImageUrl: '/images/featured/featured-4.webp',
-          photoCredit: '@parche_de_buceo',
-        },
-      },
-    ],
+    cards: featuredCards,
   },
 
   // Principles

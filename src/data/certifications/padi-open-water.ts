@@ -1,85 +1,106 @@
 // src/data/certifications/padi-open-water.ts
+import { BRAND_ASSETS } from '../../constants/assets';
+import { ROUTES } from '../../constants/routes';
 import type { Certification } from '../../types/data';
 
 const padiOpenWaterDiver: Certification = {
   // Metadata
   id: 'padi-open-water',
-  nameKey: 'owdName',
-  subtitleKey: 'owdSubtitle',
   slug: 'open-water-diver',
+  nameKey: 'owd.name',
+  subtitleKey: 'owd.subtitle',
   status: 'published',
 
-  // SEO y Header (como en la interface PageContent)
   seo: {
-    titleKey: 'owdSeoTitle',
-    descriptionKey: 'owdSeoDesc',
-    imageUrl: '/images/certifications/owd-seo-image.webp',
-    url: '/certifications/open-water-diver',
+    titleKey: 'owd.seo.seoTitle',
+    descriptionKey: 'owd.seo.seoDesc',
+    keywordsKey: 'owd.seo.seoKeywords',
+    urlPath: ROUTES.certifications,
+    imageUrl: '/images/social/owd-social-card.webp',
+    translationNS: 'certifications',
   },
+
   header: {
-    backgroundImage: '/images/certifications/owd-header.webp',
-    titleKey: 'owdHeaderTitle',
-    subtitleKey: 'owdHeaderSubtitle',
+    titleKey: 'owd.header.headerTitle',
+    subtitleKey: 'owd.header.headerSubtitle',
+    translationNS: 'certifications',
+    imageData: {
+      backgroundImage: '/images/certifications/owd-header.webp',
+      photoCredit: 'PADI®',
+      complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
+      variant: 'header',
+    },
   },
 
-  // Descripción
   description: {
-    titleKey: 'owdDescTitle',
-    paragraphs: ['owdDescP1', 'owdDescP2'],
+    titleKey: 'owd.description.descTitle',
+    paragraphs: ['owd.description.descP1', 'owd.description.descP2'],
   },
 
-  // Datos específicos de Certificación
   agency: 'PADI',
   prerequisiteIds: [],
   card: {
     imageData: {
       backgroundImage: '/images/certifications/owd-card.webp',
+      photoCredit: 'Camilo Beltran @JustDiveCol',
+      complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
       textOverlayKey: 'certificationsTextOverlay',
+      variant: 'horizontal',
     },
   },
   details: {
-    titleKey: 'certificationsDetailsTitle',
-    durationKey: 'owdDetailDurationValue',
-    items: [{ labelKey: 'owdDetailLabel1', valueKey: 'owdDetailValue1' }],
+    titleKey: 'owd.details.certificationsDetailsTitle',
+    durationKey: 'owd.details.detailDurationValue',
+    items: [
+      {
+        labelKey: 'owd.details.detailLabel1',
+        valueKey: 'owd.details.detailValue1',
+      },
+    ],
   },
   curriculum: {
-    titleKey: 'certificationsCurriculumTitle',
+    titleKey: 'owd.curriculum.certificationsCurriculumTitle',
     modules: [
       {
         id: 'theory',
-        nameKey: 'owdModule1Name',
-        descriptionKey: 'owdModule1Desc',
+        nameKey: 'owd.curriculum.module1Name',
+        descriptionKey: 'owd.curriculum.module1Desc',
       },
       {
         id: 'confined-waters',
-        nameKey: 'owdModule2Name',
-        descriptionKey: 'owdModule2Desc',
+        nameKey: 'owd.curriculum.module2Name',
+        descriptionKey: 'owd.curriculum.module2Desc',
       },
       {
         id: 'open-water',
-        nameKey: 'owdModule3Name',
-        descriptionKey: 'owdModule3Desc',
+        nameKey: 'owd.curriculum.module3Name',
+        descriptionKey: 'owd.curriculum.module3Desc',
       },
     ],
   },
   requirements: {
-    titleKey: 'certificationsRequirementsTitle',
-    items: ['owdReqItem1', 'owdReqItem2', 'owdReqItem3'],
+    titleKey: 'owd.requirements.certificationsRequirementsTitle',
+    items: [
+      'owd.requirements.reqItem1',
+      'owd.requirements.reqItem2',
+      'owd.requirements.reqItem3',
+    ],
   },
   whatIsIncluded: {
-    titleKey: 'certificationsIncludedTitle',
-    items: ['owdIncludeItem1', 'owdIncludeItem2', 'owdIncludeItem3'],
+    titleKey: 'owd.whatIsIncluded.certificationsIncludedTitle',
+    items: [
+      'owd.whatIsIncluded.includeItem1',
+      'owd.whatIsIncluded.includeItem2',
+      'owd.whatIsIncluded.includeItem3',
+    ],
   },
   gallery: {
     titleKey: 'certificationsGalleryTitle',
     images: [
       {
         backgroundImage: '/images/certifications/owd-gallery-1.webp',
-        altTextKey: 'owdGalleryAlt1',
-      },
-      {
-        backgroundImage: '/images/certifications/owd-gallery-2.webp',
-        altTextKey: 'owdGalleryAlt2',
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
       },
     ],
   },

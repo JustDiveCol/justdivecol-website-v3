@@ -9,8 +9,8 @@ import { diveConditions } from './dive-filters/conditions';
 import { diveTags } from './dive-filters/tags';
 
 export const getExperiences = () => allExperiences;
-export const getDestinations = () => allDestinations;
-export const getCertifications = () => allCertifications;
+export { getDestinationsWithSeoUrl as getDestinations } from './destinations/utils';
+export { getCertificationsWithSeoUrl as getCertifications } from './certifications/utils';
 
 /**
  * Encuentra una experiencia y le adjunta sus datos relacionados

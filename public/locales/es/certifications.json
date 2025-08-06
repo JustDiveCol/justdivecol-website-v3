@@ -1,0 +1,191 @@
+{
+  "certificationsGalleryTitle": "",
+  "certificationCtaButton": "",
+  "certificationWhatsappMessage": "",
+  "certificationsTextOverlay": "Certificaciones",
+  "statusComingSoon": "Proximamente",
+  "statusAvailable": "Disponible",
+
+  "owd": {
+    "name": "PADI Open Water Diver",
+    "subtitle": "Conviértete en un buzo certificado con el curso PADI Open Water Diver de JustDiveCol. Es tu puerta de entrada al fascinante mundo submarino para explorar las profundidades con total confianza.",
+
+    "seo": {
+      "seoTitle": "",
+      "seoDesc": "",
+      "seoKeywords": ""
+    },
+
+    "header": {
+      "headerTitle": "",
+      "headerSubtitle": ""
+    },
+
+    "description": {
+      "descTitle": "",
+      "descP1": "",
+      "descP2": ""
+    },
+
+    "prerequisiteIds": {},
+
+    "details": {
+      "certificationsDetailsTitle": "",
+      "detailDurationValue": "",
+
+      "detailLabel1": "",
+      "detailValue1": ""
+    },
+
+    "curriculum": {
+      "certificationsCurriculumTitle": "",
+
+      "module1Name": "",
+      "module1Desc": "",
+
+      "module2Name": "",
+      "module2Desc": "",
+
+      "module3Name": "",
+      "module3Desc": ""
+    },
+
+    "requirements": {
+      "certificationsRequirementsTitle": "",
+
+      "reqItem1": "",
+      "reqItem2": "",
+      "reqItem3": ""
+    },
+
+    "whatIsIncluded": {
+      "certificationsIncludedTitle": "",
+
+      "includeItem1": "",
+      "includeItem2": "",
+      "includeItem3": ""
+    }
+  },
+
+  "aowd": {
+    "name": "PADI Advanced Open Water Diver",
+    "subtitle": "Perfecciona tus habilidades, gana una confianza inquebrantable y explora nuevas dimensiones del buceo con JustDiveCol. ¡El océano te espera!",
+
+    "seo": {
+      "seoTitle": "",
+      "seoDesc": "",
+      "seoKeywords": ""
+    },
+
+    "header": {
+      "headerTitle": "",
+      "headerSubtitle": ""
+    },
+
+    "description": {
+      "descTitle": "",
+      "descP1": "",
+      "descP2": ""
+    },
+
+    "prerequisiteIds": {},
+
+    "details": {
+      "certificationsDetailsTitle": "",
+      "detailDurationValue": "",
+
+      "detailLabel1": "",
+      "detailValue1": ""
+    },
+
+    "curriculum": {
+      "certificationsCurriculumTitle": "",
+
+      "module1Name": "",
+      "module1Desc": "",
+
+      "module2Name": "",
+      "module2Desc": "",
+
+      "module3Name": "",
+      "module3Desc": ""
+    },
+
+    "requirements": {
+      "certificationsRequirementsTitle": "",
+
+      "reqItem1": "",
+      "reqItem2": "",
+      "reqItem3": ""
+    },
+
+    "whatIsIncluded": {
+      "certificationsIncludedTitle": "",
+
+      "includeItem1": "",
+      "includeItem2": "",
+      "includeItem3": ""
+    }
+  },
+
+  "rescue": {
+    "name": "PADI Rescue Diver",
+    "subtitle": "Conviértete en el buzo confiable que todos querrán tener a su lado. ¡Sé la seguridad que el océano necesita!",
+
+    "seo": {
+      "seoTitle": "",
+      "seoDesc": "",
+      "seoKeywords": ""
+    },
+
+    "header": {
+      "headerTitle": "",
+      "headerSubtitle": ""
+    },
+
+    "description": {
+      "descTitle": "",
+      "descP1": "",
+      "descP2": ""
+    },
+
+    "prerequisiteIds": {},
+
+    "details": {
+      "certificationsDetailsTitle": "",
+      "detailDurationValue": "",
+
+      "detailLabel1": "",
+      "detailValue1": ""
+    },
+
+    "curriculum": {
+      "certificationsCurriculumTitle": "",
+
+      "module1Name": "",
+      "module1Desc": "",
+
+      "module2Name": "",
+      "module2Desc": "",
+
+      "module3Name": "",
+      "module3Desc": ""
+    },
+
+    "requirements": {
+      "certificationsRequirementsTitle": "",
+
+      "reqItem1": "",
+      "reqItem2": "",
+      "reqItem3": ""
+    },
+
+    "whatIsIncluded": {
+      "certificationsIncludedTitle": "",
+
+      "includeItem1": "",
+      "includeItem2": "",
+      "includeItem3": ""
+    }
+  }
+}

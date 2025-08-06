@@ -34,7 +34,7 @@ export const CustomTripsSection = ({
   return (
     <section
       className='bg-brand-primary-dark py-20 px-4 text-white'
-      id='customs-trips-section'>
+      id='custom-experiences'>
       <div className='container mx-auto'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
           {/* Columna de la Imagen */}

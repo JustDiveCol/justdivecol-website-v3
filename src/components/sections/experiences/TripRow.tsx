@@ -4,6 +4,8 @@ import { useMemo } from 'react';
 import { Button } from '../../common/Button';
 import type { ExperienceSession } from '../../../types/data';
 import { BRAND_ASSETS } from '../../../constants/assets';
+import type { I18NNamespace } from '../../../constants/i18n';
+import { ROUTES } from '../../../constants/routes';
 
 const AvailabilityBadge = ({ status }: { status: string }) => {
   const { t } = useTranslation('common');
@@ -29,7 +31,6 @@ const AvailabilityBadge = ({ status }: { status: string }) => {
     classes: 'bg-gray-500/20 text-gray-300',
   };
 
-  // Definimos las propiedades de la animación condicional
   const animationProps =
     status === 'available' || status === 'few_spots'
       ? {
@@ -51,13 +52,12 @@ const AvailabilityBadge = ({ status }: { status: string }) => {
   );
 };
 
-// Props para el componente TripRow
 interface TripRowProps {
   session: ExperienceSession;
   experience: {
     nameKey: string;
   };
-  translationNS: string;
+  translationNS: I18NNamespace;
 }
 
 export const TripRow = ({
@@ -156,7 +156,7 @@ export const TripRow = ({
               <Button
                 action={{
                   type: 'internal',
-                  path: `/experiences/${session.experienceId}`,
+                  path: `${ROUTES.diveExperiences}/${session.experienceId}`,
                 }}
                 variant='outline'
                 size='sm'>

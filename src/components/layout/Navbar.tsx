@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { navLinks } from '../../constants/navigation';
+import { NAV_LINKS } from '../../constants/navigation';
 import { LanguageSwitcherComponent } from '../ui/LanguageSwitcher';
 import logo from '../../assets/images/logo.png';
 import { MenuIcon, CloseIcon, ChevronDownIcon } from '../ui/Icons';
@@ -16,7 +16,7 @@ const Navbar = () => {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const linksToHideOnTablet = navLinks.slice(2, -1);
+  const linksToHideOnTablet = NAV_LINKS.slice(2, -1);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -69,7 +69,7 @@ const Navbar = () => {
         </NavLink>
 
         <div className='hidden items-center gap-x-6 md:flex'>
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <NavLinkItem
               key={link.nameKey}
               to={link.path}
@@ -140,7 +140,7 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className='overflow-hidden border-t border-white/10 bg-brand-primary-dark/95 backdrop-blur-lg md:hidden'>
             <div className='flex flex-col items-center space-y-2 px-4 pb-4 pt-2'>
-              {navLinks.map((link) => (
+              {NAV_LINKS.map((link) => (
                 <NavLink
                   key={link.nameKey}
                   to={link.path}

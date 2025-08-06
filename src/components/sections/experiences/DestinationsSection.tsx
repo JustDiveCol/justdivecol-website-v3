@@ -48,7 +48,7 @@ export const DestinationsSection = ({
   return (
     <section
       className='bg-brand-primary-medium py-20 px-4'
-      id='destinations-section'>
+      id='destinations'>
       {/* --- SECCIÓN DE DESTINOS ACTIVOS --- */}
       {activeDestinations.length > 0 && (
         <div className='container mx-auto mb-20'>

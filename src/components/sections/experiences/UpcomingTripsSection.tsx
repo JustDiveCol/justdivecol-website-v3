@@ -90,7 +90,7 @@ export const UpcomingTripsSection = ({
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
-    const sectionElement = document.getElementById('upcoming-trips-section');
+    const sectionElement = document.getElementById('dive-experiences');
     if (sectionElement) {
       sectionElement.scrollIntoView({ behavior: 'smooth' });
     }
@@ -98,7 +98,7 @@ export const UpcomingTripsSection = ({
 
   return (
     <section
-      id='upcoming-trips-section'
+      id='dive-experiences'
       className='relative min-h-screen flex items-center bg-cover bg-center py-20 px-4'
       style={{ backgroundImage: `url(${backgroundImageUrl})` }}>
       <div className='absolute inset-0 bg-brand-primary-dark/80' />

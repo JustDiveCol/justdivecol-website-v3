@@ -2,7 +2,7 @@
 import type { Experience } from '../../types/data';
 import { ROUTES } from '../../constants/routes';
 
-const santaMartaFunDive: Experience = {
+const santaMartaFunDive = {
   // Metadata
   id: 'exp-santa-marta-fun-dive',
   slug: 'fun-dive-santa-marta',
@@ -12,15 +12,22 @@ const santaMartaFunDive: Experience = {
 
   // SEO y Header
   seo: {
-    titleKey: 'expSmFunDiveSeoTitle',
-    descriptionKey: 'expSmFunDiveSeoDesc',
-    imageUrl: '/images/experiences/santa-marta/header.webp',
-    url: `${ROUTES.experiences}/fun-dive-santa-marta`,
+    titleKey: 'expSm25.seo.seoTitle',
+    descriptionKey: 'expSm25.seo.seoDesc',
+    keywordsKey: 'expSm25.seo.seoKeywords',
+    urlPath: ROUTES.diveExperiences,
+    imageUrl: '/images/social/experiences-social-card.webp',
+    translationNS: 'experiences',
   },
   header: {
-    backgroundImage: '/images/experiences/santa-marta/header.webp',
-    titleKey: 'expSmFunDiveHeaderTitle',
-    subtitleKey: 'expSmFunDiveHeaderSubtitle',
+    titleKey: 'expSm25.header.headerTitle',
+    subtitleKey: 'expSm25.header.headerSubtitle',
+    translationNS: 'experiences',
+    imageData: {
+      backgroundImage: '/images/experiences/santa-marta/header.webp',
+      photoCredit: 'PADI®',
+      variant: 'header',
+    },
   },
 
   // Descripción
@@ -54,8 +61,8 @@ const santaMartaFunDive: Experience = {
 
   // Relaciones
   destinationId: 'santa-marta',
-  certificationIds: [], // Esta experiencia no otorga certificaciones
-  sessionIds: ['sm-fun-dive-oct-2025'], // Conecta con la sesión que creamos
-};
+  certificationIds: [],
+  sessionIds: ['sm-fun-dive-oct-2025'],
+} as const satisfies Experience;
 
 export default santaMartaFunDive;

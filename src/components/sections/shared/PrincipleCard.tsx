@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { BRAND_ASSETS } from '../../../constants/assets';
+import type { I18NNamespace } from '../../../constants/i18n';
 
 // --- Tipado de Props ---
 export type PrincipleCardData = {
@@ -17,7 +18,7 @@ export type PrincipleCardData = {
 
 interface PrincipleCardProps {
   cardData: PrincipleCardData;
-  translationNS?: string;
+  translationNS?: I18NNamespace;
 }
 
 export const PrincipleCard = ({

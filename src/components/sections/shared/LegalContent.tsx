@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import type { I18NNamespace } from '../../../constants/i18n';
 
 export type Point = {
   textKey?: string;
@@ -14,7 +15,7 @@ export type Section = {
 
 export type LegalContentProps = {
   sections: Section[];
-  translationNS: string;
+  translationNS: I18NNamespace;
 };
 
 export const LegalContent = ({

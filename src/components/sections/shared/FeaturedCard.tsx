@@ -4,11 +4,12 @@ import { motion } from 'framer-motion';
 
 import { BRAND_ASSETS } from '../../../constants/assets';
 import type { CardData } from '../home/FeaturedSection';
+import type { I18NNamespace } from '../../../constants/i18n';
 
 export type FeaturedCardProps = {
   cardData: CardData;
   className?: string;
-  translationNS?: string;
+  translationNS?: I18NNamespace;
 };
 
 export const FeaturedCard = ({

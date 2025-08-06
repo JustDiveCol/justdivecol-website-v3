@@ -7,7 +7,7 @@ export const experiencesPageData: ExperiencesPageData = {
     titleKey: 'seo.experiencesSeoTitle',
     descriptionKey: 'seo.experiencesSeoDesc',
     keywordsKey: 'seo.experiencesSeoKeywords',
-    urlPath: ROUTES.experiences,
+    urlPath: ROUTES.diveExperiences,
     imageUrl: '/images/social/experiences-social-card.webp',
     translationNS: 'experiences',
   },

@@ -4,7 +4,7 @@ import type { ExperienceSession, PricingOption } from '../../types/data';
 const pricingOptions: PricingOption[] = [
   {
     id: 'two-dives',
-    titleKey: 'sessionSmFunDivePriceTwoDivesName', // Corregido: 'nameKey' en lugar de 'titleKey' para consistencia
+    titleKey: 'sessionSmFunDivePriceTwoDivesName',
     descriptionKey: 'sessionSmFunDivePriceTwoDivesDesc',
     price: 350000,
     currency: 'COP',
@@ -30,7 +30,6 @@ const santaMartaFunDiveOct2025: ExperienceSession = {
   creyentes: true,
   certificationIds: ['padi-open-water'],
 
-  // ===== CORRECCIÓN AQUÍ: Se añade la propiedad que faltaba =====
   pricingOptions: pricingOptions,
 
   paymentPlan: {

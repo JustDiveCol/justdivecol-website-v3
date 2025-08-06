@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import type { I18NNamespace } from '../../constants/i18n';
-import type { RoutePath } from '../../constants/routes';
+import type { DinamicUrlPath } from '../../constants/routes';
 
 // --- Tipado de Props ---
 
@@ -10,7 +10,7 @@ export type SEOProps = {
   descriptionKey: string;
   keywordsKey: string;
   imageUrl: string;
-  urlPath: RoutePath;
+  urlPath: DinamicUrlPath;
   translationNS: I18NNamespace;
 };
 

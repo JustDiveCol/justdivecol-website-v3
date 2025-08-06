@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { FeaturedCard } from '../shared/FeaturedCard';
 import type { I18NNamespace } from '../../../constants/i18n';
-import type { RoutePath } from '../../../constants/routes';
+import type { UrlPath } from '../../../constants/routes';
 
 export type ImageInfo = {
   backgroundImageUrl: string;
@@ -14,7 +14,7 @@ export type ImageInfo = {
 
 export type CardData = {
   id: string;
-  link: RoutePath;
+  link: UrlPath;
   titleKey: string;
   subtitleKey?: string;
   imageData: ImageInfo;

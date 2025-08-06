@@ -16,7 +16,6 @@ export type ButtonProps = {
   size?: ButtonSize;
 } & (Omit<LinkProps, 'to'> | AnchorHTMLAttributes<HTMLAnchorElement>);
 
-// 1️⃣ Definimos variantes con CVA
 const buttonVariants = cva(
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold uppercase tracking-wider transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-cta-yellow',
   {
@@ -49,7 +48,6 @@ export const Button = React.forwardRef<HTMLAnchorElement, ButtonProps>(
   ) {
     const { t } = useTranslation('common');
 
-    // 2️⃣ Calculamos la URL final según tipo de acción
     const finalLink = React.useMemo(() => {
       if (action.type === 'whatsapp') {
         const text = t(action.whatsAppMessageKey || 'whatsapp_message');
@@ -59,14 +57,11 @@ export const Button = React.forwardRef<HTMLAnchorElement, ButtonProps>(
       if (action.type === 'external') {
         return action.path || '#';
       }
-      // internal (o cuando action.type es 'internal')
       return action.path || '/';
     }, [action, t]);
 
-    // 3️⃣ Unimos las clases de CVA + cualquier className extra
     const classes = twMerge(buttonVariants({ variant, size, className }));
 
-    // 4️⃣ Renderizamos <Link> o <a> según corresponda
     if (action.type === 'internal') {
       const linkProps = props as Omit<LinkProps, 'to'>;
       return (
@@ -80,7 +75,6 @@ export const Button = React.forwardRef<HTMLAnchorElement, ButtonProps>(
       );
     }
 
-    // external o whatsapp → <a> con target blank
     return (
       <a
         href={finalLink}

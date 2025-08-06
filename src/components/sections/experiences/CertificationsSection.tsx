@@ -5,11 +5,12 @@ import {
   getCertificationAvailability,
   getCertifications,
 } from '../../../data/dataService';
+import type { I18NNamespace } from '../../../constants/i18n';
 
 export interface CertificationsSectionProps {
   titleKey: string;
   subtitleKey: string;
-  translationNS: string;
+  translationNS: I18NNamespace;
 }
 
 const containerVariants = {
@@ -34,7 +35,7 @@ export const CertificationsSection = ({
   return (
     <section
       className='bg-brand-primary-medium py-20 px-4'
-      id='certifications-section'>
+      id='certifications'>
       <div className='container mx-auto'>
         <div className='max-w-3xl mx-auto text-center mb-16'>
           <h2 className='heading-2 text-white'>{t(titleKey)}</h2>
@@ -46,7 +47,7 @@ export const CertificationsSection = ({
           whileInView='visible'
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
-          className='flex flex-wrap justify-center gap-8 max-w-6xl mx-auto'>
+          className='flex flex-wrap justify-center items-stretch gap-8 max-w-6xl mx-auto'>
           {certifications.map((cert) => {
             const status = getCertificationAvailability(cert.id);
             return (
@@ -54,7 +55,7 @@ export const CertificationsSection = ({
                 key={cert.id}
                 certificationData={cert}
                 availabilityStatus={status}
-                className='w-full sm:w-1/2 lg:w-[30%]'
+                className='w-full sm:w-1/2 lg:w-[30%] h-full flex flex-col'
               />
             );
           })}

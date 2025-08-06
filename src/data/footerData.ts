@@ -1,18 +1,13 @@
 // src/data/footerData.ts
-import { ROUTES } from '../constants/routes';
+import { FOOTER_LINKS } from '../constants/navigation';
+import type { FooterData } from '../types/data';
 
-export const footerData = {
+export const footerData: FooterData = {
   sloganKey: 'footer.footerSlogan',
   closingMessageKey: 'footer.footerClosingMessage',
   copyrightKey: 'footer.footerCopyright',
   creditsKey: 'footer.footerCredits',
   importantLinksTitle: 'footer.footerLinksTitle',
-  navLinks: [
-    { nameKey: 'policy', path: ROUTES.policy },
-    { nameKey: 'terms', path: ROUTES.terms },
-    { nameKey: 'privacy', path: ROUTES.privacy },
-    { nameKey: 'faqs', path: ROUTES.faq },
-    { nameKey: 'diveSites', path: ROUTES.divesites },
-  ],
+  navLinks: FOOTER_LINKS,
   policiesLinkText: 'footer.footerLinkText',
 };

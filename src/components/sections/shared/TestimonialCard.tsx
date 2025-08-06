@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { QuoteIcon, StarRating } from '../../ui/Icons';
+import type { I18NNamespace } from '../../../constants/i18n';
 
 // --- Tipado de Props ---
 export type TestimonialData = {
@@ -13,7 +14,7 @@ export type TestimonialData = {
 
 interface TestimonialCardProps {
   cardData: TestimonialData;
-  translationNS: string;
+  translationNS: I18NNamespace;
 }
 
 export const TestimonialCard = ({
