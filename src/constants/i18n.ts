@@ -1,15 +1,15 @@
 // src/constants/i18n.ts
 
 export const I18N_NAMESPACES = [
-  'common',
-  'home',
-  'experiences',
   'aboutUs',
-  'contact',
-  'faqs',
-  'principles',
-  'legal',
   'certifications',
+  'common',
+  'contact',
+  'experiences',
+  'faq',
+  'home',
+  'legal',
+  'principles',
   'destinations',
   'dive-sites',
 ] as const;
@@ -20,19 +20,9 @@ export const I18N_LANGUAGES = ['es', 'en'] as const;
 
 export type I18NLanguage = (typeof I18N_LANGUAGES)[number];
 
-export const I18N_NAMESPACE_PATHS: Record<I18NNamespace, string> = {
-  common: '/locales/{{lng}}/common.json',
-  home: '/locales/{{lng}}/home.json',
-  experiences: '/locales/{{lng}}/experiences.json',
-  aboutUs: '/locales/{{lng}}/aboutUs.json',
-  contact: '/locales/{{lng}}/contact.json',
-  faqs: '/locales/{{lng}}/faqs.json',
-  principles: '/locales/{{lng}}/principles.json',
-  legal: '/locales/{{lng}}/legal.json',
-  certifications: '/locales/{{lng}}/certifications.json',
-  destinations: '/locales/{{lng}}/destinations.json',
-  'dive-sites': '/locales/{{lng}}/dive-sites.json',
-} as const;
+export const I18N_NAMESPACE_PATHS = Object.fromEntries(
+  I18N_NAMESPACES.map((ns) => [ns, `/locales/{{lng}}/${ns}.json`])
+) as Record<I18NNamespace, string>;
 
 export function getI18nResourcePath(
   namespace: I18NNamespace,

@@ -1,28 +1,15 @@
 // src/components/sections/shared/types.ts
+import type { ExperienceId } from '../../../constants/experiences';
 import type { I18NNamespace } from '../../../constants/i18n';
-import type { AvailableType } from '../../../constants/ui';
-import type { Certification } from '../../../data/certifications/types';
+import type { CertificationContent } from '../../../content/certifications/types';
+import type { ButtonContent } from '../../../content/types';
 import type { Destination } from '../../../data/destinations/style';
-import type { ExperienceId } from '../../../data/experiences';
 import type { Experience } from '../../../data/experiences/styles';
-import type { ButtonProps, ImageComponentData } from '../../common/types';
+import type { AvailableType } from '../../../lib/db/constants';
+import type { ImageComponentData } from '../../common/types';
 import type { CardData } from '../home/types';
 
-export type PrincipleDetail = {
-  id: string;
-  titleKey: string;
-  textKey: string;
-  imageData: ImageComponentData;
-  imagePosition: 'left' | 'right';
-};
-
-export type TeamMember = {
-  id: string;
-  name: string;
-  roleKey: string;
-  bioKey: string;
-  imageUrl: string;
-};
+// ––– Specific –––
 
 export type PrincipleCardData = {
   id: string;
@@ -36,10 +23,6 @@ export type PrincipleCardData = {
   };
 };
 
-export type CtaButtonData = Omit<ButtonProps, 'children'> & {
-  textKey: string;
-};
-
 export type TestimonialData = {
   id: number;
   quoteKey: string;
@@ -49,8 +32,46 @@ export type TestimonialData = {
   avatarUrl: string;
 };
 
+export type PageHeaderContent = {
+  titleKey: string;
+  subtitleKey: string;
+  translationNS: I18NNamespace;
+  imageData: ImageComponentData;
+};
+
+export type PrincipleDetailData = {
+  id: string;
+  titleKey: string;
+  textKey: string;
+  imageData: ImageComponentData;
+  imagePosition: 'left' | 'right';
+};
+
+export type CtaContent = {
+  titleKey: string;
+  subtitleKey: string;
+  translationNS: I18NNamespace;
+  backgroundImageUrl: string;
+  button: Omit<ButtonContent, 'children'> & { textKey: string };
+  hubspotFormTitle: string;
+};
+
+// ----------------------------
+
+export type TeamMember = {
+  id: string;
+  name: string;
+  roleKey: string;
+  bioKey: string;
+  imageUrl: string;
+};
+
+export type CtaButtonData = Omit<ButtonContent, 'children'> & {
+  textKey: string;
+};
+
 export type PointData = {
-  textKey?: string;
+  textKey: string;
   titleKey?: string;
   subpoints?: string[];
 };
@@ -68,12 +89,12 @@ export interface ActiveDestinationCardProps {
 }
 
 export interface AlternatingFeatureProps {
-  featureData: PrincipleDetail;
+  featureData: PrincipleDetailData;
   translationNS: I18NNamespace;
 }
 
 export interface CertificationCardProps {
-  certificationData: Certification;
+  certificationData: CertificationContent;
   availabilityStatus: AvailableType;
   className?: string;
 }
@@ -88,15 +109,6 @@ export interface TestimonialCardProps {
   translationNS: I18NNamespace;
 }
 
-export type CtaSectionProps = {
-  titleKey: string;
-  subtitleKey: string;
-  translationNS: I18NNamespace;
-  backgroundImageUrl: string;
-  button: Omit<ButtonProps, 'children'> & { textKey: string };
-  hubspotFormTitle: string;
-};
-
 export interface DestinationPillProps {
   destination: Destination;
   translationNS: I18NNamespace;
@@ -108,14 +120,7 @@ export interface FeaturedCardProps {
   translationNS?: I18NNamespace;
 }
 
-export interface LegalContentProps {
+export type LegalContentContent = {
   sections: SectionData[];
   translationNS: I18NNamespace;
-}
-
-export interface PageHeaderProps {
-  titleKey: string;
-  subtitleKey: string;
-  translationNS: I18NNamespace;
-  imageData: ImageComponentData;
-}
+};

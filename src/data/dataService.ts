@@ -1,8 +1,10 @@
-import { allExperiences, type ExperienceId } from './experiences';
+import { allExperiences } from './experiences';
 import { allDestinations } from './destinations';
-import { allCertifications, type CertificationId } from './certifications';
+import { allCertifications } from './certifications';
 import { allSessions } from './sessions';
 import type { DestinationId } from '../constants/destinations';
+import type { CertificationId } from '../constants/certifications';
+import type { ExperienceId } from '../constants/experiences';
 
 export const getExperiences = () => allExperiences;
 export { getDestinationsWithSeoUrl as getDestinations } from './destinations/utils';

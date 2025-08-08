@@ -1,23 +1,17 @@
 // src/components/sections/contact/types.ts
 import type { I18NNamespace } from '../../../constants/i18n';
-import type { SocialType } from '../../../constants/ui';
+import type { Social } from '../../../content/constants';
 
-export type SocialsData = {
-  name: string;
-  link: string;
-  icon: SocialType;
-};
-
-export interface ContactSectionProps {
+export type ContactSectionContent = {
   titleKey: string;
   phone: string;
   email: string;
   emailSubjectKey: string;
   emailBodyKey: string;
-  socials: SocialsData[];
+  socials: readonly Social[];
   translationNS: I18NNamespace;
   hubspotFormTitleKey: string;
-}
+};
 
 export interface FaqSectionProps {
   translationNS: I18NNamespace;

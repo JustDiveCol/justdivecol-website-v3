@@ -2,34 +2,7 @@
 import type { I18NNamespace } from '../../../constants/i18n';
 import type { ImageComponentData } from '../../common/types';
 
-export type BenefitsData = {
-  id: string;
-  textKey: string;
-  icon: string;
-};
-
-export interface CertificationsSectionProps {
-  titleKey: string;
-  subtitleKey: string;
-  translationNS: I18NNamespace;
-}
-
-export interface CustomTripsSectionProps {
-  titleKey: string;
-  textKey: string;
-  translationNS: I18NNamespace;
-  imageData: ImageComponentData;
-  buttonTextKey: string;
-  benefits: BenefitsData[];
-}
-
-export interface DestinationsSectionProps {
-  titleKey: string;
-  otherTitleKey: string;
-  translationNS: I18NNamespace;
-}
-
-export interface UpcomingTripsSectionProps {
+export type UpcomingTripsSectionContent = {
   titleKey: string;
   subtitleKey: string;
   backgroundImageUrl: string;
@@ -37,4 +10,31 @@ export interface UpcomingTripsSectionProps {
   filtersAllDestinationsKey: string;
   filtersAllMonthsKey: string;
   filtersNoResultsKey: string;
-}
+};
+
+export type CertificationsSectionContent = {
+  titleKey: string;
+  subtitleKey: string;
+  translationNS: I18NNamespace;
+};
+
+export type BenefitsData = {
+  id: string;
+  textKey: string;
+  icon: string;
+};
+
+export type DestinationsSectionContent = {
+  titleKey: string;
+  otherTitleKey: string;
+  translationNS: I18NNamespace;
+};
+
+export type CustomTripsSectionContent = {
+  titleKey: string;
+  textKey: string;
+  translationNS: I18NNamespace;
+  imageData: ImageComponentData;
+  buttonTextKey: string;
+  benefits: BenefitsData[];
+};

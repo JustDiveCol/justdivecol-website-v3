@@ -1,0 +1,98 @@
+// src/content/destinations/santa-marta.content.ts
+import { ROUTES } from '../../constants/routes';
+import { CertificationContentSchema } from '../schemas';
+import type { DestinationContent } from './types';
+
+const rawSantaMarta: DestinationContent = {
+  seo: {
+    titleKey: 'destinations.sm.seo.title',
+    descriptionKey: 'destinations.sm.seo.desc',
+    keywordsKey: 'destinations.sm.seo.keywords',
+    imageUrl: '/images/social/sm-social-card.webp',
+    urlPath: ROUTES.destinations,
+    translationNS: 'destinations',
+  },
+
+  header: {
+    titleKey: 'destinations.sm.header.title',
+    subtitleKey: 'destinations.sm.header.subtitle',
+    imageData: {
+      backgroundImage: '/images/destinations/sm-header.webp',
+      photoCredit: 'Camilo Beltran @JustDiveCol',
+      variant: 'header',
+    },
+    translationNS: 'destinations',
+  },
+
+  card: {
+    imageData: {
+      backgroundImage: '/images/destinations/santa-marta/sm-card.webp',
+      photoCredit: 'Camilo Beltran @JustDiveCol',
+      variant: 'horizontal',
+    },
+  },
+
+  description: {
+    titleKey: 'destinations.sm.description.title',
+    paragraphs: [
+      'destinations.sm.description.p1',
+      'destinations.sm.description.p2',
+    ],
+  },
+
+  details: {
+    titleKey: 'destinations.sm.details.title',
+    items: [
+      {
+        labelKey: 'destinations.sm.details.label1',
+        valueKey: 'destinations.sm.details.value1',
+      },
+      {
+        labelKey: 'destinations.sm.details.label2',
+        valueKey: 'destinations.sm.details.value2',
+      },
+    ],
+  },
+
+  uniqueFinds: {
+    titleKey: 'destinations.sm.uniqueFinds.title',
+    items: [
+      'destinations.sm.uniqueFinds.find1',
+      'destinations.sm.uniqueFinds.find2',
+      'destinations.sm.uniqueFinds.find3',
+    ],
+  },
+
+  gallery: {
+    titleKey: 'destinations.galleryTitle',
+    images: [
+      {
+        backgroundImage: '/images/destinations/santa-marta/gallery-01.webp',
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+    ],
+  },
+
+  cta: {
+    translationNS: 'home',
+    titleKey: 'cta.homeCtaTitle',
+    subtitleKey: 'cta.homeCtaSubtitle',
+    backgroundImageUrl: '/images/home/cta-background.webp',
+
+    button: {
+      textKey: 'cta.contactButton',
+      action: {
+        type: 'whatsapp',
+        whatsAppMessageKey: 'common:generalWhatsappMessage',
+      },
+      variant: 'primary',
+      size: 'default',
+    },
+
+    hubspotFormTitle: 'cta.formTitle',
+  },
+};
+
+export const padiOpenWaterContent =
+  CertificationContentSchema.parse(rawSantaMarta);

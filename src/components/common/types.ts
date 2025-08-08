@@ -11,12 +11,6 @@ import type {
 } from '../../constants/ui';
 import type { AnchorHTMLAttributes } from 'react';
 
-export type Action = {
-  type: ActionType;
-  path?: UrlPath;
-  whatsAppMessageKey?: string;
-};
-
 export type ImageComponentData = {
   backgroundImage: string;
   complementaryLogo?: { url: AssetURL; altKey: AssetAltKey };
@@ -24,15 +18,6 @@ export type ImageComponentData = {
   textOverlayKey?: string;
   variant: ImageVariant;
 };
-
-export interface SEOProps {
-  titleKey: string;
-  descriptionKey: string;
-  keywordsKey: string;
-  imageUrl: string;
-  urlPath: UrlPath;
-  translationNS: I18NNamespace;
-}
 
 export interface PaginationControlsProps {
   currentPage: number;
@@ -45,14 +30,6 @@ export interface ImageComponentProps {
   imageData: ImageComponentData;
   translationNS?: I18NNamespace;
 }
-
-export type ButtonProps = {
-  action: Action;
-  children: React.ReactNode;
-  className?: string;
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-} & (Omit<LinkProps, 'to'> | AnchorHTMLAttributes<HTMLAnchorElement>);
 
 export interface AccordionItemProps {
   question: string;

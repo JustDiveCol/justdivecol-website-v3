@@ -12,6 +12,7 @@ import { PrivacyPage } from './pages/PrivacyPage';
 import { FaqPage } from './pages/FaqPage';
 import { ExperiencesPage } from './pages/ExperiencesPage';
 import { DiveSitesPage } from './pages/DiveSitesPage';
+import { CertificationPage } from './pages/CertificationPage';
 
 function App() {
   return (
@@ -57,6 +58,11 @@ function App() {
         <Route
           path='/dive-sites'
           element={<DiveSitesPage />}
+        />
+
+        <Route
+          path='/certifications/:slug'
+          element={<CertificationPage />}
         />
       </Routes>
     </MainLayout>

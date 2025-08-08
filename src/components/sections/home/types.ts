@@ -1,9 +1,11 @@
 // src/pages/Home/types.ts
-import type { PrincipleCardData, TestimonialData } from '../shared/types';
+
 import type { I18NNamespace } from '../../../constants/i18n';
 import type { UrlPath } from '../../../constants/routes';
-import type { ButtonProps } from '../../common/types';
+import type { ButtonContent } from '../../../content/types';
+import type { PrincipleCardData, TestimonialData } from '../shared/types';
 
+// ––– Specific –––
 export type ImageData = {
   backgroundImage: string;
   complementaryLogo?: {
@@ -21,43 +23,43 @@ export type CardData = {
   imageData: ImageData;
 };
 
-export type Ally = {
+export type AllyData = {
   id: string;
   name: string;
   logoUrl: string;
   link?: string;
 };
 
-// Sections
-export interface HeroSectionProps {
+// ––– General –––
+export type HeroContent = {
   titleKey: string;
   subtitleKey: string;
   translationNS: I18NNamespace;
-  button: Omit<ButtonProps, 'children'> & { textKey: string };
+  button: Omit<ButtonContent, 'children'> & { textKey: string };
   imageData: ImageData;
-}
+};
 
-export interface FeaturedSectionProps {
+export type FeaturedContent = {
   titleKey: string;
   translationNS: I18NNamespace;
   cards: CardData[];
-}
+};
 
-export interface PrinciplesSectionProps {
+export type PrinciplesContent = {
   titleKey: string;
   subtitleKey: string;
   translationNS: I18NNamespace;
   cards: PrincipleCardData[];
-}
+};
 
-export interface TestimonialsSectionProps {
+export type TestimonialsContent = {
   titleKey: string;
   translationNS: I18NNamespace;
   items: TestimonialData[];
-}
+};
 
-export interface AlliesSectionProps {
+export type AlliesContent = {
   titleKey: string;
   translationNS: I18NNamespace;
-  logos: Ally[];
-}
+  logos: AllyData[];
+};
