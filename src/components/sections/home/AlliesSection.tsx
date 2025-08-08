@@ -1,3 +1,4 @@
+// src/components/sections/home/AlliesSection.tsx
 import { useTranslation } from 'react-i18next';
 import type { AlliesSectionProps } from './types';
 

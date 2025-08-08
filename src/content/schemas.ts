@@ -1,7 +1,9 @@
+// src/content/schemas.ts
 import { z } from 'zod';
 import { BUTTON_SIZES, BUTTON_VARIANTS, SOCIAL } from './constants';
 import { I18N_NAMESPACES } from '../constants/i18n';
 import { UrlPathSchema } from './urlPathSchema';
+import { FOOTER_LINKS } from '../constants/navigation';
 
 export const ImageDataSchema = z.object({
   backgroundImage: z.string(),
@@ -387,4 +389,19 @@ export const DiveExperiencesPageContentSchema = z.object({
   certifications: CertificationsSectionContentSchema,
   destinations: DestinationsSectionContentSchema,
   customTrips: CustomTripsSectionContentSchema,
+});
+
+export const FooterSchema = z.object({
+  path: z.enum(FOOTER_LINKS.map((s) => s.path) as [string, ...string[]]),
+  nameKey: z.enum(FOOTER_LINKS.map((s) => s.nameKey) as [string, ...string[]]),
+});
+
+export const FooterContentSchema = z.object({
+  sloganKey: z.string(),
+  closingMessageKey: z.string(),
+  copyrightKey: z.string(),
+  creditsKey: z.string(),
+  importantLinksTitle: z.string(),
+  navLinks: z.array(FooterSchema).min(1).readonly(),
+  policiesLinkText: z.string(),
 });

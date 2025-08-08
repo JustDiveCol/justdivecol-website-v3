@@ -1,3 +1,4 @@
+// src/content/experiences/exp-santa-marta.content.ts
 import { ROUTES } from '../../constants/routes';
 import { ExperienceContentSchema } from '../schemas';
 import type { ExperienceContent } from './types';

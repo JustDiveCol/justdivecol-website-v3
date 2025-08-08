@@ -1,5 +1,6 @@
 // santa-marta.content.ts
-import type { DiveSiteContent } from '../types';
+
+import type { DiveSiteContent } from './types';
 
 export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
   'sm-aguja': {

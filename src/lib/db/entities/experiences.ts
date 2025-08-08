@@ -1,3 +1,4 @@
+// src/lib/db/entities/experiences.ts
 import { ExperienceSchema, type Experience } from '../schema';
 
 const rawExperiences: Experience[] = [

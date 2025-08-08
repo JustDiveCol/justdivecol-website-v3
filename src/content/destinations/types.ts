@@ -1,3 +1,4 @@
+// src/content/destinations/types.ts
 import type { ImageComponentData } from '../../components/common/types';
 import type { PageContent } from '../types';
 

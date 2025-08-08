@@ -1,10 +1,6 @@
 // src/lib/db/entities/destinations.ts
 import { DestinationSchema, type Destination } from '../schema';
 
-/**
- * Lista de destinos (solo datos relacionales)
- * Todo lo visual/SEO se moverá después a i18n o a ficheros .content.ts
- */
 const rawDestinations: Destination[] = [
   {
     id: 'santa-marta',
@@ -25,6 +21,6 @@ const rawDestinations: Destination[] = [
   // añade otros destinos…
 ];
 
-export const destinations = rawDestinations.map(
-  (d) => DestinationSchema.parse(d) // valida al compilar
+export const destinations = rawDestinations.map((d) =>
+  DestinationSchema.parse(d)
 );

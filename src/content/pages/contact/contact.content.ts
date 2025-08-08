@@ -1,3 +1,4 @@
+// src/content/pages/contact/contact.content.ts
 import { ROUTES } from '../../../constants/routes';
 import { SOCIAL } from '../../constants';
 import { ContactPageContentSchema } from '../../schemas';

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { footerData } from '../../data/footerData';
+import { footerData } from '../../constants/footerData';
 import { contactData } from '../../data/contactData';
 
 import logo from '../../assets/images/logo.png';

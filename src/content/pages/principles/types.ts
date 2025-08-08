@@ -1,11 +1,13 @@
+// src/content/pages/principles/types.ts
 import type {
   PageHeaderContent,
-  PrincipleDetailData,
+  PrincipleDetailContent,
 } from '../../../components/sections/shared/types';
 import type { SEOContent } from '../../types';
 
+// OK
 export type PrinciplesPageContent = {
   seo: SEOContent;
   header: PageHeaderContent;
-  principles: PrincipleDetailData[];
+  principles: PrincipleDetailContent[];
 };

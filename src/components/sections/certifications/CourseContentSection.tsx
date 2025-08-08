@@ -1,3 +1,4 @@
+// src/components/sections/certifications/CourseContentSection.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import type { Certification } from '../../../data/certifications/types';

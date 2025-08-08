@@ -12,6 +12,7 @@ import type {
 import type { ImageComponentData } from '../components/common/types';
 
 // ––– Specific –––
+// OK
 export type ButtonContent = {
   action: ActionContent;
   children: React.ReactNode;
@@ -20,23 +21,15 @@ export type ButtonContent = {
   size: ButtonSize;
 } & (Omit<LinkProps, 'to'> | AnchorHTMLAttributes<HTMLAnchorElement>);
 
+// OK
 export type ActionContent = {
   type: ActionType;
   path?: UrlPath;
   whatsAppMessageKey?: string;
 };
 
-export type DiveSiteContent = {
-  nameKey: string;
-  descriptionKey: string;
-  markerIcon: string;
-  gallery?: {
-    titleKey: string;
-    images: ImageComponentData[];
-  };
-};
-
 // ––– General –––
+// OK
 export type SEOContent = {
   titleKey: string;
   descriptionKey: string;
@@ -46,7 +39,8 @@ export type SEOContent = {
   translationNS: I18NNamespace;
 };
 
-export interface PageContent {
+// OK
+export type PageContent = {
   seo: SEOContent;
   header: PageHeaderContent;
   description: {
@@ -59,4 +53,4 @@ export interface PageContent {
   };
   ctaButton?: Omit<ButtonContent, 'children'> & { textKey: string };
   cta?: CtaContent;
-}
+};

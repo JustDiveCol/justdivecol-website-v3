@@ -1,24 +1,28 @@
 // src/components/sections/about/types.ts
 import type { I18NNamespace } from '../../../constants/i18n';
 import type { ImageComponentData } from '../../common/types';
-import type { TeamMember } from '../shared/types';
+import type { TeamMemberData } from '../shared/types';
 
 // ––– XX –––
-export interface MissionSectionContent {
+
+// OK
+export type MissionSectionContent = {
   titleKey: string;
   textKey: string;
   translationNS: I18NNamespace;
   imageData: ImageComponentData;
-}
+};
 
-export interface TeamSectionContent {
+// OK
+export type TeamSectionContent = {
   titleKey: string;
-  members: TeamMember[];
+  members: TeamMemberData[];
   translationNS: I18NNamespace;
-}
+};
 
-export interface TeamCardProps {
-  memberData: TeamMember;
+// OK
+export type TeamCardProps = {
+  memberData: TeamMemberData;
   className?: string;
   translationNS: I18NNamespace;
-}
+};

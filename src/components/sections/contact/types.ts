@@ -2,6 +2,7 @@
 import type { I18NNamespace } from '../../../constants/i18n';
 import type { Social } from '../../../content/constants';
 
+// OK
 export type ContactSectionContent = {
   titleKey: string;
   phone: string;
@@ -12,7 +13,3 @@ export type ContactSectionContent = {
   translationNS: I18NNamespace;
   hubspotFormTitleKey: string;
 };
-
-export interface FaqSectionProps {
-  translationNS: I18NNamespace;
-}

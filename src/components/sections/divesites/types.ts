@@ -7,8 +7,6 @@ import type {
   DiveTypeId,
 } from '../../../constants/dive-sites';
 import type { I18NNamespace } from '../../../constants/i18n';
-import type { DiveSiteId } from '../../../data/dive-sites';
-import type { DiveSite } from '../../../data/dive-sites/style';
 
 export type Option = { id: string; nameKey: string };
 
@@ -22,14 +20,14 @@ export type FiltersData = {
   tags: DiveTagId[];
 };
 
-export interface DiveSiteCardProps {
+export type DiveSiteCardProps ={
   site: DiveSite;
   onSelect: (siteId: DiveSiteId) => void;
   onHover: (siteId: DiveSiteId | null) => void;
   translationNS: I18NNamespace;
 }
 
-export interface DiveSiteFiltersProps {
+export type DiveSiteFiltersProps ={
   filters: FiltersData;
   onFiltersChange: (newFilters: FiltersData) => void;
   availableDifficulties: Option[];
@@ -39,14 +37,14 @@ export interface DiveSiteFiltersProps {
   translationNS: I18NNamespace;
 }
 
-export interface DiveSiteListProps {
+export type DiveSiteListProps ={
   sites: DiveSite[];
   onSelect: (siteId: string) => void;
   onHover: (siteId: string | null) => void;
   translationNS: I18NNamespace;
 }
 
-export interface DiveSiteMapProps {
+export type DiveSiteMapProps {
   sites: DiveSite[];
   hoveredSiteId: DiveSiteId | null;
   focusedSite: DiveSite | null;
@@ -55,13 +53,13 @@ export interface DiveSiteMapProps {
   translationNS: I18NNamespace;
 }
 
-export interface DiveSiteModalProps {
+export type DiveSiteModalProps ={
   site: DiveSite;
   onClose: () => void;
   translationNS: I18NNamespace;
 }
 
-export interface MotionMarkerProps {
+export type MotionMarkerProps ={
   IconComponent: React.ElementType;
   isSelected: boolean;
 }

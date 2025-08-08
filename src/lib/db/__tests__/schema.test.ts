@@ -1,3 +1,4 @@
+// src/lib/db/__tests__/schema.test.ts
 import {
   CertificationSchema,
   DestinationSchema,

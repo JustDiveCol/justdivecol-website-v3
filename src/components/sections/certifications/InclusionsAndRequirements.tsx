@@ -1,3 +1,4 @@
+// src/components/sections/certifications/InclusionsAndRequirements.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { CheckIcon, RequirementsIcon } from '../../ui/Icons'; // Asumimos que tienes estos iconos

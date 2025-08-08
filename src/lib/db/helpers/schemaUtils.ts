@@ -1,4 +1,4 @@
-/* helpers/schemaUtils.ts */
+// src/lib/db/helpers/schemaUtils.ts
 import { z } from 'zod';
 
 export const zStr = <T extends string>() =>

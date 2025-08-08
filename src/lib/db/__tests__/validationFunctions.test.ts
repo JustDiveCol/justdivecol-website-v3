@@ -1,10 +1,10 @@
+// src/lib/db/__tests__/validationFunctions.test.ts
 import type { CertificationId } from '../constants';
 import { validatePrerequisites } from '../repository';
 import { certifications } from '../entities/certifications';
 
 describe('validatePrerequisites', () => {
   it('lanza error cuando hay prereq inexistente', () => {
-    // ⬇️  indicamos a TS que “no lo compruebe”
     const bad = {
       ...certifications[0],
       prerequisiteIds: ['foo-bar'] as unknown as CertificationId[],

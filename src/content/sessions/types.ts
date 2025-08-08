@@ -1,7 +1,9 @@
+// src/content/sessions/types.ts
 import type { PageHeaderContent } from '../../components/sections/shared/types';
 import type { SEOContent } from '../types';
 
-export interface ExperienceSessionContent {
+// OK
+export type ExperienceSessionContent = {
   seo: SEOContent;
   header: PageHeaderContent;
   paymentPlan: {
@@ -9,4 +11,4 @@ export interface ExperienceSessionContent {
     modules: { id: string; nameKey: string; descriptionKey: string }[];
     notes: string[];
   };
-}
+};

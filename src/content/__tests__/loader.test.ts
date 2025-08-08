@@ -1,3 +1,4 @@
+// src/content/__tests__/loader.test.ts
 import { loadContent } from '../loader';
 
 test('loader devuelve contenido de Santa Marta', async () => {

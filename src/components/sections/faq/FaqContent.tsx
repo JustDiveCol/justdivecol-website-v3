@@ -1,3 +1,4 @@
+// src/components/sections/faq/FaqContent.tsx
 import { useTranslation } from 'react-i18next';
 import { faqData } from '../../../data/faqData';
 import { AccordionItem } from '../../common/AccordionItem';

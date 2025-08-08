@@ -1,3 +1,4 @@
+// src/lib/db/__tests__/relations.test.ts
 import { certifications } from '../entities/certifications';
 import { destinations } from '../entities/destinations';
 import { diveSites } from '../entities/divesites';

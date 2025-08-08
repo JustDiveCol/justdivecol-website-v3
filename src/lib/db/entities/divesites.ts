@@ -21,6 +21,4 @@ const rawDiveSites: DiveSite[] = [
   // Agregarás más sitios aquí…
 ];
 
-export const diveSites = rawDiveSites.map(
-  (s) => DiveSiteSchema.parse(s) // valida al compilar
-);
+export const diveSites = rawDiveSites.map((s) => DiveSiteSchema.parse(s));

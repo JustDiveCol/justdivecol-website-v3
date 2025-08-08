@@ -1,3 +1,4 @@
+// src/content/pages/legal/privacy/privacy.content.ts
 import { ROUTES } from '../../../../constants/routes';
 import { LegalPageContentSchema } from '../../../schemas';
 import type { LegalPageData } from '../types';

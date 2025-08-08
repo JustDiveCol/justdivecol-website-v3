@@ -1,15 +1,17 @@
+// src/content/pages/dive-experiences/types.ts
 import type {
-  CertificationsSectionContent,
+  CertificationsSectionData,
   CustomTripsSectionContent,
-  DestinationsSectionContent,
-  UpcomingTripsSectionContent,
+  DestinationsSectionData,
+  UpcomingTripsSectionData,
 } from '../../../components/sections/experiences/types';
 import type { SEOContent } from '../../types';
 
+// OK
 export interface DiveExperiencesPageContent {
   seo: SEOContent;
-  upcomingTrips: UpcomingTripsSectionContent;
-  certifications: CertificationsSectionContent;
-  destinations: DestinationsSectionContent;
+  upcomingTrips: UpcomingTripsSectionData;
+  certifications: CertificationsSectionData;
+  destinations: DestinationsSectionData;
   customTrips: CustomTripsSectionContent;
 }

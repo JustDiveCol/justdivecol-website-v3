@@ -1,3 +1,4 @@
+// src/content/experiences/types.ts
 import type { PageContent } from '../types';
 
 export interface ExperienceContent extends PageContent {

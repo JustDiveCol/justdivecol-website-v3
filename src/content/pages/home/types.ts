@@ -7,8 +7,10 @@ import type {
   PrinciplesContent,
   TestimonialsContent,
 } from '../../../components/sections/home/types';
-import type { CtaContent, SEOContent } from '../../types';
+import type { CtaContent } from '../../../components/sections/shared/types';
+import type { SEOContent } from '../../types';
 
+// OK
 export type HomePageContent = {
   seo: SEOContent;
   hero: HeroContent;

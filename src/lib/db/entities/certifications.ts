@@ -1,6 +1,6 @@
+// src/lib/db/entities/certifications.ts
 import { CertificationSchema, type Certification } from '../schema';
 
-/** Lista de certificaciones — datos “puros”, sin textos largos ni imágenes */
 const rawCertifications: Certification[] = [
   {
     id: 'padi-open-water-diver',
@@ -62,7 +62,6 @@ const rawCertifications: Certification[] = [
   // añade las demás…
 ];
 
-/** Validamos al cargar el módulo; si algo falla, Vite/TS lanza error */
 export const certifications: Certification[] = rawCertifications.map((c) =>
   CertificationSchema.parse(c)
 );

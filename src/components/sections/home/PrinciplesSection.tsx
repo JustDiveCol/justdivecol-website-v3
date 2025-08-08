@@ -1,3 +1,4 @@
+// src/components/sections/home/PrinciplesSection.tsx
 import { useTranslation } from 'react-i18next';
 import type { PrinciplesSectionProps } from './types';
 import { PrincipleCard } from '../shared/PrincipleCard';

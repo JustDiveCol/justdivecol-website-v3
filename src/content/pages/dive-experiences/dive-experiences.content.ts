@@ -1,3 +1,4 @@
+// src/content/pages/dive-experiences/dive-experiences.content.ts
 import { ROUTES } from '../../../constants/routes';
 import { DiveExperiencesPageContentSchema } from '../../schemas';
 import type { DiveExperiencesPageContent } from './types';

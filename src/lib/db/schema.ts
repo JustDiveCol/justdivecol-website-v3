@@ -1,3 +1,4 @@
+// src/lib/db/schema.ts
 import { z } from 'zod';
 import { zStr } from './helpers/schemaUtils';
 

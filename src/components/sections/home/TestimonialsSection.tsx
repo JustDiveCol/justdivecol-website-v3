@@ -1,3 +1,4 @@
+// src/components/sections/home/TestimonialsSection.tsx
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import useEmblaCarousel from 'embla-carousel-react';

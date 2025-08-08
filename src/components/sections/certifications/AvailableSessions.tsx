@@ -1,3 +1,4 @@
+// src/components/sections/certifications/AvailableSessions.tsx
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { CalendarIcon } from '../../ui/Icons'; // Asumimos que tienes este icono

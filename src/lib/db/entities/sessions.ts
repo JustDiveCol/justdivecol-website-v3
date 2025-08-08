@@ -1,3 +1,4 @@
+// src/lib/db/entities/sessions.ts
 import { SessionSchema, type Session } from '../schema';
 
 const rawSessions: Session[] = [

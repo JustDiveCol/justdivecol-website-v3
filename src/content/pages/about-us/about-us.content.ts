@@ -1,3 +1,4 @@
+// src/content/pages/about-us/about-us.content.ts
 import { ROUTES } from '../../../constants/routes';
 import { AboutUsPageContentSchema } from '../../schemas';
 import type { AboutUsPageContent } from './types';

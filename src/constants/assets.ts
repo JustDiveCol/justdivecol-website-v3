@@ -1,5 +1,4 @@
 // src/constants/assets.ts
-
 export const BRAND_ASSETS = {
   mainLogo: {
     url: '/images/logos/logo.png',

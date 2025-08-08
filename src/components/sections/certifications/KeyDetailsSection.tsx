@@ -1,3 +1,4 @@
+// src/components/sections/certifications/KeyDetailsSection.tsx
 import { useTranslation } from 'react-i18next';
 import { ClockIcon, BarChartIcon, UserIcon } from '../../ui/Icons';
 import { Button } from '../../common/Button';

@@ -1,16 +1,12 @@
 // src/components/sections/shared/types.ts
 import type { ExperienceId } from '../../../constants/experiences';
 import type { I18NNamespace } from '../../../constants/i18n';
-import type { CertificationContent } from '../../../content/certifications/types';
 import type { ButtonContent } from '../../../content/types';
-import type { Destination } from '../../../data/destinations/style';
-import type { Experience } from '../../../data/experiences/styles';
-import type { AvailableType } from '../../../lib/db/constants';
 import type { ImageComponentData } from '../../common/types';
-import type { CardData } from '../home/types';
 
 // ––– Specific –––
 
+// OK
 export type PrincipleCardData = {
   id: string;
   imageUrl: string;
@@ -23,6 +19,7 @@ export type PrincipleCardData = {
   };
 };
 
+// OK
 export type TestimonialData = {
   id: number;
   quoteKey: string;
@@ -32,6 +29,7 @@ export type TestimonialData = {
   avatarUrl: string;
 };
 
+// OK
 export type PageHeaderContent = {
   titleKey: string;
   subtitleKey: string;
@@ -39,7 +37,8 @@ export type PageHeaderContent = {
   imageData: ImageComponentData;
 };
 
-export type PrincipleDetailData = {
+// OK
+export type PrincipleDetailContent = {
   id: string;
   titleKey: string;
   textKey: string;
@@ -47,6 +46,7 @@ export type PrincipleDetailData = {
   imagePosition: 'left' | 'right';
 };
 
+// OK
 export type CtaContent = {
   titleKey: string;
   subtitleKey: string;
@@ -56,9 +56,8 @@ export type CtaContent = {
   hubspotFormTitle: string;
 };
 
-// ----------------------------
-
-export type TeamMember = {
+// OK
+export type TeamMemberData = {
   id: string;
   name: string;
   roleKey: string;
@@ -66,60 +65,21 @@ export type TeamMember = {
   imageUrl: string;
 };
 
-export type CtaButtonData = Omit<ButtonContent, 'children'> & {
-  textKey: string;
-};
-
+// OK
 export type PointData = {
   textKey: string;
   titleKey?: string;
   subpoints?: string[];
 };
 
+// OK
 export type SectionData = {
   id: string;
   titleKey: string;
   points: PointData[];
 };
 
-export interface ActiveDestinationCardProps {
-  destination: Destination;
-  activeExperiences: Experience[];
-  className?: string;
-}
-
-export interface AlternatingFeatureProps {
-  featureData: PrincipleDetailData;
-  translationNS: I18NNamespace;
-}
-
-export interface CertificationCardProps {
-  certificationData: CertificationContent;
-  availabilityStatus: AvailableType;
-  className?: string;
-}
-
-export interface PrincipleCardProps {
-  cardData: PrincipleCardData;
-  translationNS?: I18NNamespace;
-}
-
-export interface TestimonialCardProps {
-  cardData: TestimonialData;
-  translationNS: I18NNamespace;
-}
-
-export interface DestinationPillProps {
-  destination: Destination;
-  translationNS: I18NNamespace;
-}
-
-export interface FeaturedCardProps {
-  cardData: CardData;
-  className?: string;
-  translationNS?: I18NNamespace;
-}
-
+// OK
 export type LegalContentContent = {
   sections: SectionData[];
   translationNS: I18NNamespace;

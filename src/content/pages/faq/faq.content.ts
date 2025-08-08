@@ -1,3 +1,4 @@
+// src/content/pages/faq/faq.content.ts
 import { ROUTES } from '../../../constants/routes';
 import { FaqPageContentSchema } from '../../schemas';
 import type { FaqPageContent } from './types';

@@ -1,3 +1,4 @@
+// src/content/constants.ts
 export const ACTION_TYPES = ['internal', 'external', 'whatsapp'] as const;
 export type ActionType = (typeof ACTION_TYPES)[number];
 

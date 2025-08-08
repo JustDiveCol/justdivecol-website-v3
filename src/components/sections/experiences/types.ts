@@ -2,7 +2,8 @@
 import type { I18NNamespace } from '../../../constants/i18n';
 import type { ImageComponentData } from '../../common/types';
 
-export type UpcomingTripsSectionContent = {
+// OK
+export type UpcomingTripsSectionData = {
   titleKey: string;
   subtitleKey: string;
   backgroundImageUrl: string;
@@ -12,24 +13,28 @@ export type UpcomingTripsSectionContent = {
   filtersNoResultsKey: string;
 };
 
-export type CertificationsSectionContent = {
+// OK
+export type CertificationsSectionData = {
   titleKey: string;
   subtitleKey: string;
   translationNS: I18NNamespace;
 };
 
+// OK
 export type BenefitsData = {
   id: string;
   textKey: string;
   icon: string;
 };
 
-export type DestinationsSectionContent = {
+// OK
+export type DestinationsSectionData = {
   titleKey: string;
   otherTitleKey: string;
   translationNS: I18NNamespace;
 };
 
+// OK
 export type CustomTripsSectionContent = {
   titleKey: string;
   textKey: string;

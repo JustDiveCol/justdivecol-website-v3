@@ -1,3 +1,4 @@
+// src/content/pages/principles/principles.content.ts
 import { BRAND_ASSETS } from '../../../constants/assets';
 import { ROUTES } from '../../../constants/routes';
 import { PrinciplesPageContentSchema } from '../../schemas';

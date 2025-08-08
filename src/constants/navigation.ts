@@ -3,10 +3,10 @@
 import { ROUTES } from './routes';
 import type { UrlPath, RouteName } from './routes';
 
-export interface NavLink {
+export type NavLink = {
   path: UrlPath;
   nameKey: RouteName;
-}
+};
 
 export const NAV_LINKS: ReadonlyArray<NavLink> = [
   { path: ROUTES.home, nameKey: 'home' },
@@ -27,4 +27,6 @@ export const FOOTER_LINKS: ReadonlyArray<NavLink> = [
 
 export type NavLinkItem = (typeof NAV_LINKS)[number];
 
-export type FooterLinkItem = (typeof FOOTER_LINKS)[number];
+export type FooterLink = (typeof FOOTER_LINKS)[number];
+export type FooterLinkPath = FooterLink['path'];
+export type FooterLinkNameKey = FooterLink['nameKey'];

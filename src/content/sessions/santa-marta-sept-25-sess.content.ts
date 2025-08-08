@@ -1,3 +1,4 @@
+// src/content/sessions/santa-marta-sept-25-sess.content.ts
 import { ROUTES } from '../../constants/routes';
 import { ExperienceSessionContentSchema } from '../schemas';
 import type { ExperienceSessionContent } from './types';
