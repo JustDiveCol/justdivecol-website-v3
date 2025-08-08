@@ -5,7 +5,7 @@ import { ROUTES } from '../../constants/routes';
 import { CertificationContentSchema } from '../schemas';
 import type { CertificationContent } from './types';
 
-const rawOpenWaterDiver: CertificationContent = {
+const rawRescueDiver: CertificationContent = {
   seo: {
     titleKey: 'certifications.rd.seo.title',
     descriptionKey: 'certifications.rd.seo.desc',
@@ -141,5 +141,5 @@ const rawOpenWaterDiver: CertificationContent = {
   },
 };
 
-export const padiOpenWaterContent =
-  CertificationContentSchema.parse(rawOpenWaterDiver);
+export const padiRescueDiverContent =
+  CertificationContentSchema.parse(rawRescueDiver);

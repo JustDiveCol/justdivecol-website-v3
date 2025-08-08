@@ -1,12 +1,12 @@
 // src/content/pages/home/home.content.ts
 import type { HomePageContent } from './types';
-import { HomePageContentSchema } from '../../schemas';
 import { ROUTES, type UrlPath } from '../../../constants/routes';
 import type {
   CardData,
   ImageData,
 } from '../../../components/sections/home/types';
 import { BRAND_ASSETS } from '../../../constants/assets';
+import { HomePageContentSchema } from '../../schemas';
 
 type RawCardData = {
   readonly id: string;

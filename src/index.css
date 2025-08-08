@@ -9,6 +9,15 @@
    2. ESTILOS BASE Y SOBREESCRITURAS
    ========================================================================== */
 @layer base {
+  /* safe areas globales */
+  :root {
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    /* Permite overrides por sección */
+    --section-pt: theme(spacing.section-sm);
+    --section-pb: theme(spacing.section-sm);
+  }
+
   body {
     /* Aplicamos la fuente sans-serif por defecto a todo el cuerpo */
     @apply font-sans bg-brand-primary-dark text-brand-neutral;
@@ -87,6 +96,35 @@
   .form-button {
     @apply text-sm font-semibold rounded-md px-4 py-2 transition-colors duration-200;
   }
+
+  /* Wrapper de sección consistente (mobile-first) */
+  .section {
+    @apply container max-w-content px-4 md:px-5;
+    padding-top: var(--section-pt);
+    padding-bottom: var(--section-pb);
+  }
+
+  /* utilidades para safe areas (útil con Nav fijo) */
+  .safe-pt {
+    padding-top: calc(1rem + var(--safe-top));
+  }
+  .safe-pb {
+    padding-bottom: calc(1rem + var(--safe-bottom));
+  }
+
+  /* escalado de ritmo vertical por breakpoints */
+  @screen md {
+    .section {
+      --section-pt: theme(spacing.section-md);
+      --section-pb: theme(spacing.section-md);
+    }
+  }
+  @screen lg {
+    .section {
+      --section-pt: theme(spacing.section-lg);
+      --section-pb: theme(spacing.section-lg);
+    }
+  }
 }
 
 /* ==========================================================================
@@ -94,14 +132,14 @@
    ========================================================================== */
 @layer utilities {
   .min-h-hero {
+    /* usar dvh para evitar bugs en iOS con barras dinámicas */
     min-height: calc(
-      100vh - 5rem
-    ); /* '5rem' es un ejemplo de la altura de un navbar */
+      100dvh - 5rem
+    ); /* ajustaremos '5rem' cuando definamos la altura real del Navbar */
   }
 }
 
 /* --- Estilos para Maplibre GL --- */
-/* Estos estilos son específicos y no necesitan estar en una capa. */
 .maplibregl-popup {
   max-width: 600px !important;
   z-index: 50;

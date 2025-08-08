@@ -1,23 +1,24 @@
 // src/App.tsx
-import { Routes, Route } from 'react-router-dom';
-import { RouteScrollManager } from './components/common/RouteScrollManager';
+// import { Routes, Route } from 'react-router-dom';
+// import { RouteScrollManager } from './components/common/RouteScrollManager';
 import { MainLayout } from './components/layout/MainLayout';
-import { HomePage } from './pages/HomePage';
-import { AboutUsPage } from './pages/AboutUsPage';
-import { PrinciplesPage } from './pages/PrinciplesPage';
-import { ContactPage } from './pages/ContactPage';
-import { PolicyPage } from './pages/PolicyPage';
-import { TermsPage } from './pages/TermsPage';
-import { PrivacyPage } from './pages/PrivacyPage';
-import { FaqPage } from './pages/FaqPage';
-import { ExperiencesPage } from './pages/ExperiencesPage';
-import { DiveSitesPage } from './pages/DiveSitesPage';
-import { CertificationPage } from './pages/CertificationPage';
+// import { HomePage } from './pages/HomePage';
+// import { AboutUsPage } from './pages/AboutUsPage';
+// import { PrinciplesPage } from './pages/PrinciplesPage';
+// import { ContactPage } from './pages/ContactPage';
+// import { PolicyPage } from './pages/PolicyPage';
+// import { TermsPage } from './pages/TermsPage';
+// import { PrivacyPage } from './pages/PrivacyPage';
+// import { FaqPage } from './pages/FaqPage';
+// import { ExperiencesPage } from './pages/ExperiencesPage';
+// import { DiveSitesPage } from './pages/DiveSitesPage';
+// import { CertificationPage } from './pages/CertificationPage';
 
 function App() {
   return (
     <MainLayout>
-      <RouteScrollManager />
+      a
+      {/* <RouteScrollManager />
       <Routes>
         <Route
           path='/'
@@ -64,7 +65,7 @@ function App() {
           path='/certifications/:slug'
           element={<CertificationPage />}
         />
-      </Routes>
+      </Routes> */}
     </MainLayout>
   );
 }

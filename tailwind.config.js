@@ -3,6 +3,23 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1rem',
+        md: '1.25rem',
+        lg: '2rem',
+        xl: '2rem',
+      },
+    },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       // --- Colores de Marca ---
       colors: {
@@ -29,6 +46,14 @@ export default {
       // --- Sombras de Marca ---
       boxShadow: {
         text: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+      },
+      maxWidth: {
+        content: '80rem', // ~1280px
+      },
+      spacing: {
+        'section-sm': '2.5rem', // 40px
+        'section-md': '4rem', // 64px
+        'section-lg': '6rem', // 96px
       },
       animation: {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',

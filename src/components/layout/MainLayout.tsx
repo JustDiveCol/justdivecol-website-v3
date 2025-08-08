@@ -5,9 +5,16 @@ import type { MainLayoutProps } from './types';
 
 export const MainLayout = ({ children }: MainLayoutProps) => {
   return (
-    <div className='bg-brand-primary-dark'>
+    <div className='min-h-dvh flex flex-col bg-brand-primary-dark'>
       <Navbar />
-      <main className='min-h-screen'>{children}</main>
+      <main
+        id='main'
+        role='main'
+        tabIndex={-1}
+        style={{ paddingTop: 'calc(var(--nav-h) + var(--safe-top))' }}
+        className='flex-1'>
+        {children}
+      </main>
       <Footer />
     </div>
   );

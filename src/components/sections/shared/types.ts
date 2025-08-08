@@ -1,7 +1,7 @@
 // src/components/sections/shared/types.ts
-import type { ExperienceId } from '../../../constants/experiences';
 import type { I18NNamespace } from '../../../constants/i18n';
 import type { ButtonContent } from '../../../content/types';
+import type { ExperienceId } from '../../../lib/db/constants';
 import type { ImageComponentData } from '../../common/types';
 
 // ––– Specific –––

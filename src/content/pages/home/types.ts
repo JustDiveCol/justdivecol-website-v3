@@ -1,5 +1,4 @@
 // src/content/pages/home/types.ts
-
 import type {
   AlliesContent,
   FeaturedContent,
@@ -10,7 +9,6 @@ import type {
 import type { CtaContent } from '../../../components/sections/shared/types';
 import type { SEOContent } from '../../types';
 
-// OK
 export type HomePageContent = {
   seo: SEOContent;
   hero: HeroContent;

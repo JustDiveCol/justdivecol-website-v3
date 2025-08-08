@@ -1,11 +1,10 @@
 // src/components/layout/Footer.tsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { AnimatePresence, motion } from 'framer-motion';
-
-import { footerData } from '../../constants/footerData';
-import { contactData } from '../../data/contactData';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { footerContent } from '../../content/footer/footer.content';
+import { contactContent } from '../../content/pages/contact/contact.content';
 
 import logo from '../../assets/images/logo.png';
 import {
@@ -18,95 +17,139 @@ import {
   ScubaMaskIcon,
 } from '../ui/Icons';
 
+type SocialIconType = 'instagram' | 'tiktok' | 'youtube';
+
+const socialIcons: Record<SocialIconType, React.ReactNode> = {
+  instagram: <InstagramIcon className='w-6 h-6' />,
+  tiktok: <TikTokIcon className='w-6 h-6' />,
+  youtube: <YouTubeIcon className='w-6 h-6' />,
+};
+
 const Footer = () => {
   const { t } = useTranslation(['common', 'navigation', 'contact']);
   const [isVisible, setIsVisible] = useState(false);
+  const reduceMotion = useReducedMotion();
+  const ticking = useRef(false);
 
+  const { contactInfo } = contactContent;
+  const currentYear = new Date().getFullYear();
+
+  // Scroll handler (pasivo + rAF throttling)
   useEffect(() => {
-    const toggleVisibility = () => {
-      setIsVisible(window.pageYOffset > 300);
+    const onScroll = () => {
+      if (!ticking.current) {
+        ticking.current = true;
+        requestAnimationFrame(() => {
+          setIsVisible(window.pageYOffset > 300);
+          ticking.current = false;
+        });
+      }
     };
-
-    window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // estado inicial
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  // Tipamos el objeto de iconos para mayor seguridad
-  const socialIcons: { [key: string]: React.ReactNode } = {
-    instagram: <InstagramIcon className='w-6 h-6' />,
-    tiktok: <TikTokIcon className='w-6 h-6' />,
-    youtube: <YouTubeIcon className='w-6 h-6' />,
+    // Respeta prefers-reduced-motion
+    if (reduceMotion) {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   // Construcción de URLs
   const prefilledText = t('whatsapp_message', { ns: 'common' });
-  const whatsappUrl = `https://wa.me/${contactData.contactInfo.phone.replace(
-    /\s/g,
-    ''
-  )}?text=${encodeURIComponent(prefilledText)}`;
+  const phone = contactInfo.phone.replace(/\s+/g, '');
+  const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(
+    prefilledText
+  )}`;
 
   const subject = encodeURIComponent(
-    t(contactData.contactInfo.emailSubjectKey, { ns: 'contact' })
+    t(contactInfo.emailSubjectKey, { ns: 'contact' })
   );
   const body = encodeURIComponent(
-    t(contactData.contactInfo.emailBodyKey, { ns: 'contact' })
+    t(contactInfo.emailBodyKey, { ns: 'contact' })
   );
-  const emailLink = `mailto:${contactData.contactInfo.email}?subject=${subject}&body=${body}`;
+  const emailLink = `mailto:${contactInfo.email}?subject=${subject}&body=${body}`;
 
   return (
-    <footer className='bg-gradient-to-t from-brand-primary-dark to-brand-primary-medium text-brand-neutral/80 relative select-none'>
-      <div className='container mx-auto px-8 py-16 text-center'>
+    <footer
+      className='bg-gradient-to-t from-brand-primary-dark to-brand-primary-medium text-brand-neutral/80 relative select-none'
+      aria-labelledby='site-footer-heading'>
+      <div className='section text-center'>
+        <h2
+          id='site-footer-heading'
+          className='sr-only'>
+          {t('common:footer', 'Pie de página')}
+        </h2>
+
         <div className='flex flex-col items-center'>
-          <Link to='/'>
+          <Link
+            to='/'
+            aria-label={t('common:home', 'Inicio')}>
             <img
               src={logo}
               alt='Logo'
               className='h-10 w-auto'
               loading='lazy'
+              width={160}
+              height={40}
             />
           </Link>
+
           <p className='mt-4 max-w-xl text-base'>
-            {t(footerData.sloganKey, { ns: 'common' })}
+            {t(footerContent.sloganKey, { ns: 'common' })}
           </p>
           <p className='mt-2 max-w-xl font-semibold text-brand-white text-base'>
-            {t(footerData.closingMessageKey, { ns: 'common' })}
+            {t(footerContent.closingMessageKey, { ns: 'common' })}
           </p>
 
-          <div className='flex justify-center items-center space-x-6 mt-8'>
+          <div
+            className='flex justify-center items-center space-x-6 mt-8'
+            aria-label={t('common:contact_us', 'Contáctanos')}>
             <a
               href={whatsappUrl}
               target='_blank'
               rel='noopener noreferrer'
               title='WhatsApp'
-              className='text-brand-neutral/70 hover:text-brand-cta-orange transition-all duration-300 hover:scale-110 inline-block'>
+              className='text-brand-neutral/70 hover:text-brand-cta-orange transition-transform duration-300 hover:scale-110 inline-block focus:outline-none focus:ring-2 focus:ring-brand-cta-orange/70 rounded'>
               <WhatsappIcon className='w-6 h-6' />
+              <span className='sr-only'>WhatsApp</span>
             </a>
+
             <a
               href={emailLink}
               title='Email'
-              className='text-brand-neutral/70 hover:text-brand-cta-orange transition-all duration-300 hover:scale-110 inline-block'>
+              className='text-brand-neutral/70 hover:text-brand-cta-orange transition-transform duration-300 hover:scale-110 inline-block focus:outline-none focus:ring-2 focus:ring-brand-cta-orange/70 rounded'>
               <MailIcon className='w-6 h-6' />
+              <span className='sr-only'>Email</span>
             </a>
-            {contactData.contactInfo.socials.map((social) => (
-              <a
-                key={social.name}
-                href={social.link}
-                target='_blank'
-                rel='noopener noreferrer'
-                title={social.name}
-                className='text-brand-neutral/70 hover:text-brand-cta-orange transition-all duration-300 hover:scale-110 inline-block'>
-                {socialIcons[social.icon]}
-              </a>
-            ))}
+
+            {contactInfo.socials.map((social) => {
+              const Icon = socialIcons[social.type as SocialIconType];
+              if (!Icon) return null;
+              return (
+                <a
+                  key={social.name}
+                  href={social.path}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  title={social.name}
+                  className='text-brand-neutral/70 hover:text-brand-cta-orange transition-transform duration-300 hover:scale-110 inline-block focus:outline-none focus:ring-2 focus:ring-brand-cta-orange/70 rounded'>
+                  {Icon}
+                  <span className='sr-only'>{social.name}</span>
+                </a>
+              );
+            })}
           </div>
         </div>
 
         {/* Decorative divider */}
-        <div className='flex items-center justify-center my-10'>
+        <div
+          className='flex items-center justify-center my-10'
+          aria-hidden='true'>
           <div className='flex-grow border-t border-brand-primary-light/20' />
           <div className='px-4'>
             <ScubaMaskIcon className='h-8 w-8 text-brand-cta-orange' />
@@ -115,30 +158,32 @@ const Footer = () => {
         </div>
 
         {/* Navigation links */}
-        <div className='text-center mb-8'>
+        <nav
+          className='text-center mb-8'
+          aria-label={t('common:important_links', 'Enlaces importantes')}>
           <h3 className='heading-6 font-bold text-brand-white mb-4'>
-            {t(footerData.importantLinksTitle, { ns: 'common' })}
+            {t(footerContent.importantLinksTitle, { ns: 'common' })}
           </h3>
           <div className='flex flex-wrap justify-center gap-x-4 gap-y-2'>
-            {footerData.navLinks.map((link) => (
+            {footerContent.navLinks.map((link) => (
               <Link
                 key={link.nameKey}
                 to={link.path}
-                className='text-brand-neutral/80 hover:text-brand-cta-orange transition-colors text-xs p-2'>
+                className='text-brand-neutral/80 hover:text-brand-cta-orange transition-colors text-xs p-2 rounded focus:outline-none focus:ring-2 focus:ring-brand-cta-orange/70'>
                 {t(`nav.${link.nameKey}`, { ns: 'common' })}
               </Link>
             ))}
           </div>
-        </div>
+        </nav>
 
         {/* Copyright */}
         <div className='text-xs'>
           <p>
-            &copy; {new Date().getFullYear()}{' '}
-            {t(footerData.copyrightKey, { ns: 'common' })}
+            &copy; {currentYear}{' '}
+            {t(footerContent.copyrightKey, { ns: 'common' })}
           </p>
           <p className='text-xs text-brand-neutral/60 mt-1'>
-            {t(footerData.creditsKey, { ns: 'common' })}
+            {t(footerContent.creditsKey, { ns: 'common' })}
           </p>
         </div>
       </div>
@@ -147,12 +192,16 @@ const Footer = () => {
       <AnimatePresence>
         {isVisible && (
           <motion.button
-            initial={{ opacity: 0, y: 20 }}
+            initial={
+              reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
+            exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
             onClick={scrollToTop}
-            className='fixed bottom-8 right-8 bg-brand-cta-orange text-white p-3 rounded-full shadow-lg hover:bg-opacity-90 transition-opacity cursor-pointer z-40'
-            aria-label='Scroll to top'>
+            className='fixed right-8 bg-brand-cta-orange text-white p-3 rounded-full shadow-lg hover:bg-opacity-90 transition-opacity cursor-pointer z-[60] focus:outline-none focus:ring-2 focus:ring-white/80'
+            style={{ bottom: 'calc(2rem + var(--safe-bottom))' }}
+            aria-label={t('common:back_to_top', 'Volver arriba')}
+            type='button'>
             <ChevronUpIcon className='w-6 h-6' />
           </motion.button>
         )}

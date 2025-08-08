@@ -1,6 +1,6 @@
 // src/content/destinations/santa-marta.content.ts
 import { ROUTES } from '../../constants/routes';
-import { CertificationContentSchema } from '../schemas';
+import { DestinationContentSchema } from '../schemas';
 import type { DestinationContent } from './types';
 
 const rawSantaMarta: DestinationContent = {
@@ -94,5 +94,5 @@ const rawSantaMarta: DestinationContent = {
   },
 };
 
-export const padiOpenWaterContent =
-  CertificationContentSchema.parse(rawSantaMarta);
+export const santaMartaDestinationContent =
+  DestinationContentSchema.parse(rawSantaMarta);
