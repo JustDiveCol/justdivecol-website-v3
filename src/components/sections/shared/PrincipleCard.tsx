@@ -1,25 +1,30 @@
 // src/components/sections/shared/PrincipleCard.tsx
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { BRAND_ASSETS } from '../../../constants/assets';
-import type { PrincipleCardProps } from './types';
 
-export const PrincipleCard = ({
-  cardData,
-  translationNS,
-}: PrincipleCardProps) => {
+import type { I18NNamespace } from '../../../constants/i18n';
+import type { PrincipleCardData } from './types';
+
+type PrincipleCard = {
+  cardData: PrincipleCardData;
+  translationNS: I18NNamespace;
+};
+
+export const PrincipleCard = ({ cardData, translationNS }: PrincipleCard) => {
   const { t } = useTranslation([translationNS, 'common']);
   const mainLogo = BRAND_ASSETS.mainLogo;
+  const reduceMotion = useReducedMotion();
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6 }}
-      className='group flex h-full flex-col overflow-hidden rounded-lg bg-brand-primary-dark shadow-xl'>
+      transition={{ duration: reduceMotion ? 0 : 0.6 }}
+      className='group flex h-full flex-col overflow-hidden rounded-lg bg-brand-neutral/80 shadow-xl w-[calc(50%-1rem)] flex-shrink-0 sm:w-5/12 md:w-4/12 lg:w-[30%] xl:w-[22%]'>
       {/* Image Container */}
-      <div className='relative aspect-video'>
+      <figure className='relative aspect-video m-0'>
         {/* Image */}
         <div className='absolute inset-0 overflow-hidden'>
           <img
@@ -27,11 +32,17 @@ export const PrincipleCard = ({
             alt={t(cardData.titleKey)}
             className='h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110'
             loading='lazy'
+            decoding='async'
+            width={1280}
+            height={720}
           />
         </div>
 
-        {/* Gradient */}
-        <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent' />
+        {/* Gradient (decorativo) */}
+        <div
+          aria-hidden='true'
+          className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent'
+        />
 
         {/* Logos and Credits */}
         <div className='absolute inset-0'>
@@ -42,6 +53,9 @@ export const PrincipleCard = ({
               alt={t(mainLogo.altKey)}
               className='h-auto w-full'
               loading='lazy'
+              decoding='async'
+              width={80}
+              height={80}
             />
           </div>
 
@@ -53,15 +67,18 @@ export const PrincipleCard = ({
                 alt={t(cardData.complementaryLogo.altKey)}
                 className='h-auto w-full'
                 loading='lazy'
+                decoding='async'
+                width={48}
+                height={48}
               />
             </div>
           )}
 
           {/* Photo Credit */}
           {cardData.photoCredit && (
-            <div className='pointer-events-none absolute bottom-0 left-0 w-full select-none bg-brand-primary-dark/80 px-3 py-1 text-left text-xs text-white/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+            <figcaption className='pointer-events-none absolute bottom-0 left-0 w-full select-none bg-brand-primary-dark/80 px-3 py-1 text-left text-xs text-white/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
               {t('common:photoCreditPrefix')} {cardData.photoCredit}
-            </div>
+            </figcaption>
           )}
         </div>
 
@@ -71,11 +88,11 @@ export const PrincipleCard = ({
             {t(cardData.titleKey)}
           </h3>
         </div>
-      </div>
+      </figure>
 
       {/* Description */}
       <div className='flex flex-grow flex-col p-6 text-justify'>
-        <p className='text-base-sm text-brand-neutral/80'>
+        <p className='text-base-sm text-brand-primary-dark/80'>
           {t(cardData.descriptionKey)}
         </p>
       </div>

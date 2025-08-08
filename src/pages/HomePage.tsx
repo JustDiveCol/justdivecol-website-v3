@@ -7,19 +7,19 @@ import { TestimonialsSection } from '../components/sections/home/TestimonialsSec
 import { AlliesSection } from '../components/sections/home/AlliesSection';
 import { CtaSection } from '../components/sections/shared/CtaSection';
 
-import { homePageData } from '../data/homePageData';
+import { homeContent } from '../content/pages/home/home.content';
 
 export const HomePage = () => {
   return (
     <>
-      <SEO {...homePageData.seo} />
+      <SEO {...homeContent.seo} />
 
-      <HeroSection {...homePageData.hero} />
-      <FeaturedSection {...homePageData.featured} />
-      <PrinciplesSection {...homePageData.principles} />
-      <TestimonialsSection {...homePageData.testimonials} />
-      <AlliesSection {...homePageData.allies} />
-      <CtaSection {...homePageData.cta} />
+      <HeroSection {...homeContent.hero} />
+      <FeaturedSection {...homeContent.featured} />
+      <PrinciplesSection {...homeContent.principles} />
+      <TestimonialsSection {...homeContent.testimonials} />
+      <AlliesSection {...homeContent.allies} />
+      <CtaSection {...homeContent.cta} />
     </>
   );
 };

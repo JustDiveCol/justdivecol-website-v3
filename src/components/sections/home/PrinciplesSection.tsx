@@ -1,32 +1,37 @@
 // src/components/sections/home/PrinciplesSection.tsx
 import { useTranslation } from 'react-i18next';
-import type { PrinciplesSectionProps } from './types';
 import { PrincipleCard } from '../shared/PrincipleCard';
+import type { PrinciplesContent } from './types';
 
 export const PrinciplesSection = ({
   titleKey,
   subtitleKey,
   translationNS,
   cards,
-}: PrinciplesSectionProps) => {
+}: PrinciplesContent) => {
   const { t } = useTranslation([translationNS, 'common']);
 
   return (
-    <section className='bg-brand-primary-dark py-20 px-4'>
-      <div className='container mx-auto'>
-        <div className='max-w-3xl mx-auto text-center mb-16'>
-          <h2 className='heading-2 text-white'>{t(titleKey)}</h2>
-          <p className='text-subtitle mt-4'>{t(subtitleKey)}</p>
-        </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto'>
-          {cards.map((card) => (
-            <PrincipleCard
-              key={card.id}
-              cardData={card}
-              translationNS={translationNS}
-            />
-          ))}
-        </div>
+    <section
+      className='section bg-brand-primary-dark'
+      aria-labelledby='principles-heading'>
+      <div className='max-w-3xl mx-auto text-center mb-16'>
+        <h2
+          id='principles-heading'
+          className='heading-2 text-white'>
+          {t(titleKey)}
+        </h2>
+        <p className='text-subtitle mt-4'>{t(subtitleKey)}</p>
+      </div>
+
+      <div className='flex flex-wrap justify-center gap-8'>
+        {cards.map((card) => (
+          <PrincipleCard
+            key={card.id}
+            cardData={card}
+            translationNS={translationNS}
+          />
+        ))}
       </div>
     </section>
   );

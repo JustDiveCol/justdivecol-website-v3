@@ -9,6 +9,7 @@ import {
 import { I18N_NAMESPACES } from '../constants/i18n';
 import { UrlPathSchema } from './urlPathSchema';
 import { FOOTER_LINKS } from '../constants/navigation';
+import { EXPERIENCES_IDS } from '../lib/db/constants';
 
 // ––– Image Definition –––
 const ImageVariantSchema = z.enum(IMAGE_VARIANTS);
@@ -22,7 +23,7 @@ const ImageDataSchema = z.object({
       altKey: z.string(),
     })
     .optional(),
-  variant: ImageVariantSchema,
+  variant: ImageVariantSchema.optional(),
 });
 
 // ––– Button Definition –––
@@ -110,11 +111,15 @@ const PrinciplesSectionSchema = z.object({
 });
 
 // ––– Testimonials Section - Hero –––
+const TestimonialOriginSchema = z.enum(EXPERIENCES_IDS);
+
+export type TestimonialOrigin = z.infer<typeof TestimonialOriginSchema>;
+
 const TestimonialItemSchema = z.object({
   id: z.number().int(),
   quoteKey: z.string(),
   name: z.string(),
-  originKey: z.string(),
+  originKey: TestimonialOriginSchema,
   rating: z.number().int().min(1).max(5),
   avatarUrl: z.string(),
 });
@@ -146,7 +151,7 @@ const CtaContentSchema = z.object({
   subtitleKey: z.string(),
   backgroundImageUrl: z.string(),
   button: ButtonContentSchema.optional(),
-  hubspotFormTitle: z.string().optional(),
+  hubspotFormTitle: z.string().optional().optional(),
 });
 
 // ––– Page Header –––

@@ -1,6 +1,7 @@
 // src/content/pages/about-us/about-us.content.ts
 import { ROUTES } from '../../../constants/routes';
 import { AboutUsPageContentSchema } from '../../schemas';
+import { toUrlPath } from '../../urlPathSchema';
 import type { AboutUsPageContent } from './types';
 
 const rawAboutUs: AboutUsPageContent = {
@@ -8,7 +9,7 @@ const rawAboutUs: AboutUsPageContent = {
     titleKey: 'aboutUs.seo.title',
     descriptionKey: 'aboutUs.seo.desc',
     keywordsKey: 'aboutUs.seo.keywords',
-    urlPath: ROUTES.aboutUs,
+    urlPath: toUrlPath(ROUTES.aboutUs),
     imageUrl: '/images/social/about-us-social-card.webp',
     translationNS: 'aboutUs',
   },

@@ -1,12 +1,11 @@
 // src/components/sections/shared/types.ts
 import type { I18NNamespace } from '../../../constants/i18n';
+import type { TestimonialOrigin } from '../../../content/schemas';
 import type { ButtonContent } from '../../../content/types';
-import type { ExperienceId } from '../../../lib/db/constants';
 import type { ImageComponentData } from '../../common/types';
 
 // ––– Specific –––
 
-// OK
 export type PrincipleCardData = {
   id: string;
   imageUrl: string;
@@ -24,7 +23,7 @@ export type TestimonialData = {
   id: number;
   quoteKey: string;
   name: string;
-  originKey: ExperienceId;
+  originKey: TestimonialOrigin;
   rating: number;
   avatarUrl: string;
 };
@@ -52,8 +51,8 @@ export type CtaContent = {
   subtitleKey: string;
   translationNS: I18NNamespace;
   backgroundImageUrl: string;
-  button: Omit<ButtonContent, 'children'> & { textKey: string };
-  hubspotFormTitle: string;
+  button?: Omit<ButtonContent, 'children'> & { textKey: string };
+  hubspotFormTitle?: string;
 };
 
 // OK

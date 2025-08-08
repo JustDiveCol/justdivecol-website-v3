@@ -1,8 +1,8 @@
 // src/App.tsx
-// import { Routes, Route } from 'react-router-dom';
-// import { RouteScrollManager } from './components/common/RouteScrollManager';
+import { Routes, Route } from 'react-router-dom';
+import { RouteScrollManager } from './components/common/RouteScrollManager';
 import { MainLayout } from './components/layout/MainLayout';
-// import { HomePage } from './pages/HomePage';
+import { HomePage } from './pages/HomePage';
 // import { AboutUsPage } from './pages/AboutUsPage';
 // import { PrinciplesPage } from './pages/PrinciplesPage';
 // import { ContactPage } from './pages/ContactPage';
@@ -17,14 +17,13 @@ import { MainLayout } from './components/layout/MainLayout';
 function App() {
   return (
     <MainLayout>
-      a
-      {/* <RouteScrollManager />
+      <RouteScrollManager />
       <Routes>
         <Route
           path='/'
           element={<HomePage />}
         />
-        <Route
+        {/* <Route
           path='/about-us'
           element={<AboutUsPage />}
         />
@@ -64,8 +63,8 @@ function App() {
         <Route
           path='/certifications/:slug'
           element={<CertificationPage />}
-        />
-      </Routes> */}
+        /> */}
+      </Routes>
     </MainLayout>
   );
 }

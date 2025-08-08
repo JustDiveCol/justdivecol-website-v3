@@ -1,81 +1,102 @@
 // src/components/sections/home/AlliesSection.tsx
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import type { AlliesSectionProps } from './types';
+import type { AlliesContent } from './types';
 
 export const AlliesSection = ({
   titleKey,
   translationNS,
   logos,
-}: AlliesSectionProps) => {
+}: AlliesContent) => {
   const { t } = useTranslation([translationNS, 'common']);
 
   const logoCount = logos.length;
   const marqueeThreshold = 6;
   const animationDuration = `${logoCount * 7}s`;
 
-  // Logo Component
-  const AllyLogo = ({ ally }: { ally: (typeof logos)[0] }) => (
-    <a
-      href={ally.link || '#'}
-      target='_blank'
-      rel='noopener noreferrer'
-      className='group relative flex-shrink-0'
-      aria-label={`Visitar a ${ally.name}`}>
-      {/* Hover Status */}
-      <img
-        src={ally.logoUrl}
-        alt={ally.name}
-        className='h-16 max-w-xs object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100'
-        loading='lazy'
-      />
+  // Pausa del marquee al hover/focus (mejor UX + CPU)
+  const [paused, setPaused] = React.useState(false);
 
-      {/* Default Status */}
-      <div
-        className='absolute inset-0 h-16 w-full bg-brand-neutral opacity-100 transition-opacity duration-300 group-hover:opacity-0'
-        style={{
-          maskImage: `url(${ally.logoUrl})`,
-          maskSize: 'contain',
-          maskPosition: 'center',
-          maskRepeat: 'no-repeat',
-          WebkitMaskImage: `url(${ally.logoUrl})`,
-          WebkitMaskSize: 'contain',
-          WebkitMaskPosition: 'center',
-          WebkitMaskRepeat: 'no-repeat',
-        }}
-      />
-    </a>
-  );
+  // Componente logo (link + máscara)
+  const AllyLogo = ({ ally }: { ally: (typeof logos)[0] }) => {
+    const href = ally.link || '#';
+    const isExternal = href.startsWith('http');
+
+    return (
+      <a
+        href={href}
+        target={isExternal ? '_blank' : undefined}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
+        className='
+        group relative inline-flex items-center justify-center
+        h-10 sm:h-12 md:h-14 lg:h-16    
+        px-2                            
+        focus:outline-none focus:ring-2 focus:ring-brand-cta-orange/60 rounded
+      '
+        aria-label={`Visitar a ${ally.name}`}>
+        <img
+          src={ally.logoUrl}
+          alt={`${ally.name} logo`}
+          className='
+          block h-full w-auto            /* NO fijar ancho, que lo calcule el ratio */
+          max-w-[7rem] sm:max-w-[8rem] md:max-w-[9rem] lg:max-w-[10rem]
+          transition-all duration-300
+          opacity-80 grayscale contrast-125 brightness-110
+          group-hover:opacity-100 group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100
+        '
+          loading='lazy'
+          decoding='async'
+        />
+      </a>
+    );
+  };
+
+  const shouldMarquee = logoCount >= marqueeThreshold;
 
   return (
-    <section className='bg-brand-primary-dark py-20'>
-      <div className='container mx-auto text-center'>
+    // Fondo full-bleed
+    <section className='bg-brand-primary-dark'>
+      {/* Contenido limitado por container */}
+      <div className='section text-center'>
         <h2 className='heading-3 mb-16 text-brand-white'>{t(titleKey)}</h2>
 
-        {logoCount < marqueeThreshold ? (
-          // Static Mode
-          <div className='flex flex-wrap justify-center items-center gap-x-16 gap-y-8'>
+        {!shouldMarquee ? (
+          // Modo estático
+          <ul
+            className='flex flex-wrap justify-center items-center gap-x-10 md:gap-x-12 gap-y-6'
+            role='list'>
             {logos.map((ally) => (
-              <AllyLogo
-                key={ally.id}
-                ally={ally}
-              />
+              <li key={ally.id}>
+                <AllyLogo ally={ally} />
+              </li>
             ))}
-          </div>
+          </ul>
         ) : (
-          // Carrusel Mode
+          // Modo carrusel tipo marquee
           <div
             className='relative w-full overflow-hidden'
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            onFocusCapture={() => setPaused(true)}
+            onBlurCapture={() => setPaused(false)}
             style={{
+              // Desvanecidos laterales (cross-browser)
               maskImage:
                 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-            }}>
+              WebkitMaskImage:
+                'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+            }}
+            aria-label={t('common:allies_marquee', 'Carrusel de aliados')}>
             <div
-              className='flex w-max animate-infinite-scroll'
-              style={{ animationDuration }}>
+              className='flex w-max animate-infinite-scroll motion-reduce:animate-none'
+              style={{
+                animationDuration,
+                animationPlayState: paused ? 'paused' : undefined,
+              }}>
               {[...logos, ...logos].map((ally, index) => (
                 <div
                   key={`${ally.id}-${index}`}
-                  className='mx-8'>
+                  className='mx-6 md:mx-8'>
                   <AllyLogo ally={ally} />
                 </div>
               ))}

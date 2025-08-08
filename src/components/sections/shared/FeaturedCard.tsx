@@ -1,10 +1,17 @@
 // src/components/sections/shared/FeaturedCard.tsx
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 import { BRAND_ASSETS } from '../../../constants/assets';
-import type { FeaturedCardProps } from './types';
+import type { I18NNamespace } from '../../../constants/i18n';
+import type { CardData } from '../home/types';
+
+type FeaturedCardProps = {
+  cardData: CardData;
+  className?: string;
+  translationNS: I18NNamespace;
+};
 
 export const FeaturedCard = ({
   cardData,
@@ -12,40 +19,46 @@ export const FeaturedCard = ({
   translationNS,
 }: FeaturedCardProps) => {
   const { t } = useTranslation([translationNS, 'common']);
+  const reduceMotion = useReducedMotion();
   const { imageData, link, titleKey, subtitleKey } = cardData;
 
-  // Logo
   const mainLogo = BRAND_ASSETS.mainLogo;
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={className} // El padre controla el tamaño aquí
-    >
+      transition={{ duration: reduceMotion ? 0 : 0.6, ease: 'easeOut' }}
+      className={className}>
       <Link
-        to={link}
-        className='group relative block h-full w-full overflow-hidden rounded-lg shadow-lg'>
+        to={link as unknown as string} // UrlPath brandeado es string estrecho; cast para TS si hace ruido
+        aria-label={t(titleKey)}
+        className='group relative block h-full w-full overflow-hidden rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-cta-orange/70'>
         {/* Background Image with Zoom on hover */}
         <div
+          aria-hidden='true'
           className='absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out group-hover:scale-110'
           style={{ backgroundImage: `url(${imageData.backgroundImage})` }}
         />
 
         {/* Gradient */}
-        <div className='absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/40 to-transparent' />
+        <div
+          aria-hidden='true'
+          className='absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/40 to-transparent'
+        />
 
         {/* Logos and Credits */}
         <div className='absolute inset-0 z-20'>
-          {/* Main Logo (Mandatory) */}
+          {/* Main Logo */}
           <div className='absolute top-4 right-4 drop-shadow-lg opacity-80 w-14 md:w-20'>
             <img
               src={mainLogo.url}
               alt={t(mainLogo.altKey)}
               className='h-auto w-full'
               loading='lazy'
+              width={80}
+              height={80}
             />
           </div>
 
@@ -57,6 +70,8 @@ export const FeaturedCard = ({
                 alt={t(imageData.complementaryLogo.altKey)}
                 className='h-auto w-full'
                 loading='lazy'
+                width={48}
+                height={48}
               />
             </div>
           )}

@@ -2,7 +2,6 @@
 
 import type { LinkProps } from 'react-router-dom';
 import type { I18NNamespace } from '../constants/i18n';
-import type { UrlPath } from '../constants/routes';
 import type { ActionType, ButtonSize, ButtonVariant } from './constants';
 import type { AnchorHTMLAttributes } from 'react';
 import type {
@@ -10,6 +9,7 @@ import type {
   PageHeaderContent,
 } from '../components/sections/shared/types';
 import type { ImageComponentData } from '../components/common/types';
+import type { UrlPath } from './urlPathSchema';
 
 // ––– Specific –––
 // OK

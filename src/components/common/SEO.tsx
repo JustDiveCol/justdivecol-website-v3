@@ -1,7 +1,7 @@
 // src/components/common/SEO.tsx
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import type { SEOProps } from './types';
+import type { SEOContent } from '../../content/types';
 
 export const SEO = ({
   titleKey,
@@ -10,7 +10,7 @@ export const SEO = ({
   imageUrl,
   urlPath,
   translationNS,
-}: SEOProps) => {
+}: SEOContent) => {
   const { t } = useTranslation([translationNS, 'common']);
 
   const title = t(titleKey);

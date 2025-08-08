@@ -1,12 +1,13 @@
 // src/content/pages/home/home.content.ts
 import type { HomePageContent } from './types';
-import { ROUTES, type UrlPath } from '../../../constants/routes';
+import { ROUTES } from '../../../constants/routes';
 import type {
   CardData,
   ImageData,
 } from '../../../components/sections/home/types';
 import { BRAND_ASSETS } from '../../../constants/assets';
 import { HomePageContentSchema } from '../../schemas';
+import { toUrlPath } from '../../urlPathSchema'; // ✅ usar helper correcto
 
 type RawCardData = {
   readonly id: string;
@@ -56,7 +57,7 @@ const rawCards: ReadonlyArray<RawCardData> = [
 
 export const featuredCards: CardData[] = rawCards.map((card) => ({
   ...card,
-  link: `${ROUTES.diveExperiences}#${card.id}` as UrlPath,
+  link: toUrlPath(`${ROUTES.diveExperiences}#${card.id}`),
 }));
 
 const rawHome: HomePageContent = {
@@ -64,8 +65,8 @@ const rawHome: HomePageContent = {
     titleKey: 'home.seo.title',
     descriptionKey: 'home.seo.desc',
     keywordsKey: 'home.seo.keywords',
-    imageUrl: 'home.seo.title',
-    urlPath: ROUTES.home,
+    imageUrl: '/images/social/home-social-card.webp',
+    urlPath: toUrlPath(ROUTES.home),
     translationNS: 'home',
   },
 
@@ -77,7 +78,7 @@ const rawHome: HomePageContent = {
       textKey: 'home.hero.button.text',
       action: {
         type: 'internal',
-        path: ROUTES.diveExperiences,
+        path: toUrlPath(ROUTES.diveExperiences),
       },
       variant: 'primary',
       size: 'default',

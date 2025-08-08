@@ -6,9 +6,9 @@ import { motion } from 'framer-motion';
 import { BRAND_ASSETS } from '../../../constants/assets';
 import { Button } from '../../common/Button';
 import { ChevronDownIcon } from '../../ui/Icons';
-import type { HeroSectionProps } from './types';
+import type { HeroContent } from './types';
 
-export const HeroSection: React.FC<HeroSectionProps> = ({
+export const HeroSection: React.FC<HeroContent> = ({
   titleKey,
   subtitleKey,
   translationNS,
@@ -16,13 +16,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   imageData,
 }) => {
   const { t } = useTranslation([translationNS, 'common']);
-
   const { textKey, ...buttonProps } = button;
 
   return (
     <section
-      className='relative flex items-center justify-center min-h-screen py-24 bg-cover bg-center text-white'
-      style={{ backgroundImage: `url(${imageData.backgroundImage})` }}>
+      className='relative flex items-center justify-center min-h-[100dvh] py-24 bg-cover bg-center text-white'
+      style={{
+        backgroundImage: `url(${imageData.backgroundImage})`,
+        // Cancela el padding-top del <main> para que el hero sea full screen
+        marginTop: 'calc(var(--nav-h) * -1)',
+      }}>
       {/* Overlay oscuro */}
       <div className='absolute inset-0 bg-black/60 z-10' />
 
