@@ -10,20 +10,33 @@ import { I18N_NAMESPACES } from '../constants/i18n';
 import { UrlPathSchema } from './urlPathSchema';
 import { FOOTER_LINKS } from '../constants/navigation';
 import { EXPERIENCES_IDS } from '../lib/db/constants';
+import type { AssetAltKey, AssetURL } from '../constants/assets';
 
 // ––– Image Definition –––
 const ImageVariantSchema = z.enum(IMAGE_VARIANTS);
 
+const looksLikeAssetUrl = (s: string) => s.startsWith('/images/');
+
+export const AssetURLSchema = z
+  .string()
+  .refine(looksLikeAssetUrl, 'AssetURL debe empezar con /images/')
+  .transform((s) => s as AssetURL);
+
+export const AssetAltKeySchema = z.string().transform((s) => s as AssetAltKey);
+
+const ComplementaryLogoSchema = z.object({
+  url: AssetURLSchema,
+  altKey: AssetAltKeySchema,
+});
+
 const ImageDataSchema = z.object({
   backgroundImage: z.string(),
   photoCredit: z.string(),
-  complementaryLogo: z
-    .object({
-      url: z.string(),
-      altKey: z.string(),
-    })
-    .optional(),
-  variant: ImageVariantSchema.optional(),
+  complementaryLogo: ComplementaryLogoSchema.optional(),
+});
+
+const ImageDataWithVariantSchema = ImageDataSchema.extend({
+  variant: ImageVariantSchema,
 });
 
 // ––– Button Definition –––
@@ -159,7 +172,7 @@ const PageHeaderSchema = z.object({
   titleKey: z.string(),
   subtitleKey: z.string(),
   translationNS: TranslationNSSchema,
-  imageData: ImageDataSchema,
+  imageData: ImageDataWithVariantSchema,
 });
 
 // ––– Mission Section –––
@@ -167,7 +180,7 @@ const MissionSectionSchema = z.object({
   titleKey: z.string(),
   textKey: z.string(),
   translationNS: TranslationNSSchema,
-  imageData: ImageDataSchema,
+  imageData: ImageDataWithVariantSchema,
 });
 
 // ––– Team Section –––
@@ -244,7 +257,7 @@ const PrincipleDetailSchema = z.object({
   id: z.string(),
   titleKey: z.string(),
   textKey: z.string(),
-  imageData: ImageDataSchema,
+  imageData: ImageDataWithVariantSchema,
   imagePosition: z.enum(['left', 'right']),
 });
 

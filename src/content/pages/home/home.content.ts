@@ -128,7 +128,7 @@ const rawHome: HomePageContent = {
   },
 
   testimonials: {
-    titleKey: 'home.testimonials.testimonialsTitle',
+    titleKey: 'home.testimonials.title',
     translationNS: 'home',
     items: [
       {
@@ -143,7 +143,7 @@ const rawHome: HomePageContent = {
   },
 
   allies: {
-    titleKey: 'home.allies.alliesTitle',
+    titleKey: 'home.allies.title',
     translationNS: 'home',
     logos: [
       {
@@ -169,8 +169,8 @@ const rawHome: HomePageContent = {
 
   cta: {
     translationNS: 'home',
-    titleKey: 'home.cta.ctaTitle',
-    subtitleKey: 'home.cta.ctaSubtitle',
+    titleKey: 'home.cta.title',
+    subtitleKey: 'home.cta.subtitle',
     backgroundImageUrl: '/images/home/cta-background.webp',
 
     button: {

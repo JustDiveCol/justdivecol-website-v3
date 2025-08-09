@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { RouteScrollManager } from './components/common/RouteScrollManager';
 import { MainLayout } from './components/layout/MainLayout';
 import { HomePage } from './pages/HomePage';
-// import { AboutUsPage } from './pages/AboutUsPage';
-// import { PrinciplesPage } from './pages/PrinciplesPage';
+import { AboutUsPage } from './pages/AboutUsPage';
+import { PrinciplesPage } from './pages/PrinciplesPage';
 // import { ContactPage } from './pages/ContactPage';
 // import { PolicyPage } from './pages/PolicyPage';
 // import { TermsPage } from './pages/TermsPage';
@@ -23,44 +23,53 @@ function App() {
           path='/'
           element={<HomePage />}
         />
-        {/* <Route
+
+        <Route
           path='/about-us'
           element={<AboutUsPage />}
         />
+
         <Route
           path='/principles'
           element={<PrinciplesPage />}
         />
-        <Route
+
+        {/* <Route
           path='/contact'
           element={<ContactPage />}
-        />
-        <Route
+        /> */}
+
+        {/* <Route
           path='/legal/policy'
           element={<PolicyPage />}
-        />
-        <Route
+        /> */}
+
+        {/* <Route
           path='/legal/terms'
           element={<TermsPage />}
-        />
-        <Route
+        /> */}
+
+        {/* <Route
           path='/legal/privacy'
           element={<PrivacyPage />}
-        />
-        <Route
+        /> */}
+
+        {/* <Route
           path='/faq'
           element={<FaqPage />}
-        />
-        <Route
+        /> */}
+
+        {/* <Route
           path='/dive-experiences'
           element={<ExperiencesPage />}
-        />
-        <Route
+        /> */}
+
+        {/* <Route
           path='/dive-sites'
           element={<DiveSitesPage />}
-        />
+        /> */}
 
-        <Route
+        {/* <Route
           path='/certifications/:slug'
           element={<CertificationPage />}
         /> */}

@@ -44,7 +44,7 @@ const rawAboutUs: AboutUsPageContent = {
         id: 'member-1',
         name: 'Camilo Beltrán',
         roleKey: 'aboutUs.team.roleInstructor',
-        bioKey: 'team.bioCamilo',
+        bioKey: 'aboutUs.team.bioCamilo',
         imageUrl: '/images/team/camilo.webp',
       },
       {

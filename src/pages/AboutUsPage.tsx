@@ -6,19 +6,19 @@ import { TeamSection } from '../components/sections/about/TeamSection';
 import { PrinciplesSection } from '../components/sections/home/PrinciplesSection';
 import { CtaSection } from '../components/sections/shared/CtaSection';
 
-import { aboutUsPageData } from '../data/aboutUsPageData';
-import { homePageData } from '../data/homePageData';
+import { aboutUsContent } from '../content/pages/about-us/about-us.content';
+import { homeContent } from '../content/pages/home/home.content';
 
 export const AboutUsPage = () => {
   return (
     <>
-      <SEO {...aboutUsPageData.seo} />
+      <SEO {...aboutUsContent.seo} />
 
-      <PageHeader {...aboutUsPageData.header} />
-      <MissionSection {...aboutUsPageData.mission} />
-      <TeamSection {...aboutUsPageData.team} />
-      <PrinciplesSection {...homePageData.principles} />
-      <CtaSection {...homePageData.cta} />
+      <PageHeader {...aboutUsContent.header} />
+      <MissionSection {...aboutUsContent.mission} />
+      <TeamSection {...aboutUsContent.team} />
+      <PrinciplesSection {...homeContent.principles} />
+      <CtaSection {...homeContent.cta} />
     </>
   );
 };

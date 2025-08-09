@@ -4,16 +4,16 @@ import { PageHeader } from '../components/sections/shared/PageHeader';
 import { AlternatingFeature } from '../components/sections/shared/AlternatingFeature';
 import { CtaSection } from '../components/sections/shared/CtaSection';
 
-import { principlesPageData } from '../data/principlesPageData';
-import { homePageData } from '../data/homePageData';
+import { principlesContent } from '../content/pages/principles/principles.content';
+import { homeContent } from '../content/pages/home/home.content';
 
 export const PrinciplesPage = () => {
   return (
     <>
-      <SEO {...principlesPageData.seo} />
-      <PageHeader {...principlesPageData.header} />
+      <SEO {...principlesContent.seo} />
+      <PageHeader {...principlesContent.header} />
       <div className='bg-brand-primary-dark'>
-        {principlesPageData.principles.map((principle) => (
+        {principlesContent.principles.map((principle) => (
           <AlternatingFeature
             key={principle.id}
             featureData={principle}
@@ -21,7 +21,7 @@ export const PrinciplesPage = () => {
           />
         ))}
       </div>
-      <CtaSection {...homePageData.cta} />
+      <CtaSection {...homeContent.cta} />
     </>
   );
 };

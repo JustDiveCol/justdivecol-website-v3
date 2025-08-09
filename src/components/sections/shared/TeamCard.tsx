@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
 import type { TeamCardProps } from '../about/types';
-import { cardVariants } from '../../../hooks/animations';
+import { useMotionPresets } from '../../../hooks/animations';
 
 export const TeamCard = ({
   memberData,
@@ -11,21 +11,33 @@ export const TeamCard = ({
   translationNS,
 }: TeamCardProps) => {
   const { t } = useTranslation([translationNS, 'common']);
+  const { card } = useMotionPresets();
+
+  const titleId = `member-${memberData.id}-name`;
 
   return (
     <motion.div
-      variants={cardVariants}
-      className={twMerge('flex flex-col items-center text-center', className)}>
+      variants={card}
+      aria-labelledby={titleId}
+      className={twMerge(
+        'flex h-full flex-col items-center text-center',
+        className
+      )}>
       <div className='relative'>
         <img
           src={memberData.imageUrl}
           alt={memberData.name}
           className='h-48 w-48 rounded-full object-cover shadow-lg'
           loading='lazy'
+          decoding='async'
+          width={192}
+          height={192}
         />
       </div>
       <div className='mt-4'>
-        <h3 className='text-xl font-bold text-brand-white'>
+        <h3
+          id={titleId}
+          className='text-xl font-bold text-brand-white'>
           {memberData.name}
         </h3>
         <p className='text-base font-semibold text-brand-cta-orange'>

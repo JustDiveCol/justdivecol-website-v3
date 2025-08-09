@@ -1,35 +1,30 @@
 {
-  "seo": {
-    "aboutUsSeoTitle": "Sobre nosotros",
-    "aboutUsSeoDesc": "Explora nuestra esencia: la historia de JustDiveCol, nuestro equipo apasionado y cómo combinamos la aventura submarina con un compromiso inquebrantable por la seguridad y la conservación. ¡Sumérgete con confianza!",
-    "aboutUsSeoKeywords": "JustDiveCol, sobre nosotros, historia JustDiveCol, equipo de buceo, buceo seguro, conservación marina, aventura submarina, operador de buceo, comunidad de buceo, pasión por el océano, sostenibilidad marina, viajes de buceo colombia"
-  },
+  "aboutUs": {
+    "seo": {
+      "title": "Sobre nosotros",
+      "desc": "Explora nuestra esencia: la historia de JustDiveCol, nuestro equipo apasionado y cómo combinamos la aventura submarina con un compromiso inquebrantable por la seguridad y la conservación. ¡Sumérgete con confianza!",
+      "keywords": "JustDiveCol, sobre nosotros, historia JustDiveCol, equipo de buceo, buceo seguro, conservación marina, aventura submarina, operador de buceo, comunidad de buceo, pasión por el océano, sostenibilidad marina, viajes de buceo colombia"
+    },
 
-  "header": {
-    "aboutHeaderTitle": "Más que un operador: somos una comunidad que vive el océano",
-    "aboutHeaderSubtitle": "En JustDiveCol, cada miembro es un explorador de corazón. Compartimos, protegemos y celebramos la majestuosidad del mundo submarino para garantizar que cada inmersión sea, simplemente, inolvidable."
-  },
+    "header": {
+      "title": "Más que un operador: somos una comunidad que vive el océano",
+      "subtitle": "En JustDiveCol, cada miembro es un explorador de corazón. Compartimos, protegemos y celebramos la majestuosidad del mundo submarino para garantizar que cada inmersión sea, simplemente, inolvidable."
+    },
 
-  "mission": {
-    "aboutMissionTitle": "Nuestra misión: conectar a las personas con el océano",
-    "aboutMissionText": "Nuestra misión es transformar a los turistas en exploradores conscientes. Lo logramos ofreciendo experiencias de buceo seguras e inolvidables, construyendo una comunidad apasionada y fomentando la conservación marina. Creemos que cada inmersión es un viaje de autodescubrimiento y un paso hacia la protección del mundo submarino."
-  },
+    "mission": {
+      "title": "Nuestra misión: conectar a las personas con el océano",
+      "text": "Nuestra misión es transformar a los turistas en exploradores conscientes. Lo logramos ofreciendo experiencias de buceo seguras e inolvidables, construyendo una comunidad apasionada y fomentando la conservación marina. Creemos que cada inmersión es un viaje de autodescubrimiento y un paso hacia la protección del mundo submarino."
+    },
 
-  "team": {
-    "aboutTeamTitle": "Los artífices de tus inmersiones inolvidables",
+    "team": {
+      "title": "Los artífices de tus inmersiones inolvidables",
 
-    "teamRoleInstructor": "Instructor PADI",
-    "teamRoleDivemaster": "Divemaster PADI",
+      "roleInstructor": "Instructor PADI",
+      "roleDivemaster": "Divemaster PADI",
 
-    "teamBioCamilo": "Para Camilo, el océano no es solo un destino, es un santuario de paz y emoción. Su profunda pasión lo llevó a fundar JustDiveCol, con el propósito de compartir este amor a través de experiencias seguras y llenas de aventura. Él es la prueba viviente de que la calma profunda y la adrenalina pueden coexistir en perfecta armonía bajo el agua.",
-    "teamBioAlejandra": "Para Alejandra, bucear es como volar lentamente a través de un universo oculto. Se deleita flotando entre vibrantes corales, dejándose llevar suavemente por las corrientes y descubriendo paisajes de otro mundo. Su misión es guiarte a valorar cada matiz de este vasto y asombroso océano.",
-    "teamBioPablo": "Aunque es el miembro más reciente en el mundo del buceo, Pablo aporta su excepcional ojo artístico para capturar la magia submarina. Sus impresionantes imágenes y videos cuentan historias cautivadoras que te inspirarán a descubrir el océano con todos los sentidos."
-  },
-
-  "cta": {
-    "aboutCtaTitle": "¿Listo para tu próxima aventura?",
-    "aboutCtaSubtitle": "Contáctanos hoy y planeemos juntos tu inmersión. Resolvemos todas tus dudas sin compromiso.",
-    "contactButton": "Hablemos por WhatsApp",
-    "formTitle": "O déjanos un mensaje"
+      "bioCamilo": "Para Camilo, el océano no es solo un destino, es un santuario de paz y emoción. Su profunda pasión lo llevó a fundar JustDiveCol, con el propósito de compartir este amor a través de experiencias seguras y llenas de aventura. Él es la prueba viviente de que la calma profunda y la adrenalina pueden coexistir en perfecta armonía bajo el agua.",
+      "bioAlejandra": "Para Alejandra, bucear es como volar lentamente a través de un universo oculto. Se deleita flotando entre vibrantes corales, dejándose llevar suavemente por las corrientes y descubriendo paisajes de otro mundo. Su misión es guiarte a valorar cada matiz de este vasto y asombroso océano.",
+      "bioPablo": "Aunque es el miembro más reciente en el mundo del buceo, Pablo aporta su excepcional ojo artístico para capturar la magia submarina. Sus impresionantes imágenes y videos cuentan historias cautivadoras que te inspirarán a descubrir el océano con todos los sentidos."
+    }
   }
 }

@@ -1,61 +1,61 @@
 {
-  "seo": {
-    "homeSeoTitle": "Tu compañía de turismo y buceo inolvidable",
-    "homeSeoDesc": "Sumérgete en una aventura submarina que trasciende fronteras. Ofrecemos certificaciones PADI y viajes personalizados a destinos asombrosos. ¡Tu exploración del gran azul comienza hoy mismo con JustDiveCol!",
-    "homeSeoKeywords": "buceo, certificaciones de buceo, certificaciones PADI, viajes de buceo, aventura submarina, JustDiveCol, explorar océanos, buceo seguro, buceo Colombia, buceo personalizado, open water, advanced open water, rescue diver, vida marina"
-  },
+  "home": {
+    "seo": {
+      "title": "Tu compañía de turismo y buceo inolvidable",
+      "desc": "Sumérgete en una aventura submarina que trasciende fronteras. Ofrecemos certificaciones PADI y viajes personalizados a destinos asombrosos. ¡Tu exploración del gran azul comienza hoy mismo con JustDiveCol!",
+      "keywords": "buceo, certificaciones de buceo, certificaciones PADI, viajes de buceo, aventura submarina, JustDiveCol, explorar océanos, buceo seguro, buceo Colombia, buceo personalizado, open water, advanced open water, rescue diver, vida marina"
+    },
 
-  "hero": {
-    "homeHeroTitle": "Tu próxima gran aventura comienza bajo el agua",
-    "homeHeroSubtitle": "Explora las maravillas ocultas de los océanos con la seguridad y la pasión que nos distingue. Te invitamos a descubrir un mundo de belleza inigualable y emociones que perduran mucho después de la inmersión.",
-    "experiencesButton": "Explorar experiencias"
-  },
+    "hero": {
+      "title": "Tu próxima gran aventura comienza bajo el agua",
+      "subtitle": "Explora las maravillas ocultas de los océanos con la seguridad y la pasión que nos distingue. Te invitamos a descubrir un mundo de belleza inigualable y emociones que perduran mucho después de la inmersión.",
+      "button": {
+        "text": "Ver experiencias"
+      }
+    },
 
-  "featured": {
-    "homeFeaturedTitle": "Aventuras que transforman tu visión del mundo",
+    "featured": {
+      "title": "Aventuras que transforman tu visión del mundo",
 
-    "featuredCard1Title": "Explora nuestras experiencias disponibles",
-    "featuredCard1Subtitle": "El océano más cerca de ti",
+      "card1Title": "Explora nuestras experiencias disponibles",
+      "card1Subtitle": "El océano más cerca de ti",
 
-    "featuredCard2Title": "Inicia tu certificación PADI",
-    "featuredCard2Subtitle": "Tu primer paso bajo el agua",
+      "card2Title": "Inicia tu certificación PADI",
+      "card2Subtitle": "Tu primer paso bajo el agua",
 
-    "featuredCard3Title": "Viaja a nuestros destinos soñados",
-    "featuredCard3Subtitle": "Descubre el mundo submarino",
+      "card3Title": "Viaja a nuestros destinos soñados",
+      "card3Subtitle": "Descubre el mundo submarino",
 
-    "featuredCard4Title": "Diseña tu experiencia perfecta",
-    "featuredCard4Subtitle": "Una experiencia a tu medida"
-  },
+      "card4Title": "Diseña tu experiencia perfecta",
+      "card4Subtitle": "Una experiencia a tu medida"
+    },
 
-  "principles": {
-    "homePrinciplesTitle": "Principios en acción",
-    "homePrinciplesSubtitle": "Cada inmersión es una oportunidad para demostrar nuestro compromiso. Ve cómo aplicamos nuestros principios en cada una de nuestras experiencias.",
+    "principles": {
+      "title": "Nuestros principios en acción",
+      "subtitle": "Cada inmersión es una oportunidad para vivir nuestros valores. Descubre los pilares que guían cada una de nuestras experiencias.",
+      "card1Title": "Sostenibilidad",
+      "card1Desc": "Promovemos el buceo de bajo impacto para minimizar nuestra huella ambiental. Nos comprometemos a cuidar el planeta en cada burbuja.",
+      "card2Title": "Conservación del océano",
+      "card2Desc": "Creemos que la exploración conlleva la responsabilidad de proteger. Apoyamos iniciativas de conservación marina y educamos a nuestros buzos para ser guardianes del mar.",
+      "card3Title": "Comunidad y bienestar",
+      "card3Desc": "Trabajamos de la mano con comunidades locales y operadores, fomentando un turismo responsable que genera bienestar en cada destino que visitamos."
+    },
 
-    "principlesCard1Title": "Sostenibilidad en cada burbuja",
-    "principlesCard1Desc": "Promovemos activamente prácticas de buceo de bajo impacto. Nuestro compromiso es minimizar nuestra huella ambiental, asegurando que cada aventura sea tan respetuosa con el planeta como emocionante.",
+    "testimonials": {
+      "title": "Voces de nuestras aventuras submarinas inolvidables",
 
-    "principlesCard2Title": "Guardianes del océano",
-    "principlesCard2Desc": "Creemos que la exploración conlleva la responsabilidad de proteger. Apoyamos iniciativas de conservación marina y educamos a nuestros exploradores sobre la importancia vital de preservar los ecosistemas subacuáticos para las futuras generaciones.",
+      "quote1": "Desde el primer momento en Curaçao, el profesionalismo del equipo me hizo sentir en casa. Pude relajarme y disfrutar del buceo sin preocuparme por nada."
+    },
 
-    "principlesCard3Title": "Conexión humana y bienestar local",
-    "principlesCard3Desc": "Valoramos a las personas tanto como al planeta. Trabajamos de la mano con comunidades y operadores locales, fomentando alianzas que impulsan un turismo responsable y generan bienestar económico y social en cada destino que visitamos."
-  },
+    "allies": {
+      "title": "Nuestros aliados en la aventura submarina"
+    },
 
-  "testimonials": {
-    "homeTestimonialsTitle": "Voces de nuestras aventuras submarinas inolvidables",
-
-    "testimonial1Quote": "Desde el primer momento en Curaçao, el profesionalismo del equipo me hizo sentir en casa. Pude relajarme y disfrutar del buceo sin preocuparme por nada.",
-    "testimonial1Origin": "Viaje perzonalizado a Curaçao"
-  },
-
-  "allies": {
-    "homeAlliesTitle": "Nuestros aliados en la aventura submarina"
-  },
-
-  "cta": {
-    "homeCtaTitle": "¿Listo para tu próxima aventura?",
-    "homeCtaSubtitle": "Contáctanos hoy y planeemos juntos tu inmersión. Resolvemos todas tus dudas sin compromiso.",
-    "formTitle": "O déjanos un mensaje",
-    "contactButton": "Hablemos por WhatsApp"
+    "cta": {
+      "title": "¿Listo para tu próxima aventura?",
+      "subtitle": "Contáctanos hoy y planeemos juntos tu inmersión. Resolvemos todas tus dudas sin compromiso.",
+      "formTitle": "O déjanos un mensaje",
+      "buttonText": "Hablemos por WhatsApp"
+    }
   }
 }

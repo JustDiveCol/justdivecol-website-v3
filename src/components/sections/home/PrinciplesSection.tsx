@@ -24,13 +24,16 @@ export const PrinciplesSection = ({
         <p className='text-subtitle mt-4'>{t(subtitleKey)}</p>
       </div>
 
-      <div className='flex flex-wrap justify-center gap-8'>
+      <div className='flex flex-wrap justify-center items-stretch gap-8'>
         {cards.map((card) => (
-          <PrincipleCard
+          <div
             key={card.id}
-            cardData={card}
-            translationNS={translationNS}
-          />
+            className='flex w-[calc(50%-1rem)] flex-shrink-0 sm:w-5/12 md:w-4/12 lg:w-[30%] xl:w-[22%]'>
+            <PrincipleCard
+              cardData={card}
+              translationNS={translationNS}
+            />
+          </div>
         ))}
       </div>
     </section>

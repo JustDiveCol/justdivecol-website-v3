@@ -1,7 +1,8 @@
 // src/components/sections/shared/PrincipleCard.tsx
 import { useTranslation } from 'react-i18next';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { BRAND_ASSETS } from '../../../constants/assets';
+import { useMotionPresets } from '../../../hooks/animations';
 
 import type { I18NNamespace } from '../../../constants/i18n';
 import type { PrincipleCardData } from './types';
@@ -14,18 +15,17 @@ type PrincipleCard = {
 export const PrincipleCard = ({ cardData, translationNS }: PrincipleCard) => {
   const { t } = useTranslation([translationNS, 'common']);
   const mainLogo = BRAND_ASSETS.mainLogo;
-  const reduceMotion = useReducedMotion();
+  const { card } = useMotionPresets(); // ← usar preset global
 
   return (
     <motion.div
-      initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      variants={card}
+      initial='hidden'
+      whileInView='visible'
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: reduceMotion ? 0 : 0.6 }}
-      className='group flex h-full flex-col overflow-hidden rounded-lg bg-brand-neutral/80 shadow-xl w-[calc(50%-1rem)] flex-shrink-0 sm:w-5/12 md:w-4/12 lg:w-[30%] xl:w-[22%]'>
-      {/* Image Container */}
+      className='group flex h-full flex-col overflow-hidden rounded-lg bg-brand-neutral/80 shadow-xl'>
+      {/* header con ratio fijo */}
       <figure className='relative aspect-video m-0'>
-        {/* Image */}
         <div className='absolute inset-0 overflow-hidden'>
           <img
             src={cardData.imageUrl}
@@ -37,8 +37,6 @@ export const PrincipleCard = ({ cardData, translationNS }: PrincipleCard) => {
             height={720}
           />
         </div>
-
-        {/* Gradient (decorativo) */}
         <div
           aria-hidden='true'
           className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent'
@@ -90,8 +88,8 @@ export const PrincipleCard = ({ cardData, translationNS }: PrincipleCard) => {
         </div>
       </figure>
 
-      {/* Description */}
-      <div className='flex flex-grow flex-col p-6 text-justify'>
+      {/* cuerpo que crece para igualar alturas */}
+      <div className='flex flex-1 flex-col p-6 text-justify'>
         <p className='text-base-sm text-brand-primary-dark/80'>
           {t(cardData.descriptionKey)}
         </p>

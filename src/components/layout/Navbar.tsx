@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 // src/components/layout/Navbar.tsx
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect, useRef } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation, useMatch, useResolvedPath } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 
@@ -12,6 +12,90 @@ import { MenuIcon, CloseIcon, ChevronDownIcon } from '../ui/Icons';
 
 const NAV_H_MOBILE = '4rem'; // h-16
 const NAV_H_DESKTOP = '5rem'; // h-20
+
+// ---------- Helpers de Link con estado activo robusto ----------
+type BaseLinkProps = {
+  to: string;
+  nameKey: string;
+  className?: string;
+};
+
+const useIsActive = (to: string) => {
+  const resolved = useResolvedPath(to);
+  const isRoot = resolved.pathname === '/';
+  const match = useMatch({
+    path: isRoot ? '/' : `${resolved.pathname}/*`,
+    end: isRoot, // la raíz solo matchea exactamente '/'
+  });
+  return Boolean(match);
+};
+
+const DesktopNavLinkItem = ({ to, nameKey, className = '' }: BaseLinkProps) => {
+  const { t } = useTranslation(['common', 'navigation']);
+  const active = useIsActive(to);
+
+  return (
+    <Link
+      to={to}
+      className={`group relative flex-shrink-0 whitespace-nowrap text-sm font-semibold uppercase tracking-wider transition-colors
+        ${
+          active
+            ? 'text-brand-cta-orange'
+            : 'text-white hover:text-brand-cta-orange/80'
+        }
+        ${className}`}>
+      {t(`nav.${nameKey}`)}
+      <span
+        aria-hidden='true'
+        className={`absolute -bottom-0.5 left-0 h-0.5 w-full origin-center bg-brand-cta-orange transition-transform duration-300
+          ${active ? 'scale-x-100' : 'scale-x-0'} group-hover:scale-x-100`}
+      />
+    </Link>
+  );
+};
+
+const MoreMenuLinkItem = ({ to, nameKey }: BaseLinkProps) => {
+  const { t } = useTranslation(['common', 'navigation']);
+  const active = useIsActive(to);
+
+  return (
+    <Link
+      to={to}
+      role='menuitem'
+      className={`block w-full px-4 py-2 text-left text-sm font-semibold uppercase transition-colors
+        ${
+          active
+            ? 'text-brand-cta-orange'
+            : 'text-white hover:bg-brand-primary-light'
+        }`}>
+      {t(`nav.${nameKey}`)}
+    </Link>
+  );
+};
+
+const MobileMenuLinkItem = ({
+  to,
+  nameKey,
+  onClick,
+}: BaseLinkProps & { onClick: () => void }) => {
+  const { t } = useTranslation(['common', 'navigation']);
+  const active = useIsActive(to);
+
+  return (
+    <Link
+      to={to}
+      onClick={onClick}
+      className={`w-full rounded-md py-3 text-center text-sm font-semibold uppercase tracking-wider transition-colors
+        ${
+          active
+            ? 'text-brand-cta-orange'
+            : 'text-white hover:bg-brand-primary-medium'
+        }`}>
+      {t(`nav.${nameKey}`)}
+    </Link>
+  );
+};
+// ---------------------------------------------------------------
 
 const Navbar = () => {
   const { t } = useTranslation(['common', 'navigation']);
@@ -77,30 +161,6 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
-  const NavLinkItem = ({
-    to,
-    nameKey,
-    className = '',
-  }: {
-    to: string;
-    nameKey: string;
-    className?: string;
-  }) => (
-    <NavLink
-      to={to}
-      className={({ isActive }) =>
-        `group relative flex-shrink-0 whitespace-nowrap text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:text-brand-cta-orange/80 ${
-          isActive ? 'text-brand-cta-orange' : ''
-        } ${className}`
-      }>
-      {t(`nav.${nameKey}`)}
-      <span
-        className='absolute -bottom-0.5 left-0 h-0.5 w-full origin-center scale-x-0 bg-brand-cta-orange transition-transform duration-300 group-hover:scale-x-100'
-        aria-hidden='true'
-      />
-    </NavLink>
-  );
-
   return (
     <motion.nav
       initial={reduceMotion ? false : { y: -100 }}
@@ -123,7 +183,7 @@ const Navbar = () => {
         className='container mx-auto flex items-center justify-between px-4'
         style={{ height: 'var(--nav-h)' }}>
         {/* Logo */}
-        <NavLink
+        <Link
           to='/'
           className='flex-shrink-0 transition-transform duration-300 hover:scale-105'
           aria-label={t('common:home', 'Inicio')}>
@@ -133,12 +193,12 @@ const Navbar = () => {
             className='h-12 w-auto'
             loading='lazy'
           />
-        </NavLink>
+        </Link>
 
         {/* Desktop */}
         <div className='hidden items-center gap-x-6 md:flex'>
           {NAV_LINKS.map((link) => (
-            <NavLinkItem
+            <DesktopNavLinkItem
               key={link.nameKey}
               to={link.path}
               nameKey={link.nameKey}
@@ -179,17 +239,11 @@ const Navbar = () => {
                     className='absolute right-0 top-full mt-2 w-48 rounded-md bg-brand-primary-dark/95 shadow-lg ring-1 ring-white/10 backdrop-blur-sm'>
                     <div className='py-1'>
                       {linksToHideOnTablet.map((link) => (
-                        <NavLink
+                        <MoreMenuLinkItem
                           key={link.nameKey}
                           to={link.path}
-                          role='menuitem'
-                          className={({ isActive }) =>
-                            `block w-full px-4 py-2 text-left text-sm font-semibold uppercase text-white transition-colors hover:bg-brand-primary-light ${
-                              isActive ? 'text-brand-cta-orange' : ''
-                            }`
-                          }>
-                          {t(`nav.${link.nameKey}`)}
-                        </NavLink>
+                          nameKey={link.nameKey}
+                        />
                       ))}
                     </div>
                   </motion.div>
@@ -233,17 +287,12 @@ const Navbar = () => {
             className='overflow-hidden border-t border-white/10 bg-brand-primary-dark/95 backdrop-blur-lg md:hidden'>
             <div className='flex flex-col items-center space-y-2 px-4 pb-4 pt-2'>
               {NAV_LINKS.map((link) => (
-                <NavLink
+                <MobileMenuLinkItem
                   key={link.nameKey}
                   to={link.path}
+                  nameKey={link.nameKey}
                   onClick={() => setIsMenuOpen(false)}
-                  className={({ isActive }) =>
-                    `w-full rounded-md py-3 text-center text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-brand-primary-medium ${
-                      isActive ? 'text-brand-cta-orange' : ''
-                    }`
-                  }>
-                  {t(`nav.${link.nameKey}`)}
-                </NavLink>
+                />
               ))}
             </div>
           </motion.div>

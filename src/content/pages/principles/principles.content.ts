@@ -2,6 +2,7 @@
 import { BRAND_ASSETS } from '../../../constants/assets';
 import { ROUTES } from '../../../constants/routes';
 import { PrinciplesPageContentSchema } from '../../schemas';
+import { toUrlPath } from '../../urlPathSchema';
 import type { PrinciplesPageContent } from './types';
 
 const rawPrinciples: PrinciplesPageContent = {
@@ -9,7 +10,7 @@ const rawPrinciples: PrinciplesPageContent = {
     titleKey: 'principles.seo.title',
     descriptionKey: 'principles.seo.desc',
     keywordsKey: 'principles.seo.keywords',
-    urlPath: ROUTES.principles,
+    urlPath: toUrlPath(ROUTES.principles),
     imageUrl: '/images/social/principles-social-card.webp',
     translationNS: 'principles',
   },
@@ -21,6 +22,7 @@ const rawPrinciples: PrinciplesPageContent = {
     imageData: {
       backgroundImage: '/images/principles/header-background.webp',
       photoCredit: 'Camilo Beltran @JustDiveCol',
+      complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
       variant: 'header',
     },
   },
