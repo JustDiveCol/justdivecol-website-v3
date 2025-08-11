@@ -15,7 +15,7 @@ import {
   CertificationCodeSchema,
   CertificationIdSchema,
   CertificationLevelSchema,
-} from '../../lib/db/constants';
+} from '../../constants';
 
 export const CertificationCardContentSchema = z.object({
   imageData: ImageComponentDataSchema,

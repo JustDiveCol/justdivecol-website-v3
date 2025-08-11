@@ -1,5 +1,4 @@
 // src/components/common/Button.tsx
-
 import React from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';

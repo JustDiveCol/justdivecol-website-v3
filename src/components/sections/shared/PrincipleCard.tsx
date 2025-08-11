@@ -1,16 +1,16 @@
 // src/components/sections/shared/PrincipleCard.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { BRAND_ASSETS } from '../../../constants/assets';
 import { useMotionPresets } from '../../../hooks/animations';
-import type { PrincipleCardProps } from './types';
+import type { PrincipleCardProps } from '../home/types';
+import { BRAND_ASSETS_SAFE } from '../../../constants';
 
 export const PrincipleCard = ({
   cardData,
   translationNS,
 }: PrincipleCardProps) => {
   const { t } = useTranslation([translationNS, 'common']);
-  const mainLogo = BRAND_ASSETS.mainLogo;
+  const mainLogo = BRAND_ASSETS_SAFE.mainLogo;
   const { card } = useMotionPresets(); // ← usar preset global
 
   return (

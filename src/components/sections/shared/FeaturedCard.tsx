@@ -2,9 +2,8 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, useReducedMotion } from 'framer-motion';
-
-import { BRAND_ASSETS } from '../../../constants/assets';
-import type { FeaturedCardProps } from './types';
+import type { FeaturedCardProps } from '../home/types';
+import { BRAND_ASSETS_SAFE } from '../../../constants';
 
 export const FeaturedCard = ({
   cardData,
@@ -15,7 +14,7 @@ export const FeaturedCard = ({
   const reduceMotion = useReducedMotion();
   const { imageData, link, titleKey, subtitleKey } = cardData;
 
-  const mainLogo = BRAND_ASSETS.mainLogo;
+  const mainLogo = BRAND_ASSETS_SAFE.mainLogo;
 
   return (
     <motion.div

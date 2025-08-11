@@ -1,5 +1,6 @@
 // src/content/dive-sites/types.ts
 import { z } from 'zod';
+import { ImageComponentDataSchema } from '../../../components/common/types';
 import {
   DestinationIdSchema,
   DiveConditionIdSchema,
@@ -7,8 +8,7 @@ import {
   DiveLevelIdSchema,
   DiveTagIdSchema,
   DiveTypeIdSchema,
-} from '../../../lib/db/constants';
-import { ImageComponentDataSchema } from '../../../components/common/types';
+} from '../../../constants';
 
 export const DiveSiteContentSchema = z.object({
   id: z.string(),

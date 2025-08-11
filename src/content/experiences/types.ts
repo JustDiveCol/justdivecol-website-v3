@@ -9,10 +9,7 @@ import {
   CtaSectionPropsSchema,
   PageHeaderPropsSchema,
 } from '../../components/sections/shared/types';
-import {
-  DestinationIdSchema,
-  ExperienceIdSchema,
-} from '../../lib/db/constants';
+import { DestinationIdSchema, ExperienceIdSchema } from '../../constants';
 
 export const ExperienceDescriptionContentSchema = z.object({
   titleKey: z.string(),

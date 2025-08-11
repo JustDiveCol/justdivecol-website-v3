@@ -1,7 +1,7 @@
 // src/components/common/ImageComponent.tsx
 import { useTranslation } from 'react-i18next';
-import { BRAND_ASSETS } from '../../constants/assets';
 import type { ImageComponentWithFitProps as Props } from './types';
+import { BRAND_ASSETS_SAFE } from '../../constants';
 
 const variantStyles: Record<string, string> = {
   fullscreen: 'h-full',
@@ -26,7 +26,7 @@ export const ImageComponent = ({
     variant,
   } = imageData;
 
-  const mainLogo = BRAND_ASSETS.mainLogo;
+  const mainLogo = BRAND_ASSETS_SAFE.mainLogo;
 
   const baseSizeClass =
     fit === 'parent' ? 'h-full w-full' : variantStyles[variant] || 'h-full';

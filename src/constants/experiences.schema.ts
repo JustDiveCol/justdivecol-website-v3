@@ -1,3 +1,4 @@
+// src/constants/experiences.schema.ts
 import { z } from 'zod';
 
 export const EXPERIENCES_IDS = ['exp-santa-marta', 'exp-providencia'] as const;

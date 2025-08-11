@@ -3,10 +3,10 @@ import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import type { SEOProps } from './types';
 import {
-  SITE_NAME,
-  SITE_URL,
-  DEFAULT_SOCIAL_IMAGE,
-} from '../../constants/site.schema';
+  DEFAULT_SOCIAL_IMAGE_SAFE,
+  SITE_NAME_SAFE,
+  SITE_URL_SAFE,
+} from '../../constants';
 
 export const SEO = ({
   titleKey,
@@ -21,12 +21,12 @@ export const SEO = ({
   const title = t(titleKey);
   const description = t(descriptionKey);
   const keywords = t(keywordsKey);
-  const fullTitle = `${title} | ${SITE_NAME}`;
+  const fullTitle = `${title} | ${SITE_NAME_SAFE}`;
 
-  const fullUrl = urlPath ? `${SITE_URL}${urlPath}` : SITE_URL;
+  const fullUrl = urlPath ? `${SITE_URL_SAFE}${urlPath}` : SITE_URL_SAFE;
   const fullImageUrl = imageUrl
-    ? `${SITE_URL}${imageUrl}`
-    : `${SITE_URL}${DEFAULT_SOCIAL_IMAGE}`;
+    ? `${SITE_URL_SAFE}${imageUrl}`
+    : `${SITE_URL_SAFE}${DEFAULT_SOCIAL_IMAGE_SAFE}`;
 
   return (
     <Helmet>
@@ -66,7 +66,7 @@ export const SEO = ({
       />
       <meta
         property='og:site_name'
-        content={SITE_NAME}
+        content={SITE_NAME_SAFE}
       />
 
       {/* --- Twitter Card --- */}

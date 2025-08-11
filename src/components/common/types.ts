@@ -1,25 +1,25 @@
 // src/components/common/types.ts
 import { z } from 'zod';
-import {
-  I18N_NAMESPACES,
-  type I18NNamespace,
-} from '../../constants/i18n.schema';
+
 import type { ReactNode } from 'react';
 import type { LinkProps } from 'react-router-dom';
 import {
   AssetAltKeySchema,
   AssetURLSchema,
 } from '../../constants/assets.schema';
-import {
-  BUTTON_SIZES,
-  BUTTON_VARIANTS,
-  type ButtonSize,
-  type ButtonVariant,
-} from '../../constants/ui';
+
 import { ImageVariantSchema } from '../../constants/images.schema';
 import { UrlPathSchema } from '../../content/urlPathSchema';
+import {
+  BUTTON_SIZES_SAFE,
+  BUTTON_VARIANTS_SAFE,
+  I18N_NAMESPACES_SAFE,
+  type ButtonSize,
+  type ButtonVariant,
+  type I18NNamespace,
+} from '../../constants';
 
-export const TranslationNSSchema = z.enum(I18N_NAMESPACES);
+export const TranslationNSSchema = z.enum(I18N_NAMESPACES_SAFE);
 export type TranslationNS = I18NNamespace;
 
 // ––– AccordionItemSchema –––
@@ -30,10 +30,10 @@ export const AccordionItemPropsSchema = z.object({
 export type AccordionItemProps = z.infer<typeof AccordionItemPropsSchema>;
 
 // ––– Button –––
-export const ButtonVariantsSchema = z.enum(BUTTON_VARIANTS);
+export const ButtonVariantsSchema = z.enum(BUTTON_VARIANTS_SAFE);
 export type ButtonVariantType = ButtonVariant;
 
-export const ButtonSizesSchema = z.enum(BUTTON_SIZES);
+export const ButtonSizesSchema = z.enum(BUTTON_SIZES_SAFE);
 export type ButtonSizeType = ButtonSize;
 
 export const ButtonActionSchema = z.discriminatedUnion('type', [

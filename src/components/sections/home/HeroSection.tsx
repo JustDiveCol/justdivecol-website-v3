@@ -3,11 +3,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
-import { BRAND_ASSETS } from '../../../constants/assets';
 import { Button } from '../../common/Button';
 import { ChevronDownIcon } from '../../ui';
 import type { HeroSectionProps } from './types';
 import { useMotionPresets } from '../../../hooks/animations';
+import { BRAND_ASSETS_SAFE } from '../../../constants';
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   titleKey,
@@ -94,8 +94,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className='pointer-events-none absolute inset-0 z-20'>
         <div className='absolute bottom-6 right-4 select-none w-24 h-auto md:w-28 opacity-70'>
           <img
-            src={BRAND_ASSETS.mainLogo.url}
-            alt={t(BRAND_ASSETS.mainLogo.altKey)}
+            src={BRAND_ASSETS_SAFE.mainLogo.url}
+            alt={t(BRAND_ASSETS_SAFE.mainLogo.altKey)}
             className='h-auto w-full'
             loading='lazy'
           />

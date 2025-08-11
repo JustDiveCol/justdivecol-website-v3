@@ -1,7 +1,7 @@
 // src/content/pages/contact/contact.content.ts
+import { SOCIAL_SAFE } from '../../../constants';
 import { toAssetUrl } from '../../../constants/assets.schema';
 import { ROUTES } from '../../../constants/routes.schema';
-import { SOCIAL } from '../../../constants/social.schema';
 import { toUrlPath } from '../../urlPathSchema';
 import { ContactPageContentSchema, type ContactPageContent } from './types';
 
@@ -34,7 +34,7 @@ const rawContact: ContactPageContent = {
     phone: '+57 311 522 0316',
     translationNS: 'contact',
     hubspotFormTitleKey: 'contact.contactInfo.formTitle',
-    socials: SOCIAL,
+    socials: SOCIAL_SAFE,
   },
 };
 

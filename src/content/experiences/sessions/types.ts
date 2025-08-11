@@ -1,12 +1,6 @@
 // src/content/sessions/types.ts
 import { z } from 'zod';
 import {
-  AvailableTypeSchema,
-  CertificationIdSchema,
-  CurrencyIdSchema,
-  ExperienceIdSchema,
-} from '../../../lib/db/constants';
-import {
   ContentButtonSchema,
   SEOPropsSchema,
 } from '../../../components/common/types';
@@ -20,6 +14,12 @@ import {
   ExperienceItineraryContentSchema,
   ExperienceWhatIsIncludedSchema,
 } from '../types';
+import {
+  AvailableTypeSchema,
+  CertificationIdSchema,
+  CurrencyIdSchema,
+  ExperienceIdSchema,
+} from '../../../constants';
 
 const isoDate = z
   .string()

@@ -1,3 +1,4 @@
+// src/constants/currency.schema.ts
 import { z } from 'zod';
 
 export const CURRENCY_IDS = ['COP', 'USD'] as const;

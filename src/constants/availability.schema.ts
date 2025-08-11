@@ -1,3 +1,4 @@
+// src/constants/availability.schema.ts
 import { z } from 'zod';
 
 export const AVAILABILITY = [

@@ -1,3 +1,4 @@
+// src/constants/index.ts
 export * from './assets.schema.ts';
 export * from './availability.schema.ts';
 export * from './certifications.schema';

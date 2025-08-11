@@ -9,7 +9,7 @@ import {
   CtaSectionPropsSchema,
   PageHeaderPropsSchema,
 } from '../../components/sections/shared/types';
-import { CountryIdSchema, DestinationIdSchema } from '../../lib/db/constants';
+import { CountryIdSchema, DestinationIdSchema } from '../../constants';
 
 export const DestinationCardContentSchema = z.object({
   imageData: ImageComponentDataSchema,

@@ -1,3 +1,4 @@
+// src/constants/destinations.schema.ts
 import { z } from 'zod';
 
 export const DESTINATION_IDS = [

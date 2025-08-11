@@ -6,17 +6,17 @@ import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 
 import { ImageComponent } from '../../common/ImageComponent';
-import { BRAND_ASSETS } from '../../../constants/assets';
 import { ChevronLeftIcon, ChevronRightIcon } from '../../ui';
 import type { ImageComponentData } from '../../common/types';
 import type { PhotoGalleryProps } from './types';
+import { BRAND_ASSETS_SAFE } from '../../../constants';
 
 type Slide = ImageComponentData & { src: string };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CustomSlide = ({ slide }: any) => {
   const { t } = useTranslation('common');
-  const mainLogo = BRAND_ASSETS.mainLogo;
+  const mainLogo = BRAND_ASSETS_SAFE.mainLogo;
 
   return (
     <div

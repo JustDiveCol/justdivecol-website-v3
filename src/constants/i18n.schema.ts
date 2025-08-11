@@ -20,9 +20,9 @@ export const I18N_LANGUAGES_RAW = ['es', 'en'] as const;
 export const I18NNamespaceSchema = z.enum(I18N_NAMESPACES_RAW);
 export const I18NLanguageSchema = z.enum(I18N_LANGUAGES_RAW);
 
-type I18NNamespace = z.infer<typeof I18NNamespaceSchema>;
-type I18NLanguage = z.infer<typeof I18NLanguageSchema>;
-type I18nPathTemplate = `/locales/{{lng}}/${string}.json`;
+export type I18NNamespace = z.infer<typeof I18NNamespaceSchema>;
+export type I18NLanguage = z.infer<typeof I18NLanguageSchema>;
+export type I18nPathTemplate = `/locales/{{lng}}/${string}.json`;
 
 const I18nPathTemplateSchema = z
   .string()
