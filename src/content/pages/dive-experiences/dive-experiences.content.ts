@@ -1,6 +1,6 @@
 // src/content/pages/dive-experiences/dive-experiences.content.ts
 import { toAssetUrl } from '../../../constants/assets.schema';
-import { ROUTES } from '../../../constants/routes';
+import { ROUTES } from '../../../constants/routes.schema';
 import { DiveExperiencesPageContentSchema } from '../../schemas';
 import { toUrlPath } from '../../urlPathSchema';
 import type { DiveExperiencesPageContent } from './types';

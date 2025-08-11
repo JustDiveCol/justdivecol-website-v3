@@ -2,7 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { AccordionItem } from '../../common/AccordionItem';
-import { ROUTES } from '../../../constants/routes';
+import { ROUTES } from '../../../constants/routes.schema';
 import { Button } from '../../common/Button';
 
 import { useMotionPresets } from '../../../hooks/animations';

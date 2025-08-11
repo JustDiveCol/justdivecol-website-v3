@@ -1,6 +1,6 @@
 // src/content/urlPathSchema.ts
 import { z } from 'zod';
-import { ROUTES } from '../constants/routes';
+import { ROUTES } from '../constants/routes.schema';
 
 const ROUTE_VALUES = Object.values(ROUTES) as readonly string[];
 const ROUTE_BASES = ROUTE_VALUES.map((r) => {

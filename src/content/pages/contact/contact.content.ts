@@ -1,7 +1,7 @@
 // src/content/pages/contact/contact.content.ts
 import { toAssetUrl } from '../../../constants/assets.schema';
-import { ROUTES } from '../../../constants/routes';
-import { SOCIAL } from '../../../constants/social';
+import { ROUTES } from '../../../constants/routes.schema';
+import { SOCIAL } from '../../../constants/social.schema';
 import { toUrlPath } from '../../urlPathSchema';
 import { ContactPageContentSchema, type ContactPageContent } from './types';
 

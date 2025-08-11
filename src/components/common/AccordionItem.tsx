@@ -1,6 +1,8 @@
 // src/components/common/AccordionItem.tsx
+
 import { useId, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
 import { ChevronDownIcon } from '../ui';
 import { useMotionPresets } from '../../hooks/animations';
 import type { AccordionItemProps } from './types';

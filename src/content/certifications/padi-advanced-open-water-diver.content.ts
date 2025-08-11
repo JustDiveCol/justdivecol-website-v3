@@ -1,6 +1,6 @@
 // src/content/certifications/padi-advanced-open-water-diver.content.ts
 import { BRAND_ASSETS_SAFE, toAssetUrl } from '../../constants/assets.schema';
-import { ROUTES } from '../../constants/routes';
+import { ROUTES } from '../../constants/routes.schema';
 import { toUrlPath } from '../urlPathSchema';
 import { CertificationContentSchema, type CertificationContent } from './types';
 

@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { DestinationPillProps } from './types';
-import { buildDestinationDetailRoute } from '../../../constants/routes';
+import { buildDestinationDetailRoute } from '../../../constants/routes.schema';
 
 export const DestinationPill = ({
   destination,

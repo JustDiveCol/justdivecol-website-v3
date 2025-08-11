@@ -1,6 +1,6 @@
 // src/content/experiences/exp-santa-marta.content.ts
 import { toAssetUrl } from '../../constants/assets.schema';
-import { ROUTES } from '../../constants/routes';
+import { ROUTES } from '../../constants/routes.schema';
 import { toUrlPath } from '../urlPathSchema';
 import { ExperienceContentSchema, type ExperienceContent } from './types';
 

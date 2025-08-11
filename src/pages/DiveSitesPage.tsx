@@ -23,7 +23,7 @@ import {
   type DiveTag,
 } from '../lib/db/constants';
 
-import { ROUTES } from '../constants/routes';
+import { ROUTES } from '../constants/routes.schema';
 import { toUrlPath } from '../content/urlPathSchema';
 
 const initialFilters: FiltersData = {

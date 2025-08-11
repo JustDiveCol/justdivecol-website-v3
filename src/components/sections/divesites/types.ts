@@ -1,6 +1,6 @@
 // src/components/sections/divesites/types.ts
 import type React from 'react';
-import type { I18NNamespace } from '../../../constants/i18n';
+import type { I18NNamespace } from '../../../constants/i18n.schema';
 
 // Si ya tienes un tipo enriquecido con imágenes/descripciones en content:
 import type { DiveSiteContent } from '../../../content/dive-sites/types';

@@ -1,5 +1,5 @@
 // src/components/sections/experiences/types.ts
-import type { I18NNamespace } from '../../../constants/i18n';
+import type { I18NNamespace } from '../../../constants/i18n.schema';
 import type { ImageComponentData } from '../../common/types';
 
 // OK

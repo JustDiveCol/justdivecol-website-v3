@@ -1,92 +1,6 @@
-// src/lib/db/constants.ts
 import { z } from 'zod';
 
-// ——— Certifications ———
-export const CERTIFICATION = [
-  { id: 'padi-open-water-diver', code: 'OWD', level: 'entry' },
-  { id: 'padi-advanced-open-water-diver', code: 'AOWD', level: 'advanced' },
-  { id: 'padi-rescue-diver', code: 'RD', level: 'rescue' },
-  // { id: 'padi-dive-master', code: 'DM', level: 'pro' },
-] as const;
-export type Certification = (typeof CERTIFICATION)[number];
-export type CertificationId = Certification['id'];
-export type CertificationCode = Certification['code'];
-export type CertificationLevel = Certification['level'];
-
-export const CertificationIdSchema = z.enum(
-  CERTIFICATION.map((c) => c.id) as [CertificationId, ...CertificationId[]]
-);
-export const CertificationCodeSchema = z.enum(
-  CERTIFICATION.map((c) => c.code) as [
-    CertificationCode,
-    ...CertificationCode[]
-  ]
-);
-export const CertificationLevelSchema = z.enum(
-  CERTIFICATION.map((c) => c.level) as [
-    CertificationLevel,
-    ...CertificationLevel[]
-  ]
-);
-
-export const AGENCY = [
-  { id: 'PADI', name: 'Professional Association of Diving Instructors' },
-  { id: 'SSI', name: 'Scuba Schools International (SSI)' },
-] as const;
-export type Agency = (typeof AGENCY)[number];
-export type AgencyId = Agency['id'];
-export type AgencyName = Agency['name'];
-
-export const AgencyIdSchema = z.enum(
-  AGENCY.map((a) => a.id) as [AgencyId, ...AgencyId[]]
-);
-export const AgencyNameSchema = z.enum(
-  AGENCY.map((a) => a.name) as [AgencyName, ...AgencyName[]]
-);
-
-// ——— Destinations ———
-export const DESTINATION_IDS = [
-  'santa-marta',
-  'providencia',
-  'san-andres',
-  'isla-fuerte',
-] as const;
-export type DestinationId = (typeof DESTINATION_IDS)[number];
-export const DestinationIdSchema = z.enum(DESTINATION_IDS);
-
-export const COUNTRY_IDS = ['CO'] as const;
-export type CountryId = (typeof COUNTRY_IDS)[number];
-export const CountryIdSchema = z.enum(COUNTRY_IDS);
-
-// ——— Experiences ———
-export const EXPERIENCES_IDS = ['exp-santa-marta', 'exp-providencia'] as const;
-export type ExperienceId = (typeof EXPERIENCES_IDS)[number];
-export const ExperienceIdSchema = z.enum(EXPERIENCES_IDS);
-
-// ——— Sessions ———
-export const SESSIONS_IDS = [
-  'santa-marta-sept-2025',
-  'providencia-sept-2025',
-] as const;
-export type SessionId = (typeof SESSIONS_IDS)[number];
-export const SessionIdSchema = z.enum(SESSIONS_IDS);
-
-// ——— Currency ———
-export const CURRENCY_IDS = ['COP', 'USD'] as const;
-export type CurrencyId = (typeof CURRENCY_IDS)[number];
-export const CurrencyIdSchema = z.enum(CURRENCY_IDS);
-
-// ——— Availability ———
-export const AVAILABILITY = [
-  'available',
-  'few_spots',
-  'sold_out',
-  'coming_soon',
-] as const;
-export type AvailableType = (typeof AVAILABILITY)[number];
-export const AvailableTypeSchema = z.enum(AVAILABILITY);
-
-// ——— Dive Sites ———
+// ——— Dive Levels ———
 export const DIVE_LEVELS = [
   { id: 'none', translationKey: 'noneLevelKey' },
   { id: 'open-water-diver', translationKey: 'openWaterDiverLevelKey' },
@@ -97,6 +11,7 @@ export const DIVE_LEVELS = [
   { id: 'technical-diver', translationKey: 'technicalDiverLevelKey' },
   { id: 'any', translationKey: 'anyLevelKey' },
 ] as const;
+
 export type DiveLevel = (typeof DIVE_LEVELS)[number];
 export type DiveLevelId = DiveLevel['id'];
 export type DiveLevelTranslationKey = DiveLevel['translationKey'];
@@ -111,12 +26,14 @@ export const DiveLevelTranslationKeySchema = z.enum(
   ]
 );
 
+// ——— Dive Difficulty ———
 export const DIVE_DIFFICULTIES = [
   { id: 'easy', translationKey: 'easyDifficultyKey' },
   { id: 'medium', translationKey: 'mediumDifficultyKey' },
   { id: 'hard', translationKey: 'hardDifficultyKey' },
   { id: 'expert', translationKey: 'expertDifficultyKey' },
 ] as const;
+
 export type DiveDifficulty = (typeof DIVE_DIFFICULTIES)[number];
 export type DiveDifficultyId = DiveDifficulty['id'];
 export type DiveDifficultyTranslationKey = DiveDifficulty['translationKey'];
@@ -134,6 +51,7 @@ export const DiveDifficultyTranslationKeySchema = z.enum(
   ]
 );
 
+// ——— Dive Types ———
 export const DIVE_TYPES = [
   { id: 'reef', translationKey: 'reefTypeKey', icon: 'Reef' },
   { id: 'wreck', translationKey: 'wreckTypeKey', icon: 'Wreck' },
@@ -152,6 +70,7 @@ export const DIVE_TYPES = [
     icon: 'Reef',
   },
 ] as const;
+
 export type DiveType = (typeof DIVE_TYPES)[number];
 export type DiveTypeId = DiveType['id'];
 export type DiveTypeTranslationKey = DiveType['translationKey'];
@@ -170,6 +89,7 @@ export const DiveTypeIconSchema = z.enum(
   DIVE_TYPES.map((t) => t.icon) as [DiveTypeIcon, ...DiveTypeIcon[]]
 );
 
+// ––– DiveConditions –––
 export const DIVE_CONDITIONS = [
   { id: 'current', translationKey: 'currentConditionKey' },
   { id: 'mild-current', translationKey: 'mildCurrentConditionKey' },
@@ -193,6 +113,7 @@ export const DIVE_CONDITIONS = [
   { id: 'shore-entry', translationKey: 'shoreEntryConditionKey' },
   { id: 'night', translationKey: 'nightConditionKey' },
 ] as const;
+
 export type DiveCondition = (typeof DIVE_CONDITIONS)[number];
 export type DiveConditionId = DiveCondition['id'];
 export type DiveConditionTranslationKey = DiveCondition['translationKey'];
@@ -207,7 +128,6 @@ export const DiveConditionTranslationKeySchema = z.enum(
   ]
 );
 
-// ——— Dive Tags ———
 export const DIVE_TAG_CATEGORIES = [
   {
     id: 'marine-life',
@@ -248,11 +168,20 @@ export const DIVE_TAG_CATEGORIES = [
     ],
   },
 ] as const;
-export type DiveTag = (typeof DIVE_TAG_CATEGORIES)[number]['tags'][number];
-export type DiveTagId = DiveTag['id'];
-export type DiveTagTranslationKey = DiveTag['translationKey'];
+
 export type DiveTagCategory = (typeof DIVE_TAG_CATEGORIES)[number];
 export type DiveTagCategoryId = DiveTagCategory['id'];
+
+export type DiveTag = DiveTagCategory['tags'][number];
+export type DiveTagId = DiveTag['id'];
+export type DiveTagTranslationKey = DiveTag['translationKey'];
+
+export const DiveTagCategoryIdSchema = z.enum(
+  DIVE_TAG_CATEGORIES.map((c) => c.id) as [
+    DiveTagCategoryId,
+    ...DiveTagCategoryId[]
+  ]
+);
 
 export const DiveTagIdSchema = z.enum(
   DIVE_TAG_CATEGORIES.flatMap((c) => c.tags.map((t) => t.id)) as [
@@ -260,15 +189,10 @@ export const DiveTagIdSchema = z.enum(
     ...DiveTagId[]
   ]
 );
+
 export const DiveTagTranslationKeySchema = z.enum(
   DIVE_TAG_CATEGORIES.flatMap((c) => c.tags.map((t) => t.translationKey)) as [
     DiveTagTranslationKey,
     ...DiveTagTranslationKey[]
-  ]
-);
-export const DiveTagCategoryIdSchema = z.enum(
-  DIVE_TAG_CATEGORIES.map((c) => c.id) as [
-    DiveTagCategoryId,
-    ...DiveTagCategoryId[]
   ]
 );

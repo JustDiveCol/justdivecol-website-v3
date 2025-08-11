@@ -4,11 +4,10 @@ import { motion } from 'framer-motion';
 import { useMemo } from 'react';
 import { Button } from '../../common/Button';
 import { BRAND_ASSETS } from '../../../constants/assets';
-import { ROUTES } from '../../../constants/routes';
+import { ROUTES } from '../../../constants/routes.schema';
 import type { AvailableType } from '../../../lib/db/constants';
 import { toUrlPath } from '../../../content/urlPathSchema';
 
-// 🔑 Registries / datos
 import { experiences as experiencesDB } from '../../../lib/db/entities/experiences';
 
 const AvailabilityBadge = ({ status }: { status: AvailableType }) => {

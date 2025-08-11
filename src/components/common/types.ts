@@ -1,6 +1,9 @@
 // src/components/common/types.ts
 import { z } from 'zod';
-import { I18N_NAMESPACES, type I18NNamespace } from '../../constants/i18n';
+import {
+  I18N_NAMESPACES,
+  type I18NNamespace,
+} from '../../constants/i18n.schema';
 import type { ReactNode } from 'react';
 import type { LinkProps } from 'react-router-dom';
 import {
@@ -13,7 +16,7 @@ import {
   type ButtonSize,
   type ButtonVariant,
 } from '../../constants/ui';
-import { ImageVariantSchema } from '../../constants/images';
+import { ImageVariantSchema } from '../../constants/images.schema';
 import { UrlPathSchema } from '../../content/urlPathSchema';
 
 export const TranslationNSSchema = z.enum(I18N_NAMESPACES);

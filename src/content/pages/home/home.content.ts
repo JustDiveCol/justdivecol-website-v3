@@ -1,7 +1,7 @@
 // src/content/pages/home/home.content.ts
 import type { CardData } from '../../../components/sections/home/types';
 import { toAssetUrl } from '../../../constants/assets.schema';
-import { ROUTES } from '../../../constants/routes';
+import { ROUTES } from '../../../constants/routes.schema';
 import { principlesToHomeCards } from '../../selectors/principles.selectors';
 import { toUrlPath } from '../../urlPathSchema';
 import { principlesContent } from '../principles/principles.content';

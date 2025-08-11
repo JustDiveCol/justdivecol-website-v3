@@ -5,7 +5,7 @@ import {
   ImageComponentDataSchema,
   TranslationNSSchema,
 } from '../../common/types';
-import type { I18NNamespace } from '../../../constants/i18n';
+import type { I18NNamespace } from '../../../constants/i18n.schema';
 // import { AvailableTypeSchema } from '../../../lib/db/constants';
 
 // ––– ActiveDestinationCard –––

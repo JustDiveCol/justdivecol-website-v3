@@ -1,8 +1,8 @@
 // src/components/sections/contact/types.ts
 import { z } from 'zod';
-import type { I18NNamespace } from '../../../constants/i18n';
+import type { I18NNamespace } from '../../../constants/i18n.schema';
 import { TranslationNSSchema } from '../../common/types';
-import { SocialSchema } from '../../../constants/social';
+import { SocialSchema } from '../../../constants/social.schema';
 
 // ––– ContactSection –––
 export const ContactSectionPropsSchema = z.object({

@@ -23,7 +23,7 @@ import {
   isStaticPath,
   type StaticRoutePath,
   type StaticRouteName,
-} from '../../constants/routes';
+} from '../../constants/routes.schema';
 
 type SocialIconType = 'instagram' | 'tiktok' | 'youtube';
 

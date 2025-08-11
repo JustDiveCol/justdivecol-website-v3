@@ -1,5 +1,5 @@
 // src/content/footer/footer.content.ts
-import { FOOTER_LINKS } from '../../constants/navigation';
+import { FOOTER_LINKS } from '../../constants/navigation.schema';
 
 import { FooterContentSchema, type FooterContent } from './types';
 

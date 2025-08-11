@@ -1,6 +1,6 @@
 // src/pages/Home/types.ts
 import { z } from 'zod';
-import type { I18NNamespace } from '../../../constants/i18n';
+import type { I18NNamespace } from '../../../constants/i18n.schema';
 
 import { UrlPathSchema, type UrlPath } from '../../../content/urlPathSchema';
 import {

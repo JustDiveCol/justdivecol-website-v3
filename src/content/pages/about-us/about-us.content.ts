@@ -1,6 +1,6 @@
 // src/content/pages/about-us/about-us.content.ts
 import { toAssetUrl } from '../../../constants/assets.schema';
-import { ROUTES } from '../../../constants/routes';
+import { ROUTES } from '../../../constants/routes.schema';
 import { toUrlPath } from '../../urlPathSchema';
 import { AboutUsPageContentSchema, type AboutUsPageContent } from './types';
 

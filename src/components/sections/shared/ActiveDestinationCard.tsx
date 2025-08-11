@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ImageComponent } from '../../common/ImageComponent';
 import { twMerge } from 'tailwind-merge';
-import { ROUTES } from '../../../constants/routes';
+import { ROUTES } from '../../../constants/routes.schema';
 import type { ActiveDestinationCardProps } from './types';
 
 export const ActiveDestinationCard = ({

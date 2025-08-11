@@ -1,6 +1,6 @@
 // src/components/sections/about/types.ts
 import { z } from 'zod';
-import type { I18NNamespace } from '../../../constants/i18n';
+import type { I18NNamespace } from '../../../constants/i18n.schema';
 import {
   TranslationNSSchema,
   ImageComponentDataSchema,

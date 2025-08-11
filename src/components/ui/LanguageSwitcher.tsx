@@ -5,7 +5,7 @@ import {
   I18N_LANGUAGES,
   I18NLanguageSchema,
   type I18NLanguage,
-} from '../../constants/i18n';
+} from '../../constants/i18n.schema';
 
 export const LanguageSwitcherComponent = () => {
   const { i18n, t } = useTranslation();

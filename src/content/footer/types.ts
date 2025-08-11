@@ -1,6 +1,6 @@
 // src/content/footer/types.ts
 import { z } from 'zod';
-import { FOOTER_LINKS } from '../../constants/navigation';
+import { FOOTER_LINKS } from '../../constants/navigation.schema';
 
 const footerPaths = FOOTER_LINKS.map((s) => s.path) as [string, ...string[]];
 const footerNames = FOOTER_LINKS.map((s) => s.nameKey) as [string, ...string[]];

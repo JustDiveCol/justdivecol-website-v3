@@ -1,7 +1,6 @@
-// src/constants/routes.ts
+// src/constants/routes.schema.ts
 import { z } from 'zod';
 
-/** Pequeña ayuda: crear unión de literales sin líos de tuplas */
 const unionLiterals = <const T extends readonly string[]>(vals: T) => {
   if (!vals.length) throw new Error('unionLiterals: empty array');
   return z.union(
@@ -45,9 +44,6 @@ export const ROUTES = {
   notFound: '/route-lost',
 } as const;
 
-/* =========================
-   Types derivados (TypeScript)
-   ========================= */
 export type RouteName = keyof typeof ROUTES;
 export type RoutePath = (typeof ROUTES)[RouteName];
 
@@ -63,6 +59,7 @@ type Contains<
   S extends string,
   C extends string
 > = S extends `${string}${C}${string}` ? true : false;
+
 type ExcludeContaining<U extends string, C extends string> = U extends string
   ? Contains<U, C> extends true
     ? never
@@ -79,15 +76,11 @@ export type StaticRouteName = {
     : never;
 }[keyof typeof ROUTES];
 
-/** Tipo para links de navbar/footer (solo rutas estáticas) */
 export type NavLink = {
   path: StaticRoutePath;
   nameKey: StaticRouteName;
 };
 
-/* =========================
-   Schemas (Zod, runtime)
-   ========================= */
 const entries = Object.entries(ROUTES) as [RouteName, RoutePath][];
 const staticEntries = entries.filter(
   ([, p]) => !p.includes(':') && !p.includes('#')
@@ -107,9 +100,6 @@ export const NavLinkSchema = z.object({
 });
 export const NavLinksSchema = z.array(NavLinkSchema).readonly();
 
-/* =========================
-   Builders
-   ========================= */
 export function buildCertificationDetailRoute(
   certificationSlug: string
 ): UrlPath {
@@ -135,9 +125,6 @@ export function buildDestinationDetailRoute(destinationSlug: string): UrlPath {
   ) as UrlPath;
 }
 
-/* =========================
-   Helpers opcionales
-   ========================= */
 export function isStaticPath(path: string): path is StaticRoutePath {
   return !path.includes(':') && !path.includes('#');
 }

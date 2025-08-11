@@ -6,7 +6,7 @@ import {
   SITE_NAME,
   SITE_URL,
   DEFAULT_SOCIAL_IMAGE,
-} from '../../constants/site';
+} from '../../constants/site.schema';
 
 export const SEO = ({
   titleKey,

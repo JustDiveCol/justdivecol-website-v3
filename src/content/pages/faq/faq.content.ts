@@ -1,6 +1,6 @@
 // src/content/pages/faq/faq.content.ts
 import { toAssetUrl } from '../../../constants/assets.schema';
-import { ROUTES } from '../../../constants/routes';
+import { ROUTES } from '../../../constants/routes.schema';
 
 import { toUrlPath } from '../../urlPathSchema';
 import { FaqPageContentSchema, type FaqPageContent } from './types';
