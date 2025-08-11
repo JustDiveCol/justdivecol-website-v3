@@ -1,15 +1,20 @@
 // src/content/experiences/exp-santa-marta.content.ts
+import { toAssetUrl } from '../../constants/assets.schema';
 import { ROUTES } from '../../constants/routes';
-import { ExperienceContentSchema } from '../schemas';
-import type { ExperienceContent } from './types';
+import { toUrlPath } from '../urlPathSchema';
+import { ExperienceContentSchema, type ExperienceContent } from './types';
 
 const rawSantaMartaExp: ExperienceContent = {
+  id: 'exp-santa-marta',
+  slug: 'santa-marta',
+  destinationId: 'santa-marta',
+
   seo: {
     titleKey: 'experiences.santaMartaExp.seo.title',
     descriptionKey: 'experiences.santaMartaExp.seo.desc',
     keywordsKey: 'experiences.santaMartaExp.seo.keywords',
-    urlPath: ROUTES.diveExperiences,
-    imageUrl: '/images/social/experiences-social-card.webp',
+    urlPath: toUrlPath(ROUTES.diveExperiences),
+    imageUrl: toAssetUrl('/images/social/experiences-social-card.webp'),
     translationNS: 'experiences',
   },
 
@@ -18,7 +23,9 @@ const rawSantaMartaExp: ExperienceContent = {
     subtitleKey: 'experiences.santaMartaExp.header.subtitle',
     translationNS: 'experiences',
     imageData: {
-      backgroundImage: '/images/experiences/santa-marta/header.webp',
+      backgroundImage: toAssetUrl(
+        '/images/experiences/santa-marta/header.webp'
+      ),
       photoCredit: 'PADI®',
       variant: 'header',
     },
@@ -54,6 +61,19 @@ const rawSantaMartaExp: ExperienceContent = {
     items: ['experiences.santaMartaExp.whatIsNotIncluded.item1'],
   },
 
+  gallery: {
+    titleKey: 'destinations.galleryTitle',
+    images: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/santa-marta/gallery-01.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+    ],
+  },
+
   ctaButton: {
     textKey: 'experiences.ctaButton.text',
     action: {
@@ -62,6 +82,25 @@ const rawSantaMartaExp: ExperienceContent = {
     },
     variant: 'primary',
     size: 'default',
+  },
+
+  cta: {
+    translationNS: 'home',
+    titleKey: 'cta.homeCtaTitle',
+    subtitleKey: 'cta.homeCtaSubtitle',
+    backgroundImageUrl: '/images/home/cta-background.webp',
+
+    button: {
+      textKey: 'cta.contactButton',
+      action: {
+        type: 'whatsapp',
+        whatsAppMessageKey: 'common:generalWhatsappMessage',
+      },
+      variant: 'primary',
+      size: 'default',
+    },
+
+    hubspotFormTitle: 'cta.formTitle',
   },
 };
 

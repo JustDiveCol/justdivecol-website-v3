@@ -1,14 +1,14 @@
 // src/components/sections/home/PrinciplesSection.tsx
 import { useTranslation } from 'react-i18next';
 import { PrincipleCard } from '../shared/PrincipleCard';
-import type { PrinciplesContent } from './types';
+import type { PrinciplesSectionProps } from './types';
 
 export const PrinciplesSection = ({
   titleKey,
   subtitleKey,
   translationNS,
   cards,
-}: PrinciplesContent) => {
+}: PrinciplesSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
 
   return (

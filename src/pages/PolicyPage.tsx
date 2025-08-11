@@ -3,14 +3,14 @@ import { SEO } from '../components/common/SEO';
 import { PageHeader } from '../components/sections/shared/PageHeader';
 import { LegalContent } from '../components/sections/shared/LegalContent';
 
-import { policyPageData } from '../data/policyPageData';
+import { policyContent } from '../content/pages/legal/policy/policy.content';
 
 export const PolicyPage = () => {
   return (
     <>
-      <SEO {...policyPageData.seo} />
-      <PageHeader {...policyPageData.header} />
-      <LegalContent {...policyPageData.content} />
+      <SEO {...policyContent.seo} />
+      <PageHeader {...policyContent.header} />
+      <LegalContent {...policyContent.content} />
     </>
   );
 };

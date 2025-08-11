@@ -2,13 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion, useReducedMotion, type Transition } from 'framer-motion';
 import { ImageComponent } from '../../common/ImageComponent';
-import type { I18NNamespace } from '../../../constants/i18n';
-import type { PrincipleDetailContent } from './types';
-
-type AlternatingFeatureProps = {
-  featureData: PrincipleDetailContent;
-  translationNS: I18NNamespace;
-};
+import type { AlternatingFeatureProps } from './types';
 
 export const AlternatingFeature = ({
   featureData,
@@ -17,7 +11,7 @@ export const AlternatingFeature = ({
   const { t } = useTranslation([translationNS, 'common']);
   const reduceMotion = useReducedMotion();
 
-  const { titleKey, textKey, imageData, imagePosition } = featureData;
+  const { titleKey, descriptionKey, imageData, imagePosition } = featureData;
   const isImageLeft = imagePosition === 'left';
 
   const baseTransition: Transition = reduceMotion
@@ -62,7 +56,7 @@ export const AlternatingFeature = ({
           <div className='flex flex-col justify-center'>
             <h2 className='heading-3 mb-4 text-brand-white'>{t(titleKey)}</h2>
             <p className='text-base-md font-serif text-brand-neutral/90 whitespace-pre-line'>
-              {t(textKey)}
+              {t(descriptionKey)}
             </p>
           </div>
         </motion.div>

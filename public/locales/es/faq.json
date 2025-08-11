@@ -1,0 +1,118 @@
+{
+  "faq": {
+    "seeAllFaqsButton": "Ver todas las preguntas frecuentes",
+
+    "contactFaqSectionTitle": "Preguntas frecuentes (FAQs)",
+
+    "seo": {
+      "title": "Preguntas frecuentes (FAQs)",
+      "desc": "Encuentra respuestas claras a tus preguntas sobre certificaciones de buceo, viajes, seguridad, reservas y mucho más. Planifica tu aventura submarina con total confianza y una sonrisa.",
+      "keywords": "preguntas frecuentes buceo, FAQs buceo, certificaciones de buceo, viajes de buceo, seguridad buceo, reservas de buceo, certificaciones PADI, buceo para principiantes, buceo avanzado, equipo de buceo, seguro de buceo, política de cancelación, contacto JustDiveCol, medio ambiente marino, buceo personalizado, aventura de buceo"
+    },
+
+    "header": {
+      "title": "Preguntas frecuentes",
+      "subtitle": "Encuentra respuestas claras a tus dudas sobre nuestras aventuras y servicios de buceo."
+    },
+
+    "data": {
+      "certifications": {
+        "title": "Cursos y certificaciones: el primer chapuzón",
+
+        "q1": "¿Qué certificación necesito para empezar a bucear?",
+        "a1": "Para tus primeras burbujas, el curso PADI Open Water Diver es tu pasaporte al mundo submarino. Es la certificación más popular del planeta y te enseñará los fundamentos para bucear de forma segura hasta 18 m (60 ft). ¡Prepara tus aletas, la aventura te espera!",
+
+        "q2": "¿Qué incluye el precio de un curso de certificación?",
+        "a2": "Nuestros cursos son un combo todo incluido, diseñado para tu comodidad. Incluyen acceso a la plataforma PADI eLearning, sesiones teóricas y prácticas, alquiler de equipo de alta calidad, acompañamiento de un instructor PADI experto y seguro de buceo durante el curso. Los detalles exactos de cada certificación los encontrarás en su descripción. ¡Así no habrá sorpresas bajo el agua!",
+
+        "q3": "¿Hay que saber nadar para bucear?",
+        "a3": "Sí, es indispensable saber nadar. Debes sentirte cómodo y seguro en el agua, y ser capaz de nadar 200 m (650 ft) sin parar y flotar por 10 minutos. Estos requisitos son por tu seguridad y confort, así que si necesitas practicar, ¡este es el momento!",
+
+        "q4": "¿Cuál es la edad mínima para unirse a la aventura?",
+        "a4": "Para nuestros exploradores más jóvenes, la certificación Junior Open Water Diver inicia a partir de los 10 años. Para el curso Open Water Diver y otros cursos avanzados, la edad mínima es 12 años o más. La pasión por el mar no tiene edad, ¡pero la seguridad tiene requisitos claros!",
+
+        "q5": "¿Tengo que pasar por el médico antes de bucear?",
+        "a5": "Sí, es un 'check-up' esencial. Antes de cualquier curso, deberás completar un cuestionario médico PADI. Si respondes 'sí' a alguna pregunta por condiciones médicas preexistentes, necesitarás una autorización médica firmada por un doctor especializado en medicina hiperbárica. Este es un paso vital para tu seguridad.",
+
+        "q6": "¿Qué pasa si mis oídos no se compensan bien?",
+        "a6": "Es una preocupación común, ¡a todos nos ha pasado! La compensación de oídos es una habilidad clave. Nuestros instructores te enseñarán varias técnicas efectivas. Si aun así tienes dificultades, es crucial comunicarlo de inmediato. ¡Nunca fuerces tus oídos, escucha a tu cuerpo y sigue siempre las indicaciones de tu instructor para una inmersión segura!",
+
+        "q7": "¿Puedo bucear si tengo asma o alguna condición respiratoria?",
+        "a7": "La seguridad es nuestra prioridad. Condiciones respiratorias como el asma requieren una evaluación médica exhaustiva. Si tienes alguna de estas condiciones, es obligatorio que un médico especialista en medicina hiperbárica autorice tu aptitud para el buceo. ¡No te arriesgues, tu salud es tu mayor tesoro!"
+      },
+
+      "tripsAndExperiences": {
+        "title": "Viajes y aventuras de buceo: ¡a explorar el mundo azul!",
+
+        "q1": "¿Qué tipo de aventuras de buceo ofrecen?",
+        "a1": "Ofrecemos un menú de aventuras submarinas para todos los gustos y niveles: desde emocionantes viajes de certificación, hasta experiencias avanzadas. Exploramos arrecifes vibrantes, pecios con historia y la vida marina más sorprendente. ¡Siempre con la emoción y la seguridad como ingredientes principales!",
+
+        "q2": "¿Cuál es el nivel de experiencia requerido para sus viajes?",
+        "a2": "¡Hay un nivel para cada explorador! Ofrecemos aventuras para principiantes y para buzos avanzados. Cada sitio de buceo tiene un nivel de certificación recomendado o requerido. Por ejemplo, destinos como Malpelo son exclusivos para buzos avanzados con vasta experiencia. ¡Ahí no hay espacio para novatos (aún)!",
+
+        "q3": "¿Puedo unirme a un viaje si no tengo compañero de buceo?",
+        "a3": "¡Claro que sí! Muchos de nuestros clientes viajan solos. Nosotros nos encargamos de asignarte un compañero de buceo certificado y con un nivel de experiencia similar. Así, garantizamos tu seguridad y la oportunidad de forjar nuevas amistades. ¡Aquí nadie bucea solo!",
+
+        "q4": "¿Qué debo empacar para un viaje de buceo?",
+        "a4": "Además de tus aletas, no olvides lo esencial: tu certificación PADI, tu bitácora de buceo (logbook) actualizada, artículos personales (biodegradables, por favor), ropa cómoda, traje de baño y protector solar amigable con el arrecife. En la descripción detallada de cada aventura encontrarás una lista más específica para que no se te quede nada fuera de la maleta.",
+
+        "q5": "¿Ofrecen aventuras personalizadas?",
+        "a5": "¡Absolutamente! Si no encuentras la aventura ideal en nuestro calendario, contáctanos. Seremos tus arquitectos de aventuras. Podemos diseñar un viaje de buceo totalmente personalizado que encaje con tus intereses, tu nivel de certificación y tus fechas preferidas. ¡Tu aventura, tu receta secreta, tus burbujas personalizadas!"
+      },
+
+      "bookingAndPayment": {
+        "title": "Reservas y pagos: ¡asegura tu cupo en el azul profundo!",
+
+        "q1": "¿Cómo puedo reservar una aventura con JustDiveCol?",
+        "a1": "¡Es más fácil que respirar bajo el agua! Puedes reservar tu aventura directamente en nuestro sitio web. Si prefieres una charla o necesitas asesoría, contáctanos sin dudarlo por WhatsApp o correo electrónico. Te guiaremos paso a paso en todo el proceso de reserva y pago.",
+
+        "q2": "¿Cuáles son sus métodos de pago?",
+        "a2": "Aceptamos métodos de pago modernos y seguros. Puedes usar nuestro link de pago para transacciones con tarjeta de crédito, débito (PSE), o directamente desde tu cuenta Bancolombia o Nequi. También recibimos transferencias bancarias directas a nuestra cuenta en Bold. ¡Tu tranquilidad es nuestra prioridad!",
+
+        "q3": "¿Cuál es su política de cancelación y reembolso?",
+        "a3": "Para ser transparentes, nuestra política es estricta debido a los costos operativos y la planificación anticipada. El pago inicial no es reembolsable. Las condiciones de reembolso del monto restante varían según el momento de la cancelación. Para cambios por fuerza mayor (clima, restricciones, etc.), la solución es ofrecer un crédito para el futuro. Te pedimos encarecidamente que leas nuestra sección detallada de Políticas. ¡La transparencia y tu total comprensión son claves!"
+      },
+
+      "safetyAndHealth": {
+        "title": "Seguridad y salud: ¡nuestra prioridad máxima bajo el agua!",
+
+        "q1": "¿Qué medidas de seguridad implementan? ¿Son muy estrictos?",
+        "a1": "¡Somos obsesivos y metódicos con tu seguridad! Implementamos rigurosos protocolos basados en los estándares de PADI y DAN. Usamos solo equipo de alta calidad con mantenimiento constante. Nuestros guías e instructores están certificados y, antes de cada inmersión, hacemos briefings y chequeos de equipo exhaustivos. ¡Queremos que tu única preocupación sea disfrutar y sumergirte con absoluta tranquilidad!",
+
+        "q2": "¿Es obligatorio tener seguro de buceo?",
+        "a2": "Algunas de nuestras aventuras, especialmente las certificaciones, incluyen un seguro de buceo. Sin embargo, te recomendamos encarecidamente contar con un seguro de viaje adicional que cubra emergencias médicas generales y eventuales cancelaciones. JustDiveCol no se hace responsable por gastos no cubiertos por estas pólizas. ¡Tu tranquilidad no tiene precio!",
+
+        "q3": "¿Qué sucede si tengo una emergencia médica durante una aventura?",
+        "a3": "¡Nuestro equipo está altamente entrenado para actuar con rapidez! Todos nuestros guías e instructores están capacitados en primeros auxilios y gestión de emergencias. En caso de cualquier situación médica, activaremos de inmediato los protocolos de emergencia. Es crucial que nos informes sobre cualquier condición médica preexistente antes de la actividad. ¡Tu bienestar es nuestra sirena de alarma número uno!",
+
+        "q4": "¿Es obligatorio firmar una liberación de responsabilidad?",
+        "a4": "¡Para nada es un truco, es una medida estándar de la industria! Sí, la firma de una liberación de responsabilidad y otros documentos es obligatoria antes de iniciar cualquier actividad. Esto es un reconocimiento de los riesgos inherentes al buceo. Si no firmas, no podrás participar y no habrá reembolso. ¡Es una medida necesaria para protegernos a todos y asegurar un buceo responsable!"
+      },
+
+      "generalInformation": {
+        "title": "Información general: ¡cosas que quizás no sabías!",
+
+        "q1": "¿JustDiveCol es un centro de buceo físico?",
+        "a1": "¡No somos un centro físico tradicional! Nos definimos como una empresa de turismo de aventura especializada en experiencias personalizadas. Trabajamos con operadores locales de alta calidad en cada destino, garantizándote la mejor experiencia. ¡Somos más un espíritu aventurero y una comunidad global que una dirección física!",
+
+        "q2": "¿Ofrecen aventuras personalizadas?",
+        "a2": "¡Absolutamente! Amamos la creatividad y hacer realidad tus sueños. Si no encuentras la aventura ideal en nuestro calendario, contáctanos. Podemos diseñar un viaje de buceo totalmente personalizado que encaje con tus intereses, tu nivel de certificación y tus fechas. ¡Tu aventura, tus burbujas personalizadas!",
+
+        "q3": "¿Cómo me mantengo actualizado sobre sus nuevas aventuras y ofertas?",
+        "a3": "¡Es súper fácil! Síguenos en nuestras redes sociales donde compartimos la magia de nuestras aventuras. Para no perderte nada, te invitamos a suscribirte a nuestro boletín: recibirás noticias exclusivas, ofertas especiales y actualizaciones directamente en tu bandeja de entrada. ¡No querrás perderte la próxima ola de diversión!",
+
+        "q4": "¿Cuál es su compromiso con el medio ambiente marino?",
+        "a4": "¡Amamos el océano tanto como tú! Nuestro compromiso es inquebrantable. Promovemos activamente prácticas de buceo de bajo impacto, apoyamos iniciativas de conservación y educamos a nuestros exploradores. Creemos firmemente que cada inmersión es una oportunidad para cuidar y dejar el mar mejor de como lo encontramos. ¡Somos guardianes del azul!",
+
+        "q5": "¿Cómo puedo contactarlos directamente?",
+        "a5": "¡Nos encanta charlar! Puedes contactarnos fácilmente a través de la sección de Contacto en nuestra web, enviarnos un mensaje por WhatsApp para una respuesta rápida y personalizada, o escribirnos un correo electrónico. ¡Estamos listos para planificar tu próxima aventura!",
+
+        "q6": "¿Qué pasa si mi avión se retrasa y pierdo parte de la aventura?",
+        "a6": "Lamentablemente, JustDiveCol no se hace responsable por retrasos en vuelos o eventos ajenos a nuestra operación. Nuestros itinerarios y costos están fijos, por lo que las porciones de la aventura perdidas por tu retraso no son reembolsables. Por eso, ¡insistimos en que consideres un buen seguro de viaje que cubra estas eventualidades!",
+
+        "q7": "¿Puedo llevar mi propio equipo de buceo?",
+        "a7": "¡Claro que sí! Si tienes tu propio equipo y prefieres usarlo, eres más que bienvenido. Solo asegúrate de que esté en perfecto estado y con sus mantenimientos al día. Si necesitas alquilar algo específico, también podemos ayudarte. ¡Lo importante es que te sientas cómodo y seguro!"
+      }
+    }
+  }
+}

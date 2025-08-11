@@ -5,10 +5,11 @@ import { motion } from 'framer-motion';
 
 import { BRAND_ASSETS } from '../../../constants/assets';
 import { Button } from '../../common/Button';
-import { ChevronDownIcon } from '../../ui/Icons';
-import type { HeroContent } from './types';
+import { ChevronDownIcon } from '../../ui';
+import type { HeroSectionProps } from './types';
+import { useMotionPresets } from '../../../hooks/animations';
 
-export const HeroSection: React.FC<HeroContent> = ({
+export const HeroSection: React.FC<HeroSectionProps> = ({
   titleKey,
   subtitleKey,
   translationNS,
@@ -16,7 +17,8 @@ export const HeroSection: React.FC<HeroContent> = ({
   imageData,
 }) => {
   const { t } = useTranslation([translationNS, 'common']);
-  const { textKey, ...buttonProps } = button;
+
+  const { baseTransition } = useMotionPresets();
 
   return (
     <section
@@ -49,13 +51,41 @@ export const HeroSection: React.FC<HeroContent> = ({
         </motion.p>
 
         {/* Botón */}
-        {buttonProps.action.path && (
+        {button && (
           <motion.div
-            className='mt-8'
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: 'easeInOut' }}>
-            <Button {...buttonProps}>{t(textKey)}</Button>
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ ...baseTransition, delay: 0.2 }}
+            className='mt-8 md:self-center'>
+            {button.action.type === 'internal' ? (
+              <Button
+                action={{ type: 'internal', path: button.action.path }}
+                variant={button.variant}
+                size={button.size}
+                className={button.className}>
+                {t(button.textKey)}
+              </Button>
+            ) : button.action.type === 'external' ? (
+              <Button
+                action={{ type: 'external', path: button.action.path }}
+                variant={button.variant}
+                size={button.size}
+                className={button.className}>
+                {t(button.textKey)}
+              </Button>
+            ) : (
+              <Button
+                action={{
+                  type: 'whatsapp',
+                  whatsAppMessageKey: button.action.whatsAppMessageKey,
+                }}
+                variant={button.variant}
+                size={button.size}
+                className={button.className}>
+                {t(button.textKey)}
+              </Button>
+            )}
           </motion.div>
         )}
       </div>

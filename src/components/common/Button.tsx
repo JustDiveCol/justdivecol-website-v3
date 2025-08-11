@@ -4,9 +4,9 @@ import { Link, type LinkProps } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { cva } from 'class-variance-authority';
 import { twMerge } from 'tailwind-merge';
-import type { ButtonContent } from '../../content/types';
 
 import { contactContent } from '../../content/pages/contact/contact.content';
+import type { ButtonProps } from './types';
 
 const buttonVariants = cva(
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold uppercase tracking-wider transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-cta-yellow',
@@ -33,32 +33,26 @@ const buttonVariants = cva(
   }
 );
 
-export const Button = React.forwardRef<HTMLAnchorElement, ButtonContent>(
+export const Button = React.forwardRef<HTMLAnchorElement, ButtonProps>(
   function Button(
     { action, children, className, variant, size, ...props },
     ref
   ) {
     const { t } = useTranslation('common');
-
     const { contactInfo } = contactContent;
 
     const finalLink = React.useMemo(() => {
       if (action.type === 'whatsapp') {
-        const text = t(action.whatsAppMessageKey || 'whatsapp_message');
+        const text = t(action.whatsAppMessageKey || 'whatsappMessage');
         const phone = contactInfo.phone.replace(/\s/g, '');
         return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
       }
       if (action.type === 'external') {
         return action.path || '#';
       }
+      // action.type === 'internal'
       return action.path || '/';
-    }, [
-      action.path,
-      action.type,
-      action.whatsAppMessageKey,
-      contactInfo.phone,
-      t,
-    ]);
+    }, [t, contactInfo.phone, action]);
 
     const classes = twMerge(buttonVariants({ variant, size, className }));
 

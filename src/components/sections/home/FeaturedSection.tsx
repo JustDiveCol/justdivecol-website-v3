@@ -1,13 +1,13 @@
 // src/components/sections/home/FeaturedSection.tsx
 import { useTranslation } from 'react-i18next';
 import { FeaturedCard } from '../shared/FeaturedCard';
-import type { FeaturedContent } from './types';
+import type { FeaturedSectionProps } from './types';
 
 export const FeaturedSection = ({
   titleKey,
   translationNS,
   cards,
-}: FeaturedContent) => {
+}: FeaturedSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
 
   const cardsToDisplay = [...cards];

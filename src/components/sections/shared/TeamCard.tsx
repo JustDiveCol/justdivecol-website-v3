@@ -2,8 +2,8 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
-import type { TeamCardProps } from '../about/types';
 import { useMotionPresets } from '../../../hooks/animations';
+import type { TeamCardProps } from '../home/types';
 
 export const TeamCard = ({
   memberData,

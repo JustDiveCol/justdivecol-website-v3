@@ -4,16 +4,15 @@ import { PageHeader } from '../components/sections/shared/PageHeader';
 import { ContactSection } from '../components/sections/contact/ContactSection';
 import { FaqSection } from '../components/sections/contact/FaqSection';
 
-import { contactPageData } from '../data/contactPageData';
-import { contactData } from '../data/contactData';
+import { contactContent } from '../content/pages/contact/contact.content';
 
 export const ContactPage = () => {
   return (
     <>
-      <SEO {...contactPageData.seo} />
-      <PageHeader {...contactPageData.header} />
-      <ContactSection {...contactData.contactInfo} />
-      <FaqSection translationNS={'faqs'} />
+      <SEO {...contactContent.seo} />
+      <PageHeader {...contactContent.header} />
+      <ContactSection {...contactContent.contactInfo} />
+      <FaqSection translationNS={'faq'} />
     </>
   );
 };

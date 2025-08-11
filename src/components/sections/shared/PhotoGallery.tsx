@@ -7,15 +7,13 @@ import 'yet-another-react-lightbox/styles.css';
 
 import { ImageComponent } from '../../common/ImageComponent';
 import { BRAND_ASSETS } from '../../../constants/assets';
-import { ChevronLeftIcon, ChevronRightIcon } from '../../ui/Icons';
+import { ChevronLeftIcon, ChevronRightIcon } from '../../ui';
 import type { ImageComponentData } from '../../common/types';
-import type { I18NNamespace } from '../../../constants/i18n';
+import type { PhotoGalleryProps } from './types';
 
-// Un slide lleva todos los campos de ImageComponentData y además src
 type Slide = ImageComponentData & { src: string };
 
-// Render personalizado para el Lightbox.
-// Lo tipamos como any para evitar errores de asignación de tipos.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CustomSlide = ({ slide }: any) => {
   const { t } = useTranslation('common');
   const mainLogo = BRAND_ASSETS.mainLogo;
@@ -48,12 +46,6 @@ const CustomSlide = ({ slide }: any) => {
     </div>
   );
 };
-
-interface PhotoGalleryProps {
-  titleKey: string;
-  images: ImageComponentData[];
-  translationNS: I18NNamespace;
-}
 
 export const PhotoGallery = ({
   titleKey,

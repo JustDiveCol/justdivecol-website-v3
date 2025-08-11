@@ -1,17 +1,29 @@
 // src/content/certifications/padi-open-water-diver.content.ts
-
-import { BRAND_ASSETS } from '../../constants/assets';
+import { BRAND_ASSETS_SAFE, toAssetUrl } from '../../constants/assets.schema';
 import { ROUTES } from '../../constants/routes';
-import { CertificationContentSchema } from '../schemas';
-import type { CertificationContent } from './types';
+import { toUrlPath } from '../urlPathSchema';
+import { CertificationContentSchema, type CertificationContent } from './types';
 
 const rawOpenWaterDiver: CertificationContent = {
+  id: 'padi-open-water-diver',
+  code: 'OWD',
+  level: 'entry',
+  agency: 'PADI',
+  minAge: 10,
+  maxDepthMeter: 18,
+  maxDepthFt: 60,
+
+  estimatedDuration: {
+    eLearningHours: [5, 10],
+    totalDays: [2, 4],
+  },
+
   seo: {
     titleKey: 'certifications.owd.seo.title',
     descriptionKey: 'certifications.owd.seo.desc',
     keywordsKey: 'certifications.owd.seo.keywords',
-    imageUrl: '/images/social/owd-social-card.webp',
-    urlPath: ROUTES.certifications,
+    imageUrl: toAssetUrl('/images/social/owd-social-card.webp'),
+    urlPath: toUrlPath(ROUTES.certifications),
     translationNS: 'certifications',
   },
 
@@ -19,11 +31,21 @@ const rawOpenWaterDiver: CertificationContent = {
     titleKey: 'certifications.owd.header.title',
     subtitleKey: 'certifications.owd.header.subtitle',
     imageData: {
-      backgroundImage: '/images/certifications/owd-header.webp',
+      backgroundImage: toAssetUrl('/images/certifications/owd-header.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },
     translationNS: 'certifications',
+  },
+
+  card: {
+    imageData: {
+      backgroundImage: toAssetUrl('/images/certifications/owd-card.webp'),
+      photoCredit: 'Camilo Beltran @JustDiveCol',
+      complementaryLogo: BRAND_ASSETS_SAFE.complementaryLogos.padi,
+      textOverlayKey: 'certificationsTextOverlay',
+      variant: 'horizontal',
+    },
   },
 
   description: {
@@ -34,14 +56,13 @@ const rawOpenWaterDiver: CertificationContent = {
     ],
   },
 
-  card: {
-    imageData: {
-      backgroundImage: '/images/certifications/owd-card.webp',
-      photoCredit: 'Camilo Beltran @JustDiveCol',
-      complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
-      textOverlayKey: 'certificationsTextOverlay',
-      variant: 'horizontal',
-    },
+  prerequisites: {
+    titleKey: 'certifications.owd.prerequisites.title',
+    items: [
+      'certifications.owd.prerequisites.item1',
+      'certifications.owd.prerequisites.item2',
+      'certifications.owd.prerequisites.item3',
+    ],
   },
 
   details: {
@@ -93,29 +114,103 @@ const rawOpenWaterDiver: CertificationContent = {
     ],
   },
 
+  bookingProcess: {
+    titleKey: 'certifications.owd.bookingProcess.title',
+    steps: [
+      {
+        icon: 'contact',
+        nameKey: 'certifications.owd.bookingProcess.step1Name',
+        descriptionKey: 'certifications.owd.bookingProcess.step1Desc',
+      },
+      {
+        icon: 'theory',
+        nameKey: 'certifications.owd.bookingProcess.step2Name',
+        descriptionKey: 'certifications.owd.bookingProcess.step2Desc', // "Accede al material de PADI y aprende a tu propio ritmo."
+      },
+      {
+        icon: 'dive',
+        nameKey: 'certifications.owd.bookingProcess.step3Name',
+        descriptionKey: 'certifications.owd.bookingProcess.step3Desc',
+      },
+    ],
+  },
+
   gallery: {
     titleKey: 'certifications.galleryTitle',
     images: [
       {
-        backgroundImage: 'https://placehold.co/800x600',
+        backgroundImage: toAssetUrl('https://placehold.co/800x600'),
         photoCredit: 'Camilo Beltran',
         variant: 'horizontal',
       },
       {
-        backgroundImage: 'https://placehold.co/600x800',
+        backgroundImage: toAssetUrl('https://placehold.co/600x800'),
         photoCredit: 'Camilo Beltran',
         variant: 'vertical',
       },
       {
-        backgroundImage: 'https://placehold.co/800x600',
+        backgroundImage: toAssetUrl('https://placehold.co/800x600'),
         photoCredit: 'Camilo Beltran',
         variant: 'horizontal',
       },
       {
-        backgroundImage: 'https://placehold.co/600x800',
+        backgroundImage: toAssetUrl('https://placehold.co/600x800'),
         photoCredit: 'Camilo Beltran',
         variant: 'vertical',
       },
+    ],
+  },
+
+  testimonials: {
+    titleKey: 'certifications.owd.testimonials.title',
+    items: [
+      {
+        quoteKey: 'certifications.owd.testimonials.quote1',
+        author: 'certifications.owd.testimonials.author1',
+        photoUrl: toAssetUrl('/images/testimonials/testimonial1.webp'),
+      },
+      {
+        quoteKey: 'certifications.owd.testimonials.quote2',
+        author: 'certifications.owd.testimonials.author2',
+        photoUrl: toAssetUrl('/images/testimonials/testimonial2.webp'),
+      },
+      // Puedes añadir más testimonios aquí
+    ],
+  },
+
+  faq: {
+    titleKey: 'certifications.owd.faq.title',
+    items: [
+      {
+        questionKey: 'certifications.owd.faq.q1',
+        answerKey: 'certifications.owd.faq.a1',
+      },
+      {
+        questionKey: 'certifications.owd.faq.q2',
+        answerKey: 'certifications.owd.faq.a2',
+      },
+      {
+        questionKey: 'certifications.owd.faq.q3',
+        answerKey: 'certifications.owd.faq.a3',
+      },
+      // Puedes añadir más preguntas y respuestas comunes
+    ],
+  },
+
+  instructorProfile: {
+    titleKey: 'certifications.owd.instructorProfile.title',
+    instructors: [
+      {
+        name: 'certifications.owd.instructor1.name',
+        descriptionKey: 'certifications.owd.instructor1.description',
+        photoUrl: toAssetUrl('/images/instructors/instructor1.webp'),
+      },
+      {
+        name: 'certifications.owd.instructor2.name',
+        descriptionKey: 'certifications.owd.instructor2.description',
+        photoUrl: toAssetUrl('/images/instructors/instructor2.webp'),
+      },
+      // ...(puedes añadir más instructores)
     ],
   },
 
@@ -149,5 +244,5 @@ const rawOpenWaterDiver: CertificationContent = {
   },
 };
 
-export const padiOpenWaterContent =
+export const padiOpenWaterDiverContent =
   CertificationContentSchema.parse(rawOpenWaterDiver);

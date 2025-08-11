@@ -1,31 +1,49 @@
 // src/components/sections/faq/FaqContent.tsx
 import { useTranslation } from 'react-i18next';
-import { faqData } from '../../../data/faqData';
+import { motion } from 'framer-motion';
 import { AccordionItem } from '../../common/AccordionItem';
+import { useMotionPresets } from '../../../hooks/animations';
+import { faqContent } from '../../../content/pages/faq/faq.content';
 
 export const FaqContent = () => {
-  const { t } = useTranslation(['faqs', 'common']);
+  const { t } = useTranslation(['faq', 'common']);
+  const { container, fadeIn } = useMotionPresets();
+  const { data } = faqContent;
 
   return (
-    <section className='bg-brand-primary-dark py-20 px-4'>
-      <div className='container mx-auto max-w-3xl'>
-        {faqData.categories.map((category) => (
+    <section className='bg-brand-primary-dark'>
+      <div className='section py-16'>
+        {data.categories.map((category) => (
           <div
             key={category.id}
             className='mb-12'>
-            <h2 className='heading-3 mb-6 text-brand-white text-center'>
+            <motion.h2
+              className='heading-3 mb-6 text-center text-brand-white'
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeIn()}>
               {t(category.sectionTitleKey)}
-            </h2>
+            </motion.h2>
 
-            <div className='space-y-2'>
+            <motion.div
+              className='mx-auto max-w-3xl space-y-2'
+              role='list'
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true, amount: 0.2 }}
+              variants={container}>
               {category.faqs.map((faq) => (
-                <AccordionItem
+                <motion.div
                   key={faq.id}
-                  question={t(faq.questionKey)}
-                  answer={t(faq.answerKey)}
-                />
+                  variants={fadeIn()}>
+                  <AccordionItem
+                    question={t(faq.questionKey)}
+                    answer={t(faq.answerKey)}
+                  />
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         ))}
       </div>

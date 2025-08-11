@@ -1,10 +1,7 @@
 // src/components/common/ImageComponent.tsx
 import { useTranslation } from 'react-i18next';
 import { BRAND_ASSETS } from '../../constants/assets';
-import type { ImageComponentProps } from './types';
-
-// NUEVO: amplía el tipo para aceptar 'fit'
-type Props = ImageComponentProps & { fit?: 'parent' | 'auto' };
+import type { ImageComponentWithFitProps as Props } from './types';
 
 const variantStyles: Record<string, string> = {
   fullscreen: 'h-full',

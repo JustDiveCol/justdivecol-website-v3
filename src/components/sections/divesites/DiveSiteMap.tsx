@@ -6,7 +6,7 @@ import type { Root } from 'react-dom/client';
 import { useTranslation } from 'react-i18next';
 
 import { MotionMarker } from './MotionMarker';
-import { FlagIcon, ReefIcon, WreckIcon, WallIcon } from '../../ui/Icons';
+import { FlagIcon, ReefIcon, WreckIcon, WallIcon } from '../../ui';
 import type { DiveSiteMapProps } from './types';
 import type { DiveTypeId } from '../../../constants/dive-sites';
 

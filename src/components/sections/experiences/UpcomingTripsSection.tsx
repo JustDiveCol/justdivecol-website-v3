@@ -3,13 +3,14 @@ import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { TripRow } from './TripRow';
-import { allSessions } from '../../../data/sessions';
-import { allExperiences } from '../../../data/experiences';
-import { allDestinations } from '../../../data/destinations';
 import { PaginationControls } from '../../common/PaginationControls';
-import { ChevronDownIcon } from '../../ui/Icons';
+import { ChevronDownIcon } from '../../ui';
 import { BRAND_ASSETS } from '../../../constants/assets';
-import type { UpcomingTripsSectionProps } from './types';
+import type { UpcomingTripsSectionData } from './types';
+import { experiences } from '../../../lib/db/entities/experiences';
+import { destinations } from '../../../lib/db/entities/destinations';
+import { sessions } from '../../../lib/db/entities/sessions';
+import { useMotionPresets } from '../../../hooks/animations';
 
 const ITEMS_PER_PAGE = 10;
 
@@ -21,23 +22,24 @@ export const UpcomingTripsSection = ({
   filtersAllDestinationsKey,
   filtersAllMonthsKey,
   filtersNoResultsKey,
-}: UpcomingTripsSectionProps) => {
+}: UpcomingTripsSectionData) => {
   const { t, i18n } = useTranslation([translationNS, 'common']);
+  const { container, fadeIn } = useMotionPresets();
 
   const [selectedMonth, setSelectedMonth] = useState('all');
   const [selectedDestination, setSelectedDestination] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
 
+  // Destinos disponibles según las experiencias conectadas
   const destinationOptions = useMemo(() => {
-    const destinationIds = new Set(
-      allExperiences.map((exp) => exp.destinationId)
-    );
-    return allDestinations.filter((dest) => destinationIds.has(dest.id));
+    const destinationIds = new Set(experiences.map((exp) => exp.destinationId));
+    return destinations.filter((dest) => destinationIds.has(dest.id));
   }, []);
 
+  // Meses disponibles según fechas de sesiones
   const monthOptions = useMemo(() => {
     const months = new Set(
-      allSessions.map((session) => {
+      sessions.map((session) => {
         const date = new Date(session.startDate);
         date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
         return date.toLocaleString(i18n.language, {
@@ -51,29 +53,34 @@ export const UpcomingTripsSection = ({
     );
   }, [i18n.language]);
 
+  // Filtro por destino (via experience.destinationId) y por mes
   const filteredSessions = useMemo(() => {
     setCurrentPage(1);
-    return allSessions.filter((session) => {
-      const experience = allExperiences.find(
+    return sessions.filter((session) => {
+      const experience = experiences.find(
         (exp) => exp.id === session.experienceId
       );
       if (!experience) return false;
+
       const tripDate = new Date(session.startDate);
       tripDate.setMinutes(tripDate.getMinutes() + tripDate.getTimezoneOffset());
       const tripMonthYear = tripDate.toLocaleString(i18n.language, {
         month: 'long',
         year: 'numeric',
       });
+
       const matchesDestination =
         selectedDestination === 'all' ||
         experience.destinationId === selectedDestination;
       const matchesMonth =
         selectedMonth === 'all' || tripMonthYear === selectedMonth;
+
       return matchesDestination && matchesMonth;
     });
   }, [selectedDestination, selectedMonth, i18n.language]);
 
   const totalPages = Math.ceil(filteredSessions.length / ITEMS_PER_PAGE);
+
   const paginatedSessions = useMemo(() => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     return filteredSessions.slice(startIndex, startIndex + ITEMS_PER_PAGE);
@@ -81,56 +88,97 @@ export const UpcomingTripsSection = ({
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
-    const sectionElement = document.getElementById('dive-experiences');
-    if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    document
+      .getElementById('dive-experiences')
+      ?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section
       id='dive-experiences'
-      className='relative min-h-screen flex items-center bg-cover bg-center py-20 px-4'
-      style={{ backgroundImage: `url(${backgroundImageUrl})` }}>
-      <div className='absolute inset-0 bg-brand-primary-dark/80' />
+      aria-labelledby='upcoming-trips-heading'
+      className='relative min-h-[80svh] md:min-h-screen text-white'>
+      {/* Fondo como IMG para mejor LCP */}
+      <img
+        src={backgroundImageUrl}
+        alt=''
+        className='absolute inset-0 h-full w-full object-cover'
+        loading='lazy'
+        decoding='async'
+      />
+      {/* Overlay */}
+      <div
+        className='absolute inset-0 bg-brand-primary-dark/80'
+        aria-hidden='true'
+      />
 
-      <div className='container mx-auto relative z-10'>
-        <div className='max-w-3xl mx-auto text-center mb-12'>
-          <h1 className='heading-1 text-white'>{t(titleKey)}</h1>
-          <p className='text-subtitle mt-4'>{t(subtitleKey)}</p>
-        </div>
-        <div className='flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto mb-12'>
-          <select
-            value={selectedDestination}
-            onChange={(e) => setSelectedDestination(e.target.value)}
-            className='form-input w-full'>
-            <option value='all'>{t(filtersAllDestinationsKey)}</option>
-            {destinationOptions.map((dest) => (
-              <option
-                key={dest.id}
-                value={dest.id}>
-                {t(`destinations.${dest.nameKey}`, { ns: 'destinations' })}
-              </option>
-            ))}
-          </select>
-          <select
-            value={selectedMonth}
-            onChange={(e) => setSelectedMonth(e.target.value)}
-            className='form-input w-full'>
-            <option value='all'>{t(filtersAllMonthsKey)}</option>
-            {monthOptions.map((month) => (
-              <option
-                key={month}
-                value={month}>
-                {month}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className='max-w-4xl mx-auto flex flex-col gap-4'>
+      {/* Contenido */}
+      <div className='section relative z-10 py-16 md:py-20'>
+        <motion.div
+          variants={container}
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.2 }}
+          className='max-w-3xl mx-auto text-center mb-10 md:mb-12'>
+          <motion.h1
+            variants={fadeIn()}
+            id='upcoming-trips-heading'
+            className='heading-1'>
+            {t(titleKey)}
+          </motion.h1>
+          <motion.p
+            variants={fadeIn()}
+            className='text-subtitle mt-4'>
+            {t(subtitleKey)}
+          </motion.p>
+        </motion.div>
+
+        {/* Panel de filtros */}
+        <motion.div
+          variants={container}
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.2 }}
+          className='mx-auto mb-10 max-w-2xl rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md'>
+          <div className='flex flex-col gap-4 sm:flex-row'>
+            <motion.select
+              variants={fadeIn()}
+              value={selectedDestination}
+              onChange={(e) => setSelectedDestination(e.target.value)}
+              className='form-input w-full'>
+              <option value='all'>{t(filtersAllDestinationsKey)}</option>
+              {destinationOptions.map((dest) => (
+                <option
+                  key={dest.id}
+                  value={dest.id}>
+                  {t(`destinations.${dest.nameKey}`, { ns: 'destinations' })}
+                </option>
+              ))}
+            </motion.select>
+
+            <motion.select
+              variants={fadeIn()}
+              value={selectedMonth}
+              onChange={(e) => setSelectedMonth(e.target.value)}
+              className='form-input w-full'>
+              <option value='all'>{t(filtersAllMonthsKey)}</option>
+              {monthOptions.map((month) => (
+                <option
+                  key={month}
+                  value={month}>
+                  {month}
+                </option>
+              ))}
+            </motion.select>
+          </div>
+        </motion.div>
+
+        {/* Listado */}
+        <div className='mx-auto flex max-w-4xl flex-col gap-4'>
           {paginatedSessions.length > 0 ? (
             paginatedSessions.map((session) => {
-              const experience = allExperiences.find(
+              // Aún validamos que exista la experiencia (por el filtro de destino)
+              const experience = experiences.find(
                 (exp) => exp.id === session.experienceId
               );
               if (!experience) return null;
@@ -138,31 +186,31 @@ export const UpcomingTripsSection = ({
               return (
                 <TripRow
                   key={session.id}
-                  session={session}
-                  experience={{ nameKey: experience.nameKey }}
-                  translationNS={'experiences'}
+                  session={session as any} // si quieres, tipa sessions[] como el TripRowSession
+                  translationNS='experiences'
                 />
               );
             })
           ) : (
-            <div className='flex items-center justify-center h-full pt-16'>
-              <p className='text-center text-brand-neutral/80 font-serif'>
+            <div className='flex items-center justify-center pt-12'>
+              <p className='text-center font-serif text-brand-neutral/80'>
                 {t(filtersNoResultsKey)}
               </p>
             </div>
           )}
         </div>
 
-        <PaginationControls
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-        />
+        <div className='mt-8 border-t border-white/10 pt-6'>
+          <PaginationControls
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
+        </div>
       </div>
 
-      {/* 4. Los logos y créditos se añaden como elementos separados, también encima de todo */}
-
-      <div className='absolute bottom-6 right-4 select-none w-24 h-auto md:w-24 opacity-70'>
+      {/* Logo */}
+      <div className='pointer-events-none absolute bottom-6 right-4 z-10 h-auto w-24 select-none opacity-70 md:w-24'>
         <img
           src={BRAND_ASSETS.mainLogo.url}
           alt={t(BRAND_ASSETS.mainLogo.altKey)}
@@ -171,6 +219,7 @@ export const UpcomingTripsSection = ({
         />
       </div>
 
+      {/* Chevron (sólo desktop) */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -180,8 +229,8 @@ export const UpcomingTripsSection = ({
           duration: 1.5,
           delay: 1,
         }}
-        className='absolute bottom-8 z-40 left-1/2 -translate-x-1/2'>
-        <ChevronDownIcon className='w-12 h-12 text-brand-cta-orange animate-bounce select-none' />
+        className='absolute bottom-8 left-1/2 z-40 hidden -translate-x-1/2 md:block'>
+        <ChevronDownIcon className='h-12 w-12 select-none text-brand-cta-orange' />
       </motion.div>
     </section>
   );

@@ -4,16 +4,18 @@ import { motion } from 'framer-motion';
 import { useMemo } from 'react';
 import { Button } from '../../common/Button';
 import { BRAND_ASSETS } from '../../../constants/assets';
-import type { I18NNamespace } from '../../../constants/i18n';
 import { ROUTES } from '../../../constants/routes';
-import type { AvailableType } from '../../../constants/ui';
-import type { ExperienceSession } from '../../../data/sessions/styles';
+import type { AvailableType } from '../../../lib/db/constants';
+import { toUrlPath } from '../../../content/urlPathSchema';
+
+// 🔑 Registries / datos
+import { experiences as experiencesDB } from '../../../lib/db/entities/experiences';
 
 const AvailabilityBadge = ({ status }: { status: AvailableType }) => {
   const { t } = useTranslation('common');
   const baseClasses = 'px-3 py-1 text-xs font-bold rounded-full';
 
-  const statusMap: { [key: string]: { textKey: string; classes: string } } = {
+  const statusMap: Record<string, { textKey: string; classes: string }> = {
     available: {
       textKey: 'common:statusAvailable',
       classes: 'bg-green-500/20 text-green-300',
@@ -54,23 +56,67 @@ const AvailabilityBadge = ({ status }: { status: AvailableType }) => {
   );
 };
 
-interface TripRowProps {
-  session: ExperienceSession;
-  experience: {
-    nameKey: string;
-  };
-  translationNS: I18NNamespace;
-}
+// Campos runtime que vienen desde DB (ajusta si te faltara alguno)
+type RuntimeSessionFields = {
+  id: string;
+  experienceId: string;
+  startDate: string;
+  endDate: string;
+  imageUrl: string;
+  availability: 'available' | 'few_spots' | 'sold_out';
+  seatsAvailable: number;
+  capacity: number;
+  creyentes?: boolean;
+  nameKey?: string; // por si en tu DB ya hay uno
+  subtitleKey?: string; // idem
+};
 
-export const TripRow = ({
-  session,
-  experience,
-  translationNS,
-}: TripRowProps) => {
+type TripRowProps = {
+  session: RuntimeSessionFields;
+  translationNS: string; // p. ej. 'experiences'
+};
+
+export const TripRow = ({ session, translationNS }: TripRowProps) => {
   const { t, i18n } = useTranslation([translationNS, 'common']);
   const soldOutLogo = BRAND_ASSETS.seals.soldOut;
 
-  // Lógica para formatear fechas y calcular duración
+  // 1) Resolver nameKey/subtitleKey desde contenido o DB
+  const { nameKeyResolved, subtitleKeyResolved } = useMemo(() => {
+    // sessionsContent puede ser objeto o array:
+    let contentSess: any | undefined;
+    const reg: any = sessionsContent as any;
+    if (Array.isArray(reg)) {
+      contentSess = reg.find((s) => s?.id === session.id);
+    } else if (reg && typeof reg === 'object') {
+      contentSess = reg[session.id];
+    }
+
+    // Fallbacks: contenido → runtime → nameKey de EXPERIENCE en DB → vacío
+    const expDB = experiencesDB.find((e) => e.id === session.experienceId);
+    const rawNameKey =
+      contentSess?.nameKey ?? session.nameKey ?? expDB?.nameKey ?? '';
+    const rawSubtitleKey =
+      contentSess?.subtitleKey ?? session.subtitleKey ?? undefined;
+
+    // Si la key viene con prefijo `${ns}.` (p. ej. "experiences.foo"), quítalo porque pasaremos { ns: translationNS }
+    const stripNsPrefix = (key?: string | null) =>
+      key && key.startsWith(`${translationNS}.`)
+        ? key.slice(translationNS.length + 1)
+        : key || '';
+
+    return {
+      nameKeyResolved: stripNsPrefix(rawNameKey),
+      subtitleKeyResolved: stripNsPrefix(rawSubtitleKey),
+    };
+  }, [
+    session.id,
+    session.experienceId,
+    session.nameKey,
+    session.subtitleKey,
+    translationNS,
+  ]);
+
+  // 2) Fechas y duración
   const { formattedDateRange, durationText } = useMemo(() => {
     const startDate = new Date(session.startDate);
     const endDate = new Date(session.endDate);
@@ -96,6 +142,15 @@ export const TripRow = ({
     return { formattedDateRange: dateRange, durationText: duration };
   }, [session.startDate, session.endDate, i18n.language, t]);
 
+  // DEBUG opcional (quítalo luego)
+  // if (!nameKeyResolved) {
+  //   console.warn('[TripRow] nameKey no resuelto', {
+  //     sessionId: session.id,
+  //     contentHas: Array.isArray(sessionsContent) ? sessionsContent.map((s:any)=>s.id) : Object.keys(sessionsContent || {}),
+  //     experienceId: session.experienceId,
+  //   });
+  // }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -107,34 +162,42 @@ export const TripRow = ({
           ? 'border-red-500/20 bg-red-900/10'
           : 'border-white/10 bg-white/5 hover:bg-white/10'
       }`}>
-      {/* Contenedor de la Imagen */}
+      {/* Imagen */}
       <div className='relative w-full md:w-48 h-32 md:h-24 flex-shrink-0 p-2 rounded'>
         <img
           src={session.imageUrl}
-          alt={t(experience.nameKey)}
+          alt={nameKeyResolved ? t(nameKeyResolved, { ns: translationNS }) : ''}
           className='w-full h-full object-contain'
           loading='lazy'
+          decoding='async'
         />
-
         {session.creyentes && (
           <img
             src='/images/logos/creyentes-logo.png'
             alt={t('creyentesTripSealAlt')}
-            className='absolute -top-3 -right-3 w-16 h-16 transform pointer-events-none'
+            className='absolute -top-3 -right-3 w-16 h-16 pointer-events-none'
             aria-hidden='true'
             loading='lazy'
+            decoding='async'
           />
         )}
       </div>
 
+      {/* Texto */}
       <div className='flex-grow text-center md:text-left'>
         <h3 className='text-xl font-bold text-brand-white'>
-          {t(experience.nameKey)}
+          {nameKeyResolved ? t(nameKeyResolved, { ns: translationNS }) : ''}
         </h3>
+        {subtitleKeyResolved && (
+          <p className='text-sm text-brand-neutral/70'>
+            {t(subtitleKeyResolved, { ns: translationNS })}
+          </p>
+        )}
         <p className='text-brand-neutral/80 font-serif'>{formattedDateRange}</p>
         <p className='text-sm text-brand-neutral/70'>{durationText}</p>
       </div>
 
+      {/* Acciones */}
       <div className='w-full md:w-auto flex-shrink-0 flex flex-col items-center md:items-end justify-center gap-2'>
         {session.availability === 'sold_out' ? (
           <div className='flex flex-col items-center'>
@@ -143,6 +206,7 @@ export const TripRow = ({
               alt={t(soldOutLogo.altKey)}
               className='h-20 w-auto'
               loading='lazy'
+              decoding='async'
             />
           </div>
         ) : (
@@ -158,7 +222,7 @@ export const TripRow = ({
               <Button
                 action={{
                   type: 'internal',
-                  path: `${ROUTES.diveExperiences}/${session.experienceId}`,
+                  path: toUrlPath(`${ROUTES.diveExperiences}/${session.id}`),
                 }}
                 variant='outline'
                 size='sm'>

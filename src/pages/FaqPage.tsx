@@ -3,13 +3,13 @@ import { SEO } from '../components/common/SEO';
 import { PageHeader } from '../components/sections/shared/PageHeader';
 import { FaqContent } from '../components/sections/faq/FaqContent';
 
-import { faqPageData } from '../data/faqPageData';
+import { faqContent } from '../content/pages/faq/faq.content';
 
 export const FaqPage = () => {
   return (
     <>
-      <SEO {...faqPageData.seo} />
-      <PageHeader {...faqPageData.header} />
+      <SEO {...faqContent.seo} />
+      <PageHeader {...faqContent.header} />
 
       <FaqContent />
     </>

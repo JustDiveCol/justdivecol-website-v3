@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useMotionPresets } from '../../../hooks/animations';
 import { useHubSpotForm } from '../../../hooks/useHubSpotForm';
 import { Button } from '../../common/Button';
-import type { CtaContent } from './types';
+import type { CtaSectionProps } from './types';
 
 export const CtaSection = ({
   translationNS,
@@ -13,7 +13,7 @@ export const CtaSection = ({
   backgroundImageUrl,
   button,
   hubspotFormTitle,
-}: CtaContent) => {
+}: CtaSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
   const { baseTransition, fadeIn } = useMotionPresets();
 
@@ -64,20 +64,43 @@ export const CtaSection = ({
               {t(subtitleKey)}
             </motion.p>
 
-            {button &&
-              (() => {
-                const { textKey, ...btnProps } = button;
-                return (
-                  <motion.div
-                    initial='hidden'
-                    whileInView='visible'
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ ...baseTransition, delay: 0.2 }}
-                    className='mt-8 md:self-center'>
-                    <Button {...btnProps}>{t(textKey)}</Button>
-                  </motion.div>
-                );
-              })()}
+            {button && (
+              <motion.div
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ ...baseTransition, delay: 0.2 }}
+                className='mt-8 md:self-center'>
+                {button.action.type === 'internal' ? (
+                  <Button
+                    action={{ type: 'internal', path: button.action.path }}
+                    variant={button.variant}
+                    size={button.size}
+                    className={button.className}>
+                    {t(button.textKey)}
+                  </Button>
+                ) : button.action.type === 'external' ? (
+                  <Button
+                    action={{ type: 'external', path: button.action.path }}
+                    variant={button.variant}
+                    size={button.size}
+                    className={button.className}>
+                    {t(button.textKey)}
+                  </Button>
+                ) : (
+                  <Button
+                    action={{
+                      type: 'whatsapp',
+                      whatsAppMessageKey: button.action.whatsAppMessageKey,
+                    }}
+                    variant={button.variant}
+                    size={button.size}
+                    className={button.className}>
+                    {t(button.textKey)}
+                  </Button>
+                )}
+              </motion.div>
+            )}
           </motion.div>
 
           {/* Columna derecha: HubSpot */}

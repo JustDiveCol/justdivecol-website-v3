@@ -1,7 +1,7 @@
 // src/components/sections/certifications/AvailableSessions.tsx
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { CalendarIcon } from '../../ui/Icons'; // Asumimos que tienes este icono
+import { CalendarIcon } from '../../ui'; // Asumimos que tienes este icono
 import { getAvailableSessionsForCertification } from '../../../data/certifications/utils';
 import type { CertificationId } from '../../../constants/certifications';
 

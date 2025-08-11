@@ -3,18 +3,11 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
-import { CloseIcon } from '../../ui/Icons';
+import { CloseIcon } from '../../ui';
 import { ImageComponent } from '../../common/ImageComponent';
 import type { DiveSiteModalProps } from './types';
 import type { ImageComponentData } from '../../common/types';
-import {
-  getDifficultyById,
-  getDiveConditionById,
-  getDiveTagById,
-  getDiveTypeById,
-  type DiveTagCategoryId,
-  type DiveTagWithCategory,
-} from '../../../constants/dive-sites';
+import type { DiveTagCategoryId } from '../../../lib/db/constants';
 
 const getTagColorClass = (categoryId?: DiveTagCategoryId) => {
   switch (categoryId) {
@@ -57,7 +50,7 @@ export const DiveSiteModal = ({
     showFullDescription || !isLong
       ? descriptionText
       : `${descriptionText.slice(0, 180)}…`;
-  const difficulty = getDifficultyById(site.difficultyId);
+  const difficulty = getDifficultyByI(site.difficultyId);
 
   const mainImageData: ImageComponentData = {
     backgroundImage: site.featuredImage.backgroundImage,

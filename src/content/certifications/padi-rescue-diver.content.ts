@@ -1,17 +1,29 @@
 // src/content/certifications/padi-rescue-diver.content.ts
-
-import { BRAND_ASSETS } from '../../constants/assets';
+import { BRAND_ASSETS_SAFE, toAssetUrl } from '../../constants/assets.schema';
 import { ROUTES } from '../../constants/routes';
-import { CertificationContentSchema } from '../schemas';
-import type { CertificationContent } from './types';
+import { toUrlPath } from '../urlPathSchema';
+import { CertificationContentSchema, type CertificationContent } from './types';
 
 const rawRescueDiver: CertificationContent = {
+  id: 'padi-rescue-diver',
+  code: 'RD',
+  level: 'rescue',
+  agency: 'PADI',
+  minAge: 12,
+  maxDepthMeter: 30,
+  maxDepthFt: 100,
+
+  estimatedDuration: {
+    eLearningHours: [8, 12],
+    totalDays: [4, 7],
+  },
+
   seo: {
     titleKey: 'certifications.rd.seo.title',
     descriptionKey: 'certifications.rd.seo.desc',
     keywordsKey: 'certifications.rd.seo.keywords',
-    imageUrl: '/images/social/rd-social-card.webp',
-    urlPath: ROUTES.certifications,
+    imageUrl: toAssetUrl('/images/social/rd-social-card.webp'),
+    urlPath: toUrlPath(ROUTES.certifications),
     translationNS: 'certifications',
   },
 
@@ -19,11 +31,21 @@ const rawRescueDiver: CertificationContent = {
     titleKey: 'certifications.rd.header.title',
     subtitleKey: 'certifications.rd.header.subtitle',
     imageData: {
-      backgroundImage: '/images/certifications/rd-header.webp',
+      backgroundImage: toAssetUrl('/images/certifications/rd-header.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },
     translationNS: 'certifications',
+  },
+
+  card: {
+    imageData: {
+      backgroundImage: toAssetUrl('/images/certifications/rd-card.webp'),
+      photoCredit: 'Camilo Beltran @JustDiveCol',
+      complementaryLogo: BRAND_ASSETS_SAFE.complementaryLogos.padi,
+      textOverlayKey: 'certificationsTextOverlay',
+      variant: 'horizontal',
+    },
   },
 
   description: {
@@ -34,14 +56,13 @@ const rawRescueDiver: CertificationContent = {
     ],
   },
 
-  card: {
-    imageData: {
-      backgroundImage: '/images/certifications/rd-card.webp',
-      photoCredit: 'Camilo Beltran @JustDiveCol',
-      complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
-      textOverlayKey: 'certificationsTextOverlay',
-      variant: 'horizontal',
-    },
+  prerequisites: {
+    titleKey: 'certifications.rd.prerequisites.title',
+    items: [
+      'certifications.rd.prerequisites.item1',
+      'certifications.rd.prerequisites.item2',
+      'certifications.rd.prerequisites.item3',
+    ],
   },
 
   details: {
@@ -51,6 +72,14 @@ const rawRescueDiver: CertificationContent = {
       {
         labelKey: 'certifications.rd.details.label1',
         valueKey: 'certifications.rd.details.value1',
+      },
+      {
+        labelKey: 'certifications.rd.details.label2',
+        valueKey: 'certifications.rd.details.value2',
+      },
+      {
+        labelKey: 'certifications.rd.details.label3',
+        valueKey: 'certifications.rd.details.value3',
       },
     ],
   },
@@ -85,29 +114,103 @@ const rawRescueDiver: CertificationContent = {
     ],
   },
 
+  bookingProcess: {
+    titleKey: 'certifications.rd.bookingProcess.title',
+    steps: [
+      {
+        icon: 'contact',
+        nameKey: 'certifications.rd.bookingProcess.step1Name',
+        descriptionKey: 'certifications.rd.bookingProcess.step1Desc',
+      },
+      {
+        icon: 'theory',
+        nameKey: 'certifications.rd.bookingProcess.step2Name',
+        descriptionKey: 'certifications.rd.bookingProcess.step2Desc', // "Accede al material de PADI y aprende a tu propio ritmo."
+      },
+      {
+        icon: 'dive',
+        nameKey: 'certifications.rd.bookingProcess.step3Name',
+        descriptionKey: 'certifications.rd.bookingProcess.step3Desc',
+      },
+    ],
+  },
+
   gallery: {
     titleKey: 'certifications.galleryTitle',
     images: [
       {
-        backgroundImage: 'https://placehold.co/800x600',
+        backgroundImage: toAssetUrl('https://placehold.co/800x600'),
         photoCredit: 'Camilo Beltran',
         variant: 'horizontal',
       },
       {
-        backgroundImage: 'https://placehold.co/600x800',
+        backgroundImage: toAssetUrl('https://placehold.co/600x800'),
         photoCredit: 'Camilo Beltran',
         variant: 'vertical',
       },
       {
-        backgroundImage: 'https://placehold.co/800x600',
+        backgroundImage: toAssetUrl('https://placehold.co/800x600'),
         photoCredit: 'Camilo Beltran',
         variant: 'horizontal',
       },
       {
-        backgroundImage: 'https://placehold.co/600x800',
+        backgroundImage: toAssetUrl('https://placehold.co/600x800'),
         photoCredit: 'Camilo Beltran',
         variant: 'vertical',
       },
+    ],
+  },
+
+  testimonials: {
+    titleKey: 'certifications.rd.testimonials.title',
+    items: [
+      {
+        quoteKey: 'certifications.rd.testimonials.quote1',
+        author: 'certifications.rd.testimonials.author1',
+        photoUrl: toAssetUrl('/images/testimonials/testimonial1.webp'),
+      },
+      {
+        quoteKey: 'certifications.rd.testimonials.quote2',
+        author: 'certifications.rd.testimonials.author2',
+        photoUrl: toAssetUrl('/images/testimonials/testimonial2.webp'),
+      },
+      // Puedes añadir más testimonios aquí
+    ],
+  },
+
+  faq: {
+    titleKey: 'certifications.rd.faq.title',
+    items: [
+      {
+        questionKey: 'certifications.rd.faq.q1',
+        answerKey: 'certifications.rd.faq.a1',
+      },
+      {
+        questionKey: 'certifications.rd.faq.q2',
+        answerKey: 'certifications.rd.faq.a2',
+      },
+      {
+        questionKey: 'certifications.rd.faq.q3',
+        answerKey: 'certifications.rd.faq.a3',
+      },
+      // Puedes añadir más preguntas y respuestas comunes
+    ],
+  },
+
+  instructorProfile: {
+    titleKey: 'certifications.rd.instructorProfile.title',
+    instructors: [
+      {
+        name: 'certifications.rd.instructor1.name',
+        descriptionKey: 'certifications.rd.instructor1.description',
+        photoUrl: toAssetUrl('/images/instructors/instructor1.webp'),
+      },
+      {
+        name: 'certifications.rd.instructor2.name',
+        descriptionKey: 'certifications.rd.instructor2.description',
+        photoUrl: toAssetUrl('/images/instructors/instructor2.webp'),
+      },
+      // ...(puedes añadir más instructores)
     ],
   },
 

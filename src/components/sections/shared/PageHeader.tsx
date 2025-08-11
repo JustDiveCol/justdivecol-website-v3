@@ -2,14 +2,14 @@
 import { useTranslation } from 'react-i18next';
 import { motion, useReducedMotion, type Transition } from 'framer-motion';
 import { ImageComponent } from '../../common/ImageComponent';
-import type { PageHeaderContent } from './types';
+import type { PageHeaderProps } from './types';
 
 export const PageHeader = ({
   titleKey,
   subtitleKey,
   translationNS,
   imageData,
-}: PageHeaderContent) => {
+}: PageHeaderProps) => {
   const { t } = useTranslation([translationNS, 'common']);
   const reduceMotion = useReducedMotion();
 
@@ -45,13 +45,17 @@ export const PageHeader = ({
           {t(titleKey)}
         </motion.h1>
 
-        <motion.p
-          initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ ...baseTransition, delay: reduceMotion ? 0 : 0.2 }}
-          className='text-subtitle max-w-3xl'>
-          {t(subtitleKey)}
-        </motion.p>
+        {subtitleKey && (
+          <motion.p
+            initial={
+              reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...baseTransition, delay: reduceMotion ? 0 : 0.2 }}
+            className='text-subtitle max-w-3xl'>
+            {t(subtitleKey)}
+          </motion.p>
+        )}
       </div>
     </section>
   );

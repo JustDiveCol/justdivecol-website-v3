@@ -1,15 +1,17 @@
 // src/content/pages/legal/privacy/privacy.content.ts
-import { ROUTES } from '../../../../constants/routes';
-import { LegalPageContentSchema } from '../../../schemas';
-import type { LegalPageData } from '../types';
 
-const rawPrivacy: LegalPageData = {
+import { toAssetUrl } from '../../../../constants/assets.schema';
+import { ROUTES } from '../../../../constants/routes';
+import { toUrlPath } from '../../../urlPathSchema';
+import { LegalPageContentSchema, type LegalPageContent } from '../types';
+
+const rawPrivacy: LegalPageContent = {
   seo: {
     titleKey: 'legal.privacy.seo.title',
     descriptionKey: 'contact.seo.desc',
     keywordsKey: 'contact.seo.keywords',
-    urlPath: ROUTES.privacy,
-    imageUrl: '/images/social/privacy-social-card.webp',
+    urlPath: toUrlPath(ROUTES.privacy),
+    imageUrl: toAssetUrl('/images/social/privacy-social-card.webp'),
     translationNS: 'legal',
   },
 
@@ -18,7 +20,7 @@ const rawPrivacy: LegalPageData = {
     subtitleKey: 'legal.privacy.header.subtitle',
     translationNS: 'legal',
     imageData: {
-      backgroundImage: '/images/contact/header-background.webp',
+      backgroundImage: toAssetUrl('/images/contact/header-background.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },
@@ -29,106 +31,106 @@ const rawPrivacy: LegalPageData = {
     sections: [
       {
         id: 'information-collection',
-        titleKey: 'legal.privacy.content.sections.title1',
+        titleKey: 'legal.privacy.content.sections.section1.title',
         points: [
           {
-            textKey: 'legal.privacy.content.sections.section1.point1',
+            textKey: 'legal.privacy.content.sections.section1.point1.text',
           },
           {
-            textKey: 'legal.privacy.content.sections.section1.point2',
+            textKey: 'legal.privacy.content.sections.section1.point2.text',
           },
           {
-            textKey: 'legal.privacy.content.sections.section1.point3',
+            textKey: 'legal.privacy.content.sections.section1.point3.text',
           },
         ],
       },
       {
         id: 'information-use',
-        titleKey: 'legal.privacy.content.sections.title2',
+        titleKey: 'legal.privacy.content.sections.section2.title',
         points: [
           {
-            textKey: 'legal.privacy.content.sections.section2.point1',
+            textKey: 'legal.privacy.content.sections.section2.point1.text',
           },
           {
-            textKey: 'legal.privacy.content.sections.section2.point2',
+            textKey: 'legal.privacy.content.sections.section2.point2.text',
           },
           {
-            textKey: 'legal.privacy.content.sections.section2.point3',
+            textKey: 'legal.privacy.content.sections.section2.point3.text',
           },
           {
-            textKey: 'legal.privacy.content.sections.section2.point4',
+            textKey: 'legal.privacy.content.sections.section2.point4.text',
           },
         ],
       },
       {
         id: 'information-sharing',
-        titleKey: 'legal.privacy.content.sections.title3',
+        titleKey: 'legal.privacy.content.sections.section3.title',
         points: [
           {
-            textKey: 'legal.privacy.content.sections.section3.point1',
+            textKey: 'legal.privacy.content.sections.section3.point1.text',
           },
           {
-            textKey: 'legal.privacy.content.sections.section3.point2',
+            textKey: 'legal.privacy.content.sections.section3.point2.text',
           },
           {
-            textKey: 'legal.privacy.content.sections.section3.point3',
+            textKey: 'legal.privacy.content.sections.section3.point3.text',
           },
         ],
       },
       {
         id: 'rights-options',
-        titleKey: 'legal.privacy.content.sections.title4',
+        titleKey: 'legal.privacy.content.sections.section4.title',
         points: [
           {
-            textKey: 'legal.privacy.content.sections.section4.point1',
+            textKey: 'legal.privacy.content.sections.section4.point1.text',
           },
           {
-            textKey: 'legal.privacy.content.sections.section4.point2',
+            textKey: 'legal.privacy.content.sections.section4.point2.text',
           },
           {
-            textKey: 'legal.privacy.content.sections.section4.point3',
+            textKey: 'legal.privacy.content.sections.section4.point3.text',
           },
         ],
       },
       {
         id: 'data-security',
-        titleKey: 'legal.privacy.content.sections.title5',
+        titleKey: 'legal.privacy.content.sections.section5.title',
         points: [
           {
-            textKey: 'legal.privacy.content.sections.section5.point1',
+            textKey: 'legal.privacy.content.sections.section5.point1.text',
           },
           {
-            textKey: 'legal.privacy.content.sections.section5.point2',
+            textKey: 'legal.privacy.content.sections.section5.point2.text',
           },
         ],
       },
       {
         id: 'data-retention',
-        titleKey: 'legal.privacy.content.sections.title6',
+        titleKey: 'legal.privacy.content.sections.section6.title',
         points: [
           {
-            textKey: 'legal.privacy.content.sections.section6.point1',
+            textKey: 'legal.privacy.content.sections.section6.point1.text',
           },
         ],
       },
       {
         id: 'privacy-policy-changes',
-        titleKey: 'legal.privacy.content.sections.title7',
+        titleKey: 'legal.privacy.content.sections.section7.title',
         points: [
           {
-            textKey: 'legal.privacy.content.sections.section7.point1',
+            textKey: 'legal.privacy.content.sections.section7.point1.text',
           },
           {
-            textKey: 'legal.privacy.content.sections.section7.point2',
+            textKey: 'legal.privacy.content.sections.section7.point2.text',
           },
         ],
       },
       {
         id: 'contact',
-        titleKey: 'legal.privacy.content.sections.title8',
+        titleKey: 'legal.privacy.content.sections.section8.title',
         points: [
           {
-            textKey: 'legal.privacy.content.sections.section8.point1',
+            textKey: 'legal.privacy.content.sections.section8.point1.text',
           },
         ],
       },

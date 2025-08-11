@@ -1,20 +1,31 @@
 // src/content/pages/home/types.ts
-import type {
-  AlliesContent,
-  FeaturedContent,
-  HeroContent,
-  PrinciplesContent,
-  TestimonialsContent,
+import { z } from 'zod';
+import {
+  AlliesContentSchema,
+  FeaturedSectionPropsSchema,
+  HeroSectionPropsSchema,
+  PrinciplesSectionPropsSchema,
+  TestimonialsSectionPropsSchema,
 } from '../../../components/sections/home/types';
-import type { CtaContent } from '../../../components/sections/shared/types';
-import type { SEOContent } from '../../types';
+import { CtaSectionPropsSchema } from '../../../components/sections/shared/types';
 
-export type HomePageContent = {
-  seo: SEOContent;
-  hero: HeroContent;
-  featured: FeaturedContent;
-  principles: PrinciplesContent;
-  testimonials: TestimonialsContent;
-  allies: AlliesContent;
-  cta: CtaContent;
+import { SEOPropsSchema } from '../../../components/common/types';
+
+export type RawCardData = {
+  readonly id: string;
+  readonly titleKey: string;
+  readonly subtitleKey?: string;
+  readonly imageData: ImageData;
 };
+
+export const HomePageContentSchema = z.object({
+  seo: SEOPropsSchema,
+  hero: HeroSectionPropsSchema,
+  featured: FeaturedSectionPropsSchema,
+  principles: PrinciplesSectionPropsSchema,
+  testimonials: TestimonialsSectionPropsSchema,
+  allies: AlliesContentSchema,
+  cta: CtaSectionPropsSchema,
+});
+
+export type HomePageContent = z.infer<typeof HomePageContentSchema>;

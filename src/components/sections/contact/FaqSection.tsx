@@ -1,44 +1,76 @@
 // src/components/sections/contact/FaqSection.tsx
 import { useTranslation } from 'react-i18next';
-import { faqData } from '../../../data/faqData';
+import { motion } from 'framer-motion';
 import { AccordionItem } from '../../common/AccordionItem';
 import { ROUTES } from '../../../constants/routes';
 import { Button } from '../../common/Button';
+
+import { useMotionPresets } from '../../../hooks/animations';
+import { faqContent } from '../../../content/pages/faq/faq.content';
+import { toUrlPath } from '../../../content/urlPathSchema';
 import type { FaqSectionProps } from './types';
 
 export const FaqSection = ({ translationNS }: FaqSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
-  const topFaqs = faqData.categories
+  const { container, fadeIn } = useMotionPresets();
+
+  const { data } = faqContent;
+  const topFaqs = data.categories
     .flatMap((category) => category.faqs)
-    .filter((faq) => faqData.topFaqIds.includes(faq.id));
+    .filter((faq) => data.topFaqIds.includes(faq.id));
 
   return (
-    <section className='bg-brand-primary-medium py-20 px-4'>
-      <div className='container mx-auto max-w-3xl'>
-        <div className='text-center mb-12'>
-          <h2 className='heading-2 text-white'>
-            {t('header.faqsHeaderTitle')}
-          </h2>{' '}
+    <section
+      className='bg-brand-primary-medium'
+      aria-labelledby='contact-faqs-heading'>
+      <div className='section py-16'>
+        {/* Título */}
+        <div className='mb-12 text-center'>
+          <motion.h2
+            id='contact-faqs-heading'
+            className='heading-2 text-white'
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeIn()}>
+            {t('faq:faq.contactFaqSectionTitle')}
+          </motion.h2>
         </div>
 
-        <div className='space-y-2'>
+        {/* Lista de FAQs */}
+        <motion.div
+          role='list'
+          className='mx-auto max-w-3xl space-y-2'
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.2 }}
+          variants={container}>
           {topFaqs.map((faq) => (
-            <AccordionItem
+            <motion.div
               key={faq.id}
-              question={t(faq.questionKey)}
-              answer={t(faq.answerKey)}
-            />
+              variants={fadeIn()}>
+              <AccordionItem
+                question={t(faq.questionKey)}
+                answer={t(faq.answerKey)}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className='mt-12 text-center'>
+        {/* Botón ver todas */}
+        <motion.div
+          className='mt-12 text-center'
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn()}>
           <Button
-            action={{ type: 'internal', path: ROUTES.faq }}
+            action={{ type: 'internal', path: toUrlPath(ROUTES.faq) }}
             variant='outline'
             size='sm'>
-            {t('faqs.seeAllFaqsButton')}
+            {t('faq:faq.seeAllFaqsButton')}
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

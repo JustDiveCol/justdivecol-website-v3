@@ -9,7 +9,7 @@ import {
 import { allExperiences } from '../../../data/experiences';
 import { ActiveDestinationCard } from '../shared/ActiveDestinationCard';
 import { DestinationPill } from '../shared/DestinationPill';
-import { ChevronLeftIcon, ChevronRightIcon } from '../../ui/Icons';
+import { ChevronLeftIcon, ChevronRightIcon } from '../../ui';
 import type { DestinationsSectionProps } from './types';
 
 export const DestinationsSection = ({

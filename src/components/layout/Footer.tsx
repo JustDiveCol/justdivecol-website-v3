@@ -3,10 +3,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+
 import { footerContent } from '../../content/footer/footer.content';
 import { contactContent } from '../../content/pages/contact/contact.content';
-
 import logo from '../../assets/images/logo.png';
+
 import {
   WhatsappIcon,
   MailIcon,
@@ -15,7 +16,14 @@ import {
   YouTubeIcon,
   ChevronUpIcon,
   ScubaMaskIcon,
-} from '../ui/Icons';
+} from '../ui';
+
+import type { FooterProps } from './types';
+import {
+  isStaticPath,
+  type StaticRoutePath,
+  type StaticRouteName,
+} from '../../constants/routes';
 
 type SocialIconType = 'instagram' | 'tiktok' | 'youtube';
 
@@ -25,7 +33,7 @@ const socialIcons: Record<SocialIconType, React.ReactNode> = {
   youtube: <YouTubeIcon className='w-6 h-6' />,
 };
 
-const Footer = () => {
+const Footer: React.FC<FooterProps> = () => {
   const { t } = useTranslation(['common', 'navigation', 'contact']);
   const [isVisible, setIsVisible] = useState(false);
   const reduceMotion = useReducedMotion();
@@ -34,7 +42,7 @@ const Footer = () => {
   const { contactInfo } = contactContent;
   const currentYear = new Date().getFullYear();
 
-  // Scroll handler (pasivo + rAF throttling)
+  // Scroll handler
   useEffect(() => {
     const onScroll = () => {
       if (!ticking.current) {
@@ -46,12 +54,11 @@ const Footer = () => {
       }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // estado inicial
+    onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   const scrollToTop = () => {
-    // Respeta prefers-reduced-motion
     if (reduceMotion) {
       window.scrollTo({ top: 0, behavior: 'auto' });
     } else {
@@ -59,13 +66,14 @@ const Footer = () => {
     }
   };
 
-  // Construcción de URLs
+  // WhatsApp
   const prefilledText = t('whatsapp_message', { ns: 'common' });
   const phone = contactInfo.phone.replace(/\s+/g, '');
   const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(
     prefilledText
   )}`;
 
+  // Email
   const subject = encodeURIComponent(
     t(contactInfo.emailSubjectKey, { ns: 'contact' })
   );
@@ -85,6 +93,7 @@ const Footer = () => {
           {t('common:footer', 'Pie de página')}
         </h2>
 
+        {/* Logo y slogan */}
         <div className='flex flex-col items-center'>
           <Link
             to='/'
@@ -106,6 +115,7 @@ const Footer = () => {
             {t(footerContent.closingMessageKey, { ns: 'common' })}
           </p>
 
+          {/* Social links */}
           <div
             className='flex justify-center items-center space-x-6 mt-8'
             aria-label={t('common:contact_us', 'Contáctanos')}>
@@ -146,7 +156,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Decorative divider */}
+        {/* Divider */}
         <div
           className='flex items-center justify-center my-10'
           aria-hidden='true'>
@@ -157,7 +167,7 @@ const Footer = () => {
           <div className='flex-grow border-t border-brand-primary-light/20' />
         </div>
 
-        {/* Navigation links */}
+        {/* Footer links */}
         <nav
           className='text-center mb-8'
           aria-label={t('common:important_links', 'Enlaces importantes')}>
@@ -165,14 +175,30 @@ const Footer = () => {
             {t(footerContent.importantLinksTitle, { ns: 'common' })}
           </h3>
           <div className='flex flex-wrap justify-center gap-x-4 gap-y-2'>
-            {footerContent.navLinks.map((link) => (
-              <Link
-                key={link.nameKey}
-                to={link.path}
-                className='text-brand-neutral/80 hover:text-brand-cta-orange transition-colors text-xs p-2 rounded focus:outline-none focus:ring-2 focus:ring-brand-cta-orange/70'>
-                {t(`nav.${link.nameKey}`, { ns: 'common' })}
-              </Link>
-            ))}
+            {footerContent.navLinks.map((link) => {
+              const label = t(`nav.${link.nameKey as StaticRouteName}`, {
+                ns: 'common',
+              });
+              const isInternal = isStaticPath(link.path);
+
+              return isInternal ? (
+                <Link
+                  key={link.nameKey}
+                  to={link.path as StaticRoutePath}
+                  className='text-brand-neutral/80 hover:text-brand-cta-orange transition-colors text-xs p-2 rounded focus:outline-none focus:ring-2 focus:ring-brand-cta-orange/70'>
+                  {label}
+                </Link>
+              ) : (
+                <a
+                  key={link.nameKey}
+                  href={link.path}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-brand-neutral/80 hover:text-brand-cta-orange transition-colors text-xs p-2 rounded focus:outline-none focus:ring-2 focus:ring-brand-cta-orange/70'>
+                  {label}
+                </a>
+              );
+            })}
           </div>
         </nav>
 
@@ -188,7 +214,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Scroll-to-top button */}
+      {/* Scroll-to-top */}
       <AnimatePresence>
         {isVisible && (
           <motion.button

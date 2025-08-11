@@ -1,16 +1,11 @@
 // src/components/sections/divesites/DiveSiteFilters.tsx
 import { useTranslation } from 'react-i18next';
-import { allDestinations } from '../../../data/destinations';
 import type { DiveSiteFiltersProps, FiltersData } from './types';
-import type {
-  DiveTypeId,
-  DiveConditionId,
-  DiveTagId,
-} from '../../../constants/dive-sites';
 
 export const DiveSiteFilters = ({
   filters,
   onFiltersChange,
+  availableDestinations, // ← viene del padre
   availableDifficulties,
   availableTypes,
   availableConditions,
@@ -22,29 +17,29 @@ export const DiveSiteFilters = ({
   const handleFilterChange = <K extends keyof FiltersData>(
     key: K,
     value: FiltersData[K]
-  ) => {
-    onFiltersChange({ ...filters, [key]: value });
-  };
+  ) => onFiltersChange({ ...filters, [key]: value });
 
-  const handleMultiSelectToggle = <K extends 'types' | 'conditions' | 'tags'>(
+  const handleMultiSelectToggle = <
+    K extends 'types' | 'conditions' | 'tags',
+    V extends FiltersData[K][number]
+  >(
     key: K,
-    value: FiltersData[K] extends Array<infer U> ? U : never
+    value: V
   ) => {
-    const currentValues = filters[key] as Array<typeof value>;
-    const isSelected = currentValues.includes(value);
-    const newValues = isSelected
-      ? currentValues.filter((v) => v !== value)
-      : [...currentValues, value];
-    onFiltersChange({ ...filters, [key]: newValues });
+    const current = filters[key] as V[];
+    const next = current.includes(value)
+      ? current.filter((v) => v !== value)
+      : [...current, value];
+    onFiltersChange({ ...filters, [key]: next as FiltersData[K] });
   };
 
   return (
     <div className='space-y-6'>
-      {/* --- Campo de Búsqueda por Nombre --- */}
+      {/* --- Búsqueda --- */}
       <div>
         <label
           htmlFor='search-query'
-          className='block text-sm font-bold text-brand-white mb-2'>
+          className='mb-2 block text-sm font-bold text-brand-white'>
           {t('filterBySearch')}
         </label>
         <input
@@ -59,7 +54,7 @@ export const DiveSiteFilters = ({
 
       {/* --- Filtro por Destino --- */}
       <div>
-        <label className='block text-sm font-bold text-brand-white mb-2'>
+        <label className='mb-2 block text-sm font-bold text-brand-white'>
           {t('filterByDestination')}
         </label>
         <select
@@ -72,7 +67,7 @@ export const DiveSiteFilters = ({
           }
           className='form-input w-full'>
           <option value='all'>{t('filterAllDestinations')}</option>
-          {allDestinations.map((d) => (
+          {availableDestinations.map((d) => (
             <option
               key={d.id}
               value={d.id}>
@@ -82,9 +77,9 @@ export const DiveSiteFilters = ({
         </select>
       </div>
 
-      {/* --- Filtro por Dificultad --- */}
+      {/* --- Dificultad --- */}
       <div>
-        <label className='block text-sm font-bold text-brand-white mb-2'>
+        <label className='mb-2 block text-sm font-bold text-brand-white'>
           {t('filterByDifficulty')}
         </label>
         <select
@@ -107,11 +102,11 @@ export const DiveSiteFilters = ({
         </select>
       </div>
 
-      {/* --- Filtro por Profundidad Máxima --- */}
+      {/* --- Profundidad máxima --- */}
       <div>
         <label
           htmlFor='max-depth'
-          className='block text-sm font-bold text-brand-white mb-2'>
+          className='mb-2 block text-sm font-bold text-brand-white'>
           {t('filterByMaxDepth')} ({filters.maxDepth}m)
         </label>
         <input
@@ -124,23 +119,21 @@ export const DiveSiteFilters = ({
           onChange={(e) =>
             handleFilterChange('maxDepth', parseInt(e.target.value, 10))
           }
-          className='w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer'
+          className='h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-700'
         />
       </div>
 
-      {/* --- Filtro por Tipo de Buceo --- */}
+      {/* --- Tipos --- */}
       <div>
-        <label className='block text-sm font-bold text-brand-white mb-2'>
+        <label className='mb-2 block text-sm font-bold text-brand-white'>
           {t('filterByType')}
         </label>
         <div className='flex flex-wrap gap-2'>
           {availableTypes.map((type) => (
             <button
               key={type.id}
-              onClick={() =>
-                handleMultiSelectToggle('types', type.id as DiveTypeId)
-              }
-              className={`px-3 py-1 text-sm rounded-full transition-colors ${
+              onClick={() => handleMultiSelectToggle('types', type.id)}
+              className={`rounded-full px-3 py-1 text-sm transition-colors ${
                 filters.types.includes(type.id as DiveTypeId)
                   ? 'bg-brand-cta-orange text-white'
                   : 'bg-white/10 text-brand-neutral hover:bg-white/20'
@@ -151,22 +144,17 @@ export const DiveSiteFilters = ({
         </div>
       </div>
 
-      {/* --- Filtro por Condiciones --- */}
+      {/* --- Condiciones --- */}
       <div>
-        <label className='block text-sm font-bold text-brand-white mb-2'>
+        <label className='mb-2 block text-sm font-bold text-brand-white'>
           {t('filterByCondition')}
         </label>
         <div className='flex flex-wrap gap-2'>
           {availableConditions.map((cond) => (
             <button
               key={cond.id}
-              onClick={() =>
-                handleMultiSelectToggle(
-                  'conditions',
-                  cond.id as DiveConditionId
-                )
-              }
-              className={`px-3 py-1 text-sm rounded-full transition-colors ${
+              onClick={() => handleMultiSelectToggle('conditions', cond.id)}
+              className={`rounded-full px-3 py-1 text-sm transition-colors ${
                 filters.conditions.includes(cond.id as DiveConditionId)
                   ? 'bg-brand-cta-orange text-white'
                   : 'bg-white/10 text-brand-neutral hover:bg-white/20'
@@ -177,19 +165,17 @@ export const DiveSiteFilters = ({
         </div>
       </div>
 
-      {/* --- Filtro por Etiquetas --- */}
+      {/* --- Tags --- */}
       <div>
-        <label className='block text-sm font-bold text-brand-white mb-2'>
+        <label className='mb-2 block text-sm font-bold text-brand-white'>
           {t('filterByTag')}
         </label>
         <div className='flex flex-wrap gap-2'>
           {availableTags.map((tag) => (
             <button
               key={tag.id}
-              onClick={() =>
-                handleMultiSelectToggle('tags', tag.id as DiveTagId)
-              }
-              className={`px-3 py-1 text-sm rounded-full transition-colors ${
+              onClick={() => handleMultiSelectToggle('tags', tag.id)}
+              className={`rounded-full px-3 py-1 text-sm transition-colors ${
                 filters.tags.includes(tag.id as DiveTagId)
                   ? 'bg-brand-cta-orange text-white'
                   : 'bg-white/10 text-brand-neutral hover:bg-white/20'

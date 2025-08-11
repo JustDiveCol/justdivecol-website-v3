@@ -1,15 +1,16 @@
 // src/content/pages/legal/policy/policy.content.ts
+import { toAssetUrl } from '../../../../constants/assets.schema';
 import { ROUTES } from '../../../../constants/routes';
-import { LegalPageContentSchema } from '../../../schemas';
-import type { LegalPageData } from '../types';
+import { toUrlPath } from '../../../urlPathSchema';
+import { LegalPageContentSchema, type LegalPageContent } from '../types';
 
-const rawPolicy: LegalPageData = {
+const rawPolicy: LegalPageContent = {
   seo: {
     titleKey: 'legal.policy.seo.title',
     descriptionKey: 'contact.seo.desc',
     keywordsKey: 'contact.seo.keywords',
-    urlPath: ROUTES.policy,
-    imageUrl: '/images/social/policy-social-card.webp',
+    urlPath: toUrlPath(ROUTES.policy),
+    imageUrl: toAssetUrl('/images/social/policy-social-card.webp'),
     translationNS: 'legal',
   },
 
@@ -18,7 +19,7 @@ const rawPolicy: LegalPageData = {
     subtitleKey: 'legal.policy.header.subtitle',
     translationNS: 'legal',
     imageData: {
-      backgroundImage: '/images/contact/header-background.webp',
+      backgroundImage: toAssetUrl('/images/contact/header-background.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },
@@ -29,25 +30,25 @@ const rawPolicy: LegalPageData = {
     sections: [
       {
         id: 'reserves-payment',
-        titleKey: 'legal.policy.content.sections.title1',
+        titleKey: 'legal.policy.content.sections.section1.title',
         points: [
           {
-            textKey: 'legal.policy.content.sections.section1.point1',
+            textKey: 'legal.policy.content.sections.section1.point1.text',
           },
           {
-            textKey: 'legal.policy.content.sections.section1.point2',
+            textKey: 'legal.policy.content.sections.section1.point2.text',
           },
           {
-            textKey: 'legal.policy.content.sections.section1.point3',
+            textKey: 'legal.policy.content.sections.section1.point3.text',
           },
         ],
       },
       {
         id: 'cancellations-refunds',
-        titleKey: 'legal.policy.content.sections.title2',
+        titleKey: 'legal.policy.content.sections.section2.title',
         points: [
           {
-            textKey: 'legal.policy.content.sections.section2.point1',
+            textKey: 'legal.policy.content.sections.section2.point1.text',
             subpoints: [
               'legal.policy.content.sections.section2.point1.pointA',
               'legal.policy.content.sections.section2.point1.pointB',
@@ -56,7 +57,7 @@ const rawPolicy: LegalPageData = {
             ],
           },
           {
-            textKey: 'legal.policy.content.sections.section2.point2',
+            textKey: 'legal.policy.content.sections.section2.point2.text',
             subpoints: [
               'legal.policy.content.sections.section2.point2.pointA',
               'legal.policy.content.sections.section2.point2.pointB',
@@ -70,55 +71,55 @@ const rawPolicy: LegalPageData = {
       },
       {
         id: 'safety-regulations',
-        titleKey: 'legal.policy.content.sections.title3',
+        titleKey: 'legal.policy.content.sections.section3.title',
         points: [
           {
-            textKey: 'legal.policy.content.sections.section3.point1',
+            textKey: 'legal.policy.content.sections.section3.point1.text',
           },
           {
-            textKey: 'legal.policy.content.sections.section3.point2',
+            textKey: 'legal.policy.content.sections.section3.point2.text',
           },
           {
-            textKey: 'legal.policy.content.sections.section3.point3',
+            textKey: 'legal.policy.content.sections.section3.point3.text',
           },
           {
-            textKey: 'legal.policy.content.sections.section3.point4',
+            textKey: 'legal.policy.content.sections.section3.point4.text',
           },
           {
-            textKey: 'legal.policy.content.sections.section3.point5',
+            textKey: 'legal.policy.content.sections.section3.point5.text',
           },
         ],
       },
       {
         id: 'equipment-rental',
-        titleKey: 'legal.policy.content.sections.title4',
+        titleKey: 'legal.policy.content.sections.section4.title',
         points: [
           {
-            textKey: 'legal.policy.content.sections.section4.point1',
+            textKey: 'legal.policy.content.sections.section4.point1.text',
           },
           {
-            textKey: 'legal.policy.content.sections.section4.point2',
+            textKey: 'legal.policy.content.sections.section4.point2.text',
           },
           {
-            textKey: 'legal.policy.content.sections.section4.point3',
+            textKey: 'legal.policy.content.sections.section4.point3.text',
           },
           {
-            textKey: 'legal.policy.content.sections.section4.point4',
+            textKey: 'legal.policy.content.sections.section4.point4.text',
           },
         ],
       },
       {
         id: 'responsibility-risks',
-        titleKey: 'legal.policy.content.sections.title5',
+        titleKey: 'legal.policy.content.sections.section5.title',
         points: [
           {
-            textKey: 'legal.policy.content.sections.section5.point1',
+            textKey: 'legal.policy.content.sections.section5.point1.text',
           },
           {
-            textKey: 'legal.policy.content.sections.section5.point2',
+            textKey: 'legal.policy.content.sections.section5.point2.text',
           },
           {
-            textKey: 'legal.policy.content.sections.section5.point3',
+            textKey: 'legal.policy.content.sections.section5.point3.text',
           },
         ],
       },

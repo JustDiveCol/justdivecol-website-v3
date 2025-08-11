@@ -1,6 +1,6 @@
 // src/components/sections/certifications/KeyDetailsSection.tsx
 import { useTranslation } from 'react-i18next';
-import { ClockIcon, BarChartIcon, UserIcon } from '../../ui/Icons';
+import { ClockIcon, BarChartIcon, UserIcon } from '../../ui';
 import { Button } from '../../common/Button';
 import type { Certification } from '../../../data/certifications/types';
 

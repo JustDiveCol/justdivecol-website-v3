@@ -2,7 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Button } from '../../common/Button';
-import { CheckIcon } from '../../ui/Icons';
+import { CheckIcon } from '../../ui';
 import { ImageComponent } from '../../common/ImageComponent';
 import type { CustomTripsSectionProps } from './types';
 

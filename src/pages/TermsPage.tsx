@@ -3,14 +3,14 @@ import { SEO } from '../components/common/SEO';
 import { PageHeader } from '../components/sections/shared/PageHeader';
 import { LegalContent } from '../components/sections/shared/LegalContent';
 
-import { termsPageData } from '../data/termsPageData';
+import { termsContent } from '../content/pages/legal/terms/terms.content';
 
 export const TermsPage = () => {
   return (
     <>
-      <SEO {...termsPageData.seo} />
-      <PageHeader {...termsPageData.header} />
-      <LegalContent {...termsPageData.content} />
+      <SEO {...termsContent.seo} />
+      <PageHeader {...termsContent.header} />
+      <LegalContent {...termsContent.content} />
     </>
   );
 };

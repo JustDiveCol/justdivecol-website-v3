@@ -3,16 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { BRAND_ASSETS } from '../../../constants/assets';
 import { useMotionPresets } from '../../../hooks/animations';
+import type { PrincipleCardProps } from './types';
 
-import type { I18NNamespace } from '../../../constants/i18n';
-import type { PrincipleCardData } from './types';
-
-type PrincipleCard = {
-  cardData: PrincipleCardData;
-  translationNS: I18NNamespace;
-};
-
-export const PrincipleCard = ({ cardData, translationNS }: PrincipleCard) => {
+export const PrincipleCard = ({
+  cardData,
+  translationNS,
+}: PrincipleCardProps) => {
   const { t } = useTranslation([translationNS, 'common']);
   const mainLogo = BRAND_ASSETS.mainLogo;
   const { card } = useMotionPresets(); // ← usar preset global

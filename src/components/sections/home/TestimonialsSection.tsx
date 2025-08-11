@@ -3,15 +3,15 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import useEmblaCarousel from 'embla-carousel-react';
 
-import { ChevronLeftIcon, ChevronRightIcon } from '../../ui/Icons';
+import { ChevronLeftIcon, ChevronRightIcon } from '../../ui';
 import { TestimonialCard } from '../shared/TestimonialCard';
-import type { TestimonialsContent } from './types';
+import type { TestimonialsSectionProps } from './types';
 
 export const TestimonialsSection = ({
   titleKey,
   translationNS,
   items,
-}: TestimonialsContent) => {
+}: TestimonialsSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
 
   const staticRef = React.useRef<HTMLDivElement>(null);

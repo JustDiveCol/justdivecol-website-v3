@@ -2,7 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ImageComponent } from '../../common/ImageComponent';
-import type { MissionSectionContent } from './types';
+import type { MissionSectionProps } from './types';
 
 import { useMotionPresets } from '../../../hooks/animations';
 
@@ -11,7 +11,7 @@ export const MissionSection = ({
   textKey,
   translationNS,
   imageData,
-}: MissionSectionContent) => {
+}: MissionSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
 
   const { slideIn } = useMotionPresets();

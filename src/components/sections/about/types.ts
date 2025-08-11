@@ -1,28 +1,56 @@
 // src/components/sections/about/types.ts
+import { z } from 'zod';
 import type { I18NNamespace } from '../../../constants/i18n';
-import type { ImageComponentData } from '../../common/types';
-import type { TeamMemberData } from '../shared/types';
+import {
+  TranslationNSSchema,
+  ImageComponentDataSchema,
+} from '../../common/types';
 
-// ––– XX –––
+// ––– MissionSection –––
+export const MissionSectionPropsSchema = z.object({
+  titleKey: z.string().min(1),
+  textKey: z.string().min(1),
+  translationNS: TranslationNSSchema,
+  imageData: ImageComponentDataSchema, // mismo shape que usa <ImageComponent />
+});
 
-// OK
-export type MissionSectionContent = {
-  titleKey: string;
-  textKey: string;
-  translationNS: I18NNamespace;
-  imageData: ImageComponentData;
+export type MissionSectionProps = Omit<
+  z.infer<typeof MissionSectionPropsSchema>,
+  'translationNS'
+> & {
+  translationNS: I18NNamespace; // TS fuerte
 };
 
-// OK
-export type TeamSectionContent = {
-  titleKey: string;
-  members: TeamMemberData[];
+// ––– TeamSection –––
+export const TeamMemberDataSchema = z.object({
+  id: z.union([z.string(), z.number()]),
+  imageUrl: z.string().min(1),
+  name: z.string().min(1),
+  roleKey: z.string().min(1),
+  bioKey: z.string().min(1),
+});
+export type TeamMemberData = z.infer<typeof TeamMemberDataSchema>;
+
+export const TeamCardPropsSchema = z.object({
+  memberData: TeamMemberDataSchema,
+  className: z.string().optional(),
+  translationNS: TranslationNSSchema,
+});
+export type TeamCardProps = Omit<
+  z.infer<typeof TeamCardPropsSchema>,
+  'translationNS'
+> & {
   translationNS: I18NNamespace;
 };
 
-// OK
-export type TeamCardProps = {
-  memberData: TeamMemberData;
-  className?: string;
+export const TeamSectionPropsSchema = z.object({
+  titleKey: z.string().min(1),
+  members: z.array(TeamMemberDataSchema).min(1),
+  translationNS: TranslationNSSchema,
+});
+export type TeamSectionProps = Omit<
+  z.infer<typeof TeamSectionPropsSchema>,
+  'translationNS'
+> & {
   translationNS: I18NNamespace;
 };

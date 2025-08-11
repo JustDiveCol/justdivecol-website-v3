@@ -1,13 +1,15 @@
 // src/content/pages/legal/types.ts
-import type {
-  LegalContentContent,
-  PageHeaderContent,
+import { z } from 'zod';
+import { SEOPropsSchema } from '../../../components/common/types';
+import {
+  LegalContentPropsSchema,
+  PageHeaderPropsSchema,
 } from '../../../components/sections/shared/types';
-import type { SEOContent } from '../../types';
 
-// OK
-export type LegalPageData = {
-  seo: SEOContent;
-  header: PageHeaderContent;
-  content: LegalContentContent;
-};
+export const LegalPageContentSchema = z.object({
+  seo: SEOPropsSchema,
+  header: PageHeaderPropsSchema,
+  content: LegalContentPropsSchema,
+});
+
+export type LegalPageContent = z.infer<typeof LegalPageContentSchema>;

@@ -1,5 +1,4 @@
 // src/components/layout/Navbar.tsx
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useMatch, useResolvedPath } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -8,19 +7,21 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { NAV_LINKS } from '../../constants/navigation';
 import { LanguageSwitcherComponent } from '../ui/LanguageSwitcher';
 import logo from '../../assets/images/logo.png';
-import { MenuIcon, CloseIcon, ChevronDownIcon } from '../ui/Icons';
+import { MenuIcon, CloseIcon, ChevronDownIcon } from '../ui';
+import type { NavbarProps } from './types';
+import type { StaticRouteName, StaticRoutePath } from '../../constants/routes';
 
 const NAV_H_MOBILE = '4rem'; // h-16
 const NAV_H_DESKTOP = '5rem'; // h-20
 
 // ---------- Helpers de Link con estado activo robusto ----------
 type BaseLinkProps = {
-  to: string;
-  nameKey: string;
+  to: StaticRoutePath;
+  nameKey: StaticRouteName;
   className?: string;
 };
 
-const useIsActive = (to: string) => {
+const useIsActive = (to: StaticRoutePath) => {
   const resolved = useResolvedPath(to);
   const isRoot = resolved.pathname === '/';
   const match = useMatch({
@@ -97,7 +98,7 @@ const MobileMenuLinkItem = ({
 };
 // ---------------------------------------------------------------
 
-const Navbar = () => {
+const Navbar: React.FC<NavbarProps> = () => {
   const { t } = useTranslation(['common', 'navigation']);
   const location = useLocation();
   const reduceMotion = useReducedMotion();
@@ -112,7 +113,7 @@ const Navbar = () => {
   const linksToHideOnTablet = NAV_LINKS.filter(
     (_, idx) => idx >= 2 && idx < NAV_LINKS.length - 1
   );
-  const shouldHideOnTablet = (nameKey: string) =>
+  const shouldHideOnTablet = (nameKey: StaticRouteName) =>
     linksToHideOnTablet.some((l) => l.nameKey === nameKey);
 
   // Scroll state (nav background)
@@ -161,12 +162,17 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
+  // Tipado suave para la CSS var (opcional)
+  const navStyle: React.CSSProperties & { ['--nav-h']?: string } = {
+    ['--nav-h']: NAV_H_MOBILE,
+  };
+
   return (
     <motion.nav
       initial={reduceMotion ? false : { y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: reduceMotion ? 0 : 0.5 }}
-      style={{ ['--nav-h' as any]: NAV_H_MOBILE }}
+      style={navStyle}
       className={`fixed top-0 z-50 w-full transition-colors duration-300 md:[--nav-h:${NAV_H_DESKTOP}] ${
         isScrolled
           ? 'bg-brand-primary-dark/80 backdrop-blur-lg'

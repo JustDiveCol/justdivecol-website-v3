@@ -1,6 +1,6 @@
 // src/components/sections/divesites/DiveSiteCard.tsx
 import { useTranslation } from 'react-i18next';
-import { BarChartIcon, ChevronDownIcon } from '../../ui/Icons';
+import { BarChartIcon, ChevronDownIcon } from '../../ui';
 import type { DiveSiteCardProps } from './types';
 import { DIVE_DIFFICULTIES } from '../../../constants/dive-sites';
 

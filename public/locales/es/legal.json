@@ -1,191 +1,330 @@
 {
-  "policy": {
-    "seo": {
-      "policySeoTitle": "Políticas y regulaciones",
-      "policySeoDesc": "Consulta las políticas de reserva, cancelación, seguridad y alquiler de equipos de JustDiveCol. Te ofrecemos total transparencia para una experiencia de buceo placentera y sin preocupaciones.",
-      "policySeoKeywords": "políticas JustDiveCol, términos y condiciones buceo, política de cancelación, reembolso buceo, seguridad en buceo, alquiler equipo buceo, protección de datos, regulaciones buceo, buceo responsable, condiciones de servicio buceo, aventura, experiencia, certificación"
-    },
-
-    "header": {
-      "policyHeaderTitle": "Nuestras políticas: claridad para tu aventura submarina",
-      "policyHeaderSubtitle": "En JustDiveCol, tu inmersión es tan segura y transparente como emocionante. Conoce nuestras políticas, diseñadas para una experiencia placentera y sin contratiempos. ¡Bucea con confianza!"
-    },
-
-    "content": {
-      "policySection1Title": "Política de reservas y pagos",
-      "policySection1Content": {
-        "policiesSection1Point1": "Para confirmar tu cupo, se requiere un pago inicial no reembolsable. Este pago cubre el material de la certificación (cuando aplique) y asegura tu lugar. El material de certificación tiene una vigencia de 12 meses para completarla.",
-        "policiesSection1Point2": "El saldo restante debe ser cubierto en la fecha límite que se te indicará al reservar, máximo 15 días antes del inicio del viaje o actividad. Nuestro equipo te proporcionará todos los detalles de pago de forma clara.",
-        "policiesSection1Point3": "Tu cupo se considera reservado únicamente cuando hemos recibido el pago inicial. Si no recibimos el pago final a tiempo, nos reservamos el derecho de liberar tu cupo y el pago inicial se perderá, ya que cubre gastos operativos de planificación."
+  "legal": {
+    "policy": {
+      "seo": {
+        "title": "Políticas y regulaciones",
+        "desc": "Consulta las políticas de reserva, cancelación, seguridad y alquiler de equipos de JustDiveCol. Te ofrecemos total transparencia para una experiencia de buceo placentera y sin preocupaciones.",
+        "keywords": "políticas JustDiveCol, términos y condiciones buceo, política de cancelación, reembolso buceo, seguridad en buceo, alquiler equipo buceo, protección de datos, regulaciones buceo, buceo responsable, condiciones de servicio buceo, aventura, experiencia, certificación"
       },
 
-      "policySection2Title": "Política de cancelaciones y reembolsos",
-      "policySection2Content": {
-        "policiesSection2Point1": "Cancelación por parte del cliente:",
-        "policiesSection2Point1Content": {
-          "policiesSection2Point1a": "Más de 90 días antes del inicio: Reembolso del 90% del valor pagado (se retiene un 10% por gastos administrativos).",
-          "policiesSection2Point1b": "Entre 60 y 90 días antes del inicio: Reembolso del 50% del valor pagado.",
-          "policiesSection2Point1c": "Entre 30 y 60 días antes del inicio: Se ofrece un crédito del 100% del valor pagado para usar en una futura experiencia. No aplica reembolso en efectivo.",
-          "policiesSection2Point1d": "Menos de 30 días antes del inicio o No-Show: El valor pagado se pierde en su totalidad. No aplica reembolso ni crédito."
-        },
+      "header": {
+        "title": "Nuestras políticas: claridad para tu aventura submarina",
+        "subtitle": "En JustDiveCol, tu inmersión es tan segura y transparente como emocionante. Conoce nuestras políticas, diseñadas para una experiencia placentera y sin contratiempos. ¡Bucea con confianza!"
+      },
 
-        "policiesSection2Point2": "Cambios o cancelaciones por JustDiveCol (clima, fuerza mayor):",
-        "policiesSection2Point2Content": {
-          "policiesSection2Point2a": "Si JustDiveCol modifica o cancela una experiencia debido a causas ajenas a nuestro control (como el clima o permisos), se ofrecerá un crédito para una futura experiencia, válido por 12 meses. El valor de este crédito puede variar según los costos irrecuperables.",
-          "policiesSection2Point2b": "Bajo estas circunstancias, no se realizarán reembolsos en efectivo. El valor pagado se considera usado para cubrir los costos operativos y logísticos ya incurridos."
-        },
+      "content": {
+        "sections": {
+          "section1": {
+            "title": "Política de reservas y pagos",
 
-        "policiesSection2Point3": "Excepciones médicas:",
-        "policiesSection2Point3Content": {
-          "policiesSection2Point3a": "Las cancelaciones debido a condiciones médicas imprevistas, certificadas por un médico, serán evaluadas individualmente. Se podrá ofrecer un crédito para una fecha futura si la cancelación se notifica con más de 30 días de antelación. Este crédito estará sujeto a la deducción de costos operativos. En cualquier otro caso médico con menor antelación, no aplicará reembolso ni crédito. Considera adquirir un seguro de viaje robusto para estas eventualidades."
+            "point1": {
+              "text": "Para confirmar tu cupo, se requiere un pago inicial no reembolsable. Este pago cubre el material de la certificación (cuando aplique) y asegura tu lugar. El material de certificación tiene una vigencia de 12 meses para completarla."
+            },
+            "point2": {
+              "text": "El saldo restante debe ser cubierto en la fecha límite que se te indicará al reservar, máximo 15 días antes del inicio del viaje o actividad. Nuestro equipo te proporcionará todos los detalles de pago de forma clara."
+            },
+            "point3": {
+              "text": "Tu cupo se considera reservado únicamente cuando hemos recibido el pago inicial. Si no recibimos el pago final a tiempo, nos reservamos el derecho de liberar tu cupo y el pago inicial se perderá, ya que cubre gastos operativos de planificación."
+            }
+          },
+
+          "section2": {
+            "title": "Política de cancelaciones y reembolsos",
+
+            "point1": {
+              "text": "Cancelación por parte del cliente:",
+
+              "pointA": "Más de 90 días antes del inicio: Reembolso del 90% del valor pagado (se retiene un 10% por gastos administrativos).",
+              "pointB": "Entre 60 y 90 días antes del inicio: Reembolso del 50% del valor pagado.",
+              "pointC": "Entre 30 y 60 días antes del inicio: Se ofrece un crédito del 100% del valor pagado para usar en una futura experiencia. No aplica reembolso en efectivo.",
+              "pointD": "Menos de 30 días antes del inicio o No-Show: El valor pagado se pierde en su totalidad. No aplica reembolso ni crédito."
+            },
+
+            "point2": {
+              "text": "Cambios o cancelaciones por JustDiveCol (clima, fuerza mayor):",
+
+              "pointA": "Si JustDiveCol modifica o cancela una experiencia debido a causas ajenas a nuestro control (como el clima o permisos), se ofrecerá un crédito para una futura experiencia, válido por 12 meses. El valor de este crédito puede variar según los costos irrecuperables.",
+              "pointB": "Bajo estas circunstancias, no se realizarán reembolsos en efectivo. El valor pagado se considera usado para cubrir los costos operativos y logísticos ya incurridos."
+            },
+
+            "point3": {
+              "text": "Excepciones médicas:",
+
+              "pointA": "Las cancelaciones debido a condiciones médicas imprevistas, certificadas por un médico, serán evaluadas individualmente. Se podrá ofrecer un crédito para una fecha futura si la cancelación se notifica con más de 30 días de antelación. Este crédito estará sujeto a la deducción de costos operativos. En cualquier otro caso médico con menor antelación, no aplicará reembolso ni crédito. Considera adquirir un seguro de viaje robusto para estas eventualidades."
+            }
+          },
+
+          "section3": {
+            "title": "Normativas y directrices de seguridad",
+
+            "point1": {
+              "text": "Todos los buzos certificados deben presentar su credencial PADI o equivalente y su bitácora de buceo (logbook) actualizada al momento de la llegada. Esto es esencial para validar tu nivel y experiencia."
+            },
+
+            "point2": {
+              "text": "Es responsabilidad de cada buzo acatar estrictamente los estándares de seguridad de buceo establecidos por PADI y las normativas locales. Te brindaremos toda la información necesaria para que bucees con seguridad."
+            },
+
+            "point3": {
+              "text": "Los participantes deben informarnos sobre cualquier condición médica preexistente que pueda afectar su capacidad para bucear de forma segura, antes de iniciar la actividad. Tu honestidad es crucial para tu bienestar."
+            },
+
+            "point4": {
+              "text": "JustDiveCol se reserva el derecho de negar el servicio a cualquier buzo que, a juicio de nuestro staff, no cumpla con los requisitos de seguridad o esté bajo la influencia de sustancias. Priorizamos la seguridad de todo el grupo."
+            },
+
+            "point5": {
+              "text": "Cobertura de seguro: Algunas de nuestras experiencias incluyen un seguro de buceo. Sin embargo, te recomendamos encarecidamente contar con un seguro de viaje adicional que cubra emergencias médicas generales y cancelación. Tu tranquilidad total es nuestra meta."
+            }
+          },
+
+          "section4": {
+            "title": "Política de alquiler y uso de equipos",
+
+            "point1": {
+              "text": "El equipo de alquiler debe ser inspeccionado por el buzo antes de cada uso. Cualquier daño preexistente debe ser reportado a nuestro staff de inmediato para evitar inconvenientes."
+            },
+
+            "point2": {
+              "text": "Los buzos son responsables de cualquier daño al equipo de alquiler que exceda el desgaste normal. Esto incluye roturas, pérdidas o mal funcionamiento causados por negligencia. Queremos que el equipo esté en óptimas condiciones para todos."
+            },
+
+            "point3": {
+              "text": "En caso de pérdida o daño grave del equipo, se aplicará un cargo equivalente al costo de reposición o reparación. El inventario y el estado del equipo se revisarán antes y después de cada uso."
+            },
+
+            "point4": {
+              "text": "El uso del equipo de buceo debe ser siempre supervisado y de acuerdo con las instrucciones de nuestros instructores y guías certificados. Tu seguridad y la preservación del equipo son primordiales."
+            }
+          },
+
+          "section5": {
+            "title": "Responsabilidad y aceptación de riesgos",
+
+            "point1": {
+              "text": "La participación en actividades de buceo conlleva ciertos riesgos inherentes. Al unirte a nuestras experiencias, reconoces y aceptas plenamente estos riesgos. Nuestra misión es minimizarlos al máximo."
+            },
+
+            "point2": {
+              "text": "JustDiveCol y su personal actúan como facilitadores y guías expertos, esforzándose por minimizar los riesgos mediante el estricto cumplimiento de protocolos de seguridad internacionales. Tu seguridad es nuestra máxima prioridad."
+            },
+
+            "point3": {
+              "text": "La firma de una liberación de responsabilidad estándar de la industria (Waiver of Liability) y cualquier otro documento es obligatoria antes del inicio de cualquier actividad. La negativa a firmar resultará en la no participación sin derecho a reembolso. ¡La transparencia es la clave de nuestra relación de confianza!"
+            }
+          }
         }
-      },
-
-      "policySection3Title": "Normativas y directrices de seguridad",
-      "policySection3Content": {
-        "policiesSection3Point1": "Todos los buzos certificados deben presentar su credencial PADI o equivalente y su bitácora de buceo (logbook) actualizada al momento de la llegada. Esto es esencial para validar tu nivel y experiencia.",
-        "policiesSection3Point2": "Es responsabilidad de cada buzo acatar estrictamente los estándares de seguridad de buceo establecidos por PADI y las normativas locales. Te brindaremos toda la información necesaria para que bucees con seguridad.",
-        "policiesSection3Point3": "Los participantes deben informarnos sobre cualquier condición médica preexistente que pueda afectar su capacidad para bucear de forma segura, antes de iniciar la actividad. Tu honestidad es crucial para tu bienestar.",
-        "policiesSection3Point4": "JustDiveCol se reserva el derecho de negar el servicio a cualquier buzo que, a juicio de nuestro staff, no cumpla con los requisitos de seguridad o esté bajo la influencia de sustancias. Priorizamos la seguridad de todo el grupo.",
-        "policiesSection3Point5": "Cobertura de seguro: Algunas de nuestras experiencias incluyen un seguro de buceo. Sin embargo, te recomendamos encarecidamente contar con un seguro de viaje adicional que cubra emergencias médicas generales y cancelación. Tu tranquilidad total es nuestra meta."
-      },
-
-      "policySection4Title": "Política de alquiler y uso de equipos",
-      "policySection4Content": {
-        "policiesSection4Point1": "El equipo de alquiler debe ser inspeccionado por el buzo antes de cada uso. Cualquier daño preexistente debe ser reportado a nuestro staff de inmediato para evitar inconvenientes.",
-        "policiesSection4Point2": "Los buzos son responsables de cualquier daño al equipo de alquiler que exceda el desgaste normal. Esto incluye roturas, pérdidas o mal funcionamiento causados por negligencia. Queremos que el equipo esté en óptimas condiciones para todos.",
-        "policiesSection4Point3": "En caso de pérdida o daño grave del equipo, se aplicará un cargo equivalente al costo de reposición o reparación. El inventario y el estado del equipo se revisarán antes y después de cada uso.",
-        "policiesSection4Point4": "El uso del equipo de buceo debe ser siempre supervisado y de acuerdo con las instrucciones de nuestros instructores y guías certificados. Tu seguridad y la preservación del equipo son primordiales."
-      },
-
-      "policySection5Title": "Responsabilidad y aceptación de riesgos",
-      "policySection5Content": {
-        "policiesSection5Point1": "La participación en actividades de buceo conlleva ciertos riesgos inherentes. Al unirte a nuestras experiencias, reconoces y aceptas plenamente estos riesgos. Nuestra misión es minimizarlos al máximo.",
-        "policiesSection5Point2": "JustDiveCol y su personal actúan como facilitadores y guías expertos, esforzándose por minimizar los riesgos mediante el estricto cumplimiento de protocolos de seguridad internacionales. Tu seguridad es nuestra máxima prioridad.",
-        "policiesSection5Point3": "La firma de una liberación de responsabilidad estándar de la industria (Waiver of Liability) y cualquier otro documento es obligatoria antes del inicio de cualquier actividad. La negativa a firmar resultará en la no participación sin derecho a reembolso. ¡La transparencia es la clave de nuestra relación de confianza!"
       }
-    }
-  },
-
-  "terms": {
-    "seo": {
-      "termsSeoTitle": "Términos y condiciones",
-      "termsSeoDesc": "Conoce los términos y condiciones que rigen el uso de nuestro sitio web y los servicios de JustDiveCol. Esta información es clave para garantizar una experiencia clara y segura en nuestra plataforma.",
-      "termsSeoKeywords": "términos y condiciones, uso del servicio, políticas de plataforma, JustDiveCol, condiciones de buceo, propiedad intelectual, limitación de responsabilidad, leyes aplicables, privacidad, servicios de buceo, experiencia, certificación, aventura"
     },
 
-    "header": {
-      "termsHeaderTitle": "Términos y condiciones del servicio",
-      "termsHeaderSubtitle": "Al acceder, navegar o utilizar nuestro sitio web, y al reservar o participar en cualquiera de nuestros servicios, confirmas que has leído, entendido y aceptado plenamente estos términos. Te invitamos a revisarlos con atención antes de sumergirte."
-    },
-
-    "content": {
-      "termsSection1Title": "1. Aceptación de los términos",
-      "termsSection1Content": {
-        "termsSection1Point1": "Al usar el sitio web de JustDiveCol o al reservar una de nuestras experiencias y certificaciones de buceo, confirmas que has leído, entendido y aceptado estos términos en su totalidad. Si no estás de acuerdo con alguna de las condiciones, te pedimos que no uses nuestros servicios. Tu consentimiento es fundamental para iniciar tu aventura con nosotros.",
-        "termsSection1Point2": "JustDiveCol se reserva el derecho de modificar, actualizar o revisar estos términos en cualquier momento. Te notificaremos sobre cambios importantes. El uso continuado de nuestros servicios después de dichas modificaciones significará tu aceptación de los nuevos términos. Te recomendamos revisar esta sección periódicamente."
+    "terms": {
+      "seo": {
+        "title": "Términos y condiciones",
+        "desc": "Conoce los términos y condiciones que rigen el uso de nuestro sitio web y los servicios de JustDiveCol. Esta información es clave para garantizar una experiencia clara y segura en nuestra plataforma.",
+        "keywords": "términos y condiciones, uso del servicio, políticas de plataforma, JustDiveCol, condiciones de buceo, propiedad intelectual, limitación de responsabilidad, leyes aplicables, privacidad, servicios de buceo, experiencia, certificación, aventura"
       },
 
-      "termsSection2Title": "2. Uso de nuestros servicios y sitio web",
-      "termsSection2Content": {
-        "termsSection2Point1": "Nuestro sitio web y servicios están diseñados exclusivamente para fines informativos y para la reserva legítima de experiencias de buceo. Cualquier uso indebido, como la manipulación fraudulenta de información, el acceso no autorizado o la interferencia con la plataforma, está estrictamente prohibido y será objeto de acciones legales.",
-        "termsSection2Point2": "Eres el único responsable de mantener la confidencialidad de tu información de cuenta y contraseña (si aplica) y de todas las actividades que ocurran bajo tu cuenta. Te exhortamos a proteger tus credenciales y a notificarnos inmediatamente cualquier uso no autorizado.",
-        "termsSection2Point3": "Al realizar una reserva, garantizas que toda la información que proporcionas es veraz, completa y exacta. Asimismo, confirmas que tienes la autoridad legal necesaria para realizar dicha reserva y para aceptar los términos en nombre de todos los participantes."
+      "header": {
+        "title": "Términos y condiciones del servicio",
+        "subtitle": "Al acceder, navegar o utilizar nuestro sitio web, y al reservar o participar en cualquiera de nuestros servicios, confirmas que has leído, entendido y aceptado plenamente estos términos. Te invitamos a revisarlos con atención antes de sumergirte."
       },
 
-      "termsSection3Title": "3. Propiedad intelectual",
-      "termsSection3Content": {
-        "termsSection3Point1": "Todo el contenido de este sitio web, incluyendo textos, imágenes, fotografías, videos, logotipos y el diseño de la plataforma, es propiedad exclusiva de JustDiveCol o de sus licenciantes, y está protegido por las leyes de derechos de autor y propiedad intelectual.",
-        "termsSection3Point2": "El uso no autorizado, la reproducción o la distribución de cualquier material de JustDiveCol sin nuestro consentimiento por escrito están estrictamente prohibidos. Puedes descargar e imprimir contenido solo para uso personal y no comercial, manteniendo intactos todos los avisos de propiedad."
-      },
+      "content": {
+        "sections": {
+          "section1": {
+            "title": "1. Aceptación de los términos",
 
-      "termsSection4Title": "4. Limitación de responsabilidad",
-      "termsSection4Content": {
-        "termsSection4Point1": "En JustDiveCol nos esforzamos por mantener la información de nuestro sitio web precisa y actualizada. Sin embargo, no podemos garantizar la ausencia total de errores o la fiabilidad ininterrumpida. El uso de la información es bajo tu propio riesgo y discreción.",
-        "termsSection4Point2": "JustDiveCol, sus directores, empleados o afiliados no serán responsables por daños directos, indirectos o consecuentes derivados del uso o la imposibilidad de usar nuestro sitio web o servicios. Esta limitación aplica en la máxima medida permitida por la ley.",
-        "termsSection4Point3": "La responsabilidad total de JustDiveCol por cualquier reclamo o daño relacionado con los servicios contratados (experiencias de buceo, certificaciones, etc.) se limitará al monto total pagado por el cliente por la experiencia en cuestión."
-      },
+            "point1": {
+              "text": "Al usar el sitio web de JustDiveCol o al reservar una de nuestras experiencias y certificaciones de buceo, confirmas que has leído, entendido y aceptado estos términos en su totalidad. Si no estás de acuerdo con alguna de las condiciones, te pedimos que no uses nuestros servicios. Tu consentimiento es fundamental para iniciar tu aventura con nosotros."
+            },
+            "point2": {
+              "text": "JustDiveCol se reserva el derecho de modificar, actualizar o revisar estos términos en cualquier momento. Te notificaremos sobre cambios importantes. El uso continuado de nuestros servicios después de dichas modificaciones significará tu aceptación de los nuevos términos. Te recomendamos revisar esta sección periódicamente."
+            }
+          },
 
-      "termsSection5Title": "5. Enlaces a sitios web de terceros",
-      "termsSection5Content": {
-        "termsSection5Point1": "Nuestro sitio web puede contener enlaces a servicios de terceros. Estos enlaces son solo para tu conveniencia y no implican un respaldo de JustDiveCol. No tenemos control sobre el contenido o las políticas de estos sitios y no asumimos ninguna responsabilidad por ellos.",
-        "termsSection5Point2": "Te recomendamos leer los términos y políticas de cualquier sitio web de terceros que visites. La interacción con estos sitios es bajo tu propia responsabilidad."
-      },
+          "section2": {
+            "title": "2. Uso de nuestros servicios y sitio web",
 
-      "termsSection6Title": "6. Ley aplicable y jurisdicción",
-      "termsSection6Content": {
-        "termsSection6Point1": "Estos términos se regirán e interpretarán de acuerdo con las leyes de la República de Colombia. Cualquier disputa que surja en relación con estos términos será resuelta exclusivamente por los tribunales de Bogotá, Colombia.",
-        "termsSection6Point2": "Ambas partes se someten irrevocablemente a la jurisdicción exclusiva de dichos tribunales."
-      },
+            "point1": {
+              "text": "Nuestro sitio web y servicios están diseñados exclusivamente para fines informativos y para la reserva legítima de experiencias de buceo. Cualquier uso indebido, como la manipulación fraudulenta de información, el acceso no autorizado o la interferencia con la plataforma, está estrictamente prohibido y será objeto de acciones legales."
+            },
+            "point2": {
+              "text": "Eres el único responsable de mantener la confidencialidad de tu información de cuenta y contraseña (si aplica) y de todas las actividades que ocurran bajo tu cuenta. Te exhortamos a proteger tus credenciales y a notificarnos inmediatamente cualquier uso no autorizado."
+            },
+            "point3": {
+              "text": "Al realizar una reserva, garantizas que toda la información que proporcionas es veraz, completa y exacta. Asimismo, confirmas que tienes la autoridad legal necesaria para realizar dicha reserva y para aceptar los términos en nombre de todos los participantes."
+            }
+          },
 
-      "termsSection7Title": "7. Divisibilidad",
-      "termsSection7Content": {
-        "termsSection7Point1": "Si alguna disposición de estos términos es considerada ilegal o inaplicable, dicha disposición se considerará divisible y no afectará la validez de las disposiciones restantes."
+          "section3": {
+            "title": "3. Propiedad intelectual",
+
+            "point1": {
+              "text": "Todo el contenido de este sitio web, incluyendo textos, imágenes, fotografías, videos, logotipos y el diseño de la plataforma, es propiedad exclusiva de JustDiveCol o de sus licenciantes, y está protegido por las leyes de derechos de autor y propiedad intelectual."
+            },
+            "point2": {
+              "text": "El uso no autorizado, la reproducción o la distribución de cualquier material de JustDiveCol sin nuestro consentimiento por escrito están estrictamente prohibidos. Puedes descargar e imprimir contenido solo para uso personal y no comercial, manteniendo intactos todos los avisos de propiedad."
+            }
+          },
+
+          "section4": {
+            "title": "4. Limitación de responsabilidad",
+
+            "point1": {
+              "text": "En JustDiveCol nos esforzamos por mantener la información de nuestro sitio web precisa y actualizada. Sin embargo, no podemos garantizar la ausencia total de errores o la fiabilidad ininterrumpida. El uso de la información es bajo tu propio riesgo y discreción."
+            },
+            "point2": {
+              "text": "JustDiveCol, sus directores, empleados o afiliados no serán responsables por daños directos, indirectos o consecuentes derivados del uso o la imposibilidad de usar nuestro sitio web o servicios. Esta limitación aplica en la máxima medida permitida por la ley."
+            },
+            "point3": {
+              "text": "La responsabilidad total de JustDiveCol por cualquier reclamo o daño relacionado con los servicios contratados (experiencias de buceo, certificaciones, etc.) se limitará al monto total pagado por el cliente por la experiencia en cuestión."
+            }
+          },
+
+          "section5": {
+            "title": "5. Enlaces a sitios web de terceros",
+
+            "point1": {
+              "text": "Nuestro sitio web puede contener enlaces a servicios de terceros. Estos enlaces son solo para tu conveniencia y no implican un respaldo de JustDiveCol. No tenemos control sobre el contenido o las políticas de estos sitios y no asumimos ninguna responsabilidad por ellos."
+            },
+            "point2": {
+              "text": "Te recomendamos leer los términos y políticas de cualquier sitio web de terceros que visites. La interacción con estos sitios es bajo tu propia responsabilidad."
+            }
+          },
+
+          "section6": {
+            "title": "6. Ley aplicable y jurisdicción",
+
+            "point1": {
+              "text": "Estos términos se regirán e interpretarán de acuerdo con las leyes de la República de Colombia. Cualquier disputa que surja en relación con estos términos será resuelta exclusivamente por los tribunales de Bogotá, Colombia."
+            },
+            "point2": {
+              "text": "Ambas partes se someten irrevocablemente a la jurisdicción exclusiva de dichos tribunales."
+            }
+          },
+
+          "section7": {
+            "title": "7. Divisibilidad",
+
+            "point1": {
+              "text": "Si alguna disposición de estos términos es considerada ilegal o inaplicable, dicha disposición se considerará divisible y no afectará la validez de las disposiciones restantes."
+            }
+          }
+        }
       }
-    }
-  },
-  "privacy": {
-    "seo": {
-      "privacySeoTitle": "Política de privacidad",
-      "privacySeoDesc": "Conoce la política de privacidad de JustDiveCol. Te explicamos cómo recopilamos, usamos y protegemos tus datos personales, y cuáles son tus derechos. Tu confianza y la seguridad de tu información son nuestras prioridades.",
-      "privacySeoKeywords": "política de privacidad, privacidad de datos, protección de datos, JustDiveCol, información personal, uso de datos, seguridad de datos, derechos de privacidad, buceo, gestión de datos, cookies, consentimiento"
     },
 
-    "header": {
-      "privacyHeaderTitle": "Nuestra política de privacidad: tu confianza es nuestro tesoro",
-      "privacyHeaderSubtitle": "En JustDiveCol, tu privacidad es nuestra prioridad. Esta política explica cómo protegemos tus datos, garantizando la misma seguridad que sientes al bucear con nosotros."
-    },
-
-    "content": {
-      "privacySection1Title": "1. Información que recopilamos",
-      "privacySection1Content": {
-        "privacySection1Point1": "Información que nos proporcionas directamente: Recopilamos datos personales que nos brindas voluntariamente al interactuar con nuestros servicios. Esto incluye tu nombre completo, correo electrónico, número de teléfono, contacto de emergencia, detalles de pago, historial de certificaciones de buceo, preferencias de viaje y cualquier otra información que nos des al registrarte o reservar una experiencia o certificación.",
-        "privacySection1Point2": "Información recopilada automáticamente: Al visitar nuestro sitio web, podemos recopilar automáticamente cierta información sobre tu dispositivo y tu comportamiento de uso. Esto puede incluir tu dirección IP, tipo de navegador, páginas visitadas y la duración de tu visita. Esta información nos ayuda a mejorar la funcionalidad de la plataforma y tu experiencia como usuario.",
-        "privacySection1Point3": "Información de terceros: De acuerdo con las leyes aplicables, podemos recibir información sobre ti de socios confiables, como plataformas de reservas. Nos aseguramos de que estas fuentes cumplan con las regulaciones de protección de datos antes de usar dicha información."
+    "privacy": {
+      "seo": {
+        "title": "Política de privacidad",
+        "desc": "Conoce la política de privacidad de JustDiveCol. Te explicamos cómo recopilamos, usamos y protegemos tus datos personales, y cuáles son tus derechos. Tu confianza y la seguridad de tu información son nuestras prioridades.",
+        "keywords": "política de privacidad, privacidad de datos, protección de datos, JustDiveCol, información personal, uso de datos, seguridad de datos, derechos de privacidad, buceo, gestión de datos, cookies, consentimiento"
       },
 
-      "privacySection2Title": "2. Cómo utilizamos tu información",
-      "privacySection2Content": {
-        "privacySection2Point1": "Para proveer y gestionar nuestros servicios: La principal razón para recopilar tu información es para ofrecerte y gestionar los servicios que solicitas. Esto incluye procesar tus reservas y pagos, organizar tus experiencias, enviar confirmaciones de reserva y comunicarte cualquier detalle esencial de tu actividad con JustDiveCol.",
-        "privacySection2Point2": "Para mejorar tu experiencia: Usamos la información para entender mejor tus preferencias, lo que nos permite personalizar tu experiencia en nuestro sitio web y ofrecerte contenido y ofertas más relevantes. Además, analizamos cómo interactúas con JustDiveCol para identificar mejoras y desarrollar nuevas aventuras.",
-        "privacySection2Point3": "Para comunicación y marketing: Con tu consentimiento, podemos enviarte correos electrónicos informativos sobre nuestras nuevas experiencias, certificaciones de buceo, promociones especiales o boletines. Siempre tendrás la opción de cancelar la suscripción. No compartimos tus datos personales con terceros para sus propios fines de marketing.",
-        "privacySection2Point4": "Para seguridad y cumplimiento legal: Tu información es fundamental para garantizar la seguridad de nuestras operaciones, proteger a nuestros clientes y cumplir con las leyes y regulaciones aplicables, como los requisitos de registro de PADI o la gestión de pólizas de seguro."
+      "header": {
+        "title": "Nuestra política de privacidad: tu confianza es nuestro tesoro",
+        "subtitle": "En JustDiveCol, tu privacidad es nuestra prioridad. Esta política explica cómo protegemos tus datos, garantizando la misma seguridad que sientes al bucear con nosotros."
       },
 
-      "privacySection3Title": "3. Cómo compartimos tu información",
-      "privacySection3Content": {
-        "privacySection3Point1": "Con proveedores de servicios: Para operar nuestro negocio, compartimos tu información con terceros de confianza que nos brindan servicios esenciales. Esto incluye procesadores de pago, operadores de buceo locales y proveedores de servicios de TI. Estos terceros están obligados contractualmente a proteger tu información y a usarla solo para los fines específicos para los que fue compartida.",
-        "privacySection3Point2": "Por cumplimiento legal y seguridad: Podemos divulgar tu información personal si la ley nos lo exige, por ejemplo, en respuesta a una citación judicial. También podemos compartirla si creemos de buena fe que es necesario para proteger los derechos de JustDiveCol o la seguridad de nuestros clientes. Esto incluye compartir información con autoridades en caso de emergencias.",
-        "privacySection3Point3": "En transferencias de negocio: En el caso de una fusión o venta de activos, tu información personal podría ser transferida al nuevo propietario. En tal caso, el nuevo propietario estará obligado a adherirse a las prácticas de privacidad de esta política o a notificarte de cualquier cambio."
-      },
+      "content": {
+        "sections": {
+          "section1": {
+            "title": "1. Información que recopilamos",
 
-      "privacySection4Title": "4. Tus derechos y opciones",
-      "privacySection4Content": {
-        "privacySection4Point1": "Derecho de acceso y corrección: Tienes derecho a acceder a tu información personal y a solicitar que se corrija si es inexacta. Si deseas ejercer este derecho, contáctanos a través de los canales proporcionados en la Sección 8.",
-        "privacySection4Point2": "Derecho a no recibir comunicaciones de marketing: Puedes optar por no recibir comunicaciones de marketing de JustDiveCol en cualquier momento. Puedes hacerlo siguiendo las instrucciones para cancelar la suscripción que se incluyen en nuestros correos electrónicos. Ten en cuenta que esto no afectará las comunicaciones esenciales relacionadas con tus reservas activas.",
-        "privacySection4Point3": "Derecho a la eliminación de datos: Tienes derecho a solicitar la eliminación de tus datos personales, aunque este derecho está sujeto a nuestras obligaciones legales de retención de datos. Por ejemplo, estamos obligados a mantener ciertos registros de buceo y transacciones por razones de seguridad."
-      },
+            "point1": {
+              "text": "Información que nos proporcionas directamente: Recopilamos datos personales que nos brindas voluntariamente al interactuar con nuestros servicios. Esto incluye tu nombre completo, correo electrónico, número de teléfono, contacto de emergencia, detalles de pago, historial de certificaciones de buceo, preferencias de viaje y cualquier otra información que nos des al registrarte o reservar una experiencia o certificación."
+            },
+            "point2": {
+              "text": "Información recopilada automáticamente: Al visitar nuestro sitio web, podemos recopilar automáticamente cierta información sobre tu dispositivo y tu comportamiento de uso. Esto puede incluir tu dirección IP, tipo de navegador, páginas visitadas y la duración de tu visita. Esta información nos ayuda a mejorar la funcionalidad de la plataforma y tu experiencia como usuario."
+            },
+            "point3": {
+              "text": "Información de terceros: De acuerdo con las leyes aplicables, podemos recibir información sobre ti de socios confiables, como plataformas de reservas. Nos aseguramos de que estas fuentes cumplan con las regulaciones de protección de datos antes de usar dicha información."
+            }
+          },
 
-      "privacySection5Title": "5. Seguridad de datos",
-      "privacySection5Content": {
-        "privacySection5Point1": "En JustDiveCol, implementamos rigurosas medidas de seguridad técnicas y físicas para proteger tu información personal contra el acceso no autorizado. Esto incluye el uso de cifrado y controles de acceso robustos en nuestros sistemas.",
-        "privacySection5Point2": "A pesar de nuestros esfuerzos, es fundamental recordar que ninguna transmisión de datos por internet es 100% segura. Por lo tanto, no podemos garantizar la seguridad absoluta. La seguridad de tu información también depende de ti; por favor, protege tus contraseñas y ten precaución al compartir información personal en línea."
-      },
+          "section2": {
+            "title": "2. Cómo utilizamos tu información",
 
-      "privacySection6Title": "6. Retención de datos",
-      "privacySection6Content": {
-        "privacySection6Point1": "Retenemos tu información personal durante el tiempo que sea necesario para cumplir con los fines para los que fue recopilada, incluyendo la prestación de nuestros servicios, el cumplimiento de nuestras obligaciones legales y la resolución de disputas. Una vez que tu información ya no sea necesaria, la eliminaremos de forma segura o la anonimizaremos."
-      },
+            "point1": {
+              "text": "Para proveer y gestionar nuestros servicios: La principal razón para recopilar tu información es para ofrecerte y gestionar los servicios que solicitas. Esto incluye procesar tus reservas y pagos, organizar tus experiencias, enviar confirmaciones de reserva y comunicarte cualquier detalle esencial de tu actividad con JustDiveCol."
+            },
+            "point2": {
+              "text": "Para mejorar tu experiencia: Usamos la información para entender mejor tus preferencias, lo que nos permite personalizar tu experiencia en nuestro sitio web y ofrecerte contenido y ofertas más relevantes. Además, analizamos cómo interactúas con JustDiveCol para identificar mejoras y desarrollar nuevas aventuras."
+            },
+            "point3": {
+              "text": "Para comunicación y marketing: Con tu consentimiento, podemos enviarte correos electrónicos informativos sobre nuestras nuevas experiencias, certificaciones de buceo, promociones especiales o boletines. Siempre tendrás la opción de cancelar la suscripción. No compartimos tus datos personales con terceros para sus propios fines de marketing."
+            },
+            "point4": {
+              "text": "Para seguridad y cumplimiento legal: Tu información es fundamental para garantizar la seguridad de nuestras operaciones, proteger a nuestros clientes y cumplir con las leyes y regulaciones aplicables, como los requisitos de registro de PADI o la gestión de pólizas de seguro."
+            }
+          },
 
-      "privacySection7Title": "7. Cambios en esta política de privacidad",
-      "privacySection7Content": {
-        "privacySection7Point1": "JustDiveCol se reserva el derecho de actualizar o modificar esta política periódicamente. Publicaremos cualquier cambio significativo en esta página web, y si los cambios son sustanciales, te notificaremos por correo electrónico. ",
-        "privacySection7Point2": "Te recomendamos revisar esta política de forma regular para estar siempre informado sobre cómo protegemos y utilizamos tu información. La fecha de la última actualización se indicará claramente al inicio de la política."
-      },
+          "section3": {
+            "title": "3. Cómo compartimos tu información",
 
-      "privacySection8Title": "8. Contacto",
-      "privacySection8Content": {
-        "privacySection8Point1": "Si tienes alguna pregunta sobre esta política de privacidad o deseas ejercer tus derechos relacionados con tu información personal, no dudes en contactarnos a través de nuestro formulario de contacto o enviando un correo a info@justdivecol.com. Estamos listos para escucharte."
+            "point1": {
+              "text": "Con proveedores de servicios: Para operar nuestro negocio, compartimos tu información con terceros de confianza que nos brindan servicios esenciales. Esto incluye procesadores de pago, operadores de buceo locales y proveedores de servicios de TI. Estos terceros están obligados contractualmente a proteger tu información y a usarla solo para los fines específicos para los que fue compartida."
+            },
+            "point2": {
+              "text": "Por cumplimiento legal y seguridad: Podemos divulgar tu información personal si la ley nos lo exige, por ejemplo, en respuesta a una citación judicial. También podemos compartirla si creemos de buena fe que es necesario para proteger los derechos de JustDiveCol o la seguridad de nuestros clientes. Esto incluye compartir información con autoridades en caso de emergencias."
+            },
+            "point3": {
+              "text": "En transferencias de negocio: En el caso de una fusión o venta de activos, tu información personal podría ser transferida al nuevo propietario. En tal caso, el nuevo propietario estará obligado a adherirse a las prácticas de privacidad de esta política o a notificarte de cualquier cambio."
+            }
+          },
+
+          "section4": {
+            "title": "4. Tus derechos y opciones",
+
+            "point1": {
+              "text": "Derecho de acceso y corrección: Tienes derecho a acceder a tu información personal y a solicitar que se corrija si es inexacta. Si deseas ejercer este derecho, contáctanos a través de los canales proporcionados en la Sección 8."
+            },
+            "point2": {
+              "text": "Derecho a no recibir comunicaciones de marketing: Puedes optar por no recibir comunicaciones de marketing de JustDiveCol en cualquier momento. Puedes hacerlo siguiendo las instrucciones para cancelar la suscripción que se incluyen en nuestros correos electrónicos. Ten en cuenta que esto no afectará las comunicaciones esenciales relacionadas con tus reservas activas."
+            },
+            "point3": {
+              "text": "Derecho a la eliminación de datos: Tienes derecho a solicitar la eliminación de tus datos personales, aunque este derecho está sujeto a nuestras obligaciones legales de retención de datos. Por ejemplo, estamos obligados a mantener ciertos registros de buceo y transacciones por razones de seguridad."
+            }
+          },
+
+          "section5": {
+            "title": "5. Seguridad de datos",
+
+            "point1": {
+              "text": "En JustDiveCol, implementamos rigurosas medidas de seguridad técnicas y físicas para proteger tu información personal contra el acceso no autorizado. Esto incluye el uso de cifrado y controles de acceso robustos en nuestros sistemas."
+            },
+            "point2": {
+              "text": "A pesar de nuestros esfuerzos, es fundamental recordar que ninguna transmisión de datos por internet es 100% segura. Por lo tanto, no podemos garantizar la seguridad absoluta. La seguridad de tu información también depende de ti; por favor, protege tus contraseñas y ten precaución al compartir información personal en línea."
+            }
+          },
+
+          "section6": {
+            "title": "6. Retención de datos",
+
+            "point1": {
+              "text": "Retenemos tu información personal durante el tiempo que sea necesario para cumplir con los fines para los que fue recopilada, incluyendo la prestación de nuestros servicios, el cumplimiento de nuestras obligaciones legales y la resolución de disputas. Una vez que tu información ya no sea necesaria, la eliminaremos de forma segura o la anonimizaremos."
+            }
+          },
+
+          "section7": {
+            "title": "7. Cambios en esta política de privacidad",
+
+            "point1": {
+              "text": "JustDiveCol se reserva el derecho de actualizar o modificar esta política periódicamente. Publicaremos cualquier cambio significativo en esta página web, y si los cambios son sustanciales, te notificaremos por correo electrónico. "
+            },
+            "point2": {
+              "text": "Te recomendamos revisar esta política de forma regular para estar siempre informado sobre cómo protegemos y utilizamos tu información. La fecha de la última actualización se indicará claramente al inicio de la política."
+            }
+          },
+
+          "section8": {
+            "title": "8. Contacto",
+
+            "point1": {
+              "text": "Si tienes alguna pregunta sobre esta política de privacidad o deseas ejercer tus derechos relacionados con tu información personal, no dudes en contactarnos a través de nuestro formulario de contacto o enviando un correo a info@justdivecol.com. Estamos listos para escucharte."
+            }
+          }
+        }
       }
     }
   }

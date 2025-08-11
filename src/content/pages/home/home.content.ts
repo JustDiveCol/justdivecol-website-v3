@@ -1,29 +1,21 @@
 // src/content/pages/home/home.content.ts
-import type { HomePageContent } from './types';
+import type { CardData } from '../../../components/sections/home/types';
+import { toAssetUrl } from '../../../constants/assets.schema';
 import { ROUTES } from '../../../constants/routes';
-import type {
-  CardData,
-  ImageData,
-} from '../../../components/sections/home/types';
-import { BRAND_ASSETS } from '../../../constants/assets';
-import { HomePageContentSchema } from '../../schemas';
-import { toUrlPath } from '../../urlPathSchema'; // ✅ usar helper correcto
+import { principlesToHomeCards } from '../../selectors/principles.selectors';
+import { toUrlPath } from '../../urlPathSchema';
+import { principlesContent } from '../principles/principles.content';
+import { HomePageContentSchema, type HomePageContent } from './types';
 
-type RawCardData = {
-  readonly id: string;
-  readonly titleKey: string;
-  readonly subtitleKey?: string;
-  readonly imageData: ImageData;
-};
-
-const rawCards: ReadonlyArray<RawCardData> = [
+const rawCards: ReadonlyArray<Omit<CardData, 'link'>> = [
   {
     id: 'dive-experiences',
     titleKey: 'home.featured.card1Title',
     subtitleKey: 'home.featured.card1Subtitle',
     imageData: {
-      backgroundImage: '/images/featured/featured-1.webp',
+      backgroundImage: toAssetUrl('/images/featured/featured-1.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
+      variant: 'vertical',
     },
   },
   {
@@ -31,8 +23,9 @@ const rawCards: ReadonlyArray<RawCardData> = [
     titleKey: 'home.featured.card2Title',
     subtitleKey: 'home.featured.card2Subtitle',
     imageData: {
-      backgroundImage: '/images/featured/featured-2.webp',
+      backgroundImage: toAssetUrl('/images/featured/featured-2.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
+      variant: 'vertical',
     },
   },
   {
@@ -40,8 +33,9 @@ const rawCards: ReadonlyArray<RawCardData> = [
     titleKey: 'home.featured.card3Title',
     subtitleKey: 'home.featured.card3Subtitle',
     imageData: {
-      backgroundImage: '/images/featured/featured-3.webp',
+      backgroundImage: toAssetUrl('/images/featured/featured-3.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
+      variant: 'vertical',
     },
   },
   {
@@ -49,8 +43,9 @@ const rawCards: ReadonlyArray<RawCardData> = [
     titleKey: 'home.featured.card4Title',
     subtitleKey: 'home.featured.card4Subtitle',
     imageData: {
-      backgroundImage: '/images/featured/featured-4.webp',
+      backgroundImage: toAssetUrl('/images/featured/featured-4.webp'),
       photoCredit: '@parche_de_buceo',
+      variant: 'vertical',
     },
   },
 ] as const;
@@ -65,7 +60,7 @@ const rawHome: HomePageContent = {
     titleKey: 'home.seo.title',
     descriptionKey: 'home.seo.desc',
     keywordsKey: 'home.seo.keywords',
-    imageUrl: '/images/social/home-social-card.webp',
+    imageUrl: toAssetUrl('/images/social/home-social-card.webp'),
     urlPath: toUrlPath(ROUTES.home),
     translationNS: 'home',
   },
@@ -99,32 +94,7 @@ const rawHome: HomePageContent = {
     titleKey: 'home.principles.title',
     subtitleKey: 'home.principles.subtitle',
     translationNS: 'home',
-    cards: [
-      {
-        id: 'sustainability',
-        imageUrl: '/images/principles/sustainability.webp',
-        titleKey: 'home.principles.card1Title',
-        descriptionKey: 'home.principles.card1Desc',
-        photoCredit: 'PADI®',
-        complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
-      },
-      {
-        id: 'ocean-conservation',
-        imageUrl: '/images/principles/ocean-conservation.webp',
-        titleKey: 'home.principles.card2Title',
-        descriptionKey: 'home.principles.card2Desc',
-        photoCredit: 'PADI®',
-        complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
-      },
-      {
-        id: 'people-and-humanity',
-        imageUrl: '/images/principles/people-and-humanity.webp',
-        titleKey: 'home.principles.card3Title',
-        descriptionKey: 'home.principles.card3Desc',
-        photoCredit: 'PADI®',
-        complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
-      },
-    ],
+    cards: principlesToHomeCards(principlesContent.principles),
   },
 
   testimonials: {
@@ -135,7 +105,7 @@ const rawHome: HomePageContent = {
         id: 1,
         quoteKey: 'home.testimonials.quote1',
         name: 'Sunny Velez',
-        originKey: 'exp-santa-marta',
+        originKey: 'providencia-sept-2025',
         rating: 5,
         avatarUrl: '/images/avatars/avatar1.webp',
       },
@@ -187,5 +157,4 @@ const rawHome: HomePageContent = {
   },
 } as const;
 
-/* Validación runtime: si falta algo, Vite/Vitest explota al cargar el módulo */
 export const homeContent = HomePageContentSchema.parse(rawHome);

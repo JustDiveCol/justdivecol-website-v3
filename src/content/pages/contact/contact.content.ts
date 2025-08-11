@@ -1,16 +1,17 @@
 // src/content/pages/contact/contact.content.ts
+import { toAssetUrl } from '../../../constants/assets.schema';
 import { ROUTES } from '../../../constants/routes';
-import { SOCIAL } from '../../constants';
-import { ContactPageContentSchema } from '../../schemas';
-import type { ContactPageContent } from './types';
+import { SOCIAL } from '../../../constants/social';
+import { toUrlPath } from '../../urlPathSchema';
+import { ContactPageContentSchema, type ContactPageContent } from './types';
 
 const rawContact: ContactPageContent = {
   seo: {
     titleKey: 'contact.seo.title',
     descriptionKey: 'contact.seo.desc',
     keywordsKey: 'contact.seo.keywords',
-    urlPath: ROUTES.contact,
-    imageUrl: '/images/social/contact-social-card.webp',
+    urlPath: toUrlPath(ROUTES.contact),
+    imageUrl: toAssetUrl('/images/social/contact-social-card.webp'),
     translationNS: 'contact',
   },
 
@@ -19,7 +20,7 @@ const rawContact: ContactPageContent = {
     subtitleKey: 'contact.header.subtitle',
     translationNS: 'contact',
     imageData: {
-      backgroundImage: '/images/contact/header-background.webp',
+      backgroundImage: toAssetUrl('/images/contact/header-background.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },

@@ -1,15 +1,39 @@
 // src/components/sections/contact/types.ts
+import { z } from 'zod';
 import type { I18NNamespace } from '../../../constants/i18n';
-import type { Social } from '../../../content/constants';
+import { TranslationNSSchema } from '../../common/types';
+import { SocialSchema } from '../../../constants/social';
 
-// OK
-export type ContactSectionContent = {
-  titleKey: string;
-  phone: string;
-  email: string;
-  emailSubjectKey: string;
-  emailBodyKey: string;
-  socials: readonly Social[];
+// ––– ContactSection –––
+export const ContactSectionPropsSchema = z.object({
+  titleKey: z.string().min(1),
+
+  phone: z.string().min(1),
+  email: z.email(),
+  emailSubjectKey: z.string().min(1),
+  emailBodyKey: z.string().min(1),
+
+  socials: z.array(SocialSchema).min(0).readonly(),
+
+  translationNS: TranslationNSSchema,
+  hubspotFormTitleKey: z.string().min(1),
+});
+
+export type ContactSectionProps = Omit<
+  z.infer<typeof ContactSectionPropsSchema>,
+  'translationNS'
+> & {
   translationNS: I18NNamespace;
-  hubspotFormTitleKey: string;
+};
+
+// ––– FaqSection –––
+export const FaqSectionPropsSchema = z.object({
+  translationNS: TranslationNSSchema,
+});
+
+export type FaqSectionProps = Omit<
+  z.infer<typeof FaqSectionPropsSchema>,
+  'translationNS'
+> & {
+  translationNS: I18NNamespace;
 };

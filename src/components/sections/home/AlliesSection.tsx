@@ -1,7 +1,7 @@
 // src/components/sections/home/AlliesSection.tsx
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import type { AlliesContent } from './types';
+import type { AlliesContent, AllyLogo as AllyLogoType } from './types';
 
 export const AlliesSection = ({
   titleKey,
@@ -14,11 +14,9 @@ export const AlliesSection = ({
   const marqueeThreshold = 6;
   const animationDuration = `${logoCount * 7}s`;
 
-  // Pausa del marquee al hover/focus (mejor UX + CPU)
   const [paused, setPaused] = React.useState(false);
 
-  // Componente logo (link + máscara)
-  const AllyLogo = ({ ally }: { ally: (typeof logos)[0] }) => {
+  const AllyLogo = ({ ally }: { ally: AllyLogoType }) => {
     const href = ally.link || '#';
     const isExternal = href.startsWith('http');
 
@@ -27,23 +25,12 @@ export const AlliesSection = ({
         href={href}
         target={isExternal ? '_blank' : undefined}
         rel={isExternal ? 'noopener noreferrer' : undefined}
-        className='
-        group relative inline-flex items-center justify-center
-        h-10 sm:h-12 md:h-14 lg:h-16    
-        px-2                            
-        focus:outline-none focus:ring-2 focus:ring-brand-cta-orange/60 rounded
-      '
-        aria-label={`Visitar a ${ally.name}`}>
+        className='group relative inline-flex items-center justify-center h-10 sm:h-12 md:h-14 lg:h-16 px-2 focus:outline-none focus:ring-2 focus:ring-brand-cta-orange/60 rounded'
+        aria-label={t('common:visitAlly', { allyName: ally.name })}>
         <img
           src={ally.logoUrl}
-          alt={`${ally.name} logo`}
-          className='
-          block h-full w-auto            /* NO fijar ancho, que lo calcule el ratio */
-          max-w-[7rem] sm:max-w-[8rem] md:max-w-[9rem] lg:max-w-[10rem]
-          transition-all duration-300
-          opacity-80 grayscale contrast-125 brightness-110
-          group-hover:opacity-100 group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100
-        '
+          alt={t('common:allyLogoAlt', { allyName: ally.name })}
+          className='block h-full w-auto max-w-[7rem] sm:max-w-[8rem] md:max-w-[9rem] lg:max-w-[10rem] transition-all duration-300 opacity-80 grayscale contrast-125 brightness-110 group-hover:opacity-100 group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100'
           loading='lazy'
           decoding='async'
         />
@@ -54,14 +41,11 @@ export const AlliesSection = ({
   const shouldMarquee = logoCount >= marqueeThreshold;
 
   return (
-    // Fondo full-bleed
     <section className='bg-brand-primary-dark'>
-      {/* Contenido limitado por container */}
       <div className='section text-center'>
         <h2 className='heading-3 mb-16 text-brand-white'>{t(titleKey)}</h2>
 
         {!shouldMarquee ? (
-          // Modo estático
           <ul
             className='flex flex-wrap justify-center items-center gap-x-10 md:gap-x-12 gap-y-6'
             role='list'>
@@ -72,7 +56,6 @@ export const AlliesSection = ({
             ))}
           </ul>
         ) : (
-          // Modo carrusel tipo marquee
           <div
             className='relative w-full overflow-hidden'
             onMouseEnter={() => setPaused(true)}
@@ -80,13 +63,12 @@ export const AlliesSection = ({
             onFocusCapture={() => setPaused(true)}
             onBlurCapture={() => setPaused(false)}
             style={{
-              // Desvanecidos laterales (cross-browser)
               maskImage:
                 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
               WebkitMaskImage:
                 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
             }}
-            aria-label={t('common:allies_marquee', 'Carrusel de aliados')}>
+            aria-label={t('common:allies_marquee')}>
             <div
               className='flex w-max animate-infinite-scroll motion-reduce:animate-none'
               style={{

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { twMerge } from 'tailwind-merge';
 import { ImageComponent } from '../../common/ImageComponent';
 import type { CertificationCardProps } from './types';
-import type { AvailableType } from '../../../constants/ui';
+import type { AvailableType } from '../../../lib/db/constants';
 
 const AvailabilityStatus = ({ status }: { status: AvailableType }) => {
   const { t } = useTranslation(['certifications', 'common']);

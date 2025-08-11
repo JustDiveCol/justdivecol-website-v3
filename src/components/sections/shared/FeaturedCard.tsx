@@ -4,14 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { motion, useReducedMotion } from 'framer-motion';
 
 import { BRAND_ASSETS } from '../../../constants/assets';
-import type { I18NNamespace } from '../../../constants/i18n';
-import type { CardData } from '../home/types';
-
-type FeaturedCardProps = {
-  cardData: CardData;
-  className?: string;
-  translationNS: I18NNamespace;
-};
+import type { FeaturedCardProps } from './types';
 
 export const FeaturedCard = ({
   cardData,
@@ -32,7 +25,7 @@ export const FeaturedCard = ({
       transition={{ duration: reduceMotion ? 0 : 0.6, ease: 'easeOut' }}
       className={className}>
       <Link
-        to={link as unknown as string} // UrlPath brandeado es string estrecho; cast para TS si hace ruido
+        to={link}
         aria-label={t(titleKey)}
         className='group relative block h-full w-full overflow-hidden rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-cta-orange/70'>
         {/* Background Image with Zoom on hover */}

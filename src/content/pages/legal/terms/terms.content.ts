@@ -1,15 +1,17 @@
 // src/content/pages/legal/terms/terms.content.ts
-import { ROUTES } from '../../../../constants/routes';
-import { LegalPageContentSchema } from '../../../schemas';
-import type { LegalPageData } from '../types';
 
-const rawTerms: LegalPageData = {
+import { toAssetUrl } from '../../../../constants/assets.schema';
+import { ROUTES } from '../../../../constants/routes';
+import { toUrlPath } from '../../../urlPathSchema';
+import { LegalPageContentSchema, type LegalPageContent } from '../types';
+
+const rawTerms: LegalPageContent = {
   seo: {
     titleKey: 'legal.terms.seo.title',
     descriptionKey: 'contact.seo.desc',
     keywordsKey: 'contact.seo.keywords',
-    urlPath: ROUTES.terms,
-    imageUrl: '/images/social/terms-social-card.webp',
+    urlPath: toUrlPath(ROUTES.terms),
+    imageUrl: toAssetUrl('/images/social/terms-social-card.webp'),
     translationNS: 'legal',
   },
 
@@ -18,7 +20,7 @@ const rawTerms: LegalPageData = {
     subtitleKey: 'legal.terms.header.subtitle',
     translationNS: 'legal',
     imageData: {
-      backgroundImage: '/images/contact/header-background.webp',
+      backgroundImage: toAssetUrl('/images/contact/header-background.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },
@@ -29,88 +31,88 @@ const rawTerms: LegalPageData = {
     sections: [
       {
         id: 'acceptance-terms',
-        titleKey: 'legal.terms.content.sections.title1',
+        titleKey: 'legal.terms.content.sections.section1.title',
         points: [
           {
-            textKey: 'legal.terms.content.sections.section1.point1',
+            textKey: 'legal.terms.content.sections.section1.point1.text',
           },
           {
-            textKey: 'legal.terms.content.sections.section1.point2',
+            textKey: 'legal.terms.content.sections.section1.point2.text',
           },
         ],
       },
       {
         id: 'service-usage',
-        titleKey: 'legal.terms.content.sections.title2',
+        titleKey: 'legal.terms.content.sections.section2.title',
         points: [
           {
-            textKey: 'legal.terms.content.sections.section2.point1',
+            textKey: 'legal.terms.content.sections.section2.point1.text',
           },
           {
-            textKey: 'legal.terms.content.sections.section2.point2',
+            textKey: 'legal.terms.content.sections.section2.point2.text',
           },
           {
-            textKey: 'legal.terms.content.sections.section2.point3',
+            textKey: 'legal.terms.content.sections.section2.point3.text',
           },
         ],
       },
       {
         id: 'intellectual-property',
-        titleKey: 'legal.terms.content.sections.title3',
+        titleKey: 'legal.terms.content.sections.section3.title',
         points: [
           {
-            textKey: 'legal.terms.content.sections.section3.point1',
+            textKey: 'legal.terms.content.sections.section3.point1.text',
           },
           {
-            textKey: 'legal.terms.content.sections.section3.point2',
+            textKey: 'legal.terms.content.sections.section3.point2.text',
           },
         ],
       },
       {
         id: 'responsibility-limitation',
-        titleKey: 'legal.terms.content.sections.title4',
+        titleKey: 'legal.terms.content.sections.section4.title',
         points: [
           {
-            textKey: 'legal.terms.content.sections.section4.point1',
+            textKey: 'legal.terms.content.sections.section4.point1.text',
           },
           {
-            textKey: 'legal.terms.content.sections.section4.point2',
+            textKey: 'legal.terms.content.sections.section4.point2.text',
           },
           {
-            textKey: 'legal.terms.content.sections.section4.point3',
+            textKey: 'legal.terms.content.sections.section4.point3.text',
           },
         ],
       },
       {
         id: 'third-party-links',
-        titleKey: 'legal.terms.content.sections.title5',
+        titleKey: 'legal.terms.content.sections.section5.title',
         points: [
           {
-            textKey: 'legal.terms.content.sections.section5.point1',
+            textKey: 'legal.terms.content.sections.section5.point1.text',
           },
           {
-            textKey: 'legal.terms.content.sections.section5.point2',
+            textKey: 'legal.terms.content.sections.section5.point2.text',
           },
         ],
       },
       {
         id: 'law-jurisdiction',
-        titleKey: 'legal.terms.content.sections.title6',
+        titleKey: 'legal.terms.content.sections.section6.title',
         points: [
           {
-            textKey: 'legal.terms.content.sections.section6.point1',
+            textKey: 'legal.terms.content.sections.section6.point1.text',
           },
           {
-            textKey: 'legal.terms.content.sections.section6.point2',
+            textKey: 'legal.terms.content.sections.section6.point2.text',
           },
         ],
       },
       {
         id: 'divisibility',
-        titleKey: 'legal.terms.content.sections.title7',
+        titleKey: 'legal.terms.content.sections.section7.title',
         points: [
           {
-            textKey: 'legal.terms.content.sections.section7.point1',
+            textKey: 'legal.terms.content.sections.section7.point1.text',
           },
         ],
       },

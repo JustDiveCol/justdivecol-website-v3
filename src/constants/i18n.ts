@@ -1,4 +1,5 @@
 // src/constants/i18n.ts
+import { z } from 'zod';
 
 export const I18N_NAMESPACES = [
   'aboutUs',
@@ -31,3 +32,6 @@ export function getI18nResourcePath(
   const template = I18N_NAMESPACE_PATHS[namespace];
   return template.replace('{{lng}}', language);
 }
+
+export const I18NLanguageSchema = z.enum(I18N_LANGUAGES);
+export const I18NNamespaceSchema = z.enum(I18N_NAMESPACES);

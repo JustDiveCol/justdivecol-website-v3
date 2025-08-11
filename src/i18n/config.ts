@@ -14,12 +14,13 @@ i18n
     // debug: process.env.NODE_ENV === 'development',
 
     fallbackLng: 'es',
-
-    ns: I18N_NAMESPACES as readonly string[],
-
     supportedLngs: I18N_LANGUAGES as readonly string[],
-
+    ns: I18N_NAMESPACES as readonly string[],
     defaultNS: 'common',
+
+    // Normaliza es-CO / en-US -> es / en
+    load: 'languageOnly',
+    // Alternativa: nonExplicitSupportedLngs: true,
 
     interpolation: {
       escapeValue: false,
@@ -27,6 +28,24 @@ i18n
 
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
+
+    // Detección del idioma inicial
+    detection: {
+      order: ['localStorage', 'querystring', 'cookie', 'navigator', 'htmlTag'],
+      caches: ['localStorage'],
+      // Opcionales:
+      lookupQuerystring: 'lng',
+      lookupCookie: 'i18next',
+      lookupLocalStorage: 'i18nextLng',
+      htmlTag: document.documentElement,
+    },
+
+    // Opcional: ajustes de react
+    react: {
+      useSuspense: false, // si no usas Suspense
+      bindI18n: 'languageChanged loaded',
+      bindI18nStore: 'added removed',
     },
   });
 

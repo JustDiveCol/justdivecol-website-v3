@@ -1,8 +1,8 @@
 // src/content/pages/about-us/about-us.content.ts
+import { toAssetUrl } from '../../../constants/assets.schema';
 import { ROUTES } from '../../../constants/routes';
-import { AboutUsPageContentSchema } from '../../schemas';
 import { toUrlPath } from '../../urlPathSchema';
-import type { AboutUsPageContent } from './types';
+import { AboutUsPageContentSchema, type AboutUsPageContent } from './types';
 
 const rawAboutUs: AboutUsPageContent = {
   seo: {
@@ -10,7 +10,7 @@ const rawAboutUs: AboutUsPageContent = {
     descriptionKey: 'aboutUs.seo.desc',
     keywordsKey: 'aboutUs.seo.keywords',
     urlPath: toUrlPath(ROUTES.aboutUs),
-    imageUrl: '/images/social/about-us-social-card.webp',
+    imageUrl: toAssetUrl('/images/social/about-us-social-card.webp'),
     translationNS: 'aboutUs',
   },
 
@@ -19,7 +19,7 @@ const rawAboutUs: AboutUsPageContent = {
     subtitleKey: 'aboutUs.header.subtitle',
     translationNS: 'aboutUs',
     imageData: {
-      backgroundImage: '/images/about/header-background.webp',
+      backgroundImage: toAssetUrl('/images/about/header-background.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },
@@ -30,7 +30,7 @@ const rawAboutUs: AboutUsPageContent = {
     textKey: 'aboutUs.mission.text',
     translationNS: 'aboutUs',
     imageData: {
-      backgroundImage: '/images/about/mission-image.webp',
+      backgroundImage: toAssetUrl('/images/about/mission-image.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'horizontal',
     },

@@ -1,19 +1,21 @@
 {
-  "seo": {
-    "contactSeoTitle": "Contacto",
-    "contactSeoDesc": "¿Listo para explorar el azul profundo? Contáctanos para diseñar tu viaje soñado, resolver tus dudas o simplemente compartir nuestra pasión por el increíble mundo submarino con JustDiveCol.",
-    "contactSeoKeywords": "contacto, JustDiveCol, aventura submarina, planificar viaje de buceo, dudas buceo, pasión por el océano, WhatsApp buceo, comunicación JustDiveCol, servicio al cliente buceo"
-  },
+  "contact": {
+    "seo": {
+      "title": "Contacto",
+      "desc": "¿Listo para explorar el azul profundo? Contáctanos para diseñar tu viaje soñado, resolver tus dudas o simplemente compartir nuestra pasión por el increíble mundo submarino con JustDiveCol.",
+      "keywords": "contacto, JustDiveCol, aventura submarina, planificar viaje de buceo, dudas buceo, pasión por el océano, WhatsApp buceo, comunicación JustDiveCol, servicio al cliente buceo"
+    },
 
-  "header": {
-    "contactHeaderTitle": "Hablemos de tu próxima gran aventura",
-    "contactHeaderSubtitle": "Estamos aquí para responder a tus preguntas, ayudarte a planificar ese viaje soñado o simplemente compartir nuestra pasión por el océano. ¡Tu aventura comienza con una conversación!"
-  },
+    "header": {
+      "title": "Hablemos de tu próxima gran aventura",
+      "subtitle": "Estamos aquí para responder a tus preguntas, ayudarte a planificar ese viaje soñado o simplemente compartir nuestra pasión por el océano. ¡Tu aventura comienza con una conversación!"
+    },
 
-  "contactInfo": {
-    "contactInfoTitle": "Nuestros canales de comunicación",
-    "formTitle": "Envíanos un mensaje",
-    "contactEmailSubject": "Consulta desde el sitio web",
-    "contactEmailBody": "Hola, quisiera más información sobre los servicios de JustDiveCol."
+    "contactInfo": {
+      "title": "Nuestros canales de comunicación",
+      "formTitle": "O déjanos un mensaje",
+      "emailSubject": "Consulta desde el sitio web",
+      "emailBody": "Hola, quisiera más información sobre los servicios de JustDiveCol."
+    }
   }
 }

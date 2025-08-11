@@ -5,11 +5,11 @@ import { MainLayout } from './components/layout/MainLayout';
 import { HomePage } from './pages/HomePage';
 import { AboutUsPage } from './pages/AboutUsPage';
 import { PrinciplesPage } from './pages/PrinciplesPage';
-// import { ContactPage } from './pages/ContactPage';
-// import { PolicyPage } from './pages/PolicyPage';
-// import { TermsPage } from './pages/TermsPage';
-// import { PrivacyPage } from './pages/PrivacyPage';
-// import { FaqPage } from './pages/FaqPage';
+import { ContactPage } from './pages/ContactPage';
+import { PolicyPage } from './pages/PolicyPage';
+import { TermsPage } from './pages/TermsPage';
+import { PrivacyPage } from './pages/PrivacyPage';
+import { FaqPage } from './pages/FaqPage';
 // import { ExperiencesPage } from './pages/ExperiencesPage';
 // import { DiveSitesPage } from './pages/DiveSitesPage';
 // import { CertificationPage } from './pages/CertificationPage';
@@ -34,30 +34,30 @@ function App() {
           element={<PrinciplesPage />}
         />
 
-        {/* <Route
+        <Route
           path='/contact'
           element={<ContactPage />}
-        /> */}
+        />
 
-        {/* <Route
+        <Route
           path='/legal/policy'
           element={<PolicyPage />}
-        /> */}
+        />
 
-        {/* <Route
+        <Route
           path='/legal/terms'
           element={<TermsPage />}
-        /> */}
+        />
 
-        {/* <Route
+        <Route
           path='/legal/privacy'
           element={<PrivacyPage />}
-        /> */}
+        />
 
-        {/* <Route
+        <Route
           path='/faq'
           element={<FaqPage />}
-        /> */}
+        />
 
         {/* <Route
           path='/dive-experiences'

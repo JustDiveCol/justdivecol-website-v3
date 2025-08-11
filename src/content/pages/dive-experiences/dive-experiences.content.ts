@@ -1,6 +1,8 @@
 // src/content/pages/dive-experiences/dive-experiences.content.ts
+import { toAssetUrl } from '../../../constants/assets.schema';
 import { ROUTES } from '../../../constants/routes';
 import { DiveExperiencesPageContentSchema } from '../../schemas';
+import { toUrlPath } from '../../urlPathSchema';
 import type { DiveExperiencesPageContent } from './types';
 
 const rawDiveExperiences: DiveExperiencesPageContent = {
@@ -8,7 +10,7 @@ const rawDiveExperiences: DiveExperiencesPageContent = {
     titleKey: 'diveExperiences.seo.title',
     descriptionKey: 'diveExperiences.seo.desc',
     keywordsKey: 'diveExperiences.seo.keywords',
-    urlPath: ROUTES.diveExperiences,
+    urlPath: toUrlPath(ROUTES.diveExperiences),
     imageUrl: '/images/social/dive-experiences-social-card.webp',
     translationNS: 'experiences',
   },
@@ -40,7 +42,7 @@ const rawDiveExperiences: DiveExperiencesPageContent = {
     textKey: 'diveExperiences.customTrips.text',
     translationNS: 'experiences',
     imageData: {
-      backgroundImage: '/images/experiences/custom-trip.webp',
+      backgroundImage: toAssetUrl('/images/experiences/custom-trip.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'vertical',
     },

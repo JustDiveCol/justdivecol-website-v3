@@ -1,9 +1,14 @@
-// src/content/pages/principles/principles.content.ts
-import { BRAND_ASSETS } from '../../../constants/assets';
+// src/content/pages/principles/principles.content.t
+import {
+  BRAND_ASSETS_SAFE,
+  toAssetUrl,
+} from '../../../constants/assets.schema';
 import { ROUTES } from '../../../constants/routes';
-import { PrinciplesPageContentSchema } from '../../schemas';
 import { toUrlPath } from '../../urlPathSchema';
-import type { PrinciplesPageContent } from './types';
+import {
+  PrinciplesPageContentSchema,
+  type PrinciplesPageContent,
+} from './types';
 
 const rawPrinciples: PrinciplesPageContent = {
   seo: {
@@ -11,7 +16,7 @@ const rawPrinciples: PrinciplesPageContent = {
     descriptionKey: 'principles.seo.desc',
     keywordsKey: 'principles.seo.keywords',
     urlPath: toUrlPath(ROUTES.principles),
-    imageUrl: '/images/social/principles-social-card.webp',
+    imageUrl: toAssetUrl('/images/social/principles-social-card.webp'),
     translationNS: 'principles',
   },
 
@@ -20,9 +25,9 @@ const rawPrinciples: PrinciplesPageContent = {
     subtitleKey: 'principles.header.subtitle',
     translationNS: 'principles',
     imageData: {
-      backgroundImage: '/images/principles/header-background.webp',
+      backgroundImage: toAssetUrl('/images/principles/header-background.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
-      complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
+      complementaryLogo: BRAND_ASSETS_SAFE.complementaryLogos.padi,
       variant: 'header',
     },
   },
@@ -31,11 +36,11 @@ const rawPrinciples: PrinciplesPageContent = {
     {
       id: 'safety',
       titleKey: 'principles.principles.safety.title',
-      textKey: 'principles.principles.safety.text',
+      descriptionKey: 'principles.principles.safety.text',
       imageData: {
-        backgroundImage: '/images/principles/sustainability.webp',
+        backgroundImage: toAssetUrl('/images/principles/sustainability.webp'),
         photoCredit: 'PADI®',
-        complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
+        complementaryLogo: BRAND_ASSETS_SAFE.complementaryLogos.padi,
         variant: 'horizontal',
       },
       imagePosition: 'left',
@@ -43,11 +48,13 @@ const rawPrinciples: PrinciplesPageContent = {
     {
       id: 'conservation',
       titleKey: 'principles.principles.conservation.title',
-      textKey: 'principles.principles.conservation.text',
+      descriptionKey: 'principles.principles.conservation.text',
       imageData: {
-        backgroundImage: '/images/principles/ocean-conservation.webp',
+        backgroundImage: toAssetUrl(
+          '/images/principles/ocean-conservation.webp'
+        ),
         photoCredit: 'PADI®',
-        complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
+        complementaryLogo: BRAND_ASSETS_SAFE.complementaryLogos.padi,
         variant: 'horizontal',
       },
       imagePosition: 'right',
@@ -55,11 +62,13 @@ const rawPrinciples: PrinciplesPageContent = {
     {
       id: 'community',
       titleKey: 'principles.principles.community.title',
-      textKey: 'principles.principles.community.text',
+      descriptionKey: 'principles.principles.community.text',
       imageData: {
-        backgroundImage: '/images/principles/people-and-humanity.webp',
+        backgroundImage: toAssetUrl(
+          '/images/principles/people-and-humanity.webp'
+        ),
         photoCredit: 'PADI®',
-        complementaryLogo: BRAND_ASSETS.complementaryLogos.padi,
+        complementaryLogo: BRAND_ASSETS_SAFE.complementaryLogos.padi,
         variant: 'horizontal',
       },
       imagePosition: 'left',

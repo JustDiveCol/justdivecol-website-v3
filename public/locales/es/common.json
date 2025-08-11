@@ -28,11 +28,11 @@
   },
 
   "footer": {
-    "footerSlogan": "En JustDiveCol, creamos exploradores, no solo turistas. Tu aventura submarina con nosotros trasciende fronteras y expande tu mundo.",
-    "footerClosingMessage": "Más que bucear, en JustDiveCol creamos recuerdos inolvidables que duran toda la vida. ¡Siente la pasión por el océano!",
-    "footerCopyright": "JustDiveCol. Todos los derechos reservados.",
-    "footerCredits": "Diseñado y construido con pasión para exploradores submarinos. Impulsado por React + Vite, TailwindCSS y Motion.",
-    "footerLinksTitle": "Enlaces Importantes"
+    "slogan": "En JustDiveCol, creamos exploradores, no solo turistas. Tu aventura submarina con nosotros trasciende fronteras y expande tu mundo.",
+    "closingMessage": "Más que bucear, en JustDiveCol creamos recuerdos inolvidables que duran toda la vida. ¡Siente la pasión por el océano!",
+    "copyright": "JustDiveCol. Todos los derechos reservados.",
+    "credits": "Diseñado y construido con pasión para exploradores submarinos. Impulsado por React + Vite, TailwindCSS y Motion.",
+    "linksTitle": "Enlaces Importantes"
   },
 
   "about": {

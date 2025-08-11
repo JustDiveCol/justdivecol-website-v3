@@ -3,13 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { TeamCard } from '../shared/TeamCard';
 import { useMotionPresets } from '../../../hooks/animations';
-import type { TeamSectionContent } from './types';
+import type { TeamSectionProps } from './types';
 
 export const TeamSection = ({
   titleKey,
   members,
   translationNS,
-}: TeamSectionContent) => {
+}: TeamSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
   const { container } = useMotionPresets();
 

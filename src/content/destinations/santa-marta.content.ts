@@ -1,15 +1,24 @@
 // src/content/destinations/santa-marta.content.ts
+
+import { toAssetUrl } from '../../constants/assets.schema';
 import { ROUTES } from '../../constants/routes';
-import { DestinationContentSchema } from '../schemas';
-import type { DestinationContent } from './types';
+import { toUrlPath } from '../urlPathSchema';
+import { DestinationContentSchema, type DestinationContent } from './types';
 
 const rawSantaMarta: DestinationContent = {
+  id: 'santa-marta',
+  slug: 'santa-marta',
+  country: 'CO',
+  coords: [-74.194777, 11.231811],
+  minZoom: 10.5,
+  maxZoom: 16,
+
   seo: {
     titleKey: 'destinations.sm.seo.title',
     descriptionKey: 'destinations.sm.seo.desc',
     keywordsKey: 'destinations.sm.seo.keywords',
-    imageUrl: '/images/social/sm-social-card.webp',
-    urlPath: ROUTES.destinations,
+    imageUrl: toAssetUrl('/images/social/sm-social-card.webp'),
+    urlPath: toUrlPath(ROUTES.destinations),
     translationNS: 'destinations',
   },
 
@@ -17,7 +26,7 @@ const rawSantaMarta: DestinationContent = {
     titleKey: 'destinations.sm.header.title',
     subtitleKey: 'destinations.sm.header.subtitle',
     imageData: {
-      backgroundImage: '/images/destinations/sm-header.webp',
+      backgroundImage: toAssetUrl('/images/destinations/sm-header.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },
@@ -26,7 +35,9 @@ const rawSantaMarta: DestinationContent = {
 
   card: {
     imageData: {
-      backgroundImage: '/images/destinations/santa-marta/sm-card.webp',
+      backgroundImage: toAssetUrl(
+        '/images/destinations/santa-marta/sm-card.webp'
+      ),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'horizontal',
     },
@@ -67,11 +78,23 @@ const rawSantaMarta: DestinationContent = {
     titleKey: 'destinations.galleryTitle',
     images: [
       {
-        backgroundImage: '/images/destinations/santa-marta/gallery-01.webp',
+        backgroundImage: toAssetUrl(
+          '/images/destinations/santa-marta/gallery-01.webp'
+        ),
         photoCredit: 'Camilo Beltran @JustDiveCol',
         variant: 'horizontal',
       },
     ],
+  },
+
+  ctaButton: {
+    textKey: 'destinations.sm.ctaButton.text',
+    action: {
+      type: 'whatsapp',
+      whatsAppMessageKey: 'destinations.certificationWhatsappMessage',
+    },
+    variant: 'primary',
+    size: 'default',
   },
 
   cta: {
