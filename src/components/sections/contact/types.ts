@@ -1,7 +1,10 @@
 // src/components/sections/contact/types.ts
 import { z } from 'zod';
-import type { I18NNamespace } from '../../../constants/i18n.schema';
-import { TranslationNSSchema } from '../../common/types';
+import {
+  I18NNamespaceSchema,
+  type I18NNamespace,
+} from '../../../constants/i18n.schema';
+
 import { SocialSchema } from '../../../constants/social.schema';
 
 // ––– ContactSection –––
@@ -15,7 +18,7 @@ export const ContactSectionPropsSchema = z.object({
 
   socials: z.array(SocialSchema).min(0).readonly(),
 
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
   hubspotFormTitleKey: z.string().min(1),
 });
 
@@ -28,7 +31,7 @@ export type ContactSectionProps = Omit<
 
 // ––– FaqSection –––
 export const FaqSectionPropsSchema = z.object({
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
 });
 
 export type FaqSectionProps = Omit<

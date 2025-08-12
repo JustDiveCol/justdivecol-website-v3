@@ -2,7 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  I18N_LANGUAGES,
+  I18N_LANGUAGES_SAFE,
   I18NLanguageSchema,
   type I18NLanguage,
 } from '../../constants/i18n.schema';
@@ -12,7 +12,7 @@ export const LanguageSwitcherComponent = () => {
   const [open, setOpen] = React.useState(false);
   const ref = React.useRef<HTMLDivElement>(null);
 
-  const current = (i18n.language as I18NLanguage) ?? I18N_LANGUAGES[0];
+  const current = (i18n.language as I18NLanguage) ?? I18N_LANGUAGES_SAFE[0];
   const labelFor = (lng: I18NLanguage) =>
     t(`common:lang.${lng}`, lng.toUpperCase());
 
@@ -39,8 +39,8 @@ export const LanguageSwitcherComponent = () => {
   }, []);
 
   // ---- Si solo hay 2 idiomas, mostramos el diseño actual ----
-  if (I18N_LANGUAGES.length === 2) {
-    const [first, second] = I18N_LANGUAGES;
+  if (I18N_LANGUAGES_SAFE.length === 2) {
+    const [first, second] = I18N_LANGUAGES_SAFE;
     return (
       <div className='flex items-center space-x-3 text-sm font-bold uppercase'>
         <button
@@ -92,7 +92,7 @@ export const LanguageSwitcherComponent = () => {
           role='menu'
           aria-label={t('common:language', 'Idioma')}
           className='absolute right-0 mt-2 min-w-28 rounded-md bg-brand-primary-dark/95 shadow-lg ring-1 ring-white/10 backdrop-blur-sm p-1 z-50'>
-          {I18N_LANGUAGES.map((lng) => {
+          {I18N_LANGUAGES_SAFE.map((lng) => {
             const active = i18n.language === lng;
             return (
               <button

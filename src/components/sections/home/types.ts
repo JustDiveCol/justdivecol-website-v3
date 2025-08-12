@@ -1,13 +1,15 @@
 // src/pages/Home/types.ts
 import { z } from 'zod';
-import type { I18NNamespace } from '../../../constants/i18n.schema';
+import {
+  I18NNamespaceSchema,
+  type I18NNamespace,
+} from '../../../constants/i18n.schema';
 
 import { UrlPathSchema, type UrlPath } from '../../../content/urlPathSchema';
 import {
   ComplementaryLogoSchema,
   ContentButtonSchema,
   ImageComponentDataSchema,
-  TranslationNSSchema,
 } from '../../common/types';
 import { TestimonialDataSchema } from '../shared/types';
 
@@ -15,15 +17,14 @@ import { TestimonialDataSchema } from '../shared/types';
 export const AllyLogoSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
-  logoUrl: z.string().min(1), // si luego quieres forzar /images/, lo refinamos
-  link: z.url().optional(), // puede ser interna o externa; lo dejamos libre
+  logoUrl: z.string().min(1),
+  link: z.url().optional(),
 });
-
 export type AllyLogo = z.infer<typeof AllyLogoSchema>;
 
 export const AlliesContentSchema = z.object({
   titleKey: z.string().min(1),
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
   logos: z.array(AllyLogoSchema).min(1),
 });
 export type AlliesContent = Omit<
@@ -48,7 +49,7 @@ export type CardData = Omit<z.infer<typeof CardDataSchema>, 'link'> & {
 export const FeaturedCardPropsSchema = z.object({
   cardData: CardDataSchema,
   className: z.string().optional(),
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
 });
 export type FeaturedCardProps = Omit<
   z.infer<typeof FeaturedCardPropsSchema>,
@@ -57,7 +58,7 @@ export type FeaturedCardProps = Omit<
 
 export const FeaturedSectionPropsSchema = z.object({
   titleKey: z.string().min(1),
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
   cards: z.array(CardDataSchema).min(1),
 });
 export type FeaturedSectionProps = Omit<
@@ -77,7 +78,7 @@ export const HeroImageDataSchema = z.object({
 export const HeroSectionPropsSchema = z.object({
   titleKey: z.string().min(1),
   subtitleKey: z.string().min(1),
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
   button: ContentButtonSchema,
   imageData: HeroImageDataSchema,
 });
@@ -104,7 +105,7 @@ export type PrincipleCardData = z.infer<typeof PrincipleCardDataSchema>;
 
 export const PrincipleCardPropsSchema = z.object({
   cardData: PrincipleCardDataSchema,
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
 });
 export type PrincipleCardProps = Omit<
   z.infer<typeof PrincipleCardPropsSchema>,
@@ -114,7 +115,7 @@ export type PrincipleCardProps = Omit<
 export const PrinciplesSectionPropsSchema = z.object({
   titleKey: z.string().min(1),
   subtitleKey: z.string().min(1),
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
   cards: z.array(PrincipleCardDataSchema).min(1),
 });
 export type PrinciplesSectionProps = Omit<
@@ -127,7 +128,7 @@ export type PrinciplesSectionProps = Omit<
 // ––– TestimonialsSection –––
 export const TestimonialsSectionPropsSchema = z.object({
   titleKey: z.string().min(1),
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
   items: z.array(TestimonialDataSchema).min(1),
 });
 export type TestimonialsSectionProps = Omit<

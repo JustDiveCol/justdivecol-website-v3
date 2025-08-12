@@ -1,44 +1,30 @@
 {
-  "seo": {
-    "experiencesSeoTitle": "Cursos y Viajes de Buceo | Tu Próxima Aventura Submarina",
-    "experiencesSeoDesc": "Sumérgete con JustDiveCol en un mundo de posibilidades. Explora nuestros viajes de buceo para certificados, cursos PADI para principiantes o diseña una experiencia personalizada. Tu aventura submarina perfecta te está esperando.",
-    "experiencesSeoKeywords": "viajes de buceo, cursos de buceo, certificaciones PADI, buceo para principiantes, buceo para avanzados, viajes de buceo personalizados, experiencias de buceo, aventura submarina, destinos de buceo, JustDiveCol experiencias"
-  },
+  "experiences": {
+    "santaMartaExp": {
+      "seo": {
+        "title": "",
+        "desc": "",
+        "keywords": ""
+      },
 
-  "upcomingTrips": {
-    "upcomingTripsTitle": "Próximos viajes",
-    "upcomingTripsSubtitle": "Explora nuestro calendario de emocionantes aventuras y cursos programados. ¡Tu gran inmersión te espera!",
-    "filters": {
-      "allDestinations": "Todos los destinos",
-      "allMonths": "Todos los meses",
-      "noResults": "Sin resultados"
+      "header": {
+        "title": "",
+        "subtitle": ""
+      },
+
+      "description": {
+        "title": "",
+        "paragraphs": {
+          "p1": "",
+          "p2": ""
+        }
+      },
+
+      "sessions": {
+        "sept25": {
+          "name": "Certificación PADI Open Water Diver: Tayrona"
+        }
+      }
     }
-  },
-
-  "certifications": {
-    "certificationsSectionTitle": "Tu próximo nivel: cursos y certificaciones PADI",
-    "certificationsSectionSubtitle": "Amplía tus habilidades y desbloquea un mundo de nuevas inmersiones y oportunidades."
-  },
-
-  "destinations": {
-    "destinationsSectionTitle": "Destinos disponibles",
-    "destinationsSectionOtherTitle": "Otros destinos"
-  },
-
-  "customTrips": {
-    "customTripsTitle": "Diseña tu experiencia submarina perfecta",
-    "customTripsText": "Imagina la aventura submarina de tus sueños, y deja que nosotros la hagamos realidad. Ya sea que viajes en pareja, con un grupo de amigos o familia, o que tengas un destino en mente, somos tus arquitectos de aventuras. Nos especializamos en crear itinerarios únicos que se ajustan a la perfección a tus intereses, nivel de buceo y fechas disponibles.",
-    "customTripsButton": "Crea tu viaje a medida",
-    "customTripsBenefit1": "Fechas y duración 100% flexibles.",
-    "customTripsBenefit2": "Itinerario diseñado para tus intereses.",
-    "customTripsBenefit3": "Destinos soñados, locales o internacionales.",
-    "customTripsBenefit4": "Guías expertos y exclusivos para tu grupo."
-  },
-
-  "cta": {
-    "experiencesCtaTitle": "¿Listo para tu próxima aventura?",
-    "experiencesCtaSubtitle": "Contáctanos hoy y planeemos juntos tu inmersión. Resolvemos todas tus dudas sin compromiso.",
-    "formTitle": "O déjanos un mensaje",
-    "contactButton": "Hablemos por WhatsApp"
   }
 }

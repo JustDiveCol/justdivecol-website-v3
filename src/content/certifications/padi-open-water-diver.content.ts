@@ -6,6 +6,8 @@ import { CertificationContentSchema, type CertificationContent } from './types';
 
 const rawOpenWaterDiver: CertificationContent = {
   id: 'padi-open-water-diver',
+  slug: 'padi-open-water-diver',
+  name: 'Open Water Diver',
   code: 'OWD',
   level: 'entry',
   agency: 'PADI',
@@ -39,11 +41,12 @@ const rawOpenWaterDiver: CertificationContent = {
   },
 
   card: {
+    descriptionKey: 'Description OWD',
     imageData: {
       backgroundImage: toAssetUrl('/images/certifications/owd-card.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       complementaryLogo: BRAND_ASSETS_SAFE.complementaryLogos.padi,
-      textOverlayKey: 'certificationsTextOverlay',
+      textOverlayKey: 'certifications.owd.card.cardTextOverlay',
       variant: 'horizontal',
     },
   },
@@ -51,8 +54,8 @@ const rawOpenWaterDiver: CertificationContent = {
   description: {
     titleKey: 'certifications.owd.description.title',
     paragraphs: [
-      'certifications.owd.description.p1',
-      'certifications.owd.description.p2',
+      'certifications.owd.description.paragraphs.p1',
+      'certifications.owd.description.paragraphs.p2',
     ],
   },
 
@@ -139,22 +142,22 @@ const rawOpenWaterDiver: CertificationContent = {
     titleKey: 'certifications.galleryTitle',
     images: [
       {
-        backgroundImage: toAssetUrl('https://placehold.co/800x600'),
+        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
         photoCredit: 'Camilo Beltran',
         variant: 'horizontal',
       },
       {
-        backgroundImage: toAssetUrl('https://placehold.co/600x800'),
+        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
         photoCredit: 'Camilo Beltran',
         variant: 'vertical',
       },
       {
-        backgroundImage: toAssetUrl('https://placehold.co/800x600'),
+        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
         photoCredit: 'Camilo Beltran',
         variant: 'horizontal',
       },
       {
-        backgroundImage: toAssetUrl('https://placehold.co/600x800'),
+        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
         photoCredit: 'Camilo Beltran',
         variant: 'vertical',
       },

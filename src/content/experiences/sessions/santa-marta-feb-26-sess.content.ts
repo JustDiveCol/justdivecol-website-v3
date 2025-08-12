@@ -6,17 +6,17 @@ import {
   type ExperienceSessionContent,
 } from './types';
 
-const rawSantaMartaSept25Sess: ExperienceSessionContent = {
-  id: 'santa-marta-sept-25',
+const rawSantaMartaFeb26Sess: ExperienceSessionContent = {
+  id: 'santa-marta-feb-26',
   nameKey: 'experiences.santaMartaExp.sessions.sept25.name',
   experienceId: 'exp-santa-marta',
   imageUrl: toAssetUrl('/images/experiences/santa-marta/icon.webp'),
-  startDate: '2025-09-26',
-  endDate: '2025-09-29',
-  capacity: 8,
-  seatsAvailable: 5,
+  startDate: '2026-02-20',
+  endDate: '2026-02-23',
+  capacity: 10,
+  seatsAvailable: 10,
   availability: 'available',
-  creyentes: true,
+  creyentes: false,
 
   pricingOptions: [
     {
@@ -42,6 +42,6 @@ const rawSantaMartaSept25Sess: ExperienceSessionContent = {
   certificationIds: ['padi-open-water-diver'],
 };
 
-export const santaMartaSept25SessContent = ExperienceSessionContentSchema.parse(
-  rawSantaMartaSept25Sess
+export const santaMartaFeb25SessContent = ExperienceSessionContentSchema.parse(
+  rawSantaMartaFeb26Sess
 );

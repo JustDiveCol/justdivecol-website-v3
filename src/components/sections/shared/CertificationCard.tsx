@@ -4,8 +4,15 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { twMerge } from 'tailwind-merge';
 import { ImageComponent } from '../../common/ImageComponent';
-import type { CertificationCardProps } from './types';
-import type { AvailableType } from '../../../lib/db/constants';
+import type { AvailableType } from '../../../constants';
+import type { CertificationCardProjection } from '../../../content/certifications';
+import { useMotionPresets } from '../../../hooks/animations';
+
+type CertificationCardProps = {
+  certificationData: CertificationCardProjection;
+  availabilityStatus: AvailableType;
+  className?: string;
+};
 
 const AvailabilityStatus = ({ status }: { status: AvailableType }) => {
   const { t } = useTranslation(['certifications', 'common']);
@@ -41,32 +48,23 @@ export const CertificationCard = ({
   className,
 }: CertificationCardProps) => {
   const { t } = useTranslation(['certifications', 'common']);
-  const { card, nameKey, subtitleKey, slug, agency } = certificationData;
+  const { card } = useMotionPresets();
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  };
+  const { agency, slug, name, cardDes, imageData } = certificationData;
 
   return (
     <motion.div
-      variants={cardVariants}
+      variants={card}
       className={twMerge(
         'self-stretch flex flex-col flex-1 min-h-0',
         className
       )}>
       <Link
         to={`/certifications/${slug}`}
-        className='
-         group
-         flex flex-col flex-1 min-h-0
-         overflow-hidden rounded-lg
-         bg-brand-primary-dark shadow-xl
-         transition-transform duration-300 hover:-translate-y-2
-       '>
+        className='group flex flex-col flex-1 min-h-0 overflow-hidden rounded-lg bg-brand-primary-dark shadow-xl transition-transform duration-300 hover:-translate-y-2'>
         <div className='overflow-hidden aspect-video relative'>
           <ImageComponent
-            imageData={card.imageData}
+            imageData={imageData}
             translationNS='certifications'
           />
         </div>
@@ -74,10 +72,10 @@ export const CertificationCard = ({
         <div className='flex flex-col justify-between p-6 flex-1 min-h-0'>
           <div>
             <p className='font-bold text-sm text-brand-neutral/70'>{agency}</p>
-            <h3 className='heading-5 text-brand-white mt-1'>{t(nameKey)}</h3>
-            {subtitleKey && (
+            <h3 className='heading-5 text-brand-white mt-1'>{name}</h3>
+            {cardDes && (
               <p className='font-serif text-sm text-brand-neutral/80 mt-1'>
-                {t(subtitleKey)}
+                {t(cardDes)}
               </p>
             )}
           </div>

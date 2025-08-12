@@ -1,5 +1,21 @@
 {
+  "statusAvailable": "Disponible",
+  "statusComingSoon": "Proximamente",
+
   "certifications": {
-    "owd": { "seo": { "title": "" } }
+    "owd": {
+      "seo": {
+        "title": "Curso PADI Open Water Diver | Aprende a bucear con JustDiveCol",
+        "desc": "Conviértete en un buzo certificado con el curso PADI Open Water Diver de JustDiveCol. Es tu puerta de entrada al fascinante mundo submarino para explorar las profundidades con total confianza.",
+        "keywords": "curso PADI Open Water Diver, aprender a bucear, certificación de buceo, buzo certificado, JustDiveCol, fundamentos de buceo, primeras inmersiones, buceo recreativo, curso de buceo para principiantes, certificación mundial, bucear en Colombia, aventura de buceo"
+      },
+
+      "header": {
+        "title": "",
+        "subtitle": ""
+      },
+
+      "card": { "cardTextOverlay": "Certificaciones" }
+    }
   }
 }

@@ -18,6 +18,7 @@ import {
 } from '../../constants';
 
 export const CertificationCardContentSchema = z.object({
+  descriptionKey: z.string(),
   imageData: ImageComponentDataSchema,
 });
 export type CertificationCardContent = z.infer<
@@ -149,6 +150,8 @@ export type CertificationInstructor = z.infer<
 
 export const CertificationContentSchema = z.object({
   id: CertificationIdSchema,
+  slug: z.string().min(1, 'slug is required'),
+  name: z.string(),
   code: CertificationCodeSchema,
   level: CertificationLevelSchema,
   agency: AgencyIdSchema,

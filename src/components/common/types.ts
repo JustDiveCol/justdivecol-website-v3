@@ -13,14 +13,11 @@ import { UrlPathSchema } from '../../content/urlPathSchema';
 import {
   BUTTON_SIZES_SAFE,
   BUTTON_VARIANTS_SAFE,
-  I18N_NAMESPACES_SAFE,
+  I18NNamespaceSchema,
   type ButtonSize,
   type ButtonVariant,
   type I18NNamespace,
 } from '../../constants';
-
-export const TranslationNSSchema = z.enum(I18N_NAMESPACES_SAFE);
-export type TranslationNS = I18NNamespace;
 
 // ––– AccordionItemSchema –––
 export const AccordionItemPropsSchema = z.object({
@@ -102,7 +99,7 @@ export type ImageComponentData = z.infer<typeof ImageComponentDataSchema>;
 export const ImageComponentPropsSchema = z.object({
   className: z.string().optional(),
   imageData: ImageComponentDataSchema,
-  translationNS: TranslationNSSchema.optional(),
+  translationNS: I18NNamespaceSchema.optional(),
 });
 export type ImageComponentProps = z.infer<typeof ImageComponentPropsSchema>;
 
@@ -143,7 +140,7 @@ export const SEOPropsSchema = z.object({
   keywordsKey: z.string(),
   imageUrl: AssetURLSchema,
   urlPath: UrlPathSchema.optional(),
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
 });
 
 export type SEOProps = Omit<z.infer<typeof SEOPropsSchema>, 'translationNS'> & {

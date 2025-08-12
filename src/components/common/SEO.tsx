@@ -16,7 +16,8 @@ export const SEO = ({
   urlPath,
   translationNS,
 }: SEOProps) => {
-  const { t } = useTranslation([translationNS, 'common']);
+  const { t, ready } = useTranslation([translationNS, 'common']);
+  if (!ready) return null;
 
   const title = t(titleKey);
   const description = t(descriptionKey);

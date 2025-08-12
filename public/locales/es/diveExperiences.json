@@ -1,0 +1,25 @@
+{
+  "diveExperiences": {
+    "seo": {
+      "title": "Cursos y Viajes de Buceo | Tu Próxima Aventura Submarina",
+      "desc": "Sumérgete con JustDiveCol en un mundo de posibilidades. Explora nuestros viajes de buceo para certificados, cursos PADI para principiantes o diseña una experiencia personalizada. Tu aventura submarina perfecta te está esperando.",
+      "keywords": "viajes de buceo, cursos de buceo, certificaciones PADI, buceo para principiantes, buceo para avanzados, viajes de buceo personalizados, experiencias de buceo, aventura submarina, destinos de buceo, JustDiveCol experiencias"
+    },
+
+    "filters": {
+      "filtersAllDestinations": "Todos los destinos",
+      "filtersAllMonths": "Todos los meses",
+      "filtersNoResults": "Sin resultados"
+    },
+
+    "upcomingTrips": {
+      "title": "Próximos viajes",
+      "subtitle": "Explora nuestro calendario de emocionantes aventuras y cursos programados. ¡Tu gran inmersión te espera!"
+    },
+
+    "certifications": {
+      "title": "Certificaciones PADI",
+      "subtitle": "Tu viaje al mundo submarino empieza aquí"
+    }
+  }
+}

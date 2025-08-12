@@ -1,45 +1,70 @@
 // src/components/sections/experiences/types.ts
-import type { I18NNamespace } from '../../../constants/i18n.schema';
-import type { ImageComponentData } from '../../common/types';
+import { z } from 'zod';
+import {
+  I18NNamespaceSchema,
+  type I18NNamespace,
+} from '../../../constants/i18n.schema';
+import { ImageComponentDataSchema } from '../../common/types';
+import { AssetURLSchema } from '../../../constants';
 
-// OK
-export type UpcomingTripsSectionData = {
-  titleKey: string;
-  subtitleKey: string;
-  backgroundImageUrl: string;
-  translationNS: I18NNamespace;
-  filtersAllDestinationsKey: string;
-  filtersAllMonthsKey: string;
-  filtersNoResultsKey: string;
-};
-
-// OK
-export type CertificationsSectionData = {
-  titleKey: string;
-  subtitleKey: string;
-  translationNS: I18NNamespace;
-};
-
-// OK
-export type BenefitsData = {
-  id: string;
-  textKey: string;
-  icon: string;
-};
-
-// OK
-export type DestinationsSectionData = {
-  titleKey: string;
-  otherTitleKey: string;
+export const UpcomingTripsSectionPropsSchema = z.object({
+  titleKey: z.string(),
+  subtitleKey: z.string(),
+  backgroundImageUrl: AssetURLSchema,
+  translationNS: I18NNamespaceSchema,
+  filtersAllDestinationsKey: z.string(),
+  filtersAllMonthsKey: z.string(),
+  filtersNoResultsKey: z.string(),
+});
+export type UpcomingTripsSectionProps = Omit<
+  z.infer<typeof UpcomingTripsSectionPropsSchema>,
+  'translationNS'
+> & {
   translationNS: I18NNamespace;
 };
 
-// OK
-export type CustomTripsSectionContent = {
-  titleKey: string;
-  textKey: string;
+export const CertificationsSectionPropsSchema = z.object({
+  titleKey: z.string(),
+  subtitleKey: z.string(),
+  translationNS: I18NNamespaceSchema,
+});
+export type CertificationsSectionProps = Omit<
+  z.infer<typeof CertificationsSectionPropsSchema>,
+  'translationNS'
+> & {
   translationNS: I18NNamespace;
-  imageData: ImageComponentData;
-  buttonTextKey: string;
-  benefits: BenefitsData[];
+};
+
+export const BenefitsDataSchema = z.object({
+  id: z.string(),
+  textKey: z.string(),
+  icon: z.string(),
+});
+export type BenefitsData = z.infer<typeof BenefitsDataSchema>;
+
+export const DestinationsSectionPropsSchema = z.object({
+  titleKey: z.string(),
+  otherTitleKey: z.string(),
+  translationNS: I18NNamespaceSchema,
+});
+export type DestinationsSectionProps = Omit<
+  z.infer<typeof DestinationsSectionPropsSchema>,
+  'translationNS'
+> & {
+  translationNS: I18NNamespace;
+};
+
+export const CustomTripsSectionPropsSchema = z.object({
+  titleKey: z.string(),
+  textKey: z.string(),
+  translationNS: I18NNamespaceSchema,
+  imageData: ImageComponentDataSchema,
+  buttonTextKey: z.string(),
+  benefits: z.array(BenefitsDataSchema),
+});
+export type CustomTripsSectionProps = Omit<
+  z.infer<typeof CustomTripsSectionPropsSchema>,
+  'translationNS'
+> & {
+  translationNS: I18NNamespace;
 };

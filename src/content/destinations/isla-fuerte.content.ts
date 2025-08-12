@@ -8,6 +8,7 @@ import { DestinationContentSchema, type DestinationContent } from './types';
 const rawIslaFuerte: DestinationContent = {
   id: 'isla-fuerte',
   slug: 'isla-fuerte',
+  name: 'Isla Fuerte',
   country: 'CO',
   coords: [-76.180841, 9.388325],
   minZoom: 10.5,

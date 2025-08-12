@@ -7,12 +7,13 @@ export const I18N_NAMESPACES_RAW = [
   'common',
   'contact',
   'experiences',
+  'diveExperiences',
   'faq',
   'home',
   'legal',
   'principles',
   'destinations',
-  'dive-sites',
+  'diveSites',
 ] as const;
 
 export const I18N_LANGUAGES_RAW = ['es', 'en'] as const;

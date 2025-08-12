@@ -3,10 +3,11 @@ import { z } from 'zod';
 import {
   ContentButtonSchema,
   ImageComponentDataSchema,
-  TranslationNSSchema,
 } from '../../common/types';
-import type { I18NNamespace } from '../../../constants/i18n.schema';
-// import { AvailableTypeSchema } from '../../../lib/db/constants';
+import {
+  I18NNamespaceSchema,
+  type I18NNamespace,
+} from '../../../constants/i18n.schema';
 
 // ––– ActiveDestinationCard –––
 export const DestinationCardSchema = z.object({
@@ -57,39 +58,16 @@ export type PrincipleDetailContent = z.infer<
 
 export const AlternatingFeaturePropsSchema = z.object({
   featureData: PrincipleDetailContentSchema,
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
 });
 export type AlternatingFeatureProps = Omit<
   z.infer<typeof AlternatingFeaturePropsSchema>,
   'translationNS'
 > & { translationNS: I18NNamespace };
 
-// ––– CertificationCard –––
-// export const CertificationCardContentSchema = z.object({
-//   card: z.object({
-//     imageData: ImageComponentDataSchema,
-//   }),
-//   nameKey: z.string().min(1),
-//   subtitleKey: z.string().optional(),
-//   slug: z.string().min(1),
-//   agency: z.string().min(1),
-// });
-// export type CertificationCardContent = z.infer<
-//   typeof CertificationCardContentSchema
-// >;
-
-// export const CertificationCardPropsSchema = z.object({
-//   certificationData: CertificationCardContentSchema,
-//   availabilityStatus: AvailableTypeSchema,
-//   className: z.string().optional(),
-// });
-// export type CertificationCardProps = z.infer<
-//   typeof CertificationCardPropsSchema
-// >;
-
 // ––– CtaSection –––
 export const CtaSectionPropsSchema = z.object({
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
   titleKey: z.string(),
   subtitleKey: z.string(),
   backgroundImageUrl: z.string(),
@@ -112,7 +90,7 @@ export type DestinationPillDestination = z.infer<
 
 export const DestinationPillPropsSchema = z.object({
   destination: DestinationPillDestinationSchema,
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
 });
 export type DestinationPillProps = Omit<
   z.infer<typeof DestinationPillPropsSchema>,
@@ -136,7 +114,7 @@ export type LegalSection = z.infer<typeof LegalSectionSchema>;
 
 export const LegalContentPropsSchema = z.object({
   sections: z.array(LegalSectionSchema).min(1),
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
 });
 export type LegalContentProps = Omit<
   z.infer<typeof LegalContentPropsSchema>,
@@ -147,7 +125,7 @@ export type LegalContentProps = Omit<
 export const PageHeaderPropsSchema = z.object({
   titleKey: z.string().min(1),
   subtitleKey: z.string().optional(),
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
   imageData: ImageComponentDataSchema,
 });
 export type PageHeaderProps = Omit<
@@ -159,7 +137,7 @@ export type PageHeaderProps = Omit<
 export const PhotoGalleryPropsSchema = z.object({
   titleKey: z.string().min(1),
   images: z.array(ImageComponentDataSchema).min(1),
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
 });
 
 export type PhotoGalleryProps = Omit<
@@ -180,7 +158,7 @@ export type TestimonialData = z.infer<typeof TestimonialDataSchema>;
 
 export const TestimonialCardPropsSchema = z.object({
   cardData: TestimonialDataSchema,
-  translationNS: TranslationNSSchema,
+  translationNS: I18NNamespaceSchema,
 });
 export type TestimonialCardProps = Omit<
   z.infer<typeof TestimonialCardPropsSchema>,

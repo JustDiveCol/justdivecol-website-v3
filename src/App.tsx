@@ -10,7 +10,7 @@ import { PolicyPage } from './pages/PolicyPage';
 import { TermsPage } from './pages/TermsPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { FaqPage } from './pages/FaqPage';
-// import { ExperiencesPage } from './pages/ExperiencesPage';
+import { ExperiencesPage } from './pages/ExperiencesPage';
 // import { DiveSitesPage } from './pages/DiveSitesPage';
 // import { CertificationPage } from './pages/CertificationPage';
 
@@ -59,10 +59,10 @@ function App() {
           element={<FaqPage />}
         />
 
-        {/* <Route
+        <Route
           path='/dive-experiences'
           element={<ExperiencesPage />}
-        /> */}
+        />
 
         {/* <Route
           path='/dive-sites'

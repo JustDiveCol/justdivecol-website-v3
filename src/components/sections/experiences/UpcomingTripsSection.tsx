@@ -4,13 +4,13 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { TripRow } from './TripRow';
 import { PaginationControls } from '../../common/PaginationControls';
-import { ChevronDownIcon } from '../../ui';
-import { BRAND_ASSETS } from '../../../constants/assets';
-import type { UpcomingTripsSectionData } from './types';
-import { experiences } from '../../../lib/db/entities/experiences';
-import { destinations } from '../../../lib/db/entities/destinations';
-import { sessions } from '../../../lib/db/entities/sessions';
+import type { UpcomingTripsSectionProps } from './types';
 import { useMotionPresets } from '../../../hooks/animations';
+
+import { listExperiences } from '../../../content/experiences';
+import { listDestinations } from '../../../content/destinations';
+import { listSessions } from '../../../content/experiences';
+import { ChevronDownIcon } from '../../ui';
 
 const ITEMS_PER_PAGE = 10;
 
@@ -22,21 +22,24 @@ export const UpcomingTripsSection = ({
   filtersAllDestinationsKey,
   filtersAllMonthsKey,
   filtersNoResultsKey,
-}: UpcomingTripsSectionData) => {
+}: UpcomingTripsSectionProps) => {
   const { t, i18n } = useTranslation([translationNS, 'common']);
+
   const { container, fadeIn } = useMotionPresets();
 
   const [selectedMonth, setSelectedMonth] = useState('all');
   const [selectedDestination, setSelectedDestination] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Destinos disponibles según las experiencias conectadas
+  const experiences = useMemo(() => listExperiences(), []);
+  const destinations = useMemo(() => listDestinations(), []);
+  const sessions = useMemo(() => listSessions(), []);
+
   const destinationOptions = useMemo(() => {
     const destinationIds = new Set(experiences.map((exp) => exp.destinationId));
     return destinations.filter((dest) => destinationIds.has(dest.id));
-  }, []);
+  }, [experiences, destinations]);
 
-  // Meses disponibles según fechas de sesiones
   const monthOptions = useMemo(() => {
     const months = new Set(
       sessions.map((session) => {
@@ -51,12 +54,18 @@ export const UpcomingTripsSection = ({
     return Array.from(months).sort(
       (a, b) => new Date(a).getTime() - new Date(b).getTime()
     );
-  }, [i18n.language]);
+  }, [i18n.language, sessions]);
 
-  // Filtro por destino (via experience.destinationId) y por mes
+  const toUTC = (iso: string) => {
+    const [y, m, d] = iso.split('-').map(Number);
+    return Date.UTC(y, m - 1, d);
+  };
+
   const filteredSessions = useMemo(() => {
     setCurrentPage(1);
-    return sessions.filter((session) => {
+
+    // 1) Filtra
+    const filtered = sessions.filter((session) => {
       const experience = experiences.find(
         (exp) => exp.id === session.experienceId
       );
@@ -77,7 +86,17 @@ export const UpcomingTripsSection = ({
 
       return matchesDestination && matchesMonth;
     });
-  }, [selectedDestination, selectedMonth, i18n.language]);
+
+    filtered.sort((a, b) => toUTC(a.startDate) - toUTC(b.startDate));
+
+    return filtered;
+  }, [
+    selectedDestination,
+    selectedMonth,
+    i18n.language,
+    sessions,
+    experiences,
+  ]);
 
   const totalPages = Math.ceil(filteredSessions.length / ITEMS_PER_PAGE);
 
@@ -151,7 +170,7 @@ export const UpcomingTripsSection = ({
                 <option
                   key={dest.id}
                   value={dest.id}>
-                  {t(`destinations.${dest.nameKey}`, { ns: 'destinations' })}
+                  {t(dest.name)}
                 </option>
               ))}
             </motion.select>
@@ -177,7 +196,6 @@ export const UpcomingTripsSection = ({
         <div className='mx-auto flex max-w-4xl flex-col gap-4'>
           {paginatedSessions.length > 0 ? (
             paginatedSessions.map((session) => {
-              // Aún validamos que exista la experiencia (por el filtro de destino)
               const experience = experiences.find(
                 (exp) => exp.id === session.experienceId
               );
@@ -186,8 +204,8 @@ export const UpcomingTripsSection = ({
               return (
                 <TripRow
                   key={session.id}
-                  session={session as any} // si quieres, tipa sessions[] como el TripRowSession
-                  translationNS='experiences'
+                  session={session}
+                  translationNS={'experiences'}
                 />
               );
             })
@@ -209,17 +227,7 @@ export const UpcomingTripsSection = ({
         </div>
       </div>
 
-      {/* Logo */}
-      <div className='pointer-events-none absolute bottom-6 right-4 z-10 h-auto w-24 select-none opacity-70 md:w-24'>
-        <img
-          src={BRAND_ASSETS.mainLogo.url}
-          alt={t(BRAND_ASSETS.mainLogo.altKey)}
-          className='h-auto w-full'
-          loading='lazy'
-        />
-      </div>
-
-      {/* Chevron (sólo desktop) */}
+      {/* Logo, Chevron */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -55,6 +55,7 @@ export type DestinationGallery = z.infer<typeof DestinationGallerySchema>;
 export const DestinationContentSchema = z.object({
   id: DestinationIdSchema,
   slug: z.string(),
+  name: z.string(),
   country: CountryIdSchema,
   coords: z
     .tuple([z.number(), z.number()])

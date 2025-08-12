@@ -8,6 +8,7 @@ import { DestinationContentSchema, type DestinationContent } from './types';
 const rawSantaMarta: DestinationContent = {
   id: 'santa-marta',
   slug: 'santa-marta',
+  name: 'Santa Marta',
   country: 'CO',
   coords: [-74.194777, 11.231811],
   minZoom: 10.5,

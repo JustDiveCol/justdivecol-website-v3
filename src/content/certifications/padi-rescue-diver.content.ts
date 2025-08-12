@@ -6,6 +6,8 @@ import { CertificationContentSchema, type CertificationContent } from './types';
 
 const rawRescueDiver: CertificationContent = {
   id: 'padi-rescue-diver',
+  slug: 'padi-rescue-diver',
+  name: 'Rescue Diver',
   code: 'RD',
   level: 'rescue',
   agency: 'PADI',
@@ -39,6 +41,7 @@ const rawRescueDiver: CertificationContent = {
   },
 
   card: {
+    descriptionKey: 'Description RD',
     imageData: {
       backgroundImage: toAssetUrl('/images/certifications/rd-card.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
@@ -139,22 +142,22 @@ const rawRescueDiver: CertificationContent = {
     titleKey: 'certifications.galleryTitle',
     images: [
       {
-        backgroundImage: toAssetUrl('https://placehold.co/800x600'),
+        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
         photoCredit: 'Camilo Beltran',
         variant: 'horizontal',
       },
       {
-        backgroundImage: toAssetUrl('https://placehold.co/600x800'),
+        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
         photoCredit: 'Camilo Beltran',
         variant: 'vertical',
       },
       {
-        backgroundImage: toAssetUrl('https://placehold.co/800x600'),
+        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
         photoCredit: 'Camilo Beltran',
         variant: 'horizontal',
       },
       {
-        backgroundImage: toAssetUrl('https://placehold.co/600x800'),
+        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
         photoCredit: 'Camilo Beltran',
         variant: 'vertical',
       },

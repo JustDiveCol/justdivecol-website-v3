@@ -1,4 +1,4 @@
-// src/content/dive-sites/types.ts
+// src/content/destinations/dive-sites/types.ts
 import { z } from 'zod';
 import { ImageComponentDataSchema } from '../../../components/common/types';
 import {

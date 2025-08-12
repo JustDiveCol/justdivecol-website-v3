@@ -19,7 +19,7 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
     tagsIds: ['reef-fish'],
     photos: [
       {
-        backgroundImage: toAssetUrl('https://placehold.co/800x600'),
+        backgroundImage: toAssetUrl('/images/placeholders/800x600.webp'),
         photoCredit: 'Camilo Beltran',
         variant: 'horizontal',
       },

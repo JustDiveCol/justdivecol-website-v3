@@ -33,7 +33,10 @@ const rawSantaMartaExp: ExperienceContent = {
 
   description: {
     titleKey: 'experiences.santaMartaExp.description.title',
-    paragraphs: ['expSmFunDiveDescP1', 'expSmFunDiveDescP2'],
+    paragraphs: [
+      'experiences.santaMartaExp.description.paragraphs.p1',
+      'experiences.santaMartaExp.description.paragraphs.p2',
+    ],
   },
 
   itinerary: {

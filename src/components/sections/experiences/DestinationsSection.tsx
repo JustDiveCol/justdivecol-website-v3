@@ -1,50 +1,102 @@
-// src/components/sections/experiences/DestinationsSection.tsx
-import React from 'react';
+import { useMemo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import useEmblaCarousel from 'embla-carousel-react';
-import {
-  getActiveDestinations,
-  getOtherDestinations,
-} from '../../../data/dataService';
-import { allExperiences } from '../../../data/experiences';
+
+import { listDestinations } from '../../../content/destinations';
+import { listExperiences } from '../../../content/experiences';
 import { ActiveDestinationCard } from '../shared/ActiveDestinationCard';
 import { DestinationPill } from '../shared/DestinationPill';
 import { ChevronLeftIcon, ChevronRightIcon } from '../../ui';
 import type { DestinationsSectionProps } from './types';
+import type { DestinationContent } from '../../../content/destinations/types';
+
+// ✅ NUEVO: importa sesiones y tipo
+import { listSessions } from '../../../content/experiences';
+import type { ExperienceSessionContent } from '../../../content/experiences/sessions/types';
 
 export const DestinationsSection = ({
   titleKey,
   otherTitleKey,
   translationNS,
 }: DestinationsSectionProps) => {
-  const { t } = useTranslation([translationNS, 'destinations']);
+  const { t } = useTranslation([translationNS, 'destinations', 'experiences']);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'center',
     loop: true,
   });
 
-  const scrollPrev = React.useCallback(
-    () => emblaApi && emblaApi.scrollPrev(),
-    [emblaApi]
-  );
-  const scrollNext = React.useCallback(
-    () => emblaApi && emblaApi.scrollNext(),
-    [emblaApi]
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  // Contenido tipado
+  const destinations = useMemo(() => listDestinations(), []);
+  const experiences = useMemo(() => listExperiences(), []);
+  const sessions = useMemo(() => listSessions(), []); // ✅ NUEVO
+
+  // Mapa experiencia -> destino
+  const expIdToDestId = useMemo<Record<string, string>>(
+    () =>
+      experiences.reduce((acc, e) => {
+        acc[e.id] = e.destinationId;
+        return acc;
+      }, {} as Record<string, string>),
+    [experiences]
   );
 
-  const activeDestinations = getActiveDestinations();
-  const otherDestinations = getOtherDestinations();
+  // ✅ NUEVO: sesiones futuras por destino (ordenadas por fecha)
+  const sessionsByDestination = useMemo<
+    Record<string, ExperienceSessionContent[]>
+  >(() => {
+    const todayUTC = new Date();
+    todayUTC.setUTCHours(0, 0, 0, 0);
+    const todayMs = todayUTC.getTime();
 
-  // ===== LÓGICA INTELIGENTE AQUÍ =====
-  // Definimos que el carrusel solo se usa si hay más de 3 elementos
+    const byDest: Record<string, ExperienceSessionContent[]> = {};
+
+    for (const s of sessions) {
+      const destId = expIdToDestId[s.experienceId];
+      if (!destId) continue;
+
+      const startMs = new Date(`${s.startDate}T00:00:00Z`).getTime();
+      if (startMs < todayMs) continue; // solo futuras/actuales
+
+      (byDest[destId] ||= []).push(s);
+    }
+
+    // orden ascendente por fecha
+    Object.values(byDest).forEach((arr) =>
+      arr.sort(
+        (a, b) =>
+          new Date(`${a.startDate}T00:00:00Z`).getTime() -
+          new Date(`${b.startDate}T00:00:00Z`).getTime()
+      )
+    );
+
+    return byDest;
+  }, [sessions, expIdToDestId]);
+
+  // Destinos activos: con al menos una sesión futura
+  const activeDestinations = useMemo<DestinationContent[]>(() => {
+    return destinations.filter(
+      (d) => (sessionsByDestination[d.id]?.length ?? 0) > 0
+    );
+  }, [destinations, sessionsByDestination]);
+
+  // Resto de destinos
+  const otherDestinations = useMemo<DestinationContent[]>(() => {
+    const activeIds = new Set(activeDestinations.map((d) => d.id));
+    return destinations.filter((d) => !activeIds.has(d.id));
+  }, [destinations, activeDestinations]);
+
+  // Carrusel solo si hay más de 3
   const shouldUseCarousel = activeDestinations.length > 3;
 
   return (
     <section
       className='bg-brand-primary-medium py-20 px-4'
       id='destinations'>
-      {/* --- SECCIÓN DE DESTINOS ACTIVOS --- */}
+      {/* --- ACTIVOS --- */}
       {activeDestinations.length > 0 && (
         <div className='container mx-auto mb-20'>
           <div className='max-w-3xl mx-auto text-center mb-12'>
@@ -52,29 +104,27 @@ export const DestinationsSection = ({
           </div>
 
           {shouldUseCarousel ? (
-            // --- VISTA DE CARRUSEL (si hay MÁS de 3 destinos) ---
             <div className='relative'>
               <div
                 className='overflow-hidden'
                 ref={emblaRef}>
                 <div className='flex -ml-4'>
                   {activeDestinations.map((dest) => {
-                    const activeExps = allExperiences.filter(
-                      (exp) => exp.destinationId === dest.id
-                    );
+                    const activeSess = sessionsByDestination[dest.id] || []; // ✅ CAMBIO
                     return (
                       <div
                         key={dest.id}
                         className='relative pl-4 flex-[0_0_90%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%]'>
                         <ActiveDestinationCard
                           destination={dest}
-                          activeExperiences={activeExps}
+                          activeSessions={activeSess} // ✅ CAMBIO
                         />
                       </div>
                     );
                   })}
                 </div>
               </div>
+
               <button
                 onClick={scrollPrev}
                 className='absolute top-1/2 left-[-1rem] md:left-[-2rem] -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20 z-10'
@@ -89,17 +139,14 @@ export const DestinationsSection = ({
               </button>
             </div>
           ) : (
-            // --- VISTA ESTÁTICA (si hay 3 o menos destinos) ---
             <div className='flex flex-wrap justify-center gap-8'>
               {activeDestinations.map((dest) => {
-                const activeExps = allExperiences.filter(
-                  (exp) => exp.destinationId === dest.id
-                );
+                const activeSess = sessionsByDestination[dest.id] || []; // ✅ CAMBIO
                 return (
                   <ActiveDestinationCard
                     key={dest.id}
                     destination={dest}
-                    activeExperiences={activeExps}
+                    activeSessions={activeSess} // ✅ CAMBIO
                     className='w-full max-w-sm'
                   />
                 );
@@ -109,19 +156,19 @@ export const DestinationsSection = ({
         </div>
       )}
 
-      {/* --- NUBE DE OTROS DESTINOS --- */}
+      {/* --- OTROS --- */}
       {otherDestinations.length > 0 && (
         <div className='container mx-auto'>
           <div className='max-w-3xl mx-auto text-center mb-12'>
             <h2 className='heading-3 text-white'>{t(otherTitleKey)}</h2>
           </div>
-          {/* 2. Reemplazamos la rejilla de tarjetas por una nube de píldoras centrada */}
+
           <div className='flex flex-wrap justify-center items-center gap-4 max-w-4xl mx-auto'>
             {otherDestinations.map((dest) => (
               <DestinationPill
                 key={dest.id}
                 destination={dest}
-                translationNS={'destinations'}
+                translationNS='destinations'
               />
             ))}
           </div>

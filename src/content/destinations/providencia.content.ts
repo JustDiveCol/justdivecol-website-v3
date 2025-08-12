@@ -8,6 +8,7 @@ import { DestinationContentSchema, type DestinationContent } from './types';
 const rawProvidencia: DestinationContent = {
   id: 'providencia',
   slug: 'providencia',
+  name: 'Providencia',
   country: 'CO',
   coords: [-81.37393, 13.352018],
   minZoom: 10,

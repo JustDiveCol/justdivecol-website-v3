@@ -6,6 +6,8 @@ import { CertificationContentSchema, type CertificationContent } from './types';
 
 const rawAdvancedOpenWaterDiver: CertificationContent = {
   id: 'padi-advanced-open-water-diver',
+  slug: 'padi-advanced-open-water-diver',
+  name: 'Advanced Open Water Diver',
   code: 'AOWD',
   level: 'advanced',
   agency: 'PADI',
@@ -39,6 +41,7 @@ const rawAdvancedOpenWaterDiver: CertificationContent = {
   },
 
   card: {
+    descriptionKey: 'Description AOWD',
     imageData: {
       backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
@@ -139,22 +142,22 @@ const rawAdvancedOpenWaterDiver: CertificationContent = {
     titleKey: 'certifications.galleryTitle',
     images: [
       {
-        backgroundImage: toAssetUrl('https://placehold.co/800x600'),
+        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
         photoCredit: 'Camilo Beltran',
         variant: 'horizontal',
       },
       {
-        backgroundImage: toAssetUrl('https://placehold.co/600x800'),
+        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
         photoCredit: 'Camilo Beltran',
         variant: 'vertical',
       },
       {
-        backgroundImage: toAssetUrl('https://placehold.co/800x600'),
+        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
         photoCredit: 'Camilo Beltran',
         variant: 'horizontal',
       },
       {
-        backgroundImage: toAssetUrl('https://placehold.co/600x800'),
+        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
         photoCredit: 'Camilo Beltran',
         variant: 'vertical',
       },

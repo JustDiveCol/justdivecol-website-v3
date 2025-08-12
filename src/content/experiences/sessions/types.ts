@@ -15,6 +15,7 @@ import {
   ExperienceWhatIsIncludedSchema,
 } from '../types';
 import {
+  AssetURLSchema,
   AvailableTypeSchema,
   CertificationIdSchema,
   CurrencyIdSchema,
@@ -69,11 +70,14 @@ export const ExperienceSessionContentSchema = z.object({
   id: z.string(),
   nameKey: z.string(),
   experienceId: ExperienceIdSchema,
+  imageUrl: AssetURLSchema,
   startDate: isoDate,
   endDate: isoDate,
   capacity: z.number().int().positive(),
   seatsAvailable: z.number().int().min(0),
-  availability: AvailableTypeSchema,
+  availability: AvailableTypeSchema.optional().describe(
+    'DERIVED at runtime; omit in content'
+  ),
   creyentes: z.boolean().default(false),
   pricingOptions: z.array(PricingOptionSchema),
   certificationIds: z.array(CertificationIdSchema).optional(),

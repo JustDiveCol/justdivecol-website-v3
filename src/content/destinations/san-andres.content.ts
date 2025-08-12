@@ -8,6 +8,7 @@ import { DestinationContentSchema, type DestinationContent } from './types';
 const rawSanAndres: DestinationContent = {
   id: 'san-andres',
   slug: 'san-andres',
+  name: 'San Andres',
   country: 'CO',
   coords: [-81.715862, 12.538296],
   minZoom: 10,

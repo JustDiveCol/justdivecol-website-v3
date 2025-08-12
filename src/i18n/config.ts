@@ -4,7 +4,10 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
 
-import { I18N_LANGUAGES, I18N_NAMESPACES } from '../constants/i18n.schema';
+import {
+  I18N_LANGUAGES_SAFE,
+  I18N_NAMESPACES_SAFE,
+} from '../constants/i18n.schema';
 
 i18n
   .use(HttpApi)
@@ -14,8 +17,8 @@ i18n
     // debug: process.env.NODE_ENV === 'development',
 
     fallbackLng: 'es',
-    supportedLngs: I18N_LANGUAGES as readonly string[],
-    ns: I18N_NAMESPACES as readonly string[],
+    supportedLngs: I18N_LANGUAGES_SAFE as readonly string[],
+    ns: I18N_NAMESPACES_SAFE as readonly string[],
     defaultNS: 'common',
 
     // Normaliza es-CO / en-US -> es / en

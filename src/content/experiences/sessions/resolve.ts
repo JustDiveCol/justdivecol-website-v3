@@ -2,6 +2,7 @@
 import { z } from 'zod';
 import { ExperienceContentSchema, type ExperienceContent } from '../types';
 import type { ExperienceSessionContent } from './types';
+import { AvailableTypeSchema } from '../../../constants';
 
 export const ResolvedExperienceSessionSchema = ExperienceContentSchema.extend({
   sessionId: z.string(),
@@ -10,7 +11,9 @@ export const ResolvedExperienceSessionSchema = ExperienceContentSchema.extend({
   endDate: z.string(),
   capacity: z.number().int().positive(),
   seatsAvailable: z.number().int().min(0),
-  availability: z.any(), // o AvailableTypeSchema si lo exportas aquí
+  availability: AvailableTypeSchema.optional().describe(
+    'DERIVED at runtime; omit in content'
+  ),
   creyentes: z.boolean(),
   pricingOptions: z.array(
     z.object({
