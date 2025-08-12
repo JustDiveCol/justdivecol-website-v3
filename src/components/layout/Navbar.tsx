@@ -6,13 +6,13 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 
 import { NAV_LINKS } from '../../constants/navigation.schema';
 import { LanguageSwitcherComponent } from '../ui/LanguageSwitcher';
-import logo from '../../assets/images/logo.png';
 import { MenuIcon, CloseIcon, ChevronDownIcon } from '../ui';
 import type { NavbarProps } from './types';
 import type {
   StaticRouteName,
   StaticRoutePath,
 } from '../../constants/routes.schema';
+import { BRAND_ASSETS_SAFE } from '../../constants';
 
 const NAV_H_MOBILE = '4rem'; // h-16
 const NAV_H_DESKTOP = '5rem'; // h-20
@@ -197,7 +197,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           className='flex-shrink-0 transition-transform duration-300 hover:scale-105'
           aria-label={t('common:home', 'Inicio')}>
           <img
-            src={logo}
+            src={BRAND_ASSETS_SAFE.mainLogo.url}
             alt='Logo'
             className='h-12 w-auto'
             loading='lazy'

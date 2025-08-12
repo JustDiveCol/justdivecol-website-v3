@@ -28,8 +28,11 @@ export const FOOTER_LINKS_RAW = [
   { path: ROUTES['dive-sites'], nameKey: 'dive-sites' },
 ] as const satisfies readonly NavLinkRaw[];
 
-export const NAV_LINKS = NavLinksSchema.readonly().parse(NAV_LINKS_RAW);
-export const FOOTER_LINKS = NavLinksSchema.readonly().parse(FOOTER_LINKS_RAW);
+export const NAV_LINKS: readonly NavLinkRaw[] =
+  NavLinksSchema.readonly().parse(NAV_LINKS_RAW);
+
+export const FOOTER_LINKS: readonly NavLinkRaw[] =
+  NavLinksSchema.readonly().parse(FOOTER_LINKS_RAW);
 
 export type NavLinkItem = (typeof NAV_LINKS)[number];
 export type FooterLink = (typeof FOOTER_LINKS)[number];

@@ -6,7 +6,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 
 import { footerContent } from '../../content/footer/footer.content';
 import { contactContent } from '../../content/pages/contact/contact.content';
-import logo from '../../assets/images/logo.png';
+import { BRAND_ASSETS_SAFE } from '../../constants';
 
 import {
   WhatsappIcon,
@@ -99,7 +99,7 @@ const Footer: React.FC<FooterProps> = () => {
             to='/'
             aria-label={t('common:home', 'Inicio')}>
             <img
-              src={logo}
+              src={BRAND_ASSETS_SAFE.mainLogo.url}
               alt='Logo'
               className='h-10 w-auto'
               loading='lazy'

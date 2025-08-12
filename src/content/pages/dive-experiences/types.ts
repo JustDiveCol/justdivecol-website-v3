@@ -5,7 +5,7 @@ import {
   CustomTripsSectionPropsSchema,
   DestinationsSectionPropsSchema,
   UpcomingTripsSectionPropsSchema,
-} from '../../../components/sections/experiences/types';
+} from '../../../components/sections/diveExperiences/types';
 
 export const DiveExperiencesPageContentSchema = z.object({
   seo: SEOPropsSchema,

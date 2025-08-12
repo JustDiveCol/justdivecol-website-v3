@@ -1,16 +1,6 @@
 // src/constants/routes.schema.ts
 import { z } from 'zod';
 
-const unionLiterals = <const T extends readonly string[]>(vals: T) => {
-  if (!vals.length) throw new Error('unionLiterals: empty array');
-  return z.union(
-    vals.map((v) => z.literal(v)) as unknown as [
-      z.ZodLiteral<string>,
-      ...z.ZodLiteral<string>[]
-    ]
-  );
-};
-
 export const ROUTES = {
   // Páginas principales (ESTÁTICAS)
   home: '/',
@@ -91,8 +81,21 @@ const staticPaths = staticEntries.map(
   ([, v]) => v
 ) as readonly StaticRoutePath[];
 
-export const RouteNameStaticSchema = unionLiterals(staticNames);
-export const RoutePathStaticSchema = unionLiterals(staticPaths);
+export const RouteNameStaticSchema = z
+  .string()
+  .refine(
+    (v): v is StaticRouteName =>
+      (staticNames as readonly string[]).includes(v as string),
+    { message: 'Invalid static route name' }
+  ) as z.ZodType<StaticRouteName>;
+
+export const RoutePathStaticSchema = z
+  .string()
+  .refine(
+    (v): v is StaticRoutePath =>
+      (staticPaths as readonly string[]).includes(v as string),
+    { message: 'Invalid static route path' }
+  ) as z.ZodType<StaticRoutePath>;
 
 export const NavLinkSchema = z.object({
   path: RoutePathStaticSchema,
