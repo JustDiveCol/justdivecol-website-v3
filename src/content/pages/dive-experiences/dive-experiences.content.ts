@@ -19,7 +19,7 @@ const rawDiveExperiences: DiveExperiencesPageContent = {
     titleKey: 'diveExperiences.upcomingTrips.title',
     subtitleKey: 'diveExperiences.upcomingTrips.subtitle',
     backgroundImageUrl: toAssetUrl(
-      '/images/experiences/santa-marta/upcoming-trips-background.webp'
+      '/images/experiences/upcoming-trips-background.webp'
     ),
     translationNS: 'diveExperiences',
     filtersAllDestinationsKey: 'diveExperiences.filters.filtersAllDestinations',
@@ -44,33 +44,27 @@ const rawDiveExperiences: DiveExperiencesPageContent = {
     textKey: 'diveExperiences.customTrips.text',
     translationNS: 'diveExperiences',
     imageData: {
-      backgroundImage: toAssetUrl(
-        '/images/experiences/santa-marta/header.webp'
-      ),
-      photoCredit: 'PADI®',
-      variant: 'header',
+      backgroundImage: toAssetUrl('/images/experiences/custom-trip.webp'),
+      photoCredit: 'Camilo Beltran @JustDiveCol',
+      variant: 'horizontal',
     },
     buttonTextKey: 'diveExperiences.customTrips.buttonText',
     benefits: [
       {
-        id: 'diveExperiences.customTrips.buttonText1',
-        textKey: 'diveExperiences.customTrips.text',
-        icon: 'diveExperiences.customTrips.icon',
+        id: 'benefit-1',
+        textKey: 'diveExperiences.customTrips.benefits.text1',
       },
       {
-        id: 'diveExperiences.customTrips.buttonText2',
-        textKey: 'diveExperiences.customTrips.text',
-        icon: 'diveExperiences.customTrips.icon',
+        id: 'benefit-2',
+        textKey: 'diveExperiences.customTrips.benefits.text2',
       },
       {
-        id: 'diveExperiences.customTrips.buttonText3',
-        textKey: 'diveExperiences.customTrips.text',
-        icon: 'diveExperiences.customTrips.icon',
+        id: 'benefit-3',
+        textKey: 'diveExperiences.customTrips.benefits.text3',
       },
       {
-        id: 'diveExperiences.customTrips.buttonText4',
-        textKey: 'diveExperiences.customTrips.text',
-        icon: 'diveExperiences.customTrips.icon',
+        id: 'benefit-4',
+        textKey: 'diveExperiences.customTrips.benefits.text4',
       },
     ],
   },

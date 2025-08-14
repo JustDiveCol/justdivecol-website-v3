@@ -38,7 +38,6 @@ export type CertificationsSectionProps = Omit<
 export const BenefitsDataSchema = z.object({
   id: z.string(),
   textKey: z.string(),
-  icon: z.string(),
 });
 export type BenefitsData = z.infer<typeof BenefitsDataSchema>;
 

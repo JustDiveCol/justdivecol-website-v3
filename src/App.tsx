@@ -11,7 +11,8 @@ import { TermsPage } from './pages/TermsPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { FaqPage } from './pages/FaqPage';
 import { ExperiencesPage } from './pages/ExperiencesPage';
-// import { DiveSitesPage } from './pages/DiveSitesPage';
+import { DiveSitesSection } from './pages/DiveSitesSection';
+
 // import { CertificationPage } from './pages/CertificationPage';
 
 function App() {
@@ -64,10 +65,10 @@ function App() {
           element={<ExperiencesPage />}
         />
 
-        {/* <Route
+        <Route
           path='/dive-sites'
-          element={<DiveSitesPage />}
-        /> */}
+          element={<DiveSitesSection />}
+        />
 
         {/* <Route
           path='/certifications/:slug'

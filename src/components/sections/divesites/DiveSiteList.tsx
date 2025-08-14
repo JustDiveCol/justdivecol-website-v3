@@ -11,25 +11,35 @@ export const DiveSiteList = ({
 }: DiveSiteListProps) => {
   const { t } = useTranslation([translationNS, 'common']);
 
+  const handleSelect = onSelect ?? (() => {});
+  const handleHover = onHover ?? (() => {});
+
   if (sites.length === 0) {
     return (
       <div className='p-8 text-center'>
-        <p className='text-brand-neutral/70 font-serif'>{t('noSitesFound')}</p>
+        <p className='text-brand-neutral/70 font-serif'>
+          {t('noSitesFound', { ns: translationNS })}
+        </p>
       </div>
     );
   }
 
   return (
-    <div>
+    <ul
+      role='list'
+      className='space-y-4'>
       {sites.map((site) => (
-        <DiveSiteCard
+        <li
           key={site.id}
-          site={site}
-          onSelect={onSelect}
-          onHover={onHover}
-          translationNS={translationNS}
-        />
+          role='listitem'>
+          <DiveSiteCard
+            site={site}
+            onSelect={handleSelect}
+            onHover={handleHover}
+            translationNS={translationNS}
+          />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };

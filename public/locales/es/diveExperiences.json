@@ -20,6 +20,24 @@
     "certifications": {
       "title": "Certificaciones PADI",
       "subtitle": "Tu viaje al mundo submarino empieza aquí"
+    },
+
+    "destinations": {
+      "title": "Destinos disponibles",
+      "otherTitle": "Otros destinos"
+    },
+
+    "customTrips": {
+      "title": "Diseña tu viaje de buceo a medida",
+      "text": "Si nuestros itinerarios y sesiones no se ajustan a lo que buscas, permítenos diseñar un viaje de buceo único, hecho exclusivamente para ti. Cuéntanos tus sueños y nosotros los convertimos en una inmersión inolvidable, con los destinos, fechas y certificaciones que prefieras.",
+      "buttonText": "Diseñar mi viaje a medida",
+
+      "benefits": {
+        "text1": "Fechas flexibles que se adaptan a tu calendario.",
+        "text2": "Destinos y puntos de inmersión seleccionados por ti.",
+        "text3": "Experiencias para tu nivel: desde principiante hasta avanzado.",
+        "text4": "Una aventura única, diseñada solo para ti y tus compañeros."
+      }
     }
   }
 }

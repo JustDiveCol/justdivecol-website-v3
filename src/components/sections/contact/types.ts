@@ -21,7 +21,6 @@ export const ContactSectionPropsSchema = z.object({
   translationNS: I18NNamespaceSchema,
   hubspotFormTitleKey: z.string().min(1),
 });
-
 export type ContactSectionProps = Omit<
   z.infer<typeof ContactSectionPropsSchema>,
   'translationNS'
@@ -33,7 +32,6 @@ export type ContactSectionProps = Omit<
 export const FaqSectionPropsSchema = z.object({
   translationNS: I18NNamespaceSchema,
 });
-
 export type FaqSectionProps = Omit<
   z.infer<typeof FaqSectionPropsSchema>,
   'translationNS'

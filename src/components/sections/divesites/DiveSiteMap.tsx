@@ -1,18 +1,19 @@
 // src/components/sections/divesites/DiveSiteMap.tsx
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import maplibregl, { Marker, LngLatBounds, Popup } from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css';
 import { createRoot } from 'react-dom/client';
 import type { Root } from 'react-dom/client';
 import { useTranslation } from 'react-i18next';
 
 import { MotionMarker } from './MotionMarker';
 import { FlagIcon, ReefIcon, WreckIcon, WallIcon } from '../../ui';
-import type { DiveSiteMapProps } from './types';
-import type { DiveTypeId } from '../../../constants/dive-sites';
+import type { DiveSiteMapProps, IconComponentType } from './types';
+import type { DiveTypeId } from '../../../constants';
 
 const MAPTILER_API_KEY = '97B6xeRDLNUfHdzle616';
 
-const getIconComponent = (typeIds: DiveTypeId[] = []) => {
+const getIconComponent = (typeIds: DiveTypeId[] = []): IconComponentType => {
   const primaryType = typeIds[0];
   switch (primaryType) {
     case 'reef':
@@ -36,65 +37,121 @@ export const DiveSiteMap = ({
 }: DiveSiteMapProps) => {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const mapInstance = useRef<maplibregl.Map | null>(null);
-  const markersRef = useRef<{
-    [key: string]: {
-      marker: Marker;
-      root: Root;
-      IconComponent: React.ElementType;
-    };
-  }>({});
+
+  // Guarda marker + React root + icono + listeners
+  const markersRef = useRef<
+    Record<
+      string,
+      {
+        marker: Marker;
+        root: Root;
+        IconComponent: IconComponentType; // ← aquí
+        el: HTMLDivElement;
+        enter: () => void;
+        leave: () => void;
+        click: () => void;
+      }
+    >
+  >({});
+
   const { t } = useTranslation([translationNS, 'common']);
-  const hoverPopup = useRef(
-    new Popup({
-      closeButton: false,
-      closeOnClick: false,
-      anchor: 'bottom',
-      className: 'map-popup',
-    })
-  );
+  const hoverPopup = useRef<Popup | null>(null);
 
   useEffect(() => {
     if (mapInstance.current || !mapContainer.current) return;
-    mapInstance.current = new maplibregl.Map({
+
+    const map = new maplibregl.Map({
       container: mapContainer.current,
       style: `https://api.maptiler.com/maps/ocean/style.json?key=${MAPTILER_API_KEY}`,
       center: [-74.2973, 4.5709],
       zoom: 4.5,
     });
-    mapInstance.current.addControl(
-      new maplibregl.NavigationControl(),
-      'top-right'
-    );
+    map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+    hoverPopup.current = new Popup({
+      closeButton: false,
+      closeOnClick: false,
+      anchor: 'bottom',
+      className: 'map-popup',
+    });
+
+    mapInstance.current = map;
+
+    return () => {
+      Object.values(markersRef.current).forEach(
+        ({ root, marker, el, enter, leave, click }) => {
+          el.removeEventListener('click', click);
+          el.removeEventListener('mouseenter', enter);
+          el.removeEventListener('mouseleave', leave);
+          root.unmount();
+          marker.remove();
+        }
+      );
+      markersRef.current = {};
+      hoverPopup.current?.remove();
+      hoverPopup.current = null;
+
+      map.remove();
+      mapInstance.current = null;
+    };
   }, []);
 
   useEffect(() => {
-    if (!mapInstance.current) return;
-    Object.values(markersRef.current).forEach(({ marker }) => marker.remove());
+    const map = mapInstance.current;
+    if (!map) return;
+
+    // limpia anteriores
+    Object.values(markersRef.current).forEach(
+      ({ root, marker, el, enter, leave, click }) => {
+        el.removeEventListener('click', click);
+        el.removeEventListener('mouseenter', enter);
+        el.removeEventListener('mouseleave', leave);
+        root.unmount();
+        marker.remove();
+      }
+    );
     markersRef.current = {};
+
+    // crea nuevos
     sites.forEach((site) => {
       const el = document.createElement('div');
       const root = createRoot(el);
-      const IconComponent = getIconComponent(site.typeIds);
+      const IconComponent = getIconComponent(site.typeIds ?? []);
+
       const marker = new Marker({ element: el, anchor: 'center' })
         .setLngLat(site.coordinates)
-        .addTo(mapInstance.current!);
-      el.addEventListener('click', () => onSelect(site.id));
-      el.addEventListener('mouseenter', () => {
-        onHover(site.id);
-        mapInstance.current!.getCanvas().style.cursor = 'pointer';
+        .addTo(map);
+
+      const click = () => onSelect?.(site.id);
+      const enter = () => {
+        onHover?.(site.id);
+        map.getCanvas().style.cursor = 'pointer';
         hoverPopup.current
-          .setLngLat(site.coordinates)
-          .setHTML(`<strong>${t(site.nameKey)}</strong>`)
-          .addTo(mapInstance.current!);
-      });
-      el.addEventListener('mouseleave', () => {
-        onHover(null);
-        mapInstance.current!.getCanvas().style.cursor = '';
-        hoverPopup.current.remove();
-      });
-      markersRef.current[site.id] = { marker, root, IconComponent };
+          ?.setLngLat(site.coordinates)
+          .setHTML(`<strong>${t(site.nameKey, { ns: translationNS })}</strong>`)
+          .addTo(map);
+      };
+      const leave = () => {
+        onHover?.(null);
+        map.getCanvas().style.cursor = '';
+        hoverPopup.current?.remove();
+      };
+
+      el.addEventListener('click', click);
+      el.addEventListener('mouseenter', enter);
+      el.addEventListener('mouseleave', leave);
+
+      markersRef.current[site.id] = {
+        marker,
+        root,
+        IconComponent, // ← ahora coincide con MotionMarker
+        el,
+        enter,
+        leave,
+        click,
+      };
     });
-  }, [sites, onSelect, onHover, t]);
+  }, [sites, onSelect, onHover, t, translationNS]);
 
   useEffect(() => {
     Object.entries(markersRef.current).forEach(
@@ -110,18 +167,23 @@ export const DiveSiteMap = ({
   }, [focusedSite, hoveredSiteId, sites]);
 
   useEffect(() => {
-    if (!mapInstance.current) return;
+    const map = mapInstance.current;
+    if (!map) return;
+
     if (focusedSite) {
-      mapInstance.current.flyTo({
+      map.flyTo({
         center: focusedSite.coordinates,
         zoom: 13,
         essential: true,
       });
-    } else if (sites.length > 0) {
+      return;
+    }
+
+    if (sites.length > 0) {
       const bounds = new LngLatBounds();
-      sites.forEach((site) => bounds.extend(site.coordinates));
+      sites.forEach((s) => bounds.extend(s.coordinates));
       if (!bounds.isEmpty()) {
-        mapInstance.current.fitBounds(bounds, {
+        map.fitBounds(bounds, {
           padding: 80,
           duration: 1000,
           maxZoom: 14,
