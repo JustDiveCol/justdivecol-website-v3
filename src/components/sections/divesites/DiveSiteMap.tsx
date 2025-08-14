@@ -27,6 +27,18 @@ const getIconComponent = (typeIds: DiveTypeId[] = []): IconComponentType => {
   }
 };
 
+// Desmonta un ReactRoot fuera del frame de render actual para evitar el warning.
+const safeUnmountRoot = (root: Root) => {
+  // queueMicrotask es preferible a setTimeout(0) para que ocurra justo después del commit.
+  queueMicrotask(() => {
+    try {
+      root.unmount();
+    } catch {
+      // no-op: en dev/strict pueden pasar dobles invocaciones
+    }
+  });
+};
+
 export const DiveSiteMap = ({
   sites,
   hoveredSiteId,
@@ -45,7 +57,7 @@ export const DiveSiteMap = ({
       {
         marker: Marker;
         root: Root;
-        IconComponent: IconComponentType; // ← aquí
+        IconComponent: IconComponentType;
         el: HTMLDivElement;
         enter: () => void;
         leave: () => void;
@@ -57,6 +69,7 @@ export const DiveSiteMap = ({
   const { t } = useTranslation([translationNS, 'common']);
   const hoverPopup = useRef<Popup | null>(null);
 
+  // Init / teardown del mapa
   useEffect(() => {
     if (mapInstance.current || !mapContainer.current) return;
 
@@ -78,12 +91,13 @@ export const DiveSiteMap = ({
     mapInstance.current = map;
 
     return () => {
+      // Limpieza completa al desmontar el mapa
       Object.values(markersRef.current).forEach(
         ({ root, marker, el, enter, leave, click }) => {
           el.removeEventListener('click', click);
           el.removeEventListener('mouseenter', enter);
           el.removeEventListener('mouseleave', leave);
-          root.unmount();
+          safeUnmountRoot(root); // ← defer
           marker.remove();
         }
       );
@@ -96,23 +110,14 @@ export const DiveSiteMap = ({
     };
   }, []);
 
+  // Crear / actualizar marcadores cuando cambian los sitios
   useEffect(() => {
     const map = mapInstance.current;
     if (!map) return;
 
-    // limpia anteriores
-    Object.values(markersRef.current).forEach(
-      ({ root, marker, el, enter, leave, click }) => {
-        el.removeEventListener('click', click);
-        el.removeEventListener('mouseenter', enter);
-        el.removeEventListener('mouseleave', leave);
-        root.unmount();
-        marker.remove();
-      }
-    );
-    markersRef.current = {};
+    // Importante: NO limpiar marcadores aquí. El cleanup del efecto anterior se ejecuta primero.
+    const createdIds: string[] = [];
 
-    // crea nuevos
     sites.forEach((site) => {
       const el = document.createElement('div');
       const root = createRoot(el);
@@ -144,15 +149,32 @@ export const DiveSiteMap = ({
       markersRef.current[site.id] = {
         marker,
         root,
-        IconComponent, // ← ahora coincide con MotionMarker
+        IconComponent,
         el,
         enter,
         leave,
         click,
       };
+      createdIds.push(site.id);
     });
+
+    // Cleanup SOLO de lo creado en este pase (defer unmount)
+    return () => {
+      createdIds.forEach((id) => {
+        const rec = markersRef.current[id];
+        if (!rec) return;
+        const { root, marker, el, enter, leave, click } = rec;
+        el.removeEventListener('click', click);
+        el.removeEventListener('mouseenter', enter);
+        el.removeEventListener('mouseleave', leave);
+        safeUnmountRoot(root); // ← defer
+        marker.remove();
+        delete markersRef.current[id];
+      });
+    };
   }, [sites, onSelect, onHover, t, translationNS]);
 
+  // Render del MotionMarker (selected/hover state)
   useEffect(() => {
     Object.entries(markersRef.current).forEach(
       ([id, { root, IconComponent }]) => {
@@ -166,6 +188,7 @@ export const DiveSiteMap = ({
     );
   }, [focusedSite, hoveredSiteId, sites]);
 
+  // Fit bounds / flyTo según focusedSite
   useEffect(() => {
     const map = mapInstance.current;
     if (!map) return;

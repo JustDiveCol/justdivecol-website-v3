@@ -9,7 +9,7 @@ import {
   DIVE_TYPES,
   type DiveTagId,
   type I18NNamespace,
-} from '../constants';
+} from '../../../constants';
 import type {
   ConditionLookupItem,
   DestinationOption,
@@ -19,13 +19,17 @@ import type {
   FiltersData,
   TagLookupItem,
   TypeLookupItem,
-} from '../components/sections/divesites/types';
-import type { DiveSiteContent } from '../content/destinations/dive-sites/types';
-import { ChevronDoubleLeftIcon, CloseIcon, FilterIcon } from '../components/ui';
-import { DiveSiteFilters } from '../components/sections/divesites/DiveSiteFilters';
-import { DiveSiteList } from '../components/sections/divesites/DiveSiteList';
-import { DiveSiteMap } from '../components/sections/divesites/DiveSiteMap';
-import { DiveSiteModal } from '../components/sections/divesites/DiveSiteModal';
+} from '../../../components/sections/divesites/types';
+import type { DiveSiteContent } from '../../../content/destinations/dive-sites/types';
+import {
+  ChevronDoubleLeftIcon,
+  CloseIcon,
+  FilterIcon,
+} from '../../../components/ui';
+import { DiveSiteFilters } from '../../../components/sections/divesites/DiveSiteFilters';
+import { DiveSiteList } from '../../../components/sections/divesites/DiveSiteList';
+import { DiveSiteMap } from '../../../components/sections/divesites/DiveSiteMap';
+import { DiveSiteModal } from '../../../components/sections/divesites/DiveSiteModal';
 
 // ---- Helper mínimo para tipar los tags y evitar errores de unión
 type TagLite = { id: DiveTagId; translationKey: string };
@@ -66,8 +70,7 @@ export const DiveSitesSection = ({
   const [isMobilePanelOpen, setIsMobilePanelOpen] = useState(false);
   const [isDesktopPanelExpanded, setIsDesktopPanelExpanded] = useState(false);
 
-  // Lookups estáticos para el Modal (mapeados a {id, nameKey})
-  const difficultyLookup = useMemo<readonly DifficultyLookupItem[]>(
+  const difficultyLookup = useMemo<DifficultyLookupItem[]>(
     () =>
       DIVE_DIFFICULTIES.map(({ id, translationKey }) => ({
         id,
@@ -75,7 +78,8 @@ export const DiveSitesSection = ({
       })),
     []
   );
-  const typeLookup = useMemo<readonly TypeLookupItem[]>(
+
+  const typeLookup = useMemo<TypeLookupItem[]>(
     () =>
       DIVE_TYPES.map(({ id, translationKey }) => ({
         id,
@@ -83,7 +87,8 @@ export const DiveSitesSection = ({
       })),
     []
   );
-  const conditionLookup = useMemo<readonly ConditionLookupItem[]>(
+
+  const conditionLookup = useMemo<ConditionLookupItem[]>(
     () =>
       DIVE_CONDITIONS.map(({ id, translationKey }) => ({
         id,
@@ -91,7 +96,8 @@ export const DiveSitesSection = ({
       })),
     []
   );
-  const tagLookup = useMemo<readonly TagLookupItem[]>(
+
+  const tagLookup = useMemo<TagLookupItem[]>(
     () =>
       DIVE_TAG_CATEGORIES.flatMap((cat) =>
         (cat.tags as readonly TagLite[]).map((tag) => ({
@@ -180,7 +186,6 @@ export const DiveSitesSection = ({
         ({ id, translationKey }) => ({ id, nameKey: translationKey })
       ),
 
-      // ⬅️ clave: usamos ALL_TAGS (tipado fuerte) + Set<DiveTagId>
       availableTags: ALL_TAGS.filter((tag) => tagIds.has(tag.id)).map(
         ({ id, translationKey }) => ({ id, nameKey: translationKey })
       ),
@@ -193,7 +198,7 @@ export const DiveSitesSection = ({
       filteredSites.map((s) => ({
         id: s.id,
         nameKey: s.nameKey,
-        photos: s.photos, // optional
+        photos: s.photos,
         maxDepthMeter: s.maxDepthMeter,
         maxDepthFt: s.maxDepthFt,
         difficultyId: s.difficultyId,
@@ -266,17 +271,18 @@ export const DiveSitesSection = ({
         {/* Sidebar de filtros/lista */}
         <aside
           className={`
-            absolute left-0 top-0 z-30 flex h-full flex-col bg-brand-primary-dark shadow-lg
-            transition-all duration-300 ease-in-out
-            md:relative md:z-10 md:translate-x-0
-            ${
-              isMobilePanelOpen
-                ? 'translate-x-0 w-full sm:w-[350px]'
-                : '-translate-x-full w-full sm:w-[350px]'
-            }
-            ${isDesktopPanelExpanded ? 'md:w-[350px]' : 'md:w-20'}
-          `}>
+    absolute left-0 top-0 z-30 flex h-full flex-col bg-brand-primary-dark shadow-lg
+    transition-all duration-300 ease-in-out
+    md:relative md:z-10 md:translate-x-0
+    ${
+      isMobilePanelOpen
+        ? 'translate-x-0 w-full sm:w-[350px]'
+        : '-translate-x-full w-full sm:w-[350px]'
+    }
+    ${isDesktopPanelExpanded ? 'md:w-[350px]' : 'md:w-20'}
+  `}>
           <div className='flex h-full flex-col overflow-hidden'>
+            {/* Header */}
             <div className='flex flex-shrink-0 items-center justify-between border-b border-white/10 p-4'>
               <AnimatePresence>
                 {isDesktopPanelExpanded && (
@@ -300,26 +306,29 @@ export const DiveSitesSection = ({
               </button>
             </div>
 
+            {/* Cuerpo: Filtros (70%) + Lista (30%) */}
             <div
-              className={`flex min-h-0 flex-grow flex-col md:transition-opacity md:duration-200 ${
+              className={`flex-1 min-h-0 flex flex-col md:transition-opacity md:duration-200 ${
                 isDesktopPanelExpanded
                   ? 'md:opacity-100'
                   : 'md:pointer-events-none md:opacity-0'
               }`}>
-              <div className='overflow-y-auto p-4'>
+              {/* Filtros con más espacio */}
+              <div className='min-h-0 overflow-y-auto p-4 flex-[0_0_70%]'>
                 <DiveSiteFilters
                   filters={filters}
                   onFiltersChange={setFilters}
                   availableDestinations={availableDestinations}
-                  availableDifficulties={difficultyLookup}
-                  availableTypes={typeLookup}
-                  availableConditions={conditionLookup}
-                  availableTags={tagLookup}
+                  availableDifficulties={availableDifficulties}
+                  availableTypes={availableTypes}
+                  availableConditions={availableConditions}
+                  availableTags={availableTags}
                   translationNS={translationNS}
                 />
               </div>
 
-              <div className='mt-4 flex-grow overflow-y-auto border-t border-white/10'>
+              {/* Lista con menos espacio */}
+              <div className='min-h-0 overflow-y-auto border-t border-white/10 flex-[0_0_30%]'>
                 <DiveSiteList
                   sites={listItems}
                   onSelect={handleSelectSite}
@@ -329,6 +338,7 @@ export const DiveSitesSection = ({
               </div>
             </div>
 
+            {/* Footer (toggle expand) */}
             <div className='mt-auto hidden flex-shrink-0 items-center justify-center border-t border-white/10 p-4 md:flex'>
               <button
                 onClick={() => setIsDesktopPanelExpanded((prev) => !prev)}

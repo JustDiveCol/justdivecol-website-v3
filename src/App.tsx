@@ -11,7 +11,7 @@ import { TermsPage } from './pages/TermsPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { FaqPage } from './pages/FaqPage';
 import { ExperiencesPage } from './pages/ExperiencesPage';
-import { DiveSitesSection } from './pages/DiveSitesSection';
+import DiveSiteMapPage from './pages/DiveSiteMapPage';
 
 // import { CertificationPage } from './pages/CertificationPage';
 
@@ -67,7 +67,7 @@ function App() {
 
         <Route
           path='/dive-sites'
-          element={<DiveSitesSection />}
+          element={<DiveSiteMapPage />}
         />
 
         {/* <Route

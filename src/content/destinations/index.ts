@@ -5,14 +5,12 @@ import {
   type DiveSiteContent,
 } from './dive-sites/types';
 
-/** Tipos cargados con metadato de archivo (debug útil) */
 export type LoadedDestination = DestinationContent & { __filePath: string };
 export type LoadedDiveSite = DiveSiteContent & { __filePath: string };
 
 const isObj = (v: unknown): v is Record<string, unknown> =>
   typeof v === 'object' && v !== null && !Array.isArray(v);
 
-/** Carga TODOS los DestinationContent válidos de ./*.content.ts */
 function loadAllDestinations(): LoadedDestination[] {
   const mods = import.meta.glob('./*.content.ts', { eager: true }) as Record<
     string,
@@ -22,7 +20,6 @@ function loadAllDestinations(): LoadedDestination[] {
   const results: LoadedDestination[] = [];
 
   for (const [filePath, mod] of Object.entries(mods)) {
-    // buscamos cualquier export que pase DestinationContentSchema
     for (const value of Object.values(mod)) {
       if (!isObj(value)) continue;
       const parsed = DestinationContentSchema.safeParse(value);
@@ -35,12 +32,6 @@ function loadAllDestinations(): LoadedDestination[] {
   return results;
 }
 
-/**
- * Carga TODOS los DiveSiteContent válidos desde ./dive-sites/*.content.ts
- * Soporta dos formas:
- *  1) export const algo: DiveSiteContent = { ... }
- *  2) export const algo: Record<string, DiveSiteContent> = { id1: {...}, id2: {...} }
- */
 function loadAllDiveSites(): LoadedDiveSite[] {
   const mods = import.meta.glob('./dive-sites/*.content.ts', {
     eager: true,
@@ -82,7 +73,6 @@ function loadAllDiveSites(): LoadedDiveSite[] {
   return results;
 }
 
-/** Cache simple en módulo */
 let __destinations: LoadedDestination[] | null = null;
 let __diveSites: LoadedDiveSite[] | null = null;
 
@@ -93,7 +83,6 @@ function getDiveSites(): LoadedDiveSite[] {
   return (__diveSites ??= loadAllDiveSites());
 }
 
-/** Índices rápidos */
 const _destById = new Map<string, LoadedDestination>();
 const _destBySlug = new Map<string, LoadedDestination>();
 const _sitesById = new Map<string, LoadedDiveSite>();
@@ -122,7 +111,6 @@ function ensureIndexes() {
   }
 }
 
-/** API pública — Destinations */
 export function listDestinations(): Readonly<LoadedDestination[]> {
   ensureIndexes();
   return getDestinations();
@@ -152,13 +140,13 @@ export function listDiveSitesForDestination(
   return _sitesByDestinationId.get(destinationId) ?? [];
 }
 
-/** Proyección estricta para tarjetas de destino (UI) */
 export type DestinationCardProjection = {
   id: DestinationContent['id'];
   slug: DestinationContent['slug'];
   country: DestinationContent['country'];
-  titleKey: string; // header.titleKey
-  subtitleKey?: string; // si está en PageHeaderPropsSchema
+  titleKey: string;
+  name: string;
+  subtitleKey?: string;
   imageData: DestinationContent['card']['imageData'];
   seo: DestinationContent['seo'];
   coords: DestinationContent['coords']; // [lon, lat]
@@ -177,6 +165,7 @@ export function projectDestinationToCard(
     slug: d.slug,
     country: d.country,
     titleKey: d.header.titleKey,
+    name: d.name,
     subtitleKey: headerAny.subtitleKey,
     imageData: d.card.imageData,
     seo: d.seo,
@@ -194,7 +183,6 @@ export function listDestinationCards(): DestinationCardProjection[] {
 
 type DiveSitePhotoItem = NonNullable<DiveSiteContent['photos']>[number];
 
-/** Proyección útil para mapas/listas de sitios de buceo */
 export type DiveSiteProjection = {
   id: DiveSiteContent['id'];
   nameKey: DiveSiteContent['nameKey'];
