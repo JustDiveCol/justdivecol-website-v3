@@ -70,7 +70,6 @@ const rawOpenWaterDiver: CertificationContent = {
 
   details: {
     titleKey: 'certifications.owd.details.title',
-    durationKey: 'certifications.owd.details.durationValue',
     items: [
       {
         labelKey: 'certifications.owd.details.label1',
@@ -128,7 +127,7 @@ const rawOpenWaterDiver: CertificationContent = {
       {
         icon: 'theory',
         nameKey: 'certifications.owd.bookingProcess.step2Name',
-        descriptionKey: 'certifications.owd.bookingProcess.step2Desc', // "Accede al material de PADI y aprende a tu propio ritmo."
+        descriptionKey: 'certifications.owd.bookingProcess.step2Desc',
       },
       {
         icon: 'dive',
@@ -149,7 +148,7 @@ const rawOpenWaterDiver: CertificationContent = {
       {
         backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
         photoCredit: 'Camilo Beltran',
-        variant: 'vertical',
+        variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
@@ -159,7 +158,7 @@ const rawOpenWaterDiver: CertificationContent = {
       {
         backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
         photoCredit: 'Camilo Beltran',
-        variant: 'vertical',
+        variant: 'horizontal',
       },
     ],
   },

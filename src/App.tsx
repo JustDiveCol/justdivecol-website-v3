@@ -12,8 +12,7 @@ import { PrivacyPage } from './pages/PrivacyPage';
 import { FaqPage } from './pages/FaqPage';
 import { ExperiencesPage } from './pages/ExperiencesPage';
 import DiveSiteMapPage from './pages/DiveSiteMapPage';
-
-// import { CertificationPage } from './pages/CertificationPage';
+import CertificationPage from './pages/certifications/CertificationPage';
 
 function App() {
   return (
@@ -70,10 +69,10 @@ function App() {
           element={<DiveSiteMapPage />}
         />
 
-        {/* <Route
+        <Route
           path='/certifications/:slug'
           element={<CertificationPage />}
-        /> */}
+        />
       </Routes>
     </MainLayout>
   );

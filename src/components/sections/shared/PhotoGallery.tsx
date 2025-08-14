@@ -58,7 +58,6 @@ export const PhotoGallery = ({
 
   if (!images.length) return null;
 
-  // Construimos el array de slides para el Lightbox
   const slides: Slide[] = images.map((img) => ({
     ...img,
     src: img.backgroundImage,

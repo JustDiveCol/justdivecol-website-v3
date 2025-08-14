@@ -49,7 +49,6 @@ export type CertificationItems = z.infer<typeof CertificationItemsSchema>;
 
 export const CertificationDetailsSchema = z.object({
   titleKey: z.string(),
-  durationKey: z.string(),
   items: z.array(CertificationItemsSchema).min(1),
 });
 export type CertificationDetails = z.infer<typeof CertificationDetailsSchema>;
