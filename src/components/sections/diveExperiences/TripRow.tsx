@@ -1,4 +1,4 @@
-// src/components/sections/experiences/TripRow.tsx
+// src/components/sections/diveExperiences/TripRow.tsx
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useMemo } from 'react';
@@ -15,12 +15,9 @@ import { getExperienceById } from '../../../content/experiences';
 import { listDestinations } from '../../../content/destinations';
 import type { ExperienceContent } from '../../../content/experiences/types';
 import type { TOptions } from 'i18next';
-
-// ✅ helper central para disponibilidad
 import { deriveSessionAvailability } from '../../../lib/availability';
 
-// ---------- AvailabilityBadge ----------
-const AvailabilityBadge = ({ status }: { status: AvailableType }) => {
+export const AvailabilityBadge = ({ status }: { status: AvailableType }) => {
   const { t } = useTranslation('common');
   const baseClasses = 'px-3 py-1 text-xs font-bold rounded-full';
 
@@ -70,19 +67,15 @@ const AvailabilityBadge = ({ status }: { status: AvailableType }) => {
   );
 };
 
-// ---------- Tipos de props ----------
 type TripRowSession = {
   id: string;
   experienceId: ExperienceId;
-  startDate: string; // 'YYYY-MM-DD'
-  endDate: string; // 'YYYY-MM-DD'
+  startDate: string;
+  endDate: string;
   seatsAvailable: number;
   capacity: number;
-
-  // Estos dos pueden no venir si el selector ya adjunta derivedAvailability
-  availability?: AvailableType; // estado "de origen" opcional
-  derivedAvailability?: AvailableType; // calculado en selectors (si existe)
-
+  availability?: AvailableType;
+  derivedAvailability?: AvailableType;
   creyentes?: boolean;
   nameKey?: string;
   subtitleKey?: string;
@@ -91,14 +84,13 @@ type TripRowSession = {
 
 type TripRowProps = {
   session: TripRowSession;
-  translationNS: string; // p.ej. 'experiences'
+  translationNS: string;
 };
 
 type ExperienceHeaderWithSubtitle = ExperienceContent['header'] & {
   subtitleKey?: string;
 };
 
-// Util para traducir keys absolutas ("ns:key") o relativas (key) con ns dado
 function tKey(
   t: (k: string, opts?: TOptions) => string,
   key: string | undefined,
@@ -108,14 +100,26 @@ function tKey(
   return key.includes(':') ? t(key) : t(key, { ns });
 }
 
-// Fecha 'YYYY-MM-DD' → Date UTC seguro
 const toUTCDate = (isoDate: string) => new Date(`${isoDate}T00:00:00Z`);
 
 export const TripRow = ({ session, translationNS }: TripRowProps) => {
   const { t, i18n } = useTranslation([translationNS, 'common']);
   const soldOutLogo = BRAND_ASSETS_SAFE.seals.soldOut;
 
-  // 0) Estado derivado (usa el que venga del selector o calcúlalo aquí)
+  const parentExperience = useMemo(
+    () => getExperienceById(session.experienceId),
+    [session.experienceId]
+  );
+
+  const sessionUrl = useMemo(() => {
+    if (!parentExperience) {
+      return toUrlPath(ROUTES.diveExperiences);
+    }
+    return toUrlPath(
+      `${ROUTES.diveExperiences}/${parentExperience.slug}/${session.id}`
+    );
+  }, [parentExperience, session.id]);
+
   const derivedStatus = useMemo<AvailableType>(() => {
     if (session.derivedAvailability) return session.derivedAvailability;
     return deriveSessionAvailability({
@@ -124,19 +128,16 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
     });
   }, [session.derivedAvailability, session.seatsAvailable, session.capacity]);
 
-  // 1) Resolvemos experiencia, textos e imagen
   const { titleKey, subtitleKey, imageUrl, destinationId } = useMemo(() => {
-    const exp = getExperienceById(session.experienceId) as
-      | ExperienceContent
+    const header = parentExperience?.header as
+      | ExperienceHeaderWithSubtitle
       | undefined;
-
-    const header = exp?.header as ExperienceHeaderWithSubtitle | undefined;
 
     const titleKeyRaw = session.nameKey ?? header?.titleKey ?? '';
     const subtitleKeyRaw = session.subtitleKey ?? header?.subtitleKey ?? '';
 
     const expImg =
-      exp?.gallery?.images?.[0]?.backgroundImage ??
+      parentExperience?.gallery?.images?.[0]?.backgroundImage ??
       header?.imageData?.backgroundImage ??
       undefined;
 
@@ -144,18 +145,16 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
       titleKey: titleKeyRaw,
       subtitleKey: subtitleKeyRaw || undefined,
       imageUrl: session.imageUrl ?? expImg,
-      destinationId: exp?.destinationId,
+      destinationId: parentExperience?.destinationId,
     };
-  }, [session]);
+  }, [session, parentExperience]);
 
   const destinationNameKey = useMemo(() => {
     if (!destinationId) return '';
     const destination = listDestinations().find((d) => d.id === destinationId);
-    // si tu proyección expone nameKey (i18n), usa destination?.nameKey
     return destination?.name ?? '';
   }, [destinationId]);
 
-  // 2) Fechas + duración usando UTC
   const { formattedDateRange, durationText } = useMemo(() => {
     const start = toUTCDate(session.startDate);
     const end = toUTCDate(session.endDate);
@@ -170,7 +169,7 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
     const year = start.getUTCFullYear();
     const dateRange = `${month} ${startDay} - ${endDay}, ${year}`;
 
-    const diffDays = Math.round((+end - +start) / (1000 * 60 * 60 * 24)) + 1; // inclusive
+    const diffDays = Math.round((+end - +start) / (1000 * 60 * 60 * 24)) + 1;
     const nights = diffDays - 1;
 
     const duration = `${diffDays} ${t('common:durationDays')} / ${nights} ${t(
@@ -219,14 +218,11 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
         <h3 className='text-xl font-bold text-brand-white'>
           {tKey(t, titleKey, translationNS)}
         </h3>
-
-        {/* Nombre del destino */}
         {destinationNameKey && (
           <p className='text-sm font-medium text-brand-cta-orange'>
             {t(destinationNameKey)}
           </p>
         )}
-
         {subtitleKey && (
           <p className='text-sm text-brand-neutral/70'>
             {tKey(t, subtitleKey, translationNS)}
@@ -263,7 +259,7 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
               <Button
                 action={{
                   type: 'internal',
-                  path: toUrlPath(`${ROUTES.diveExperiences}/${session.id}`),
+                  path: sessionUrl,
                 }}
                 variant='outline'
                 size='sm'>

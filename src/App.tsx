@@ -13,6 +13,8 @@ import { FaqPage } from './pages/FaqPage';
 import { ExperiencesPage } from './pages/ExperiencesPage';
 import DiveSiteMapPage from './pages/DiveSiteMapPage';
 import CertificationPage from './pages/certifications/CertificationPage';
+import DestinationPage from './pages/destinations/DestinationPage';
+import ExperiencePage from './pages/experiences/ExperiencePage';
 
 function App() {
   return (
@@ -72,6 +74,16 @@ function App() {
         <Route
           path='/certifications/:slug'
           element={<CertificationPage />}
+        />
+
+        <Route
+          path='/destinations/:slug'
+          element={<DestinationPage />}
+        />
+
+        <Route
+          path='/dive-experiences/:experienceSlug/:sessionSlug'
+          element={<ExperiencePage />}
         />
       </Routes>
     </MainLayout>

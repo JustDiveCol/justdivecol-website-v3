@@ -21,19 +21,19 @@ const rawSantaMartaSept25Sess: ExperienceSessionContent = {
   pricingOptions: [
     {
       id: 'certification',
-      nameKey: '',
+      nameKey: 'Opt1',
       price: 3500000,
       currency: 'COP',
     },
     {
       id: 'certified',
-      nameKey: '',
+      nameKey: 'Opt2',
       price: 2600000,
       currency: 'COP',
     },
     {
       id: 'companion',
-      nameKey: '',
+      nameKey: 'Opt3',
       price: 1800000,
       currency: 'COP',
     },

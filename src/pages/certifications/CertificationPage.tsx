@@ -118,11 +118,9 @@ const CertificationPage: React.FC = () => {
 
         <CtaSection {...homeContent.cta} />
 
-        {/* Espaciador para que el footer no sea tapado por la barra CTA */}
         <div className='h-24 md:h-28' />
       </main>
 
-      {/* La barra CTA se coloca fuera del main para que no afecte su scroll */}
       <StickyCtaBar buttonData={content.ctaButton} />
     </>
   );

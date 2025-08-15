@@ -27,14 +27,12 @@ const getIconComponent = (typeIds: DiveTypeId[] = []): IconComponentType => {
   }
 };
 
-// Desmonta un ReactRoot fuera del frame de render actual para evitar el warning.
 const safeUnmountRoot = (root: Root) => {
-  // queueMicrotask es preferible a setTimeout(0) para que ocurra justo después del commit.
   queueMicrotask(() => {
     try {
       root.unmount();
     } catch {
-      // no-op: en dev/strict pueden pasar dobles invocaciones
+      // no-op
     }
   });
 };
@@ -46,11 +44,13 @@ export const DiveSiteMap = ({
   onSelect,
   onHover,
   translationNS,
+  initialCenter,
+  initialZoom,
+  minZoom,
+  maxZoom,
 }: DiveSiteMapProps) => {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const mapInstance = useRef<maplibregl.Map | null>(null);
-
-  // Guarda marker + React root + icono + listeners
   const markersRef = useRef<
     Record<
       string,
@@ -65,19 +65,20 @@ export const DiveSiteMap = ({
       }
     >
   >({});
-
   const { t } = useTranslation([translationNS, 'common']);
   const hoverPopup = useRef<Popup | null>(null);
 
-  // Init / teardown del mapa
+  // Efecto de inicialización del mapa
   useEffect(() => {
     if (mapInstance.current || !mapContainer.current) return;
 
     const map = new maplibregl.Map({
       container: mapContainer.current,
       style: `https://api.maptiler.com/maps/ocean/style.json?key=${MAPTILER_API_KEY}`,
-      center: [-74.2973, 4.5709],
-      zoom: 4.5,
+      center: initialCenter || [-74.2973, 4.5709],
+      zoom: initialZoom || 4.5,
+      minZoom: minZoom || 2,
+      maxZoom: maxZoom || 20,
     });
     map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
@@ -91,34 +92,49 @@ export const DiveSiteMap = ({
     mapInstance.current = map;
 
     return () => {
-      // Limpieza completa al desmontar el mapa
       Object.values(markersRef.current).forEach(
         ({ root, marker, el, enter, leave, click }) => {
           el.removeEventListener('click', click);
           el.removeEventListener('mouseenter', enter);
           el.removeEventListener('mouseleave', leave);
-          safeUnmountRoot(root); // ← defer
+          safeUnmountRoot(root);
           marker.remove();
         }
       );
       markersRef.current = {};
       hoverPopup.current?.remove();
       hoverPopup.current = null;
-
       map.remove();
       mapInstance.current = null;
     };
-  }, []);
+  }, [initialCenter, initialZoom, minZoom, maxZoom]);
 
-  // Crear / actualizar marcadores cuando cambian los sitios
+  // Efecto para crear y actualizar los marcadores
   useEffect(() => {
     const map = mapInstance.current;
     if (!map) return;
 
-    // Importante: NO limpiar marcadores aquí. El cleanup del efecto anterior se ejecuta primero.
-    const createdIds: string[] = [];
+    const currentMarkerIds = Object.keys(markersRef.current);
+    const newSiteIds = sites.map((s) => s.id);
 
+    // Eliminar marcadores que ya no están en la lista de sitios
+    currentMarkerIds.forEach((id) => {
+      if (!newSiteIds.includes(id)) {
+        const { root, marker, el, enter, leave, click } =
+          markersRef.current[id];
+        el.removeEventListener('click', click);
+        el.removeEventListener('mouseenter', enter);
+        el.removeEventListener('mouseleave', leave);
+        safeUnmountRoot(root);
+        marker.remove();
+        delete markersRef.current[id];
+      }
+    });
+
+    // Añadir nuevos marcadores
     sites.forEach((site) => {
+      if (markersRef.current[site.id]) return; // Ya existe, no hacer nada
+
       const el = document.createElement('div');
       const root = createRoot(el);
       const IconComponent = getIconComponent(site.typeIds ?? []);
@@ -155,26 +171,10 @@ export const DiveSiteMap = ({
         leave,
         click,
       };
-      createdIds.push(site.id);
     });
-
-    // Cleanup SOLO de lo creado en este pase (defer unmount)
-    return () => {
-      createdIds.forEach((id) => {
-        const rec = markersRef.current[id];
-        if (!rec) return;
-        const { root, marker, el, enter, leave, click } = rec;
-        el.removeEventListener('click', click);
-        el.removeEventListener('mouseenter', enter);
-        el.removeEventListener('mouseleave', leave);
-        safeUnmountRoot(root); // ← defer
-        marker.remove();
-        delete markersRef.current[id];
-      });
-    };
   }, [sites, onSelect, onHover, t, translationNS]);
 
-  // Render del MotionMarker (selected/hover state)
+  // Efecto para renderizar el estado de los marcadores (hover/selected)
   useEffect(() => {
     Object.entries(markersRef.current).forEach(
       ([id, { root, IconComponent }]) => {
@@ -188,7 +188,7 @@ export const DiveSiteMap = ({
     );
   }, [focusedSite, hoveredSiteId, sites]);
 
-  // Fit bounds / flyTo según focusedSite
+  // Efecto para ajustar la vista del mapa
   useEffect(() => {
     const map = mapInstance.current;
     if (!map) return;
@@ -196,7 +196,7 @@ export const DiveSiteMap = ({
     if (focusedSite) {
       map.flyTo({
         center: focusedSite.coordinates,
-        zoom: 13,
+        zoom: Math.max(13, minZoom || 13),
         essential: true,
       });
       return;
@@ -205,15 +205,16 @@ export const DiveSiteMap = ({
     if (sites.length > 0) {
       const bounds = new LngLatBounds();
       sites.forEach((s) => bounds.extend(s.coordinates));
+
       if (!bounds.isEmpty()) {
         map.fitBounds(bounds, {
           padding: 80,
           duration: 1000,
-          maxZoom: 14,
+          maxZoom: maxZoom ? Math.min(14, maxZoom) : 14,
         });
       }
     }
-  }, [focusedSite, sites]);
+  }, [focusedSite, sites, minZoom, maxZoom]);
 
   return (
     <div

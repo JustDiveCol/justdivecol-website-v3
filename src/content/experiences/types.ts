@@ -10,6 +10,7 @@ import {
   PageHeaderPropsSchema,
 } from '../../components/sections/shared/types';
 import { DestinationIdSchema, ExperienceIdSchema } from '../../constants';
+import type { ExperienceSessionContent } from './sessions/types';
 
 export const ExperienceDescriptionContentSchema = z.object({
   titleKey: z.string(),
@@ -67,3 +68,7 @@ export const ExperienceContentSchema = z.object({
   cta: CtaSectionPropsSchema,
 });
 export type ExperienceContent = z.infer<typeof ExperienceContentSchema>;
+
+export type ResolvedExperienceContent = ExperienceContent & {
+  session: ExperienceSessionContent;
+};

@@ -9,7 +9,10 @@ import {
   I18NNamespaceSchema,
   type I18NNamespace,
 } from '../../../constants';
-import { DiveSiteContentSchema } from '../../../content/destinations/dive-sites/types';
+import {
+  DiveSiteContentSchema,
+  type DiveSiteContent,
+} from '../../../content/destinations/dive-sites/types';
 
 /* ──────────────────────────────
  * Helpers genéricos
@@ -175,6 +178,10 @@ export const DiveSiteMapPropsSchema = z.object({
   onSelect: OnSelectHandlerSchema,
   onHover: OnHoverHandlerSchema,
   translationNS: I18NNamespaceSchema,
+  initialCenter: CoordinatesSchema.optional(),
+  initialZoom: z.number().optional(),
+  minZoom: z.number().optional(),
+  maxZoom: z.number().optional(),
 });
 export type DiveSiteMapProps = Omit<
   z.infer<typeof DiveSiteMapPropsSchema>,
@@ -255,3 +262,16 @@ export type MotionMarkerPropsData = z.infer<typeof MotionMarkerPropsDataSchema>;
 export type MotionMarkerProps = MotionMarkerPropsData & {
   IconComponent: IconComponentType;
 };
+
+export const DiveSitesSectionPropsSchema = z.object({
+  translationNS: I18NNamespaceSchema,
+  sites: z.array(z.custom<DiveSiteContent>()).readonly(),
+  destinations: z.array(DestinationOptionSchema).readonly(),
+  initialFilters: z.custom<Partial<FiltersData>>().optional(),
+  initialCenter: CoordinatesSchema.optional(),
+  initialZoom: z.number().optional(),
+  minZoom: z.number().optional(),
+  maxZoom: z.number().optional(),
+});
+
+export type DiveSitesSectionProps = z.infer<typeof DiveSitesSectionPropsSchema>;

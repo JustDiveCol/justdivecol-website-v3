@@ -8,14 +8,13 @@ import {
   DIVE_TAG_CATEGORIES,
   DIVE_TYPES,
   type DiveTagId,
-  type I18NNamespace,
 } from '../../../constants';
 import type {
   ConditionLookupItem,
-  DestinationOption,
   DifficultyLookupItem,
   DiveSiteForMap,
   DiveSiteListItem,
+  DiveSitesSectionProps,
   FiltersData,
   TagLookupItem,
   TypeLookupItem,
@@ -48,20 +47,22 @@ const initialFilters: FiltersData = {
   tags: [],
 };
 
-type DiveSitesSectionProps = {
-  translationNS: I18NNamespace; // p.ej. 'diveSites'
-  sites: readonly DiveSiteContent[]; // datos del content ya cargados
-  destinations: readonly DestinationOption[]; // { id, nameKey } para el combo
-};
-
 export const DiveSitesSection = ({
   translationNS,
   sites,
   destinations,
+  initialFilters: initialFiltersProp,
+  initialCenter,
+  initialZoom,
+  minZoom,
+  maxZoom,
 }: DiveSitesSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
 
-  const [filters, setFilters] = useState<FiltersData>(initialFilters);
+  const [filters, setFilters] = useState<FiltersData>({
+    ...initialFilters,
+    ...initialFiltersProp,
+  });
   const [selectedSite, setSelectedSite] = useState<DiveSiteContent | null>(
     null
   );
@@ -253,8 +254,8 @@ export const DiveSitesSection = ({
   return (
     <section
       id='dive-sites'
-      className='relative'>
-      <div className='relative mt-20 flex h-[calc(100vh-5rem)] overflow-hidden'>
+      className='relative w-full h-full bg-brand-primary-dark'>
+      <div className='relative flex h-full overflow-hidden'>
         <AnimatePresence>
           {isMobilePanelOpen && (
             <motion.div
@@ -271,16 +272,16 @@ export const DiveSitesSection = ({
         {/* Sidebar de filtros/lista */}
         <aside
           className={`
-    absolute left-0 top-0 z-30 flex h-full flex-col bg-brand-primary-dark shadow-lg
-    transition-all duration-300 ease-in-out
-    md:relative md:z-10 md:translate-x-0
-    ${
-      isMobilePanelOpen
-        ? 'translate-x-0 w-full sm:w-[350px]'
-        : '-translate-x-full w-full sm:w-[350px]'
-    }
-    ${isDesktopPanelExpanded ? 'md:w-[350px]' : 'md:w-20'}
-  `}>
+            absolute left-0 top-0 z-30 flex h-full flex-col bg-brand-primary-dark shadow-lg
+            transition-all duration-300 ease-in-out
+            md:relative md:z-10 md:translate-x-0
+            ${
+              isMobilePanelOpen
+                ? 'translate-x-0 w-full sm:w-[350px]'
+                : '-translate-x-full w-full sm:w-[350px]'
+            }
+            ${isDesktopPanelExpanded ? 'md:w-[350px]' : 'md:w-20'}
+          `}>
           <div className='flex h-full flex-col overflow-hidden'>
             {/* Header */}
             <div className='flex flex-shrink-0 items-center justify-between border-b border-white/10 p-4'>
@@ -390,6 +391,10 @@ export const DiveSitesSection = ({
             onSelect={handleSelectSite}
             onHover={handleHoverSite}
             translationNS={translationNS}
+            initialCenter={initialCenter}
+            initialZoom={initialZoom}
+            minZoom={minZoom}
+            maxZoom={maxZoom}
           />
         </main>
       </div>
