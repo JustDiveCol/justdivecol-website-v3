@@ -146,3 +146,8 @@ export const SEOPropsSchema = z.object({
 export type SEOProps = Omit<z.infer<typeof SEOPropsSchema>, 'translationNS'> & {
   translationNS: I18NNamespace;
 };
+
+export const StickyCtaBarPropsSchema = z.object({
+  buttonData: ContentButtonSchema,
+});
+export type StickyCtaBarProps = z.infer<typeof StickyCtaBarPropsSchema>;

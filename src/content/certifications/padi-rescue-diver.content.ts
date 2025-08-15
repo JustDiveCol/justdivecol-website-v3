@@ -24,7 +24,7 @@ const rawRescueDiver: CertificationContent = {
     titleKey: 'certifications.rd.seo.title',
     descriptionKey: 'certifications.rd.seo.desc',
     keywordsKey: 'certifications.rd.seo.keywords',
-    imageUrl: toAssetUrl('/images/social/rd-social-card.webp'),
+    imageUrl: toAssetUrl('/images/certifications/rd/social-card.webp'),
     urlPath: toUrlPath(ROUTES.certifications),
     translationNS: 'certifications',
   },
@@ -33,7 +33,9 @@ const rawRescueDiver: CertificationContent = {
     titleKey: 'certifications.rd.header.title',
     subtitleKey: 'certifications.rd.header.subtitle',
     imageData: {
-      backgroundImage: toAssetUrl('/images/certifications/rd-header.webp'),
+      backgroundImage: toAssetUrl(
+        '/images/certifications/rd/header-background.webp'
+      ),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },
@@ -41,26 +43,26 @@ const rawRescueDiver: CertificationContent = {
   },
 
   card: {
-    descriptionKey: 'Description RD',
+    descriptionKey: 'certifications.rd.card.desc',
     imageData: {
-      backgroundImage: toAssetUrl('/images/certifications/rd-card.webp'),
+      backgroundImage: toAssetUrl('/images/certifications/rd/card-image.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       complementaryLogo: BRAND_ASSETS_SAFE.complementaryLogos.padi,
-      textOverlayKey: 'certificationsTextOverlay',
+      textOverlayKey: 'certifications.rd.card.cardTextOverlay',
       variant: 'horizontal',
     },
   },
 
   description: {
-    titleKey: 'certifications.rd.description.title',
+    titleKey: 'certifications.descriptionTitle',
     paragraphs: [
-      'certifications.rd.description.p1',
-      'certifications.rd.description.p2',
+      'certifications.rd.description.paragraphs.p1',
+      'certifications.rd.description.paragraphs.p2',
     ],
   },
 
   prerequisites: {
-    titleKey: 'certifications.rd.prerequisites.title',
+    titleKey: 'certifications.prerequisitesTitle',
     items: [
       'certifications.rd.prerequisites.item1',
       'certifications.rd.prerequisites.item2',
@@ -69,71 +71,70 @@ const rawRescueDiver: CertificationContent = {
   },
 
   details: {
-    titleKey: 'certifications.rd.details.title',
-    durationKey: 'certifications.rd.details.durationValue',
+    titleKey: 'certifications.detailsTitle',
     items: [
       {
-        labelKey: 'certifications.rd.details.label1',
-        valueKey: 'certifications.rd.details.value1',
+        labelKey: 'certifications.rd.details.items.label1',
+        valueKey: 'certifications.rd.details.items.value1',
       },
       {
-        labelKey: 'certifications.rd.details.label2',
-        valueKey: 'certifications.rd.details.value2',
+        labelKey: 'certifications.rd.details.items.label2',
+        valueKey: 'certifications.rd.details.items.value2',
       },
       {
-        labelKey: 'certifications.rd.details.label3',
-        valueKey: 'certifications.rd.details.value3',
+        labelKey: 'certifications.rd.details.items.label3',
+        valueKey: 'certifications.rd.details.items.value3',
       },
     ],
   },
 
   curriculum: {
-    titleKey: 'certifications.rd.curriculum.title',
+    titleKey: 'certifications.curriculumTitle',
     modules: [
       {
         id: 'theory',
-        nameKey: 'certifications.rd.curriculum.module1Name',
-        descriptionKey: 'certifications.rd.curriculum.module1Desc',
+        nameKey: 'certifications.rd.curriculum.modules.name1',
+        descriptionKey: 'certifications.rd.curriculum.modules.desc1',
       },
       {
         id: 'confined-water',
-        nameKey: 'certifications.rd.curriculum.module2Name',
-        descriptionKey: 'certifications.rd.curriculum.module2Desc',
+        nameKey: 'certifications.rd.curriculum.modules.name2',
+        descriptionKey: 'certifications.rd.curriculum.modules.desc2',
       },
       {
         id: 'open-water',
-        nameKey: 'certifications.rd.curriculum.module3Name',
-        descriptionKey: 'certifications.rd.curriculum.module3Desc',
+        nameKey: 'certifications.rd.curriculum.modules.name3',
+        descriptionKey: 'certifications.rd.curriculum.modules.desc3',
       },
     ],
   },
 
   whatIsIncluded: {
-    titleKey: 'certifications.rd.whatIsIncluded.title',
+    titleKey: 'certifications.whatIsIncludedTitle',
     items: [
-      'certifications.rd.whatIsIncluded.item1',
-      'certifications.rd.whatIsIncluded.item2',
-      'certifications.rd.whatIsIncluded.item3',
+      'certifications.rd.whatIsIncluded.items.item1',
+      'certifications.rd.whatIsIncluded.items.item2',
+      'certifications.rd.whatIsIncluded.items.item3',
     ],
   },
 
   bookingProcess: {
-    titleKey: 'certifications.rd.bookingProcess.title',
+    titleKey: 'certifications.bookingProcessTitle',
     steps: [
       {
         icon: 'contact',
-        nameKey: 'certifications.rd.bookingProcess.step1Name',
-        descriptionKey: 'certifications.rd.bookingProcess.step1Desc',
+        nameKey: 'certifications.rd.bookingProcess.steps.name1',
+        descriptionKey: 'certifications.rd.bookingProcess.steps.desc1',
       },
       {
         icon: 'theory',
-        nameKey: 'certifications.rd.bookingProcess.step2Name',
-        descriptionKey: 'certifications.rd.bookingProcess.step2Desc', // "Accede al material de PADI y aprende a tu propio ritmo."
+        nameKey: 'certifications.rd.bookingProcess.steps.name2',
+        descriptionKey: 'certifications.rd.bookingProcess.steps.desc2',
       },
       {
         icon: 'dive',
-        nameKey: 'certifications.rd.bookingProcess.step3Name',
-        descriptionKey: 'certifications.rd.bookingProcess.step3Desc',
+        nameKey: 'certifications.rd.bookingProcess.steps.name3',
+        descriptionKey: 'certifications.rd.bookingProcess.steps.desc3',
       },
     ],
   },
@@ -142,83 +143,71 @@ const rawRescueDiver: CertificationContent = {
     titleKey: 'certifications.galleryTitle',
     images: [
       {
-        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
-        photoCredit: 'Camilo Beltran',
+        backgroundImage: toAssetUrl(
+          '/images/certifications/rd/gallery-01.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
         variant: 'horizontal',
       },
       {
-        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
-        photoCredit: 'Camilo Beltran',
-        variant: 'vertical',
-      },
-      {
-        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
-        photoCredit: 'Camilo Beltran',
+        backgroundImage: toAssetUrl(
+          '/images/certifications/rd/gallery-02.webp'
+        ),
+        photoCredit: 'PADI®',
         variant: 'horizontal',
       },
       {
-        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
-        photoCredit: 'Camilo Beltran',
-        variant: 'vertical',
+        backgroundImage: toAssetUrl(
+          '/images/certifications/rd/gallery-03.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/certifications/rd/gallery-04.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
       },
     ],
   },
 
   testimonials: {
-    titleKey: 'certifications.rd.testimonials.title',
+    titleKey: 'certifications.testimonialsTitle',
     items: [
       {
-        quoteKey: 'certifications.rd.testimonials.quote1',
-        author: 'certifications.rd.testimonials.author1',
-        photoUrl: toAssetUrl('/images/testimonials/testimonial1.webp'),
-      },
-      {
-        quoteKey: 'certifications.rd.testimonials.quote2',
-        author: 'certifications.rd.testimonials.author2',
-        photoUrl: toAssetUrl('/images/testimonials/testimonial2.webp'),
+        quoteKey: 'certifications.rd.testimonials.items.quote1',
+        name: 'XYZ',
+        originKey: 'providencia-sept-2025',
+        rating: 5,
+        photoUrl: toAssetUrl('/images/certifications/rd/testimonial-01.webp'),
       },
       // Puedes añadir más testimonios aquí
     ],
   },
 
   faq: {
-    titleKey: 'certifications.rd.faq.title',
+    titleKey: 'certifications.faqTitle',
     items: [
       {
-        questionKey: 'certifications.rd.faq.q1',
-        answerKey: 'certifications.rd.faq.a1',
+        questionKey: 'certifications.rd.faq.items.q1',
+        answerKey: 'certifications.rd.faq.items.a1',
       },
       {
-        questionKey: 'certifications.rd.faq.q2',
-        answerKey: 'certifications.rd.faq.a2',
+        questionKey: 'certifications.rd.faq.items.q2',
+        answerKey: 'certifications.rd.faq.items.a2',
       },
       {
-        questionKey: 'certifications.rd.faq.q3',
-        answerKey: 'certifications.rd.faq.a3',
+        questionKey: 'certifications.rd.faq.items.q3',
+        answerKey: 'certifications.rd.faq.items.a3',
       },
       // Puedes añadir más preguntas y respuestas comunes
     ],
   },
 
-  instructorProfile: {
-    titleKey: 'certifications.rd.instructorProfile.title',
-    instructors: [
-      {
-        name: 'certifications.rd.instructor1.name',
-        descriptionKey: 'certifications.rd.instructor1.description',
-        photoUrl: toAssetUrl('/images/instructors/instructor1.webp'),
-      },
-      {
-        name: 'certifications.rd.instructor2.name',
-        descriptionKey: 'certifications.rd.instructor2.description',
-        photoUrl: toAssetUrl('/images/instructors/instructor2.webp'),
-      },
-      // ...(puedes añadir más instructores)
-    ],
-  },
-
   ctaButton: {
-    textKey: 'certifications.rd.ctaButton.text',
+    textKey: 'certifications.ctaButtonText',
     action: {
       type: 'whatsapp',
       whatsAppMessageKey: 'certifications.certificationWhatsappMessage',

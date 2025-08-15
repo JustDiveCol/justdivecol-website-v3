@@ -63,21 +63,12 @@ export const PhotoGallery = ({
     src: img.backgroundImage,
   }));
 
-  const goPrev = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setActiveIndex((i) => (i === 0 ? slides.length - 1 : i - 1));
-  };
-  const goNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setActiveIndex((i) => (i + 1) % slides.length);
-  };
-
   const main = slides[activeIndex];
 
   const containerClass = (() => {
     switch (main.variant) {
       case 'vertical':
-        return 'w-auto max-h-[40vh] aspect-[9/16] mx-auto';
+        return 'w-auto max-h-[50vh] aspect-[9/16] mx-auto';
       case 'square':
         return 'w-full max-w-lg aspect-square';
       case 'horizontal':
@@ -99,36 +90,46 @@ export const PhotoGallery = ({
 
         {/* Imagen principal */}
         <div
-          className='relative group cursor-pointer'
+          className='relative group cursor-pointer bg-brand-neutral rounded-2xl'
           onClick={() => setIsOpen(true)}>
           <motion.div
             key={activeIndex}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className={`${containerClass} rounded-lg overflow-hidden shadow-2xl`}>
-            <ImageComponent
-              imageData={{
-                backgroundImage: main.backgroundImage,
-                photoCredit: main.photoCredit,
-                variant: main.variant,
-              }}
-              translationNS={translationNS}
-            />
+            className={`${containerClass} relative rounded-lg overflow-hidden shadow-2xl`}>
+            {/* Capa interna con padding que “aleja” los overlays del borde */}
+            <div className='absolute inset-0 p-3 md:p-4'>
+              <ImageComponent
+                imageData={{
+                  backgroundImage: main.backgroundImage,
+                  photoCredit: main.photoCredit,
+                  variant: main.variant,
+                }}
+                translationNS={translationNS}
+                className='w-full h-full'
+              />
+            </div>
           </motion.div>
 
-          {/* Flechas de navegación */}
+          {/* Flechas de navegación (sin cambios) */}
           {slides.length > 1 && (
             <>
               <button
-                onClick={goPrev}
-                className='absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity'
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveIndex((i) => (i === 0 ? slides.length - 1 : i - 1));
+                }}
+                className='absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity'
                 aria-label='Anterior'>
                 <ChevronLeftIcon className='h-6 w-6' />
               </button>
               <button
-                onClick={goNext}
-                className='absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity'
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveIndex((i) => (i + 1) % slides.length);
+                }}
+                className='absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity'
                 aria-label='Siguiente'>
                 <ChevronRightIcon className='h-6 w-6' />
               </button>

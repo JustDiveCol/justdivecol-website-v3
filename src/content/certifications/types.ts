@@ -103,7 +103,9 @@ export type CertificationGallery = z.infer<typeof CertificationGallerySchema>;
 
 export const CertificationTestimonialsItemsSchema = z.object({
   quoteKey: z.string(),
-  author: z.string(),
+  name: z.string(),
+  originKey: z.string(),
+  rating: z.number(),
   photoUrl: AssetURLSchema,
 });
 export type CertificationTestimonialsItems = z.infer<
@@ -175,7 +177,6 @@ export const CertificationContentSchema = z.object({
   gallery: CertificationGallerySchema,
   testimonials: CertificationTestimonialsSchema,
   faq: CertificationFaqSchema,
-  instructorProfile: CertificationInstructorSchema,
   ctaButton: ContentButtonSchema,
   cta: CtaSectionPropsSchema,
 });

@@ -24,7 +24,7 @@ const rawOpenWaterDiver: CertificationContent = {
     titleKey: 'certifications.owd.seo.title',
     descriptionKey: 'certifications.owd.seo.desc',
     keywordsKey: 'certifications.owd.seo.keywords',
-    imageUrl: toAssetUrl('/images/social/owd-social-card.webp'),
+    imageUrl: toAssetUrl('/images/certifications/owd/social-card.webp'),
     urlPath: toUrlPath(ROUTES.certifications),
     translationNS: 'certifications',
   },
@@ -33,7 +33,9 @@ const rawOpenWaterDiver: CertificationContent = {
     titleKey: 'certifications.owd.header.title',
     subtitleKey: 'certifications.owd.header.subtitle',
     imageData: {
-      backgroundImage: toAssetUrl('/images/certifications/owd-header.webp'),
+      backgroundImage: toAssetUrl(
+        '/images/certifications/owd/header-background.webp'
+      ),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },
@@ -41,9 +43,9 @@ const rawOpenWaterDiver: CertificationContent = {
   },
 
   card: {
-    descriptionKey: 'Description OWD',
+    descriptionKey: 'certifications.owd.card.desc',
     imageData: {
-      backgroundImage: toAssetUrl('/images/certifications/owd-card.webp'),
+      backgroundImage: toAssetUrl('/images/certifications/owd/card-image.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       complementaryLogo: BRAND_ASSETS_SAFE.complementaryLogos.padi,
       textOverlayKey: 'certifications.owd.card.cardTextOverlay',
@@ -52,7 +54,7 @@ const rawOpenWaterDiver: CertificationContent = {
   },
 
   description: {
-    titleKey: 'certifications.owd.description.title',
+    titleKey: 'certifications.descriptionTitle',
     paragraphs: [
       'certifications.owd.description.paragraphs.p1',
       'certifications.owd.description.paragraphs.p2',
@@ -60,7 +62,7 @@ const rawOpenWaterDiver: CertificationContent = {
   },
 
   prerequisites: {
-    titleKey: 'certifications.owd.prerequisites.title',
+    titleKey: 'certifications.prerequisitesTitle',
     items: [
       'certifications.owd.prerequisites.item1',
       'certifications.owd.prerequisites.item2',
@@ -69,70 +71,70 @@ const rawOpenWaterDiver: CertificationContent = {
   },
 
   details: {
-    titleKey: 'certifications.owd.details.title',
+    titleKey: 'certifications.detailsTitle',
     items: [
       {
-        labelKey: 'certifications.owd.details.label1',
-        valueKey: 'certifications.owd.details.value1',
+        labelKey: 'certifications.owd.details.items.label1',
+        valueKey: 'certifications.owd.details.items.value1',
       },
       {
-        labelKey: 'certifications.owd.details.label2',
-        valueKey: 'certifications.owd.details.value2',
+        labelKey: 'certifications.owd.details.items.label2',
+        valueKey: 'certifications.owd.details.items.value2',
       },
       {
-        labelKey: 'certifications.owd.details.label3',
-        valueKey: 'certifications.owd.details.value3',
+        labelKey: 'certifications.owd.details.items.label3',
+        valueKey: 'certifications.owd.details.items.value3',
       },
     ],
   },
 
   curriculum: {
-    titleKey: 'certifications.owd.curriculum.title',
+    titleKey: 'certifications.curriculumTitle',
     modules: [
       {
         id: 'theory',
-        nameKey: 'certifications.owd.curriculum.module1Name',
-        descriptionKey: 'certifications.owd.curriculum.module1Desc',
+        nameKey: 'certifications.owd.curriculum.modules.name1',
+        descriptionKey: 'certifications.owd.curriculum.modules.desc1',
       },
       {
         id: 'confined-water',
-        nameKey: 'certifications.owd.curriculum.module2Name',
-        descriptionKey: 'certifications.owd.curriculum.module2Desc',
+        nameKey: 'certifications.owd.curriculum.modules.name2',
+        descriptionKey: 'certifications.owd.curriculum.modules.desc2',
       },
       {
         id: 'open-water',
-        nameKey: 'certifications.owd.curriculum.module3Name',
-        descriptionKey: 'certifications.owd.curriculum.module3Desc',
+        nameKey: 'certifications.owd.curriculum.modules.name3',
+        descriptionKey: 'certifications.owd.curriculum.modules.desc3',
       },
     ],
   },
 
   whatIsIncluded: {
-    titleKey: 'certifications.owd.whatIsIncluded.title',
+    titleKey: 'certifications.whatIsIncludedTitle',
     items: [
-      'certifications.owd.whatIsIncluded.item1',
-      'certifications.owd.whatIsIncluded.item2',
-      'certifications.owd.whatIsIncluded.item3',
+      'certifications.owd.whatIsIncluded.items.item1',
+      'certifications.owd.whatIsIncluded.items.item2',
+      'certifications.owd.whatIsIncluded.items.item3',
     ],
   },
 
   bookingProcess: {
-    titleKey: 'certifications.owd.bookingProcess.title',
+    titleKey: 'certifications.bookingProcessTitle',
     steps: [
       {
         icon: 'contact',
-        nameKey: 'certifications.owd.bookingProcess.step1Name',
-        descriptionKey: 'certifications.owd.bookingProcess.step1Desc',
+        nameKey: 'certifications.owd.bookingProcess.steps.name1',
+        descriptionKey: 'certifications.owd.bookingProcess.steps.desc1',
       },
       {
         icon: 'theory',
-        nameKey: 'certifications.owd.bookingProcess.step2Name',
-        descriptionKey: 'certifications.owd.bookingProcess.step2Desc',
+        nameKey: 'certifications.owd.bookingProcess.steps.name2',
+        descriptionKey: 'certifications.owd.bookingProcess.steps.desc2',
       },
       {
         icon: 'dive',
-        nameKey: 'certifications.owd.bookingProcess.step3Name',
-        descriptionKey: 'certifications.owd.bookingProcess.step3Desc',
+        nameKey: 'certifications.owd.bookingProcess.steps.name3',
+        descriptionKey: 'certifications.owd.bookingProcess.steps.desc3',
       },
     ],
   },
@@ -141,83 +143,71 @@ const rawOpenWaterDiver: CertificationContent = {
     titleKey: 'certifications.galleryTitle',
     images: [
       {
-        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
-        photoCredit: 'Camilo Beltran',
+        backgroundImage: toAssetUrl(
+          '/images/certifications/owd/gallery-01.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
         variant: 'horizontal',
       },
       {
-        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
-        photoCredit: 'Camilo Beltran',
+        backgroundImage: toAssetUrl(
+          '/images/certifications/owd/gallery-02.webp'
+        ),
+        photoCredit: 'PADI®',
         variant: 'horizontal',
       },
       {
-        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
-        photoCredit: 'Camilo Beltran',
+        backgroundImage: toAssetUrl(
+          '/images/certifications/owd/gallery-03.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
         variant: 'horizontal',
       },
       {
-        backgroundImage: toAssetUrl('/images/certifications/aowd-card.webp'),
-        photoCredit: 'Camilo Beltran',
+        backgroundImage: toAssetUrl(
+          '/images/certifications/owd/gallery-04.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
         variant: 'horizontal',
       },
     ],
   },
 
   testimonials: {
-    titleKey: 'certifications.owd.testimonials.title',
+    titleKey: 'certifications.testimonialsTitle',
     items: [
       {
-        quoteKey: 'certifications.owd.testimonials.quote1',
-        author: 'certifications.owd.testimonials.author1',
-        photoUrl: toAssetUrl('/images/testimonials/testimonial1.webp'),
-      },
-      {
-        quoteKey: 'certifications.owd.testimonials.quote2',
-        author: 'certifications.owd.testimonials.author2',
-        photoUrl: toAssetUrl('/images/testimonials/testimonial2.webp'),
+        quoteKey: 'certifications.owd.testimonials.items.quote1',
+        name: 'XYZ',
+        originKey: 'providencia-sept-2025',
+        rating: 5,
+        photoUrl: toAssetUrl('/images/certifications/owd/testimonial-01.webp'),
       },
       // Puedes añadir más testimonios aquí
     ],
   },
 
   faq: {
-    titleKey: 'certifications.owd.faq.title',
+    titleKey: 'certifications.faqTitle',
     items: [
       {
-        questionKey: 'certifications.owd.faq.q1',
-        answerKey: 'certifications.owd.faq.a1',
+        questionKey: 'certifications.owd.faq.items.q1',
+        answerKey: 'certifications.owd.faq.items.a1',
       },
       {
-        questionKey: 'certifications.owd.faq.q2',
-        answerKey: 'certifications.owd.faq.a2',
+        questionKey: 'certifications.owd.faq.items.q2',
+        answerKey: 'certifications.owd.faq.items.a2',
       },
       {
-        questionKey: 'certifications.owd.faq.q3',
-        answerKey: 'certifications.owd.faq.a3',
+        questionKey: 'certifications.owd.faq.items.q3',
+        answerKey: 'certifications.owd.faq.items.a3',
       },
       // Puedes añadir más preguntas y respuestas comunes
     ],
   },
 
-  instructorProfile: {
-    titleKey: 'certifications.owd.instructorProfile.title',
-    instructors: [
-      {
-        name: 'certifications.owd.instructor1.name',
-        descriptionKey: 'certifications.owd.instructor1.description',
-        photoUrl: toAssetUrl('/images/instructors/instructor1.webp'),
-      },
-      {
-        name: 'certifications.owd.instructor2.name',
-        descriptionKey: 'certifications.owd.instructor2.description',
-        photoUrl: toAssetUrl('/images/instructors/instructor2.webp'),
-      },
-      // ...(puedes añadir más instructores)
-    ],
-  },
-
   ctaButton: {
-    textKey: 'certifications.owd.ctaButton.text',
+    textKey: 'certifications.ctaButtonText',
     action: {
       type: 'whatsapp',
       whatsAppMessageKey: 'certifications.certificationWhatsappMessage',
