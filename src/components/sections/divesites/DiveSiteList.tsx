@@ -9,7 +9,7 @@ export const DiveSiteList = ({
   onHover,
   translationNS,
 }: DiveSiteListProps) => {
-  const { t } = useTranslation([translationNS, 'common']);
+  const { t } = useTranslation([translationNS, 'dive-sites', 'common']);
 
   const handleSelect = onSelect ?? (() => {});
   const handleHover = onHover ?? (() => {});

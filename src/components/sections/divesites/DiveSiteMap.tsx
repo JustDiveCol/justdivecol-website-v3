@@ -65,7 +65,7 @@ export const DiveSiteMap = ({
       }
     >
   >({});
-  const { t } = useTranslation([translationNS, 'common']);
+  const { t } = useTranslation([translationNS, 'dive-sites', 'common']);
   const hoverPopup = useRef<Popup | null>(null);
 
   // Efecto de inicialización del mapa
@@ -133,7 +133,7 @@ export const DiveSiteMap = ({
 
     // Añadir nuevos marcadores
     sites.forEach((site) => {
-      if (markersRef.current[site.id]) return; // Ya existe, no hacer nada
+      if (markersRef.current[site.id]) return;
 
       const el = document.createElement('div');
       const root = createRoot(el);

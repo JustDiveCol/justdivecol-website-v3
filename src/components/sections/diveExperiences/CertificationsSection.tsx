@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { CertificationCard } from '../shared/CertificationCard';
 import type { CertificationsSectionProps } from './types';
 import { listCertificationCards } from '../../../content/certifications';
-import { listSessions } from '../../../content/experiences'; // <-- usa la ruta donde expongas las sesiones
+import { listSessions } from '../../../content/experiences';
 import { useMotionPresets } from '../../../hooks/animations';
 import type { AvailableType, CertificationId } from '../../../constants';
 

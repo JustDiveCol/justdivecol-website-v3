@@ -1,7 +1,35 @@
 {
+  "allies_marquee": "Nuestros aliados",
+  "galleryTitle": "Galeria de imagenes",
+  "maxDepthLabel": "Profundidad maxima",
+  "tagsLabel": "Tags",
+  "viewMoreLabel": "Ver más",
+
+  "allyLogoAlt": "Logo de aliado",
+  "back_to_top": "Volver arriba",
+  "carousel": "Carrusel",
+  "contact_us": "Contáctanos",
+  "footerAria": "Pie de página",
+  "home": "Inicio",
+  "language": "Idioma",
+  "next": "Siguiente",
+  "previous": "Anterior",
+  "rating": "Calificación",
+  "skip_to_content": "Saltar al contenido",
+  "testimonials": "Testimonios",
+  "toggle_menu": "Abrir o cerrar menú",
+  "visitAlly": "Visitar aliado",
+  "visit_social": "Visitar {{name}}",
+
+  "conditionsLabel": "",
+  "difficultyLabel": "",
+
+  "important_links": "Enlaces importantes",
+
   "mainLogoAlt": "Logo de la empresa",
   "photoCreditPrefix": "Foto por:",
   "more_label": "Más",
+  "creyentesTripSealAlt": "Logo Creyentes",
 
   "seatsAvailableText": "{{count}} de {{total}} cupos disponibles",
 
@@ -11,6 +39,7 @@
   "years": "años",
   "duration": "duración",
   "days": "días",
+  "day": "día",
   "elearning": "eLearning",
   "hours": "horas",
 

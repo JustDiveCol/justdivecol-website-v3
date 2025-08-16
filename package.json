@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:ui": "vitest",
-    "validate:translations": "node ./validate-translations.js"
+    "validate:translations": "node ./validate-translations.cjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

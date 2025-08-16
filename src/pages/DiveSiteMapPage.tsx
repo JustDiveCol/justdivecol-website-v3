@@ -11,7 +11,7 @@ export default function DiveSiteMapPage() {
 
   return (
     <DiveSitesSection
-      translationNS='diveSites'
+      translationNS={'dive-sites'}
       sites={sites}
       destinations={destinations}
     />

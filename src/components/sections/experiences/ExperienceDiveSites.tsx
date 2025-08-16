@@ -37,7 +37,10 @@ export const ExperienceDiveSites = ({
           whileInView='visible'
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeIn()}>
-          <DiveSitesSection {...diveSitesSectionProps} />
+          <DiveSitesSection
+            {...diveSitesSectionProps}
+            translationNS={'dive-sites'}
+          />
         </motion.div>
       </div>
     </section>

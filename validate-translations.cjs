@@ -1,4 +1,4 @@
-// validate-translations.js
+// validate-translations.cjs
 const fs = require('fs');
 const path = require('path');
 
@@ -8,13 +8,13 @@ const LOCALES_DIR = path.join(__dirname, 'public/locales/es'); // Usamos 'es' co
 const FILE_EXTENSIONS = ['.tsx', '.ts'];
 // --- Fin de Configuración ---
 
-// Un Set para almacenar todas las claves usadas en el código, sin duplicados.
-const usedKeys = new Set();
-// Un Set para almacenar todas las claves definidas en los archivos JSON.
+// Cambiamos 'usedKeys' de un Set a un Map para rastrear las ubicaciones.
+// La estructura será: Map<string, string[]>
+// donde la clave es la 'translation key' y el valor es un array de rutas de archivo.
+const usedKeys = new Map();
 const definedKeys = new Set();
 
 // Expresión regular para encontrar usos de la función t('clave') o t("clave").
-// Captura el contenido dentro de las comillas.
 const I18N_KEY_REGEX = /t\(['"`]([^'"`]+)['"`]/g;
 
 /**
@@ -35,7 +35,7 @@ function traverseDirectory(dir, fileCallback) {
 }
 
 /**
- * Lee un archivo de código y extrae las claves de traducción.
+ * Lee un archivo de código y extrae las claves de traducción junto con su ubicación.
  * @param {string} filePath - La ruta del archivo.
  */
 function extractKeysFromFile(filePath) {
@@ -43,16 +43,24 @@ function extractKeysFromFile(filePath) {
   let match;
   while ((match = I18N_KEY_REGEX.exec(content)) !== null) {
     const key = match[1];
-    // Ignoramos claves que contienen variables, ya que el script no puede resolverlas.
+    // Ignoramos claves que contienen variables.
     if (!key.includes('${') && !key.includes('{{')) {
-      usedKeys.add(key);
+      // Si la clave ya existe, añadimos la nueva ruta (si no está ya).
+      if (usedKeys.has(key)) {
+        const files = usedKeys.get(key);
+        if (!files.includes(filePath)) {
+          files.push(filePath);
+        }
+      } else {
+        // Si es una clave nueva, la añadimos con su ruta.
+        usedKeys.set(key, [filePath]);
+      }
     }
   }
 }
 
 /**
  * Lee un archivo JSON y aplana su estructura para obtener las claves completas.
- * Ej: { "header": { "title": "Hola" } } -> "header.title"
  * @param {string} filePath - La ruta del archivo JSON.
  */
 function loadKeysFromJson(filePath) {
@@ -94,11 +102,11 @@ console.log(
 
 // 3. Comparar y encontrar las claves que faltan.
 const missingKeys = [];
-for (const key of usedKeys) {
-  // Algunas claves incluyen el namespace (ej: 'common:key'). Lo separamos.
+for (const [key, files] of usedKeys.entries()) {
   const keyWithoutNamespace = key.split(':').pop();
   if (!definedKeys.has(keyWithoutNamespace)) {
-    missingKeys.push(key);
+    // Guardamos la clave y los archivos donde se encontró.
+    missingKeys.push({ key, files });
   }
 }
 
@@ -111,9 +119,13 @@ if (missingKeys.length === 0) {
   console.error(
     `\n❌ ¡Atención! Se encontraron ${missingKeys.length} claves de traducción sin definir:`
   );
-  missingKeys.sort().forEach((key) => {
-    console.error(`  - ${key}`);
-  });
-  // Salimos con un código de error para que pueda ser usado en pipelines de CI/CD.
+  // Modificamos cómo se muestra el error para incluir la ruta.
+  missingKeys
+    .sort((a, b) => a.key.localeCompare(b.key))
+    .forEach(({ key, files }) => {
+      const relativeFiles = files.map((f) => path.relative(__dirname, f));
+      console.error(`\n  - Clave: "${key}"`);
+      console.error(`    -> Usada en: ${relativeFiles.join(', ')}`);
+    });
   process.exit(1);
 }

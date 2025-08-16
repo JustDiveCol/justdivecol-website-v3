@@ -90,7 +90,7 @@ const Footer: React.FC<FooterProps> = () => {
         <h2
           id='site-footer-heading'
           className='sr-only'>
-          {t('common:footer', 'Pie de página')}
+          {t('common:footerAria', 'Pie de página')}
         </h2>
 
         {/* Logo y slogan */}

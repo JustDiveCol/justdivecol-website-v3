@@ -65,7 +65,7 @@ const DestinationPage: React.FC = () => {
   }
 
   const diveSitesSectionProps = {
-    translationNS: 'diveSites' as const,
+    translationNS: 'dive-sites' as const,
     sites: allDiveSites,
     destinations: allDestinationsForFilters,
     initialFilters: {

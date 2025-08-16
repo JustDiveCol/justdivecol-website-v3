@@ -20,7 +20,7 @@ export const DiveSiteFilters = ({
   availableTags,
   translationNS,
 }: DiveSiteFiltersProps) => {
-  const { t } = useTranslation([translationNS, 'destinations', 'common']);
+  const { t } = useTranslation([translationNS, 'dive-sites', 'common']);
 
   const handleFilterChange = <K extends keyof FiltersData>(
     key: K,
@@ -119,13 +119,15 @@ export const DiveSiteFilters = ({
         <label
           htmlFor='max-depth'
           className='mb-2 block text-sm font-bold text-brand-white'>
-          {t('filterByMaxDepth', { ns: translationNS })} ({filters.maxDepth}m)
+          {t('filterByMaxDepth', { ns: translationNS })} ({filters.maxDepth} m /{' '}
+          {(filters.maxDepth * 3.281).toFixed(0)} ft)
         </label>
+
         <input
           id='max-depth'
           type='range'
           min={10}
-          max={40}
+          max={50}
           step={5}
           value={filters.maxDepth}
           onChange={(e) =>
