@@ -16,7 +16,7 @@ const rawPrinciples: PrinciplesPageContent = {
     descriptionKey: 'principles.seo.desc',
     keywordsKey: 'principles.seo.keywords',
     urlPath: toUrlPath(ROUTES.principles),
-    imageUrl: toAssetUrl('/images/social/principles-social-card.webp'),
+    imageUrl: toAssetUrl('/images/principles/social-card.webp'),
     translationNS: 'principles',
   },
 

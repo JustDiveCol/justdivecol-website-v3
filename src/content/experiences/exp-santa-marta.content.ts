@@ -14,7 +14,7 @@ const rawSantaMartaExp: ExperienceContent = {
     descriptionKey: 'experiences.santaMartaExp.seo.desc',
     keywordsKey: 'experiences.santaMartaExp.seo.keywords',
     urlPath: toUrlPath(ROUTES.diveExperiences),
-    imageUrl: toAssetUrl('/images/social/experiences-social-card.webp'),
+    imageUrl: toAssetUrl('/images/experiences/santa-marta/social-card.webp'),
     translationNS: 'experiences',
   },
 
@@ -24,7 +24,7 @@ const rawSantaMartaExp: ExperienceContent = {
     translationNS: 'experiences',
     imageData: {
       backgroundImage: toAssetUrl(
-        '/images/experiences/santa-marta/header.webp'
+        '/images/experiences/santa-marta/header-background.webp'
       ),
       photoCredit: 'PADI®',
       variant: 'header',
@@ -91,7 +91,42 @@ const rawSantaMartaExp: ExperienceContent = {
     images: [
       {
         backgroundImage: toAssetUrl(
-          '/images/destinations/santa-marta/gallery-01.webp'
+          '/images/experiences/santa-marta/gallery-01.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/experiences/santa-marta/gallery-02.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/experiences/santa-marta/gallery-03.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/experiences/santa-marta/gallery-04.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/experiences/santa-marta/gallery-05.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/experiences/santa-marta/gallery-06.webp'
         ),
         photoCredit: 'Camilo Beltran @JustDiveCol',
         variant: 'horizontal',

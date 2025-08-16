@@ -153,7 +153,7 @@ const rawRescueDiver: CertificationContent = {
         backgroundImage: toAssetUrl(
           '/images/certifications/rd/gallery-02.webp'
         ),
-        photoCredit: 'PADI®',
+        photoCredit: 'Camilo Beltran @JustDiveCol',
         variant: 'horizontal',
       },
       {
@@ -167,7 +167,7 @@ const rawRescueDiver: CertificationContent = {
         backgroundImage: toAssetUrl(
           '/images/certifications/rd/gallery-04.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'PADI®',
         variant: 'horizontal',
       },
     ],

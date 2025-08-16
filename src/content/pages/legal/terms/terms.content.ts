@@ -11,7 +11,7 @@ const rawTerms: LegalPageContent = {
     descriptionKey: 'contact.seo.desc',
     keywordsKey: 'contact.seo.keywords',
     urlPath: toUrlPath(ROUTES.terms),
-    imageUrl: toAssetUrl('/images/social/terms-social-card.webp'),
+    imageUrl: toAssetUrl('/images/legal/terms/social-card.webp'),
     translationNS: 'legal',
   },
 
@@ -20,7 +20,7 @@ const rawTerms: LegalPageContent = {
     subtitleKey: 'legal.terms.header.subtitle',
     translationNS: 'legal',
     imageData: {
-      backgroundImage: toAssetUrl('/images/contact/header-background.webp'),
+      backgroundImage: toAssetUrl('/images/legal/terms/header-background.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },

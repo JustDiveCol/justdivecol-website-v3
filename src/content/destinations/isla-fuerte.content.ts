@@ -18,7 +18,7 @@ const rawIslaFuerte: DestinationContent = {
     titleKey: 'destinations.ifi.seo.title',
     descriptionKey: 'destinations.ifi.seo.desc',
     keywordsKey: 'destinations.ifi.seo.keywords',
-    imageUrl: toAssetUrl('/images/social/ifi-social-card.webp'),
+    imageUrl: toAssetUrl('/images/destinations/isla-fuerte/social-card.webp'),
     urlPath: toUrlPath(ROUTES.destinations),
     translationNS: 'destinations',
   },
@@ -27,7 +27,9 @@ const rawIslaFuerte: DestinationContent = {
     titleKey: 'destinations.ifi.header.title',
     subtitleKey: 'destinations.ifi.header.subtitle',
     imageData: {
-      backgroundImage: toAssetUrl('/images/destinations/ifi-header.webp'),
+      backgroundImage: toAssetUrl(
+        '/images/destinations/isla-fuerte/header-background.webp'
+      ),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },
@@ -37,7 +39,7 @@ const rawIslaFuerte: DestinationContent = {
   card: {
     imageData: {
       backgroundImage: toAssetUrl(
-        '/images/destinations/santa-marta/ifi-card.webp'
+        '/images/destinations/isla-fuerte/card-image.webp'
       ),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'horizontal',
@@ -94,9 +96,44 @@ const rawIslaFuerte: DestinationContent = {
     images: [
       {
         backgroundImage: toAssetUrl(
-          '/images/destinations/santa-marta/gallery-01.webp'
+          '/images/destinations/isla-fuerte/gallery-01.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/isla-fuerte/gallery-02.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/isla-fuerte/gallery-03.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/isla-fuerte/gallery-04.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/isla-fuerte/gallery-05.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/isla-fuerte/gallery-06.webp'
+        ),
+        photoCredit: 'XYZ',
         variant: 'horizontal',
       },
     ],

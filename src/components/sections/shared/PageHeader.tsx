@@ -22,10 +22,10 @@ export const PageHeader = ({
       {/* Fondo (imagen) */}
       <div className='absolute inset-0'>
         <ImageComponent
-          className='absolute inset-0' // posición absoluta dentro del section
+          className='absolute inset-0'
           imageData={imageData}
           translationNS={translationNS}
-          fit='parent' // ⬅️ clave: ignora su 'variant' y llena al padre
+          fit='parent'
         />
       </div>
 

@@ -11,7 +11,7 @@ const rawDiveExperiences: DiveExperiencesPageContent = {
     descriptionKey: 'diveExperiences.seo.desc',
     keywordsKey: 'diveExperiences.seo.keywords',
     urlPath: toUrlPath(ROUTES.diveExperiences),
-    imageUrl: toAssetUrl('/images/social/diveExperiences-social-card.webp'),
+    imageUrl: toAssetUrl('/images/dive-experiences/social-card.webp'),
     translationNS: 'diveExperiences',
   },
 
@@ -19,7 +19,7 @@ const rawDiveExperiences: DiveExperiencesPageContent = {
     titleKey: 'diveExperiences.upcomingTrips.title',
     subtitleKey: 'diveExperiences.upcomingTrips.subtitle',
     backgroundImageUrl: toAssetUrl(
-      '/images/experiences/upcoming-trips-background.webp'
+      '/images/dive-experiences/upcoming-trips-background.webp'
     ),
     translationNS: 'diveExperiences',
     filtersAllDestinationsKey: 'diveExperiences.filters.filtersAllDestinations',
@@ -44,7 +44,7 @@ const rawDiveExperiences: DiveExperiencesPageContent = {
     textKey: 'diveExperiences.customTrips.text',
     translationNS: 'diveExperiences',
     imageData: {
-      backgroundImage: toAssetUrl('/images/experiences/custom-trip.webp'),
+      backgroundImage: toAssetUrl('/images/dive-experiences/custom-trip.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'horizontal',
     },

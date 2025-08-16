@@ -5,11 +5,11 @@ import {
   FeaturedSectionPropsSchema,
   HeroSectionPropsSchema,
   PrinciplesSectionPropsSchema,
-  TestimonialsSectionPropsSchema,
 } from '../../../components/sections/home/types';
 import { CtaSectionPropsSchema } from '../../../components/sections/shared/types';
 
 import { SEOPropsSchema } from '../../../components/common/types';
+import { TestimonialsSectionContentSchema } from '../testimonials/types';
 
 export type RawCardData = {
   readonly id: string;
@@ -23,7 +23,7 @@ export const HomePageContentSchema = z.object({
   hero: HeroSectionPropsSchema,
   featured: FeaturedSectionPropsSchema,
   principles: PrinciplesSectionPropsSchema,
-  testimonials: TestimonialsSectionPropsSchema,
+  testimonials: TestimonialsSectionContentSchema,
   allies: AlliesContentSchema,
   cta: CtaSectionPropsSchema,
 });

@@ -11,7 +11,6 @@ import {
   ContentButtonSchema,
   ImageComponentDataSchema,
 } from '../../common/types';
-import { TestimonialDataSchema } from '../shared/types';
 
 // ––– AlliesSection –––
 export const AllyLogoSchema = z.object({
@@ -120,19 +119,6 @@ export const PrinciplesSectionPropsSchema = z.object({
 });
 export type PrinciplesSectionProps = Omit<
   z.infer<typeof PrinciplesSectionPropsSchema>,
-  'translationNS'
-> & {
-  translationNS: I18NNamespace;
-};
-
-// ––– TestimonialsSection –––
-export const TestimonialsSectionPropsSchema = z.object({
-  titleKey: z.string().min(1),
-  translationNS: I18NNamespaceSchema,
-  items: z.array(TestimonialDataSchema).min(1),
-});
-export type TestimonialsSectionProps = Omit<
-  z.infer<typeof TestimonialsSectionPropsSchema>,
   'translationNS'
 > & {
   translationNS: I18NNamespace;

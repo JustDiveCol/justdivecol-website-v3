@@ -18,9 +18,7 @@ const rawSanAndres: DestinationContent = {
     titleKey: 'destinations.sai.seo.title',
     descriptionKey: 'destinations.sai.seo.desc',
     keywordsKey: 'destinations.sai.seo.keywords',
-    imageUrl: toAssetUrl(
-      '/images/destinations/san-andres-isla/sm-social-card.webp'
-    ),
+    imageUrl: toAssetUrl('/images/destinations/san-andres/social-card.webp'),
     urlPath: toUrlPath(ROUTES.destinations),
     translationNS: 'destinations',
   },
@@ -30,7 +28,7 @@ const rawSanAndres: DestinationContent = {
     subtitleKey: 'destinations.sai.header.subtitle',
     imageData: {
       backgroundImage: toAssetUrl(
-        '/images/destinations/san-andres-isla/header-background.webp'
+        '/images/destinations/san-andres/header-background.webp'
       ),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
@@ -41,7 +39,7 @@ const rawSanAndres: DestinationContent = {
   card: {
     imageData: {
       backgroundImage: toAssetUrl(
-        '/images/destinations/san-andres-isla/card-image.webp'
+        '/images/destinations/san-andres/card-image.webp'
       ),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'horizontal',
@@ -102,44 +100,44 @@ const rawSanAndres: DestinationContent = {
     images: [
       {
         backgroundImage: toAssetUrl(
-          '/images/destinations/san-andres-isla/gallery-01.webp'
+          '/images/destinations/san-andres/gallery-01.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'XYZ',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
-          '/images/destinations/san-andres-isla/gallery-02.webp'
+          '/images/destinations/san-andres/gallery-02.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'XYZ',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
-          '/images/destinations/san-andres-isla/gallery-03.webp'
+          '/images/destinations/san-andres/gallery-03.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'XYZ',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
-          '/images/destinations/san-andres-isla/gallery-04.webp'
+          '/images/destinations/san-andres/gallery-04.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'XYZ',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
-          '/images/destinations/san-andres-isla/gallery-05.webp'
+          '/images/destinations/san-andres/gallery-05.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'XYZ',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
-          '/images/destinations/san-andres-isla/gallery-06.webp'
+          '/images/destinations/san-andres/gallery-06.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'XYZ',
         variant: 'horizontal',
       },
     ],

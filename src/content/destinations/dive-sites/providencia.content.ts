@@ -17,7 +17,7 @@ export const providenciaDiveSitesContent: Record<string, DiveSiteContent> = {
     conditionsIds: ['deep'],
     descriptionKey: 'turtleRockProvDesc',
     tagsIds: ['advanced-only'],
-    photos: [],
+    photos: [], // /images/destinations/providencia/dive-sites/
   },
 
   'mantas-city-prov': {

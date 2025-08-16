@@ -5,7 +5,25 @@ import { ROUTES } from '../../../constants/routes.schema';
 import { principlesToHomeCards } from '../../selectors/principles.selectors';
 import { toUrlPath } from '../../urlPathSchema';
 import { principlesContent } from '../principles/principles.content';
+import { testimonialsContent } from '../testimonials/testimonials.content';
 import { HomePageContentSchema, type HomePageContent } from './types';
+
+const selectHomeTestimonials = (limit = 6) => {
+  return testimonialsContent.items
+    .filter((t) => t.pagePosition?.includes('home')) // ⬅️ clave
+    .sort((a, b) => {
+      // featured primero
+      if (a.featured && !b.featured) return -1;
+      if (!a.featured && b.featured) return 1;
+      // más recientes primero
+      const da = a.dateISO ? Date.parse(a.dateISO) : 0;
+      const db = b.dateISO ? Date.parse(b.dateISO) : 0;
+      if (db !== da) return db - da;
+      // rating desc
+      return (b.rating ?? 0) - (a.rating ?? 0);
+    })
+    .slice(0, limit);
+};
 
 const rawCards: ReadonlyArray<Omit<CardData, 'link'>> = [
   {
@@ -13,7 +31,7 @@ const rawCards: ReadonlyArray<Omit<CardData, 'link'>> = [
     titleKey: 'home.featured.cards.title1',
     subtitleKey: 'home.featured.cards.subtitle1',
     imageData: {
-      backgroundImage: toAssetUrl('/images/featured/featured-1.webp'),
+      backgroundImage: toAssetUrl('/images/home/featured-1.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'vertical',
     },
@@ -23,7 +41,7 @@ const rawCards: ReadonlyArray<Omit<CardData, 'link'>> = [
     titleKey: 'home.featured.cards.title2',
     subtitleKey: 'home.featured.cards.subtitle2',
     imageData: {
-      backgroundImage: toAssetUrl('/images/featured/featured-2.webp'),
+      backgroundImage: toAssetUrl('/images/home/featured-2.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'vertical',
     },
@@ -33,7 +51,7 @@ const rawCards: ReadonlyArray<Omit<CardData, 'link'>> = [
     titleKey: 'home.featured.cards.title3',
     subtitleKey: 'home.featured.cards.subtitle3',
     imageData: {
-      backgroundImage: toAssetUrl('/images/featured/featured-3.webp'),
+      backgroundImage: toAssetUrl('/images/home/featured-3.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'vertical',
     },
@@ -43,7 +61,7 @@ const rawCards: ReadonlyArray<Omit<CardData, 'link'>> = [
     titleKey: 'home.featured.cards.title4',
     subtitleKey: 'home.featured.cards.subtitle4',
     imageData: {
-      backgroundImage: toAssetUrl('/images/featured/featured-4.webp'),
+      backgroundImage: toAssetUrl('/images/home/featured-4.webp'),
       photoCredit: '@parche_de_buceo',
       variant: 'vertical',
     },
@@ -60,7 +78,7 @@ const rawHome: HomePageContent = {
     titleKey: 'home.seo.title',
     descriptionKey: 'home.seo.desc',
     keywordsKey: 'home.seo.keywords',
-    imageUrl: toAssetUrl('/images/social/home-social-card.webp'),
+    imageUrl: toAssetUrl('/images/home/social-card.webp'),
     urlPath: toUrlPath(ROUTES.home),
     translationNS: 'home',
   },
@@ -98,18 +116,9 @@ const rawHome: HomePageContent = {
   },
 
   testimonials: {
-    titleKey: 'home.testimonials.title',
-    translationNS: 'home',
-    items: [
-      {
-        id: 1,
-        quoteKey: 'home.testimonials.quote1',
-        name: 'Sunny Velez',
-        originKey: 'providencia-sept-2025',
-        rating: 5,
-        avatarUrl: '/images/home/avatar-1.webp',
-      },
-    ],
+    titleKey: 'testimonials.title',
+    translationNS: 'testimonials',
+    items: selectHomeTestimonials(6),
   },
 
   allies: {

@@ -8,6 +8,7 @@ import {
   I18NNamespaceSchema,
   type I18NNamespace,
 } from '../../../constants/i18n.schema';
+import { AssetURLSchema, CertificationIdSchema } from '../../../constants';
 
 // ––– ActiveDestinationCard –––
 export const DestinationCardSchema = z.object({
@@ -146,14 +147,34 @@ export type PhotoGalleryProps = Omit<
 > & { translationNS: I18NNamespace };
 
 // ––– TestimonialCard –––
-export const TestimonialDataSchema = z.object({
-  id: z.union([z.string(), z.number()]),
-  quoteKey: z.string().min(1),
-  name: z.string().min(1),
-  originKey: z.string().min(1),
-  rating: z.number().int().min(1).max(5),
-  avatarUrl: z.string().min(1),
-});
+export const PagePositionSchema = z.enum([
+  'home',
+  'destinations',
+  'certifications',
+  'experiences',
+]);
+export type TestimonialPagePosition = z.infer<typeof PagePositionSchema>;
+
+export const TestimonialDataSchema = z
+  .object({
+    id: z.string().min(1),
+    quoteKey: z.string().min(1),
+    name: z.string().min(2),
+    originKey: z.string().min(1),
+    pagePosition: z.array(PagePositionSchema).min(1),
+    rating: z.number().int().min(1).max(5).default(5),
+    dateISO: z.iso.date().optional(),
+    avatarUrl: AssetURLSchema,
+    certificationId: CertificationIdSchema.optional(),
+    featured: z.boolean().optional(),
+    verified: z.boolean().optional(),
+  })
+  .refine((v) => !!v.quoteKey, {
+    message: 'Debe existir quoteKey',
+  })
+  .refine((v) => !!v.originKey, {
+    message: 'Debe existir originKey o originText',
+  });
 export type TestimonialData = z.infer<typeof TestimonialDataSchema>;
 
 export const TestimonialCardPropsSchema = z.object({

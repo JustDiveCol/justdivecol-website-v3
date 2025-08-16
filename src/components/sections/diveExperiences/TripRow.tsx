@@ -128,7 +128,7 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
     });
   }, [session.derivedAvailability, session.seatsAvailable, session.capacity]);
 
-  const { titleKey, subtitleKey, imageUrl, destinationId } = useMemo(() => {
+  const { titleKey, subtitleKey, destinationId } = useMemo(() => {
     const header = parentExperience?.header as
       | ExperienceHeaderWithSubtitle
       | undefined;
@@ -187,31 +187,22 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5 }}
-      className={`flex flex-col md:flex-row items-center gap-6 p-4 border rounded-lg transition-colors duration-300 ${
+      className={`relative flex flex-col md:flex-row items-center gap-6 p-4 border rounded-lg transition-colors duration-300 ${
         isSoldOut
           ? 'border-red-500/20 bg-red-900/10'
           : 'border-white/10 bg-white/5 hover:bg-white/10'
       }`}>
-      {/* Imagen */}
-      <div className='relative w-full md:w-48 h-32 md:h-24 flex-shrink-0 p-2 rounded'>
+      {/* Sello Creyentes (flotante) */}
+      {session.creyentes && (
         <img
-          src={imageUrl}
-          alt={titleKey ? tKey(t, titleKey, translationNS) : ''}
-          className='w-full h-full object-contain'
+          src='/images/logos/creyentes-logo.png'
+          alt={t('common:creyentesTripSealAlt')}
+          className='absolute -top-3 -right-3 w-16 h-16 pointer-events-none'
+          aria-hidden='true'
           loading='lazy'
           decoding='async'
         />
-        {session.creyentes && (
-          <img
-            src='/images/logos/creyentes-logo.png'
-            alt={t('common:creyentesTripSealAlt')}
-            className='absolute -top-3 -right-3 w-16 h-16 pointer-events-none'
-            aria-hidden='true'
-            loading='lazy'
-            decoding='async'
-          />
-        )}
-      </div>
+      )}
 
       {/* Texto */}
       <div className='flex-grow text-center md:text-left'>
@@ -257,10 +248,7 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
             </p>
             <div className='mt-1 cursor-pointer'>
               <Button
-                action={{
-                  type: 'internal',
-                  path: sessionUrl,
-                }}
+                action={{ type: 'internal', path: sessionUrl }}
                 variant='outline'
                 size='sm'>
                 {t('common:seeDetailsButton')}

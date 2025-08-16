@@ -14,6 +14,7 @@ export const I18N_NAMESPACES_RAW = [
   'principles',
   'destinations',
   'dive-sites',
+  'testimonials',
 ] as const;
 
 export const I18N_LANGUAGES_RAW = ['es', 'en'] as const;

@@ -17,7 +17,7 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
     conditionsIds: ['boat-entry'],
     descriptionKey: 'bajoDelPescadorDesc',
     tagsIds: ['reef-fish'],
-    photos: [],
+    photos: [], // /images/destinations/santa-marta/dive-sites/
   },
 
   'barcaza-profunda-sm': {

@@ -155,7 +155,7 @@ const rawAdvancedOpenWaterDiver: CertificationContent = {
         backgroundImage: toAssetUrl(
           '/images/certifications/aowd/gallery-02.webp'
         ),
-        photoCredit: 'PADI®',
+        photoCredit: 'Camilo Beltran @JustDiveCol',
         variant: 'horizontal',
       },
       {
