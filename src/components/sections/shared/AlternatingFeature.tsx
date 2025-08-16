@@ -36,7 +36,6 @@ export const AlternatingFeature = ({
           transition={baseTransition}
           className='w-full md:w-1/2'>
           <div className='relative h-full overflow-hidden rounded-lg shadow-2xl'>
-            {/* No alteramos tus proporciones: ImageComponent decide según imageData.variant */}
             <ImageComponent imageData={imageData} />
           </div>
         </motion.div>
@@ -52,7 +51,6 @@ export const AlternatingFeature = ({
           viewport={{ once: true, amount: 0.3 }}
           transition={baseTransition}
           className='w-full md:w-1/2 flex'>
-          {/* Igualamos alturas sin forzar la imagen: el texto se estira y se centra verticalmente */}
           <div className='flex flex-col justify-center'>
             <h2 className='heading-3 mb-4 text-brand-white'>{t(titleKey)}</h2>
             <p className='text-base-md font-serif text-brand-neutral/90 whitespace-pre-line'>

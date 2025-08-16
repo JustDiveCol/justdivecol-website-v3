@@ -18,7 +18,7 @@ function isValidUrlPath(v: string): boolean {
 export const UrlPathSchema = z
   .string()
   .refine(isValidUrlPath, { message: 'Invalid UrlPath for current ROUTES' })
-  .brand<'UrlPath'>(); // ⬅️ IMPORTANTÍSIMO
+  .brand<'UrlPath'>();
 
 export type UrlPath = z.infer<typeof UrlPathSchema>;
 

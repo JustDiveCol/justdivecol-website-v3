@@ -7,6 +7,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { contactContent } from '../../content/pages/contact/contact.content';
 import type { ButtonProps } from './types';
+import { useLocalizedRoutes } from '../../hooks/useLocalizedRoutes'; // CAMBIO: Importar el hook
 
 const buttonVariants = cva(
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold uppercase tracking-wider transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-cta-yellow',
@@ -40,6 +41,7 @@ export const Button = React.forwardRef<HTMLAnchorElement, ButtonProps>(
   ) {
     const { t } = useTranslation('common');
     const { contactInfo } = contactContent;
+    const { to: localizedTo } = useLocalizedRoutes();
 
     const finalLink = React.useMemo(() => {
       if (action.type === 'whatsapp') {
@@ -57,9 +59,12 @@ export const Button = React.forwardRef<HTMLAnchorElement, ButtonProps>(
       if (action.type === 'external') {
         return action.path || '#';
       }
-      // action.type === 'internal'
-      return action.path || '/';
-    }, [t, contactInfo.phone, action]);
+
+      if (action.type === 'internal') {
+        return localizedTo(action.path || '/');
+      }
+      return '/';
+    }, [t, contactInfo.phone, action, localizedTo]);
 
     const classes = twMerge(buttonVariants({ variant, size, className }));
 

@@ -10,7 +10,6 @@ import { listSessions } from '../../../content/experiences';
 import { useMotionPresets } from '../../../hooks/animations';
 import type { AvailableType, CertificationId } from '../../../constants';
 
-/** Orden semántico por nivel → código */
 const LEVEL_ORDER = {
   entry: 0,
   advanced: 1,
@@ -37,7 +36,6 @@ function compareCerts(a: CertCard, b: CertCard): number {
   return String(a.titleKey ?? '').localeCompare(String(b.titleKey ?? ''));
 }
 
-// Helpers de fecha (ISO 'YYYY-MM-DD' en UTC)
 const toUTC = (iso: string) => {
   const [y, m, d] = iso.split('-').map(Number);
   return Date.UTC(y, m - 1, d);
@@ -88,7 +86,7 @@ export const CertificationsSection = ({
   }, [certificationsRaw]);
 
   const total = certifications.length;
-  const hasSingleInLastRowLg = total % 3 === 1; // última fila con 1 item en 3 columnas
+  const hasSingleInLastRowLg = total % 3 === 1;
 
   return (
     <section
@@ -124,7 +122,6 @@ export const CertificationsSection = ({
             const status = getCertificationStatus(cert.id, sessions);
             const isLast = idx === total - 1;
 
-            // Si queda 1 solo en la última fila (en lg), colocarlo en la columna central (2)
             const extraPos =
               isLast && hasSingleInLastRowLg ? ' lg:col-start-2' : '';
 

@@ -13,28 +13,30 @@ export const PrinciplesSection = ({
 
   return (
     <section
-      className='section bg-brand-primary-dark'
+      className='bg-brand-primary-dark py-16 px-4'
       aria-labelledby='principles-heading'>
-      <div className='max-w-3xl mx-auto text-center mb-16'>
-        <h2
-          id='principles-heading'
-          className='heading-2 text-white'>
-          {t(titleKey)}
-        </h2>
-        <p className='text-subtitle mt-4'>{t(subtitleKey)}</p>
-      </div>
+      <div className='container mx-auto'>
+        <div className='mx-auto max-w-max text-center mb-12'>
+          <h2
+            id='principles-heading'
+            className='heading-3 text-white'>
+            {t(titleKey)}
+          </h2>
+          <p className='text-subtitle mt-4'>{t(subtitleKey)}</p>
+        </div>
 
-      <div className='flex flex-wrap justify-center items-stretch gap-8'>
-        {cards.map((card) => (
-          <div
-            key={card.id}
-            className='flex w-[calc(50%-1rem)] flex-shrink-0 sm:w-5/12 md:w-4/12 lg:w-[30%] xl:w-[22%]'>
-            <PrincipleCard
-              cardData={card}
-              translationNS={'principles'}
-            />
-          </div>
-        ))}
+        <div className='flex flex-wrap justify-center items-stretch gap-8'>
+          {cards.map((card) => (
+            <div
+              key={card.id}
+              className='flex w-[calc(50%-1rem)] flex-shrink-0 sm:w-5/12 md:w-4/12 lg:w-[30%] xl:w-[22%]'>
+              <PrincipleCard
+                cardData={card}
+                translationNS={'principles'}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

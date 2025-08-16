@@ -10,7 +10,6 @@ import { ChevronLeftIcon, ChevronRightIcon } from '../../ui';
 import type { DestinationsSectionProps } from './types';
 import type { DestinationContent } from '../../../content/destinations/types';
 
-// ✅ NUEVO: importa sesiones y tipo
 import { listSessions } from '../../../content/experiences';
 import type { ExperienceSessionContent } from '../../../content/experiences/sessions/types';
 
@@ -29,12 +28,10 @@ export const DestinationsSection = ({
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
-  // Contenido tipado
   const destinations = useMemo(() => listDestinations(), []);
   const experiences = useMemo(() => listExperiences(), []);
-  const sessions = useMemo(() => listSessions(), []); // ✅ NUEVO
+  const sessions = useMemo(() => listSessions(), []);
 
-  // Mapa experiencia -> destino
   const expIdToDestId = useMemo<Record<string, string>>(
     () =>
       experiences.reduce((acc, e) => {
@@ -44,7 +41,6 @@ export const DestinationsSection = ({
     [experiences]
   );
 
-  // ✅ NUEVO: sesiones futuras por destino (ordenadas por fecha)
   const sessionsByDestination = useMemo<
     Record<string, ExperienceSessionContent[]>
   >(() => {
@@ -59,12 +55,11 @@ export const DestinationsSection = ({
       if (!destId) continue;
 
       const startMs = new Date(`${s.startDate}T00:00:00Z`).getTime();
-      if (startMs < todayMs) continue; // solo futuras/actuales
+      if (startMs < todayMs) continue;
 
       (byDest[destId] ||= []).push(s);
     }
 
-    // orden ascendente por fecha
     Object.values(byDest).forEach((arr) =>
       arr.sort(
         (a, b) =>
@@ -76,20 +71,17 @@ export const DestinationsSection = ({
     return byDest;
   }, [sessions, expIdToDestId]);
 
-  // Destinos activos: con al menos una sesión futura
   const activeDestinations = useMemo<DestinationContent[]>(() => {
     return destinations.filter(
       (d) => (sessionsByDestination[d.id]?.length ?? 0) > 0
     );
   }, [destinations, sessionsByDestination]);
 
-  // Resto de destinos
   const otherDestinations = useMemo<DestinationContent[]>(() => {
     const activeIds = new Set(activeDestinations.map((d) => d.id));
     return destinations.filter((d) => !activeIds.has(d.id));
   }, [destinations, activeDestinations]);
 
-  // Carrusel solo si hay más de 3
   const shouldUseCarousel = activeDestinations.length > 3;
 
   return (
@@ -110,14 +102,14 @@ export const DestinationsSection = ({
                 ref={emblaRef}>
                 <div className='flex -ml-4'>
                   {activeDestinations.map((dest) => {
-                    const activeSess = sessionsByDestination[dest.id] || []; // ✅ CAMBIO
+                    const activeSess = sessionsByDestination[dest.id] || [];
                     return (
                       <div
                         key={dest.id}
                         className='relative pl-4 flex-[0_0_90%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%]'>
                         <ActiveDestinationCard
                           destination={dest}
-                          activeSessions={activeSess} // ✅ CAMBIO
+                          activeSessions={activeSess}
                         />
                       </div>
                     );
@@ -141,12 +133,12 @@ export const DestinationsSection = ({
           ) : (
             <div className='flex flex-wrap justify-center gap-8'>
               {activeDestinations.map((dest) => {
-                const activeSess = sessionsByDestination[dest.id] || []; // ✅ CAMBIO
+                const activeSess = sessionsByDestination[dest.id] || [];
                 return (
                   <ActiveDestinationCard
                     key={dest.id}
                     destination={dest}
-                    activeSessions={activeSess} // ✅ CAMBIO
+                    activeSessions={activeSess}
                     className='w-full max-w-sm'
                   />
                 );

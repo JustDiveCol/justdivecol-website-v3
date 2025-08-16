@@ -13,10 +13,12 @@ export const FeaturedSection = ({
   const cardsToDisplay = [...cards];
 
   return (
-    <section className='bg-brand-primary-medium py-20 px-4'>
+    <section
+      className='bg-brand-primary-medium py-16 px-4'
+      aria-labelledby='featured-heading'>
       <div className='container mx-auto'>
-        <div className='mx-auto max-w-max text-center mb-16'>
-          <h2 className='heading-2 text-white'>{t(titleKey)}</h2>
+        <div className='mx-auto max-w-max text-center mb-12'>
+          <h2 className='heading-3 text-white'>{t(titleKey)}</h2>
         </div>
 
         <div className='flex flex-wrap justify-center gap-8'>

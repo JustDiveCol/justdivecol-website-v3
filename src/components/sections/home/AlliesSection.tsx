@@ -41,9 +41,11 @@ export const AlliesSection = ({
   const shouldMarquee = logoCount >= marqueeThreshold;
 
   return (
-    <section className='bg-brand-primary-dark'>
-      <div className='section text-center'>
-        <h2 className='heading-3 mb-16 text-brand-white'>{t(titleKey)}</h2>
+    <section
+      className='bg-brand-primary-dark py-16 px-4'
+      aria-labelledby='featured-heading'>
+      <div className='container mx-auto text-center mb-12'>
+        <h2 className='heading-4 mb-16 text-brand-white'>{t(titleKey)}</h2>
 
         {!shouldMarquee ? (
           <ul

@@ -175,38 +175,7 @@ const rawAdvancedOpenWaterDiver: CertificationContent = {
     ],
   },
 
-  testimonials: {
-    titleKey: 'certifications.testimonialsTitle',
-    items: [
-      {
-        quoteKey: 'certifications.aowd.testimonials.items.quote1',
-        name: 'XYZ',
-        originKey: 'providencia-sept-2025',
-        rating: 5,
-        photoUrl: toAssetUrl('/images/certifications/aowd/testimonial-01.webp'),
-      },
-      // Puedes añadir más testimonios aquí
-    ],
-  },
-
-  faq: {
-    titleKey: 'certifications.faqTitle',
-    items: [
-      {
-        questionKey: 'certifications.aowd.faq.items.q1',
-        answerKey: 'certifications.aowd.faq.items.a1',
-      },
-      {
-        questionKey: 'certifications.aowd.faq.items.q2',
-        answerKey: 'certifications.aowd.faq.items.a2',
-      },
-      {
-        questionKey: 'certifications.aowd.faq.items.q3',
-        answerKey: 'certifications.aowd.faq.items.a3',
-      },
-      // Puedes añadir más preguntas y respuestas comunes
-    ],
-  },
+  faq: 'advancedOpenWater',
 
   ctaButton: {
     textKey: 'certifications.ctaButtonText',

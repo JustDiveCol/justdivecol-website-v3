@@ -31,6 +31,9 @@ export type ContactSectionProps = Omit<
 // ––– FaqSection –––
 export const FaqSectionPropsSchema = z.object({
   translationNS: I18NNamespaceSchema,
+  titleKey: z.string().optional(),
+  categoryId: z.string().optional(),
+  showSeeAllButton: z.boolean().optional().default(true),
 });
 export type FaqSectionProps = Omit<
   z.infer<typeof FaqSectionPropsSchema>,

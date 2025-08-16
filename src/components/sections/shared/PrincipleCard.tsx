@@ -11,7 +11,7 @@ export const PrincipleCard = ({
 }: PrincipleCardProps) => {
   const { t } = useTranslation([translationNS, 'common']);
   const mainLogo = BRAND_ASSETS_SAFE.mainLogo;
-  const { card } = useMotionPresets(); // ← usar preset global
+  const { card } = useMotionPresets();
 
   return (
     <motion.div
@@ -20,7 +20,6 @@ export const PrincipleCard = ({
       whileInView='visible'
       viewport={{ once: true, amount: 0.3 }}
       className='group flex h-full flex-col overflow-hidden rounded-lg bg-brand-neutral/80 shadow-xl'>
-      {/* header con ratio fijo */}
       <figure className='relative aspect-video m-0'>
         <div className='absolute inset-0 overflow-hidden'>
           <img
@@ -41,7 +40,7 @@ export const PrincipleCard = ({
         {/* Logos and Credits */}
         <div className='absolute inset-0'>
           {/* Main Logo */}
-          <div className='absolute top-3 right-3 opacity-80 w-14 md:w-20 filter drop-shadow-lg'>
+          <div className='absolute top-3 right-3 opacity-80 w-14 md:w-20 filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
             <img
               src={mainLogo.url}
               alt={t(mainLogo.altKey)}
@@ -55,7 +54,7 @@ export const PrincipleCard = ({
 
           {/* Complementary Logo */}
           {cardData.complementaryLogo && (
-            <div className='absolute top-3 left-3 opacity-80 w-8 md:w-12 filter drop-shadow-lg'>
+            <div className='absolute top-3 left-3 opacity-80 w-8 md:w-12 filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
               <img
                 src={cardData.complementaryLogo.url}
                 alt={t(cardData.complementaryLogo.altKey)}
@@ -78,7 +77,7 @@ export const PrincipleCard = ({
 
         {/* Title Over the Image */}
         <div className='relative flex h-full items-end p-6'>
-          <h3 className='heading-6 text-brand-white w-full text-center font-bold filter drop-shadow-lg'>
+          <h3 className='text-xs sm:text-sm md:text-lg lg:text-xl leading-snug font-semibold text-brand-white w-full text-center filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
             {t(cardData.titleKey)}
           </h3>
         </div>
@@ -86,7 +85,7 @@ export const PrincipleCard = ({
 
       {/* cuerpo que crece para igualar alturas */}
       <div className='flex flex-1 flex-col p-6 text-justify'>
-        <p className='text-base-sm text-brand-primary-dark/80'>
+        <p className='text-base-xs text-brand-primary-dark/80 line-clamp-4'>
           {t(cardData.descriptionKey)}
         </p>
       </div>

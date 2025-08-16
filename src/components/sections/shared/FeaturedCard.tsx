@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { motion, useReducedMotion } from 'framer-motion';
 import type { FeaturedCardProps } from '../home/types';
 import { BRAND_ASSETS_SAFE } from '../../../constants';
+import { useLocalizedRoutes } from '../../../hooks/useLocalizedRoutes';
 
 export const FeaturedCard = ({
   cardData,
@@ -11,6 +12,7 @@ export const FeaturedCard = ({
   translationNS,
 }: FeaturedCardProps) => {
   const { t } = useTranslation([translationNS, 'common']);
+  const { to: localizedTo } = useLocalizedRoutes();
   const reduceMotion = useReducedMotion();
   const { imageData, link, titleKey, subtitleKey } = cardData;
 
@@ -24,7 +26,7 @@ export const FeaturedCard = ({
       transition={{ duration: reduceMotion ? 0 : 0.6, ease: 'easeOut' }}
       className={className}>
       <Link
-        to={link}
+        to={localizedTo(link)}
         aria-label={t(titleKey)}
         className='group relative block h-full w-full overflow-hidden rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-cta-orange/70'>
         {/* Background Image with Zoom on hover */}
@@ -43,7 +45,7 @@ export const FeaturedCard = ({
         {/* Logos and Credits */}
         <div className='absolute inset-0 z-20'>
           {/* Main Logo */}
-          <div className='absolute top-4 right-4 drop-shadow-lg opacity-80 w-14 md:w-20'>
+          <div className='absolute top-4 right-4 opacity-80 w-14 md:w-20 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
             <img
               src={mainLogo.url}
               alt={t(mainLogo.altKey)}
@@ -56,7 +58,7 @@ export const FeaturedCard = ({
 
           {/* Complementary Logo */}
           {imageData.complementaryLogo && (
-            <div className='absolute top-4 left-4 drop-shadow-md opacity-80 w-8 md:w-12'>
+            <div className='absolute top-4 left-4 opacity-80 w-8 md:w-12 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
               <img
                 src={imageData.complementaryLogo.url}
                 alt={t(imageData.complementaryLogo.altKey)}
@@ -70,7 +72,7 @@ export const FeaturedCard = ({
 
           {/* Photo Credits */}
           {imageData.photoCredit && (
-            <div className='pointer-events-none absolute bottom-0 left-0 z-30 w-full select-none bg-brand-primary-dark/70 px-4 py-2 text-left text-xs text-brand-white opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+            <div className='pointer-events-none absolute bottom-0 left-0 z-30 w-full select-none bg-brand-primary-dark/70 px-4 py-2 text-left text-base-xs text-brand-white opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
               {t('common:photoCreditPrefix')} {imageData.photoCredit}
             </div>
           )}
@@ -79,11 +81,11 @@ export const FeaturedCard = ({
         {/* Text Content */}
         <div className='relative z-20 flex h-full flex-col items-center justify-end p-6 text-center text-white'>
           <div className='transition-transform duration-500 ease-in-out group-hover:-translate-y-4'>
-            <h3 className='heading-6 text-brand-cta-orange font-bold'>
+            <h3 className='text-xs sm:text-sm md:text-base lg:text-lg leading-snug font-bold uppercase tracking-tight text-brand-cta-orange'>
               {t(titleKey)}
             </h3>
             {subtitleKey && (
-              <p className='hidden sm:block mt-1 font-serif text-base text-brand-neutral'>
+              <p className='text-xs sm:text-xs md:text-sm lg:text-base leading-snug hidden sm:block mt-1 text-brand-neutral'>
                 {t(subtitleKey)}
               </p>
             )}

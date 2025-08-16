@@ -14,6 +14,8 @@ import type {
 } from '../../constants/routes.schema';
 import { BRAND_ASSETS_SAFE } from '../../constants';
 
+import { useLocalizedRoutes } from '../../hooks/useLocalizedRoutes';
+
 const NAV_H_MOBILE = '4rem'; // h-16
 const NAV_H_DESKTOP = '5rem'; // h-20
 
@@ -25,22 +27,26 @@ type BaseLinkProps = {
 };
 
 const useIsActive = (to: StaticRoutePath) => {
-  const resolved = useResolvedPath(to);
-  const isRoot = resolved.pathname === '/';
+  const { i18n } = useTranslation();
+  const lang = i18n.language;
+  const localizedPath = `/${lang}${to === '/' ? '' : to}`;
+  const resolved = useResolvedPath(localizedPath);
+  const isRoot = to === '/';
   const match = useMatch({
-    path: isRoot ? '/' : `${resolved.pathname}/*`,
-    end: isRoot, // la raíz solo matchea exactamente '/'
+    path: isRoot ? `/${lang}` : `${resolved.pathname}/*`,
+    end: isRoot,
   });
   return Boolean(match);
 };
 
 const DesktopNavLinkItem = ({ to, nameKey, className = '' }: BaseLinkProps) => {
   const { t } = useTranslation(['common', 'navigation']);
+  const { to: localizedTo } = useLocalizedRoutes();
   const active = useIsActive(to);
 
   return (
     <Link
-      to={to}
+      to={localizedTo(to)}
       className={`group relative flex-shrink-0 whitespace-nowrap text-sm font-semibold uppercase tracking-wider transition-colors
         ${
           active
@@ -60,11 +66,12 @@ const DesktopNavLinkItem = ({ to, nameKey, className = '' }: BaseLinkProps) => {
 
 const MoreMenuLinkItem = ({ to, nameKey }: BaseLinkProps) => {
   const { t } = useTranslation(['common', 'navigation']);
+  const { to: localizedTo } = useLocalizedRoutes();
   const active = useIsActive(to);
 
   return (
     <Link
-      to={to}
+      to={localizedTo(to)}
       role='menuitem'
       className={`block w-full px-4 py-2 text-left text-sm font-semibold uppercase transition-colors
         ${
@@ -83,11 +90,12 @@ const MobileMenuLinkItem = ({
   onClick,
 }: BaseLinkProps & { onClick: () => void }) => {
   const { t } = useTranslation(['common', 'navigation']);
+  const { to: localizedTo } = useLocalizedRoutes();
   const active = useIsActive(to);
 
   return (
     <Link
-      to={to}
+      to={localizedTo(to)}
       onClick={onClick}
       className={`w-full rounded-md py-3 text-center text-sm font-semibold uppercase tracking-wider transition-colors
         ${
@@ -103,6 +111,7 @@ const MobileMenuLinkItem = ({
 
 const Navbar: React.FC<NavbarProps> = () => {
   const { t } = useTranslation(['common', 'navigation']);
+  const { to: localizedTo } = useLocalizedRoutes();
   const location = useLocation();
   const reduceMotion = useReducedMotion();
 
@@ -193,7 +202,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         style={{ height: 'var(--nav-h)' }}>
         {/* Logo */}
         <Link
-          to='/'
+          to={localizedTo('/')}
           className='flex-shrink-0 transition-transform duration-300 hover:scale-105'
           aria-label={t('common:home', 'Inicio')}>
           <img

@@ -1,7 +1,6 @@
 // src/main.tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App.tsx';
 import 'maplibre-gl/dist/maplibre-gl.css';
@@ -11,9 +10,7 @@ import './i18n/config.ts';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HelmetProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <App />
     </HelmetProvider>
   </React.StrictMode>
 );

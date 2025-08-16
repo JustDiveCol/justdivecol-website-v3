@@ -1,6 +1,4 @@
 /* src/index.css */
-
-/* 1. Importa las directivas base de Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,17 +7,14 @@
    2. ESTILOS BASE Y SOBREESCRITURAS
    ========================================================================== */
 @layer base {
-  /* safe areas globales */
   :root {
     --safe-top: env(safe-area-inset-top, 0px);
     --safe-bottom: env(safe-area-inset-bottom, 0px);
-    /* Permite overrides por sección */
     --section-pt: theme(spacing.section-sm);
     --section-pb: theme(spacing.section-sm);
   }
 
   body {
-    /* Aplicamos la fuente sans-serif por defecto a todo el cuerpo */
     @apply font-sans bg-brand-primary-dark text-brand-neutral;
   }
 
@@ -57,22 +52,25 @@
 @layer components {
   /* --- Clases para encabezados --- */
   .heading-1 {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight font-extrabold uppercase tracking-tight;
+    @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight font-extrabold uppercase tracking-tight;
   }
   .heading-2 {
-    @apply text-2xl sm:text-4xl md:text-5xl leading-tight font-bold uppercase tracking-tight;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight font-bold uppercase tracking-tight;
   }
   .heading-3 {
-    @apply text-2xl sm:text-3xl md:text-4xl leading-snug font-semibold uppercase tracking-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-snug font-semibold uppercase tracking-tight;
   }
   .heading-4 {
-    @apply text-xl sm:text-2xl md:text-3xl leading-snug font-semibold uppercase tracking-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-snug font-semibold uppercase tracking-tight;
   }
   .heading-5 {
-    @apply text-lg sm:text-xl md:text-2xl leading-snug font-semibold uppercase tracking-tight;
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-snug font-semibold uppercase tracking-tight;
   }
   .heading-6 {
-    @apply text-base sm:text-lg md:text-xl leading-snug font-semibold uppercase tracking-tight;
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl leading-snug font-semibold uppercase tracking-tight;
+  }
+  .heading-7 {
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl leading-snug font-semibold uppercase tracking-tight;
   }
 
   /* --- Clases para texto --- */
@@ -81,6 +79,12 @@
   }
   .text-base-md {
     @apply text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed;
+  }
+  .text-base-sm {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed;
+  }
+  .text-base-xs {
+    @apply text-xs sm:text-xs md:text-sm lg:text-base leading-relaxed;
   }
   .text-button {
     @apply text-base sm:text-lg md:text-xl font-bold uppercase tracking-wide font-serif;
@@ -132,10 +136,7 @@
    ========================================================================== */
 @layer utilities {
   .min-h-hero {
-    /* usar dvh para evitar bugs en iOS con barras dinámicas */
-    min-height: calc(
-      100dvh - 5rem
-    ); /* ajustaremos '5rem' cuando definamos la altura real del Navbar */
+    min-height: calc(100dvh - 5rem);
   }
 }
 
@@ -148,11 +149,11 @@
   background: transparent !important;
   padding: 0 !important;
   box-shadow: none !important;
-  border-radius: 0.75rem !important; /* 12px */
+  border-radius: 0.75rem !important;
 }
 .maplibregl-popup-close-button {
   font-size: 24px !important;
-  color: white !important; /* Ejemplo de mejora de visibilidad */
+  color: white !important;
 }
 
 /* --- Otras utilidades --- */

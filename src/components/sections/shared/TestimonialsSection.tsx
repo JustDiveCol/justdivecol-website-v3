@@ -11,9 +11,9 @@ function useColumnsByBreakpoint() {
     if (typeof window === 'undefined') return 1;
     const mqMd = window.matchMedia('(min-width: 768px)');
     const mqLg = window.matchMedia('(min-width: 1024px)');
-    if (mqLg.matches) return 3; // lg: w-1/3
-    if (mqMd.matches) return 2; // md: w-1/2
-    return 1; // base: w-full
+    if (mqLg.matches) return 3;
+    if (mqMd.matches) return 2;
+    return 1;
   }, []);
 
   const [cols, setCols] = React.useState(1);
@@ -44,13 +44,10 @@ export const TestimonialsSection = ({
 }: TestimonialsSectionContent) => {
   const { t } = useTranslation([translationNS, 'common']);
 
-  // 1) columnas actuales por breakpoint
   const cols = useColumnsByBreakpoint();
 
-  // 2) Mostrar carrusel sólo si “no caben” en una fila
   const showCarousel = items.length > cols;
 
-  // Embla: sólo lo usamos si showCarousel es true
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: 'start',
@@ -90,13 +87,13 @@ export const TestimonialsSection = ({
 
   return (
     <section
-      className='bg-brand-primary-medium'
+      className='bg-brand-primary-medium py-16 px-4'
       aria-labelledby='testimonials-heading'>
-      <div className='section'>
-        <div className='mx-auto mb-12 max-w-max text-center'>
+      <div className='container mx-auto'>
+        <div className='mx-auto max-w-max text-center mb-12'>
           <h2
             id='testimonials-heading'
-            className='heading-2 text-white'>
+            className='heading-3 text-white'>
             {t(titleKey)}
           </h2>
         </div>
@@ -143,7 +140,6 @@ export const TestimonialsSection = ({
               </button>
             </>
           ) : (
-            // Layout estático (1–3 por fila) — refleja las mismas columnas
             <div className='flex flex-wrap justify-center gap-6'>
               {items.map((testimonial) => (
                 <div

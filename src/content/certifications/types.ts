@@ -9,7 +9,6 @@ import {
   CtaSectionPropsSchema,
   PageHeaderPropsSchema,
 } from '../../components/sections/shared/types';
-import { AssetURLSchema } from '../../constants/assets.schema';
 import {
   AgencyIdSchema,
   CertificationCodeSchema,
@@ -101,54 +100,6 @@ export const CertificationGallerySchema = z.object({
 });
 export type CertificationGallery = z.infer<typeof CertificationGallerySchema>;
 
-export const CertificationTestimonialsItemsSchema = z.object({
-  quoteKey: z.string(),
-  name: z.string(),
-  originKey: z.string(),
-  rating: z.number(),
-  photoUrl: AssetURLSchema,
-});
-export type CertificationTestimonialsItems = z.infer<
-  typeof CertificationTestimonialsItemsSchema
->;
-
-export const CertificationTestimonialsSchema = z.object({
-  titleKey: z.string(),
-  items: z.array(CertificationTestimonialsItemsSchema).min(1),
-});
-export type CertificationTestimonials = z.infer<
-  typeof CertificationTestimonialsSchema
->;
-
-export const CertificationFaqItemSchema = z.object({
-  questionKey: z.string(),
-  answerKey: z.string(),
-});
-export type CertificationFaqItem = z.infer<typeof CertificationFaqItemSchema>;
-
-export const CertificationFaqSchema = z.object({
-  titleKey: z.string(),
-  items: z.array(CertificationFaqItemSchema).min(1),
-});
-export type CertificationFaq = z.infer<typeof CertificationFaqSchema>;
-
-export const CertificationInstructorInstructorsSchema = z.object({
-  name: z.string(),
-  descriptionKey: z.string(),
-  photoUrl: AssetURLSchema,
-});
-export type CertificationInstructorInstructors = z.infer<
-  typeof CertificationInstructorInstructorsSchema
->;
-
-export const CertificationInstructorSchema = z.object({
-  titleKey: z.string(),
-  instructors: z.array(CertificationInstructorInstructorsSchema).min(1),
-});
-export type CertificationInstructor = z.infer<
-  typeof CertificationInstructorSchema
->;
-
 export const CertificationContentSchema = z.object({
   id: CertificationIdSchema,
   slug: z.string().min(1, 'slug is required'),
@@ -175,8 +126,7 @@ export const CertificationContentSchema = z.object({
   whatIsIncluded: CertificationWhatIsIncludedSchema,
   bookingProcess: CertificationBookingProcessSchema,
   gallery: CertificationGallerySchema,
-  testimonials: CertificationTestimonialsSchema,
-  faq: CertificationFaqSchema,
+  faq: z.string().optional(),
   ctaButton: ContentButtonSchema,
   cta: CtaSectionPropsSchema,
 });

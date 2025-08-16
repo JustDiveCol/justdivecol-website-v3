@@ -10,14 +10,27 @@ import { faqContent } from '../../../content/pages/faq/faq.content';
 import { toUrlPath } from '../../../content/urlPathSchema';
 import type { FaqSectionProps } from './types';
 
-export const FaqSection = ({ translationNS }: FaqSectionProps) => {
+export const FaqSection = ({
+  translationNS,
+  categoryId,
+  titleKey = 'faq:faq.contactFaqSectionTitle',
+  showSeeAllButton = true,
+}: FaqSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
   const { container, fadeIn } = useMotionPresets();
-
   const { data } = faqContent;
-  const topFaqs = data.categories
-    .flatMap((category) => category.faqs)
-    .filter((faq) => data.topFaqIds.includes(faq.id));
+
+  // Lógica para seleccionar las FAQs a mostrar
+  const faqsToShow = (() => {
+    if (categoryId) {
+      const category = data.categories.find((c) => c.id === categoryId);
+      return category ? category.faqs : [];
+    }
+    // Comportamiento por defecto: mostrar topFaqs
+    return data.categories
+      .flatMap((category) => category.faqs)
+      .filter((faq) => data.topFaqIds.includes(faq.id));
+  })();
 
   return (
     <section
@@ -33,7 +46,7 @@ export const FaqSection = ({ translationNS }: FaqSectionProps) => {
             whileInView='visible'
             viewport={{ once: true, amount: 0.2 }}
             variants={fadeIn()}>
-            {t('faq:faq.contactFaqSectionTitle')}
+            {t(titleKey)}
           </motion.h2>
         </div>
 
@@ -45,7 +58,7 @@ export const FaqSection = ({ translationNS }: FaqSectionProps) => {
           whileInView='visible'
           viewport={{ once: true, amount: 0.2 }}
           variants={container}>
-          {topFaqs.map((faq) => (
+          {faqsToShow.map((faq) => (
             <motion.div
               key={faq.id}
               variants={fadeIn()}>
@@ -57,20 +70,22 @@ export const FaqSection = ({ translationNS }: FaqSectionProps) => {
           ))}
         </motion.div>
 
-        {/* Botón ver todas */}
-        <motion.div
-          className='mt-12 text-center'
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeIn()}>
-          <Button
-            action={{ type: 'internal', path: toUrlPath(ROUTES.faq) }}
-            variant='outline'
-            size='sm'>
-            {t('faq:faq.seeAllFaqsButton')}
-          </Button>
-        </motion.div>
+        {/* Botón ver todas (condicional) */}
+        {showSeeAllButton && (
+          <motion.div
+            className='mt-12 text-center'
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeIn()}>
+            <Button
+              action={{ type: 'internal', path: toUrlPath(ROUTES.faq) }}
+              variant='outline'
+              size='sm'>
+              {t('faq:faq.seeAllFaqsButton')}
+            </Button>
+          </motion.div>
+        )}
       </div>
     </section>
   );

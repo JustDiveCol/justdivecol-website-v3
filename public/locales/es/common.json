@@ -4,6 +4,7 @@
   "maxDepthLabel": "Profundidad maxima",
   "tagsLabel": "Tags",
   "viewMoreLabel": "Ver más",
+  "enable_js_to_view_form": "Activa JavaScript para ver el formulario.",
 
   "allyLogoAlt": "Logo de aliado",
   "back_to_top": "Volver arriba",
@@ -20,6 +21,7 @@
   "toggle_menu": "Abrir o cerrar menú",
   "visitAlly": "Visitar aliado",
   "visit_social": "Visitar {{name}}",
+  "ratingLabel": "Calificación: {{rating}} de 5",
 
   "conditionsLabel": "",
   "difficultyLabel": "",

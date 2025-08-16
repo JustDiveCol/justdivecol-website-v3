@@ -25,7 +25,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       className='relative flex items-center justify-center min-h-[100dvh] py-24 bg-cover bg-center text-white'
       style={{
         backgroundImage: `url(${imageData.backgroundImage})`,
-        // Cancela el padding-top del <main> para que el hero sea full screen
         marginTop: 'calc(var(--nav-h) * -1)',
       }}>
       {/* Overlay oscuro */}
@@ -37,7 +36,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
-          className='heading-1'>
+          className='heading-2'>
           {t(titleKey)}
         </motion.h1>
 
@@ -92,7 +91,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
       {/* Logos y créditos */}
       <div className='pointer-events-none absolute inset-0 z-20'>
-        <div className='absolute bottom-6 right-4 select-none w-24 h-auto md:w-28 opacity-70'>
+        <div className='absolute bottom-6 right-6 select-none w-24 h-auto md:w-28 opacity-70 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
           <img
             src={BRAND_ASSETS_SAFE.mainLogo.url}
             alt={t(BRAND_ASSETS_SAFE.mainLogo.altKey)}
@@ -101,8 +100,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           />
         </div>
         {imageData.photoCredit && (
-          <div className='absolute bottom-2 left-2 select-none text-xs text-white/70'>
-            {t('photoCreditPrefix', { ns: 'common' })} {imageData.photoCredit}
+          <div className='absolute bottom-2 left-2 select-none text-base-xs text-white/70'>
+            {t('common:photoCreditPrefix')} {imageData.photoCredit}
           </div>
         )}
       </div>

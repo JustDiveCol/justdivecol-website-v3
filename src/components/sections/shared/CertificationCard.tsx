@@ -7,6 +7,7 @@ import { ImageComponent } from '../../common/ImageComponent';
 import type { AvailableType } from '../../../constants';
 import type { CertificationCardProjection } from '../../../content/certifications';
 import { useMotionPresets } from '../../../hooks/animations';
+import { useLocalizedRoutes } from '../../../hooks/useLocalizedRoutes';
 
 type CertificationCardProps = {
   certificationData: CertificationCardProjection;
@@ -49,6 +50,7 @@ export const CertificationCard = ({
 }: CertificationCardProps) => {
   const { t } = useTranslation(['certifications', 'common']);
   const { card } = useMotionPresets();
+  const { to: localizedTo } = useLocalizedRoutes();
 
   const { agency, slug, name, cardDes, imageData } = certificationData;
 
@@ -57,7 +59,7 @@ export const CertificationCard = ({
       variants={card}
       className={twMerge('self-stretch flex flex-col min-h-0', className)}>
       <Link
-        to={`/certifications/${slug}`}
+        to={localizedTo(`/certifications/${slug}`)}
         className='group flex flex-col flex-1 min-h-0 overflow-hidden rounded-lg bg-brand-primary-dark shadow-xl transition-transform duration-300 hover:-translate-y-2'>
         <div className='overflow-hidden aspect-video relative'>
           <ImageComponent

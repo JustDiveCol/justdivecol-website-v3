@@ -11,7 +11,7 @@ export const MissionSectionPropsSchema = z.object({
   titleKey: z.string().min(1),
   textKey: z.string().min(1),
   translationNS: I18NNamespaceSchema,
-  imageData: ImageComponentDataSchema, // mismo shape que usa <ImageComponent />
+  imageData: ImageComponentDataSchema,
 });
 
 export type MissionSectionProps = Omit<

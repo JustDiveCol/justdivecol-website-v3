@@ -12,7 +12,10 @@ export const ContactPage = () => {
       <SEO {...contactContent.seo} />
       <PageHeader {...contactContent.header} />
       <ContactSection {...contactContent.contactInfo} />
-      <FaqSection translationNS={'faq'} />
+      <FaqSection
+        translationNS={'faq'}
+        showSeeAllButton={true}
+      />
     </>
   );
 };

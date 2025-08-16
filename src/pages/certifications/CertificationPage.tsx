@@ -12,13 +12,12 @@ import { KeyMetricsBar } from '../../components/sections/certifications/KeyMetri
 import { CourseContent } from '../../components/sections/certifications/CourseContent';
 import { CourseCurriculum } from '../../components/sections/certifications/CourseCurriculum';
 import { BookingProcess } from '../../components/sections/certifications/BookingProcess';
-import { CertificationTestimonials } from '../../components/sections/certifications/CertificationTestimonials';
-import { CertificationFaq } from '../../components/sections/certifications/CertificationFaq';
 import { PhotoGallery } from '../../components/sections/shared/PhotoGallery';
 import { CtaSection } from '../../components/sections/shared/CtaSection';
 import { homeContent } from '../../content/pages/home/home.content';
 import { RelatedExperiences } from '../../components/sections/certifications/RelatedExperiences';
 import { listSessions } from '../../content/experiences';
+import { FaqSection } from '../../components/sections/contact/FaqSection';
 
 const CertificationPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -127,19 +126,11 @@ const CertificationPage: React.FC = () => {
           translationNS={content.seo.translationNS}
         />
 
-        {content.testimonials && content.testimonials.items.length > 0 && (
-          <CertificationTestimonials
-            testimonials={content.testimonials}
-            translationNS={content.seo.translationNS}
-          />
-        )}
-
-        {content.faq && content.faq.items.length > 0 && (
-          <CertificationFaq
-            faq={content.faq}
-            translationNS={content.seo.translationNS}
-          />
-        )}
+        <FaqSection
+          translationNS={'faq'}
+          showSeeAllButton={true}
+          categoryId={content.faq}
+        />
 
         <CtaSection {...homeContent.cta} />
 

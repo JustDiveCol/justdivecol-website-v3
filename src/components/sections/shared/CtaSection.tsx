@@ -17,7 +17,6 @@ export const CtaSection = ({
   const { t } = useTranslation([translationNS, 'common']);
   const { baseTransition, fadeIn } = useMotionPresets();
 
-  // Monta el formulario normalmente
   const formTargetId = 'hubspot-form-5fe58871-a1b6-4462-8a3e-ebcb21936a72';
   useHubSpotForm({
     portalId: '50063006',
@@ -54,7 +53,7 @@ export const CtaSection = ({
             <motion.h2
               variants={fadeIn()}
               id='cta-heading'
-              className='heading-2 uppercase'>
+              className='heading-3 uppercase'>
               {t(titleKey)}
             </motion.h2>
 
@@ -106,7 +105,7 @@ export const CtaSection = ({
           {/* Columna derecha: HubSpot */}
           {hubspotFormTitle && (
             <div className='w-full md:w-1/2 flex flex-col justify-center items-center'>
-              <h3 className='heading-5 text-brand-cta-orange mb-4 font-bold'>
+              <h3 className='heading-6 text-brand-cta-orange mb-4 font-bold'>
                 {t(hubspotFormTitle)}
               </h3>
               <div

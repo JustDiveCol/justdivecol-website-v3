@@ -25,15 +25,12 @@ export const LegalContent = ({
             <div
               key={i}
               className='mb-6 text-justify'>
-              {/* Si hay título para este punto, lo mostramos */}
               {point.titleKey && <h3 className='mt-4'>{t(point.titleKey)}</h3>}
 
-              {/* Texto principal del punto */}
               {point.textKey && (
                 <p className='whitespace-pre-line mt-2'>{t(point.textKey)}</p>
               )}
 
-              {/* Si hay subpuntos, listarlos */}
               {point.subpoints && (
                 <ul className='list-disc ml-6 mt-2 space-y-1'>
                   {point.subpoints.map((spKey) => (

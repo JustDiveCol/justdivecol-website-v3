@@ -10,16 +10,15 @@ import { HomePageContentSchema, type HomePageContent } from './types';
 
 const selectHomeTestimonials = (limit = 6) => {
   return testimonialsContent.items
-    .filter((t) => t.pagePosition?.includes('home')) // ⬅️ clave
+    .filter((t) => t.pagePosition?.includes('home'))
     .sort((a, b) => {
-      // featured primero
       if (a.featured && !b.featured) return -1;
       if (!a.featured && b.featured) return 1;
-      // más recientes primero
+
       const da = a.dateISO ? Date.parse(a.dateISO) : 0;
       const db = b.dateISO ? Date.parse(b.dateISO) : 0;
       if (db !== da) return db - da;
-      // rating desc
+
       return (b.rating ?? 0) - (a.rating ?? 0);
     })
     .slice(0, limit);

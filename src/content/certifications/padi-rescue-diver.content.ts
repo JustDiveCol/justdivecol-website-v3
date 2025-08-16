@@ -173,38 +173,7 @@ const rawRescueDiver: CertificationContent = {
     ],
   },
 
-  testimonials: {
-    titleKey: 'certifications.testimonialsTitle',
-    items: [
-      {
-        quoteKey: 'certifications.rd.testimonials.items.quote1',
-        name: 'XYZ',
-        originKey: 'providencia-sept-2025',
-        rating: 5,
-        photoUrl: toAssetUrl('/images/certifications/rd/testimonial-01.webp'),
-      },
-      // Puedes añadir más testimonios aquí
-    ],
-  },
-
-  faq: {
-    titleKey: 'certifications.faqTitle',
-    items: [
-      {
-        questionKey: 'certifications.rd.faq.items.q1',
-        answerKey: 'certifications.rd.faq.items.a1',
-      },
-      {
-        questionKey: 'certifications.rd.faq.items.q2',
-        answerKey: 'certifications.rd.faq.items.a2',
-      },
-      {
-        questionKey: 'certifications.rd.faq.items.q3',
-        answerKey: 'certifications.rd.faq.items.a3',
-      },
-      // Puedes añadir más preguntas y respuestas comunes
-    ],
-  },
+  faq: 'rescueDiver',
 
   ctaButton: {
     textKey: 'certifications.ctaButtonText',

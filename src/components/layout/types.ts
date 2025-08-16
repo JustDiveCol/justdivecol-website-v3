@@ -6,7 +6,6 @@ import { z } from 'zod';
 export const MainLayoutPropsSchema = z.object({
   children: z.custom<ReactNode>(() => true),
 });
-
 export type MainLayoutProps = z.infer<typeof MainLayoutPropsSchema>;
 
 // ––– Footer –––

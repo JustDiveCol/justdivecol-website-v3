@@ -121,7 +121,7 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
               </div>
             </div>
 
-            {/* --- SECCIÓN DE DISPONIBILIDAD (CORREGIDA) --- */}
+            {/* --- SECCIÓN DE DISPONIBILIDAD --- */}
             <div className='flex items-center justify-between gap-4 mt-4'>
               <div className='flex items-center gap-2'>
                 <UserGroupIcon className='h-6 w-6 text-brand-cta-orange' />

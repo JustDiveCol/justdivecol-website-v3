@@ -1,6 +1,7 @@
 // src/components/ui/LanguageSwitcher.tsx
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation, useNavigate } from 'react-router-dom'; // CAMBIO: Importar hooks de router
 import {
   I18N_LANGUAGES_SAFE,
   I18NLanguageSchema,
@@ -9,6 +10,8 @@ import {
 
 export const LanguageSwitcherComponent = () => {
   const { i18n, t } = useTranslation();
+  const location = useLocation(); // CAMBIO: Obtener ubicación actual
+  const navigate = useNavigate(); // CAMBIO: Obtener función de navegación
   const [open, setOpen] = React.useState(false);
   const ref = React.useRef<HTMLDivElement>(null);
 
@@ -16,10 +19,18 @@ export const LanguageSwitcherComponent = () => {
   const labelFor = (lng: I18NLanguage) =>
     t(`common:lang.${lng}`, lng.toUpperCase());
 
+  // CAMBIO: Lógica actualizada para cambiar la URL
   const handleChangeLanguage = (lng: unknown) => {
     const parsed = I18NLanguageSchema.safeParse(lng);
-    if (!parsed.success) return;
-    if (parsed.data !== i18n.language) i18n.changeLanguage(parsed.data);
+    if (!parsed.success || parsed.data === i18n.language) {
+      setOpen(false);
+      return;
+    }
+    const newLang = parsed.data;
+    const currentPath = location.pathname;
+    const newPath = currentPath.replace(`/${i18n.language}`, `/${newLang}`);
+
+    navigate(newPath);
     setOpen(false);
   };
 

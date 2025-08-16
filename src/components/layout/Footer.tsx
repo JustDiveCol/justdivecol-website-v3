@@ -24,6 +24,7 @@ import {
   type StaticRoutePath,
   type StaticRouteName,
 } from '../../constants/routes.schema';
+import { useLocalizedRoutes } from '../../hooks/useLocalizedRoutes';
 
 type SocialIconType = 'instagram' | 'tiktok' | 'youtube';
 
@@ -35,6 +36,7 @@ const socialIcons: Record<SocialIconType, React.ReactNode> = {
 
 const Footer: React.FC<FooterProps> = () => {
   const { t } = useTranslation(['common', 'navigation', 'contact']);
+  const { to: localizedTo } = useLocalizedRoutes();
   const [isVisible, setIsVisible] = useState(false);
   const reduceMotion = useReducedMotion();
   const ticking = useRef(false);
@@ -96,7 +98,7 @@ const Footer: React.FC<FooterProps> = () => {
         {/* Logo y slogan */}
         <div className='flex flex-col items-center'>
           <Link
-            to='/'
+            to={localizedTo('/')}
             aria-label={t('common:home', 'Inicio')}>
             <img
               src={BRAND_ASSETS_SAFE.mainLogo.url}
@@ -184,7 +186,7 @@ const Footer: React.FC<FooterProps> = () => {
               return isInternal ? (
                 <Link
                   key={link.nameKey}
-                  to={link.path as StaticRoutePath}
+                  to={localizedTo(link.path as StaticRoutePath)}
                   className='text-brand-neutral/80 hover:text-brand-cta-orange transition-colors text-xs p-2 rounded focus:outline-none focus:ring-2 focus:ring-brand-cta-orange/70'>
                   {label}
                 </Link>

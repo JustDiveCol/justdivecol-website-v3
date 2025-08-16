@@ -9,6 +9,7 @@ import { toUrlPath } from '../../../content/urlPathSchema';
 import { getExperienceById } from '../../../content/experiences';
 import type { DestinationContent } from '../../../content/destinations/types';
 import type { ExperienceSessionContent } from '../../../content/experiences/sessions/types';
+import { useLocalizedRoutes } from '../../../hooks/useLocalizedRoutes';
 
 type ActiveDestinationCardProps = {
   destination: DestinationContent;
@@ -34,8 +35,10 @@ export const ActiveDestinationCard = ({
 }: ActiveDestinationCardProps) => {
   const { t, i18n } = useTranslation(['destinations', 'experiences', 'common']);
   const navigate = useNavigate();
-  const destinationUrl = toUrlPath(
-    `${ROUTES.destinations}/${destination.slug}`
+  const { to: localizedTo } = useLocalizedRoutes();
+
+  const destinationUrl = localizedTo(
+    toUrlPath(`${ROUTES.destinations}/${destination.slug}`)
   );
 
   const experienceSlugMap = useMemo(() => {
@@ -97,8 +100,8 @@ export const ActiveDestinationCard = ({
               const experienceSlug = experienceSlugMap.get(s.experienceId);
               if (!experienceSlug) return null;
 
-              const sessionUrl = toUrlPath(
-                `${ROUTES.diveExperiences}/${experienceSlug}/${s.id}`
+              const sessionUrl = localizedTo(
+                toUrlPath(`${ROUTES.diveExperiences}/${experienceSlug}/${s.id}`)
               );
               const name = tKey(t, s.nameKey, 'experiences');
               const start = toUTCDate(s.startDate);

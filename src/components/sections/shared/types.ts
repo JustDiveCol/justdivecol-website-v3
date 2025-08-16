@@ -150,8 +150,10 @@ export type PhotoGalleryProps = Omit<
 export const PagePositionSchema = z.enum([
   'home',
   'destinations',
-  'certifications',
   'experiences',
+  'owd',
+  'aowd',
+  'rd',
 ]);
 export type TestimonialPagePosition = z.infer<typeof PagePositionSchema>;
 
