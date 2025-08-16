@@ -21,23 +21,51 @@ const rawSantaMartaSept25Sess: ExperienceSessionContent = {
   pricingOptions: [
     {
       id: 'certification',
-      nameKey: 'Opt1',
+      nameKey: 'experiences.santaMartaExp.sessions.sept25.pricingOptions.opt1',
       price: 3500000,
       currency: 'COP',
     },
     {
       id: 'certified',
-      nameKey: 'Opt2',
+      nameKey: 'experiences.santaMartaExp.sessions.sept25.pricingOptions.opt2',
       price: 2600000,
       currency: 'COP',
     },
     {
       id: 'companion',
-      nameKey: 'Opt3',
+      nameKey: 'experiences.santaMartaExp.sessions.sept25.pricingOptions.opt3',
       price: 1800000,
       currency: 'COP',
     },
   ],
+
+  pricingOptionsNotes: [
+    'experiences.santaMartaExp.sessions.sept25.pricingOptionsNotes.note1',
+  ],
+
+  paymentPlan: {
+    titleKey: 'experiences.paymentPlanTitle',
+    installments: [
+      {
+        date: '2025-07-26',
+        percentage: 50,
+        descriptionKey:
+          'experiences.santaMartaExp.sessions.sept25.paymentPlan.installments.desc1',
+      },
+      {
+        date: '2025-08-26',
+        percentage: 25,
+        descriptionKey:
+          'experiences.santaMartaExp.sessions.sept25.paymentPlan.installments.desc2',
+      },
+      {
+        date: '2025-09-12',
+        percentage: 25,
+        descriptionKey:
+          'experiences.santaMartaExp.sessions.sept25.paymentPlan.installments.desc3',
+      },
+    ],
+  },
 
   certificationIds: ['padi-open-water-diver'],
 };

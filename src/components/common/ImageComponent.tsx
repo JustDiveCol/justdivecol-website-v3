@@ -42,7 +42,7 @@ export const ImageComponent = ({
       className={wrapperClass}
       style={{ backgroundImage: `url(${backgroundImage})` }}>
       {textOverlayKey && (
-        <div className='absolute top-2 left-2 select-none text-brand-neutral text-sm sm:text-base md:text-lg lg:text-2xl font-bold drop-shadow-md opacity-80 uppercase'>
+        <div className='absolute top-2 left-2 select-none text-brand-neutral text-sm sm:text-base md:text-lg lg:text-2xl font-bold uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
           {t(textOverlayKey)}
         </div>
       )}
@@ -52,7 +52,7 @@ export const ImageComponent = ({
           <img
             src={complementaryLogo.url}
             alt={t(complementaryLogo.altKey)}
-            className='h-auto w-full'
+            className='h-auto w-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'
             loading='lazy'
             decoding='async'
             width={96}
@@ -65,7 +65,7 @@ export const ImageComponent = ({
         <img
           src={mainLogo.url}
           alt={t(mainLogo.altKey)}
-          className='h-auto w-full'
+          className='h-auto w-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'
           loading='lazy'
           decoding='async'
           width={192}

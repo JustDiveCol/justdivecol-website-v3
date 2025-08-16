@@ -8,7 +8,7 @@ import {
 
 const rawSantaMartaFeb26Sess: ExperienceSessionContent = {
   id: 'santa-marta-feb-26',
-  nameKey: 'experiences.santaMartaExp.sessions.sept25.name',
+  nameKey: 'experiences.santaMartaExp.sessions.feb26.name',
   experienceId: 'exp-santa-marta',
   imageUrl: toAssetUrl('/images/experiences/santa-marta/icon.webp'),
   startDate: '2026-02-20',
@@ -21,23 +21,47 @@ const rawSantaMartaFeb26Sess: ExperienceSessionContent = {
   pricingOptions: [
     {
       id: 'certification',
-      nameKey: '',
+      nameKey: 'experiences.santaMartaExp.sessions.feb26.pricingOptions.opt1',
       price: 3500000,
       currency: 'COP',
     },
     {
       id: 'certified',
-      nameKey: '',
+      nameKey: 'experiences.santaMartaExp.sessions.feb26.pricingOptions.opt2',
       price: 2600000,
       currency: 'COP',
     },
     {
       id: 'companion',
-      nameKey: '',
+      nameKey: 'experiences.santaMartaExp.sessions.feb26.pricingOptions.opt3',
       price: 1800000,
       currency: 'COP',
     },
   ],
+
+  paymentPlan: {
+    titleKey: 'experiences.paymentPlanTitle',
+    installments: [
+      {
+        date: '2025-12-20',
+        percentage: 50,
+        descriptionKey:
+          'experiences.santaMartaExp.sessions.feb25.paymentPlan.installments.installment1',
+      },
+      {
+        date: '2026-01-20',
+        percentage: 25,
+        descriptionKey:
+          'experiences.santaMartaExp.sessions.feb25.paymentPlan.installments.installment2',
+      },
+      {
+        date: '2026-02-06',
+        percentage: 25,
+        descriptionKey:
+          'experiences.santaMartaExp.sessions.feb25.paymentPlan.installments.installment3',
+      },
+    ],
+  },
 
   certificationIds: ['padi-open-water-diver'],
 };

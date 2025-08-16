@@ -18,7 +18,9 @@ const rawSantaMarta: DestinationContent = {
     titleKey: 'destinations.sm.seo.title',
     descriptionKey: 'destinations.sm.seo.desc',
     keywordsKey: 'destinations.sm.seo.keywords',
-    imageUrl: toAssetUrl('/images/social/sm-social-card.webp'),
+    imageUrl: toAssetUrl(
+      '/images/destinations/santa-marta/sm-social-card.webp'
+    ),
     urlPath: toUrlPath(ROUTES.destinations),
     translationNS: 'destinations',
   },
@@ -27,7 +29,9 @@ const rawSantaMarta: DestinationContent = {
     titleKey: 'destinations.sm.header.title',
     subtitleKey: 'destinations.sm.header.subtitle',
     imageData: {
-      backgroundImage: toAssetUrl('/images/destinations/sm-header.webp'),
+      backgroundImage: toAssetUrl(
+        '/images/destinations/santa-marta/header-background.webp'
+      ),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },
@@ -37,7 +41,7 @@ const rawSantaMarta: DestinationContent = {
   card: {
     imageData: {
       backgroundImage: toAssetUrl(
-        '/images/destinations/santa-marta/sm-card.webp'
+        '/images/destinations/santa-marta/card-image.webp'
       ),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'horizontal',
@@ -45,33 +49,51 @@ const rawSantaMarta: DestinationContent = {
   },
 
   description: {
-    titleKey: 'destinations.sm.description.title',
+    titleKey: 'destinations.descriptionTitle',
     paragraphs: [
-      'destinations.sm.description.p1',
-      'destinations.sm.description.p2',
+      'destinations.sm.description.paragraphs.p1',
+      'destinations.sm.description.paragraphs.p2',
     ],
   },
 
   details: {
-    titleKey: 'destinations.sm.details.title',
+    titleKey: 'destinations.detailsTitle',
     items: [
       {
-        labelKey: 'destinations.sm.details.label1',
-        valueKey: 'destinations.sm.details.value1',
+        labelKey: 'destinations.sm.details.items.label1',
+        valueKey: 'destinations.sm.details.items.value1',
       },
       {
-        labelKey: 'destinations.sm.details.label2',
-        valueKey: 'destinations.sm.details.value2',
+        labelKey: 'destinations.sm.details.items.label2',
+        valueKey: 'destinations.sm.details.items.value2',
+      },
+      {
+        labelKey: 'destinations.sm.details.items.label3',
+        valueKey: 'destinations.sm.details.items.value3',
+      },
+      {
+        labelKey: 'destinations.sm.details.items.label4',
+        valueKey: 'destinations.sm.details.items.value4',
+      },
+      {
+        labelKey: 'destinations.sm.details.items.label5',
+        valueKey: 'destinations.sm.details.items.value5',
+      },
+      {
+        labelKey: 'destinations.sm.details.items.label6',
+        valueKey: 'destinations.sm.details.items.value6',
       },
     ],
   },
 
   uniqueFinds: {
-    titleKey: 'destinations.sm.uniqueFinds.title',
+    titleKey: 'destinations.uniqueFindsTitle',
     items: [
-      'destinations.sm.uniqueFinds.find1',
-      'destinations.sm.uniqueFinds.find2',
-      'destinations.sm.uniqueFinds.find3',
+      'destinations.sm.uniqueFinds.items.find1',
+      'destinations.sm.uniqueFinds.items.find2',
+      'destinations.sm.uniqueFinds.items.find3',
+      'destinations.sm.uniqueFinds.items.find4',
+      'destinations.sm.uniqueFinds.items.find5',
     ],
   },
 
@@ -85,11 +107,46 @@ const rawSantaMarta: DestinationContent = {
         photoCredit: 'Camilo Beltran @JustDiveCol',
         variant: 'horizontal',
       },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/santa-marta/gallery-02.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/santa-marta/gallery-03.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/santa-marta/gallery-04.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/santa-marta/gallery-05.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/santa-marta/gallery-06.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
     ],
   },
 
   ctaButton: {
-    textKey: 'destinations.sm.ctaButton.text',
+    textKey: 'destinations.ctaButtonText',
     action: {
       type: 'whatsapp',
       whatsAppMessageKey: 'destinations.certificationWhatsappMessage',

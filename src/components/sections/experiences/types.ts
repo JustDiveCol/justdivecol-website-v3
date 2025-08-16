@@ -9,6 +9,7 @@ import type {
 } from '../../../content/experiences/types';
 import type { CertificationWhatIsIncluded } from '../../../content/certifications/types';
 import type { DiveSitesSectionProps } from '../divesites/types';
+import type { PaymentPlanSchema } from '../../../content/experiences/sessions/types';
 
 // Props para el componente SessionHero
 export const SessionHeroPropsSchema = z.object({
@@ -61,4 +62,14 @@ export const ExperienceDiveSitesPropsSchema = z.object({
 
 export type ExperienceDiveSitesProps = z.infer<
   typeof ExperienceDiveSitesPropsSchema
+>;
+
+// Props para el nuevo componente de plan de pagos
+export const ExperiencePaymentPlanPropsSchema = z.object({
+  paymentPlan: z.custom<z.infer<typeof PaymentPlanSchema>>(),
+  translationNS: I18NNamespaceSchema,
+});
+
+export type ExperiencePaymentPlanProps = z.infer<
+  typeof ExperiencePaymentPlanPropsSchema
 >;

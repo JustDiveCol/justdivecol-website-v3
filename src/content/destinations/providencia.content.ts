@@ -18,7 +18,9 @@ const rawProvidencia: DestinationContent = {
     titleKey: 'destinations.provi.seo.title',
     descriptionKey: 'destinations.provi.seo.desc',
     keywordsKey: 'destinations.provi.seo.keywords',
-    imageUrl: toAssetUrl('/images/social/provi-social-card.webp'),
+    imageUrl: toAssetUrl(
+      '/images/destinations/providencia/provi-social-card.webp'
+    ),
     urlPath: toUrlPath(ROUTES.destinations),
     translationNS: 'destinations',
   },
@@ -27,7 +29,9 @@ const rawProvidencia: DestinationContent = {
     titleKey: 'destinations.provi.header.title',
     subtitleKey: 'destinations.provi.header.subtitle',
     imageData: {
-      backgroundImage: toAssetUrl('/images/destinations/provi-header.webp'),
+      backgroundImage: toAssetUrl(
+        '/images/destinations/providencia/header-background.webp'
+      ),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },
@@ -37,7 +41,7 @@ const rawProvidencia: DestinationContent = {
   card: {
     imageData: {
       backgroundImage: toAssetUrl(
-        '/images/destinations/providencia/provi-card.webp'
+        '/images/destinations/providencia/card-image.webp'
       ),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'horizontal',
@@ -45,33 +49,51 @@ const rawProvidencia: DestinationContent = {
   },
 
   description: {
-    titleKey: 'destinations.provi.description.title',
+    titleKey: 'destinations.descriptionTitle',
     paragraphs: [
-      'destinations.provi.description.p1',
-      'destinations.provi.description.p2',
+      'destinations.provi.description.paragraphs.p1',
+      'destinations.provi.description.paragraphs.p2',
     ],
   },
 
   details: {
-    titleKey: 'destinations.provi.details.title',
+    titleKey: 'destinations.detailsTitle',
     items: [
       {
-        labelKey: 'destinations.provi.details.label1',
-        valueKey: 'destinations.provi.details.value1',
+        labelKey: 'destinations.provi.details.items.label1',
+        valueKey: 'destinations.provi.details.items.value1',
       },
       {
-        labelKey: 'destinations.provi.details.label2',
-        valueKey: 'destinations.provi.details.value2',
+        labelKey: 'destinations.provi.details.items.label2',
+        valueKey: 'destinations.provi.details.items.value2',
+      },
+      {
+        labelKey: 'destinations.provi.details.items.label3',
+        valueKey: 'destinations.provi.details.items.value3',
+      },
+      {
+        labelKey: 'destinations.provi.details.items.label4',
+        valueKey: 'destinations.provi.details.items.value4',
+      },
+      {
+        labelKey: 'destinations.provi.details.items.label5',
+        valueKey: 'destinations.provi.details.items.value5',
+      },
+      {
+        labelKey: 'destinations.provi.details.items.label6',
+        valueKey: 'destinations.provi.details.items.value6',
       },
     ],
   },
 
   uniqueFinds: {
-    titleKey: 'destinations.provi.uniqueFinds.title',
+    titleKey: 'destinations.uniqueFindsTitle',
     items: [
-      'destinations.provi.uniqueFinds.find1',
-      'destinations.provi.uniqueFinds.find2',
-      'destinations.provi.uniqueFinds.find3',
+      'destinations.provi.uniqueFinds.items.find1',
+      'destinations.provi.uniqueFinds.items.find2',
+      'destinations.provi.uniqueFinds.items.find3',
+      'destinations.provi.uniqueFinds.items.find4',
+      'destinations.provi.uniqueFinds.items.find5',
     ],
   },
 
@@ -85,11 +107,46 @@ const rawProvidencia: DestinationContent = {
         photoCredit: 'Camilo Beltran @JustDiveCol',
         variant: 'horizontal',
       },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/providencia/gallery-02.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/providencia/gallery-03.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/providencia/gallery-04.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/providencia/gallery-05.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/providencia/gallery-06.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
     ],
   },
 
   ctaButton: {
-    textKey: 'destinations.provi.ctaButton.text',
+    textKey: 'destinations.ctaButtonText',
     action: {
       type: 'whatsapp',
       whatsAppMessageKey: 'destinations.certificationWhatsappMessage',

@@ -1,0 +1,139 @@
+{
+  "experiences": {
+    "descriptionTitle": "Descripción de la experiencia",
+    "itineraryTitle": "Itinerario de tu aventura",
+    "whatIsIncludedTitle": "Qué incluye tu inversión",
+    "whatIsNotIncludedTitle": "Tu inversión no incluye",
+    "galleryTitle": "Momentos inolvidables de tu experiencia submarina",
+    "ctaButtonText": "Reservar ahora",
+    "whatsappMessage": "Hola JustDiveCol, quiero más información sobre esta experiencia de buceo.",
+    "diveSitesSectionTitle": "Sitios de buceo destacados",
+    "diveSitesSectionSubtitle": "Explora arrecifes, naufragios y paisajes submarinos únicos durante tu experiencia",
+
+    "santaMartaExp": {
+      "seo": {
+        "title": "Certificación PADI Open Water en Tayrona",
+        "desc": "Iníciate en el buceo y obtén tu certificación PADI Open Water en el Parque Tayrona, Santa Marta. Entrenamiento seguro, aguas cristalinas y vida marina del Caribe.",
+        "keywords": "certificación de buceo, PADI Open Water, Tayrona, Santa Marta, buceo principiantes, experiencia de buceo, Caribe colombiano, JustDiveCol, licencia de buceo, aguas abiertas"
+      },
+
+      "header": {
+        "title": "Certifícate como PADI Open Water en Tayrona",
+        "subtitle": "Descubre el Caribe colombiano desde una nueva perspectiva y conviértete en buzo en las aguas cristalinas de Santa Marta."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "El Parque Tayrona, en Santa Marta, ofrece el escenario perfecto para dar tus primeras respiraciones bajo el agua. Con aguas cristalinas y una biodiversidad fascinante, este destino del Caribe colombiano es ideal para obtener tu certificación PADI Open Water y abrir las puertas a un mundo lleno de aventuras submarinas.",
+          "p2": "Con la guía de instructores profesionales y el respaldo de JustDiveCol, aprenderás a bucear de manera segura y divertida mientras disfrutas de arrecifes, peces tropicales y playas de ensueño. Esta certificación es más que un logro, es el inicio de una pasión que te permitirá explorar el 70% del planeta que se esconde bajo la superficie."
+        }
+      },
+
+      "itinerary": {
+        "days": {
+          "title1": "Llegada y fundamentos en aguas confinadas",
+          "desc1": "Arriba a Santa Marta, tu puerta de entrada al Caribe. Tras acomodarte, iniciaremos con la primera sesión de habilidades en un entorno controlado, donde aprenderás a manejar el equipo y dar tus primeras respiraciones bajo el agua con seguridad.",
+
+          "title2": "Primeras inmersiones en el Parque Tayrona",
+          "desc2": "Vive tus dos primeras inmersiones en aguas abiertas explorando arrecifes llenos de vida marina. La tarde quedará libre para descansar y asimilar lo aprendido.",
+
+          "title3": "Inmersiones finales y certificación",
+          "desc3": "Completarás las inmersiones restantes necesarias para tu certificación PADI Open Water. Por la noche celebraremos tu logro con una ceremonia especial, marcando el inicio de tu vida como buzo.",
+
+          "title4": "Despedida de tu experiencia en Tayrona",
+          "desc4": "Disfruta de un último desayuno con el grupo. Ahora eres un buzo certificado y llevas contigo la pasión por explorar el mundo submarino en cualquier rincón del planeta."
+        },
+
+        "notes": {
+          "note1": "Recomendamos programar tu vuelo de regreso para después del mediodía del último día, respetando el margen de seguridad post-buceo (mínimo 18-24 horas sin volar)."
+        }
+      },
+
+      "whatIsIncluded": {
+        "items": {
+          "item1": "Alojamiento por 3 noches y 4 días en hotel seleccionado en Santa Marta (habitaciones compartidas).",
+          "item2": "Plan de alimentación: 3 desayunos, 3 cenas y snacks diarios.",
+          "item3": "Traslados terrestres: aeropuerto-hotel-aeropuerto y hacia las actividades programadas.",
+          "item4": "Cobertura fotográfica de tus inmersiones y momentos destacados de la experiencia."
+        }
+      },
+
+      "whatIsNotIncluded": {
+        "items": {
+          "item1": "Tiquetes aéreos nacionales o internacionales hacia y desde Santa Marta.",
+          "item2": "Bebidas alcohólicas, consumos no especificados y comidas adicionales fuera del plan.",
+          "item3": "Propinas voluntarias para instructores, guías o personal de apoyo.",
+          "item4": "Gastos personales no mencionados explícitamente en la experiencia."
+        }
+      },
+
+      "sessions": {
+        "sept25": {
+          "name": "Certificación PADI Open Water en Tayrona - Septiembre 2025",
+
+          "pricingOptions": {
+            "opt1": "Participante principal: incluye certificación PADI Open Water",
+            "opt2": "Buzo certificado acompañante: solo inmersiones recreativas",
+            "opt3": "Acompañante no buzo: alojamiento y actividades fuera del agua"
+          },
+
+          "pricingOptionsNotes": {
+            "note1": "Las habitaciones son compartidas. La opción de habitación individual tiene un costo adicional y está sujeta a disponibilidad."
+          },
+
+          "paymentPlan": {
+            "installments": {
+              "desc1": "Separar cupo y recibir material de estudio PADI",
+              "desc2": "Segundo abono del plan de pagos",
+              "desc3": "Saldo final antes de la salida"
+            }
+          }
+        },
+
+        "nov25": {
+          "name": "Certificación PADI Open Water en Tayrona - Noviembre 2025",
+
+          "pricingOptions": {
+            "opt1": "Participante principal: incluye certificación PADI Open Water",
+            "opt2": "Buzo certificado acompañante: solo inmersiones recreativas",
+            "opt3": "Acompañante no buzo: alojamiento y actividades fuera del agua"
+          },
+
+          "pricingOptionsNotes": {
+            "note1": "Las habitaciones son compartidas. La opción de habitación individual tiene un costo adicional y está sujeta a disponibilidad."
+          },
+
+          "paymentPlan": {
+            "installments": {
+              "desc1": "Separar cupo y recibir material de estudio PADI",
+              "desc2": "Segundo abono del plan de pagos",
+              "desc3": "Saldo final antes de la salida"
+            }
+          }
+        },
+
+        "feb26": {
+          "name": "Certificación PADI Open Water en Tayrona - Febrero 2026",
+
+          "pricingOptions": {
+            "opt1": "Participante principal: incluye certificación PADI Open Water",
+            "opt2": "Buzo certificado acompañante: solo inmersiones recreativas",
+            "opt3": "Acompañante no buzo: alojamiento y actividades fuera del agua"
+          },
+
+          "pricingOptionsNotes": {
+            "note1": "Las habitaciones son compartidas. La opción de habitación individual tiene un costo adicional y está sujeta a disponibilidad."
+          },
+
+          "paymentPlan": {
+            "installments": {
+              "desc1": "Separar cupo y recibir material de estudio PADI",
+              "desc2": "Segundo abono del plan de pagos",
+              "desc3": "Saldo final antes de la salida"
+            }
+          }
+        }
+      }
+    }
+  }
+}

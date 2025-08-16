@@ -55,10 +55,7 @@ export const CertificationCard = ({
   return (
     <motion.div
       variants={card}
-      className={twMerge(
-        'self-stretch flex flex-col flex-1 min-h-0',
-        className
-      )}>
+      className={twMerge('self-stretch flex flex-col min-h-0', className)}>
       <Link
         to={`/certifications/${slug}`}
         className='group flex flex-col flex-1 min-h-0 overflow-hidden rounded-lg bg-brand-primary-dark shadow-xl transition-transform duration-300 hover:-translate-y-2'>
@@ -72,9 +69,11 @@ export const CertificationCard = ({
         <div className='flex flex-col justify-between p-6 flex-1 min-h-0'>
           <div>
             <p className='font-bold text-sm text-brand-neutral/70'>{agency}</p>
-            <h3 className='heading-5 text-brand-white mt-1'>{name}</h3>
+            <h3 className='heading-5 text-brand-white mt-1 line-clamp-2'>
+              {name}
+            </h3>
             {cardDes && (
-              <p className='font-serif text-sm text-brand-neutral/80 mt-1'>
+              <p className='font-serif text-sm text-brand-neutral/80 mt-1 line-clamp-4'>
                 {t(cardDes)}
               </p>
             )}

@@ -37,7 +37,7 @@ const rawIslaFuerte: DestinationContent = {
   card: {
     imageData: {
       backgroundImage: toAssetUrl(
-        '/images/destinations/isla-fuerte/ifi-card.webp'
+        '/images/destinations/santa-marta/ifi-card.webp'
       ),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'horizontal',
@@ -45,33 +45,47 @@ const rawIslaFuerte: DestinationContent = {
   },
 
   description: {
-    titleKey: 'destinations.ifi.description.title',
+    titleKey: 'destinations.descriptionTitle',
     paragraphs: [
-      'destinations.ifi.description.p1',
-      'destinations.ifi.description.p2',
+      'destinations.ifi.description.paragraphs.p1',
+      'destinations.ifi.description.paragraphs.p2',
     ],
   },
 
   details: {
-    titleKey: 'destinations.ifi.details.title',
+    titleKey: 'destinations.detailsTitle',
     items: [
       {
-        labelKey: 'destinations.ifi.details.label1',
-        valueKey: 'destinations.ifi.details.value1',
+        labelKey: 'destinations.ifi.details.items.label1',
+        valueKey: 'destinations.ifi.details.items.value1',
       },
       {
-        labelKey: 'destinations.ifi.details.label2',
-        valueKey: 'destinations.ifi.details.value2',
+        labelKey: 'destinations.ifi.details.items.label2',
+        valueKey: 'destinations.ifi.details.items.value2',
+      },
+      {
+        labelKey: 'destinations.ifi.details.items.label3',
+        valueKey: 'destinations.ifi.details.items.value3',
+      },
+      {
+        labelKey: 'destinations.ifi.details.items.label4',
+        valueKey: 'destinations.ifi.details.items.value4',
+      },
+      {
+        labelKey: 'destinations.ifi.details.items.label5',
+        valueKey: 'destinations.ifi.details.items.value5',
       },
     ],
   },
 
   uniqueFinds: {
-    titleKey: 'destinations.ifi.uniqueFinds.title',
+    titleKey: 'destinations.uniqueFindsTitle',
     items: [
-      'destinations.ifi.uniqueFinds.find1',
-      'destinations.ifi.uniqueFinds.find2',
-      'destinations.ifi.uniqueFinds.find3',
+      'destinations.ifi.uniqueFinds.items.find1',
+      'destinations.ifi.uniqueFinds.items.find2',
+      'destinations.ifi.uniqueFinds.items.find3',
+      'destinations.ifi.uniqueFinds.items.find4',
+      'destinations.ifi.uniqueFinds.items.find5',
     ],
   },
 
@@ -80,7 +94,7 @@ const rawIslaFuerte: DestinationContent = {
     images: [
       {
         backgroundImage: toAssetUrl(
-          '/images/destinations/isla-fuerte/gallery-01.webp'
+          '/images/destinations/santa-marta/gallery-01.webp'
         ),
         photoCredit: 'Camilo Beltran @JustDiveCol',
         variant: 'horizontal',
@@ -89,10 +103,10 @@ const rawIslaFuerte: DestinationContent = {
   },
 
   ctaButton: {
-    textKey: 'destinations.ifi.ctaButton.text',
+    textKey: 'destinations.ctaButtonText',
     action: {
       type: 'whatsapp',
-      whatsAppMessageKey: 'destinations.certifiicationWhatsappMessage',
+      whatsAppMessageKey: 'destinations.certificationWhatsappMessage',
     },
     variant: 'primary',
     size: 'default',

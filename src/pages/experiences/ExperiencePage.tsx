@@ -24,6 +24,7 @@ import { SessionHero } from '../../components/sections/experiences/SessionHero';
 import { ExperienceItinerary } from '../../components/sections/experiences/ExperienceItinerary';
 import { ExperienceInclusions } from '../../components/sections/experiences/ExperienceInclusions';
 import { ExperienceDiveSites } from '../../components/sections/experiences/ExperienceDiveSites';
+import { ExperiencePaymentPlan } from '../../components/sections/experiences/ExperiencePaymentPlan';
 
 const ExperiencePage: React.FC = () => {
   const { experienceSlug, sessionSlug } = useParams<{
@@ -72,7 +73,7 @@ const ExperiencePage: React.FC = () => {
     return <div>Experiencia no encontrada.</div>;
   }
 
-  const { experience } = content;
+  const { experience, session } = content;
 
   const diveSitesSectionProps = {
     translationNS: 'diveSites' as const,
@@ -114,6 +115,13 @@ const ExperiencePage: React.FC = () => {
           {...experience.gallery}
           translationNS={experience.seo.translationNS}
         />
+
+        {session.paymentPlan && (
+          <ExperiencePaymentPlan
+            paymentPlan={session.paymentPlan}
+            translationNS={experience.seo.translationNS}
+          />
+        )}
 
         <ExperienceDiveSites
           destinationName={destinationContent.name}

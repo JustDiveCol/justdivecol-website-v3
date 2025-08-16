@@ -1,0 +1,220 @@
+{
+  "destinations": {
+    "descriptionTitle": "Explora un Paraíso Submarino",
+    "detailsTitle": "El Destino en Datos Clave",
+    "uniqueFindsTitle": "Tesoros Únicos por Descubrir",
+    "galleryTitle": "Sumérgete en Imágenes",
+    "certificationWhatsappMessage": "¡Hola JustDiveCol! Me encantaría bucear en [Nombre del Destino] y quisiera saber más sobre sus planes y disponibilidad para organizar una inmersión. ¡Gracias!",
+    "ctaButtonText": "¡Bucea en este Destino!",
+    "upcomingTripsTitle": "Próximas Salidas y Viajes",
+    "diveSitesSectionTitle": "Sitios de Buceo Imperdibles",
+    "diveSitesSectionSubtitle": "Cada punto de inmersión en la zona ofrece una experiencia única. Aquí te presentamos algunos de nuestros favoritos.",
+    "noUpcomingTripsTitle": "¿No Ves la Fecha que Buscas?",
+    "noUpcomingTripsSubtitle": "¡No te preocupes! Muchas de nuestras mejores aventuras se organizan a pedido. Ponte en contacto con nosotros y crearemos una salida personalizada para ti o tu grupo.",
+
+    "sm": {
+      "seo": {
+        "title": "Buceo en Santa Marta, Colombia | Parque Tayrona y arrecifes del Caribe",
+        "desc": "Explora Santa Marta, la bahía más bella de América, y sumérgete en el Parque Tayrona. Descubre arrecifes de coral, naufragios y biodiversidad marina en uno de los mejores destinos de buceo de Colombia.",
+        "keywords": "Santa Marta buceo, buceo Parque Tayrona, arrecifes de coral Santa Marta, buceo Caribe colombiano, naufragio Santa Marta, sitios de buceo Tayrona, buceo principiantes Colombia, buceo avanzado Caribe"
+      },
+
+      "header": {
+        "title": "Santa Marta: buceo en la bahía más bella de América",
+        "subtitle": "Explora arrecifes, naufragios y biodiversidad marina en el Parque Tayrona y sus alrededores."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Santa Marta, ubicada en la costa del Caribe colombiano, es reconocida como la bahía más bella de América y un destino privilegiado para el buceo. Sus aguas cristalinas, con temperaturas agradables y una visibilidad excepcional, revelan arrecifes de coral, naufragios y una fauna marina diversa que atrae tanto a buzos principiantes como a los más experimentados.",
+          "p2": "En el Parque Nacional Natural Tayrona y sus alrededores encontrarás más de 30 sitios de buceo, desde bahías protegidas ideales para bautismos hasta paredes profundas y zonas de fuertes corrientes para los más aventureros. Con más de 50 especies de corales y más de 370 especies de peces, Santa Marta ofrece una experiencia submarina única en Colombia, combinando naturaleza, historia y cultura caribeña."
+        }
+      },
+
+      "details": {
+        "items": {
+          "label1": "Ubicación",
+          "value1": "Caribe colombiano, departamento del Magdalena",
+
+          "label2": "Mejor época para bucear",
+          "value2": "De diciembre a abril y de julio a septiembre, con aguas más claras y clima estable",
+
+          "label3": "Nivel de buceo",
+          "value3": "Apto para principiantes, buzos avanzados y expertos",
+
+          "label4": "Tipo de buceo",
+          "value4": "Arrecifes de coral, naufragios, cuevas, buceo nocturno y paredes profundas",
+
+          "label5": "Visibilidad promedio",
+          "value5": "15 a 30 metros según la temporada",
+
+          "label6": "Temperatura del agua",
+          "value6": "Entre 25°C y 30°C durante todo el año"
+        }
+      },
+
+      "uniqueFinds": {
+        "items": {
+          "find1": "Parque Nacional Natural Tayrona con más de 30 sitios de buceo y 50 especies de corales.",
+          "find2": "Naufragio del Barco Hundido en el Rodadero, hogar de peces multicolores y corales vibrantes.",
+          "find3": "Posibilidad de avistar tortugas carey, caballitos de mar y grandes cardúmenes en un mismo viaje.",
+          "find4": "Bahías protegidas ideales para principiantes y zonas de fuertes corrientes para buzos expertos.",
+          "find5": "Conexión única entre ecosistemas marinos y la Sierra Nevada de Santa Marta."
+        }
+      }
+    },
+
+    "sai": {
+      "seo": {
+        "title": "Buceo con propósito en San Andrés | Conservación y arrecifes del Caribe",
+        "desc": "Sumérgete en el Mar de los Siete Colores y participa en la restauración de arrecifes en San Andrés. Vive una experiencia de buceo única que combina naturaleza, aventura y conservación marina.",
+        "keywords": "San Andrés buceo, buceo con propósito Colombia, arrecifes de coral San Andrés, buceo sostenible Caribe, restauración de corales San Andrés, buceo conservación marina, Mar de los Siete Colores"
+      },
+
+      "header": {
+        "title": "San Andrés: buceo con propósito en el Mar de los Siete Colores",
+        "subtitle": "Participa en la restauración de arrecifes y explora uno de los ecosistemas marinos más bellos del Caribe colombiano."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "San Andrés, joya del Caribe colombiano, deslumbra con el Mar de los Siete Colores y una riqueza marina que cautiva a buzos de todo el mundo. Más que un destino turístico, la isla ofrece la oportunidad de practicar buceo con propósito, una experiencia en la que cada inmersión contribuye a la conservación de sus arrecifes de coral.",
+          "p2": "Guiado por expertos en biología marina, podrás aprender técnicas de restauración y trasplante de corales, explorar viveros submarinos y descubrir la biodiversidad única de la Reserva de Biosfera Seaflower. Cada buceo en San Andrés es una oportunidad para disfrutar de paisajes submarinos vibrantes y dejar un legado positivo en uno de los ecosistemas más valiosos del planeta."
+        }
+      },
+
+      "details": {
+        "items": {
+          "label1": "Ubicación",
+          "value1": "Archipiélago de San Andrés, Providencia y Santa Catalina, Caribe colombiano",
+
+          "label2": "Mejor época para bucear",
+          "value2": "De diciembre a mayo, con aguas más tranquilas y excelente visibilidad",
+
+          "label3": "Nivel de buceo",
+          "value3": "Apto para principiantes y buzos avanzados",
+
+          "label4": "Tipo de buceo",
+          "value4": "Restauración de arrecifes, arrecifes de coral, jardines submarinos y buceo recreativo",
+
+          "label5": "Visibilidad promedio",
+          "value5": "Hasta 30 metros en temporada óptima",
+
+          "label6": "Temperatura del agua",
+          "value6": "Entre 26°C y 29°C durante todo el año"
+        }
+      },
+
+      "uniqueFinds": {
+        "items": {
+          "find1": "Experiencia de buceo con propósito que combina exploración submarina y restauración activa de arrecifes.",
+          "find2": "Reserva de Biosfera Seaflower, uno de los ecosistemas marinos más diversos del Caribe.",
+          "find3": "Posibilidad de participar en viveros de corales y trasplantes guiados por biólogos marinos.",
+          "find4": "Mar de los Siete Colores, con visibilidad de hasta 30 metros y aguas cálidas todo el año.",
+          "find5": "Encuentros cercanos con especies como peces loro, tortugas carey y cardúmenes de peces tropicales."
+        }
+      }
+    },
+
+    "provi": {
+      "seo": {
+        "title": "Buceo en Providencia, Colombia | Arrecifes, naufragios y paredes del Caribe",
+        "desc": "Descubre Providencia, una joya del Caribe colombiano con la segunda barrera coralina más grande del hemisferio occidental. Bucea entre arrecifes, naufragios, cuevas y cantiles en un ecosistema único de aguas cristalinas.",
+        "keywords": "Providencia buceo, buceo en Providencia Colombia, arrecifes de coral Providencia, naufragios Providencia, puntos de buceo Providencia, paredes de buceo Caribe, buceo avanzado Colombia"
+      },
+
+      "header": {
+        "title": "Providencia: buceo entre arrecifes, naufragios y paredes coralinas",
+        "subtitle": "Explora la segunda barrera de coral más grande del hemisferio occidental en aguas cristalinas llenas de vida marina."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Providencia, junto a la pequeña isla de Santa Catalina, es un paraíso del Caribe colombiano reconocido por sus aguas cristalinas, playas de arena blanca y un entorno marino de gran valor ecológico. Declarada zona núcleo de la Reserva de Biosfera Seaflower, alberga la segunda barrera de coral más extensa del hemisferio occidental, un escenario perfecto para el buceo durante todo el año.",
+          "p2": "Sus arrecifes, paredes verticales, cuevas y naufragios ofrecen experiencias para todos los niveles de buceo, desde principiantes hasta expertos. En cada inmersión es posible encontrarse con barracudas, tortugas carey y verdes, rayas, meros y una amplia variedad de corales y esponjas, en un ecosistema marino que combina aventura y conservación."
+        }
+      },
+
+      "details": {
+        "items": {
+          "label1": "Ubicación",
+          "value1": "Archipiélago de San Andrés, Providencia y Santa Catalina, Caribe colombiano",
+
+          "label2": "Mejor época para bucear",
+          "value2": "Todo el año, con condiciones óptimas y aguas cristalinas",
+
+          "label3": "Nivel de buceo",
+          "value3": "Apto para principiantes, buzos avanzados y expertos",
+
+          "label4": "Tipo de buceo",
+          "value4": "Arrecifes de coral, paredes verticales, cuevas, naufragios y buceo libre",
+
+          "label5": "Visibilidad promedio",
+          "value5": "Hasta 30 metros",
+
+          "label6": "Temperatura del agua",
+          "value6": "Aproximadamente 29°C durante todo el año"
+        }
+      },
+
+      "uniqueFinds": {
+        "items": {
+          "find1": "Segunda barrera de coral más grande del hemisferio occidental, declarada Reserva de Biosfera Seaflower.",
+          "find2": "Paredes verticales y terrazas coralinas que descienden hasta más de 150 metros.",
+          "find3": "Naufragio de un barco petrolero de la Segunda Guerra Mundial cubierto de vida marina.",
+          "find4": "Diversidad de puntos de buceo para todos los niveles, desde arrecifes poco profundos hasta inmersiones técnicas.",
+          "find5": "Encuentros frecuentes con barracudas, tortugas carey y verdes, rayas y grandes cardúmenes."
+        }
+      }
+    },
+
+    "ifi": {
+      "seo": {
+        "title": "Buceo en Isla Fuerte, Caribe colombiano | Arrecifes y vida marina",
+        "desc": "Descubre Isla Fuerte, un paraíso del buceo en el Caribe colombiano. Explora arrecifes de coral, naufragios y una biodiversidad marina única, ideal para buzos de todos los niveles.",
+        "keywords": "Isla Fuerte, buceo en Colombia, arrecifes de coral, buceo Caribe colombiano, vida marina Isla Fuerte, naufragio Isla Fuerte, puntos de buceo Colombia, turismo de buceo"
+      },
+
+      "header": {
+        "title": "Isla Fuerte: paraíso de buceo en el Caribe colombiano",
+        "subtitle": "Aguas cristalinas, arrecifes vírgenes y una biodiversidad marina que cautiva a buzos de todos los niveles."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Isla Fuerte, situada en el corazón del Caribe colombiano, es un tesoro natural donde el buceo se convierte en una experiencia inolvidable. Sus aguas transparentes revelan arrecifes de coral en perfecto estado, hogar de peces tropicales, tortugas marinas y una gran variedad de vida submarina que fascina a buzos principiantes y experimentados.",
+          "p2": "Más allá de sus paisajes submarinos, Isla Fuerte ofrece un ambiente tranquilo y auténtico, alejado del turismo masivo. Aquí podrás sumergirte en naufragios, explorar cuevas y descubrir jardines de gorgonias, todo mientras contribuyes a la conservación de uno de los ecosistemas marinos mejor preservados de Colombia."
+        }
+      },
+
+      "details": {
+        "items": {
+          "label1": "Ubicación",
+          "value1": "Caribe colombiano, departamento de Bolívar",
+
+          "label2": "Mejor época para bucear",
+          "value2": "De abril a diciembre, con aguas más claras y clima estable",
+
+          "label3": "Nivel de buceo",
+          "value3": "Apto para principiantes y buzos avanzados",
+
+          "label4": "Tipo de buceo",
+          "value4": "Arrecifes de coral, naufragios, cuevas y jardines submarinos",
+
+          "label5": "Visibilidad promedio",
+          "value5": "Hasta 30 metros en temporada óptima"
+        }
+      },
+
+      "uniqueFinds": {
+        "items": {
+          "find1": "Arrecifes vírgenes en excelente estado de conservación, hogar de una gran diversidad de especies marinas.",
+          "find2": "Naufragio de un antiguo barco mercante convertido en arrecife artificial, ideal para fotografía submarina.",
+          "find3": "Jardines de gorgonias y abanicos de mar de colores vibrantes en zonas poco profundas, perfectos para principiantes.",
+          "find4": "Posibilidad de avistar tortugas carey y verdes en su hábitat natural.",
+          "find5": "Ambiente tranquilo y auténtico, alejado del turismo masivo."
+        }
+      }
+    }
+  }
+}

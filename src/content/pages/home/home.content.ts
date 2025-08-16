@@ -10,8 +10,8 @@ import { HomePageContentSchema, type HomePageContent } from './types';
 const rawCards: ReadonlyArray<Omit<CardData, 'link'>> = [
   {
     id: 'dive-experiences',
-    titleKey: 'home.featured.card1Title',
-    subtitleKey: 'home.featured.card1Subtitle',
+    titleKey: 'home.featured.cards.title1',
+    subtitleKey: 'home.featured.cards.subtitle1',
     imageData: {
       backgroundImage: toAssetUrl('/images/featured/featured-1.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
@@ -20,8 +20,8 @@ const rawCards: ReadonlyArray<Omit<CardData, 'link'>> = [
   },
   {
     id: 'certifications',
-    titleKey: 'home.featured.card2Title',
-    subtitleKey: 'home.featured.card2Subtitle',
+    titleKey: 'home.featured.cards.title2',
+    subtitleKey: 'home.featured.cards.subtitle2',
     imageData: {
       backgroundImage: toAssetUrl('/images/featured/featured-2.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
@@ -30,8 +30,8 @@ const rawCards: ReadonlyArray<Omit<CardData, 'link'>> = [
   },
   {
     id: 'destinations',
-    titleKey: 'home.featured.card3Title',
-    subtitleKey: 'home.featured.card3Subtitle',
+    titleKey: 'home.featured.cards.title3',
+    subtitleKey: 'home.featured.cards.subtitle3',
     imageData: {
       backgroundImage: toAssetUrl('/images/featured/featured-3.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
@@ -40,8 +40,8 @@ const rawCards: ReadonlyArray<Omit<CardData, 'link'>> = [
   },
   {
     id: 'custom-experiences',
-    titleKey: 'home.featured.card4Title',
-    subtitleKey: 'home.featured.card4Subtitle',
+    titleKey: 'home.featured.cards.title4',
+    subtitleKey: 'home.featured.cards.subtitle4',
     imageData: {
       backgroundImage: toAssetUrl('/images/featured/featured-4.webp'),
       photoCredit: '@parche_de_buceo',
@@ -107,7 +107,7 @@ const rawHome: HomePageContent = {
         name: 'Sunny Velez',
         originKey: 'providencia-sept-2025',
         rating: 5,
-        avatarUrl: '/images/avatars/avatar1.webp',
+        avatarUrl: '/images/home/avatar-1.webp',
       },
     ],
   },

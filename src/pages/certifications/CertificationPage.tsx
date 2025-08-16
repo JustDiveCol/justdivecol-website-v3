@@ -1,6 +1,7 @@
 // src/pages/certifications/CertificationPage.tsx
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { SEO } from '../../components/common/SEO';
 import { PageHeader } from '../../components/sections/shared/PageHeader';
@@ -21,6 +22,7 @@ import { listSessions } from '../../content/experiences';
 
 const CertificationPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+  const { t } = useTranslation(['certifications', 'common']);
   const content = useMemo(
     () => (slug ? getCertificationBySlug(slug) : null),
     [slug]
@@ -50,6 +52,29 @@ const CertificationPage: React.FC = () => {
 
     return futureSessions;
   }, [content]);
+
+  const stickyButtonData = useMemo(() => {
+    if (!content || !content.ctaButton) return undefined;
+
+    const newAction = { ...content.ctaButton.action };
+
+    if (newAction.type === 'whatsapp' && newAction.whatsAppMessageKey) {
+      const itemName = t(content.name, { ns: 'certifications' });
+
+      const translatedMessage = t(newAction.whatsAppMessageKey, { itemName });
+
+      newAction.pretranslatedMessage = translatedMessage;
+    }
+
+    return {
+      ...content.ctaButton,
+      action: newAction,
+    };
+  }, [content, t]);
+
+  if (!stickyButtonData) {
+    return null;
+  }
 
   if (!slug) {
     return <div>Certificación no encontrada.</div>;
@@ -94,7 +119,7 @@ const CertificationPage: React.FC = () => {
         <RelatedExperiences
           titleKey='certifications.relatedExperiencesTitle'
           sessions={relatedSessions}
-          translationNS={'experiences'}
+          translationNS={'certifications'}
         />
 
         <PhotoGallery
@@ -121,7 +146,10 @@ const CertificationPage: React.FC = () => {
         <div className='h-24 md:h-28' />
       </main>
 
-      <StickyCtaBar buttonData={content.ctaButton} />
+      <StickyCtaBar
+        buttonData={stickyButtonData}
+        translationNS={'certifications'}
+      />
     </>
   );
 };

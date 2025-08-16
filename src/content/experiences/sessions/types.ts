@@ -49,6 +49,18 @@ export const PricingOptionSchema = z.object({
 });
 export type PricingOption = z.infer<typeof PricingOptionSchema>;
 
+export const PaymentInstallmentSchema = z.object({
+  date: z.string().optional(), // Fecha límite del pago (YYYY-MM-DD)
+  percentage: z.number().min(0).max(100).optional(), // Porcentaje del total
+  amount: z.number().positive().optional(), // O un monto fijo
+  descriptionKey: z.string(), // Ej: "Reserva tu cupo", "Segundo pago", etc.
+});
+
+export const PaymentPlanSchema = z.object({
+  titleKey: z.string(),
+  installments: z.array(PaymentInstallmentSchema),
+});
+
 /** Secciones de Experience que la sesión puede sobrescribir (todas opcionales) */
 export const ExperienceSessionOverridesSchema = z.object({
   seo: SEOPropsSchema.optional(),
@@ -80,6 +92,8 @@ export const ExperienceSessionContentSchema = z.object({
   ),
   creyentes: z.boolean().default(false),
   pricingOptions: z.array(PricingOptionSchema),
+  pricingOptionsNotes: z.array(z.string()).optional(),
+  paymentPlan: PaymentPlanSchema,
   certificationIds: z.array(CertificationIdSchema).optional(),
   overrides: ExperienceSessionOverridesSchema.optional(),
 });

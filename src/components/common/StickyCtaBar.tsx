@@ -4,13 +4,14 @@ import { motion } from 'framer-motion';
 import { Button } from './Button';
 import type { StickyCtaBarProps } from './types';
 
-export const StickyCtaBar = ({ buttonData }: StickyCtaBarProps) => {
-  const { t } = useTranslation(['certifications', 'common']);
+export const StickyCtaBar = ({
+  buttonData,
+  translationNS,
+}: StickyCtaBarProps) => {
+  const { t } = useTranslation([translationNS, 'common']);
 
   if (!buttonData) return null;
 
-  // Esta función auxiliar utiliza un switch para que TypeScript pueda
-  // inferir el tipo exacto de 'action' en cada caso, eliminando el error.
   const renderButton = () => {
     const commonProps = {
       variant: buttonData.variant || 'primary',

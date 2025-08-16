@@ -43,7 +43,14 @@ export const Button = React.forwardRef<HTMLAnchorElement, ButtonProps>(
 
     const finalLink = React.useMemo(() => {
       if (action.type === 'whatsapp') {
-        const text = t(action.whatsAppMessageKey || 'whatsappMessage');
+        let text = '';
+
+        if (action.pretranslatedMessage) {
+          text = action.pretranslatedMessage;
+        } else if (action.whatsAppMessageKey) {
+          text = t(action.whatsAppMessageKey, { ...action.interpolation });
+        }
+
         const phone = contactInfo.phone.replace(/\s/g, '');
         return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
       }

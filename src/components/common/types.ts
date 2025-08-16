@@ -45,12 +45,19 @@ export const ButtonActionSchema = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('whatsapp'),
     whatsAppMessageKey: z.string().optional(),
+    interpolation: z.record(z.string(), z.string()).optional(),
+    pretranslatedMessage: z.string().optional(),
   }),
 ]);
 
 type InternalAction = { type: 'internal'; path?: string };
 type ExternalAction = { type: 'external'; path?: string };
-type WhatsappAction = { type: 'whatsapp'; whatsAppMessageKey?: string };
+type WhatsappAction = {
+  type: 'whatsapp';
+  whatsAppMessageKey?: string;
+  interpolation?: Record<string, string>;
+  pretranslatedMessage?: string;
+};
 
 type BaseButtonProps = {
   action: InternalAction | ExternalAction | WhatsappAction;
@@ -149,5 +156,11 @@ export type SEOProps = Omit<z.infer<typeof SEOPropsSchema>, 'translationNS'> & {
 
 export const StickyCtaBarPropsSchema = z.object({
   buttonData: ContentButtonSchema,
+  translationNS: I18NNamespaceSchema,
 });
-export type StickyCtaBarProps = z.infer<typeof StickyCtaBarPropsSchema>;
+export type StickyCtaBarProps = Omit<
+  z.infer<typeof StickyCtaBarPropsSchema>,
+  'translationNS'
+> & {
+  translationNS: I18NNamespace;
+};

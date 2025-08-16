@@ -17,28 +17,24 @@
     "featured": {
       "title": "Aventuras que transforman tu visión del mundo",
 
-      "card1Title": "Explora nuestras experiencias disponibles",
-      "card1Subtitle": "El océano más cerca de ti",
+      "cards": {
+        "title1": "Explora nuestras experiencias disponibles",
+        "subtitle1": "El océano más cerca de ti",
 
-      "card2Title": "Inicia tu certificación PADI",
-      "card2Subtitle": "Tu primer paso bajo el agua",
+        "title2": "Inicia tu certificación PADI",
+        "subtitle2": "Tu primer paso bajo el agua",
 
-      "card3Title": "Viaja a nuestros destinos soñados",
-      "card3Subtitle": "Descubre el mundo submarino",
+        "title3": "Viaja a nuestros destinos soñados",
+        "subtitle3": "Descubre el mundo submarino",
 
-      "card4Title": "Diseña tu experiencia perfecta",
-      "card4Subtitle": "Una experiencia a tu medida"
+        "title4": "Diseña tu experiencia perfecta",
+        "subtitle4": "Una experiencia a tu medida"
+      }
     },
 
     "principles": {
       "title": "Nuestros principios en acción",
-      "subtitle": "Cada inmersión es una oportunidad para vivir nuestros valores. Descubre los pilares que guían cada una de nuestras experiencias.",
-      "card1Title": "Sostenibilidad",
-      "card1Desc": "Promovemos el buceo de bajo impacto para minimizar nuestra huella ambiental. Nos comprometemos a cuidar el planeta en cada burbuja.",
-      "card2Title": "Conservación del océano",
-      "card2Desc": "Creemos que la exploración conlleva la responsabilidad de proteger. Apoyamos iniciativas de conservación marina y educamos a nuestros buzos para ser guardianes del mar.",
-      "card3Title": "Comunidad y bienestar",
-      "card3Desc": "Trabajamos de la mano con comunidades locales y operadores, fomentando un turismo responsable que genera bienestar en cada destino que visitamos."
+      "subtitle": "Cada inmersión es una oportunidad para vivir nuestros valores. Descubre los pilares que guían cada una de nuestras experiencias."
     },
 
     "testimonials": {

@@ -18,7 +18,9 @@ const rawSanAndres: DestinationContent = {
     titleKey: 'destinations.sai.seo.title',
     descriptionKey: 'destinations.sai.seo.desc',
     keywordsKey: 'destinations.sai.seo.keywords',
-    imageUrl: toAssetUrl('/images/social/sai-social-card.webp'),
+    imageUrl: toAssetUrl(
+      '/images/destinations/san-andres-isla/sm-social-card.webp'
+    ),
     urlPath: toUrlPath(ROUTES.destinations),
     translationNS: 'destinations',
   },
@@ -27,7 +29,9 @@ const rawSanAndres: DestinationContent = {
     titleKey: 'destinations.sai.header.title',
     subtitleKey: 'destinations.sai.header.subtitle',
     imageData: {
-      backgroundImage: toAssetUrl('/images/destinations/sai-header.webp'),
+      backgroundImage: toAssetUrl(
+        '/images/destinations/san-andres-isla/header-background.webp'
+      ),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'header',
     },
@@ -37,7 +41,7 @@ const rawSanAndres: DestinationContent = {
   card: {
     imageData: {
       backgroundImage: toAssetUrl(
-        '/images/destinations/san-andres/sai-card.webp'
+        '/images/destinations/san-andres-isla/card-image.webp'
       ),
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'horizontal',
@@ -45,33 +49,51 @@ const rawSanAndres: DestinationContent = {
   },
 
   description: {
-    titleKey: 'destinations.sai.description.title',
+    titleKey: 'destinations.descriptionTitle',
     paragraphs: [
-      'destinations.sai.description.p1',
-      'destinations.sai.description.p2',
+      'destinations.sai.description.paragraphs.p1',
+      'destinations.sai.description.paragraphs.p2',
     ],
   },
 
   details: {
-    titleKey: 'destinations.sai.details.title',
+    titleKey: 'destinations.detailsTitle',
     items: [
       {
-        labelKey: 'destinations.sai.details.label1',
-        valueKey: 'destinations.sai.details.value1',
+        labelKey: 'destinations.sai.details.items.label1',
+        valueKey: 'destinations.sai.details.items.value1',
       },
       {
-        labelKey: 'destinations.sai.details.label2',
-        valueKey: 'destinations.sai.details.value2',
+        labelKey: 'destinations.sai.details.items.label2',
+        valueKey: 'destinations.sai.details.items.value2',
+      },
+      {
+        labelKey: 'destinations.sai.details.items.label3',
+        valueKey: 'destinations.sai.details.items.value3',
+      },
+      {
+        labelKey: 'destinations.sai.details.items.label4',
+        valueKey: 'destinations.sai.details.items.value4',
+      },
+      {
+        labelKey: 'destinations.sai.details.items.label5',
+        valueKey: 'destinations.sai.details.items.value5',
+      },
+      {
+        labelKey: 'destinations.sai.details.items.label6',
+        valueKey: 'destinations.sai.details.items.value6',
       },
     ],
   },
 
   uniqueFinds: {
-    titleKey: 'destinations.sai.uniqueFinds.title',
+    titleKey: 'destinations.uniqueFindsTitle',
     items: [
-      'destinations.sai.uniqueFinds.find1',
-      'destinations.sai.uniqueFinds.find2',
-      'destinations.sai.uniqueFinds.find3',
+      'destinations.sai.uniqueFinds.items.find1',
+      'destinations.sai.uniqueFinds.items.find2',
+      'destinations.sai.uniqueFinds.items.find3',
+      'destinations.sai.uniqueFinds.items.find4',
+      'destinations.sai.uniqueFinds.items.find5',
     ],
   },
 
@@ -80,7 +102,42 @@ const rawSanAndres: DestinationContent = {
     images: [
       {
         backgroundImage: toAssetUrl(
-          '/images/destinations/san-andres/gallery-01.webp'
+          '/images/destinations/san-andres-isla/gallery-01.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/san-andres-isla/gallery-02.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/san-andres-isla/gallery-03.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/san-andres-isla/gallery-04.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/san-andres-isla/gallery-05.webp'
+        ),
+        photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/san-andres-isla/gallery-06.webp'
         ),
         photoCredit: 'Camilo Beltran @JustDiveCol',
         variant: 'horizontal',
@@ -89,7 +146,7 @@ const rawSanAndres: DestinationContent = {
   },
 
   ctaButton: {
-    textKey: 'destinations.sai.ctaButton.text',
+    textKey: 'destinations.ctaButtonText',
     action: {
       type: 'whatsapp',
       whatsAppMessageKey: 'destinations.certificationWhatsappMessage',

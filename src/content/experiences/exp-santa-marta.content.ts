@@ -32,7 +32,7 @@ const rawSantaMartaExp: ExperienceContent = {
   },
 
   description: {
-    titleKey: 'experiences.santaMartaExp.description.title',
+    titleKey: 'experiences.descriptionTitle',
     paragraphs: [
       'experiences.santaMartaExp.description.paragraphs.p1',
       'experiences.santaMartaExp.description.paragraphs.p2',
@@ -40,32 +40,54 @@ const rawSantaMartaExp: ExperienceContent = {
   },
 
   itinerary: {
-    titleKey: 'experiences.santaMartaExp.itinerary.title',
+    titleKey: 'experiences.itineraryTitle',
     days: [
       {
         day: 1,
-        titleKey: 'experiences.santaMartaExp.itinerary.day1Title',
-        descriptionKey: 'experiences.santaMartaExp.itinerary.day1Desc',
+        titleKey: 'experiences.santaMartaExp.itinerary.days.title1',
+        descriptionKey: 'experiences.santaMartaExp.itinerary.days.desc1',
+      },
+      {
+        day: 2,
+        titleKey: 'experiences.santaMartaExp.itinerary.days.title2',
+        descriptionKey: 'experiences.santaMartaExp.itinerary.days.desc2',
+      },
+      {
+        day: 3,
+        titleKey: 'experiences.santaMartaExp.itinerary.days.title3',
+        descriptionKey: 'experiences.santaMartaExp.itinerary.days.desc3',
+      },
+      {
+        day: 4,
+        titleKey: 'experiences.santaMartaExp.itinerary.days.title4',
+        descriptionKey: 'experiences.santaMartaExp.itinerary.days.desc4',
       },
     ],
-    notes: ['experiences.santaMartaExp.itinerary.note1'],
+    notes: ['experiences.santaMartaExp.itinerary.notes.note1'],
   },
 
   whatIsIncluded: {
-    titleKey: 'experiences.santaMartaExp.whatIsIncluded.title',
+    titleKey: 'experiences.whatIsIncludedTitle',
     items: [
-      'experiences.santaMartaExp.whatIsIncluded.item1',
-      'experiences.santaMartaExp.whatIsIncluded.item2',
+      'experiences.santaMartaExp.whatIsIncluded.items.item1',
+      'experiences.santaMartaExp.whatIsIncluded.items.item2',
+      'experiences.santaMartaExp.whatIsIncluded.items.item3',
+      'experiences.santaMartaExp.whatIsIncluded.items.item4',
     ],
   },
 
   whatIsNotIncluded: {
-    titleKey: 'experiences.santaMartaExp.whatIsNotIncluded.title',
-    items: ['experiences.santaMartaExp.whatIsNotIncluded.item1'],
+    titleKey: 'experiences.whatIsNotIncludedTitle',
+    items: [
+      'experiences.santaMartaExp.whatIsNotIncluded.items.item1',
+      'experiences.santaMartaExp.whatIsNotIncluded.items.item2',
+      'experiences.santaMartaExp.whatIsNotIncluded.items.item3',
+      'experiences.santaMartaExp.whatIsNotIncluded.items.item4',
+    ],
   },
 
   gallery: {
-    titleKey: 'destinations.galleryTitle',
+    titleKey: 'experiences.galleryTitle',
     images: [
       {
         backgroundImage: toAssetUrl(
@@ -78,7 +100,7 @@ const rawSantaMartaExp: ExperienceContent = {
   },
 
   ctaButton: {
-    textKey: 'experiences.ctaButton.text',
+    textKey: 'experiences.ctaButtonText',
     action: {
       type: 'whatsapp',
       whatsAppMessageKey: 'experiences.whatsappMessage',

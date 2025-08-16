@@ -87,6 +87,9 @@ export const CertificationsSection = ({
     return arr;
   }, [certificationsRaw]);
 
+  const total = certifications.length;
+  const hasSingleInLastRowLg = total % 3 === 1; // última fila con 1 item en 3 columnas
+
   return (
     <section
       className='bg-brand-primary-medium py-20 px-4'
@@ -116,15 +119,21 @@ export const CertificationsSection = ({
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.2 }}
-          className='flex flex-wrap justify-center items-stretch gap-8 max-w-6xl mx-auto'>
-          {certifications.map((cert) => {
+          className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-stretch gap-8 max-w-6xl mx-auto'>
+          {certifications.map((cert, idx) => {
             const status = getCertificationStatus(cert.id, sessions);
+            const isLast = idx === total - 1;
+
+            // Si queda 1 solo en la última fila (en lg), colocarlo en la columna central (2)
+            const extraPos =
+              isLast && hasSingleInLastRowLg ? ' lg:col-start-2' : '';
+
             return (
               <CertificationCard
                 key={cert.id}
                 certificationData={cert}
                 availabilityStatus={status}
-                className='w-full sm:w-1/2 lg:w-[30%] h-full flex flex-col'
+                className={`h-full${extraPos}`}
               />
             );
           })}

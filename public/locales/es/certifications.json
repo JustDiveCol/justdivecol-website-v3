@@ -3,6 +3,7 @@
   "statusComingSoon": "Proximamente",
 
   "certifications": {
+    "relatedExperiencesTitle": "Experiencias disponibles para tu certificación",
     "descriptionTitle": "Tu próxima aventura submarina",
     "prerequisitesTitle": "Checklist para la aventura",
     "detailsTitle": "El curso en datos clave",
@@ -12,8 +13,13 @@
     "galleryTitle": "Una mirada a tu futura aventura",
     "testimonialsTitle": "Lo que dicen nuestros buzos",
     "faqTitle": "Preguntas frecuentes",
-    "ctaButtonText": "¡Reserva tu aventura ahora!",
-    "certificationWhatsappMessage": "¡Hola JustDiveCol! Estoy interesado/a en el curso de [Nombre del Curso] y me gustaría recibir más información sobre fechas y disponibilidad. ¡Gracias!",
+    "ctaButtonText": "Quiero más información sobre esta certificación",
+    "certificationWhatsappMessage": "¡Hola JustDiveCol! Estoy interesado/a en el curso de {{itemName}} y me gustaría recibir más información sobre fechas y disponibilidad. ¡Gracias!",
+
+    "details": {
+      "maxDepth": "Profundidad máxima",
+      "minAge": "Edad minima"
+    },
 
     "owd": {
       "seo": {

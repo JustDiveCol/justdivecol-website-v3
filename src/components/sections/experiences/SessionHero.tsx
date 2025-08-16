@@ -160,6 +160,11 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
                   </span>
                 </div>
               ))}
+              {session.pricingOptionsNotes && (
+                <p className='text-xs text-brand-neutral/70 italic pt-2'>
+                  {t(session.pricingOptionsNotes)}
+                </p>
+              )}
             </div>
 
             {/* Botón CTA */}
