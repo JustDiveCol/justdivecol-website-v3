@@ -115,7 +115,10 @@ const DestinationPage: React.FC = () => {
         <div className='h-24 md:h-28' />
       </main>
 
-      <StickyCtaBar buttonData={content.ctaButton} />
+      <StickyCtaBar
+        buttonData={content.ctaButton}
+        translationNS={'destinations'}
+      />
     </>
   );
 };

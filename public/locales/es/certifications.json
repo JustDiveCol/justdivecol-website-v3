@@ -1,6 +1,7 @@
 {
   "statusAvailable": "Disponible",
   "statusComingSoon": "Proximamente",
+  "certificationInclusionsTitle": "Qué incluye tu certificación",
 
   "certifications": {
     "relatedExperiencesTitle": "Experiencias disponibles para tu certificación",

@@ -133,7 +133,10 @@ const ExperiencePage: React.FC = () => {
         <div className='h-24 md:h-28' />
       </main>
 
-      <StickyCtaBar buttonData={experience.ctaButton} />
+      <StickyCtaBar
+        buttonData={experience.ctaButton}
+        translationNS={'experiences'}
+      />
     </>
   );
 };
