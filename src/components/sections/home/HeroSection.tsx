@@ -1,8 +1,9 @@
 // src/components/sections/home/HeroSection.tsx
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
+import { MotionBlock } from '../../motion/MotionBlock';
 import { Button } from '../../common/Button';
 import { ChevronDownIcon } from '../../ui';
 import type { HeroSectionProps } from './types';
@@ -17,8 +18,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   imageData,
 }) => {
   const { t } = useTranslation([translationNS, 'common']);
+  const reduce = useReducedMotion();
 
-  const { baseTransition } = useMotionPresets();
+  const { container, slideIn, fadeIn, scaleIn } = useMotionPresets();
 
   return (
     <section
@@ -26,37 +28,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       style={{
         backgroundImage: `url(${imageData.backgroundImage})`,
         marginTop: 'calc(var(--nav-h) * -1)',
-      }}>
+      }}
+      aria-label={t(titleKey)}>
       {/* Overlay oscuro */}
       <div className='absolute inset-0 bg-black/60 z-10' />
 
-      <div className='relative z-20 text-center px-4'>
+      {/* Contenido */}
+      <MotionBlock
+        kind='eager'
+        variants={container}
+        className='relative z-20 text-center px-4'>
         {/* Título */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeInOut' }}
-          className='heading-2'>
+        <MotionBlock
+          kind='eager'
+          variants={slideIn('up', { distance: 40 })}
+          className='heading-2 transform-gpu will-change-transform'>
           {t(titleKey)}
-        </motion.h1>
+        </MotionBlock>
 
         {/* Subtítulo */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: 'easeInOut' }}
-          className='text-subtitle'>
+        <MotionBlock
+          kind='eager'
+          variants={fadeIn({ delay: 0.1 })}
+          className='text-subtitle mt-2 transform-gpu will-change-transform'>
           {t(subtitleKey)}
-        </motion.p>
+        </MotionBlock>
 
         {/* Botón */}
         {button && (
-          <motion.div
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ ...baseTransition, delay: 0.2 }}
-            className='mt-8 md:self-center'>
+          <MotionBlock
+            kind='eager'
+            variants={scaleIn({ delay: 0.2 }, { type: 'spring' })}
+            className='mt-8 md:self-center transform-gpu will-change-transform'>
             {button.action.type === 'internal' ? (
               <Button
                 action={{ type: 'internal', path: button.action.path }}
@@ -85,9 +88,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 {t(button.textKey)}
               </Button>
             )}
-          </motion.div>
+          </MotionBlock>
         )}
-      </div>
+      </MotionBlock>
 
       {/* Logos y créditos */}
       <div className='pointer-events-none absolute inset-0 z-20'>
@@ -106,19 +109,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         )}
       </div>
 
-      {/* Chevron */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          repeat: Infinity,
-          repeatType: 'reverse',
-          duration: 1.5,
-          delay: 1,
-        }}
-        className='absolute bottom-8 inset-x-0 z-40 flex justify-center'>
-        <ChevronDownIcon className='w-12 h-12 text-brand-cta-orange animate-bounce select-none' />
-      </motion.div>
+      {/* Chevron (baja sutil). Si reduce, lo mostramos estático */}
+      <div className='absolute bottom-8 inset-x-0 z-40 flex justify-center'>
+        {reduce ? (
+          <ChevronDownIcon className='w-12 h-12 text-brand-cta-orange select-none' />
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: [0, 8, 0] }}
+            transition={{
+              duration: 1.8,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: 1,
+            }}
+            className='select-none'>
+            <ChevronDownIcon className='w-12 h-12 text-brand-cta-orange' />
+          </motion.div>
+        )}
+      </div>
     </section>
   );
 };

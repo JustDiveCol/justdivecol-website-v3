@@ -1,9 +1,7 @@
 // src/components/sections/contact/ContactSection.tsx
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
 import { useMotionPresets } from '../../../hooks/animations';
 import { useHubSpotForm } from '../../../hooks/useHubSpotForm';
-
 import {
   WhatsappIcon,
   MailIcon,
@@ -12,6 +10,7 @@ import {
   YouTubeIcon,
 } from '../../ui';
 import type { ContactSectionProps } from './types';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 const socialIconMap: Record<string, React.ReactNode> = {
   instagram: <InstagramIcon className='h-7 w-7' />,
@@ -44,7 +43,6 @@ export const ContactSection = ({
   const subject = encodeURIComponent(t(emailSubjectKey, { ns: 'contact' }));
   const body = encodeURIComponent(t(emailBodyKey, { ns: 'contact' }));
   const emailLink = `mailto:${email}?subject=${subject}&body=${body}`;
-
   const whatsappUrl = `https://wa.me/${phone.replace(
     /\s/g,
     ''
@@ -56,20 +54,21 @@ export const ContactSection = ({
       aria-labelledby='contact-heading'>
       <div className='section py-16'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch'>
-          {/* Columna izquierda */}
-          <motion.div
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, amount: 0.3 }}
-            variants={slideIn('left')}
+          {/* Columna izquierda (slide-in desde la izquierda) */}
+          <MotionBlock
+            kind='inView'
+            variants={slideIn('left', { distance: 50 })}
             className='flex h-full flex-col items-center justify-center'>
             <div className='w-full max-w-lg text-left'>
-              <motion.h2
-                variants={fadeIn()}
-                id='contact-heading'
-                className='heading-3 mb-6 text-brand-white'>
-                {t(titleKey)}
-              </motion.h2>
+              <MotionBlock
+                kind='none'
+                variants={fadeIn()}>
+                <h2
+                  id='contact-heading'
+                  className='heading-3 mb-6 text-brand-white'>
+                  {t(titleKey)}
+                </h2>
+              </MotionBlock>
 
               <div className='space-y-6'>
                 <a
@@ -119,28 +118,36 @@ export const ContactSection = ({
                 ))}
               </div>
             </div>
-          </motion.div>
+          </MotionBlock>
 
-          {/* Columna derecha (HubSpot) */}
-          <motion.div
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, amount: 0.3 }}
-            variants={slideIn('right')}
+          {/* Columna derecha (slide-in desde la derecha) */}
+          <MotionBlock
+            kind='inView'
+            variants={slideIn('right', { distance: 50 })}
             className='flex h-full w-full flex-col items-center justify-center'>
-            <motion.h3
-              variants={fadeIn()}
-              className='heading-6 mb-4 font-bold text-brand-cta-orange'>
-              {t(hubspotFormTitleKey)}
-            </motion.h3>
+            <MotionBlock
+              kind='none'
+              variants={fadeIn()}>
+              <h3 className='heading-6 mb-4 font-bold text-brand-cta-orange'>
+                {t(hubspotFormTitleKey)}
+              </h3>
+            </MotionBlock>
 
-            <motion.div
+            <MotionBlock
+              kind='none'
               variants={fadeIn()}
-              transition={{ ...baseTransition, delay: 0.1 }}
-              id={formTargetId}
-              role='form'
-              aria-label={t(hubspotFormTitleKey)}
-              className='w-full max-w-lg rounded-lg bg-white p-6 text-brand-primary-dark shadow-2xl sm:p-8'>
+              className='w-full max-w-lg rounded-lg bg-white p-6 text-brand-primary-dark shadow-2xl sm:p-8'
+              style={{
+                transitionDuration: `${
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  (baseTransition as any)?.duration ?? 0.8
+                }s`,
+              }}>
+              <div
+                id={formTargetId}
+                role='form'
+                aria-label={t(hubspotFormTitleKey)}
+              />
               <noscript>
                 <p>
                   {t(
@@ -149,8 +156,8 @@ export const ContactSection = ({
                   )}
                 </p>
               </noscript>
-            </motion.div>
-          </motion.div>
+            </MotionBlock>
+          </MotionBlock>
         </div>
       </div>
     </section>

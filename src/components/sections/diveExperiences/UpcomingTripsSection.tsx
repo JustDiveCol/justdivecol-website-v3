@@ -1,6 +1,5 @@
 // src/components/sections/experiences/UpcomingTripsSection.tsx
 import { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { TripRow } from './TripRow';
 import { PaginationControls } from '../../common/PaginationControls';
@@ -11,6 +10,8 @@ import { listExperiences } from '../../../content/experiences';
 import { listDestinations } from '../../../content/destinations';
 import { listSessions } from '../../../content/experiences';
 import { ChevronDownIcon } from '../../ui';
+import { useReducedMotion, motion } from 'framer-motion';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 const ITEMS_PER_PAGE = 10;
 
@@ -24,8 +25,8 @@ export const UpcomingTripsSection = ({
   filtersNoResultsKey,
 }: UpcomingTripsSectionProps) => {
   const { t, i18n } = useTranslation([translationNS, 'common']);
-
-  const { container, fadeIn } = useMotionPresets();
+  const { fadeIn } = useMotionPresets();
+  const reduce = useReducedMotion();
 
   const [selectedMonth, setSelectedMonth] = useState('all');
   const [selectedDestination, setSelectedDestination] = useState('all');
@@ -64,7 +65,6 @@ export const UpcomingTripsSection = ({
   const filteredSessions = useMemo(() => {
     setCurrentPage(1);
 
-    // 1) Filtra
     const filtered = sessions.filter((session) => {
       const experience = experiences.find(
         (exp) => exp.id === session.experienceId
@@ -88,7 +88,6 @@ export const UpcomingTripsSection = ({
     });
 
     filtered.sort((a, b) => toUTC(a.startDate) - toUTC(b.startDate));
-
     return filtered;
   }, [
     selectedDestination,
@@ -133,35 +132,26 @@ export const UpcomingTripsSection = ({
 
       {/* Contenido */}
       <div className='section relative z-10 py-16 md:py-20'>
-        <motion.div
-          variants={container}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.2 }}
+        {/* Header: EAGER */}
+        <MotionBlock
+          kind='eager'
+          variants={fadeIn()}
           className='max-w-max mx-auto text-center mb-12 md:mb-12'>
-          <motion.h1
-            variants={fadeIn()}
+          <h1
             id='upcoming-trips-heading'
             className='heading-2'>
             {t(titleKey)}
-          </motion.h1>
-          <motion.p
-            variants={fadeIn()}
-            className='text-subtitle mt-4'>
-            {t(subtitleKey)}
-          </motion.p>
-        </motion.div>
+          </h1>
+          <p className='text-subtitle mt-4'>{t(subtitleKey)}</p>
+        </MotionBlock>
 
-        {/* Panel de filtros */}
-        <motion.div
-          variants={container}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.2 }}
+        {/* Panel de filtros: EAGER (entra ya, sin depender del scroll) */}
+        <MotionBlock
+          kind='eager'
+          variants={fadeIn({ delay: 0.06 })}
           className='mx-auto mb-10 max-w-max rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md'>
           <div className='flex flex-col gap-4 sm:flex-row'>
-            <motion.select
-              variants={fadeIn()}
+            <select
               value={selectedDestination}
               onChange={(e) => setSelectedDestination(e.target.value)}
               className='form-input w-full'>
@@ -173,10 +163,9 @@ export const UpcomingTripsSection = ({
                   {t(dest.name)}
                 </option>
               ))}
-            </motion.select>
+            </select>
 
-            <motion.select
-              variants={fadeIn()}
+            <select
               value={selectedMonth}
               onChange={(e) => setSelectedMonth(e.target.value)}
               className='form-input w-full'>
@@ -188,11 +177,11 @@ export const UpcomingTripsSection = ({
                   {month}
                 </option>
               ))}
-            </motion.select>
+            </select>
           </div>
-        </motion.div>
+        </MotionBlock>
 
-        {/* Listado */}
+        {/* Listado (cada TripRow ya es EAGER) */}
         <div className='mx-auto flex max-w-max flex-col gap-4 drop-shadow-strong'>
           {paginatedSessions.length > 0 ? (
             paginatedSessions.map((session) => {
@@ -227,19 +216,25 @@ export const UpcomingTripsSection = ({
         </div>
       </div>
 
-      {/* Logo, Chevron */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          repeat: Infinity,
-          repeatType: 'reverse',
-          duration: 1.5,
-          delay: 1,
-        }}
-        className='absolute bottom-8 left-1/2 z-40 hidden -translate-x-1/2 md:block'>
-        <ChevronDownIcon className='h-12 w-12 select-none text-brand-cta-orange' />
-      </motion.div>
+      {/* Chevron: animado solo si NO hay reduced motion */}
+      <div className='absolute bottom-8 left-1/2 z-40 hidden -translate-x-1/2 md:block'>
+        {reduce ? (
+          <ChevronDownIcon className='h-12 w-12 select-none text-brand-cta-orange' />
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: [0, 8, 0] }}
+            transition={{
+              duration: 1.8,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: 1,
+            }}
+            className='select-none'>
+            <ChevronDownIcon className='h-12 w-12 text-brand-cta-orange' />
+          </motion.div>
+        )}
+      </div>
     </section>
   );
 };

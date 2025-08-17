@@ -1,9 +1,9 @@
 // src/components/sections/destinations/RelatedExperiences.tsx
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { useMotionPresets } from '../../../hooks/animations';
 import type { RelatedExperiencesProps } from './types';
 import { TripRow } from '../diveExperiences/TripRow';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 export const RelatedExperiences = ({
   titleKey,
@@ -11,28 +11,26 @@ export const RelatedExperiences = ({
   translationNS,
 }: RelatedExperiencesProps) => {
   const { t } = useTranslation([translationNS, 'common', 'destinations']);
-  const { container, fadeIn } = useMotionPresets();
+  const { fadeIn } = useMotionPresets();
 
   if (sessions.length === 0) {
     return (
       <section className='bg-brand-primary-dark'>
         <div className='section max-w-4xl mx-auto text-center'>
-          <motion.h2
-            className='heading-3 text-white mb-4'
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, amount: 0.3 }}
+          <MotionBlock
+            kind='inView'
             variants={fadeIn()}>
-            {t('destinations.noUpcomingTripsTitle')}
-          </motion.h2>
-          <motion.p
-            className='text-subtitle'
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, amount: 0.3 }}
+            <h2 className='heading-3 text-white mb-4'>
+              {t('destinations.noUpcomingTripsTitle')}
+            </h2>
+          </MotionBlock>
+          <MotionBlock
+            kind='inView'
             variants={fadeIn()}>
-            {t('destinations.noUpcomingTripsSubtitle')}
-          </motion.p>
+            <p className='text-subtitle'>
+              {t('destinations.noUpcomingTripsSubtitle')}
+            </p>
+          </MotionBlock>
         </div>
       </section>
     );
@@ -41,32 +39,29 @@ export const RelatedExperiences = ({
   return (
     <section className='bg-brand-primary-dark'>
       <div className='section max-w-4xl mx-auto'>
-        <motion.h2
-          className='heading-3 text-white mb-8 text-center'
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.3 }}
+        {/* El padre anima el título */}
+        <MotionBlock
+          kind='inView'
           variants={fadeIn()}>
-          {t(titleKey)}
-        </motion.h2>
+          <h2 className='heading-3 text-white mb-8 text-center'>
+            {t(titleKey)}
+          </h2>
+        </MotionBlock>
 
-        <motion.div
-          className='space-y-4'
-          variants={container}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.2 }}>
+        {/* La lista NO abre ciclos por item; TripRow ya anima */}
+        <MotionBlock
+          kind='inView'
+          variants={fadeIn()}
+          className='space-y-4'>
           {sessions.map((session) => (
-            <motion.div
-              key={session.id}
-              variants={fadeIn()}>
+            <div key={session.id}>
               <TripRow
                 session={session}
                 translationNS='experiences'
               />
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </MotionBlock>
       </div>
     </section>
   );

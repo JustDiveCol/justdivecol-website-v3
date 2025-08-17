@@ -1,10 +1,10 @@
 // src/components/sections/shared/CtaSection.tsx
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
 import { useMotionPresets } from '../../../hooks/animations';
 import { useHubSpotForm } from '../../../hooks/useHubSpotForm';
 import { Button } from '../../common/Button';
 import type { CtaSectionProps } from './types';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 export const CtaSection = ({
   translationNS,
@@ -15,7 +15,7 @@ export const CtaSection = ({
   hubspotFormTitle,
 }: CtaSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
-  const { baseTransition, fadeIn } = useMotionPresets();
+  const { fadeIn, slideIn } = useMotionPresets();
 
   const formTargetId = 'hubspot-form-5fe58871-a1b6-4462-8a3e-ebcb21936a72';
   useHubSpotForm({
@@ -25,11 +25,10 @@ export const CtaSection = ({
   });
 
   return (
-    // Fondo full-bleed
     <section
       className='relative text-brand-white'
       aria-labelledby='cta-heading'>
-      {/* Capa de fondo */}
+      {/* Fondo full-bleed */}
       <div
         aria-hidden='true'
         className='absolute inset-0 bg-cover bg-center'
@@ -41,34 +40,36 @@ export const CtaSection = ({
         className='absolute inset-0 bg-brand-primary-dark/80'
       />
 
-      {/* Contenido (container) */}
+      {/* Contenido */}
       <div className='section relative z-10'>
         <div className='flex flex-col md:flex-row gap-12'>
-          {/* Columna izquierda */}
-          <motion.div
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, amount: 0.3 }}
-            className='w-full md:w-1/2 flex flex-col justify-center items-center text-center'>
-            <motion.h2
+          {/* Columna izquierda (owner inView) */}
+          <MotionBlock
+            kind='inView'
+            variants={slideIn('up', { distance: 48 })}
+            className='w-full md:w-1/2 flex flex-col justify-center items-center text-center transform-gpu will-change-transform'>
+            <MotionBlock
+              kind='none'
               variants={fadeIn()}
-              id='cta-heading'
-              className='heading-3 uppercase'>
-              {t(titleKey)}
-            </motion.h2>
+              className='w-full max-w-prose'>
+              <h2
+                id='cta-heading'
+                className='heading-3 uppercase'>
+                {t(titleKey)}
+              </h2>
+            </MotionBlock>
 
-            <motion.p
-              variants={fadeIn()}
-              className='text-subtitle mt-4'>
-              {t(subtitleKey)}
-            </motion.p>
+            <MotionBlock
+              kind='none'
+              variants={fadeIn({ delay: 0.08 })}
+              className='w-full max-w-prose'>
+              <p className='text-subtitle mt-4'>{t(subtitleKey)}</p>
+            </MotionBlock>
 
             {button && (
-              <motion.div
-                initial='hidden'
-                whileInView='visible'
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ ...baseTransition, delay: 0.2 }}
+              <MotionBlock
+                kind='none'
+                variants={fadeIn({ delay: 0.16 })}
                 className='mt-8 md:self-center'>
                 {button.action.type === 'internal' ? (
                   <Button
@@ -98,13 +99,16 @@ export const CtaSection = ({
                     {t(button.textKey)}
                   </Button>
                 )}
-              </motion.div>
+              </MotionBlock>
             )}
-          </motion.div>
+          </MotionBlock>
 
-          {/* Columna derecha: HubSpot */}
+          {/* Columna derecha (form HubSpot) — owner inView independiente */}
           {hubspotFormTitle && (
-            <div className='w-full md:w-1/2 flex flex-col justify-center items-center'>
+            <MotionBlock
+              kind='inView'
+              variants={slideIn('up', { distance: 48, delay: 0.06 })}
+              className='w-full md:w-1/2 flex flex-col justify-center items-center transform-gpu will-change-transform'>
               <h3 className='heading-6 text-brand-cta-orange mb-4 font-bold'>
                 {t(hubspotFormTitle)}
               </h3>
@@ -122,7 +126,7 @@ export const CtaSection = ({
                   </p>
                 </noscript>
               </div>
-            </div>
+            </MotionBlock>
           )}
         </div>
       </div>

@@ -1,9 +1,9 @@
 // src/components/sections/destinations/KeyHighlights.tsx
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { useMotionPresets } from '../../../hooks/animations';
 import type { KeyHighlightsProps } from './types';
-import { CheckIcon } from '../../ui'; // Usaremos íconos genéricos por ahora
+import { CheckIcon } from '../../ui';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 export const KeyHighlights = ({
   details,
@@ -14,15 +14,14 @@ export const KeyHighlights = ({
   const { container, fadeIn } = useMotionPresets();
 
   return (
-    <motion.section
-      className='bg-brand-primary-medium'
-      initial='hidden'
-      whileInView='visible'
-      viewport={{ once: true, amount: 0.2 }}
-      variants={container}>
-      <div className='section grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto'>
+    <section className='bg-brand-primary-medium'>
+      <MotionBlock
+        kind='inView'
+        variants={container}
+        className='section grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto transform-gpu will-change-transform'>
         {/* Card de Detalles */}
-        <motion.div
+        <MotionBlock
+          kind='none'
           variants={fadeIn()}
           className='bg-brand-primary-dark/50 border border-white/10 rounded-lg p-6 md:p-8'>
           <h3 className='heading-5 text-white mb-6 flex items-center gap-3'>
@@ -34,16 +33,17 @@ export const KeyHighlights = ({
                 <span className='block text-base-xs font-bold text-brand-neutral/80 uppercase tracking-wider'>
                   {t(labelKey)}
                 </span>
-                <span className='blocktext-base-sm text-white'>
+                <span className='block text-base-sm text-white'>
                   {t(valueKey)}
                 </span>
               </li>
             ))}
           </ul>
-        </motion.div>
+        </MotionBlock>
 
         {/* Card de Hallazgos Únicos */}
-        <motion.div
+        <MotionBlock
+          kind='none'
           variants={fadeIn()}
           className='bg-brand-primary-dark/50 border border-white/10 rounded-lg p-6 md:p-8'>
           <h3 className='heading-5 text-white mb-6 flex items-center gap-3'>
@@ -51,18 +51,21 @@ export const KeyHighlights = ({
           </h3>
           <ul className='space-y-3'>
             {uniqueFinds.items.map((itemKey, i) => (
-              <li
+              <MotionBlock
                 key={i}
-                className='flex items-start gap-3'>
-                <CheckIcon className='h-5 w-5 text-brand-cta-green flex-shrink-0 mt-1' />
-                <span className='blocktext-base-sm text-brand-neutral/90'>
-                  {t(itemKey)}
-                </span>
-              </li>
+                kind='none'
+                variants={fadeIn({ delay: i * 0.03 })}>
+                <li className='flex items-start gap-3'>
+                  <CheckIcon className='h-5 w-5 text-brand-cta-green flex-shrink-0 mt-1' />
+                  <span className='block text-base-sm text-brand-neutral/90'>
+                    {t(itemKey)}
+                  </span>
+                </li>
+              </MotionBlock>
             ))}
           </ul>
-        </motion.div>
-      </div>
-    </motion.section>
+        </MotionBlock>
+      </MotionBlock>
+    </section>
   );
 };

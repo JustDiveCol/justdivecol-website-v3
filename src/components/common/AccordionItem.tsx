@@ -13,8 +13,16 @@ export const AccordionItem = ({ question, answer }: AccordionItemProps) => {
   const btnId = useId();
   const panelId = `${btnId}-panel`;
 
+  const chevronVariants = {
+    open: { rotate: 180 },
+    closed: { rotate: 0 },
+  } as const;
+
   return (
-    <div className='border-b border-white/10'>
+    // layout: reacomoda suavemente el espacio al abrir/cerrar
+    <motion.div
+      layout
+      className='border-b border-white/10'>
       <button
         type='button'
         id={btnId}
@@ -25,12 +33,16 @@ export const AccordionItem = ({ question, answer }: AccordionItemProps) => {
         <span className='text-base-sm font-bold text-brand-white'>
           {question}
         </span>
-        <ChevronDownIcon
+
+        {/* Chevron animado con Framer (respeta reduced motion) */}
+        <motion.span
+          animate={isOpen ? 'open' : 'closed'}
+          variants={chevronVariants}
+          transition={baseTransition}
           aria-hidden='true'
-          className={`h-6 w-6 flex-shrink-0 text-brand-cta-orange transition-transform duration-300 ${
-            isOpen ? 'rotate-180' : ''
-          }`}
-        />
+          className='h-6 w-6 flex-shrink-0 text-brand-cta-orange'>
+          <ChevronDownIcon className='h-6 w-6' />
+        </motion.span>
       </button>
 
       <AnimatePresence initial={false}>
@@ -54,6 +66,6 @@ export const AccordionItem = ({ question, answer }: AccordionItemProps) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };

@@ -1,3 +1,4 @@
+// src/components/sections/experiences/DestinationsSection.tsx
 import { useMemo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -12,13 +13,21 @@ import type { DestinationContent } from '../../../content/destinations/types';
 
 import { listSessions } from '../../../content/experiences';
 import type { ExperienceSessionContent } from '../../../content/experiences/sessions/types';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 export const DestinationsSection = ({
   titleKey,
   otherTitleKey,
   translationNS,
 }: DestinationsSectionProps) => {
-  const { t } = useTranslation([translationNS, 'destinations', 'experiences']);
+  const { t } = useTranslation([
+    translationNS,
+    'destinations',
+    'experiences',
+    'common',
+  ]);
+  const { fadeIn } = useMotionPresets();
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'center',
@@ -92,7 +101,12 @@ export const DestinationsSection = ({
       {activeDestinations.length > 0 && (
         <div className='container mx-auto mb-12'>
           <div className='max-w-max mx-auto text-center mb-12'>
-            <h2 className='heading-3 text-white'>{t(titleKey)}</h2>
+            {/* Header del bloque: in-view suave (el padre NO controla a las cards) */}
+            <MotionBlock
+              kind='inView'
+              variants={fadeIn()}>
+              <h2 className='heading-3 text-white'>{t(titleKey)}</h2>
+            </MotionBlock>
           </div>
 
           {shouldUseCarousel ? (
@@ -100,13 +114,15 @@ export const DestinationsSection = ({
               <div
                 className='overflow-hidden'
                 ref={emblaRef}>
-                <div className='flex -ml-4'>
+                {/* Track con GPU accel para el translateX del carrusel */}
+                <div className='flex -ml-4 transform-gpu will-change-transform'>
                   {activeDestinations.map((dest) => {
                     const activeSess = sessionsByDestination[dest.id] || [];
                     return (
                       <div
                         key={dest.id}
                         className='relative pl-4 flex-[0_0_90%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] drop-shadow-strong'>
+                        {/* Cada card ya es in-view owner */}
                         <ActiveDestinationCard
                           destination={dest}
                           activeSessions={activeSess}
@@ -119,14 +135,16 @@ export const DestinationsSection = ({
 
               <button
                 onClick={scrollPrev}
-                className='absolute top-1/2 left-[-1rem] md:left-[-2rem] -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20 z-10'
-                aria-label='Anterior'>
+                className='absolute top-1/2 left-[-1rem] md:left-[-2rem] -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20 z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/70'
+                aria-label={t('common:previous', 'Anterior')}
+                type='button'>
                 <ChevronLeftIcon className='h-6 w-6' />
               </button>
               <button
                 onClick={scrollNext}
-                className='absolute top-1/2 right-[-1rem] md:right-[-2rem] -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20 z-10'
-                aria-label='Siguiente'>
+                className='absolute top-1/2 right-[-1rem] md:right-[-2rem] -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20 z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/70'
+                aria-label={t('common:next', 'Siguiente')}
+                type='button'>
                 <ChevronRightIcon className='h-6 w-6' />
               </button>
             </div>
@@ -152,9 +170,14 @@ export const DestinationsSection = ({
       {otherDestinations.length > 0 && (
         <div className='container mx-auto'>
           <div className='max-w-max mx-auto text-center mb-12'>
-            <h2 className='heading-4 text-white'>{t(otherTitleKey)}</h2>
+            <MotionBlock
+              kind='inView'
+              variants={fadeIn()}>
+              <h2 className='heading-4 text-white'>{t(otherTitleKey)}</h2>
+            </MotionBlock>
           </div>
 
+          {/* Cada pill es in-view owner; el padre no anima la grilla */}
           <div className='flex flex-wrap justify-center items-center gap-4 max-w-max mx-auto drop-shadow-strong'>
             {otherDestinations.map((dest) => (
               <DestinationPill

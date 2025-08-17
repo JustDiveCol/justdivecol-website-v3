@@ -1,7 +1,7 @@
 // src/components/sections/shared/PhotoGallery.tsx
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 
@@ -10,6 +10,8 @@ import { ChevronLeftIcon, ChevronRightIcon } from '../../ui';
 import type { ImageComponentData } from '../../common/types';
 import type { PhotoGalleryProps } from './types';
 import { BRAND_ASSETS_SAFE } from '../../../constants';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 type Slide = ImageComponentData & { src: string };
 
@@ -56,6 +58,8 @@ export const PhotoGallery = ({
   const { t } = useTranslation(translationNS);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const reduce = useReducedMotion();
+  const { container, fadeIn } = useMotionPresets();
 
   if (!images.length) return null;
 
@@ -63,7 +67,6 @@ export const PhotoGallery = ({
     ...img,
     src: img.backgroundImage,
   }));
-
   const main = slides[activeIndex];
 
   const containerClass = (() => {
@@ -85,80 +88,98 @@ export const PhotoGallery = ({
   return (
     <section className={`${sectionBackgroundColor} px-4`}>
       <div className='section mx-auto max-w-5xl'>
-        <h2 className='heading-3 text-white text-center mb-12'>
-          {t(titleKey)}
-        </h2>
+        {/* Owner del ciclo: el padre controla in-view + stagger */}
+        <MotionBlock
+          kind='inView'
+          variants={container}>
+          {/* Título */}
+          <MotionBlock
+            kind='none'
+            variants={fadeIn()}
+            className='text-center mb-12'>
+            <h2 className='heading-3 text-white'>{t(titleKey)}</h2>
+          </MotionBlock>
 
-        {/* Imagen principal */}
-        <div
-          className='relative group cursor-pointer bg-brand-neutral rounded-2xl drop-shadow-strong'
-          onClick={() => setIsOpen(true)}>
-          <motion.div
-            key={activeIndex}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className={`${containerClass} relative rounded-lg overflow-hidden shadow-2xl`}>
-            {/* Capa interna con padding que “aleja” los overlays del borde */}
-            <div className='absolute inset-0 p-3 md:p-4'>
-              <ImageComponent
-                imageData={{
-                  backgroundImage: main.backgroundImage,
-                  photoCredit: main.photoCredit,
-                  variant: main.variant,
-                }}
-                translationNS={translationNS}
-                className='w-full h-full'
-              />
-            </div>
-          </motion.div>
-
-          {/* Flechas de navegación (sin cambios) */}
-          {slides.length > 1 && (
-            <>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setActiveIndex((i) => (i === 0 ? slides.length - 1 : i - 1));
-                }}
-                className='absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity'
-                aria-label='Anterior'>
-                <ChevronLeftIcon className='h-6 w-6' />
-              </button>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setActiveIndex((i) => (i + 1) % slides.length);
-                }}
-                className='absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity'
-                aria-label='Siguiente'>
-                <ChevronRightIcon className='h-6 w-6' />
-              </button>
-            </>
-          )}
-        </div>
-
-        {/* Thumbnails */}
-        {slides.length > 1 && (
-          <div className='flex justify-center gap-4 mt-4 drop-shadow-strong'>
-            {slides.map((s, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveIndex(idx)}
-                className={`w-24 h-16 rounded-md overflow-hidden transition-opacity duration-300 ${
-                  idx === activeIndex
-                    ? 'ring-4 ring-brand-cta-orange'
-                    : 'opacity-60 hover:opacity-100'
-                }`}>
-                <img
-                  src={s.src}
-                  className='w-full h-full object-cover'
-                  alt=''
+          {/* Imagen principal */}
+          <MotionBlock
+            kind='none'
+            variants={fadeIn()}
+            className='relative group cursor-pointer bg-brand-neutral rounded-2xl drop-shadow-strong'
+            onClick={() => setIsOpen(true)}>
+            {/* Cross-fade por cambio de índice (animación local, no in-view) */}
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: reduce ? 1 : 0, y: reduce ? 0 : 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: reduce ? 0 : 0.4 }}
+              className={`${containerClass} relative rounded-lg overflow-hidden shadow-2xl`}>
+              <div className='absolute inset-0 p-3 md:p-4'>
+                <ImageComponent
+                  imageData={{
+                    backgroundImage: main.backgroundImage,
+                    photoCredit: main.photoCredit,
+                    variant: main.variant,
+                  }}
+                  translationNS={translationNS}
+                  className='w-full h-full'
                 />
-              </button>
-            ))}
-          </div>
-        )}
+              </div>
+            </motion.div>
+
+            {/* Flechas de navegación */}
+            {slides.length > 1 && (
+              <>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveIndex((i) =>
+                      i === 0 ? slides.length - 1 : i - 1
+                    );
+                  }}
+                  className='absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity'
+                  aria-label='Anterior'
+                  type='button'>
+                  <ChevronLeftIcon className='h-6 w-6' />
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveIndex((i) => (i + 1) % slides.length);
+                  }}
+                  className='absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity'
+                  aria-label='Siguiente'
+                  type='button'>
+                  <ChevronRightIcon className='h-6 w-6' />
+                </button>
+              </>
+            )}
+          </MotionBlock>
+
+          {/* Thumbnails */}
+          {slides.length > 1 && (
+            <MotionBlock
+              kind='none'
+              variants={fadeIn({ delay: 0.06 })}
+              className='flex justify-center gap-4 mt-4 drop-shadow-strong'>
+              {slides.map((s, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveIndex(idx)}
+                  className={`w-24 h-16 rounded-md overflow-hidden transition-opacity duration-300 ${
+                    idx === activeIndex
+                      ? 'ring-4 ring-brand-cta-orange'
+                      : 'opacity-60 hover:opacity-100'
+                  }`}>
+                  <img
+                    src={s.src}
+                    className='w-full h-full object-cover'
+                    alt=''
+                  />
+                </button>
+              ))}
+            </MotionBlock>
+          )}
+        </MotionBlock>
       </div>
 
       {/* Lightbox */}

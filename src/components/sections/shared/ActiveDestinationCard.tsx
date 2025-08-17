@@ -10,6 +10,8 @@ import { getExperienceById } from '../../../content/experiences';
 import type { DestinationContent } from '../../../content/destinations/types';
 import type { ExperienceSessionContent } from '../../../content/experiences/sessions/types';
 import { useLocalizedRoutes } from '../../../hooks/useLocalizedRoutes';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 type ActiveDestinationCardProps = {
   destination: DestinationContent;
@@ -36,6 +38,7 @@ export const ActiveDestinationCard = ({
   const { t, i18n } = useTranslation(['destinations', 'experiences', 'common']);
   const navigate = useNavigate();
   const { to: localizedTo } = useLocalizedRoutes();
+  const { card, fadeIn } = useMotionPresets();
 
   const destinationUrl = localizedTo(
     toUrlPath(`${ROUTES.destinations}/${destination.slug}`)
@@ -63,16 +66,20 @@ export const ActiveDestinationCard = ({
   };
 
   return (
-    <div
+    // 🟢 Owner del ciclo: entra al verse (in-view)
+    <MotionBlock
+      kind='inView'
+      variants={card}
+      className={twMerge(
+        'group w-full overflow-hidden rounded-2xl shadow-lg bg-brand-primary-dark transition-transform duration-300 hover:-translate-y-2 cursor-pointer',
+        'flex flex-col min-h-0 transform-gpu will-change-transform',
+        className
+      )}
       role='link'
       tabIndex={0}
       onClick={handleCardClick}
       onKeyDown={handleCardKeyDown}
-      className={twMerge(
-        'group w-full overflow-hidden rounded-2xl shadow-lg bg-brand-primary-dark transition-transform duration-300 hover:-translate-y-2 cursor-pointer',
-        'flex flex-col min-h-0',
-        className
-      )}>
+      aria-label={t(destination.name, { ns: 'destinations' })}>
       <div className='relative w-full aspect-[16/10]'>
         <ImageComponent
           imageData={destination.card.imageData}
@@ -80,22 +87,37 @@ export const ActiveDestinationCard = ({
         />
         <div className='pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/40 to-transparent' />
       </div>
+
       <div className='flex flex-col gap-3 p-6 text-white min-h-0'>
         <div className='min-w-0'>
-          <h3 className='heading-6'>
-            {t(destination.name, { ns: 'destinations' })}
-          </h3>
+          {/* Micro-fade del título */}
+          <MotionBlock
+            kind='none'
+            variants={fadeIn()}>
+            <h3 className='heading-6'>
+              {t(destination.name, { ns: 'destinations' })}
+            </h3>
+          </MotionBlock>
         </div>
+
         {activeSessions.length > 0 && (
-          <h4 className='text-base-xs font-bold uppercase text-green-300'>
-            {t('activeExperiencesTitle', {
-              ns: 'destinations',
-              defaultValue: 'Próximas experiencias',
-            })}
-          </h4>
+          <MotionBlock
+            kind='none'
+            variants={fadeIn({ delay: 0.06 })}>
+            <h4 className='text-base-xs font-bold uppercase text-green-300'>
+              {t('activeExperiencesTitle', {
+                ns: 'destinations',
+                defaultValue: 'Próximas experiencias',
+              })}
+            </h4>
+          </MotionBlock>
         )}
+
         {activeSessions.length > 0 && (
-          <div className='min-h-0 max-h-32 overflow-y-auto pr-1 flex flex-col gap-2'>
+          <MotionBlock
+            kind='none'
+            variants={fadeIn({ delay: 0.12 })}
+            className='min-h-0 max-h-32 overflow-y-auto pr-1 flex flex-col gap-2'>
             {activeSessions.map((s) => {
               const experienceSlug = experienceSlugMap.get(s.experienceId);
               if (!experienceSlug) return null;
@@ -137,9 +159,9 @@ export const ActiveDestinationCard = ({
                 </Link>
               );
             })}
-          </div>
+          </MotionBlock>
         )}
       </div>
-    </div>
+    </MotionBlock>
   );
 };

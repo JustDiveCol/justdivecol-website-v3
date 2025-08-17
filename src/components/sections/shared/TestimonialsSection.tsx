@@ -5,6 +5,8 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeftIcon, ChevronRightIcon } from '../../ui';
 import { TestimonialCard } from './TestimonialCard';
 import type { TestimonialsSectionContent } from '../../../content/pages/testimonials/types';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 function useColumnsByBreakpoint() {
   const getCols = React.useCallback(() => {
@@ -43,9 +45,9 @@ export const TestimonialsSection = ({
   items,
 }: TestimonialsSectionContent) => {
   const { t } = useTranslation([translationNS, 'common']);
+  const { fadeIn } = useMotionPresets();
 
   const cols = useColumnsByBreakpoint();
-
   const showCarousel = items.length > cols;
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -90,13 +92,17 @@ export const TestimonialsSection = ({
       className='bg-brand-primary-medium py-16 px-4'
       aria-labelledby='testimonials-heading'>
       <div className='container mx-auto'>
-        <div className='mx-auto max-w-max text-center mb-12'>
+        {/* Header eager: entra al cargar, independiente de las cards */}
+        <MotionBlock
+          kind='eager'
+          variants={fadeIn()}
+          className='mx-auto max-w-max text-center mb-12'>
           <h2
             id='testimonials-heading'
             className='heading-3 text-white'>
             {t(titleKey)}
           </h2>
-        </div>
+        </MotionBlock>
 
         <div className='relative'>
           {showCarousel ? (
@@ -107,11 +113,13 @@ export const TestimonialsSection = ({
                 ref={emblaRef}
                 aria-roledescription={t('common:carousel', 'Carrusel')}
                 aria-label={t('common:testimonials', 'Testimonios')}>
-                <div className='flex gap-x-6'>
+                {/* Usamos transform-gpu para suavizar el translateX del slider */}
+                <div className='flex gap-x-6 transform-gpu will-change-transform'>
                   {items.map((testimonial) => (
                     <div
                       key={testimonial.id}
                       className='relative flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.33%]'>
+                      {/* Cada card controla su propio inView (patrón B) */}
                       <TestimonialCard
                         cardData={testimonial}
                         translationNS={translationNS}
@@ -140,6 +148,7 @@ export const TestimonialsSection = ({
               </button>
             </>
           ) : (
+            // Grid sin animaciones en el parent; cada TestimonialCard se anima sola
             <div className='flex flex-wrap justify-center gap-6'>
               {items.map((testimonial) => (
                 <div

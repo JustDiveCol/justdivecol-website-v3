@@ -1,8 +1,9 @@
 // src/components/sections/shared/PageHeader.tsx
 import { useTranslation } from 'react-i18next';
-import { motion, useReducedMotion, type Transition } from 'framer-motion';
 import { ImageComponent } from '../../common/ImageComponent';
 import type { PageHeaderProps } from './types';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 export const PageHeader = ({
   titleKey,
@@ -11,11 +12,7 @@ export const PageHeader = ({
   imageData,
 }: PageHeaderProps) => {
   const { t } = useTranslation([translationNS, 'common']);
-  const reduceMotion = useReducedMotion();
-
-  const baseTransition: Transition = reduceMotion
-    ? { duration: 0 }
-    : { duration: 0.8, ease: [0.4, 0, 0.2, 1] };
+  const { container, slideIn, fadeIn } = useMotionPresets();
 
   return (
     <section className='relative h-[50vh] min-h-[400px] text-white'>
@@ -35,27 +32,26 @@ export const PageHeader = ({
         aria-hidden='true'
       />
 
-      {/* Contenido */}
+      {/* Contenido (owner: el padre controla ciclo y stagger) */}
       <div className='section max-w-max relative z-10 h-full flex flex-col items-center justify-center text-center'>
-        <motion.h1
-          initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={baseTransition}
-          className='heading-2'>
-          {t(titleKey)}
-        </motion.h1>
+        <MotionBlock
+          kind='eager'
+          variants={container}
+          className='transform-gpu will-change-transform'>
+          <MotionBlock
+            kind='none'
+            variants={slideIn('up', { distance: 20 })}>
+            <h1 className='heading-2'>{t(titleKey)}</h1>
+          </MotionBlock>
 
-        {subtitleKey && (
-          <motion.p
-            initial={
-              reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-            }
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...baseTransition, delay: reduceMotion ? 0 : 0.2 }}
-            className='text-subtitle max-w-max'>
-            {t(subtitleKey)}
-          </motion.p>
-        )}
+          {subtitleKey && (
+            <MotionBlock
+              kind='none'
+              variants={fadeIn()}>
+              <p className='text-subtitle max-w-max'>{t(subtitleKey)}</p>
+            </MotionBlock>
+          )}
+        </MotionBlock>
       </div>
     </section>
   );

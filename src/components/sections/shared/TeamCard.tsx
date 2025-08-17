@@ -5,22 +5,38 @@ import { twMerge } from 'tailwind-merge';
 import { useMotionPresets } from '../../../hooks/animations';
 import type { TeamCardProps } from '../about/types';
 
+type TeamCardOwnProps = TeamCardProps & {
+  /** Si true, el propio card controla su ciclo in-view. Por defecto false. */
+  inView?: boolean;
+};
+
 export const TeamCard = ({
   memberData,
   className,
   translationNS,
-}: TeamCardProps) => {
+  inView = false,
+}: TeamCardOwnProps) => {
   const { t } = useTranslation([translationNS, 'common']);
   const { card } = useMotionPresets();
 
   const titleId = `member-${memberData.id}-name`;
 
+  // Solo aplicamos initial/whileInView si se solicita inView explícitamente
+  const inViewProps = inView
+    ? {
+        initial: 'hidden' as const,
+        whileInView: 'visible' as const,
+        viewport: { once: true, amount: 0.3 },
+      }
+    : {};
+
   return (
     <motion.div
+      {...inViewProps}
       variants={card}
       aria-labelledby={titleId}
       className={twMerge(
-        'flex h-full flex-col items-center text-center',
+        'flex h-full flex-col items-center text-center transform-gpu will-change-transform',
         className
       )}>
       <div className='relative'>

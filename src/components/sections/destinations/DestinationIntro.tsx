@@ -1,35 +1,41 @@
 // src/components/sections/destinations/DestinationIntro.tsx
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { useMotionPresets } from '../../../hooks/animations';
 import type { DestinationIntroProps } from './types';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 export const DestinationIntro = ({
   description,
   translationNS,
 }: DestinationIntroProps) => {
   const { t } = useTranslation([translationNS, 'common']);
-  const { fadeIn } = useMotionPresets();
+  const { container, fadeIn } = useMotionPresets();
 
   return (
     <section className='bg-brand-primary-dark'>
-      <motion.div
-        className='section max-w-4xl mx-auto text-center'
-        initial='hidden'
-        whileInView='visible'
-        viewport={{ once: true, amount: 0.3 }}
-        variants={fadeIn()}>
-        <h2 className='heading-3 text-white mb-6'>{t(description.titleKey)}</h2>
+      <MotionBlock
+        kind='eager'
+        variants={container}
+        className='section max-w-4xl mx-auto text-center transform-gpu will-change-transform'>
+        <MotionBlock
+          kind='none'
+          variants={fadeIn()}>
+          <h2 className='heading-3 text-white mb-6'>
+            {t(description.titleKey)}
+          </h2>
+        </MotionBlock>
+
         <div className='prose prose-invert prose-lg text-brand-neutral/90 max-w-none'>
           {description.paragraphs.map((pKey, i) => (
-            <p
+            <MotionBlock
               key={i}
-              className='text-base-sm whitespace-pre-line'>
-              {t(pKey)}
-            </p>
+              kind='none'
+              variants={fadeIn()}>
+              <p className='text-base-sm whitespace-pre-line'>{t(pKey)}</p>
+            </MotionBlock>
           ))}
         </div>
-      </motion.div>
+      </MotionBlock>
     </section>
   );
 };

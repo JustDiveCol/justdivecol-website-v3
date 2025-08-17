@@ -1,12 +1,15 @@
 // src/components/sections/shared/LegalContent.tsx
 import { useTranslation } from 'react-i18next';
 import type { LegalContentProps } from './types';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 export const LegalContent = ({
   sections,
   translationNS,
 }: LegalContentProps) => {
   const { t } = useTranslation(translationNS);
+  const { container, fadeIn } = useMotionPresets();
 
   return (
     <article
@@ -18,14 +21,22 @@ export const LegalContent = ({
         prose-a:text-brand-cta-orange hover:prose-a:text-brand-cta-orange/80
       '>
       {sections.map((section) => (
-        <section
+        <MotionBlock
           key={section.id}
+          kind='inView'
+          variants={container}
           className='px-4'>
-          <h2>{t(section.titleKey)}</h2>
+          <MotionBlock
+            kind='none'
+            variants={fadeIn()}>
+            <h2>{t(section.titleKey)}</h2>
+          </MotionBlock>
 
           {section.points.map((point, i) => (
-            <div
+            <MotionBlock
               key={i}
+              kind='none'
+              variants={fadeIn({ delay: i * 0.02 })}
               className='mb-6 text-justify'>
               {point.titleKey && <h3 className='mt-4'>{t(point.titleKey)}</h3>}
 
@@ -40,9 +51,9 @@ export const LegalContent = ({
                   ))}
                 </ul>
               )}
-            </div>
+            </MotionBlock>
           ))}
-        </section>
+        </MotionBlock>
       ))}
     </article>
   );

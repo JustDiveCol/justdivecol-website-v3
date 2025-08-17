@@ -1,55 +1,43 @@
 // src/components/sections/shared/AlternatingFeature.tsx
 import { useTranslation } from 'react-i18next';
-import { motion, useReducedMotion, type Transition } from 'framer-motion';
 import { ImageComponent } from '../../common/ImageComponent';
 import type { AlternatingFeatureProps } from './types';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 export const AlternatingFeature = ({
   featureData,
   translationNS,
 }: AlternatingFeatureProps) => {
   const { t } = useTranslation([translationNS, 'common']);
-  const reduceMotion = useReducedMotion();
+  const { slideIn } = useMotionPresets();
 
   const { titleKey, descriptionKey, imageData, imagePosition } = featureData;
   const isImageLeft = imagePosition === 'left';
 
-  const baseTransition: Transition = reduceMotion
-    ? { duration: 0 }
-    : { duration: 0.8, ease: [0.4, 0, 0.2, 1] };
-
   return (
     <section className='py-8'>
       <div
-        className={`section bg-brand-primary-dark rounded-2xl  p-8 flex flex-col md:flex-row gap-12 md:items-stretch ${
+        className={`section bg-brand-primary-dark rounded-2xl p-8 flex flex-col md:flex-row gap-12 md:items-stretch ${
           !isImageLeft ? 'md:flex-row-reverse' : ''
         }`}>
-        {/* Columna Imagen */}
-        <motion.div
-          initial={
-            reduceMotion
-              ? { opacity: 1, x: 0 }
-              : { opacity: 0, x: isImageLeft ? -50 : 50 }
-          }
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={baseTransition}
+        {/* Columna Imagen: entra desde el borde externo (izq si imagen va a la izq, der si va a la der) */}
+        <MotionBlock
+          kind='inView'
+          variants={slideIn(isImageLeft ? 'left' : 'right', { distance: 50 })}
           className='w-full md:w-1/2'>
           <div className='relative h-full overflow-hidden rounded-lg shadow-2xl drop-shadow-strong'>
-            <ImageComponent imageData={imageData} />
+            <ImageComponent
+              imageData={imageData}
+              translationNS={translationNS}
+            />
           </div>
-        </motion.div>
+        </MotionBlock>
 
-        {/* Columna Texto */}
-        <motion.div
-          initial={
-            reduceMotion
-              ? { opacity: 1, x: 0 }
-              : { opacity: 0, x: isImageLeft ? 50 : -50 }
-          }
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={baseTransition}
+        {/* Columna Texto: entra desde el lado opuesto */}
+        <MotionBlock
+          kind='inView'
+          variants={slideIn(isImageLeft ? 'right' : 'left', { distance: 50 })}
           className='w-full md:w-1/2 flex'>
           <div className='flex flex-col justify-center'>
             <h2 className='heading-4 mb-4 text-brand-white'>{t(titleKey)}</h2>
@@ -57,7 +45,7 @@ export const AlternatingFeature = ({
               {t(descriptionKey)}
             </p>
           </div>
-        </motion.div>
+        </MotionBlock>
       </div>
     </section>
   );

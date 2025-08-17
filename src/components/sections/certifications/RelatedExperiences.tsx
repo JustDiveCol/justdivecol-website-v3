@@ -1,9 +1,9 @@
 // src/components/sections/certifications/RelatedExperiences.tsx
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { useMotionPresets } from '../../../hooks/animations'; // La importación del hook es correcta
 import type { RelatedExperiencesProps } from './types';
 import { TripRow } from '../diveExperiences/TripRow';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 export const RelatedExperiences = ({
   titleKey,
@@ -11,42 +11,36 @@ export const RelatedExperiences = ({
   translationNS,
 }: RelatedExperiencesProps) => {
   const { t } = useTranslation([translationNS, 'common']);
+  const { fadeIn } = useMotionPresets();
 
-  const { container, fadeIn } = useMotionPresets();
-
-  if (sessions.length === 0) {
-    return null;
-  }
+  if (sessions.length === 0) return null;
 
   return (
     <section className='bg-brand-primary-medium'>
       <div className='section max-w-4xl mx-auto'>
-        <motion.h2
-          className='heading-3 text-white mb-8 text-center'
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.3 }}
+        {/* Título: in-view controlado por el padre */}
+        <MotionBlock
+          kind='inView'
           variants={fadeIn()}>
-          {t(titleKey)}
-        </motion.h2>
+          <h2 className='heading-3 text-white mb-8 text-center'>
+            {t(titleKey)}
+          </h2>
+        </MotionBlock>
 
-        <motion.div
-          className='space-y-4'
-          variants={container}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.2 }}>
+        {/* Contenedor de lista: in-view; hijos NO abren ciclos */}
+        <MotionBlock
+          kind='inView'
+          variants={fadeIn()}
+          className='space-y-4'>
           {sessions.map((session) => (
-            <motion.div
-              key={session.id}
-              variants={fadeIn()}>
+            <div key={session.id}>
               <TripRow
                 session={session}
                 translationNS='experiences'
               />
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </MotionBlock>
       </div>
     </section>
   );

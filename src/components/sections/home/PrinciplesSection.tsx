@@ -2,6 +2,8 @@
 import { useTranslation } from 'react-i18next';
 import { PrincipleCard } from '../shared/PrincipleCard';
 import type { PrinciplesSectionProps } from './types';
+import { MotionBlock } from '../../motion/MotionBlock';
+import { useMotionPresets } from '../../../hooks/animations';
 
 export const PrinciplesSection = ({
   titleKey,
@@ -10,29 +12,33 @@ export const PrinciplesSection = ({
   cards,
 }: PrinciplesSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
+  const { fadeIn } = useMotionPresets();
 
   return (
     <section
       className='bg-brand-primary-dark py-16 px-4'
       aria-labelledby='principles-heading'>
       <div className='container mx-auto'>
-        <div className='mx-auto max-w-max text-center mb-12'>
+        <MotionBlock
+          kind='inView'
+          variants={fadeIn()}
+          className='mx-auto max-w-max text-center mb-12'>
           <h2
             id='principles-heading'
             className='heading-3 text-white'>
             {t(titleKey)}
           </h2>
           <p className='text-subtitle mt-4'>{t(subtitleKey)}</p>
-        </div>
+        </MotionBlock>
 
         <div className='flex flex-wrap justify-center items-stretch gap-8'>
-          {cards.map((card) => (
+          {cards.map((c) => (
             <div
-              key={card.id}
+              key={c.id}
               className='flex w-[calc(50%-1rem)] flex-shrink-0 sm:w-5/12 md:w-4/12 lg:w-[30%] xl:w-[22%] drop-shadow-strong'>
               <PrincipleCard
-                cardData={card}
-                translationNS={'principles'}
+                cardData={c}
+                translationNS='principles'
               />
             </div>
           ))}

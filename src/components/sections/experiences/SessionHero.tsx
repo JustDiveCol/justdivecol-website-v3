@@ -1,15 +1,15 @@
 // src/components/sections/experiences/SessionHero.tsx
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
-import { motion } from 'framer-motion';
-import { useMotionPresets } from '../../../hooks/animations';
 import type { SessionHeroProps } from './types';
 import { Button } from '../../common/Button';
 import { CalendarIcon, UserGroupIcon } from '../../ui';
 import { deriveSessionAvailability } from '../../../lib/availability';
 import { AvailabilityBadge } from '../diveExperiences/TripRow';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
-const toUTCDate = (isoDate: string) => new Date(`${isoDate}T00:00:00Z`);
+const toUTCDate = (iso: string) => new Date(`${iso}T00:00:00Z`);
 
 export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
   const { t, i18n } = useTranslation([translationNS, 'common']);
@@ -80,17 +80,17 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
   };
 
   return (
-    <motion.section
-      className='bg-brand-primary-dark'
-      initial='hidden'
-      whileInView='visible'
-      viewport={{ once: true, amount: 0.2 }}
-      variants={container}>
-      <div className='section grid grid-cols-1 lg:grid-cols-3 gap-12'>
+    <section className='bg-brand-primary-dark'>
+      {/* Owner: el padre controla el ciclo (eager) y el stagger de las columnas */}
+      <MotionBlock
+        kind='eager'
+        variants={container}
+        className='section grid grid-cols-1 lg:grid-cols-3 gap-12'>
         {/* Columna Izquierda: Descripción */}
-        <motion.div
-          className='lg:col-span-2'
-          variants={fadeIn()}>
+        <MotionBlock
+          kind='none'
+          variants={fadeIn()}
+          className='lg:col-span-2'>
           <h2 className='heading-3 text-white mb-4'>
             {t(experience.description.titleKey)}
           </h2>
@@ -103,18 +103,19 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
               </p>
             ))}
           </div>
-        </motion.div>
+        </MotionBlock>
 
         {/* Columna Derecha: Panel de Detalles */}
-        <motion.div
-          className='lg:col-span-1'
-          variants={fadeIn()}>
+        <MotionBlock
+          kind='none'
+          variants={fadeIn()}
+          className='lg:col-span-1'>
           <div className='sticky top-28 bg-brand-primary-medium/30 border border-white/10 rounded-lg p-6 drop-shadow-strong'>
             {/* Fechas */}
             <div className='flex items-center gap-4 border-b border-white/10 pb-4'>
               <CalendarIcon className='h-8 w-8 text-brand-cta-orange flex-shrink-0' />
               <div>
-                <p className='text-base-smfont-bold text-white capitalize'>
+                <p className='text-base-sm font-bold text-white capitalize'>
                   {formattedDateRange}
                 </p>
                 <p className='text-base-xs text-brand-neutral/80'>
@@ -123,7 +124,7 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
               </div>
             </div>
 
-            {/* --- SECCIÓN DE DISPONIBILIDAD --- */}
+            {/* Disponibilidad */}
             <div className='flex items-center justify-between gap-4 mt-4'>
               <div className='flex items-center gap-2'>
                 <UserGroupIcon className='h-6 w-6 text-brand-cta-orange' />
@@ -131,7 +132,6 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
                   {t('common:availability')}
                 </p>
               </div>
-              {/* Contenedor para el badge y el texto de los cupos */}
               <div className='flex flex-col items-end'>
                 <AvailabilityBadge status={derivedStatus} />
                 <p className='text-xs text-brand-neutral/70 mt-1'>
@@ -169,11 +169,11 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
               )}
             </div>
 
-            {/* Botón CTA */}
+            {/* CTA */}
             <div className='mt-6'>{renderCtaButton()}</div>
           </div>
-        </motion.div>
-      </div>
-    </motion.section>
+        </MotionBlock>
+      </MotionBlock>
+    </section>
   );
 };

@@ -1,6 +1,5 @@
 // src/components/sections/contact/FaqSection.tsx
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
 import { AccordionItem } from '../../common/AccordionItem';
 import { ROUTES } from '../../../constants/routes.schema';
 import { Button } from '../../common/Button';
@@ -9,6 +8,7 @@ import { useMotionPresets } from '../../../hooks/animations';
 import { faqContent } from '../../../content/pages/faq/faq.content';
 import { toUrlPath } from '../../../content/urlPathSchema';
 import type { FaqSectionProps } from './types';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 export const FaqSection = ({
   translationNS,
@@ -17,7 +17,7 @@ export const FaqSection = ({
   showSeeAllButton = true,
 }: FaqSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
-  const { container, fadeIn } = useMotionPresets();
+  const { container, fadeIn } = useMotionPresets(); // <-- usamos container + fadeIn
   const { data } = faqContent;
 
   // Lógica para seleccionar las FAQs a mostrar
@@ -26,7 +26,6 @@ export const FaqSection = ({
       const category = data.categories.find((c) => c.id === categoryId);
       return category ? category.faqs : [];
     }
-    // Comportamiento por defecto: mostrar topFaqs
     return data.categories
       .flatMap((category) => category.faqs)
       .filter((faq) => data.topFaqIds.includes(faq.id));
@@ -37,55 +36,57 @@ export const FaqSection = ({
       className='bg-brand-primary-medium'
       aria-labelledby='contact-faqs-heading'>
       <div className='section py-16'>
-        {/* Título */}
-        <div className='mb-12 text-center'>
-          <motion.h2
-            id='contact-faqs-heading'
-            className='heading-3 text-white'
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeIn()}>
-            {t(titleKey)}
-          </motion.h2>
-        </div>
+        {/* Owner del ciclo: eager + stagger de hijos */}
+        <MotionBlock
+          kind='eager'
+          variants={container}
+          className='mx-auto max-w-3xl transform-gpu will-change-transform'>
+          {/* Título (hijo 1) */}
+          <MotionBlock
+            kind='none'
+            variants={fadeIn()}
+            className='mb-12 text-center'>
+            <h2
+              id='contact-faqs-heading'
+              className='heading-3 text-white'>
+              {t(titleKey)}
+            </h2>
+          </MotionBlock>
 
-        {/* Lista de FAQs */}
-        <motion.div
-          role='list'
-          className='mx-auto max-w-3xl space-y-2'
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.2 }}
-          variants={container}>
-          {faqsToShow.map((faq) => (
-            <motion.div
-              key={faq.id}
-              variants={fadeIn()}>
-              <AccordionItem
-                question={t(faq.questionKey)}
-                answer={t(faq.answerKey)}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
+          {/* Lista (hijo 2): micro-stagger por item */}
+          <MotionBlock
+            kind='none'
+            variants={container}
+            role='list'
+            className='space-y-2'>
+            {faqsToShow.map((faq, i) => (
+              <MotionBlock
+                key={faq.id}
+                kind='none'
+                variants={fadeIn({ delay: i * 0.03 })}>
+                <AccordionItem
+                  question={t(faq.questionKey)}
+                  answer={t(faq.answerKey)}
+                />
+              </MotionBlock>
+            ))}
+          </MotionBlock>
 
-        {/* Botón ver todas (condicional) */}
-        {showSeeAllButton && (
-          <motion.div
-            className='mt-12 text-center'
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeIn()}>
-            <Button
-              action={{ type: 'internal', path: toUrlPath(ROUTES.faq) }}
-              variant='outline'
-              size='sm'>
-              {t('faq:faq.seeAllFaqsButton')}
-            </Button>
-          </motion.div>
-        )}
+          {/* Botón (hijo 3) */}
+          {showSeeAllButton && (
+            <MotionBlock
+              kind='none'
+              variants={fadeIn()}
+              className='mt-12 text-center'>
+              <Button
+                action={{ type: 'internal', path: toUrlPath(ROUTES.faq) }}
+                variant='outline'
+                size='sm'>
+                {t('faq:faq.seeAllFaqsButton')}
+              </Button>
+            </MotionBlock>
+          )}
+        </MotionBlock>
       </div>
     </section>
   );

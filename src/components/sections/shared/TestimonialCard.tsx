@@ -3,6 +3,8 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { QuoteIcon, StarRating } from '../../ui';
 import type { TestimonialCardProps } from './types';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 export const TestimonialCard = ({
   cardData,
@@ -13,6 +15,8 @@ export const TestimonialCard = ({
     'common',
     'certifications',
   ]);
+  const { card, fadeIn } = useMotionPresets();
+
   const {
     quoteKey,
     name,
@@ -27,7 +31,6 @@ export const TestimonialCard = ({
     if (!dateISO) return undefined;
     const d = new Date(dateISO);
     if (Number.isNaN(d.getTime())) return undefined;
-
     return d.toLocaleDateString(i18n.language, {
       month: 'short',
       year: 'numeric',
@@ -40,21 +43,25 @@ export const TestimonialCard = ({
     : '';
 
   return (
-    <figure
+    <MotionBlock
+      kind='inView'
+      variants={card}
       className='
         relative flex h-full flex-col rounded-2xl border border-white/15
         bg-gradient-to-b from-white/10 to-white/5 backdrop-blur
         p-4 sm:p-5 md:p-7
+        transform-gpu will-change-transform
       '>
-      {/* Ícono decorativo: oculto en mobile para no saturar */}
+      {/* Ícono decorativo */}
       <QuoteIcon
         className='pointer-events-none absolute right-3 top-3 hidden md:block md:h-16 md:w-16 lg:h-20 lg:w-20 text-white/10'
         aria-hidden
       />
 
-      {/* Cita: mejor legibilidad en mobile (izq), justificado en desktop.
-         Clamp en mobile para evitar tarjetas muy altas. */}
-      <blockquote
+      {/* Cita (micro fade) */}
+      <MotionBlock
+        kind='none'
+        variants={fadeIn({ delay: 0.05 })}
         className='
           relative z-10 flex-grow
           font-serif leading-relaxed text-brand-neutral/90
@@ -63,17 +70,19 @@ export const TestimonialCard = ({
           break-words hyphens-auto
           line-clamp-5 md:line-clamp-none
         '>
-        “{t(quoteKey)}”
-      </blockquote>
+        <blockquote>“{t(quoteKey)}”</blockquote>
+      </MotionBlock>
 
-      {/* Footer: en mobile apilado; en md+ en fila */}
-      <figcaption
+      {/* Footer (micro fade) */}
+      <MotionBlock
+        kind='none'
+        variants={fadeIn({ delay: 0.12 })}
         className='
           relative z-10 mt-5 md:mt-6
           flex flex-col md:flex-row md:items-center gap-3 md:gap-4
           border-t border-white/10 pt-5 md:pt-6
         '>
-        {/* Avatar ajustado por breakpoint */}
+        {/* Avatar */}
         {avatarUrl ? (
           <img
             src={avatarUrl}
@@ -105,20 +114,16 @@ export const TestimonialCard = ({
           )}
         </div>
 
-        {/* Rating: abajo en mobile, alineado a la derecha en md+ */}
+        {/* Rating a la derecha en md+ */}
         <div
-          className='
-            md:ml-auto
-            order-last md:order-none
-            pt-2 md:pt-0
-          '
+          className='md:ml-auto order-last md:order-none pt-2 md:pt-0'
           aria-label={t('common:ratingLabel', {
             defaultValue: 'Calificación: {{rating}} de 5',
             rating,
           })}>
           <StarRating rating={rating} />
         </div>
-      </figcaption>
-    </figure>
+      </MotionBlock>
+    </MotionBlock>
   );
 };

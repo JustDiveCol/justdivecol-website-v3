@@ -1,8 +1,8 @@
 // src/components/sections/experiences/ExperienceItinerary.tsx
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
 import { useMotionPresets } from '../../../hooks/animations';
 import type { ExperienceItineraryProps } from './types';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 export const ExperienceItinerary = ({
   itinerary,
@@ -14,29 +14,28 @@ export const ExperienceItinerary = ({
   return (
     <section className='bg-brand-primary-medium'>
       <div className='section max-w-4xl mx-auto'>
-        <motion.div
-          className='text-center mb-12'
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.3 }}
-          variants={fadeIn()}>
+        {/* Header: in-view */}
+        <MotionBlock
+          kind='inView'
+          variants={fadeIn()}
+          className='text-center mb-12'>
           <h2 className='heading-3 text-white'>{t(itinerary.titleKey)}</h2>
-        </motion.div>
+        </MotionBlock>
 
-        <motion.div
-          className='relative pl-8'
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.2 }}
-          variants={container}>
+        {/* Timeline: el padre controla in-view + stagger */}
+        <MotionBlock
+          kind='inView'
+          variants={container}
+          className='relative pl-8 transform-gpu will-change-transform'>
           {/* Línea de tiempo vertical */}
           <div className='absolute left-0 top-0 h-full w-px bg-white/20 drop-shadow-strong' />
 
           {itinerary.days.map((day, index) => (
-            <motion.div
+            <MotionBlock
               key={index}
-              className='relative mb-12'
-              variants={fadeIn()}>
+              kind='none'
+              variants={fadeIn()}
+              className='relative mb-12'>
               <div className='absolute -left-12 top-1 flex h-8 w-8 items-center justify-center rounded-full bg-brand-cta-orange font-bold text-white'>
                 {day.day}
               </div>
@@ -47,24 +46,22 @@ export const ExperienceItinerary = ({
               <p className='mt-2 text-base-xs text-brand-neutral/90 font-serif'>
                 {t(day.descriptionKey)}
               </p>
-            </motion.div>
+            </MotionBlock>
           ))}
-        </motion.div>
+        </MotionBlock>
 
-        {/* Notas Adicionales */}
+        {/* Notas adicionales: in-view independiente */}
         {itinerary.notes && itinerary.notes.length > 0 && (
-          <motion.div
-            className='mt-8 text-center'
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeIn()}>
+          <MotionBlock
+            kind='inView'
+            variants={fadeIn()}
+            className='mt-8 text-center'>
             <ul className='text-xs text-brand-neutral/70 italic space-y-1 text-left'>
               {itinerary.notes.map((noteKey, i) => (
                 <li key={i}>{t(noteKey)}</li>
               ))}
             </ul>
-          </motion.div>
+          </MotionBlock>
         )}
       </div>
     </section>

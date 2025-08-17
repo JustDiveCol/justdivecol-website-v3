@@ -1,9 +1,9 @@
 // src/components/sections/certifications/CourseCurriculum.tsx
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { useMotionPresets } from '../../../hooks/animations';
 import type { CourseCurriculumProps } from './types';
 import { ComputerIcon, ScubaTanksIcon, DiverIcon } from '../../ui';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 const curriculumIconMap: Record<string, React.ReactNode> = {
   theory: (
@@ -27,35 +27,36 @@ export const CourseCurriculum = ({
   return (
     <section className='bg-brand-primary-medium'>
       <div className='section text-center drop-shadow-strong'>
-        <motion.h2
-          className='heading-3 text-white mb-12'
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.3 }}
+        {/* Título: in-view */}
+        <MotionBlock
+          kind='inView'
           variants={fadeIn()}>
-          {t(curriculum.titleKey)}
-        </motion.h2>
-        <motion.div
-          className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto'
+          <h2 className='heading-3 text-white mb-12'>
+            {t(curriculum.titleKey)}
+          </h2>
+        </MotionBlock>
+
+        {/* Grid: el padre controla in-view + stagger */}
+        <MotionBlock
+          kind='inView'
           variants={container}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.2 }}>
-          {curriculum.modules.map((module) => (
-            <motion.div
+          className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto transform-gpu will-change-transform'>
+          {curriculum.modules.map((module, i) => (
+            <MotionBlock
               key={module.id}
-              variants={fadeIn()}
+              kind='none'
+              variants={fadeIn({ delay: i * 0.04 })}
               className='flex flex-col items-center p-6 bg-brand-primary-dark/50 rounded-lg border border-white/10'>
-              {curriculumIconMap[module.id] || (
+              {curriculumIconMap[module.id] ?? (
                 <DiverIcon className='h-10 w-10 text-brand-cta-orange' />
               )}
               <h3 className='heading-6 text-white mt-4'>{t(module.nameKey)}</h3>
               <p className='mt-2 text-base-xs font-serif text-brand-neutral/80'>
                 {t(module.descriptionKey)}
               </p>
-            </motion.div>
+            </MotionBlock>
           ))}
-        </motion.div>
+        </MotionBlock>
       </div>
     </section>
   );

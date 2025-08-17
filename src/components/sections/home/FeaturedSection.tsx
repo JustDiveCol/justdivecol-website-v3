@@ -2,6 +2,8 @@
 import { useTranslation } from 'react-i18next';
 import { FeaturedCard } from '../shared/FeaturedCard';
 import type { FeaturedSectionProps } from './types';
+import { MotionBlock } from '../../motion/MotionBlock';
+import { useMotionPresets } from '../../../hooks/animations';
 
 export const FeaturedSection = ({
   titleKey,
@@ -9,6 +11,7 @@ export const FeaturedSection = ({
   cards,
 }: FeaturedSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
+  const { fadeIn } = useMotionPresets();
 
   const cardsToDisplay = [...cards];
 
@@ -17,9 +20,12 @@ export const FeaturedSection = ({
       className='bg-brand-primary-medium py-16 px-4'
       aria-labelledby='featured-heading'>
       <div className='container mx-auto'>
-        <div className='mx-auto max-w-max text-center mb-12'>
+        <MotionBlock
+          kind='inView'
+          variants={fadeIn()}
+          className='mx-auto max-w-max text-center mb-12'>
           <h2 className='heading-3 text-white'>{t(titleKey)}</h2>
-        </div>
+        </MotionBlock>
 
         <div className='flex flex-wrap justify-center gap-8'>
           {cardsToDisplay.map((card, index) => (

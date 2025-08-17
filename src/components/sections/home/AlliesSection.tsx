@@ -2,6 +2,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import type { AlliesContent, AllyLogo as AllyLogoType } from './types';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 export const AlliesSection = ({
   titleKey,
@@ -9,6 +11,7 @@ export const AlliesSection = ({
   logos,
 }: AlliesContent) => {
   const { t } = useTranslation([translationNS, 'common']);
+  const { fadeIn, scaleIn } = useMotionPresets();
 
   const logoCount = logos.length;
   const marqueeThreshold = 6;
@@ -43,22 +46,41 @@ export const AlliesSection = ({
   return (
     <section
       className='bg-brand-primary-dark py-16 px-4'
-      aria-labelledby='featured-heading'>
+      aria-labelledby='allies-heading'>
       <div className='container mx-auto text-center mb-12'>
-        <h2 className='heading-4 mb-16 text-brand-white'>{t(titleKey)}</h2>
+        {/* Header */}
+        <MotionBlock
+          kind='inView'
+          variants={fadeIn()}
+          className='mb-16'>
+          <h2
+            id='allies-heading'
+            className='heading-4 text-brand-white'>
+            {t(titleKey)}
+          </h2>
+        </MotionBlock>
 
         {!shouldMarquee ? (
+          // GRID independiente: cada logo entra on-scroll
           <ul
             className='flex flex-wrap justify-center items-center gap-x-10 md:gap-x-12 gap-y-6 drop-shadow-strong'
             role='list'>
             {logos.map((ally) => (
               <li key={ally.id}>
-                <AllyLogo ally={ally} />
+                <MotionBlock
+                  kind='inView'
+                  variants={scaleIn()} // sutil y limpio para logos
+                  className='transform-gpu will-change-transform'>
+                  <AllyLogo ally={ally} />
+                </MotionBlock>
               </li>
             ))}
           </ul>
         ) : (
-          <div
+          // MARQUEE: no animamos cada logo (evita observers excesivos); fadeIn del track al montar
+          <MotionBlock
+            kind='inView'
+            variants={fadeIn()}
             className='relative w-full overflow-hidden'
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
@@ -72,7 +94,7 @@ export const AlliesSection = ({
             }}
             aria-label={t('common:allies_marquee')}>
             <div
-              className='flex w-max animate-infinite-scroll motion-reduce:animate-none'
+              className='flex w-max animate-infinite-scroll motion-reduce:animate-none transform-gpu will-change-transform'
               style={{
                 animationDuration,
                 animationPlayState: paused ? 'paused' : undefined,
@@ -81,11 +103,12 @@ export const AlliesSection = ({
                 <div
                   key={`${ally.id}-${index}`}
                   className='mx-6 md:mx-8'>
+                  {/* sin inView aquí: el track se mueve */}
                   <AllyLogo ally={ally} />
                 </div>
               ))}
             </div>
-          </div>
+          </MotionBlock>
         )}
       </div>
     </section>

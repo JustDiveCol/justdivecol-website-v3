@@ -1,14 +1,16 @@
 // src/components/common/StickyCtaBar.tsx
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
 import { Button } from './Button';
 import type { StickyCtaBarProps } from './types';
+import { useMotionPresets } from '../../hooks/animations';
+import { MotionBlock } from '../motion/MotionBlock';
 
 export const StickyCtaBar = ({
   buttonData,
   translationNS,
 }: StickyCtaBarProps) => {
   const { t } = useTranslation([translationNS, 'common']);
+  const { slideIn } = useMotionPresets();
 
   if (!buttonData) return null;
 
@@ -47,16 +49,19 @@ export const StickyCtaBar = ({
   };
 
   return (
-    <motion.div
-      initial={{ y: '100%' }}
-      animate={{ y: '0%' }}
-      transition={{ ease: 'easeOut', duration: 0.5 }}
-      className='fixed bottom-0 left-0 right-0 z-40'>
+    <MotionBlock
+      kind='eager'
+      variants={slideIn('down', { distance: 32 })}
+      className='fixed bottom-0 left-0 right-0 z-40 transform-gpu will-change-transform'
+      role='region'
+      aria-label={t('common:stickyCta', { defaultValue: 'Acción rápida' })}>
       <div
-        className='bg-brand-primary-dark/80 backdrop-blur-lg p-4 pb-[calc(1rem+var(--safe-bottom))]'
+        className='w-full bg-brand-primary-light/20 backdrop-blur-lg p-4 pb-[calc(1rem+var(--safe-bottom))]'
         style={{ boxShadow: '0 -4px 15px rgba(0, 0, 0, 0.2)' }}>
-        <div className='container max-w-lg mx-auto'>{renderButton()}</div>
+        <div className='container max-w-lg mx-auto flex justify-center'>
+          {renderButton()}
+        </div>
       </div>
-    </motion.div>
+    </MotionBlock>
   );
 };

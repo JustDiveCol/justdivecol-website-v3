@@ -1,8 +1,8 @@
 // src/components/sections/certifications/BookingProcess.tsx
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { useMotionPresets } from '../../../hooks/animations';
 import type { BookingProcessProps } from './types';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
 
 export const BookingProcess = ({
   bookingProcess,
@@ -14,28 +14,30 @@ export const BookingProcess = ({
   return (
     <section className='bg-brand-primary-dark'>
       <div className='section text-center'>
-        <motion.h2
-          className='heading-3 text-white mb-12'
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.3 }}
+        {/* Título: in-view independiente */}
+        <MotionBlock
+          kind='inView'
           variants={fadeIn()}>
-          {t(bookingProcess.titleKey)}
-        </motion.h2>
-        <motion.div
-          className='relative max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8'
+          <h2 className='heading-3 text-white mb-12'>
+            {t(bookingProcess.titleKey)}
+          </h2>
+        </MotionBlock>
+
+        {/* Grid: el padre controla in-view + stagger */}
+        <MotionBlock
+          kind='inView'
           variants={container}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.2 }}>
+          className='relative max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 transform-gpu will-change-transform'>
           <div
             aria-hidden='true'
             className='absolute top-14 left-0 w-full h-px bg-white/20 hidden md:block z-0'
           />
+
           {bookingProcess.steps.map((step, index) => (
-            <motion.div
+            <MotionBlock
               key={step.nameKey}
-              variants={fadeIn()}
+              kind='none'
+              variants={fadeIn({ delay: index * 0.04 })}
               className='relative flex flex-col items-center text-center p-6'>
               <div className='relative z-10 flex items-center justify-center h-16 w-16 rounded-full bg-brand-primary-medium border-2 border-brand-cta-orange text-white text-2xl font-bold drop-shadow-strong'>
                 {index + 1}
@@ -44,9 +46,9 @@ export const BookingProcess = ({
               <p className='mt-2 text-base-xs text-brand-neutral/80'>
                 {t(step.descriptionKey)}
               </p>
-            </motion.div>
+            </MotionBlock>
           ))}
-        </motion.div>
+        </MotionBlock>
       </div>
     </section>
   );

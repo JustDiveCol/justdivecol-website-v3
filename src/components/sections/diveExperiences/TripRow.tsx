@@ -1,6 +1,5 @@
 // src/components/sections/diveExperiences/TripRow.tsx
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
 import { useMemo } from 'react';
 import { Button } from '../../common/Button';
 import { ROUTES } from '../../../constants/routes.schema';
@@ -17,8 +16,17 @@ import type { ExperienceContent } from '../../../content/experiences/types';
 import type { TOptions } from 'i18next';
 import { deriveSessionAvailability } from '../../../lib/availability';
 
+import { useReducedMotion } from 'framer-motion';
+import { useMotionPresets } from '../../../hooks/animations';
+import { MotionBlock } from '../../motion/MotionBlock';
+
+/* ────────────────────────────────────────────────────────────
+ * Badge con respeto a prefers-reduced-motion
+ * ──────────────────────────────────────────────────────────── */
 export const AvailabilityBadge = ({ status }: { status: AvailableType }) => {
   const { t } = useTranslation('common');
+  const reduce = useReducedMotion();
+
   const baseClasses = 'px-3 py-1 text-xs font-bold rounded-full';
 
   const statusMap: Record<AvailableType, { textKey: string; classes: string }> =
@@ -46,26 +54,26 @@ export const AvailabilityBadge = ({ status }: { status: AvailableType }) => {
     classes: 'bg-gray-500/20 text-gray-300',
   };
 
-  const animationProps =
-    status === 'available' || status === 'few_spots' || status === 'coming_soon'
-      ? {
-          animate: { scale: [1, 1.1, 1] },
-          transition: {
-            duration: 1.5,
-            repeat: Infinity,
-            repeatType: 'mirror' as const,
-          },
-        }
-      : {};
+  // Pulso sutil sólo si no hay reduce y el estado lo amerita
+  const shouldPulse =
+    !reduce &&
+    (status === 'available' ||
+      status === 'few_spots' ||
+      status === 'coming_soon');
 
   return (
-    <motion.div
-      className={`${baseClasses} ${current.classes}`}
-      {...animationProps}>
+    <div
+      className={`${baseClasses} ${current.classes} ${
+        shouldPulse ? 'animate-pulse' : ''
+      }`}>
       {t(current.textKey)}
-    </motion.div>
+    </div>
   );
 };
+
+/* ────────────────────────────────────────────────────────────
+ * TripRow (inmediato / eager)
+ * ──────────────────────────────────────────────────────────── */
 
 type TripRowSession = {
   id: string;
@@ -104,6 +112,7 @@ const toUTCDate = (isoDate: string) => new Date(`${isoDate}T00:00:00Z`);
 
 export const TripRow = ({ session, translationNS }: TripRowProps) => {
   const { t, i18n } = useTranslation([translationNS, 'common']);
+  const { slideIn } = useMotionPresets();
   const soldOutLogo = BRAND_ASSETS_SAFE.seals.soldOut;
 
   const parentExperience = useMemo(
@@ -182,12 +191,10 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
   const isSoldOut = derivedStatus === 'sold_out';
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.5 }}
-      className={`relative flex flex-col md:flex-row items-center gap-6 p-4 border rounded-lg transition-colors duration-300 ${
+    <MotionBlock
+      kind='eager'
+      variants={slideIn('up', { distance: 32 })}
+      className={`relative flex flex-col md:flex-row items-center gap-6 p-4 border rounded-lg transition-colors duration-300 transform-gpu will-change-transform ${
         isSoldOut
           ? 'border-red-500/20 bg-red-900/10'
           : 'border-white/10 bg-white/5 hover:bg-white/10'
@@ -257,6 +264,6 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
           </>
         )}
       </div>
-    </motion.div>
+    </MotionBlock>
   );
 };
