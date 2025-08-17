@@ -48,7 +48,7 @@ export const ImageComponent = ({
       )}
 
       {complementaryLogo && (
-        <div className='absolute top-2 right-2 select-none w-8 h-auto sm:w-10 md:w-12 drop-shadow-md opacity-70'>
+        <div className='absolute top-4 right-4 select-none w-8 h-auto sm:w-10 md:w-12 drop-shadow-md opacity-70'>
           <img
             src={complementaryLogo.url}
             alt={t(complementaryLogo.altKey)}
@@ -61,7 +61,7 @@ export const ImageComponent = ({
         </div>
       )}
 
-      <div className='absolute bottom-2 right-2 select-none w-16 h-auto sm:w-20 md:w-24 drop-shadow-md opacity-70'>
+      <div className='absolute bottom-4 right-4 select-none w-16 h-auto sm:w-20 md:w-24 drop-shadow-md opacity-70'>
         <img
           src={mainLogo.url}
           alt={t(mainLogo.altKey)}

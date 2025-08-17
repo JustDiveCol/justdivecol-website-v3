@@ -12,10 +12,10 @@ export const BookingProcess = ({
   const { container, fadeIn } = useMotionPresets();
 
   return (
-    <section className='bg-brand-primary-medium py-16'>
+    <section className='bg-brand-primary-dark'>
       <div className='section text-center'>
         <motion.h2
-          className='heading-2 text-white mb-12'
+          className='heading-3 text-white mb-12'
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.3 }}
@@ -37,11 +37,11 @@ export const BookingProcess = ({
               key={step.nameKey}
               variants={fadeIn()}
               className='relative flex flex-col items-center text-center p-6'>
-              <div className='relative z-10 flex items-center justify-center h-16 w-16 rounded-full bg-brand-primary-dark border-2 border-brand-cta-orange text-white text-2xl font-bold'>
+              <div className='relative z-10 flex items-center justify-center h-16 w-16 rounded-full bg-brand-primary-medium border-2 border-brand-cta-orange text-white text-2xl font-bold drop-shadow-strong'>
                 {index + 1}
               </div>
-              <h3 className='heading-5 text-white mt-4'>{t(step.nameKey)}</h3>
-              <p className='mt-2 font-serif text-brand-neutral/80'>
+              <h3 className='heading-6 text-white mt-4'>{t(step.nameKey)}</h3>
+              <p className='mt-2 text-base-xs text-brand-neutral/80'>
                 {t(step.descriptionKey)}
               </p>
             </motion.div>

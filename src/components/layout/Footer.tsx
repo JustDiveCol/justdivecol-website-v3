@@ -103,7 +103,7 @@ const Footer: React.FC<FooterProps> = () => {
             <img
               src={BRAND_ASSETS_SAFE.mainLogo.url}
               alt='Logo'
-              className='h-10 w-auto'
+              className='h-10 w-auto drop-shadow-strong'
               loading='lazy'
               width={160}
               height={40}

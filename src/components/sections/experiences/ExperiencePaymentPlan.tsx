@@ -13,7 +13,7 @@ export const ExperiencePaymentPlan = ({
   const { container, fadeIn } = useMotionPresets();
 
   return (
-    <section className='bg-brand-primary-dark py-16'>
+    <section className='bg-brand-primary-dark'>
       <div className='section max-w-4xl mx-auto'>
         <motion.div
           className='text-center mb-12'
@@ -21,7 +21,7 @@ export const ExperiencePaymentPlan = ({
           whileInView='visible'
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeIn()}>
-          <h2 className='heading-2 text-white'>{t(paymentPlan.titleKey)}</h2>
+          <h2 className='heading-3 text-white'>{t(paymentPlan.titleKey)}</h2>
         </motion.div>
 
         <motion.div
@@ -52,7 +52,7 @@ export const ExperiencePaymentPlan = ({
                   <WalletIcon className='h-5 w-5 text-brand-cta-orange' />
                 </div>
 
-                <h3 className='heading-4 text-white mt-1'>
+                <h3 className='heading-5 text-white mt-1'>
                   {installment.percentage ? `${installment.percentage}%` : ''}
                   {installment.amount ? `$${installment.amount}` : ''}
                 </h3>

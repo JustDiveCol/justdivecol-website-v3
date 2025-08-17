@@ -41,7 +41,7 @@ export const FaqSection = ({
         <div className='mb-12 text-center'>
           <motion.h2
             id='contact-faqs-heading'
-            className='heading-2 text-white'
+            className='heading-3 text-white'
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true, amount: 0.2 }}

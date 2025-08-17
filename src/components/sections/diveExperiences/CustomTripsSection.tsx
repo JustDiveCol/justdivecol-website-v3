@@ -30,7 +30,7 @@ export const CustomTripsSection = ({
             transition={{ duration: 0.8 }}>
             <ImageComponent
               imageData={imageData}
-              className='rounded-2xl'
+              className='rounded-2xl drop-shadow-strong'
             />
           </motion.div>
 
@@ -40,7 +40,7 @@ export const CustomTripsSection = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}>
-            <h2 className='heading-2 mb-6'>{t(titleKey)}</h2>
+            <h2 className='heading-3 mb-6'>{t(titleKey)}</h2>
             <p className='text-base-md font-serif text-brand-neutral/90 mb-8'>
               {t(textKey)}
             </p>
@@ -52,7 +52,7 @@ export const CustomTripsSection = ({
                   key={benefit.id}
                   className='flex items-center gap-3'>
                   <CheckIcon className='h-6 w-6 text-brand-cta-green flex-shrink-0' />
-                  <span className='text-brand-neutral'>
+                  <span className='text-brand-neutral text-base-xs'>
                     {t(benefit.textKey)}
                   </span>
                 </li>
@@ -65,7 +65,7 @@ export const CustomTripsSection = ({
                 whatsAppMessageKey: 'customTripWhatsappMessage',
               }}
               variant='primary'
-              size='lg'>
+              size='sm'>
               {t(buttonTextKey)}
             </Button>
           </motion.div>

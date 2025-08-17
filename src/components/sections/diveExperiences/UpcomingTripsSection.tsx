@@ -138,11 +138,11 @@ export const UpcomingTripsSection = ({
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.2 }}
-          className='max-w-3xl mx-auto text-center mb-10 md:mb-12'>
+          className='max-w-max mx-auto text-center mb-12 md:mb-12'>
           <motion.h1
             variants={fadeIn()}
             id='upcoming-trips-heading'
-            className='heading-1'>
+            className='heading-2'>
             {t(titleKey)}
           </motion.h1>
           <motion.p
@@ -158,7 +158,7 @@ export const UpcomingTripsSection = ({
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.2 }}
-          className='mx-auto mb-10 max-w-2xl rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md'>
+          className='mx-auto mb-10 max-w-max rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md'>
           <div className='flex flex-col gap-4 sm:flex-row'>
             <motion.select
               variants={fadeIn()}
@@ -193,7 +193,7 @@ export const UpcomingTripsSection = ({
         </motion.div>
 
         {/* Listado */}
-        <div className='mx-auto flex max-w-4xl flex-col gap-4'>
+        <div className='mx-auto flex max-w-max flex-col gap-4 drop-shadow-strong'>
           {paginatedSessions.length > 0 ? (
             paginatedSessions.map((session) => {
               const experience = experiences.find(

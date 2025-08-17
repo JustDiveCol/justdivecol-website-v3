@@ -90,12 +90,12 @@ export const CertificationsSection = ({
 
   return (
     <section
-      className='bg-brand-primary-medium py-20 px-4'
+      className='bg-brand-primary-dark py-16 px-4'
       id='certifications'>
       <div className='container mx-auto'>
-        <div className='max-w-3xl mx-auto text-center mb-16'>
+        <div className='max-w-max mx-auto text-center mb-12'>
           <motion.h2
-            className='heading-2 text-white'
+            className='heading-3 text-white'
             variants={fadeIn()}
             initial='hidden'
             whileInView='visible'
@@ -130,7 +130,7 @@ export const CertificationsSection = ({
                 key={cert.id}
                 certificationData={cert}
                 availabilityStatus={status}
-                className={`h-full${extraPos}`}
+                className={`h-full drop-shadow-strong${extraPos}`}
               />
             );
           })}

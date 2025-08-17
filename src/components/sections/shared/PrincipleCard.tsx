@@ -84,7 +84,7 @@ export const PrincipleCard = ({
       </figure>
 
       {/* cuerpo que crece para igualar alturas */}
-      <div className='flex flex-1 flex-col p-6 text-justify'>
+      <div className='flex flex-1 flex-col p-6 text-left lg:text-justify'>
         <p className='text-base-xs text-brand-primary-dark/80 line-clamp-4'>
           {t(cardData.descriptionKey)}
         </p>

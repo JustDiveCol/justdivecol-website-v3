@@ -108,11 +108,10 @@ const DestinationPage: React.FC = () => {
         <PhotoGallery
           {...content.gallery}
           translationNS={content.seo.translationNS}
+          sectionBackgroundColor={'bg-brand-primary-dark'}
         />
 
         <CtaSection {...homeContent.cta} />
-
-        <div className='h-24 md:h-28' />
       </main>
 
       <StickyCtaBar

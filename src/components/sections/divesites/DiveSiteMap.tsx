@@ -7,11 +7,21 @@ import type { Root } from 'react-dom/client';
 import { useTranslation } from 'react-i18next';
 
 import { MotionMarker } from './MotionMarker';
-import { FlagIcon, ReefIcon, WreckIcon, WallIcon } from '../../ui';
+import {
+  FlagIcon,
+  ReefIcon,
+  WreckIcon,
+  WallIcon,
+  PinnacleIcon,
+  CaveIcon,
+  DiverIcon,
+  MuckIcon,
+  BlueHoleIcon,
+  FreshWaterIcon,
+  ArtificialReefIcon,
+} from '../../ui';
 import type { DiveSiteMapProps, IconComponentType } from './types';
 import type { DiveTypeId } from '../../../constants';
-
-const MAPTILER_API_KEY = '97B6xeRDLNUfHdzle616';
 
 const getIconComponent = (typeIds: DiveTypeId[] = []): IconComponentType => {
   const primaryType = typeIds[0];
@@ -22,6 +32,24 @@ const getIconComponent = (typeIds: DiveTypeId[] = []): IconComponentType => {
       return WreckIcon;
     case 'wall':
       return WallIcon;
+    case 'pinnacle':
+      return PinnacleIcon;
+    case 'cavern':
+      return CaveIcon;
+    case 'cave':
+      return CaveIcon;
+    case 'cenote':
+      return CaveIcon;
+    case 'drift':
+      return DiverIcon;
+    case 'muck':
+      return MuckIcon;
+    case 'blue-hole':
+      return BlueHoleIcon;
+    case 'freshwater':
+      return FreshWaterIcon;
+    case 'artificial-reef':
+      return ArtificialReefIcon;
     default:
       return FlagIcon;
   }
@@ -68,13 +96,33 @@ export const DiveSiteMap = ({
   const { t } = useTranslation([translationNS, 'dive-sites', 'common']);
   const hoverPopup = useRef<Popup | null>(null);
 
+  const centeredOnSiteId = useRef<string | null>(null);
+
   // Efecto de inicialización del mapa
   useEffect(() => {
     if (mapInstance.current || !mapContainer.current) return;
 
     const map = new maplibregl.Map({
       container: mapContainer.current,
-      style: `https://api.maptiler.com/maps/ocean/style.json?key=${MAPTILER_API_KEY}`,
+      style: {
+        version: 8,
+        sources: {
+          osm: {
+            type: 'raster',
+            tiles: ['https://a.tile.opentopomap.org/{z}/{x}/{y}.png'],
+            tileSize: 256,
+            attribution:
+              '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors | © <a href="https://opentopomap.org" target="_blank" rel="noopener noreferrer">OpenTopoMap</a> (CC-BY-SA) | Data © <a href="https://justdivecol.com">JustDiveCol</a>',
+          },
+        },
+        layers: [
+          {
+            id: 'osm',
+            type: 'raster',
+            source: 'osm',
+          },
+        ],
+      },
       center: initialCenter || [-74.2973, 4.5709],
       zoom: initialZoom || 4.5,
       minZoom: minZoom || 2,
@@ -193,7 +241,9 @@ export const DiveSiteMap = ({
     const map = mapInstance.current;
     if (!map) return;
 
-    if (focusedSite) {
+    // CAMBIO: Lógica actualizada para el centrado
+    if (focusedSite && centeredOnSiteId.current !== focusedSite.id) {
+      centeredOnSiteId.current = focusedSite.id; // Marcar como centrado
       map.flyTo({
         center: focusedSite.coordinates,
         zoom: Math.max(13, minZoom || 13),
@@ -202,7 +252,8 @@ export const DiveSiteMap = ({
       return;
     }
 
-    if (sites.length > 0) {
+    if (!focusedSite && sites.length > 0) {
+      centeredOnSiteId.current = null; // Limpiar el estado de centrado
       const bounds = new LngLatBounds();
       sites.forEach((s) => bounds.extend(s.coordinates));
 

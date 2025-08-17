@@ -16,20 +16,19 @@ export const ExperienceInclusions = ({
 
   return (
     <motion.section
-      className='bg-brand-primary-dark py-16'
+      className='bg-brand-primary-dark'
       initial='hidden'
       whileInView='visible'
       viewport={{ once: true, amount: 0.2 }}
       variants={container}>
-      <div className='section grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto'>
+      <div className='section grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto drop-shadow-strong'>
         {/* Columna: Qué Incluye */}
         <motion.div
           variants={fadeIn()}
-          className='bg-brand-primary-medium/30 border border-white/10 rounded-lg p-6 md:p-8 flex flex-col'>
+          className='bg-brand-primary-medium/20 border border-white/10 rounded-lg p-6 md:p-8 flex flex-col'>
           {/* Inclusiones del Viaje */}
           <div>
-            <h3 className='heading-4 text-white mb-6 flex items-center gap-3'>
-              <CheckIcon className='h-8 w-8 text-brand-cta-green' />
+            <h3 className='heading-5 text-white mb-6 flex items-center gap-3'>
               {t(whatIsIncluded.titleKey)}
             </h3>
             <ul className='space-y-3'>
@@ -47,7 +46,7 @@ export const ExperienceInclusions = ({
           {/* Bloque Condicional para la Certificación */}
           {certificationInclusions && (
             <div className='mt-8 pt-6 border-t border-white/10'>
-              <h4 className='font-bold text-brand-cta-orange mb-4'>
+              <h4 className='font-bold text-subtitle text-brand-cta-orange mb-4'>
                 {t('certifications:certificationInclusionsTitle')}
               </h4>
               <ul className='space-y-3'>
@@ -69,9 +68,8 @@ export const ExperienceInclusions = ({
         {/* Columna: Qué NO Incluye */}
         <motion.div
           variants={fadeIn()}
-          className='bg-brand-primary-medium/30 border border-white/10 rounded-lg p-6 md:p-8'>
-          <h3 className='heading-4 text-white mb-6 flex items-center gap-3'>
-            <CloseIcon className='h-8 w-8 text-red-400' />
+          className='bg-brand-primary-medium/20 border border-white/10 rounded-lg p-6 md:p-8'>
+          <h3 className='heading-5 text-white mb-6 flex items-center gap-3'>
             {t(whatIsNotIncluded.titleKey)}
           </h3>
           <ul className='space-y-3'>

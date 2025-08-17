@@ -21,7 +21,7 @@ export const DestinationPill = ({
   return (
     <Link
       to={localizedTo(toUrlPath(`${ROUTES.destinations}/${destination.slug}`))}
-      className='rounded-full bg-white/5 px-4 py-2 text-sm font-semibold text-brand-neutral/80 transition-colors duration-300 hover:bg-brand-cta-orange hover:text-white'>
+      className='rounded-full bg-white/25 px-4 py-2 text-sm font-semibold text-brand-neutral/80 transition-colors duration-300 hover:bg-brand-cta-orange hover:text-white'>
       {t(destination.name, { ns: 'destinations' })}
     </Link>
   );

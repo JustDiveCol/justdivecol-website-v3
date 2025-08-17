@@ -85,5 +85,18 @@
   "biodiversityHotspotTag": "Alta biodiversidad",
   "conservationAreaTag": "Área de conservación",
   "coldWaterTag": "Agua fría",
-  "warmWaterTag": "Agua cálida"
+  "warmWaterTag": "Agua cálida",
+
+  "dive-sites": {
+    "seo": {
+      "title": "Puntos de Buceo en Colombia",
+      "desc": "Explora los mejores puntos de buceo en Colombia: arrecifes, naufragios y reservas marinas. Encuentra tu sitio ideal según dificultad, profundidad y condiciones del mar.",
+      "keywords": "puntos de buceo Colombia, sitios de buceo, buceo en Santa Marta, buceo en Malpelo, buceo en San Andrés, naufragios, arrecifes, buceo principiantes, buceo avanzado"
+    },
+
+    "header": {
+      "title": "Puntos de Buceo",
+      "subtitle": "Descubre los destinos submarinos más impresionantes de Colombia, clasificados por nivel, tipo de experiencia y condiciones para que encuentres tu próxima inmersión."
+    }
+  }
 }

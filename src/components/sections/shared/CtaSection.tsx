@@ -42,7 +42,7 @@ export const CtaSection = ({
       />
 
       {/* Contenido (container) */}
-      <div className='section relative z-10 py-24'>
+      <div className='section relative z-10'>
         <div className='flex flex-col md:flex-row gap-12'>
           {/* Columna izquierda */}
           <motion.div
@@ -110,7 +110,7 @@ export const CtaSection = ({
               </h3>
               <div
                 id={formTargetId}
-                className='w-full p-6 sm:p-8 rounded-lg shadow-2xl bg-white text-brand-primary-dark'
+                className='w-full p-6 sm:p-8 rounded-lg shadow-2xl bg-white text-brand-primary-dark drop-shadow-strong'
                 role='form'
                 aria-label={t(hubspotFormTitle)}>
                 <noscript>

@@ -27,7 +27,7 @@ export const TeamCard = ({
         <img
           src={memberData.imageUrl}
           alt={memberData.name}
-          className='h-48 w-48 rounded-full object-cover shadow-lg'
+          className='h-48 w-48 rounded-full object-cover shadow-lg drop-shadow-strong'
           loading='lazy'
           decoding='async'
           width={192}
@@ -37,13 +37,13 @@ export const TeamCard = ({
       <div className='mt-4'>
         <h3
           id={titleId}
-          className='text-xl font-bold text-brand-white'>
+          className='text-base-sm font-bold text-brand-white'>
           {memberData.name}
         </h3>
-        <p className='text-base font-semibold text-brand-cta-orange'>
+        <p className='text-base-xs font-semibold text-brand-cta-orange'>
           {t(memberData.roleKey)}
         </p>
-        <p className='mt-2 text-sm text-brand-neutral/80 font-serif'>
+        <p className='mt-2 text-base-xs text-brand-neutral/80 font-serif'>
           {t(memberData.bioKey)}
         </p>
       </div>

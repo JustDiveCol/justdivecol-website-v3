@@ -20,7 +20,7 @@ const MetricItem = ({
       visible: { opacity: 1, y: 0 },
     }}
     className='flex flex-col items-center text-center'>
-    <div className='text-brand-cta-orange'>{icon}</div>
+    <div className='text-brand-cta-orange drop-shadow-strong'>{icon}</div>
     <p className='mt-2 text-2xl font-bold text-white'>{value}</p>
     <p className='text-xs uppercase tracking-wider text-brand-neutral/80'>
       {label}

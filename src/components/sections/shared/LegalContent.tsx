@@ -12,13 +12,15 @@ export const LegalContent = ({
     <article
       className='
         prose prose-invert prose-lg
-        mx-auto py-16
+        mx-auto py-16 max-w-7xl
         text-brand-neutral/90
         prose-headings:text-brand-white
         prose-a:text-brand-cta-orange hover:prose-a:text-brand-cta-orange/80
       '>
       {sections.map((section) => (
-        <section key={section.id}>
+        <section
+          key={section.id}
+          className='px-4'>
           <h2>{t(section.titleKey)}</h2>
 
           {section.points.map((point, i) => (

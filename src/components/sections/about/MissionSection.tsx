@@ -26,7 +26,7 @@ export const MissionSection = ({
             whileInView='visible'
             viewport={{ once: true, amount: 0.3 }}
             variants={slideIn('left')}
-            className='rounded-lg shadow-2xl overflow-hidden'>
+            className='rounded-lg shadow-2xl overflow-hidden drop-shadow-strong'>
             <ImageComponent
               imageData={imageData}
               translationNS={translationNS}
@@ -40,7 +40,7 @@ export const MissionSection = ({
             viewport={{ once: true, amount: 0.3 }}
             variants={slideIn('right')}
             className=''>
-            <h2 className='heading-2 mb-6 text-white'>{t(titleKey)}</h2>
+            <h2 className='heading-3 mb-6 text-white'>{t(titleKey)}</h2>
             <p className='text-base-md font-serif text-brand-neutral/90 whitespace-pre-line'>
               {t(textKey)}
             </p>

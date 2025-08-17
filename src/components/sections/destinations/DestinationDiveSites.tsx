@@ -13,7 +13,7 @@ export const DestinationDiveSites = ({
   const { fadeIn } = useMotionPresets();
 
   return (
-    <section className='bg-brand-primary-dark py-16'>
+    <section className='bg-brand-primary-medium'>
       <div className='section'>
         <motion.div
           className='text-center'
@@ -21,7 +21,7 @@ export const DestinationDiveSites = ({
           whileInView='visible'
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeIn()}>
-          <h2 className='heading-2 text-white mb-4'>
+          <h2 className='heading-3 text-white mb-4'>
             {t('destinations.diveSitesSectionTitle')}
           </h2>
           <p className='text-subtitle text-brand-neutral/80'>
@@ -32,7 +32,7 @@ export const DestinationDiveSites = ({
         </motion.div>
 
         <motion.div
-          className='mt-12 h-[80vh] min-h-[400px] w-full rounded-xl shadow-2xl border-2 border-white/10'
+          className='mt-12 h-[85vh] min-h-[600px] w-full rounded-xl overflow-hidden shadow-2xl border-2 border-white/10'
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.3 }}

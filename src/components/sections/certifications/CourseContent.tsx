@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useMotionPresets } from '../../../hooks/animations';
 import type { CourseContentProps } from './types';
-import { CheckIcon, RequirementsIcon } from '../../ui';
+import { CheckIcon, CheckboxIcon } from '../../ui';
 
 export const CourseContent = ({
   description,
@@ -16,12 +16,12 @@ export const CourseContent = ({
 
   return (
     <motion.section
-      className='bg-brand-primary-dark py-16'
+      className='bg-brand-primary-dark'
       initial='hidden'
       whileInView='visible'
       viewport={{ once: true, amount: 0.2 }}
       variants={container}>
-      <div className='section max-w-4xl mx-auto space-y-16'>
+      <div className='section max-w-7xl mx-auto space-y-16'>
         {/* --- Bloque de Descripción --- */}
         <motion.div variants={fadeIn()}>
           <h2 className='heading-3 text-white mb-4 text-center md:text-left'>
@@ -42,8 +42,7 @@ export const CourseContent = ({
         <motion.div
           variants={fadeIn()}
           className='bg-brand-primary-medium/30 border border-white/10 rounded-lg p-6 md:p-8'>
-          <h3 className='heading-4 text-white mb-6 flex items-center gap-3'>
-            <RequirementsIcon className='h-8 w-8 text-brand-cta-orange' />
+          <h3 className='heading-5 text-white mb-6 flex items-center gap-3'>
             {t(prerequisites.titleKey)}
           </h3>
           <ul className='space-y-4'>
@@ -51,7 +50,7 @@ export const CourseContent = ({
               <li
                 key={i}
                 className='flex items-start gap-4'>
-                <CheckIcon className='h-6 w-6 text-brand-cta-green flex-shrink-0 mt-1' />
+                <CheckboxIcon className='h-6 w-6 text-brand-cta-green flex-shrink-0 mt-1 drop-shadow-strong' />
                 <span className='text-brand-neutral/90 text-lg'>
                   {t(itemKey)}
                 </span>
@@ -64,8 +63,7 @@ export const CourseContent = ({
         <motion.div
           variants={fadeIn()}
           className='bg-brand-primary-medium/30 border border-white/10 rounded-lg p-6 md:p-8'>
-          <h3 className='heading-4 text-white mb-6 flex items-center gap-3'>
-            <CheckIcon className='h-8 w-8 text-brand-cta-green' />
+          <h3 className='heading-5 text-white mb-6 flex items-center gap-3'>
             {t(whatIsIncluded.titleKey)}
           </h3>
           <ul className='space-y-4'>
@@ -73,7 +71,7 @@ export const CourseContent = ({
               <li
                 key={i}
                 className='flex items-start gap-4'>
-                <CheckIcon className='h-6 w-6 text-brand-cta-green flex-shrink-0 mt-1' />
+                <CheckIcon className='h-6 w-6 text-brand-cta-green flex-shrink-0 mt-1 drop-shadow-strong' />
                 <span className='text-brand-neutral/90 text-lg'>
                   {t(itemKey)}
                 </span>

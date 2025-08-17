@@ -18,10 +18,10 @@ export const TeamSection = ({
       className='bg-brand-primary-medium'
       aria-labelledby='team-heading'>
       <div className='section py-12'>
-        <div className='max-w-3xl mx-auto text-center mb-12'>
+        <div className='max-w-max mx-auto text-center mb-12'>
           <h2
             id='team-heading'
-            className='heading-2 text-white'>
+            className='heading-3 text-white'>
             {t(titleKey)}
           </h2>
         </div>

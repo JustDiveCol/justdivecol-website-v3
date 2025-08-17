@@ -13,7 +13,7 @@ export const ExperienceDiveSites = ({
   const { fadeIn } = useMotionPresets();
 
   return (
-    <section className='bg-brand-primary-dark py-16'>
+    <section className='bg-brand-primary-medium'>
       <div className='section'>
         <motion.div
           className='text-center'

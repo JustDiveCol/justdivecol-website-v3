@@ -29,7 +29,7 @@ export const PrinciplesSection = ({
           {cards.map((card) => (
             <div
               key={card.id}
-              className='flex w-[calc(50%-1rem)] flex-shrink-0 sm:w-5/12 md:w-4/12 lg:w-[30%] xl:w-[22%]'>
+              className='flex w-[calc(50%-1rem)] flex-shrink-0 sm:w-5/12 md:w-4/12 lg:w-[30%] xl:w-[22%] drop-shadow-strong'>
               <PrincipleCard
                 cardData={card}
                 translationNS={'principles'}

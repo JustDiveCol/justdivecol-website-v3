@@ -81,7 +81,7 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
 
   return (
     <motion.section
-      className='bg-brand-primary-dark py-16'
+      className='bg-brand-primary-dark'
       initial='hidden'
       whileInView='visible'
       viewport={{ once: true, amount: 0.2 }}
@@ -98,7 +98,7 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
             {experience.description.paragraphs.map((pKey, i) => (
               <p
                 key={i}
-                className='whitespace-pre-line'>
+                className='text-base-sm whitespace-pre-line'>
                 {t(pKey)}
               </p>
             ))}
@@ -109,15 +109,17 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
         <motion.div
           className='lg:col-span-1'
           variants={fadeIn()}>
-          <div className='sticky top-28 bg-brand-primary-medium/30 border border-white/10 rounded-lg p-6'>
+          <div className='sticky top-28 bg-brand-primary-medium/30 border border-white/10 rounded-lg p-6 drop-shadow-strong'>
             {/* Fechas */}
             <div className='flex items-center gap-4 border-b border-white/10 pb-4'>
               <CalendarIcon className='h-8 w-8 text-brand-cta-orange flex-shrink-0' />
               <div>
-                <p className='font-bold text-white capitalize'>
+                <p className='text-base-smfont-bold text-white capitalize'>
                   {formattedDateRange}
                 </p>
-                <p className='text-sm text-brand-neutral/80'>{durationText}</p>
+                <p className='text-base-xs text-brand-neutral/80'>
+                  {durationText}
+                </p>
               </div>
             </div>
 
@@ -125,7 +127,7 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
             <div className='flex items-center justify-between gap-4 mt-4'>
               <div className='flex items-center gap-2'>
                 <UserGroupIcon className='h-6 w-6 text-brand-cta-orange' />
-                <p className='font-bold text-white'>
+                <p className='text-base-xs font-bold text-white'>
                   {t('common:availability')}
                 </p>
               </div>
@@ -148,10 +150,10 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
                 <div
                   key={opt.id}
                   className='flex justify-between items-center'>
-                  <span className='text-brand-neutral/90'>
+                  <span className='text-base-xs text-brand-neutral/90'>
                     {t(opt.nameKey)}
                   </span>
-                  <span className='font-semibold text-white'>
+                  <span className='text-base-xs font-semibold text-white'>
                     {new Intl.NumberFormat(i18n.language, {
                       style: 'currency',
                       currency: opt.currency,

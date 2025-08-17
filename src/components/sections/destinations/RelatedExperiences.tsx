@@ -15,10 +15,10 @@ export const RelatedExperiences = ({
 
   if (sessions.length === 0) {
     return (
-      <section className='bg-brand-primary-dark py-16'>
+      <section className='bg-brand-primary-dark'>
         <div className='section max-w-4xl mx-auto text-center'>
           <motion.h2
-            className='heading-2 text-white mb-4'
+            className='heading-3 text-white mb-4'
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true, amount: 0.3 }}
@@ -39,10 +39,10 @@ export const RelatedExperiences = ({
   }
 
   return (
-    <section className='bg-brand-primary-dark py-16'>
+    <section className='bg-brand-primary-dark'>
       <div className='section max-w-4xl mx-auto'>
         <motion.h2
-          className='heading-2 text-white mb-8 text-center'
+          className='heading-3 text-white mb-8 text-center'
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.3 }}

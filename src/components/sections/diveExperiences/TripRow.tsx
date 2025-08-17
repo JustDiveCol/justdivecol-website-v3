@@ -197,7 +197,7 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
         <img
           src='/images/logos/creyentes-logo.png'
           alt={t('common:creyentesTripSealAlt')}
-          className='absolute -top-3 -right-3 w-16 h-16 pointer-events-none'
+          className='absolute -top-3 -right-3 w-16 h-16 pointer-events-none drop-shadow-strong'
           aria-hidden='true'
           loading='lazy'
           decoding='async'

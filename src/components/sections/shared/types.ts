@@ -139,6 +139,7 @@ export const PhotoGalleryPropsSchema = z.object({
   titleKey: z.string().min(1),
   images: z.array(ImageComponentDataSchema).min(1),
   translationNS: I18NNamespaceSchema,
+  sectionBackgroundColor: z.string().optional(),
 });
 
 export type PhotoGalleryProps = Omit<

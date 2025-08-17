@@ -21,7 +21,6 @@ export default {
       '2xl': '1536px',
     },
     extend: {
-      // --- Colores de Marca ---
       colors: {
         brand: {
           primary: {
@@ -46,6 +45,9 @@ export default {
       // --- Sombras de Marca ---
       boxShadow: {
         text: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+      },
+      dropShadow: {
+        strong: '0 2px 4px rgba(0,0,0,0.8)',
       },
       maxWidth: {
         content: '80rem', // ~1280px

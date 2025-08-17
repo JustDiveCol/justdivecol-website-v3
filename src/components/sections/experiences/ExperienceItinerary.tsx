@@ -12,7 +12,7 @@ export const ExperienceItinerary = ({
   const { container, fadeIn } = useMotionPresets();
 
   return (
-    <section className='bg-brand-primary-medium py-16'>
+    <section className='bg-brand-primary-medium'>
       <div className='section max-w-4xl mx-auto'>
         <motion.div
           className='text-center mb-12'
@@ -20,7 +20,7 @@ export const ExperienceItinerary = ({
           whileInView='visible'
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeIn()}>
-          <h2 className='heading-2 text-white'>{t(itinerary.titleKey)}</h2>
+          <h2 className='heading-3 text-white'>{t(itinerary.titleKey)}</h2>
         </motion.div>
 
         <motion.div
@@ -30,7 +30,7 @@ export const ExperienceItinerary = ({
           viewport={{ once: true, amount: 0.2 }}
           variants={container}>
           {/* Línea de tiempo vertical */}
-          <div className='absolute left-0 top-0 h-full w-px bg-white/20' />
+          <div className='absolute left-0 top-0 h-full w-px bg-white/20 drop-shadow-strong' />
 
           {itinerary.days.map((day, index) => (
             <motion.div
@@ -43,8 +43,8 @@ export const ExperienceItinerary = ({
               <p className='text-sm uppercase tracking-wider text-brand-neutral/80'>
                 {t('common:day')} {day.day}
               </p>
-              <h3 className='heading-4 text-white mt-1'>{t(day.titleKey)}</h3>
-              <p className='mt-2 text-brand-neutral/90 font-serif'>
+              <h3 className='heading-5 text-white mt-1'>{t(day.titleKey)}</h3>
+              <p className='mt-2 text-base-xs text-brand-neutral/90 font-serif'>
                 {t(day.descriptionKey)}
               </p>
             </motion.div>
@@ -59,7 +59,7 @@ export const ExperienceItinerary = ({
             whileInView='visible'
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeIn()}>
-            <ul className='text-sm text-brand-neutral/70 italic space-y-1'>
+            <ul className='text-xs text-brand-neutral/70 italic space-y-1 text-left'>
               {itinerary.notes.map((noteKey, i) => (
                 <li key={i}>{t(noteKey)}</li>
               ))}

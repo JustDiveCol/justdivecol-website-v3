@@ -66,7 +66,7 @@ const rawPolicy: LegalPageContent = {
             ],
           },
           {
-            textKey: 'legal.policy.content.sections.section2.point3',
+            textKey: 'legal.policy.content.sections.section2.point3.text',
             subpoints: ['legal.policy.content.sections.section2.point3.pointA'],
           },
         ],

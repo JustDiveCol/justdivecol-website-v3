@@ -103,7 +103,7 @@
 
   /* Wrapper de sección consistente (mobile-first) */
   .section {
-    @apply container max-w-content px-4 md:px-5;
+    @apply w-full container px-4 md:px-5; /* container ya centra y pone max-width */
     padding-top: var(--section-pt);
     padding-bottom: var(--section-pb);
   }
@@ -117,6 +117,17 @@
   }
 
   /* escalado de ritmo vertical por breakpoints */
+  @screen xl {
+    .section {
+      @apply max-w-screen-xl;
+    } /* 1280px */
+  }
+  @screen 2xl {
+    .section {
+      @apply max-w-screen-2xl;
+    } /* 1536px */
+  }
+
   @screen md {
     .section {
       --section-pt: theme(spacing.section-md);
@@ -146,10 +157,12 @@
   z-index: 50;
 }
 .maplibregl-popup-content {
-  background: transparent !important;
-  padding: 0 !important;
+  /* background: transparent !important; */
+  padding: 10px !important;
   box-shadow: none !important;
   border-radius: 0.75rem !important;
+  color: #e0e0e0;
+  background: #0a264f;
 }
 .maplibregl-popup-close-button {
   font-size: 24px !important;

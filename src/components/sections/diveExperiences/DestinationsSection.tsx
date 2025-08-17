@@ -86,13 +86,13 @@ export const DestinationsSection = ({
 
   return (
     <section
-      className='bg-brand-primary-medium py-20 px-4'
+      className='bg-brand-primary-medium py-16 px-4'
       id='destinations'>
       {/* --- ACTIVOS --- */}
       {activeDestinations.length > 0 && (
-        <div className='container mx-auto mb-20'>
-          <div className='max-w-3xl mx-auto text-center mb-12'>
-            <h2 className='heading-2 text-white'>{t(titleKey)}</h2>
+        <div className='container mx-auto mb-12'>
+          <div className='max-w-max mx-auto text-center mb-12'>
+            <h2 className='heading-3 text-white'>{t(titleKey)}</h2>
           </div>
 
           {shouldUseCarousel ? (
@@ -106,7 +106,7 @@ export const DestinationsSection = ({
                     return (
                       <div
                         key={dest.id}
-                        className='relative pl-4 flex-[0_0_90%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%]'>
+                        className='relative pl-4 flex-[0_0_90%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] drop-shadow-strong'>
                         <ActiveDestinationCard
                           destination={dest}
                           activeSessions={activeSess}
@@ -131,7 +131,7 @@ export const DestinationsSection = ({
               </button>
             </div>
           ) : (
-            <div className='flex flex-wrap justify-center gap-8'>
+            <div className='flex flex-wrap justify-center gap-8 drop-shadow-strong'>
               {activeDestinations.map((dest) => {
                 const activeSess = sessionsByDestination[dest.id] || [];
                 return (
@@ -151,11 +151,11 @@ export const DestinationsSection = ({
       {/* --- OTROS --- */}
       {otherDestinations.length > 0 && (
         <div className='container mx-auto'>
-          <div className='max-w-3xl mx-auto text-center mb-12'>
-            <h2 className='heading-3 text-white'>{t(otherTitleKey)}</h2>
+          <div className='max-w-max mx-auto text-center mb-12'>
+            <h2 className='heading-4 text-white'>{t(otherTitleKey)}</h2>
           </div>
 
-          <div className='flex flex-wrap justify-center items-center gap-4 max-w-4xl mx-auto'>
+          <div className='flex flex-wrap justify-center items-center gap-4 max-w-max mx-auto drop-shadow-strong'>
             {otherDestinations.map((dest) => (
               <DestinationPill
                 key={dest.id}

@@ -60,7 +60,7 @@ export const CertificationCard = ({
       className={twMerge('self-stretch flex flex-col min-h-0', className)}>
       <Link
         to={localizedTo(`/certifications/${slug}`)}
-        className='group flex flex-col flex-1 min-h-0 overflow-hidden rounded-lg bg-brand-primary-dark shadow-xl transition-transform duration-300 hover:-translate-y-2'>
+        className='group flex flex-col flex-1 min-h-0 overflow-hidden rounded-lg bg-brand-primary-medium shadow-xl transition-transform duration-300 hover:-translate-y-2'>
         <div className='overflow-hidden aspect-video relative'>
           <ImageComponent
             imageData={imageData}

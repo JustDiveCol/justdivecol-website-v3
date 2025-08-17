@@ -49,7 +49,7 @@ export const AlliesSection = ({
 
         {!shouldMarquee ? (
           <ul
-            className='flex flex-wrap justify-center items-center gap-x-10 md:gap-x-12 gap-y-6'
+            className='flex flex-wrap justify-center items-center gap-x-10 md:gap-x-12 gap-y-6 drop-shadow-strong'
             role='list'>
             {logos.map((ally) => (
               <li key={ally.id}>

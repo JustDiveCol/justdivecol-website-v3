@@ -26,7 +26,7 @@ export const FeaturedSection = ({
             <FeaturedCard
               key={`${card.id}-${index}`}
               cardData={card}
-              className='aspect-[4/5] w-[calc(50%-1rem)] flex-shrink-0 sm:w-5/12 md:w-4/12 lg:w-[30%] xl:w-[22%]'
+              className='aspect-[4/5] w-[calc(50%-1rem)] flex-shrink-0 sm:w-5/12 md:w-4/12 lg:w-[30%] xl:w-[22%] drop-shadow-strong'
               translationNS={translationNS}
             />
           ))}

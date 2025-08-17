@@ -203,7 +203,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         {/* Logo */}
         <Link
           to={localizedTo('/')}
-          className='flex-shrink-0 transition-transform duration-300 hover:scale-105'
+          className='flex-shrink-0 transition-transform duration-300 hover:scale-105 drop-shadow-strong'
           aria-label={t('common:home', 'Inicio')}>
           <img
             src={BRAND_ASSETS_SAFE.mainLogo.url}

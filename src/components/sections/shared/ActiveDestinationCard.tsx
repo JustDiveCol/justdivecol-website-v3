@@ -82,12 +82,12 @@ export const ActiveDestinationCard = ({
       </div>
       <div className='flex flex-col gap-3 p-6 text-white min-h-0'>
         <div className='min-w-0'>
-          <h3 className='heading-4'>
+          <h3 className='heading-6'>
             {t(destination.name, { ns: 'destinations' })}
           </h3>
         </div>
         {activeSessions.length > 0 && (
-          <h4 className='text-xs font-bold uppercase text-green-300'>
+          <h4 className='text-base-xs font-bold uppercase text-green-300'>
             {t('activeExperiencesTitle', {
               ns: 'destinations',
               defaultValue: 'Próximas experiencias',

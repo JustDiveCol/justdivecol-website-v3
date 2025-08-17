@@ -6,11 +6,15 @@ import type { CourseCurriculumProps } from './types';
 import { ComputerIcon, ScubaTanksIcon, DiverIcon } from '../../ui';
 
 const curriculumIconMap: Record<string, React.ReactNode> = {
-  theory: <ComputerIcon className='h-10 w-10 text-brand-cta-orange' />,
-  'confined-water': (
-    <ScubaTanksIcon className='h-10 w-10 text-brand-cta-orange' />
+  theory: (
+    <ComputerIcon className='h-10 w-10 text-brand-cta-orange drop-shadow-strong' />
   ),
-  'open-water': <DiverIcon className='h-10 w-10 text-brand-cta-orange' />,
+  'confined-water': (
+    <ScubaTanksIcon className='h-10 w-10 text-brand-cta-orange drop-shadow-strong' />
+  ),
+  'open-water': (
+    <DiverIcon className='h-10 w-10 text-brand-cta-orange drop-shadow-strong' />
+  ),
 };
 
 export const CourseCurriculum = ({
@@ -21,10 +25,10 @@ export const CourseCurriculum = ({
   const { container, fadeIn } = useMotionPresets();
 
   return (
-    <section className='bg-brand-primary-medium py-16'>
-      <div className='section text-center'>
+    <section className='bg-brand-primary-medium'>
+      <div className='section text-center drop-shadow-strong'>
         <motion.h2
-          className='heading-2 text-white mb-12'
+          className='heading-3 text-white mb-12'
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.3 }}
@@ -45,8 +49,8 @@ export const CourseCurriculum = ({
               {curriculumIconMap[module.id] || (
                 <DiverIcon className='h-10 w-10 text-brand-cta-orange' />
               )}
-              <h3 className='heading-5 text-white mt-4'>{t(module.nameKey)}</h3>
-              <p className='mt-2 font-serif text-brand-neutral/80'>
+              <h3 className='heading-6 text-white mt-4'>{t(module.nameKey)}</h3>
+              <p className='mt-2 text-base-xs font-serif text-brand-neutral/80'>
                 {t(module.descriptionKey)}
               </p>
             </motion.div>

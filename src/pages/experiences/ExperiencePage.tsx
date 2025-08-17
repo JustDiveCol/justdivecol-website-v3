@@ -129,8 +129,6 @@ const ExperiencePage: React.FC = () => {
         />
 
         <CtaSection {...homeContent.cta} />
-
-        <div className='h-24 md:h-28' />
       </main>
 
       <StickyCtaBar

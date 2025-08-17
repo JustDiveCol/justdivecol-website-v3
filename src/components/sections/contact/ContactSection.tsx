@@ -82,7 +82,7 @@ export const ContactSection = ({
                     'Contactar por WhatsApp'
                   )}>
                   <WhatsappIcon className='h-8 w-8 text-brand-cta-orange' />
-                  <span className='font-serif text-lg text-brand-neutral transition-colors group-hover:text-brand-cta-orange'>
+                  <span className='font-serif text-base-sm text-brand-neutral transition-colors group-hover:text-brand-cta-orange'>
                     {phone}
                   </span>
                 </a>
@@ -95,7 +95,7 @@ export const ContactSection = ({
                     'Contactar por correo'
                   )}>
                   <MailIcon className='h-8 w-8 text-brand-cta-orange' />
-                  <span className='font-serif text-lg text-brand-neutral transition-colors group-hover:text-brand-cta-orange'>
+                  <span className='font-serif text-base-sm text-brand-neutral transition-colors group-hover:text-brand-cta-orange'>
                     {email}
                   </span>
                 </a>
@@ -130,7 +130,7 @@ export const ContactSection = ({
             className='flex h-full w-full flex-col items-center justify-center'>
             <motion.h3
               variants={fadeIn()}
-              className='heading-5 mb-4 font-bold text-brand-cta-orange'>
+              className='heading-6 mb-4 font-bold text-brand-cta-orange'>
               {t(hubspotFormTitleKey)}
             </motion.h3>
 

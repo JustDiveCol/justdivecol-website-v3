@@ -51,6 +51,7 @@ export const PhotoGallery = ({
   titleKey,
   images,
   translationNS,
+  sectionBackgroundColor = 'bg-brand-primary-medium',
 }: PhotoGalleryProps) => {
   const { t } = useTranslation(translationNS);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -82,15 +83,15 @@ export const PhotoGallery = ({
   })();
 
   return (
-    <section className='bg-brand-primary-dark py-20 px-4'>
-      <div className='container mx-auto max-w-5xl'>
-        <h2 className='heading-2 text-white text-center mb-12'>
+    <section className={`${sectionBackgroundColor} px-4`}>
+      <div className='section mx-auto max-w-5xl'>
+        <h2 className='heading-3 text-white text-center mb-12'>
           {t(titleKey)}
         </h2>
 
         {/* Imagen principal */}
         <div
-          className='relative group cursor-pointer bg-brand-neutral rounded-2xl'
+          className='relative group cursor-pointer bg-brand-neutral rounded-2xl drop-shadow-strong'
           onClick={() => setIsOpen(true)}>
           <motion.div
             key={activeIndex}
@@ -139,7 +140,7 @@ export const PhotoGallery = ({
 
         {/* Thumbnails */}
         {slides.length > 1 && (
-          <div className='flex justify-center gap-4 mt-4'>
+          <div className='flex justify-center gap-4 mt-4 drop-shadow-strong'>
             {slides.map((s, idx) => (
               <button
                 key={idx}

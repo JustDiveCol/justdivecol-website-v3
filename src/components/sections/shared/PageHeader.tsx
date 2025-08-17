@@ -36,12 +36,12 @@ export const PageHeader = ({
       />
 
       {/* Contenido */}
-      <div className='section relative z-10 h-full flex flex-col items-center justify-center text-center'>
+      <div className='section max-w-max relative z-10 h-full flex flex-col items-center justify-center text-center'>
         <motion.h1
           initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={baseTransition}
-          className='heading-1'>
+          className='heading-2'>
           {t(titleKey)}
         </motion.h1>
 
@@ -52,7 +52,7 @@ export const PageHeader = ({
             }
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...baseTransition, delay: reduceMotion ? 0 : 0.2 }}
-            className='text-subtitle max-w-3xl'>
+            className='text-subtitle max-w-max'>
             {t(subtitleKey)}
           </motion.p>
         )}

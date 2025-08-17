@@ -22,7 +22,9 @@ export const AccordionItem = ({ question, answer }: AccordionItemProps) => {
         aria-expanded={isOpen}
         onClick={() => setIsOpen((o) => !o)}
         className='flex w-full items-center justify-between gap-4 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/60 rounded-md'>
-        <span className='text-lg font-bold text-brand-white'>{question}</span>
+        <span className='text-base-sm font-bold text-brand-white'>
+          {question}
+        </span>
         <ChevronDownIcon
           aria-hidden='true'
           className={`h-6 w-6 flex-shrink-0 text-brand-cta-orange transition-transform duration-300 ${
@@ -46,7 +48,7 @@ export const AccordionItem = ({ question, answer }: AccordionItemProps) => {
               collapsed: { opacity: 0, height: 0, transition: baseTransition },
             }}
             className='overflow-hidden'>
-            <p className='pb-4 pr-8 font-serif text-brand-neutral/80 whitespace-pre-line'>
+            <p className='pb-4 pr-8 text-base-xs text-justify text-brand-neutral/80 whitespace-pre-line'>
               {answer}
             </p>
           </motion.div>
