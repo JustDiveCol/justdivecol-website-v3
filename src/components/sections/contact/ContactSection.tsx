@@ -13,9 +13,9 @@ import type { ContactSectionProps } from './types';
 import { MotionBlock } from '../../motion/MotionBlock';
 
 const socialIconMap: Record<string, React.ReactNode> = {
-  instagram: <InstagramIcon className='h-7 w-7' />,
-  tiktok: <TikTokIcon className='h-7 w-7' />,
-  youtube: <YouTubeIcon className='h-7 w-7' />,
+  instagram: <InstagramIcon className="h-7 w-7" />,
+  tiktok: <TikTokIcon className="h-7 w-7" />,
+  youtube: <YouTubeIcon className="h-7 w-7" />,
 };
 
 export const ContactSection = ({
@@ -50,69 +50,73 @@ export const ContactSection = ({
 
   return (
     <section
-      className='bg-brand-primary-dark text-white'
-      aria-labelledby='contact-heading'>
-      <div className='section py-16'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch'>
+      className="bg-brand-primary-dark text-white"
+      aria-labelledby="contact-heading"
+    >
+      <div className="section py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
           {/* Columna izquierda (slide-in desde la izquierda) */}
           <MotionBlock
-            kind='inView'
+            kind="inView"
             variants={slideIn('left', { distance: 50 })}
-            className='flex h-full flex-col items-center justify-center'>
-            <div className='w-full max-w-lg text-left'>
-              <MotionBlock
-                kind='none'
-                variants={fadeIn()}>
+            className="flex h-full flex-col items-center justify-center"
+          >
+            <div className="w-full max-w-lg text-left">
+              <MotionBlock kind="none" variants={fadeIn()}>
                 <h2
-                  id='contact-heading'
-                  className='heading-3 mb-6 text-brand-white'>
+                  id="contact-heading"
+                  className="heading-3 mb-6 text-brand-white"
+                >
                   {t(titleKey)}
                 </h2>
               </MotionBlock>
 
-              <div className='space-y-6'>
+              <div className="space-y-6">
                 <a
                   href={whatsappUrl}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='group flex items-center gap-4'
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-4"
                   aria-label={t(
                     'common:contact_via_whatsapp',
                     'Contactar por WhatsApp'
-                  )}>
-                  <WhatsappIcon className='h-8 w-8 text-brand-cta-orange' />
-                  <span className='font-serif text-base-sm text-brand-neutral transition-colors group-hover:text-brand-cta-orange'>
+                  )}
+                >
+                  <WhatsappIcon className="h-8 w-8 text-brand-cta-orange" />
+                  <span className="font-serif text-base-sm text-brand-neutral transition-colors group-hover:text-brand-cta-orange">
                     {phone}
                   </span>
                 </a>
 
                 <a
                   href={emailLink}
-                  className='group flex items-center gap-4'
+                  className="group flex items-center gap-4"
                   aria-label={t(
                     'common:contact_via_email',
                     'Contactar por correo'
-                  )}>
-                  <MailIcon className='h-8 w-8 text-brand-cta-orange' />
-                  <span className='font-serif text-base-sm text-brand-neutral transition-colors group-hover:text-brand-cta-orange'>
+                  )}
+                >
+                  <MailIcon className="h-8 w-8 text-brand-cta-orange" />
+                  <span className="font-serif text-base-sm text-brand-neutral transition-colors group-hover:text-brand-cta-orange">
                     {email}
                   </span>
                 </a>
               </div>
 
-              <div className='mt-8 flex items-center gap-6 border-t border-white/10 pt-6'>
+              <div className="mt-8 flex items-center gap-6 border-t border-white/10 pt-6">
                 {socials.map((social) => (
                   <a
                     key={social.name}
                     href={social.path}
-                    target='_blank'
-                    rel='noopener noreferrer'
+                    target="_blank"
+                    rel="noopener noreferrer"
                     title={social.name}
                     aria-label={t('common:visit_social', {
                       defaultValue: 'Visitar {{name}}',
                       name: social.name,
                     })}
-                    className='text-brand-neutral transition-transform hover:scale-110 hover:text-brand-cta-orange'>
+                    className="text-brand-neutral transition-transform hover:scale-110 hover:text-brand-cta-orange"
+                  >
                     {socialIconMap[social.type]}
                   </a>
                 ))}
@@ -122,30 +126,30 @@ export const ContactSection = ({
 
           {/* Columna derecha (slide-in desde la derecha) */}
           <MotionBlock
-            kind='inView'
+            kind="inView"
             variants={slideIn('right', { distance: 50 })}
-            className='flex h-full w-full flex-col items-center justify-center'>
-            <MotionBlock
-              kind='none'
-              variants={fadeIn()}>
-              <h3 className='heading-6 mb-4 font-bold text-brand-cta-orange'>
+            className="flex h-full w-full flex-col items-center justify-center"
+          >
+            <MotionBlock kind="none" variants={fadeIn()}>
+              <h3 className="heading-6 mb-4 font-bold text-brand-cta-orange">
                 {t(hubspotFormTitleKey)}
               </h3>
             </MotionBlock>
 
             <MotionBlock
-              kind='none'
+              kind="none"
               variants={fadeIn()}
-              className='w-full max-w-lg rounded-lg bg-white p-6 text-brand-primary-dark shadow-2xl sm:p-8'
+              className="w-full max-w-lg rounded-lg bg-white p-6 text-brand-primary-dark shadow-2xl sm:p-8"
               style={{
                 transitionDuration: `${
                   // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   (baseTransition as any)?.duration ?? 0.8
                 }s`,
-              }}>
+              }}
+            >
               <div
                 id={formTargetId}
-                role='form'
+                role="form"
                 aria-label={t(hubspotFormTitleKey)}
               />
               <noscript>

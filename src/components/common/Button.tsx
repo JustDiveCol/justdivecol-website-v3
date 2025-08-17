@@ -7,7 +7,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { contactContent } from '../../content/pages/contact/contact.content';
 import type { ButtonProps } from './types';
-import { useLocalizedRoutes } from '../../hooks/useLocalizedRoutes'; // CAMBIO: Importar el hook
+import { useLocalizedRoutes } from '../../hooks/useLocalizedRoutes';
 
 const buttonVariants = cva(
   'drop-shadow-strong inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold uppercase tracking-wider transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-cta-yellow',
@@ -71,11 +71,7 @@ export const Button = React.forwardRef<HTMLAnchorElement, ButtonProps>(
     if (action.type === 'internal') {
       const linkProps = props as Omit<LinkProps, 'to'>;
       return (
-        <Link
-          to={finalLink}
-          className={classes}
-          ref={ref}
-          {...linkProps}>
+        <Link to={finalLink} className={classes} ref={ref} {...linkProps}>
           {children}
         </Link>
       );
@@ -86,9 +82,10 @@ export const Button = React.forwardRef<HTMLAnchorElement, ButtonProps>(
         href={finalLink}
         className={classes}
         ref={ref}
-        target='_blank'
-        rel='noopener noreferrer'
-        {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
+        target="_blank"
+        rel="noopener noreferrer"
+        {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+      >
         {children}
       </a>
     );

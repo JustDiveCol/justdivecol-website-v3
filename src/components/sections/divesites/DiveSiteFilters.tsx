@@ -42,27 +42,28 @@ export const DiveSiteFilters = ({
   };
 
   return (
-    <div className='space-y-6'>
+    <div className="space-y-6">
       {/* --- Búsqueda --- */}
       <div>
         <label
-          htmlFor='search-query'
-          className='mb-2 block text-sm font-bold text-brand-white'>
+          htmlFor="search-query"
+          className="mb-2 block text-sm font-bold text-brand-white"
+        >
           {t('filterBySearch', { ns: translationNS })}
         </label>
         <input
-          id='search-query'
-          type='text'
+          id="search-query"
+          type="text"
           value={filters.searchQuery}
           onChange={(e) => handleFilterChange('searchQuery', e.target.value)}
           placeholder={t('searchPlaceholder', { ns: translationNS })}
-          className='form-input w-full'
+          className="form-input w-full"
         />
       </div>
 
       {/* --- Destino --- */}
       <div>
-        <label className='mb-2 block text-sm font-bold text-brand-white'>
+        <label className="mb-2 block text-sm font-bold text-brand-white">
           {t('filterByDestination', { ns: translationNS })}
         </label>
         <select
@@ -73,14 +74,13 @@ export const DiveSiteFilters = ({
               (e.target.value || 'all') as DestinationIdAll
             )
           }
-          className='form-input w-full'>
-          <option value='all'>
+          className="form-input w-full"
+        >
+          <option value="all">
             {t('filterAllDestinations', { ns: translationNS })}
           </option>
           {availableDestinations.map((d) => (
-            <option
-              key={d.id}
-              value={d.id}>
+            <option key={d.id} value={d.id}>
               {t(d.nameKey, { ns: 'destinations' })}
             </option>
           ))}
@@ -89,7 +89,7 @@ export const DiveSiteFilters = ({
 
       {/* --- Dificultad --- */}
       <div>
-        <label className='mb-2 block text-sm font-bold text-brand-white'>
+        <label className="mb-2 block text-sm font-bold text-brand-white">
           {t('filterByDifficulty', { ns: translationNS })}
         </label>
         <select
@@ -100,14 +100,13 @@ export const DiveSiteFilters = ({
               (e.target.value || 'all') as DiveDifficultyIdAll
             )
           }
-          className='form-input w-full'>
-          <option value='all'>
+          className="form-input w-full"
+        >
+          <option value="all">
             {t('filterAllDifficulties', { ns: translationNS })}
           </option>
           {availableDifficulties.map((d) => (
-            <option
-              key={d.id}
-              value={d.id}>
+            <option key={d.id} value={d.id}>
               {t(d.nameKey)}
             </option>
           ))}
@@ -117,15 +116,16 @@ export const DiveSiteFilters = ({
       {/* --- Profundidad máxima --- */}
       <div>
         <label
-          htmlFor='max-depth'
-          className='mb-2 block text-sm font-bold text-brand-white'>
+          htmlFor="max-depth"
+          className="mb-2 block text-sm font-bold text-brand-white"
+        >
           {t('filterByMaxDepth', { ns: translationNS })} ({filters.maxDepth} m /{' '}
           {(filters.maxDepth * 3.281).toFixed(0)} ft)
         </label>
 
         <input
-          id='max-depth'
-          type='range'
+          id="max-depth"
+          type="range"
           min={10}
           max={50}
           step={5}
@@ -133,29 +133,30 @@ export const DiveSiteFilters = ({
           onChange={(e) =>
             handleFilterChange('maxDepth', parseInt(e.target.value, 10))
           }
-          className='h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-700'
+          className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-700"
         />
       </div>
 
       {/* --- Tipos --- */}
       <div>
-        <label className='mb-2 block text-sm font-bold text-brand-white'>
+        <label className="mb-2 block text-sm font-bold text-brand-white">
           {t('filterByType', { ns: translationNS })}
         </label>
-        <div className='flex flex-wrap gap-2'>
+        <div className="flex flex-wrap gap-2">
           {availableTypes.map((type: TypeOption) => {
             const selected = filters.types.includes(type.id);
             return (
               <button
                 key={type.id}
-                type='button'
+                type="button"
                 onClick={() => handleMultiSelectToggle('types', type.id)}
                 aria-pressed={selected}
                 className={`rounded-full px-3 py-1 text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/60 ${
                   selected
                     ? 'bg-brand-cta-orange text-white'
                     : 'bg-white/10 text-brand-neutral hover:bg-white/20'
-                }`}>
+                }`}
+              >
                 {t(type.nameKey)}
               </button>
             );
@@ -165,23 +166,24 @@ export const DiveSiteFilters = ({
 
       {/* --- Condiciones --- */}
       <div>
-        <label className='mb-2 block text-sm font-bold text-brand-white'>
+        <label className="mb-2 block text-sm font-bold text-brand-white">
           {t('filterByCondition', { ns: translationNS })}
         </label>
-        <div className='flex flex-wrap gap-2'>
+        <div className="flex flex-wrap gap-2">
           {availableConditions.map((cond: ConditionOption) => {
             const selected = filters.conditions.includes(cond.id);
             return (
               <button
                 key={cond.id}
-                type='button'
+                type="button"
                 onClick={() => handleMultiSelectToggle('conditions', cond.id)}
                 aria-pressed={selected}
                 className={`rounded-full px-3 py-1 text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/60 ${
                   selected
                     ? 'bg-brand-cta-orange text-white'
                     : 'bg-white/10 text-brand-neutral hover:bg-white/20'
-                }`}>
+                }`}
+              >
                 {t(cond.nameKey)}
               </button>
             );
@@ -191,23 +193,24 @@ export const DiveSiteFilters = ({
 
       {/* --- Tags --- */}
       <div>
-        <label className='mb-2 block text-sm font-bold text-brand-white'>
+        <label className="mb-2 block text-sm font-bold text-brand-white">
           {t('filterByTag', { ns: translationNS })}
         </label>
-        <div className='flex flex-wrap gap-2'>
+        <div className="flex flex-wrap gap-2">
           {availableTags.map((tag: TagOption) => {
             const selected = filters.tags.includes(tag.id);
             return (
               <button
                 key={tag.id}
-                type='button'
+                type="button"
                 onClick={() => handleMultiSelectToggle('tags', tag.id)}
                 aria-pressed={selected}
                 className={`rounded-full px-3 py-1 text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/60 ${
                   selected
                     ? 'bg-brand-cta-orange text-white'
                     : 'bg-white/10 text-brand-neutral hover:bg-white/20'
-                }`}>
+                }`}
+              >
                 {t(tag.nameKey)}
               </button>
             );

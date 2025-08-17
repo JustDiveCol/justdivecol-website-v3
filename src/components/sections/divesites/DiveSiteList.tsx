@@ -16,8 +16,8 @@ export const DiveSiteList = ({
 
   if (sites.length === 0) {
     return (
-      <div className='p-8 text-center'>
-        <p className='text-brand-neutral/70 font-serif'>
+      <div className="p-8 text-center">
+        <p className="text-brand-neutral/70 font-serif">
           {t('noSitesFound', { ns: translationNS })}
         </p>
       </div>
@@ -25,13 +25,9 @@ export const DiveSiteList = ({
   }
 
   return (
-    <ul
-      role='list'
-      className='space-y-4'>
+    <ul role="list" className="space-y-4">
       {sites.map((site) => (
-        <li
-          key={site.id}
-          role='listitem'>
+        <li key={site.id} role="listitem">
           <DiveSiteCard
             site={site}
             onSelect={handleSelect}

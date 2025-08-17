@@ -17,7 +17,7 @@ export const FaqSection = ({
   showSeeAllButton = true,
 }: FaqSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
-  const { container, fadeIn } = useMotionPresets(); // <-- usamos container + fadeIn
+  const { container, fadeIn } = useMotionPresets();
   const { data } = faqContent;
 
   // Lógica para seleccionar las FAQs a mostrar
@@ -33,37 +33,39 @@ export const FaqSection = ({
 
   return (
     <section
-      className='bg-brand-primary-medium'
-      aria-labelledby='contact-faqs-heading'>
-      <div className='section py-16'>
-        {/* Owner del ciclo: eager + stagger de hijos */}
+      className="bg-brand-primary-medium"
+      aria-labelledby="contact-faqs-heading"
+    >
+      <div className="section py-16">
         <MotionBlock
-          kind='eager'
+          kind="eager"
           variants={container}
-          className='mx-auto max-w-3xl transform-gpu will-change-transform'>
+          className="mx-auto max-w-3xl transform-gpu will-change-transform"
+        >
           {/* Título (hijo 1) */}
           <MotionBlock
-            kind='none'
+            kind="none"
             variants={fadeIn()}
-            className='mb-12 text-center'>
-            <h2
-              id='contact-faqs-heading'
-              className='heading-3 text-white'>
+            className="mb-12 text-center"
+          >
+            <h2 id="contact-faqs-heading" className="heading-3 text-white">
               {t(titleKey)}
             </h2>
           </MotionBlock>
 
           {/* Lista (hijo 2): micro-stagger por item */}
           <MotionBlock
-            kind='none'
+            kind="none"
             variants={container}
-            role='list'
-            className='space-y-2'>
+            role="list"
+            className="space-y-2"
+          >
             {faqsToShow.map((faq, i) => (
               <MotionBlock
                 key={faq.id}
-                kind='none'
-                variants={fadeIn({ delay: i * 0.03 })}>
+                kind="none"
+                variants={fadeIn({ delay: i * 0.03 })}
+              >
                 <AccordionItem
                   question={t(faq.questionKey)}
                   answer={t(faq.answerKey)}
@@ -75,13 +77,15 @@ export const FaqSection = ({
           {/* Botón (hijo 3) */}
           {showSeeAllButton && (
             <MotionBlock
-              kind='none'
+              kind="none"
               variants={fadeIn()}
-              className='mt-12 text-center'>
+              className="mt-12 text-center"
+            >
               <Button
                 action={{ type: 'internal', path: toUrlPath(ROUTES.faq) }}
-                variant='outline'
-                size='sm'>
+                variant="outline"
+                size="sm"
+              >
                 {t('faq:faq.seeAllFaqsButton')}
               </Button>
             </MotionBlock>

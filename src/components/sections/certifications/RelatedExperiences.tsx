@@ -16,28 +16,18 @@ export const RelatedExperiences = ({
   if (sessions.length === 0) return null;
 
   return (
-    <section className='bg-brand-primary-medium'>
-      <div className='section max-w-4xl mx-auto'>
-        {/* Título: in-view controlado por el padre */}
-        <MotionBlock
-          kind='inView'
-          variants={fadeIn()}>
-          <h2 className='heading-3 text-white mb-8 text-center'>
+    <section className="bg-brand-primary-medium">
+      <div className="section max-w-4xl mx-auto">
+        <MotionBlock kind="inView" variants={fadeIn()}>
+          <h2 className="heading-3 text-white mb-8 text-center">
             {t(titleKey)}
           </h2>
         </MotionBlock>
 
-        {/* Contenedor de lista: in-view; hijos NO abren ciclos */}
-        <MotionBlock
-          kind='inView'
-          variants={fadeIn()}
-          className='space-y-4'>
+        <MotionBlock kind="inView" variants={fadeIn()} className="space-y-4">
           {sessions.map((session) => (
             <div key={session.id}>
-              <TripRow
-                session={session}
-                translationNS='experiences'
-              />
+              <TripRow session={session} translationNS="experiences" />
             </div>
           ))}
         </MotionBlock>

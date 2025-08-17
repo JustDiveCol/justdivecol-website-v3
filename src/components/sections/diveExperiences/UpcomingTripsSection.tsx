@@ -1,4 +1,4 @@
-// src/components/sections/experiences/UpcomingTripsSection.tsx
+// src/components/sections/diveExperiences/UpcomingTripsSection.tsx
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TripRow } from './TripRow';
@@ -113,53 +113,51 @@ export const UpcomingTripsSection = ({
 
   return (
     <section
-      id='dive-experiences'
-      aria-labelledby='upcoming-trips-heading'
-      className='relative min-h-[80svh] md:min-h-screen text-white'>
+      id="dive-experiences"
+      aria-labelledby="upcoming-trips-heading"
+      className="relative min-h-[80svh] md:min-h-screen text-white"
+    >
       {/* Fondo como IMG para mejor LCP */}
       <img
         src={backgroundImageUrl}
-        alt=''
-        className='absolute inset-0 h-full w-full object-cover'
-        loading='lazy'
-        decoding='async'
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover"
+        loading="lazy"
+        decoding="async"
       />
       {/* Overlay */}
       <div
-        className='absolute inset-0 bg-brand-primary-dark/80'
-        aria-hidden='true'
+        className="absolute inset-0 bg-brand-primary-dark/80"
+        aria-hidden="true"
       />
 
       {/* Contenido */}
-      <div className='section relative z-10 py-16 md:py-20'>
-        {/* Header: EAGER */}
+      <div className="section relative z-10 py-16 md:py-20">
         <MotionBlock
-          kind='eager'
+          kind="eager"
           variants={fadeIn()}
-          className='max-w-max mx-auto text-center mb-12 md:mb-12'>
-          <h1
-            id='upcoming-trips-heading'
-            className='heading-2'>
+          className="max-w-max mx-auto text-center mb-12 md:mb-12"
+        >
+          <h1 id="upcoming-trips-heading" className="heading-2">
             {t(titleKey)}
           </h1>
-          <p className='text-subtitle mt-4'>{t(subtitleKey)}</p>
+          <p className="text-subtitle mt-4">{t(subtitleKey)}</p>
         </MotionBlock>
 
-        {/* Panel de filtros: EAGER (entra ya, sin depender del scroll) */}
         <MotionBlock
-          kind='eager'
+          kind="eager"
           variants={fadeIn({ delay: 0.06 })}
-          className='mx-auto mb-10 max-w-max rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md'>
-          <div className='flex flex-col gap-4 sm:flex-row'>
+          className="mx-auto mb-10 max-w-max rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md"
+        >
+          <div className="flex flex-col gap-4 sm:flex-row">
             <select
               value={selectedDestination}
               onChange={(e) => setSelectedDestination(e.target.value)}
-              className='form-input w-full'>
-              <option value='all'>{t(filtersAllDestinationsKey)}</option>
+              className="form-input w-full"
+            >
+              <option value="all">{t(filtersAllDestinationsKey)}</option>
               {destinationOptions.map((dest) => (
-                <option
-                  key={dest.id}
-                  value={dest.id}>
+                <option key={dest.id} value={dest.id}>
                   {t(dest.name)}
                 </option>
               ))}
@@ -168,12 +166,11 @@ export const UpcomingTripsSection = ({
             <select
               value={selectedMonth}
               onChange={(e) => setSelectedMonth(e.target.value)}
-              className='form-input w-full'>
-              <option value='all'>{t(filtersAllMonthsKey)}</option>
+              className="form-input w-full"
+            >
+              <option value="all">{t(filtersAllMonthsKey)}</option>
               {monthOptions.map((month) => (
-                <option
-                  key={month}
-                  value={month}>
+                <option key={month} value={month}>
                   {month}
                 </option>
               ))}
@@ -181,8 +178,7 @@ export const UpcomingTripsSection = ({
           </div>
         </MotionBlock>
 
-        {/* Listado (cada TripRow ya es EAGER) */}
-        <div className='mx-auto flex max-w-max flex-col gap-4 drop-shadow-strong'>
+        <div className="mx-auto flex max-w-max flex-col gap-4 drop-shadow-strong">
           {paginatedSessions.length > 0 ? (
             paginatedSessions.map((session) => {
               const experience = experiences.find(
@@ -199,15 +195,15 @@ export const UpcomingTripsSection = ({
               );
             })
           ) : (
-            <div className='flex items-center justify-center pt-12'>
-              <p className='text-center font-serif text-brand-neutral/80'>
+            <div className="flex items-center justify-center pt-12">
+              <p className="text-center font-serif text-brand-neutral/80">
                 {t(filtersNoResultsKey)}
               </p>
             </div>
           )}
         </div>
 
-        <div className='mt-8 border-t border-white/10 pt-6'>
+        <div className="mt-8 border-t border-white/10 pt-6">
           <PaginationControls
             currentPage={currentPage}
             totalPages={totalPages}
@@ -216,10 +212,9 @@ export const UpcomingTripsSection = ({
         </div>
       </div>
 
-      {/* Chevron: animado solo si NO hay reduced motion */}
-      <div className='absolute bottom-8 left-1/2 z-40 hidden -translate-x-1/2 md:block'>
+      <div className="absolute bottom-8 left-1/2 z-40 hidden -translate-x-1/2 md:block">
         {reduce ? (
-          <ChevronDownIcon className='h-12 w-12 select-none text-brand-cta-orange' />
+          <ChevronDownIcon className="h-12 w-12 select-none text-brand-cta-orange" />
         ) : (
           <motion.div
             initial={{ opacity: 0, y: -6 }}
@@ -230,8 +225,9 @@ export const UpcomingTripsSection = ({
               ease: 'easeInOut',
               delay: 1,
             }}
-            className='select-none'>
-            <ChevronDownIcon className='h-12 w-12 text-brand-cta-orange' />
+            className="select-none"
+          >
+            <ChevronDownIcon className="h-12 w-12 text-brand-cta-orange" />
           </motion.div>
         )}
       </div>

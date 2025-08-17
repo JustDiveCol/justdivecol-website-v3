@@ -10,9 +10,9 @@ const rawTestimonials: TestimonialsSectionContent = {
   items: [
     {
       id: 't1',
-      quoteKey: 'testimonials.quote1',
+      quoteKey: 'testimonials.items.quote1',
       name: 'Sunny Velez',
-      originKey: 'testimonials.origin1',
+      originKey: 'testimonials.items.origin1',
       pagePosition: ['home'],
       rating: 5,
       dateISO: '2024-11-07',

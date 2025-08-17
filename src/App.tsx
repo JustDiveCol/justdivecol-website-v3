@@ -44,56 +44,20 @@ const AppRoutes = () => (
     <RouteScrollManager />
     <LanguageHandler />
     <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/about-us" element={<AboutUsPage />} />
+      <Route path="/principles" element={<PrinciplesPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/legal/policy" element={<PolicyPage />} />
+      <Route path="/legal/terms" element={<TermsPage />} />
+      <Route path="/legal/privacy" element={<PrivacyPage />} />
+      <Route path="/faq" element={<FaqPage />} />
+      <Route path="/dive-experiences" element={<ExperiencesPage />} />
+      <Route path="/dive-sites" element={<DiveSiteMapPage />} />
+      <Route path="/certifications/:slug" element={<CertificationPage />} />
+      <Route path="/destinations/:slug" element={<DestinationPage />} />
       <Route
-        path='/'
-        element={<HomePage />}
-      />
-      <Route
-        path='/about-us'
-        element={<AboutUsPage />}
-      />
-      <Route
-        path='/principles'
-        element={<PrinciplesPage />}
-      />
-      <Route
-        path='/contact'
-        element={<ContactPage />}
-      />
-      <Route
-        path='/legal/policy'
-        element={<PolicyPage />}
-      />
-      <Route
-        path='/legal/terms'
-        element={<TermsPage />}
-      />
-      <Route
-        path='/legal/privacy'
-        element={<PrivacyPage />}
-      />
-      <Route
-        path='/faq'
-        element={<FaqPage />}
-      />
-      <Route
-        path='/dive-experiences'
-        element={<ExperiencesPage />}
-      />
-      <Route
-        path='/dive-sites'
-        element={<DiveSiteMapPage />}
-      />
-      <Route
-        path='/certifications/:slug'
-        element={<CertificationPage />}
-      />
-      <Route
-        path='/destinations/:slug'
-        element={<DestinationPage />}
-      />
-      <Route
-        path='/dive-experiences/:experienceSlug/:sessionSlug'
+        path="/dive-experiences/:experienceSlug/:sessionSlug"
         element={<ExperiencePage />}
       />
     </Routes>
@@ -105,18 +69,10 @@ function App() {
     <I18nextProvider i18n={i18n}>
       <BrowserRouter>
         <Routes>
+          <Route path="/:lang/*" element={<AppRoutes />} />
           <Route
-            path='/:lang/*'
-            element={<AppRoutes />}
-          />
-          <Route
-            path='*'
-            element={
-              <Navigate
-                to={`/${i18n.language}`}
-                replace
-              />
-            }
+            path="*"
+            element={<Navigate to={`/${i18n.language}`} replace />}
           />
         </Routes>
       </BrowserRouter>

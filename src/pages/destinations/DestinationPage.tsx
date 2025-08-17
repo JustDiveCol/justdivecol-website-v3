@@ -2,7 +2,6 @@
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
-// Helpers de contenido
 import { getDestinationBySlug } from '../../content/destinations';
 import { listSessions } from '../../content/experiences';
 import {
@@ -10,14 +9,12 @@ import {
   gatherAllDiveSites,
 } from '../../content/destinations/dive-sites.helpers';
 
-// Componentes comunes y compartidos
 import { SEO } from '../../components/common/SEO';
 import { PageHeader } from '../../components/sections/shared/PageHeader';
 import { CtaSection } from '../../components/sections/shared/CtaSection';
 import { PhotoGallery } from '../../components/sections/shared/PhotoGallery';
 import { homeContent } from '../../content/pages/home/home.content';
 
-// Componentes específicos de la página de Destinos
 import { DestinationIntro } from '../../components/sections/destinations/DestinationIntro';
 import { KeyHighlights } from '../../components/sections/destinations/KeyHighlights';
 import { RelatedExperiences } from '../../components/sections/destinations/RelatedExperiences';
@@ -95,7 +92,7 @@ const DestinationPage: React.FC = () => {
         />
 
         <RelatedExperiences
-          titleKey='destinations.upcomingTripsTitle'
+          titleKey="destinations.upcomingTripsTitle"
           sessions={relatedSessions}
           translationNS={content.seo.translationNS}
         />

@@ -23,7 +23,7 @@ export const DiveSiteCard = ({
 
   return (
     <div
-      role='button'
+      role="button"
       tabIndex={0}
       onClick={handleClick}
       onKeyDown={(e) => {
@@ -32,33 +32,34 @@ export const DiveSiteCard = ({
           handleClick();
         }
       }}
-      className='p-4 border-b border-white/10 cursor-pointer hover:bg-white/5 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/60'
+      className="p-4 border-b border-white/10 cursor-pointer hover:bg-white/5 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/60"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      title={t(site.nameKey, { ns: translationNS })}>
+      title={t(site.nameKey, { ns: translationNS })}
+    >
       <img
         src={imgUrl}
         alt={t(site.nameKey, { ns: translationNS })}
-        className='w-full h-32 object-cover rounded-md mb-3'
-        loading='lazy'
-        decoding='async'
+        className="w-full h-32 object-cover rounded-md mb-3"
+        loading="lazy"
+        decoding="async"
       />
 
-      <h3 className='font-bold text-brand-white'>
+      <h3 className="font-bold text-brand-white">
         {t(site.nameKey, { ns: translationNS })}
       </h3>
 
-      <div className='flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-brand-neutral/80'>
-        <div className='flex items-center gap-1'>
-          <ChevronDownIcon className='h-4 w-4' />
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-brand-neutral/80">
+        <div className="flex items-center gap-1">
+          <ChevronDownIcon className="h-4 w-4" />
           <span>
-            {site.maxDepthMeter}m <span className='opacity-60'>·</span>{' '}
+            {site.maxDepthMeter}m <span className="opacity-60">·</span>{' '}
             {site.maxDepthFt}ft
           </span>
         </div>
 
-        <div className='flex items-center gap-1'>
-          <BarChartIcon className='h-4 w-4' />
+        <div className="flex items-center gap-1">
+          <BarChartIcon className="h-4 w-4" />
           <span>
             {difficulty
               ? t(difficulty.translationKey, { ns: 'dive-sites' })

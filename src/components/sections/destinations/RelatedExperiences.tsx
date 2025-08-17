@@ -15,19 +15,15 @@ export const RelatedExperiences = ({
 
   if (sessions.length === 0) {
     return (
-      <section className='bg-brand-primary-dark'>
-        <div className='section max-w-4xl mx-auto text-center'>
-          <MotionBlock
-            kind='inView'
-            variants={fadeIn()}>
-            <h2 className='heading-3 text-white mb-4'>
+      <section className="bg-brand-primary-dark">
+        <div className="section max-w-4xl mx-auto text-center">
+          <MotionBlock kind="inView" variants={fadeIn()}>
+            <h2 className="heading-3 text-white mb-4">
               {t('destinations.noUpcomingTripsTitle')}
             </h2>
           </MotionBlock>
-          <MotionBlock
-            kind='inView'
-            variants={fadeIn()}>
-            <p className='text-subtitle'>
+          <MotionBlock kind="inView" variants={fadeIn()}>
+            <p className="text-subtitle">
               {t('destinations.noUpcomingTripsSubtitle')}
             </p>
           </MotionBlock>
@@ -37,28 +33,18 @@ export const RelatedExperiences = ({
   }
 
   return (
-    <section className='bg-brand-primary-dark'>
-      <div className='section max-w-4xl mx-auto'>
-        {/* El padre anima el título */}
-        <MotionBlock
-          kind='inView'
-          variants={fadeIn()}>
-          <h2 className='heading-3 text-white mb-8 text-center'>
+    <section className="bg-brand-primary-dark">
+      <div className="section max-w-4xl mx-auto">
+        <MotionBlock kind="inView" variants={fadeIn()}>
+          <h2 className="heading-3 text-white mb-8 text-center">
             {t(titleKey)}
           </h2>
         </MotionBlock>
 
-        {/* La lista NO abre ciclos por item; TripRow ya anima */}
-        <MotionBlock
-          kind='inView'
-          variants={fadeIn()}
-          className='space-y-4'>
+        <MotionBlock kind="inView" variants={fadeIn()} className="space-y-4">
           {sessions.map((session) => (
             <div key={session.id}>
-              <TripRow
-                session={session}
-                translationNS='experiences'
-              />
+              <TripRow session={session} translationNS="experiences" />
             </div>
           ))}
         </MotionBlock>

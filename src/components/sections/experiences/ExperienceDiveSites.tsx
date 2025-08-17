@@ -13,32 +13,27 @@ export const ExperienceDiveSites = ({
   const { fadeIn } = useMotionPresets();
 
   return (
-    <section className='bg-brand-primary-medium'>
-      <div className='section'>
-        {/* Header: in-view */}
-        <MotionBlock
-          kind='inView'
-          variants={fadeIn()}
-          className='text-center'>
-          <h2 className='heading-2 text-white mb-4'>
+    <section className="bg-brand-primary-medium">
+      <div className="section">
+        <MotionBlock kind="inView" variants={fadeIn()} className="text-center">
+          <h2 className="heading-2 text-white mb-4">
             {t('experiences.diveSitesSectionTitle')}
           </h2>
-          <p className='text-subtitle text-brand-neutral/80'>
+          <p className="text-subtitle text-brand-neutral/80">
             {t('experiences.diveSitesSectionSubtitle', {
               destination: destinationName,
             })}
           </p>
         </MotionBlock>
 
-        {/* Contenedor del mapa/galería: in-view, sin ciclos internos */}
         <MotionBlock
-          kind='inView'
+          kind="inView"
           variants={fadeIn()}
-          className='mt-12 h-[85vh] min-h-[600px] w-full rounded-xl overflow-hidden shadow-2xl border-2 border-white/10 transform-gpu will-change-transform'>
+          className="mt-12 h-[85vh] min-h-[600px] w-full rounded-xl overflow-hidden shadow-2xl border-2 border-white/10 transform-gpu will-change-transform"
+        >
           <DiveSitesSection
             {...diveSitesSectionProps}
-            translationNS='dive-sites'
-            // Asegúrate que este child no tenga initial/whileInView propios
+            translationNS="dive-sites"
           />
         </MotionBlock>
       </div>

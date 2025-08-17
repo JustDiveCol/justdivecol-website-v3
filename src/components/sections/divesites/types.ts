@@ -14,22 +14,13 @@ import {
   type DiveSiteContent,
 } from '../../../content/destinations/dive-sites/types';
 
-/* ──────────────────────────────
- * Helpers genéricos
- * ────────────────────────────── */
-
 const OnSelectHandlerSchema = z.custom<(id: string) => void>().optional();
 const OnHoverHandlerSchema = z.custom<(id: string | null) => void>().optional();
 
-/* ──────────────────────────────
- * DiveSiteCard
- * ────────────────────────────── */
-
-// Sólo lo que necesita la Card
 export const DiveSiteCardSiteSchema = DiveSiteContentSchema.pick({
   id: true,
   nameKey: true,
-  photos: true, // se mantiene optional como en el content
+  photos: true,
   maxDepthMeter: true,
   maxDepthFt: true,
   difficultyId: true,
@@ -51,11 +42,6 @@ export type DiveSiteCardProps = {
   onHover?: DiveSiteHoverHandler;
 };
 
-/* ──────────────────────────────
- * DiveSiteFilters
- * ────────────────────────────── */
-
-// Select con “all”
 export const DestinationIdAllSchema = z.union([
   DestinationIdSchema,
   z.literal('all'),
@@ -68,7 +54,6 @@ export const DiveDifficultyIdAllSchema = z.union([
 ]);
 export type DiveDifficultyIdAll = z.infer<typeof DiveDifficultyIdAllSchema>;
 
-// Opciones de selects
 export const DestinationOptionSchema = z.object({
   id: DestinationIdSchema,
   nameKey: z.string(),
@@ -99,7 +84,6 @@ export const TagOptionSchema = z.object({
 });
 export type TagOption = z.infer<typeof TagOptionSchema>;
 
-// Estado de filtros
 export const FiltersDataSchema = z.object({
   searchQuery: z.string(),
   destinationId: DestinationIdAllSchema,
@@ -111,7 +95,6 @@ export const FiltersDataSchema = z.object({
 });
 export type FiltersData = z.infer<typeof FiltersDataSchema>;
 
-// Props (datos con Zod + callbacks en TS)
 export type DiveSiteFiltersProps = {
   filters: FiltersData;
   onFiltersChange: (next: FiltersData) => void;
@@ -125,11 +108,6 @@ export type DiveSiteFiltersProps = {
   translationNS: I18NNamespace;
 };
 
-/* ──────────────────────────────
- * DiveSiteList
- * ────────────────────────────── */
-
-// Item mínimo para la lista
 export const DiveSiteListItemSchema = DiveSiteContentSchema.pick({
   id: true,
   nameKey: true,
@@ -153,11 +131,6 @@ export type DiveSiteListProps = Omit<
   translationNS: I18NNamespace;
 };
 
-/* ──────────────────────────────
- * DiveSiteMap
- * ────────────────────────────── */
-
-// Proyección mínima para el mapa
 export const CoordinatesSchema = z
   .tuple([z.number(), z.number()])
   .describe('[lon, lat] — must be in WGS84');
@@ -190,11 +163,6 @@ export type DiveSiteMapProps = Omit<
   translationNS: I18NNamespace;
 };
 
-/* ──────────────────────────────
- * DiveSiteModal
- * ────────────────────────────── */
-
-// Lookups (alineados a los IDs del content)
 export const DifficultyLookupItemSchema = z.object({
   id: DiveDifficultyIdSchema,
   nameKey: z.string(),
@@ -213,7 +181,6 @@ export const ConditionLookupItemSchema = z.object({
 });
 export type ConditionLookupItem = z.infer<typeof ConditionLookupItemSchema>;
 
-// Categorías de tags (si no existe en constants)
 export const TagCategoryIdSchema = z.enum([
   'marine-life',
   'dive-characteristics',
@@ -228,7 +195,6 @@ export const TagLookupItemSchema = z.object({
 });
 export type TagLookupItem = z.infer<typeof TagLookupItemSchema>;
 
-// Datos del modal (sin callbacks)
 export const DiveSiteModalDataSchema = z.object({
   site: DiveSiteContentSchema.nullable(),
   translationNS: z.string(),
@@ -244,12 +210,10 @@ export type DiveSiteModalData = Omit<
   translationNS: I18NNamespace;
 };
 
-// Props completas del modal (TS añade el callback)
 export type DiveSiteModalProps = DiveSiteModalData & {
   onClose: () => void;
 };
 
-// Icono que recibe className (nuestros íconos lo cumplen)
 export type IconComponentType = React.ComponentType<
   React.SVGProps<SVGSVGElement>
 >;

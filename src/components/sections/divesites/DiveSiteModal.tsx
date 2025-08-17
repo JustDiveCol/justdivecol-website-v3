@@ -79,43 +79,46 @@ export const DiveSiteModal = ({
   const modalContent = (
     <AnimatePresence>
       <motion.div
-        className='fixed inset-0 z-[99] flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm'
+        className="fixed inset-0 z-[99] flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        onClick={onClose}>
+        onClick={onClose}
+      >
         <motion.div
           initial={{ y: '100%' }}
           animate={{ y: '0%' }}
           exit={{ y: '100%' }}
           transition={{ type: 'spring', stiffness: 400, damping: 40 }}
-          className='relative bg-white w-full max-w-2xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto rounded-t-xl sm:rounded-xl shadow-lg'
-          onClick={(e) => e.stopPropagation()}>
-          <div className='relative h-72 w-full'>
+          className="relative bg-white w-full max-w-2xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto rounded-t-xl sm:rounded-xl shadow-lg"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="relative h-72 w-full">
             {mainImageData && (
               <ImageComponent
                 imageData={mainImageData}
-                className='absolute inset-0'
+                className="absolute inset-0"
                 translationNS={translationNS}
               />
             )}
-            <div className='absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent' />
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent" />
             <button
               onClick={onClose}
-              className='absolute top-4 right-4 text-gray-500 hover:text-gray-800 z-10 bg-white/50 rounded-full p-1'
-              type='button'>
-              <CloseIcon className='h-6 w-6' />
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 z-10 bg-white/50 rounded-full p-1"
+              type="button"
+            >
+              <CloseIcon className="h-6 w-6" />
             </button>
           </div>
 
-          <div className='p-6 -mt-16 relative z-10 bg-white rounded-t-lg'>
-            <h2 className='heading-3 text-brand-primary-dark pr-8'>
+          <div className="p-6 -mt-16 relative z-10 bg-white rounded-t-lg">
+            <h2 className="heading-3 text-brand-primary-dark pr-8">
               {t(site.nameKey, { ns: translationNS })}
             </h2>
 
             {/* Tipos */}
             {site.typeIds.length > 0 && (
-              <p className='text-sm text-brand-primary-light italic -mt-2 mb-4'>
+              <p className="text-sm text-brand-primary-light italic -mt-2 mb-4">
                 {site.typeIds.map((typeId, idx) => {
                   const type = byId(types, typeId);
                   const label = type
@@ -132,14 +135,15 @@ export const DiveSiteModal = ({
             )}
 
             {/* Descripción */}
-            <div className='mt-4 text-base text-brand-primary-medium space-y-3 font-serif'>
+            <div className="mt-4 text-base text-brand-primary-medium space-y-3 font-serif">
               <p>
                 {displayedText}
                 {isLong && !showFullDescription && (
                   <button
                     onClick={() => setShowFullDescription(true)}
-                    className='ml-1 underline text-brand-cta-orange font-bold text-sm'
-                    type='button'>
+                    className="ml-1 underline text-brand-cta-orange font-bold text-sm"
+                    type="button"
+                  >
                     {t('viewMoreLabel', { ns: 'common' })}
                   </button>
                 )}
@@ -147,23 +151,23 @@ export const DiveSiteModal = ({
             </div>
 
             {/* Detalle numérico */}
-            <ul className='text-sm space-y-2 mt-4 border-t pt-4'>
+            <ul className="text-sm space-y-2 mt-4 border-t pt-4">
               <li>
-                <span className='font-bold text-brand-primary-dark'>
+                <span className="font-bold text-brand-primary-dark">
                   {t('maxDepthLabel', { ns: 'common' })}:
                 </span>
-                <span className='text-brand-primary-medium'>
+                <span className="text-brand-primary-medium">
                   {' '}
-                  {site.maxDepthMeter}m
+                  {site.maxDepthMeter}m / {site.maxDepthFt}ft
                 </span>
               </li>
 
               {difficulty && (
                 <li>
-                  <span className='font-bold text-brand-primary-dark'>
+                  <span className="font-bold text-brand-primary-dark">
                     {t('difficultyLabel', { ns: 'common' })}:
                   </span>
-                  <span className='text-brand-primary-medium'>
+                  <span className="text-brand-primary-medium">
                     {' '}
                     {t(difficulty.nameKey, { ns: translationNS })}
                   </span>
@@ -172,10 +176,10 @@ export const DiveSiteModal = ({
 
               {site.conditionsIds.length > 0 && (
                 <li>
-                  <span className='font-bold text-brand-primary-dark'>
+                  <span className="font-bold text-brand-primary-dark">
                     {t('conditionsLabel', { ns: 'common' })}:
                   </span>
-                  <span className='text-brand-primary-medium'>
+                  <span className="text-brand-primary-medium">
                     {site.conditionsIds.map((condId, idx) => {
                       const condition = byId(conditions, condId);
                       const label = condition
@@ -196,11 +200,11 @@ export const DiveSiteModal = ({
 
             {/* Tags */}
             {site.tagsIds.length > 0 && (
-              <div className='mt-6'>
-                <h4 className='font-bold text-brand-primary-dark mb-2'>
+              <div className="mt-6">
+                <h4 className="font-bold text-brand-primary-dark mb-2">
                   {t('tagsLabel', { ns: 'common' })}
                 </h4>
-                <div className='flex flex-wrap gap-2'>
+                <div className="flex flex-wrap gap-2">
                   {site.tagsIds.map((tagId) => {
                     const tag = byId(tags, tagId);
                     if (!tag) return null;
@@ -209,7 +213,8 @@ export const DiveSiteModal = ({
                         key={tag.id}
                         className={`px-2 py-1 rounded-full text-xs font-medium ${getTagColorClass(
                           tag.categoryId
-                        )}`}>
+                        )}`}
+                      >
                         {t(tag.nameKey, { ns: translationNS })}
                       </span>
                     );
@@ -220,11 +225,11 @@ export const DiveSiteModal = ({
 
             {/* Galería */}
             {site.photos?.length ? (
-              <div className='mt-6'>
-                <h3 className='heading-5 text-brand-primary-dark mb-4'>
+              <div className="mt-6">
+                <h3 className="heading-5 text-brand-primary-dark mb-4">
                   {t('galleryTitle', { ns: 'common' })}
                 </h3>
-                <div className='grid grid-cols-2 sm:grid-cols-3 gap-2'>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {site.photos.map((photo, idx) => {
                     const img: ImageComponentData = {
                       backgroundImage: photo.backgroundImage,
@@ -234,7 +239,8 @@ export const DiveSiteModal = ({
                     return (
                       <div
                         key={idx}
-                        className='aspect-video rounded-lg overflow-hidden shadow-md'>
+                        className="aspect-video rounded-lg overflow-hidden shadow-md"
+                      >
                         <ImageComponent
                           imageData={img}
                           translationNS={translationNS}

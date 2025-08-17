@@ -16,8 +16,8 @@ import { BRAND_ASSETS_SAFE } from '../../constants';
 
 import { useLocalizedRoutes } from '../../hooks/useLocalizedRoutes';
 
-const NAV_H_MOBILE = '4rem'; // h-16
-const NAV_H_DESKTOP = '5rem'; // h-20
+const NAV_H_MOBILE = '4rem';
+const NAV_H_DESKTOP = '5rem';
 
 // ---------- Helpers de Link con estado activo robusto ----------
 type BaseLinkProps = {
@@ -40,7 +40,7 @@ const useIsActive = (to: StaticRoutePath) => {
 };
 
 const DesktopNavLinkItem = ({ to, nameKey, className = '' }: BaseLinkProps) => {
-  const { t } = useTranslation(['common', 'navigation']);
+  const { t } = useTranslation(['common']);
   const { to: localizedTo } = useLocalizedRoutes();
   const active = useIsActive(to);
 
@@ -53,10 +53,11 @@ const DesktopNavLinkItem = ({ to, nameKey, className = '' }: BaseLinkProps) => {
             ? 'text-brand-cta-orange'
             : 'text-white hover:text-brand-cta-orange/80'
         }
-        ${className}`}>
+        ${className}`}
+    >
       {t(`nav.${nameKey}`)}
       <span
-        aria-hidden='true'
+        aria-hidden="true"
         className={`absolute -bottom-0.5 left-0 h-0.5 w-full origin-center bg-brand-cta-orange transition-transform duration-300
           ${active ? 'scale-x-100' : 'scale-x-0'} group-hover:scale-x-100`}
       />
@@ -65,20 +66,21 @@ const DesktopNavLinkItem = ({ to, nameKey, className = '' }: BaseLinkProps) => {
 };
 
 const MoreMenuLinkItem = ({ to, nameKey }: BaseLinkProps) => {
-  const { t } = useTranslation(['common', 'navigation']);
+  const { t } = useTranslation(['common']);
   const { to: localizedTo } = useLocalizedRoutes();
   const active = useIsActive(to);
 
   return (
     <Link
       to={localizedTo(to)}
-      role='menuitem'
+      role="menuitem"
       className={`block w-full px-4 py-2 text-left text-sm font-semibold uppercase transition-colors
         ${
           active
             ? 'text-brand-cta-orange'
             : 'text-white hover:bg-brand-primary-light'
-        }`}>
+        }`}
+    >
       {t(`nav.${nameKey}`)}
     </Link>
   );
@@ -89,7 +91,7 @@ const MobileMenuLinkItem = ({
   nameKey,
   onClick,
 }: BaseLinkProps & { onClick: () => void }) => {
-  const { t } = useTranslation(['common', 'navigation']);
+  const { t } = useTranslation(['common']);
   const { to: localizedTo } = useLocalizedRoutes();
   const active = useIsActive(to);
 
@@ -102,15 +104,15 @@ const MobileMenuLinkItem = ({
           active
             ? 'text-brand-cta-orange'
             : 'text-white hover:bg-brand-primary-medium'
-        }`}>
+        }`}
+    >
       {t(`nav.${nameKey}`)}
     </Link>
   );
 };
-// ---------------------------------------------------------------
 
 const Navbar: React.FC<NavbarProps> = () => {
-  const { t } = useTranslation(['common', 'navigation']);
+  const { t } = useTranslation(['common']);
   const { to: localizedTo } = useLocalizedRoutes();
   const location = useLocation();
   const reduceMotion = useReducedMotion();
@@ -189,32 +191,36 @@ const Navbar: React.FC<NavbarProps> = () => {
         isScrolled
           ? 'bg-brand-primary-dark/80 backdrop-blur-lg'
           : 'bg-transparent'
-      }`}>
+      }`}
+    >
       {/* Skip link para accesibilidad */}
       <a
-        href='#main'
-        className='sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-black/80 focus:px-3 focus:py-2 focus:text-white'>
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-black/80 focus:px-3 focus:py-2 focus:text-white"
+      >
         {t('common:skip_to_content', 'Saltar al contenido')}
       </a>
 
       <div
-        className='container mx-auto flex items-center justify-between px-4'
-        style={{ height: 'var(--nav-h)' }}>
+        className="container mx-auto flex items-center justify-between px-4"
+        style={{ height: 'var(--nav-h)' }}
+      >
         {/* Logo */}
         <Link
           to={localizedTo('/')}
-          className='flex-shrink-0 transition-transform duration-300 hover:scale-105 drop-shadow-strong'
-          aria-label={t('common:home', 'Inicio')}>
+          className="flex-shrink-0 transition-transform duration-300 hover:scale-105 drop-shadow-strong"
+          aria-label={t('common:home', 'Inicio')}
+        >
           <img
             src={BRAND_ASSETS_SAFE.mainLogo.url}
-            alt='Logo'
-            className='h-12 w-auto'
-            loading='lazy'
+            alt="Logo"
+            className="h-12 w-auto"
+            loading="lazy"
           />
         </Link>
 
         {/* Desktop */}
-        <div className='hidden items-center gap-x-6 md:flex'>
+        <div className="hidden items-center gap-x-6 md:flex">
           {NAV_LINKS.map((link) => (
             <DesktopNavLinkItem
               key={link.nameKey}
@@ -228,16 +234,15 @@ const Navbar: React.FC<NavbarProps> = () => {
 
           {/* More (solo aparece cuando hay links escondidos en tablet) */}
           {linksToHideOnTablet.length > 0 && (
-            <div
-              ref={moreRef}
-              className='relative lg:hidden'>
+            <div ref={moreRef} className="relative lg:hidden">
               <button
                 onClick={() => setIsMoreMenuOpen((o) => !o)}
-                className='flex cursor-pointer items-center text-sm font-semibold uppercase text-white transition-colors hover:text-brand-cta-orange/80'
-                aria-haspopup='menu'
+                className="flex cursor-pointer items-center text-sm font-semibold uppercase text-white transition-colors hover:text-brand-cta-orange/80"
+                aria-haspopup="menu"
                 aria-expanded={isMoreMenuOpen}
-                aria-controls='more-menu'
-                type='button'>
+                aria-controls="more-menu"
+                type="button"
+              >
                 {t('more_label')}
                 <ChevronDownIcon
                   className={`ml-1 h-5 w-5 transition-transform ${
@@ -249,13 +254,14 @@ const Navbar: React.FC<NavbarProps> = () => {
               <AnimatePresence>
                 {isMoreMenuOpen && (
                   <motion.div
-                    id='more-menu'
-                    role='menu'
+                    id="more-menu"
+                    role="menu"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
-                    className='absolute right-0 top-full mt-2 w-48 rounded-md bg-brand-primary-dark/95 shadow-lg ring-1 ring-white/10 backdrop-blur-sm'>
-                    <div className='py-1'>
+                    className="absolute right-0 top-full mt-2 w-48 rounded-md bg-brand-primary-dark/95 shadow-lg ring-1 ring-white/10 backdrop-blur-sm"
+                  >
+                    <div className="py-1">
                       {linksToHideOnTablet.map((link) => (
                         <MoreMenuLinkItem
                           key={link.nameKey}
@@ -274,19 +280,20 @@ const Navbar: React.FC<NavbarProps> = () => {
         </div>
 
         {/* Mobile toggler + language */}
-        <div className='flex items-center md:hidden'>
+        <div className="flex items-center md:hidden">
           <LanguageSwitcherComponent />
           <button
             onClick={() => setIsMenuOpen((o) => !o)}
             aria-label={t('common:toggle_menu', 'Abrir o cerrar menú')}
-            aria-controls='mobile-menu'
+            aria-controls="mobile-menu"
             aria-expanded={isMenuOpen}
-            className='ml-4 text-white'
-            type='button'>
+            className="ml-4 text-white"
+            type="button"
+          >
             {isMenuOpen ? (
-              <CloseIcon className='h-7 w-7' />
+              <CloseIcon className="h-7 w-7" />
             ) : (
-              <MenuIcon className='h-7 w-7' />
+              <MenuIcon className="h-7 w-7" />
             )}
           </button>
         </div>
@@ -296,14 +303,15 @@ const Navbar: React.FC<NavbarProps> = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            id='mobile-menu'
-            role='dialog'
-            aria-modal='true'
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className='overflow-hidden border-t border-white/10 bg-brand-primary-dark/95 backdrop-blur-lg md:hidden'>
-            <div className='flex flex-col items-center space-y-2 px-4 pb-4 pt-2'>
+            className="overflow-hidden border-t border-white/10 bg-brand-primary-dark/95 backdrop-blur-lg md:hidden"
+          >
+            <div className="flex flex-col items-center space-y-2 px-4 pb-4 pt-2">
               {NAV_LINKS.map((link) => (
                 <MobileMenuLinkItem
                   key={link.nameKey}

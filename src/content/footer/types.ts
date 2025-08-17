@@ -19,7 +19,7 @@ export const FooterContentSchema = z.object({
   creditsKey: z.string(),
   importantLinksTitle: z.string(),
   navLinks: z.array(FooterSchema).min(1).readonly(),
-  policiesLinkText: z.string(), // ← lo mantenemos como string
+  policiesLinkText: z.string(),
 });
 
 export type FooterContent = z.infer<typeof FooterContentSchema>;

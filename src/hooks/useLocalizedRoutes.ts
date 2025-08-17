@@ -6,11 +6,11 @@ export const useLocalizedRoutes = () => {
 
   const to = (path: string) => {
     const lang = i18n.language;
-    // Asegura que no se duplique el prefijo del idioma
+
     if (path.startsWith(`/${lang}`)) {
       return path;
     }
-    // Añade el prefijo del idioma
+
     return `/${lang}${path}`;
   };
 

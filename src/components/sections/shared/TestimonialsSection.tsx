@@ -89,37 +89,36 @@ export const TestimonialsSection = ({
 
   return (
     <section
-      className='bg-brand-primary-medium py-16 px-4'
-      aria-labelledby='testimonials-heading'>
-      <div className='container mx-auto'>
-        {/* Header eager: entra al cargar, independiente de las cards */}
+      className="bg-brand-primary-medium py-16 px-4"
+      aria-labelledby="testimonials-heading"
+    >
+      <div className="container mx-auto">
         <MotionBlock
-          kind='eager'
+          kind="eager"
           variants={fadeIn()}
-          className='mx-auto max-w-max text-center mb-12'>
-          <h2
-            id='testimonials-heading'
-            className='heading-3 text-white'>
+          className="mx-auto max-w-max text-center mb-12"
+        >
+          <h2 id="testimonials-heading" className="heading-3 text-white">
             {t(titleKey)}
           </h2>
         </MotionBlock>
 
-        <div className='relative'>
+        <div className="relative">
           {showCarousel ? (
             <>
               {/* Carrusel */}
               <div
-                className='overflow-hidden touch-pan-y'
+                className="overflow-hidden touch-pan-y"
                 ref={emblaRef}
                 aria-roledescription={t('common:carousel', 'Carrusel')}
-                aria-label={t('common:testimonials', 'Testimonios')}>
-                {/* Usamos transform-gpu para suavizar el translateX del slider */}
-                <div className='flex gap-x-6 transform-gpu will-change-transform'>
+                aria-label={t('common:testimonials', 'Testimonios')}
+              >
+                <div className="flex gap-x-6 transform-gpu will-change-transform">
                   {items.map((testimonial) => (
                     <div
                       key={testimonial.id}
-                      className='relative flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.33%]'>
-                      {/* Cada card controla su propio inView (patrón B) */}
+                      className="relative flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.33%]"
+                    >
                       <TestimonialCard
                         cardData={testimonial}
                         translationNS={translationNS}
@@ -133,27 +132,26 @@ export const TestimonialsSection = ({
               <button
                 onClick={scrollPrev}
                 disabled={!canPrev}
-                className='absolute left-[-1rem] top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/70 disabled:opacity-40 md:left-[-2rem]'
+                className="absolute left-[-1rem] top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/70 disabled:opacity-40 md:left-[-2rem]"
                 aria-label={t('common:previous', 'Anterior')}
-                type='button'>
-                <ChevronLeftIcon className='h-6 w-6' />
+                type="button"
+              >
+                <ChevronLeftIcon className="h-6 w-6" />
               </button>
               <button
                 onClick={scrollNext}
                 disabled={!canNext}
-                className='absolute right-[-1rem] top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/70 disabled:opacity-40 md:right-[-2rem]'
+                className="absolute right-[-1rem] top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/70 disabled:opacity-40 md:right-[-2rem]"
                 aria-label={t('common:next', 'Siguiente')}
-                type='button'>
-                <ChevronRightIcon className='h-6 w-6' />
+                type="button"
+              >
+                <ChevronRightIcon className="h-6 w-6" />
               </button>
             </>
           ) : (
-            // Grid sin animaciones en el parent; cada TestimonialCard se anima sola
-            <div className='flex flex-wrap justify-center gap-6'>
+            <div className="flex flex-wrap justify-center gap-6">
               {items.map((testimonial) => (
-                <div
-                  key={testimonial.id}
-                  className='w-full sm:w-1/2 lg:w-1/3'>
+                <div key={testimonial.id} className="w-full sm:w-1/2 lg:w-1/3">
                   <TestimonialCard
                     cardData={testimonial}
                     translationNS={translationNS}

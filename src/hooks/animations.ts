@@ -26,14 +26,11 @@ type SpringOpts = {
 export function useMotionPresets() {
   const reduce = useReducedMotion();
 
-  // Transición base
   const baseTransition: Transition = useMemo(() => {
     if (reduce) return { duration: 0 };
-    // Material-esque curve: [0.4, 0, 0.2, 1]
     return { duration: 0.6, ease: [0.4, 0, 0.2, 1] };
   }, [reduce]);
 
-  // Pequeño helper para combinar transición con delay y spring si se pide
   const withTx = useCallback(
     (delay = 0, spring?: SpringOpts): Transition => {
       if (reduce) return { duration: 0 };
@@ -51,7 +48,6 @@ export function useMotionPresets() {
     [baseTransition, reduce]
   );
 
-  // Contenedor con stagger de hijos
   const container = useMemo<Variants>(() => {
     if (reduce) {
       return {
@@ -74,7 +70,6 @@ export function useMotionPresets() {
     };
   }, [baseTransition, reduce]);
 
-  // Tarjeta simple (fade + slide up)
   const card = useMemo<Variants>(() => {
     if (reduce) {
       return {
@@ -90,7 +85,6 @@ export function useMotionPresets() {
     };
   }, [withTx, reduce]);
 
-  // Factory: slide en cualquier dirección
   const slideIn = useCallback(
     (
       dir: SlideDir,
@@ -123,7 +117,6 @@ export function useMotionPresets() {
     [withTx, reduce]
   );
 
-  // Factory: solo fade
   const fadeIn = useCallback(
     ({ delay = 0 }: BaseOpts = {}, spring?: SpringOpts): Variants => {
       if (reduce) {
@@ -142,7 +135,6 @@ export function useMotionPresets() {
     [withTx, reduce]
   );
 
-  // Extra: scaleIn
   const scaleIn = useCallback(
     ({ delay = 0 }: BaseOpts = {}, spring?: SpringOpts): Variants => {
       if (reduce) {
@@ -161,7 +153,6 @@ export function useMotionPresets() {
     [withTx, reduce]
   );
 
-  // Extra: blurIn (sutil, úsalo con moderación)
   const blurIn = useCallback(
     ({ delay = 0 }: BaseOpts = {}): Variants => {
       if (reduce) {
@@ -184,7 +175,6 @@ export function useMotionPresets() {
     [withTx, reduce]
   );
 
-  // Interacciones estándar
   const hover = useMemo(
     () =>
       reduce
@@ -207,13 +197,12 @@ export function useMotionPresets() {
     [reduce]
   );
 
-  // Viewport por defecto para whileInView
   const viewport = useMemo(
     () =>
       ({
         once: true,
-        amount: 0.25, // 25% visible
-        margin: '0px 0px -10% 0px', // pre-disparo un poco antes
+        amount: 0.25,
+        margin: '0px 0px -10% 0px',
       } as const),
     []
   );

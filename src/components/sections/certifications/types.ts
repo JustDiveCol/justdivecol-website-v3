@@ -5,9 +5,7 @@ import { I18NNamespaceSchema, type I18NNamespace } from '../../../constants';
 import {
   CertificationCurriculumSchema,
   CertificationDescriptionContentSchema,
-  CertificationFaqSchema,
   CertificationPrerequisitesSchema,
-  CertificationTestimonialsSchema,
   CertificationWhatIsIncludedSchema,
 } from '../../../content/certifications/types';
 import type { ExperienceSessionContent } from '../../../content/experiences/sessions/types';
@@ -61,7 +59,6 @@ export type CourseCurriculumProps = Omit<
 // Props para el componente BookingProcess
 export const BookingProcessPropsSchema = z.object({
   bookingProcess: z.object({
-    // Asumiendo la estructura del content
     titleKey: z.string(),
     steps: z.array(
       z.object({
@@ -75,32 +72,6 @@ export const BookingProcessPropsSchema = z.object({
 });
 export type BookingProcessProps = Omit<
   z.infer<typeof BookingProcessPropsSchema>,
-  'translationNS'
-> & {
-  translationNS: I18NNamespace;
-};
-
-// Props para los testimonios
-export const CertificationTestimonialsPropsSchema = z.object({
-  testimonials: CertificationTestimonialsSchema,
-  translationNS: I18NNamespaceSchema,
-});
-
-export type CertificationTestimonialsProps = Omit<
-  z.infer<typeof CertificationTestimonialsPropsSchema>,
-  'translationNS'
-> & {
-  translationNS: I18NNamespace;
-};
-
-// Props para las preguntas frecuentes (FAQ)
-export const CertificationFaqPropsSchema = z.object({
-  faq: CertificationFaqSchema,
-  translationNS: I18NNamespaceSchema,
-});
-
-export type CertificationFaqProps = Omit<
-  z.infer<typeof CertificationFaqPropsSchema>,
   'translationNS'
 > & {
   translationNS: I18NNamespace;

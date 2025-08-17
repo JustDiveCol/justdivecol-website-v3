@@ -19,48 +19,55 @@ export const AccordionItem = ({ question, answer }: AccordionItemProps) => {
   } as const;
 
   return (
-    // layout: reacomoda suavemente el espacio al abrir/cerrar
-    <motion.div
-      layout
-      className='border-b border-white/10'>
+    <motion.div layout className="border-b border-white/10">
       <button
-        type='button'
+        type="button"
         id={btnId}
         aria-controls={panelId}
         aria-expanded={isOpen}
         onClick={() => setIsOpen((o) => !o)}
-        className='flex w-full items-center justify-between gap-4 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/60 rounded-md'>
-        <span className='text-base-sm font-bold text-brand-white'>
+        className="flex w-full items-center justify-between gap-4 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/60 rounded-md"
+      >
+        <span className="text-base-sm font-bold text-brand-white">
           {question}
         </span>
 
-        {/* Chevron animado con Framer (respeta reduced motion) */}
         <motion.span
           animate={isOpen ? 'open' : 'closed'}
           variants={chevronVariants}
           transition={baseTransition}
-          aria-hidden='true'
-          className='h-6 w-6 flex-shrink-0 text-brand-cta-orange'>
-          <ChevronDownIcon className='h-6 w-6' />
+          aria-hidden="true"
+          className="h-6 w-6 flex-shrink-0 text-brand-cta-orange"
+        >
+          <ChevronDownIcon className="h-6 w-6" />
         </motion.span>
       </button>
 
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            key='content'
+            key="content"
             id={panelId}
-            role='region'
+            role="region"
             aria-labelledby={btnId}
-            initial='collapsed'
-            animate='open'
-            exit='collapsed'
+            initial="collapsed"
+            animate="open"
+            exit="collapsed"
             variants={{
-              open: { opacity: 1, height: 'auto', transition: baseTransition },
-              collapsed: { opacity: 0, height: 0, transition: baseTransition },
+              open: {
+                opacity: 1,
+                height: 'auto',
+                transition: baseTransition,
+              },
+              collapsed: {
+                opacity: 0,
+                height: 0,
+                transition: baseTransition,
+              },
             }}
-            className='overflow-hidden'>
-            <p className='pb-4 pr-8 text-base-xs text-justify text-brand-neutral/80 whitespace-pre-line'>
+            className="overflow-hidden"
+          >
+            <p className="pb-4 pr-8 text-base-xs text-justify text-brand-neutral/80 whitespace-pre-line">
               {answer}
             </p>
           </motion.div>

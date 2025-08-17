@@ -20,9 +20,6 @@ import { useReducedMotion } from 'framer-motion';
 import { useMotionPresets } from '../../../hooks/animations';
 import { MotionBlock } from '../../motion/MotionBlock';
 
-/* ────────────────────────────────────────────────────────────
- * Badge con respeto a prefers-reduced-motion
- * ──────────────────────────────────────────────────────────── */
 export const AvailabilityBadge = ({ status }: { status: AvailableType }) => {
   const { t } = useTranslation('common');
   const reduce = useReducedMotion();
@@ -54,7 +51,6 @@ export const AvailabilityBadge = ({ status }: { status: AvailableType }) => {
     classes: 'bg-gray-500/20 text-gray-300',
   };
 
-  // Pulso sutil sólo si no hay reduce y el estado lo amerita
   const shouldPulse =
     !reduce &&
     (status === 'available' ||
@@ -65,15 +61,12 @@ export const AvailabilityBadge = ({ status }: { status: AvailableType }) => {
     <div
       className={`${baseClasses} ${current.classes} ${
         shouldPulse ? 'animate-pulse' : ''
-      }`}>
+      }`}
+    >
       {t(current.textKey)}
     </div>
   );
 };
-
-/* ────────────────────────────────────────────────────────────
- * TripRow (inmediato / eager)
- * ──────────────────────────────────────────────────────────── */
 
 type TripRowSession = {
   id: string;
@@ -192,72 +185,74 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
 
   return (
     <MotionBlock
-      kind='eager'
+      kind="eager"
       variants={slideIn('up', { distance: 32 })}
       className={`relative flex flex-col md:flex-row items-center gap-6 p-4 border rounded-lg transition-colors duration-300 transform-gpu will-change-transform ${
         isSoldOut
           ? 'border-red-500/20 bg-red-900/10'
           : 'border-white/10 bg-white/5 hover:bg-white/10'
-      }`}>
+      }`}
+    >
       {/* Sello Creyentes (flotante) */}
       {session.creyentes && (
         <img
-          src='/images/logos/creyentes-logo.png'
+          src="/images/logos/creyentes-logo.png"
           alt={t('common:creyentesTripSealAlt')}
-          className='absolute -top-3 -right-3 w-16 h-16 pointer-events-none drop-shadow-strong'
-          aria-hidden='true'
-          loading='lazy'
-          decoding='async'
+          className="absolute -top-3 -right-3 w-16 h-16 pointer-events-none drop-shadow-strong"
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
         />
       )}
 
       {/* Texto */}
-      <div className='flex-grow text-center md:text-left'>
-        <h3 className='text-xl font-bold text-brand-white'>
+      <div className="flex-grow text-center md:text-left">
+        <h3 className="text-xl font-bold text-brand-white">
           {tKey(t, titleKey, translationNS)}
         </h3>
         {destinationNameKey && (
-          <p className='text-sm font-medium text-brand-cta-orange'>
+          <p className="text-sm font-medium text-brand-cta-orange">
             {t(destinationNameKey)}
           </p>
         )}
         {subtitleKey && (
-          <p className='text-sm text-brand-neutral/70'>
+          <p className="text-sm text-brand-neutral/70">
             {tKey(t, subtitleKey, translationNS)}
           </p>
         )}
-        <p className='text-brand-neutral/80 font-serif capitalize'>
+        <p className="text-brand-neutral/80 font-serif capitalize">
           {formattedDateRange}
         </p>
-        <p className='text-sm text-brand-neutral/70'>{durationText}</p>
+        <p className="text-sm text-brand-neutral/70">{durationText}</p>
       </div>
 
       {/* Acciones */}
-      <div className='w-full md:w-auto flex-shrink-0 flex flex-col items-center md:items-end justify-center gap-2'>
+      <div className="w-full md:w-auto flex-shrink-0 flex flex-col items-center md:items-end justify-center gap-2">
         {isSoldOut ? (
-          <div className='flex flex-col items-center'>
+          <div className="flex flex-col items-center">
             <img
               src={soldOutLogo.url}
               alt={t(soldOutLogo.altKey)}
-              className='h-20 w-auto'
-              loading='lazy'
-              decoding='async'
+              className="h-20 w-auto"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         ) : (
           <>
             <AvailabilityBadge status={derivedStatus} />
-            <p className='text-xs text-brand-neutral/70'>
+            <p className="text-xs text-brand-neutral/70">
               {t('common:seatsAvailableText', {
                 count: session.seatsAvailable,
                 total: session.capacity,
               })}
             </p>
-            <div className='mt-1 cursor-pointer'>
+            <div className="mt-1 cursor-pointer">
               <Button
                 action={{ type: 'internal', path: sessionUrl }}
-                variant='outline'
-                size='sm'>
+                variant="outline"
+                size="sm"
+              >
                 {t('common:seeDetailsButton')}
               </Button>
             </div>

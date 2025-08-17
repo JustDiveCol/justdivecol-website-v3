@@ -21,40 +21,40 @@ export const FeaturedCard = ({
   const { imageData, link, titleKey, subtitleKey } = cardData;
   const mainLogo = BRAND_ASSETS_SAFE.mainLogo;
 
-  // Desactiva el zoom hover si reduce está activo
   const hoverZoomClass = reduce ? '' : 'group-hover:scale-110';
 
   return (
     <MotionBlock
-      kind='inView'
+      kind="inView"
       variants={card}
-      className={`transform-gpu will-change-transform ${className}`}>
+      className={`transform-gpu will-change-transform ${className}`}
+    >
       <Link
         to={localizedTo(link)}
         aria-label={t(titleKey)}
-        className='group relative block h-full w-full overflow-hidden rounded-lg shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/70'>
-        {/* Fondo con zoom on-hover (omitido si reduce) */}
+        className="group relative block h-full w-full overflow-hidden rounded-lg shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/70"
+      >
         <div
-          aria-hidden='true'
+          aria-hidden="true"
           className={`absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out ${hoverZoomClass}`}
           style={{ backgroundImage: `url(${imageData.backgroundImage})` }}
         />
 
         {/* Gradiente */}
         <div
-          aria-hidden='true'
-          className='absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/40 to-transparent'
+          aria-hidden="true"
+          className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
         />
 
         {/* Logos y créditos */}
-        <div className='absolute inset-0 z-20'>
+        <div className="absolute inset-0 z-20">
           {/* Main Logo */}
-          <div className='absolute top-4 right-4 opacity-80 w-14 md:w-20 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
+          <div className="absolute top-4 right-4 opacity-80 w-14 md:w-20 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             <img
               src={mainLogo.url}
-              alt={t(mainLogo.altKey)}
-              className='h-auto w-full'
-              loading='lazy'
+              alt={t(mainLogo.altKey, { ns: 'common' })}
+              className="h-auto w-full"
+              loading="lazy"
               width={80}
               height={80}
             />
@@ -62,12 +62,12 @@ export const FeaturedCard = ({
 
           {/* Logo complementario */}
           {imageData.complementaryLogo && (
-            <div className='absolute top-4 left-4 opacity-80 w-8 md:w-12 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
+            <div className="absolute top-4 left-4 opacity-80 w-8 md:w-12 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               <img
                 src={imageData.complementaryLogo.url}
-                alt={t(imageData.complementaryLogo.altKey)}
-                className='h-auto w-full'
-                loading='lazy'
+                alt={t(imageData.complementaryLogo.altKey, { ns: 'common' })}
+                className="h-auto w-full"
+                loading="lazy"
                 width={48}
                 height={48}
               />
@@ -81,27 +81,29 @@ export const FeaturedCard = ({
                 reduce
                   ? ''
                   : 'opacity-0 transition-opacity duration-300 group-hover:opacity-100'
-              }`}>
+              }`}
+            >
               {t('common:photoCreditPrefix')} {imageData.photoCredit}
             </div>
           )}
         </div>
 
         {/* Contenido de texto */}
-        <div className='relative z-20 flex h-full flex-col items-center justify-end p-6 text-center text-white'>
+        <div className="relative z-20 flex h-full flex-col items-center justify-end p-6 text-center text-white">
           <MotionBlock
-            kind='inView'
+            kind="inView"
             variants={fadeIn()}
             className={`transform-gpu will-change-transform ${
               reduce
                 ? ''
                 : 'transition-transform duration-500 ease-in-out group-hover:-translate-y-4'
-            }`}>
-            <h3 className='text-xs sm:text-sm md:text-base lg:text-lg leading-snug font-bold uppercase tracking-tight text-brand-cta-orange'>
+            }`}
+          >
+            <h3 className="text-xs sm:text-sm md:text-base lg:text-lg leading-snug font-bold uppercase tracking-tight text-brand-cta-orange">
               {t(titleKey)}
             </h3>
             {subtitleKey && (
-              <p className='text-xs sm:text-xs md:text-sm lg:text-base leading-snug hidden sm:block mt-1 text-brand-neutral'>
+              <p className="text-xs sm:text-xs md:text-sm lg:text-base leading-snug hidden sm:block mt-1 text-brand-neutral">
                 {t(subtitleKey)}
               </p>
             )}

@@ -18,9 +18,9 @@ export default function DiveSiteMapPage() {
       <SEO {...seo} />
       <PageHeader {...header} />
       <main>
-        <section className='bg-brand-primary-dark py-8'>
-          <div className='section h-[85vh] min-h-[700px] w-full'>
-            <div className='h-full w-full rounded-xl overflow-hidden shadow-2xl border-2 border-white/10 drop-shadow-strong'>
+        <section className="bg-brand-primary-dark py-8">
+          <div className="section h-[85vh] min-h-[700px] w-full">
+            <div className="h-full w-full rounded-xl overflow-hidden shadow-2xl border-2 border-white/10 drop-shadow-strong">
               <DiveSitesSection
                 translationNS={'dive-sites'}
                 sites={sites}

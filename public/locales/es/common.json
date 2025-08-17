@@ -1,4 +1,10 @@
 {
+  "padiLogoAlt": "Logo PADI",
+  "mainLogoAlt": "JustDiveCol Logo",
+
+  "lang.es": "ES",
+  "lang.en": "EN",
+
   "allies_marquee": "Nuestros aliados",
   "galleryTitle": "Galeria de imagenes",
   "maxDepthLabel": "Profundidad maxima",
@@ -25,12 +31,11 @@
   "visit_social": "Visitar {{name}}",
   "ratingLabel": "Calificación: {{rating}} de 5",
 
-  "conditionsLabel": "",
-  "difficultyLabel": "",
+  "conditionsLabel": "Condiciones",
+  "difficultyLabel": "Dificultad",
 
   "important_links": "Enlaces importantes",
 
-  "mainLogoAlt": "Logo de la empresa",
   "photoCreditPrefix": "Foto por:",
   "more_label": "Más",
   "creyentesTripSealAlt": "Logo Creyentes",
@@ -56,6 +61,8 @@
   "statusAvailable": "Cupos disponibles",
   "statusFewSpots": "Pocos cupos",
   "statusSoldOut": "Sin cupos",
+
+  "generalWhatsappMessage": "Hola, estoy interesado en las experiencias de buceo.",
 
   "nav": {
     "home": "Inicio",
@@ -88,8 +95,5 @@
     "teamBioAndrea": "Con un ojo increíble para los detalles submarinos, Andrea se asegura de que cada inmersión sea una aventura inolvidable.",
     "aboutCtaTitle": "Únete a la Aventura",
     "aboutCtaSubtitle": "Ahora que nos conoces, es tu turno de vivir la experiencia. Explora nuestras inmersiones y encuentra tu próxima gran historia."
-  },
-
-  "whatsapp_message": "Hola, estoy interesado en las experiencias de buceo.",
-  "generalWhatsappMessage": "Hola, estoy interesado en las experiencias de buceo."
+  }
 }

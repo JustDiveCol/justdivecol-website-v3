@@ -12,12 +12,12 @@ export const PrinciplesPage = () => {
     <>
       <SEO {...principlesContent.seo} />
       <PageHeader {...principlesContent.header} />
-      <div className='bg-brand-primary-dark'>
+      <div className="bg-brand-primary-dark">
         {principlesContent.principles.map((principle) => (
           <AlternatingFeature
             key={principle.id}
             featureData={principle}
-            translationNS='principles'
+            translationNS="principles"
           />
         ))}
       </div>

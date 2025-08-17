@@ -94,35 +94,27 @@ export const DestinationsSection = ({
   const shouldUseCarousel = activeDestinations.length > 3;
 
   return (
-    <section
-      className='bg-brand-primary-medium py-16 px-4'
-      id='destinations'>
+    <section className="bg-brand-primary-medium py-16 px-4" id="destinations">
       {/* --- ACTIVOS --- */}
       {activeDestinations.length > 0 && (
-        <div className='container mx-auto mb-12'>
-          <div className='max-w-max mx-auto text-center mb-12'>
-            {/* Header del bloque: in-view suave (el padre NO controla a las cards) */}
-            <MotionBlock
-              kind='inView'
-              variants={fadeIn()}>
-              <h2 className='heading-3 text-white'>{t(titleKey)}</h2>
+        <div className="container mx-auto mb-12">
+          <div className="max-w-max mx-auto text-center mb-12">
+            <MotionBlock kind="inView" variants={fadeIn()}>
+              <h2 className="heading-3 text-white">{t(titleKey)}</h2>
             </MotionBlock>
           </div>
 
           {shouldUseCarousel ? (
-            <div className='relative'>
-              <div
-                className='overflow-hidden'
-                ref={emblaRef}>
-                {/* Track con GPU accel para el translateX del carrusel */}
-                <div className='flex -ml-4 transform-gpu will-change-transform'>
+            <div className="relative">
+              <div className="overflow-hidden" ref={emblaRef}>
+                <div className="flex -ml-4 transform-gpu will-change-transform">
                   {activeDestinations.map((dest) => {
                     const activeSess = sessionsByDestination[dest.id] || [];
                     return (
                       <div
                         key={dest.id}
-                        className='relative pl-4 flex-[0_0_90%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] drop-shadow-strong'>
-                        {/* Cada card ya es in-view owner */}
+                        className="relative pl-4 flex-[0_0_90%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] drop-shadow-strong"
+                      >
                         <ActiveDestinationCard
                           destination={dest}
                           activeSessions={activeSess}
@@ -135,21 +127,23 @@ export const DestinationsSection = ({
 
               <button
                 onClick={scrollPrev}
-                className='absolute top-1/2 left-[-1rem] md:left-[-2rem] -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20 z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/70'
+                className="absolute top-1/2 left-[-1rem] md:left-[-2rem] -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20 z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/70"
                 aria-label={t('common:previous', 'Anterior')}
-                type='button'>
-                <ChevronLeftIcon className='h-6 w-6' />
+                type="button"
+              >
+                <ChevronLeftIcon className="h-6 w-6" />
               </button>
               <button
                 onClick={scrollNext}
-                className='absolute top-1/2 right-[-1rem] md:right-[-2rem] -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20 z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/70'
+                className="absolute top-1/2 right-[-1rem] md:right-[-2rem] -translate-y-1/2 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20 z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/70"
                 aria-label={t('common:next', 'Siguiente')}
-                type='button'>
-                <ChevronRightIcon className='h-6 w-6' />
+                type="button"
+              >
+                <ChevronRightIcon className="h-6 w-6" />
               </button>
             </div>
           ) : (
-            <div className='flex flex-wrap justify-center gap-8 drop-shadow-strong'>
+            <div className="flex flex-wrap justify-center gap-8 drop-shadow-strong">
               {activeDestinations.map((dest) => {
                 const activeSess = sessionsByDestination[dest.id] || [];
                 return (
@@ -157,7 +151,7 @@ export const DestinationsSection = ({
                     key={dest.id}
                     destination={dest}
                     activeSessions={activeSess}
-                    className='w-full max-w-sm'
+                    className="w-full max-w-sm"
                   />
                 );
               })}
@@ -168,22 +162,20 @@ export const DestinationsSection = ({
 
       {/* --- OTROS --- */}
       {otherDestinations.length > 0 && (
-        <div className='container mx-auto'>
-          <div className='max-w-max mx-auto text-center mb-12'>
-            <MotionBlock
-              kind='inView'
-              variants={fadeIn()}>
-              <h2 className='heading-4 text-white'>{t(otherTitleKey)}</h2>
+        <div className="container mx-auto">
+          <div className="max-w-max mx-auto text-center mb-12">
+            <MotionBlock kind="inView" variants={fadeIn()}>
+              <h2 className="heading-4 text-white">{t(otherTitleKey)}</h2>
             </MotionBlock>
           </div>
 
           {/* Cada pill es in-view owner; el padre no anima la grilla */}
-          <div className='flex flex-wrap justify-center items-center gap-4 max-w-max mx-auto drop-shadow-strong'>
+          <div className="flex flex-wrap justify-center items-center gap-4 max-w-max mx-auto drop-shadow-strong">
             {otherDestinations.map((dest) => (
               <DestinationPill
                 key={dest.id}
                 destination={dest}
-                translationNS='destinations'
+                translationNS="destinations"
               />
             ))}
           </div>

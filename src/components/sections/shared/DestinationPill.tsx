@@ -23,15 +23,17 @@ export const DestinationPill = ({
 
   return (
     <MotionBlock
-      kind='inView'
+      kind="inView"
       variants={scaleIn()}
-      className='inline-block transform-gpu will-change-transform'>
+      className="inline-block transform-gpu will-change-transform"
+    >
       <Link
         to={localizedTo(
           toUrlPath(`${ROUTES.destinations}/${destination.slug}`)
         )}
-        className='rounded-full bg-white/25 px-4 py-2 text-sm font-semibold text-brand-neutral/80 transition-colors duration-300 hover:bg-brand-cta-orange hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/70'
-        aria-label={t(destination.name, { ns: 'destinations' })}>
+        className="rounded-full bg-white/25 px-4 py-2 text-sm font-semibold text-brand-neutral/80 transition-colors duration-300 hover:bg-brand-cta-orange hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/70"
+        aria-label={t(destination.name, { ns: 'destinations' })}
+      >
         {t(destination.name, { ns: 'destinations' })}
       </Link>
     </MotionBlock>

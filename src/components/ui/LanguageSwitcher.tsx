@@ -1,7 +1,7 @@
 // src/components/ui/LanguageSwitcher.tsx
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation, useNavigate } from 'react-router-dom'; // CAMBIO: Importar hooks de router
+import { useLocation, useNavigate } from 'react-router-dom';
 import {
   I18N_LANGUAGES_SAFE,
   I18NLanguageSchema,
@@ -10,8 +10,8 @@ import {
 
 export const LanguageSwitcherComponent = () => {
   const { i18n, t } = useTranslation();
-  const location = useLocation(); // CAMBIO: Obtener ubicación actual
-  const navigate = useNavigate(); // CAMBIO: Obtener función de navegación
+  const location = useLocation();
+  const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
   const ref = React.useRef<HTMLDivElement>(null);
 
@@ -19,7 +19,6 @@ export const LanguageSwitcherComponent = () => {
   const labelFor = (lng: I18NLanguage) =>
     t(`common:lang.${lng}`, lng.toUpperCase());
 
-  // CAMBIO: Lógica actualizada para cambiar la URL
   const handleChangeLanguage = (lng: unknown) => {
     const parsed = I18NLanguageSchema.safeParse(lng);
     if (!parsed.success || parsed.data === i18n.language) {
@@ -34,7 +33,6 @@ export const LanguageSwitcherComponent = () => {
     setOpen(false);
   };
 
-  // Cerrar con click afuera / Escape
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
     const onClick = (e: MouseEvent) => {
@@ -49,66 +47,67 @@ export const LanguageSwitcherComponent = () => {
     };
   }, []);
 
-  // ---- Si solo hay 2 idiomas, mostramos el diseño actual ----
   if (I18N_LANGUAGES_SAFE.length === 2) {
     const [first, second] = I18N_LANGUAGES_SAFE;
     return (
-      <div className='flex items-center space-x-3 text-sm font-bold uppercase'>
+      <div className="flex items-center space-x-3 text-sm font-bold uppercase">
         <button
           onClick={() => handleChangeLanguage(first)}
           className={
             i18n.language === first
               ? 'text-brand-cta-orange'
               : 'hover:text-brand-cta-orange transition-colors'
-          }>
+          }
+        >
           {labelFor(first)}
         </button>
-        <span className='text-brand-white/50'>|</span>
+        <span className="text-brand-white/50">|</span>
         <button
           onClick={() => handleChangeLanguage(second)}
           className={
             i18n.language === second
               ? 'text-brand-cta-orange'
               : 'hover:text-brand-cta-orange transition-colors'
-          }>
+          }
+        >
           {labelFor(second)}
         </button>
       </div>
     );
   }
 
-  // ---- Si hay más de 2 idiomas, mostramos el menú desplegable ----
   return (
-    <div
-      ref={ref}
-      className='relative'>
+    <div ref={ref} className="relative">
       <button
-        type='button'
+        type="button"
         onClick={() => setOpen((o) => !o)}
-        aria-haspopup='menu'
+        aria-haspopup="menu"
         aria-expanded={open}
-        className='flex items-center gap-1 text-sm font-bold uppercase text-white hover:text-brand-cta-orange transition-colors'>
+        className="flex items-center gap-1 text-sm font-bold uppercase text-white hover:text-brand-cta-orange transition-colors"
+      >
         {labelFor(current)}
         <svg
-          aria-hidden='true'
-          viewBox='0 0 20 20'
+          aria-hidden="true"
+          viewBox="0 0 20 20"
           className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`}
-          fill='currentColor'>
-          <path d='M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.084l3.71-3.854a.75.75 0 1 1 1.08 1.04l-4.24 4.4a.75.75 0 0 1-1.08 0l-4.24-4.4a.75.75 0 0 1 .02-1.06z' />
+          fill="currentColor"
+        >
+          <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.084l3.71-3.854a.75.75 0 1 1 1.08 1.04l-4.24 4.4a.75.75 0 0 1-1.08 0l-4.24-4.4a.75.75 0 0 1 .02-1.06z" />
         </svg>
       </button>
 
       {open && (
         <div
-          role='menu'
+          role="menu"
           aria-label={t('common:language', 'Idioma')}
-          className='absolute right-0 mt-2 min-w-28 rounded-md bg-brand-primary-dark/95 shadow-lg ring-1 ring-white/10 backdrop-blur-sm p-1 z-50'>
+          className="absolute right-0 mt-2 min-w-28 rounded-md bg-brand-primary-dark/95 shadow-lg ring-1 ring-white/10 backdrop-blur-sm p-1 z-50"
+        >
           {I18N_LANGUAGES_SAFE.map((lng) => {
             const active = i18n.language === lng;
             return (
               <button
                 key={lng}
-                role='menuitemradio'
+                role="menuitemradio"
                 aria-checked={active}
                 onClick={() => handleChangeLanguage(lng)}
                 className={`w-full text-left rounded px-3 py-2 text-sm uppercase transition-colors ${
@@ -116,7 +115,8 @@ export const LanguageSwitcherComponent = () => {
                     ? 'text-brand-cta-orange'
                     : 'text-white hover:bg-white/10'
                 }`}
-                type='button'>
+                type="button"
+              >
                 {labelFor(lng)}
               </button>
             );

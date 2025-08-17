@@ -66,45 +66,40 @@ export const ActiveDestinationCard = ({
   };
 
   return (
-    // 🟢 Owner del ciclo: entra al verse (in-view)
     <MotionBlock
-      kind='inView'
+      kind="inView"
       variants={card}
       className={twMerge(
         'group w-full overflow-hidden rounded-2xl shadow-lg bg-brand-primary-dark transition-transform duration-300 hover:-translate-y-2 cursor-pointer',
         'flex flex-col min-h-0 transform-gpu will-change-transform',
         className
       )}
-      role='link'
+      role="link"
       tabIndex={0}
       onClick={handleCardClick}
       onKeyDown={handleCardKeyDown}
-      aria-label={t(destination.name, { ns: 'destinations' })}>
-      <div className='relative w-full aspect-[16/10]'>
+      aria-label={t(destination.name, { ns: 'destinations' })}
+    >
+      <div className="relative w-full aspect-[16/10]">
         <ImageComponent
           imageData={destination.card.imageData}
-          translationNS='destinations'
+          translationNS="destinations"
         />
-        <div className='pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/40 to-transparent' />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/40 to-transparent" />
       </div>
 
-      <div className='flex flex-col gap-3 p-6 text-white min-h-0'>
-        <div className='min-w-0'>
-          {/* Micro-fade del título */}
-          <MotionBlock
-            kind='none'
-            variants={fadeIn()}>
-            <h3 className='heading-6'>
+      <div className="flex flex-col gap-3 p-6 text-white min-h-0">
+        <div className="min-w-0">
+          <MotionBlock kind="none" variants={fadeIn()}>
+            <h3 className="heading-6">
               {t(destination.name, { ns: 'destinations' })}
             </h3>
           </MotionBlock>
         </div>
 
         {activeSessions.length > 0 && (
-          <MotionBlock
-            kind='none'
-            variants={fadeIn({ delay: 0.06 })}>
-            <h4 className='text-base-xs font-bold uppercase text-green-300'>
+          <MotionBlock kind="none" variants={fadeIn({ delay: 0.06 })}>
+            <h4 className="text-base-xs font-bold uppercase text-green-300">
               {t('activeExperiencesTitle', {
                 ns: 'destinations',
                 defaultValue: 'Próximas experiencias',
@@ -115,9 +110,10 @@ export const ActiveDestinationCard = ({
 
         {activeSessions.length > 0 && (
           <MotionBlock
-            kind='none'
+            kind="none"
             variants={fadeIn({ delay: 0.12 })}
-            className='min-h-0 max-h-32 overflow-y-auto pr-1 flex flex-col gap-2'>
+            className="min-h-0 max-h-32 overflow-y-auto pr-1 flex flex-col gap-2"
+          >
             {activeSessions.map((s) => {
               const experienceSlug = experienceSlugMap.get(s.experienceId);
               if (!experienceSlug) return null;
@@ -139,21 +135,23 @@ export const ActiveDestinationCard = ({
                 <Link
                   key={s.id}
                   to={sessionUrl}
-                  className='pointer-events-auto block group/link rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/70'
+                  className="pointer-events-auto block group/link rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/70"
                   onClick={(e) => e.stopPropagation()}
                   onKeyDown={(e) => e.stopPropagation()}
-                  title={`${name} · ${dateRange}`}>
+                  title={`${name} · ${dateRange}`}
+                >
                   <span
-                    className='block text-sm font-semibold text-brand-white leading-snug break-words transition-colors group-hover/link:text-brand-cta-orange focus-visible:text-brand-cta-orange'
+                    className="block text-sm font-semibold text-brand-white leading-snug break-words transition-colors group-hover/link:text-brand-cta-orange focus-visible:text-brand-cta-orange"
                     style={{
                       display: '-webkit-box',
                       WebkitLineClamp: 2,
                       WebkitBoxOrient: 'vertical',
                       overflow: 'hidden',
-                    }}>
+                    }}
+                  >
                     {name}
                   </span>
-                  <span className='block text-xs text-brand-neutral/80 mt-0.5 capitalize transition-colors group-hover/link:text-brand-cta-orange/80 focus-visible:text-brand-cta-orange/80'>
+                  <span className="block text-xs text-brand-neutral/80 mt-0.5 capitalize transition-colors group-hover/link:text-brand-cta-orange/80 focus-visible:text-brand-cta-orange/80">
                     {dateRange}
                   </span>
                 </Link>

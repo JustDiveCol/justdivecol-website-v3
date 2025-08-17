@@ -16,17 +16,18 @@ export const AlternatingFeature = ({
   const isImageLeft = imagePosition === 'left';
 
   return (
-    <section className='py-8'>
+    <section className="py-8">
       <div
         className={`section bg-brand-primary-dark rounded-2xl p-8 flex flex-col md:flex-row gap-12 md:items-stretch ${
           !isImageLeft ? 'md:flex-row-reverse' : ''
-        }`}>
-        {/* Columna Imagen: entra desde el borde externo (izq si imagen va a la izq, der si va a la der) */}
+        }`}
+      >
         <MotionBlock
-          kind='inView'
+          kind="inView"
           variants={slideIn(isImageLeft ? 'left' : 'right', { distance: 50 })}
-          className='w-full md:w-1/2'>
-          <div className='relative h-full overflow-hidden rounded-lg shadow-2xl drop-shadow-strong'>
+          className="w-full md:w-1/2"
+        >
+          <div className="relative h-full overflow-hidden rounded-lg shadow-2xl drop-shadow-strong">
             <ImageComponent
               imageData={imageData}
               translationNS={translationNS}
@@ -34,14 +35,14 @@ export const AlternatingFeature = ({
           </div>
         </MotionBlock>
 
-        {/* Columna Texto: entra desde el lado opuesto */}
         <MotionBlock
-          kind='inView'
+          kind="inView"
           variants={slideIn(isImageLeft ? 'right' : 'left', { distance: 50 })}
-          className='w-full md:w-1/2 flex'>
-          <div className='flex flex-col justify-center'>
-            <h2 className='heading-4 mb-4 text-brand-white'>{t(titleKey)}</h2>
-            <p className='text-base-md font-serif text-brand-neutral/90 whitespace-pre-line'>
+          className="w-full md:w-1/2 flex"
+        >
+          <div className="flex flex-col justify-center">
+            <h2 className="heading-4 mb-4 text-brand-white">{t(titleKey)}</h2>
+            <p className="text-base-md font-serif text-brand-neutral/90 whitespace-pre-line">
               {t(descriptionKey)}
             </p>
           </div>

@@ -1,4 +1,4 @@
-// src/components/sections/experiences/CertificationsSection.tsx
+// src/components/sections/diveExperiences/CertificationsSection.tsx
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -77,26 +77,18 @@ export const CertificationsSection = ({
   const hasSingleInLastRowLg = total % 3 === 1;
 
   return (
-    <section
-      className='bg-brand-primary-dark py-16 px-4'
-      id='certifications'>
-      <div className='container mx-auto'>
-        {/* Header: in-view suave */}
-        <div className='max-w-max mx-auto text-center mb-12'>
-          <MotionBlock
-            kind='inView'
-            variants={fadeIn()}>
-            <h2 className='heading-3 text-white'>{t(titleKey)}</h2>
+    <section className="bg-brand-primary-dark py-16 px-4" id="certifications">
+      <div className="container mx-auto">
+        <div className="max-w-max mx-auto text-center mb-12">
+          <MotionBlock kind="inView" variants={fadeIn()}>
+            <h2 className="heading-3 text-white">{t(titleKey)}</h2>
           </MotionBlock>
-          <MotionBlock
-            kind='inView'
-            variants={fadeIn({ delay: 0.06 })}>
-            <p className='text-subtitle mt-4'>{t(subtitleKey)}</p>
+          <MotionBlock kind="inView" variants={fadeIn({ delay: 0.06 })}>
+            <p className="text-subtitle mt-4">{t(subtitleKey)}</p>
           </MotionBlock>
         </div>
 
-        {/* Grilla SIN animación en el parent (cada card se anima sola) */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-stretch gap-8 max-w-6xl mx-auto'>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-stretch gap-8 max-w-6xl mx-auto">
           {certifications.map((cert, idx) => {
             const status = getCertificationStatus(cert.id, sessions);
             const isLast = idx === total - 1;

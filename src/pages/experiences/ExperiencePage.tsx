@@ -2,7 +2,6 @@
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
-// Helpers de contenido
 import { resolveExperienceForSession } from '../../content/experiences';
 import { getCertificationById } from '../../content/certifications';
 import { getDestinationById } from '../../content/destinations';
@@ -11,7 +10,6 @@ import {
   gatherAllDiveSites,
 } from '../../content/destinations/dive-sites.helpers';
 
-// Componentes comunes y compartidos
 import { SEO } from '../../components/common/SEO';
 import { PageHeader } from '../../components/sections/shared/PageHeader';
 import { CtaSection } from '../../components/sections/shared/CtaSection';
@@ -19,7 +17,6 @@ import { PhotoGallery } from '../../components/sections/shared/PhotoGallery';
 import { StickyCtaBar } from '../../components/common/StickyCtaBar';
 import { homeContent } from '../../content/pages/home/home.content';
 
-// Componentes específicos de la página
 import { SessionHero } from '../../components/sections/experiences/SessionHero';
 import { ExperienceItinerary } from '../../components/sections/experiences/ExperienceItinerary';
 import { ExperienceInclusions } from '../../components/sections/experiences/ExperienceInclusions';

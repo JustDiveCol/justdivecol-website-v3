@@ -243,7 +243,7 @@ export const DiveSiteMap = ({
 
     // CAMBIO: Lógica actualizada para el centrado
     if (focusedSite && centeredOnSiteId.current !== focusedSite.id) {
-      centeredOnSiteId.current = focusedSite.id; // Marcar como centrado
+      centeredOnSiteId.current = focusedSite.id;
       map.flyTo({
         center: focusedSite.coordinates,
         zoom: Math.max(13, minZoom || 13),
@@ -253,7 +253,7 @@ export const DiveSiteMap = ({
     }
 
     if (!focusedSite && sites.length > 0) {
-      centeredOnSiteId.current = null; // Limpiar el estado de centrado
+      centeredOnSiteId.current = null;
       const bounds = new LngLatBounds();
       sites.forEach((s) => bounds.extend(s.coordinates));
 
@@ -267,10 +267,5 @@ export const DiveSiteMap = ({
     }
   }, [focusedSite, sites, minZoom, maxZoom]);
 
-  return (
-    <div
-      ref={mapContainer}
-      className='w-full h-full'
-    />
-  );
+  return <div ref={mapContainer} className="w-full h-full" />;
 };

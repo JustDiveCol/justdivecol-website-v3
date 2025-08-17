@@ -168,7 +168,7 @@ export const DiveSitesSection = ({
     const diffIds = new Set(filtered.map((s) => s.difficultyId));
     const typeIds = new Set(filtered.flatMap((s) => s.typeIds));
     const condIds = new Set(filtered.flatMap((s) => s.conditionsIds));
-    const tagIds = new Set<DiveTagId>(filtered.flatMap((s) => s.tagsIds)); // ⬅️ clave: Set tipado
+    const tagIds = new Set<DiveTagId>(filtered.flatMap((s) => s.tagsIds));
 
     return {
       filteredSites: filtered,
@@ -253,18 +253,19 @@ export const DiveSitesSection = ({
 
   return (
     <section
-      id='dive-sites'
-      className='relative w-full h-full bg-brand-primary-dark'>
-      <div className='relative flex h-full overflow-hidden'>
+      id="dive-sites"
+      className="relative w-full h-full bg-brand-primary-dark"
+    >
+      <div className="relative flex h-full overflow-hidden">
         <AnimatePresence>
           {isMobilePanelOpen && (
             <motion.div
-              key='mobile-backdrop'
+              key="mobile-backdrop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsMobilePanelOpen(false)}
-              className='absolute inset-0 z-20 bg-black/50 md:hidden'
+              className="absolute inset-0 z-20 bg-black/50 md:hidden"
             />
           )}
         </AnimatePresence>
@@ -281,17 +282,19 @@ export const DiveSitesSection = ({
                 : '-translate-x-full w-full sm:w-[350px]'
             }
             ${isDesktopPanelExpanded ? 'md:w-[350px]' : 'md:w-20'}
-          `}>
-          <div className='flex h-full flex-col overflow-hidden'>
+          `}
+        >
+          <div className="flex h-full flex-col overflow-hidden">
             {/* Header */}
-            <div className='flex flex-shrink-0 items-center justify-between border-b border-white/10 p-4'>
+            <div className="flex flex-shrink-0 items-center justify-between border-b border-white/10 p-4">
               <AnimatePresence>
                 {isDesktopPanelExpanded && (
                   <motion.h2
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className='heading-5 whitespace-nowrap text-white'>
+                    className="heading-5 whitespace-nowrap text-white"
+                  >
                     {t('filtersTitle', {
                       ns: translationNS,
                       defaultValue: 'Filtros',
@@ -301,9 +304,10 @@ export const DiveSitesSection = ({
               </AnimatePresence>
               <button
                 onClick={() => setIsMobilePanelOpen(false)}
-                className='text-white/80 hover:text-white md:hidden'
-                type='button'>
-                <CloseIcon className='h-6 w-6' />
+                className="text-white/80 hover:text-white md:hidden"
+                type="button"
+              >
+                <CloseIcon className="h-6 w-6" />
               </button>
             </div>
 
@@ -313,9 +317,10 @@ export const DiveSitesSection = ({
                 isDesktopPanelExpanded
                   ? 'md:opacity-100'
                   : 'md:pointer-events-none md:opacity-0'
-              }`}>
+              }`}
+            >
               {/* Filtros con más espacio */}
-              <div className='min-h-0 overflow-y-auto p-4 flex-[0_0_70%]'>
+              <div className="min-h-0 overflow-y-auto p-4 flex-[0_0_70%]">
                 <DiveSiteFilters
                   filters={filters}
                   onFiltersChange={setFilters}
@@ -329,7 +334,7 @@ export const DiveSitesSection = ({
               </div>
 
               {/* Lista con menos espacio */}
-              <div className='min-h-0 overflow-y-auto border-t border-white/10 flex-[0_0_30%]'>
+              <div className="min-h-0 overflow-y-auto border-t border-white/10 flex-[0_0_30%]">
                 <DiveSiteList
                   sites={listItems}
                   onSelect={handleSelectSite}
@@ -340,15 +345,16 @@ export const DiveSitesSection = ({
             </div>
 
             {/* Footer (toggle expand) */}
-            <div className='mt-auto hidden flex-shrink-0 items-center justify-center border-t border-white/10 p-4 md:flex'>
+            <div className="mt-auto hidden flex-shrink-0 items-center justify-center border-t border-white/10 p-4 md:flex">
               <button
                 onClick={() => setIsDesktopPanelExpanded((prev) => !prev)}
-                className='flex h-10 w-full items-center justify-center gap-2 text-white/70 hover:text-white'
-                type='button'>
+                className="flex h-10 w-full items-center justify-center gap-2 text-white/70 hover:text-white"
+                type="button"
+              >
                 {isDesktopPanelExpanded ? (
-                  <ChevronDoubleLeftIcon className='h-5 w-5' />
+                  <ChevronDoubleLeftIcon className="h-5 w-5" />
                 ) : (
-                  <FilterIcon className='h-6 w-6' />
+                  <FilterIcon className="h-6 w-6" />
                 )}
                 <AnimatePresence>
                   {isDesktopPanelExpanded && (
@@ -360,7 +366,8 @@ export const DiveSitesSection = ({
                         marginLeft: '0.5rem',
                       }}
                       exit={{ opacity: 0, width: 0, marginLeft: 0 }}
-                      className='whitespace-nowrap text-sm font-bold'>
+                      className="whitespace-nowrap text-sm font-bold"
+                    >
                       {t('hideFilters', {
                         ns: translationNS,
                         defaultValue: 'Ocultar',
@@ -374,7 +381,7 @@ export const DiveSitesSection = ({
         </aside>
 
         {/* Mapa */}
-        <main className='h-full flex-grow'>
+        <main className="h-full flex-grow">
           <DiveSiteMap
             sites={mapSites}
             hoveredSiteId={hoveredSiteId}
@@ -402,10 +409,11 @@ export const DiveSitesSection = ({
       {/* Botón de filtros en móvil */}
       <button
         onClick={() => setIsMobilePanelOpen((prev) => !prev)}
-        className='absolute bottom-8 left-1/2 z-10 -translate-x-1/2 rounded-full border border-white/20 bg-brand-primary-dark px-4 py-2 text-white shadow-lg md:hidden'
-        type='button'>
-        <FilterIcon className='h-5 w-5' />
-        <span className='ml-2 font-bold'>
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 rounded-full border border-white/20 bg-brand-primary-dark px-4 py-2 text-white shadow-lg md:hidden"
+        type="button"
+      >
+        <FilterIcon className="h-5 w-5" />
+        <span className="ml-2 font-bold">
           {t('filtersCta', { ns: translationNS, defaultValue: 'Filtros' })}
         </span>
       </button>

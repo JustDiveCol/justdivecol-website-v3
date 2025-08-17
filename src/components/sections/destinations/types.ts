@@ -1,6 +1,6 @@
 // src/components/sections/destinations/types.ts
 import { z } from 'zod';
-import { I18NNamespaceSchema, type I18NNamespace } from '../../../constants'; // Asumiendo exportaciones desde un barrel file
+import { I18NNamespaceSchema, type I18NNamespace } from '../../../constants';
 import {
   DestinationDescriptionContentSchema,
   DestinationDetailsSchema,
@@ -53,7 +53,7 @@ export type RelatedExperiencesProps = Omit<
 // Props para el nuevo componente contenedor del mapa de sitios de buceo
 export const DestinationDiveSitesPropsSchema = z.object({
   destinationName: z.string(),
-  diveSitesSectionProps: z.custom<DiveSitesSectionProps>(), // Pasaremos todas las props necesarias para la sección
+  diveSitesSectionProps: z.custom<DiveSitesSectionProps>(),
 });
 
 export type DestinationDiveSitesProps = z.infer<

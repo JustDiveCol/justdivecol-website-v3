@@ -23,25 +23,26 @@ const CustomSlide = ({ slide }: any) => {
   return (
     <div
       onContextMenu={(e) => e.preventDefault()}
-      className='relative flex items-center justify-center h-full w-full bg-black/80'>
+      className="relative flex items-center justify-center h-full w-full bg-black/80"
+    >
       <img
         src={slide.backgroundImage}
         draggable={false}
         onContextMenu={(e) => e.preventDefault()}
-        className='max-h-[90vh] max-w-[90vw] object-contain'
-        alt=''
+        className="max-h-[90vh] max-w-[90vw] object-contain"
+        alt=""
       />
 
-      <div className='absolute bottom-4 right-4 w-24 opacity-70 pointer-events-none'>
+      <div className="absolute bottom-4 right-4 w-24 opacity-70 pointer-events-none">
         <img
           src={mainLogo.url}
           alt={t(mainLogo.altKey)}
-          className='w-full h-auto'
+          className="w-full h-auto"
         />
       </div>
 
       {slide.photoCredit && (
-        <div className='absolute bottom-4 left-4 bg-black/50 text-white text-xs px-2 py-1 rounded pointer-events-none'>
+        <div className="absolute bottom-4 left-4 bg-black/50 text-white text-xs px-2 py-1 rounded pointer-events-none">
           {t('common:photoCreditPrefix')} {slide.photoCredit}
         </div>
       )}
@@ -87,33 +88,32 @@ export const PhotoGallery = ({
 
   return (
     <section className={`${sectionBackgroundColor} px-4`}>
-      <div className='section mx-auto max-w-5xl'>
-        {/* Owner del ciclo: el padre controla in-view + stagger */}
-        <MotionBlock
-          kind='inView'
-          variants={container}>
+      <div className="section mx-auto max-w-5xl">
+        <MotionBlock kind="inView" variants={container}>
           {/* Título */}
           <MotionBlock
-            kind='none'
+            kind="none"
             variants={fadeIn()}
-            className='text-center mb-12'>
-            <h2 className='heading-3 text-white'>{t(titleKey)}</h2>
+            className="text-center mb-12"
+          >
+            <h2 className="heading-3 text-white">{t(titleKey)}</h2>
           </MotionBlock>
 
           {/* Imagen principal */}
           <MotionBlock
-            kind='none'
+            kind="none"
             variants={fadeIn()}
-            className='relative group cursor-pointer bg-brand-neutral rounded-2xl drop-shadow-strong'
-            onClick={() => setIsOpen(true)}>
-            {/* Cross-fade por cambio de índice (animación local, no in-view) */}
+            className="relative group cursor-pointer bg-brand-neutral rounded-2xl drop-shadow-strong"
+            onClick={() => setIsOpen(true)}
+          >
             <motion.div
               key={activeIndex}
               initial={{ opacity: reduce ? 1 : 0, y: reduce ? 0 : 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: reduce ? 0 : 0.4 }}
-              className={`${containerClass} relative rounded-lg overflow-hidden shadow-2xl`}>
-              <div className='absolute inset-0 p-3 md:p-4'>
+              className={`${containerClass} relative rounded-lg overflow-hidden shadow-2xl`}
+            >
+              <div className="absolute inset-0 p-3 md:p-4">
                 <ImageComponent
                   imageData={{
                     backgroundImage: main.backgroundImage,
@@ -121,7 +121,7 @@ export const PhotoGallery = ({
                     variant: main.variant,
                   }}
                   translationNS={translationNS}
-                  className='w-full h-full'
+                  className="w-full h-full"
                 />
               </div>
             </motion.div>
@@ -136,20 +136,22 @@ export const PhotoGallery = ({
                       i === 0 ? slides.length - 1 : i - 1
                     );
                   }}
-                  className='absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity'
-                  aria-label='Anterior'
-                  type='button'>
-                  <ChevronLeftIcon className='h-6 w-6' />
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  aria-label="Anterior"
+                  type="button"
+                >
+                  <ChevronLeftIcon className="h-6 w-6" />
                 </button>
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveIndex((i) => (i + 1) % slides.length);
                   }}
-                  className='absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity'
-                  aria-label='Siguiente'
-                  type='button'>
-                  <ChevronRightIcon className='h-6 w-6' />
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  aria-label="Siguiente"
+                  type="button"
+                >
+                  <ChevronRightIcon className="h-6 w-6" />
                 </button>
               </>
             )}
@@ -158,9 +160,10 @@ export const PhotoGallery = ({
           {/* Thumbnails */}
           {slides.length > 1 && (
             <MotionBlock
-              kind='none'
+              kind="none"
               variants={fadeIn({ delay: 0.06 })}
-              className='flex justify-center gap-4 mt-4 drop-shadow-strong'>
+              className="flex justify-center gap-4 mt-4 drop-shadow-strong"
+            >
               {slides.map((s, idx) => (
                 <button
                   key={idx}
@@ -169,11 +172,12 @@ export const PhotoGallery = ({
                     idx === activeIndex
                       ? 'ring-4 ring-brand-cta-orange'
                       : 'opacity-60 hover:opacity-100'
-                  }`}>
+                  }`}
+                >
                   <img
                     src={s.src}
-                    className='w-full h-full object-cover'
-                    alt=''
+                    className="w-full h-full object-cover"
+                    alt=""
                   />
                 </button>
               ))}

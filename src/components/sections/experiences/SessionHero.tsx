@@ -54,51 +54,31 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
 
     switch (experience.ctaButton.action.type) {
       case 'internal':
-        return (
-          <Button
-            {...commonProps}
-            action={experience.ctaButton.action}
-          />
-        );
+        return <Button {...commonProps} action={experience.ctaButton.action} />;
       case 'external':
-        return (
-          <Button
-            {...commonProps}
-            action={experience.ctaButton.action}
-          />
-        );
+        return <Button {...commonProps} action={experience.ctaButton.action} />;
       case 'whatsapp':
-        return (
-          <Button
-            {...commonProps}
-            action={experience.ctaButton.action}
-          />
-        );
+        return <Button {...commonProps} action={experience.ctaButton.action} />;
       default:
         return null;
     }
   };
 
   return (
-    <section className='bg-brand-primary-dark'>
-      {/* Owner: el padre controla el ciclo (eager) y el stagger de las columnas */}
+    <section className="bg-brand-primary-dark">
       <MotionBlock
-        kind='eager'
+        kind="eager"
         variants={container}
-        className='section grid grid-cols-1 lg:grid-cols-3 gap-12'>
+        className="section grid grid-cols-1 lg:grid-cols-3 gap-12"
+      >
         {/* Columna Izquierda: Descripción */}
-        <MotionBlock
-          kind='none'
-          variants={fadeIn()}
-          className='lg:col-span-2'>
-          <h2 className='heading-3 text-white mb-4'>
+        <MotionBlock kind="none" variants={fadeIn()} className="lg:col-span-2">
+          <h2 className="heading-3 text-white mb-4">
             {t(experience.description.titleKey)}
           </h2>
-          <div className='prose prose-invert prose-lg text-brand-neutral/90 max-w-none'>
+          <div className="prose prose-invert prose-lg text-brand-neutral/90 max-w-none">
             {experience.description.paragraphs.map((pKey, i) => (
-              <p
-                key={i}
-                className='text-base-sm whitespace-pre-line'>
+              <p key={i} className="text-base-sm whitespace-pre-line">
                 {t(pKey)}
               </p>
             ))}
@@ -106,35 +86,32 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
         </MotionBlock>
 
         {/* Columna Derecha: Panel de Detalles */}
-        <MotionBlock
-          kind='none'
-          variants={fadeIn()}
-          className='lg:col-span-1'>
-          <div className='sticky top-28 bg-brand-primary-medium/30 border border-white/10 rounded-lg p-6 drop-shadow-strong'>
+        <MotionBlock kind="none" variants={fadeIn()} className="lg:col-span-1">
+          <div className="sticky top-28 bg-brand-primary-medium/30 border border-white/10 rounded-lg p-6 drop-shadow-strong">
             {/* Fechas */}
-            <div className='flex items-center gap-4 border-b border-white/10 pb-4'>
-              <CalendarIcon className='h-8 w-8 text-brand-cta-orange flex-shrink-0' />
+            <div className="flex items-center gap-4 border-b border-white/10 pb-4">
+              <CalendarIcon className="h-8 w-8 text-brand-cta-orange flex-shrink-0" />
               <div>
-                <p className='text-base-sm font-bold text-white capitalize'>
+                <p className="text-base-sm font-bold text-white capitalize">
                   {formattedDateRange}
                 </p>
-                <p className='text-base-xs text-brand-neutral/80'>
+                <p className="text-base-xs text-brand-neutral/80">
                   {durationText}
                 </p>
               </div>
             </div>
 
             {/* Disponibilidad */}
-            <div className='flex items-center justify-between gap-4 mt-4'>
-              <div className='flex items-center gap-2'>
-                <UserGroupIcon className='h-6 w-6 text-brand-cta-orange' />
-                <p className='text-base-xs font-bold text-white'>
+            <div className="flex items-center justify-between gap-4 mt-4">
+              <div className="flex items-center gap-2">
+                <UserGroupIcon className="h-6 w-6 text-brand-cta-orange" />
+                <p className="text-base-xs font-bold text-white">
                   {t('common:availability')}
                 </p>
               </div>
-              <div className='flex flex-col items-end'>
+              <div className="flex flex-col items-end">
                 <AvailabilityBadge status={derivedStatus} />
-                <p className='text-xs text-brand-neutral/70 mt-1'>
+                <p className="text-xs text-brand-neutral/70 mt-1">
                   {t('common:seatsAvailableText', {
                     count: session.seatsAvailable,
                     total: session.capacity,
@@ -144,16 +121,14 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
             </div>
 
             {/* Precios */}
-            <div className='mt-6 space-y-2'>
-              <p className='font-bold text-white'>{t('common:pricesFrom')}</p>
+            <div className="mt-6 space-y-2">
+              <p className="font-bold text-white">{t('common:pricesFrom')}</p>
               {session.pricingOptions.map((opt) => (
-                <div
-                  key={opt.id}
-                  className='flex justify-between items-center'>
-                  <span className='text-base-xs text-brand-neutral/90'>
+                <div key={opt.id} className="flex justify-between items-center">
+                  <span className="text-base-xs text-brand-neutral/90">
                     {t(opt.nameKey)}
                   </span>
-                  <span className='text-base-xs font-semibold text-white'>
+                  <span className="text-base-xs font-semibold text-white">
                     {new Intl.NumberFormat(i18n.language, {
                       style: 'currency',
                       currency: opt.currency,
@@ -163,14 +138,14 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
                 </div>
               ))}
               {session.pricingOptionsNotes && (
-                <p className='text-xs text-brand-neutral/70 italic pt-2'>
+                <p className="text-xs text-brand-neutral/70 italic pt-2">
                   {t(session.pricingOptionsNotes)}
                 </p>
               )}
             </div>
 
             {/* CTA */}
-            <div className='mt-6'>{renderCtaButton()}</div>
+            <div className="mt-6">{renderCtaButton()}</div>
           </div>
         </MotionBlock>
       </MotionBlock>

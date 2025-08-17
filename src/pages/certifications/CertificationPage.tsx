@@ -116,7 +116,7 @@ const CertificationPage: React.FC = () => {
         />
 
         <RelatedExperiences
-          titleKey='certifications.relatedExperiencesTitle'
+          titleKey="certifications.relatedExperiencesTitle"
           sessions={relatedSessions}
           translationNS={'certifications'}
         />

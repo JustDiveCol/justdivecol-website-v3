@@ -12,51 +12,51 @@ export const ExperienceItinerary = ({
   const { container, fadeIn } = useMotionPresets();
 
   return (
-    <section className='bg-brand-primary-medium'>
-      <div className='section max-w-4xl mx-auto'>
-        {/* Header: in-view */}
+    <section className="bg-brand-primary-medium">
+      <div className="section max-w-4xl mx-auto">
         <MotionBlock
-          kind='inView'
+          kind="inView"
           variants={fadeIn()}
-          className='text-center mb-12'>
-          <h2 className='heading-3 text-white'>{t(itinerary.titleKey)}</h2>
+          className="text-center mb-12"
+        >
+          <h2 className="heading-3 text-white">{t(itinerary.titleKey)}</h2>
         </MotionBlock>
 
-        {/* Timeline: el padre controla in-view + stagger */}
         <MotionBlock
-          kind='inView'
+          kind="inView"
           variants={container}
-          className='relative pl-8 transform-gpu will-change-transform'>
-          {/* Línea de tiempo vertical */}
-          <div className='absolute left-0 top-0 h-full w-px bg-white/20 drop-shadow-strong' />
+          className="relative pl-8 transform-gpu will-change-transform"
+        >
+          <div className="absolute left-0 top-0 h-full w-px bg-white/20 drop-shadow-strong" />
 
           {itinerary.days.map((day, index) => (
             <MotionBlock
               key={index}
-              kind='none'
+              kind="none"
               variants={fadeIn()}
-              className='relative mb-12'>
-              <div className='absolute -left-12 top-1 flex h-8 w-8 items-center justify-center rounded-full bg-brand-cta-orange font-bold text-white'>
+              className="relative mb-12"
+            >
+              <div className="absolute -left-12 top-1 flex h-8 w-8 items-center justify-center rounded-full bg-brand-cta-orange font-bold text-white">
                 {day.day}
               </div>
-              <p className='text-sm uppercase tracking-wider text-brand-neutral/80'>
+              <p className="text-sm uppercase tracking-wider text-brand-neutral/80">
                 {t('common:day')} {day.day}
               </p>
-              <h3 className='heading-5 text-white mt-1'>{t(day.titleKey)}</h3>
-              <p className='mt-2 text-base-xs text-brand-neutral/90 font-serif'>
+              <h3 className="heading-5 text-white mt-1">{t(day.titleKey)}</h3>
+              <p className="mt-2 text-base-xs text-brand-neutral/90 font-serif">
                 {t(day.descriptionKey)}
               </p>
             </MotionBlock>
           ))}
         </MotionBlock>
 
-        {/* Notas adicionales: in-view independiente */}
         {itinerary.notes && itinerary.notes.length > 0 && (
           <MotionBlock
-            kind='inView'
+            kind="inView"
             variants={fadeIn()}
-            className='mt-8 text-center'>
-            <ul className='text-xs text-brand-neutral/70 italic space-y-1 text-left'>
+            className="mt-8 text-center"
+          >
+            <ul className="text-xs text-brand-neutral/70 italic space-y-1 text-left">
               {itinerary.notes.map((noteKey, i) => (
                 <li key={i}>{t(noteKey)}</li>
               ))}

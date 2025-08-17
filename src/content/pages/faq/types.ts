@@ -26,7 +26,6 @@ export const FaqDataSchema = z
     categories: z.array(FaqCategorySchema).min(1).readonly(),
   })
   .superRefine((val, ctx) => {
-    // Validación opcional: que todos los topFaqIds existan en categories.faqs
     const allIds = new Set(
       val.categories.flatMap((c) => c.faqs.map((f) => f.id))
     );

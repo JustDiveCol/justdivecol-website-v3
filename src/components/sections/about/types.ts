@@ -18,7 +18,7 @@ export type MissionSectionProps = Omit<
   z.infer<typeof MissionSectionPropsSchema>,
   'translationNS'
 > & {
-  translationNS: I18NNamespace; // TS fuerte
+  translationNS: I18NNamespace;
 };
 
 // ––– TeamSection –––

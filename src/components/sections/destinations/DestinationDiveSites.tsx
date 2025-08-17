@@ -13,19 +13,14 @@ export const DestinationDiveSites = ({
   const { fadeIn, container } = useMotionPresets();
 
   return (
-    <section className='bg-brand-primary-medium'>
-      <div className='section'>
-        <MotionBlock
-          kind='inView'
-          variants={container}>
-          <MotionBlock
-            kind='none'
-            variants={fadeIn()}
-            className='text-center'>
-            <h2 className='heading-3 text-white mb-4'>
+    <section className="bg-brand-primary-medium">
+      <div className="section">
+        <MotionBlock kind="inView" variants={container}>
+          <MotionBlock kind="none" variants={fadeIn()} className="text-center">
+            <h2 className="heading-3 text-white mb-4">
               {t('destinations.diveSitesSectionTitle')}
             </h2>
-            <p className='text-subtitle text-brand-neutral/80'>
+            <p className="text-subtitle text-brand-neutral/80">
               {t('destinations.diveSitesSectionSubtitle', {
                 destination: destinationName,
               })}
@@ -33,12 +28,13 @@ export const DestinationDiveSites = ({
           </MotionBlock>
 
           <MotionBlock
-            kind='none'
+            kind="none"
             variants={fadeIn()}
-            className='mt-12 h-[85vh] min-h-[600px] w-full rounded-xl overflow-hidden shadow-2xl border-2 border-white/10 transform-gpu will-change-transform'>
+            className="mt-12 h-[85vh] min-h-[600px] w-full rounded-xl overflow-hidden shadow-2xl border-2 border-white/10 transform-gpu will-change-transform"
+          >
             <DiveSitesSection
               {...diveSitesSectionProps}
-              translationNS='dive-sites'
+              translationNS="dive-sites"
             />
           </MotionBlock>
         </MotionBlock>

@@ -1,40 +1,50 @@
-/** @type {import('eslint').Linter.Config} */
 module.exports = {
   root: true,
-  ignorePatterns: ['dist', 'node_modules'],
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: './tsconfig.eslint.json', // 👈 ESLint usará este tsconfig
-    tsconfigRootDir: __dirname,
-    ecmaVersion: 2022,
-    sourceType: 'module',
+  parserOptions: { ecmaVersion: 'latest', sourceType: 'module', project: true },
+  settings: {
+    react: { version: 'detect' },
+    'import/resolver': { typescript: true },
   },
-  plugins: ['@typescript-eslint', 'vitest'],
+  env: { browser: true, es2021: true, node: true },
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'react-hooks',
+    'import',
+    'simple-import-sort',
+    'prettier',
+  ],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    // Si no quieres reglas type-aware, elimina la siguiente línea:
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'plugin:prettier/recommended',
   ],
-  env: {
-    es2022: true,
-    node: true,
-  },
   rules: {
-    // Tus reglas globales (si tienes)
+    // Prettier como error visible en ESLint:
+    'prettier/prettier': 'error',
+
+    // Orden real de imports/exports:
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
+    // Evita conflictos con otras reglas de orden de import:
+    'import/order': 'off',
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
+
+    // TS/React ajustes comunes:
+    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    'react/react-in-jsx-scope': 'off',
   },
   overrides: [
     {
-      files: ['**/__tests__/**/*.{ts,tsx}', '**/*.test.{ts,tsx}'],
-      env: {
-        'vitest/globals': true, // describe/it/expect disponibles
-      },
-      rules: {
-        '@typescript-eslint/no-explicit-any': 'off',
-        '@typescript-eslint/no-unsafe-assignment': 'off',
-        '@typescript-eslint/no-unsafe-member-access': 'off',
-        '@typescript-eslint/no-unsafe-call': 'off',
-      },
+      files: ['*.ts', '*.tsx'],
+      rules: {},
     },
   ],
 };
