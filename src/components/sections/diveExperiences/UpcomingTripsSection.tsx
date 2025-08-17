@@ -158,7 +158,7 @@ export const UpcomingTripsSection = ({
               <option value="all">{t(filtersAllDestinationsKey)}</option>
               {destinationOptions.map((dest) => (
                 <option key={dest.id} value={dest.id}>
-                  {t(dest.name)}
+                  {dest.name}
                 </option>
               ))}
             </select>

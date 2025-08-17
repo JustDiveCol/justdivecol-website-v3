@@ -138,7 +138,8 @@ const rawSantaMartaExp: ExperienceContent = {
     textKey: 'experiences.ctaButtonText',
     action: {
       type: 'whatsapp',
-      whatsAppMessageKey: 'experiences.whatsappMessage',
+      whatsAppMessageKey: 'experiences.experienceWhatsappMessage',
+      translationNS: 'experiences',
     },
     variant: 'primary',
     size: 'default',

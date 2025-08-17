@@ -1,9 +1,12 @@
 {
   "padiLogoAlt": "Logo PADI",
   "mainLogoAlt": "JustDiveCol Logo",
+  "photoCreditPrefix": "Foto por:",
 
   "lang.es": "ES",
   "lang.en": "EN",
+
+  "stickyCta": "Call to action button",
 
   "allies_marquee": "Nuestros aliados",
   "galleryTitle": "Galeria de imagenes",
@@ -36,7 +39,6 @@
 
   "important_links": "Enlaces importantes",
 
-  "photoCreditPrefix": "Foto por:",
   "more_label": "Más",
   "creyentesTripSealAlt": "Logo Creyentes",
 

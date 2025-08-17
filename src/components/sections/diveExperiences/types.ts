@@ -4,7 +4,10 @@ import {
   I18NNamespaceSchema,
   type I18NNamespace,
 } from '../../../constants/i18n.schema';
-import { ImageComponentDataSchema } from '../../common/types';
+import {
+  ContentButtonSchema,
+  ImageComponentDataSchema,
+} from '../../common/types';
 import { AssetURLSchema } from '../../../constants';
 
 export const UpcomingTripsSectionPropsSchema = z.object({
@@ -58,7 +61,7 @@ export const CustomTripsSectionPropsSchema = z.object({
   textKey: z.string(),
   translationNS: I18NNamespaceSchema,
   imageData: ImageComponentDataSchema,
-  buttonTextKey: z.string(),
+  ctaButton: ContentButtonSchema,
   benefits: z.array(BenefitsDataSchema),
 });
 export type CustomTripsSectionProps = Omit<

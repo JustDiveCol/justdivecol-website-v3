@@ -12,11 +12,30 @@ export const CustomTripsSection = ({
   textKey,
   translationNS,
   imageData,
-  buttonTextKey,
+  ctaButton,
   benefits,
 }: CustomTripsSectionProps) => {
   const { t } = useTranslation([translationNS, 'common']);
   const { container, slideIn, fadeIn } = useMotionPresets();
+
+  const renderButton = () => {
+    const commonProps = {
+      variant: ctaButton.variant || 'primary',
+      size: ctaButton.size || 'lg',
+      children: t(ctaButton.textKey),
+    };
+
+    switch (ctaButton.action.type) {
+      case 'internal':
+        return <Button {...commonProps} action={ctaButton.action} />;
+      case 'external':
+        return <Button {...commonProps} action={ctaButton.action} />;
+      case 'whatsapp':
+        return <Button {...commonProps} action={ctaButton.action} />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <section
@@ -38,6 +57,7 @@ export const CustomTripsSection = ({
             <ImageComponent
               imageData={imageData}
               className="rounded-2xl drop-shadow-strong"
+              translationNS={'diveExperiences'}
             />
           </MotionBlock>
 
@@ -76,16 +96,7 @@ export const CustomTripsSection = ({
             </ul>
 
             <MotionBlock kind="none" variants={fadeIn({ delay: 0.12 })}>
-              <Button
-                action={{
-                  type: 'whatsapp',
-                  whatsAppMessageKey: 'customTripWhatsappMessage',
-                }}
-                variant="primary"
-                size="sm"
-              >
-                {t(buttonTextKey)}
-              </Button>
+              {renderButton()}
             </MotionBlock>
           </MotionBlock>
         </MotionBlock>

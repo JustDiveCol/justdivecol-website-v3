@@ -7,8 +7,8 @@ import { LegalPageContentSchema, type LegalPageContent } from '../types';
 const rawPolicy: LegalPageContent = {
   seo: {
     titleKey: 'legal.policy.seo.title',
-    descriptionKey: 'contact.seo.desc',
-    keywordsKey: 'contact.seo.keywords',
+    descriptionKey: 'legal.policy.seo.desc',
+    keywordsKey: 'legal.policy.seo.keywords',
     urlPath: toUrlPath(ROUTES.policy),
     imageUrl: toAssetUrl('/images/legal/policy/social-card.webp'),
     translationNS: 'legal',

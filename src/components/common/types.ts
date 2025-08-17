@@ -47,6 +47,7 @@ export const ButtonActionSchema = z.discriminatedUnion('type', [
     whatsAppMessageKey: z.string().optional(),
     interpolation: z.record(z.string(), z.string()).optional(),
     pretranslatedMessage: z.string().optional(),
+    translationNS: I18NNamespaceSchema.optional(),
   }),
 ]);
 
@@ -57,6 +58,7 @@ type WhatsappAction = {
   whatsAppMessageKey?: string;
   interpolation?: Record<string, string>;
   pretranslatedMessage?: string;
+  translationNS?: I18NNamespace;
 };
 
 type BaseButtonProps = {

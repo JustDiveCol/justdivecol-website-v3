@@ -39,7 +39,14 @@ export const Button = React.forwardRef<HTMLAnchorElement, ButtonProps>(
     { action, children, className, variant, size, ...props },
     ref
   ) {
-    const { t } = useTranslation('common');
+    const getTranslationNamespace = () => {
+      if (action.type === 'whatsapp' && action.translationNS) {
+        return [action.translationNS, 'common'];
+      }
+      return 'common';
+    };
+
+    const { t } = useTranslation(getTranslationNamespace());
     const { contactInfo } = contactContent;
     const { to: localizedTo } = useLocalizedRoutes();
 

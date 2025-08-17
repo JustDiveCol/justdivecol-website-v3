@@ -78,7 +78,7 @@ export const ActiveDestinationCard = ({
       tabIndex={0}
       onClick={handleCardClick}
       onKeyDown={handleCardKeyDown}
-      aria-label={t(destination.name, { ns: 'destinations' })}
+      aria-label={destination.name}
     >
       <div className="relative w-full aspect-[16/10]">
         <ImageComponent
@@ -91,9 +91,7 @@ export const ActiveDestinationCard = ({
       <div className="flex flex-col gap-3 p-6 text-white min-h-0">
         <div className="min-w-0">
           <MotionBlock kind="none" variants={fadeIn()}>
-            <h3 className="heading-6">
-              {t(destination.name, { ns: 'destinations' })}
-            </h3>
+            <h3 className="heading-6">{destination.name}</h3>
           </MotionBlock>
         </div>
 

@@ -48,7 +48,17 @@ const rawDiveExperiences: DiveExperiencesPageContent = {
       photoCredit: 'Camilo Beltran @JustDiveCol',
       variant: 'horizontal',
     },
-    buttonTextKey: 'diveExperiences.customTrips.buttonText',
+    ctaButton: {
+      textKey: 'diveExperiences.customTrips.buttonText',
+      action: {
+        type: 'whatsapp',
+        whatsAppMessageKey: 'diveExperiences.customTrips.whatsappMessage',
+        translationNS: 'diveExperiences',
+      },
+      variant: 'primary',
+      size: 'default',
+    },
+
     benefits: [
       {
         id: 'benefit-1',

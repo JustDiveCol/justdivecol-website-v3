@@ -40,34 +40,35 @@ export const ImageComponent = ({
   return (
     <div
       className={wrapperClass}
-      style={{ backgroundImage: `url(${backgroundImage})` }}>
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       {textOverlayKey && (
-        <div className='absolute top-2 left-2 select-none text-brand-neutral text-sm sm:text-base md:text-lg lg:text-2xl font-bold uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
+        <div className="absolute top-2 left-2 select-none text-brand-neutral text-sm sm:text-base md:text-lg lg:text-2xl font-bold uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
           {t(textOverlayKey)}
         </div>
       )}
 
       {complementaryLogo && (
-        <div className='absolute top-4 right-4 select-none w-8 h-auto sm:w-10 md:w-12 drop-shadow-md opacity-70'>
+        <div className="absolute top-4 right-4 select-none w-8 h-auto sm:w-10 md:w-12 drop-shadow-md opacity-70">
           <img
             src={complementaryLogo.url}
-            alt={t(complementaryLogo.altKey)}
-            className='h-auto w-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'
-            loading='lazy'
-            decoding='async'
+            alt={t(complementaryLogo.altKey, { ns: 'common' })}
+            className="h-auto w-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+            loading="lazy"
+            decoding="async"
             width={96}
             height={96}
           />
         </div>
       )}
 
-      <div className='absolute bottom-4 right-4 select-none w-16 h-auto sm:w-20 md:w-24 drop-shadow-md opacity-70'>
+      <div className="absolute bottom-4 right-4 select-none w-16 h-auto sm:w-20 md:w-24 drop-shadow-md opacity-70">
         <img
           src={mainLogo.url}
-          alt={t(mainLogo.altKey)}
-          className='h-auto w-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'
-          loading='lazy'
-          decoding='async'
+          alt={t(mainLogo.altKey, { ns: 'common' })}
+          className="h-auto w-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+          loading="lazy"
+          decoding="async"
           width={192}
           height={72}
         />
@@ -75,8 +76,9 @@ export const ImageComponent = ({
 
       {photoCredit && (
         <div
-          className={`absolute bottom-0 left-0 select-none w-full ${photoCreditBgClass} px-2 py-1 text-xs text-brand-neutral transition-opacity duration-300 ${photoCreditOpacityClass}`}>
-          {t('common:photoCreditPrefix')} {t(photoCredit)}
+          className={`absolute bottom-0 left-0 select-none w-full ${photoCreditBgClass} px-2 py-1 text-xs text-brand-neutral transition-opacity duration-300 ${photoCreditOpacityClass}`}
+        >
+          {t('common:photoCreditPrefix')} {photoCredit}
         </div>
       )}
     </div>

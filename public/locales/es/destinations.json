@@ -6,7 +6,7 @@
     "detailsTitle": "El Destino en Datos Clave",
     "uniqueFindsTitle": "Tesoros Únicos por Descubrir",
     "galleryTitle": "Sumérgete en Imágenes",
-    "certificationWhatsappMessage": "¡Hola JustDiveCol! Me encantaría bucear en [Nombre del Destino] y quisiera saber más sobre sus planes y disponibilidad para organizar una inmersión. ¡Gracias!",
+    "destinationWhatsappMessage": "¡Hola JustDiveCol! Estoy interesado/a en las experiencias en {{itemName}} y me gustaría recibir más información sobre fechas y disponibilidad. ¡Gracias!",
     "ctaButtonText": "¡Bucea en este Destino!",
     "upcomingTripsTitle": "Próximas Salidas y Viajes",
 

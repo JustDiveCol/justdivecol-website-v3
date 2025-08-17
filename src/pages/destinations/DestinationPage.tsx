@@ -1,6 +1,7 @@
 // src/pages/destinations/DestinationPage.tsx
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { getDestinationBySlug } from '../../content/destinations';
 import { listSessions } from '../../content/experiences';
@@ -23,6 +24,7 @@ import { StickyCtaBar } from '../../components/common/StickyCtaBar';
 
 const DestinationPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+  const { t } = useTranslation(['destinations', 'common']);
 
   const content = useMemo(
     () => (slug ? getDestinationBySlug(slug) : null),
@@ -56,6 +58,25 @@ const DestinationPage: React.FC = () => {
     []
   );
   const allDiveSites = useMemo(() => gatherAllDiveSites(), []);
+
+  // 👉 Aquí preparamos el StickyCtaBar con mensaje personalizado
+  const stickyButtonData = useMemo(() => {
+    if (!content || !content.ctaButton) return undefined;
+
+    const newAction = { ...content.ctaButton.action };
+
+    if (newAction.type === 'whatsapp' && newAction.whatsAppMessageKey) {
+      const itemName = content.name; // usamos el nombre crudo, sin traducción
+      const translatedMessage = t(newAction.whatsAppMessageKey, { itemName });
+
+      newAction.pretranslatedMessage = translatedMessage;
+    }
+
+    return {
+      ...content.ctaButton,
+      action: newAction,
+    };
+  }, [content, t]);
 
   if (!slug || !content) {
     return <div>Destino no encontrado.</div>;
@@ -111,10 +132,12 @@ const DestinationPage: React.FC = () => {
         <CtaSection {...homeContent.cta} />
       </main>
 
-      <StickyCtaBar
-        buttonData={content.ctaButton}
-        translationNS={'destinations'}
-      />
+      {stickyButtonData && (
+        <StickyCtaBar
+          buttonData={stickyButtonData}
+          translationNS={'destinations'}
+        />
+      )}
     </>
   );
 };

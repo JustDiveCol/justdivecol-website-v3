@@ -212,7 +212,7 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
         </h3>
         {destinationNameKey && (
           <p className="text-sm font-medium text-brand-cta-orange">
-            {t(destinationNameKey)}
+            {destinationNameKey}
           </p>
         )}
         {subtitleKey && (

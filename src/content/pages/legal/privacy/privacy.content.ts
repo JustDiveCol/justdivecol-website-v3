@@ -8,8 +8,8 @@ import { LegalPageContentSchema, type LegalPageContent } from '../types';
 const rawPrivacy: LegalPageContent = {
   seo: {
     titleKey: 'legal.privacy.seo.title',
-    descriptionKey: 'contact.seo.desc',
-    keywordsKey: 'contact.seo.keywords',
+    descriptionKey: 'legal.privacy.seo.desc',
+    keywordsKey: 'legal.privacy.seo.keywords',
     urlPath: toUrlPath(ROUTES.privacy),
     imageUrl: toAssetUrl('/images/legal/privacy/social-card.webp'),
     translationNS: 'legal',

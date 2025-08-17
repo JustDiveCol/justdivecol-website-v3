@@ -6,7 +6,7 @@
     "whatIsNotIncludedTitle": "Tu inversión no incluye",
     "galleryTitle": "Momentos inolvidables de tu experiencia submarina",
     "ctaButtonText": "Reservar ahora",
-    "whatsappMessage": "Hola JustDiveCol, quiero más información sobre esta experiencia de buceo.",
+    "experienceWhatsappMessage": "¡Hola JustDiveCol! Estoy interesado/a en la experiencia de {{itemName}} y me gustaría recibir más información sobre fechas y disponibilidad. ¡Gracias!",
 
     "diveSitesSectionTitle": "Sitios de buceo destacados",
     "diveSitesSectionSubtitle": "Explora arrecifes, naufragios y paisajes submarinos únicos durante tu experiencia",

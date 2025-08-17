@@ -147,7 +147,8 @@ const rawSanAndres: DestinationContent = {
     textKey: 'destinations.ctaButtonText',
     action: {
       type: 'whatsapp',
-      whatsAppMessageKey: 'destinations.certificationWhatsappMessage',
+      whatsAppMessageKey: 'destinations.destinationWhatsappMessage',
+      translationNS: 'destinations',
     },
     variant: 'primary',
     size: 'default',

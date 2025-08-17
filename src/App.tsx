@@ -26,6 +26,42 @@ import CertificationPage from './pages/certifications/CertificationPage';
 import DestinationPage from './pages/destinations/DestinationPage';
 import ExperiencePage from './pages/experiences/ExperiencePage';
 
+import { I18N_NAMESPACES_SAFE } from './constants/i18n.schema';
+
+const I18nReadyGate: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const { i18n } = useTranslation();
+  const [ready, setReady] = React.useState(i18n.isInitialized);
+
+  React.useEffect(() => {
+    let active = true;
+
+    // Cuando i18n termine su init, intentamos cargar namespaces
+    const onInitialized = async () => {
+      try {
+        await i18n.loadNamespaces(I18N_NAMESPACES_SAFE as unknown as string[]);
+      } finally {
+        if (active) setReady(true);
+      }
+    };
+
+    if (i18n.isInitialized) {
+      onInitialized();
+    } else {
+      i18n.on('initialized', onInitialized);
+    }
+
+    return () => {
+      active = false;
+      i18n.off('initialized', onInitialized);
+    };
+  }, [i18n]);
+
+  if (!ready) return null; // puedes poner un loader aquí si quieres
+  return <>{children}</>;
+};
+
 const LanguageHandler = () => {
   const { lang } = useParams();
   const { i18n } = useTranslation();
@@ -67,15 +103,18 @@ const AppRoutes = () => (
 function App() {
   return (
     <I18nextProvider i18n={i18n}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/:lang/*" element={<AppRoutes />} />
-          <Route
-            path="*"
-            element={<Navigate to={`/${i18n.language}`} replace />}
-          />
-        </Routes>
-      </BrowserRouter>
+      {/* 👇 Espera a que i18n cargue los namespaces antes de pintar rutas */}
+      <I18nReadyGate>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/:lang/*" element={<AppRoutes />} />
+            <Route
+              path="*"
+              element={<Navigate to={`/${i18n.language}`} replace />}
+            />
+          </Routes>
+        </BrowserRouter>
+      </I18nReadyGate>
     </I18nextProvider>
   );
 }

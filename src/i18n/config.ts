@@ -16,6 +16,8 @@ i18n
   .init({
     debug: process.env.NODE_ENV === 'development',
 
+    saveMissing: true,
+
     fallbackLng: 'es',
     supportedLngs: I18N_LANGUAGES_SAFE as readonly string[],
     ns: I18N_NAMESPACES_SAFE as readonly string[],
