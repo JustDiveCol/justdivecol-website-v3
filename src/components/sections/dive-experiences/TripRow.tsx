@@ -1,4 +1,4 @@
-// src/components/sections/diveExperiences/TripRow.tsx
+// src/components/sections/dive-experiences/TripRow.tsx
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
 import { Button } from '../../common/Button';
@@ -115,10 +115,10 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
 
   const sessionUrl = useMemo(() => {
     if (!parentExperience) {
-      return toUrlPath(ROUTES.diveExperiences);
+      return toUrlPath(ROUTES['dive-experiences']);
     }
     return toUrlPath(
-      `${ROUTES.diveExperiences}/${parentExperience.slug}/${session.id}`
+      `${ROUTES['dive-experiences']}/${parentExperience.slug}/${session.id}`
     );
   }, [parentExperience, session.id]);
 

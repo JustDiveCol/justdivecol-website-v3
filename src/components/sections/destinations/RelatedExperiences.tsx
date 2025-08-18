@@ -1,7 +1,7 @@
 // src/components/sections/destinations/RelatedExperiences.tsx
 import { useTranslation } from 'react-i18next';
 import type { RelatedExperiencesProps } from './types';
-import { TripRow } from '../diveExperiences/TripRow';
+import { TripRow } from '../dive-experiences/TripRow';
 import { useMotionPresets } from '../../../hooks/animations';
 import { MotionBlock } from '../../motion/MotionBlock';
 

@@ -81,7 +81,7 @@ export const DiveSiteFilters = ({
           </option>
           {availableDestinations.map((d) => (
             <option key={d.id} value={d.id}>
-              {t(d.nameKey, { ns: 'destinations' })}
+              {d.nameKey}
             </option>
           ))}
         </select>

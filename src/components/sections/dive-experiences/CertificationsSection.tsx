@@ -1,4 +1,4 @@
-// src/components/sections/diveExperiences/CertificationsSection.tsx
+// src/components/sections/dive-experiences/CertificationsSection.tsx
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 

@@ -26,7 +26,19 @@ import CertificationPage from './pages/certifications/CertificationPage';
 import DestinationPage from './pages/destinations/DestinationPage';
 import ExperiencePage from './pages/experiences/ExperiencePage';
 
-import { I18N_NAMESPACES_SAFE } from './constants/i18n.schema';
+import {
+  I18N_LANGUAGES_SAFE,
+  I18N_NAMESPACES_SAFE,
+  type I18NLanguage,
+} from './constants/i18n.schema';
+import { NotFoundPage } from './pages/NotFoundPage';
+import { UnderConstructionPage } from './pages/UnderConstructionPage';
+
+const DEFAULT_LANG: I18NLanguage = 'es';
+const ensureSafeLang = (lng?: string): I18NLanguage =>
+  I18N_LANGUAGES_SAFE.includes(lng as I18NLanguage)
+    ? (lng as I18NLanguage)
+    : DEFAULT_LANG;
 
 const I18nReadyGate: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -62,15 +74,27 @@ const I18nReadyGate: React.FC<{ children: React.ReactNode }> = ({
   return <>{children}</>;
 };
 
-const LanguageHandler = () => {
+const LanguageHandler: React.FC = () => {
   const { lang } = useParams();
   const { i18n } = useTranslation();
 
+  const urlIsValid = I18N_LANGUAGES_SAFE.includes(lang as I18NLanguage);
+  const safeLang = ensureSafeLang(lang);
+
   React.useEffect(() => {
-    if (lang && i18n.language !== lang) {
+    if (urlIsValid && lang && i18n.language !== lang) {
       i18n.changeLanguage(lang);
+      return;
     }
-  }, [lang, i18n]);
+
+    if (!urlIsValid && i18n.language !== safeLang) {
+      i18n.changeLanguage(safeLang);
+    }
+  }, [urlIsValid, lang, safeLang, i18n]);
+
+  if (!urlIsValid) {
+    return <Navigate to={`/${safeLang}/route-lost`} replace />;
+  }
 
   return null;
 };
@@ -80,22 +104,28 @@ const AppRoutes = () => (
     <RouteScrollManager />
     <LanguageHandler />
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/about-us" element={<AboutUsPage />} />
-      <Route path="/principles" element={<PrinciplesPage />} />
-      <Route path="/contact" element={<ContactPage />} />
-      <Route path="/legal/policy" element={<PolicyPage />} />
-      <Route path="/legal/terms" element={<TermsPage />} />
-      <Route path="/legal/privacy" element={<PrivacyPage />} />
-      <Route path="/faq" element={<FaqPage />} />
-      <Route path="/dive-experiences" element={<ExperiencesPage />} />
-      <Route path="/dive-sites" element={<DiveSiteMapPage />} />
-      <Route path="/certifications/:slug" element={<CertificationPage />} />
-      <Route path="/destinations/:slug" element={<DestinationPage />} />
+      <Route path="" element={<HomePage />} />
+      <Route path="about-us" element={<AboutUsPage />} />
+      <Route path="principles" element={<PrinciplesPage />} />
+      <Route path="contact" element={<ContactPage />} />
+      <Route path="legal/policy" element={<PolicyPage />} />
+      <Route path="legal/terms" element={<TermsPage />} />
+      <Route path="legal/privacy" element={<PrivacyPage />} />
+      <Route path="faq" element={<FaqPage />} />
+      <Route path="dive-experiences" element={<ExperiencesPage />} />
+      <Route path="dive-sites" element={<DiveSiteMapPage />} />
+
+      <Route path="certifications/:slug" element={<CertificationPage />} />
+      <Route path="destinations/:slug" element={<DestinationPage />} />
       <Route
-        path="/dive-experiences/:experienceSlug/:sessionSlug"
+        path="dive-experiences/:experienceSlug/:sessionSlug"
         element={<ExperiencePage />}
       />
+
+      <Route path="coming-soon" element={<UnderConstructionPage />} />
+      <Route path="route-lost" element={<NotFoundPage />} />
+
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   </MainLayout>
 );
@@ -103,14 +133,18 @@ const AppRoutes = () => (
 function App() {
   return (
     <I18nextProvider i18n={i18n}>
-      {/* 👇 Espera a que i18n cargue los namespaces antes de pintar rutas */}
       <I18nReadyGate>
         <BrowserRouter>
           <Routes>
             <Route path="/:lang/*" element={<AppRoutes />} />
             <Route
               path="*"
-              element={<Navigate to={`/${i18n.language}`} replace />}
+              element={
+                <Navigate
+                  to={`/${ensureSafeLang(i18n.language)}/route-lost`}
+                  replace
+                />
+              }
             />
           </Routes>
         </BrowserRouter>

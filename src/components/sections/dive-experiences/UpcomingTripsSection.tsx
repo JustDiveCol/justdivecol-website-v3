@@ -1,4 +1,4 @@
-// src/components/sections/diveExperiences/UpcomingTripsSection.tsx
+// src/components/sections/dive-experiences/UpcomingTripsSection.tsx
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TripRow } from './TripRow';

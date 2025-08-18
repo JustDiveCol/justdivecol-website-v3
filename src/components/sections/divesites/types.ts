@@ -4,6 +4,7 @@ import {
   DestinationIdSchema,
   DiveConditionIdSchema,
   DiveDifficultyIdSchema,
+  DiveTagCategoryIdSchema,
   DiveTagIdSchema,
   DiveTypeIdSchema,
   I18NNamespaceSchema,
@@ -181,17 +182,10 @@ export const ConditionLookupItemSchema = z.object({
 });
 export type ConditionLookupItem = z.infer<typeof ConditionLookupItemSchema>;
 
-export const TagCategoryIdSchema = z.enum([
-  'marine-life',
-  'dive-characteristics',
-  'features',
-]);
-export type TagCategoryId = z.infer<typeof TagCategoryIdSchema>;
-
 export const TagLookupItemSchema = z.object({
   id: DiveTagIdSchema,
   nameKey: z.string(),
-  categoryId: TagCategoryIdSchema.optional(),
+  categoryId: DiveTagCategoryIdSchema.optional(),
 });
 export type TagLookupItem = z.infer<typeof TagLookupItemSchema>;
 

@@ -6,18 +6,18 @@ import { AboutUsPageContentSchema, type AboutUsPageContent } from './types';
 
 const rawAboutUs: AboutUsPageContent = {
   seo: {
-    titleKey: 'aboutUs.seo.title',
-    descriptionKey: 'aboutUs.seo.desc',
-    keywordsKey: 'aboutUs.seo.keywords',
-    urlPath: toUrlPath(ROUTES.aboutUs),
+    titleKey: 'about-us.seo.title',
+    descriptionKey: 'about-us.seo.desc',
+    keywordsKey: 'about-us.seo.keywords',
+    urlPath: toUrlPath(ROUTES['about-us']),
     imageUrl: toAssetUrl('/images/about-us/social-card.webp'),
-    translationNS: 'aboutUs',
+    translationNS: 'about-us',
   },
 
   header: {
-    titleKey: 'aboutUs.header.title',
-    subtitleKey: 'aboutUs.header.subtitle',
-    translationNS: 'aboutUs',
+    titleKey: 'about-us.header.title',
+    subtitleKey: 'about-us.header.subtitle',
+    translationNS: 'about-us',
     imageData: {
       backgroundImage: toAssetUrl('/images/about-us/header-background.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
@@ -26,9 +26,9 @@ const rawAboutUs: AboutUsPageContent = {
   },
 
   mission: {
-    titleKey: 'aboutUs.mission.title',
-    textKey: 'aboutUs.mission.text',
-    translationNS: 'aboutUs',
+    titleKey: 'about-us.mission.title',
+    textKey: 'about-us.mission.text',
+    translationNS: 'about-us',
     imageData: {
       backgroundImage: toAssetUrl('/images/about-us/mission-image.webp'),
       photoCredit: 'Camilo Beltran @JustDiveCol',
@@ -37,28 +37,28 @@ const rawAboutUs: AboutUsPageContent = {
   },
 
   team: {
-    titleKey: 'aboutUs.team.title',
-    translationNS: 'aboutUs',
+    titleKey: 'about-us.team.title',
+    translationNS: 'about-us',
     members: [
       {
         id: 'member-1',
         name: 'Camilo Beltrán',
-        roleKey: 'aboutUs.team.roleInstructor',
-        bioKey: 'aboutUs.team.bioCamilo',
+        roleKey: 'about-us.team.roleInstructor',
+        bioKey: 'about-us.team.bioCamilo',
         imageUrl: '/images/about-us/team/camilo.webp',
       },
       {
         id: 'member-2',
         name: 'Alejandra Vargas',
-        roleKey: 'aboutUs.team.roleDivemaster',
-        bioKey: 'aboutUs.team.bioAlejandra',
+        roleKey: 'about-us.team.roleDivemaster',
+        bioKey: 'about-us.team.bioAlejandra',
         imageUrl: '/images/about-us/team/alejandra.webp',
       },
       {
         id: 'member-3',
         name: 'Pablo Orjuela',
-        roleKey: 'aboutUs.team.roleInstructor',
-        bioKey: 'aboutUs.team.bioPablo',
+        roleKey: 'about-us.team.roleInstructor',
+        bioKey: 'about-us.team.bioPablo',
         imageUrl: '/images/about-us/team/pablo.webp',
       },
     ],

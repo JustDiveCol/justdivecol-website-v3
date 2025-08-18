@@ -13,6 +13,7 @@ import {
 export const DiveSiteContentSchema = z.object({
   id: z.string(),
   nameKey: z.string(),
+  descriptionKey: z.string(),
   destinationId: DestinationIdSchema,
   isTopSite: z.boolean(),
   coordinates: z
@@ -24,7 +25,6 @@ export const DiveSiteContentSchema = z.object({
   difficultyId: DiveDifficultyIdSchema,
   typeIds: z.array(DiveTypeIdSchema).min(1),
   conditionsIds: z.array(DiveConditionIdSchema).min(1),
-  descriptionKey: z.string(),
   tagsIds: z.array(DiveTagIdSchema).min(1),
   photos: z.array(ImageComponentDataSchema).optional(),
 });

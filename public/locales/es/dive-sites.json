@@ -14,6 +14,13 @@
   "noSitesFound": "No hay puntos de buceo",
   "searchPlaceholder": "Nombre",
 
+  "viewMoreLabel": "Ver más",
+  "maxDepthLabel": "Profundidad máxima",
+  "difficultyLabel": "Dificultad",
+  "conditionsLabel": "Condiciones",
+  "tagsLabel": "Etiquetas",
+  "galleryTitle": "Galería de imágenes",
+
   "noneLevelKey": "Sin nivel",
   "openWaterDiverLevelKey": "Open Water Diver",
   "advancedOpenWaterDiverLevelKey": "Advanced Open Water Diver",
@@ -87,16 +94,267 @@
   "coldWaterTag": "Agua fría",
   "warmWaterTag": "Agua cálida",
 
+  "featuresTagCategory": "Características del sitio",
+  "swimThroughsTag": "Pasadizos",
+  "canyonsTag": "Cañones",
+  "cavesTag": "Cuevas",
+  "overhangsTag": "Voladizos",
+  "softCoralsTag": "Corales blandos",
+  "hardCoralsTag": "Corales duros",
+  "anemonesTag": "Anémonas",
+
+  "locationTagCategory": "Ubicación",
+  "caribbeanTag": "Caribe",
+  "pacificTag": "Pacífico",
+  "redSeaTag": "Mar Rojo",
+  "indianOceanTag": "Océano Índico",
+  "tropicalTag": "Tropical",
+  "temperateTag": "Templado",
+
   "dive-sites": {
     "seo": {
-      "title": "Puntos de Buceo en Colombia",
-      "desc": "Explora los mejores puntos de buceo en Colombia: arrecifes, naufragios y reservas marinas. Encuentra tu sitio ideal según dificultad, profundidad y condiciones del mar.",
+      "title": "Puntos de Buceo",
+      "desc": "Explora los mejores puntos de buceo: arrecifes, naufragios y reservas marinas. Encuentra tu sitio ideal según dificultad, profundidad y condiciones del mar.",
       "keywords": "puntos de buceo Colombia, sitios de buceo, buceo en Santa Marta, buceo en Malpelo, buceo en San Andrés, naufragios, arrecifes, buceo principiantes, buceo avanzado"
     },
 
     "header": {
       "title": "Puntos de Buceo",
-      "subtitle": "Descubre los destinos submarinos más impresionantes de Colombia, clasificados por nivel, tipo de experiencia y condiciones para que encuentres tu próxima inmersión."
+      "subtitle": "Descubre los destinos submarinos más impresionantes, clasificados por nivel, tipo de experiencia y condiciones para que encuentres tu próxima inmersión."
+    }
+  },
+
+  "santa-marta": {
+    "bajoDelPescador": {
+      "name": "Bajo del Pescador - PNN Tayrona",
+      "desc": "Ubicado en la zona sur del Parque Tayrona, este punto de buceo es ideal para principiantes por sus arrecifes poco profundos y accesibles. Entre formaciones rocosas y pequeñas montañas submarinas, se observa una gran variedad de peces de arrecife, corales duros y blandos, en un entorno protegido con gran biodiversidad."
+    },
+
+    "barcazaProfunda": {
+      "name": "Barcaza Profunda",
+      "desc": "Frente al Morro Chico, la Barcaza Caribe es una inmersión técnica para buzos avanzados. Este pecio hundido a 32-40 metros se ha transformado en un arrecife artificial, cubierto de corales y vida marina. Su profundidad y las condiciones dinámicas del entorno lo convierten en un desafío gratificante para quienes buscan explorar un naufragio con la certificación adecuada."
+    },
+
+    "barcoHundido": {
+      "name": "Barco Hundido (El Naufragio del Rodadero)",
+      "desc": "Antes de El Rodadero, reposa un carguero hundido en los años ochenta a 30 metros de profundidad sobre un fondo arenoso. Con 30 m de largo, 7,5 m de ancho y 4,5 m de altura, permite explorar sus interiores cubiertos por ostras, corales e invertebrados. Hoy, convertido en un arrecife artificial, alberga meros, peces ángel, peces loro y una gran diversidad marina, siendo un atractivo imperdible para buzos con experiencia."
+    },
+
+    "cagaPajaro": {
+      "name": "Caga Pájaro - PNN Tayrona",
+      "desc": "Formaciones rocosas y grietas que esconden morenas, peces de arrecife y vida macro. Un sitio dinámico y fotogénico en pleno Tayrona."
+    },
+
+    "calderon": {
+      "name": "Calderón",
+      "desc": "Sector costero ideal para entrenamiento de Open Water Diver. Combina aguas confinadas abiertas y zonas de arrecife rocoso infralitoral cercanas a arenales, perfectas para prácticas de flotabilidad y buceo inicial en un entorno seguro y con buena visibilidad."
+    },
+
+    "calichan": {
+      "name": "Calichán - PNN Tayrona",
+      "desc": "Ubicado en Isla Aguja dentro del Parque Tayrona, Calichan es un sitio ideal para principiantes gracias a su banco de arena y condiciones tranquilas. Ofrece un entorno seguro y placentero para las primeras inmersiones, con aguas claras, suaves corrientes y una gran diversidad de peces de arrecife."
+    },
+
+    "cantilGranate": {
+      "name": "El Cantíl de Granate - PNN Tayrona",
+      "desc": "A solo 25 minutos en lancha desde Taganga, El Cantil en Bahía Granate ofrece una pared de coral que comienza a 2 metros y desciende hasta los 30 metros de profundidad. Con una pequeña cueva a 6 metros y una estatua de un ángel entre corales cerebro, es un sitio ideal tanto para principiantes como avanzados. Su corriente moderada, abundante vida marina y posibilidad de buceo nocturno lo convierten en un lugar dinámico y fascinante."
+    },
+
+    "elCoro": {
+      "name": "El Coro - PNN Tayrona",
+      "desc": "Ubicado a mar abierto, a unos 700 metros de la Isla Aguja, El Coro es un sitio de buceo avanzado con profundidades entre 14 y 40 metros. Sus dos grandes formaciones rocosas crean pequeñas cuevas donde habitan diversas especies marinas. Es uno de los pocos puntos en la zona donde se pueden avistar tiburones, lo que lo convierte en un lugar emocionante y único para los buzos experimentados."
+    },
+
+    "elMorroChico": {
+      "name": "El Morro Chico",
+      "desc": "Arrecife dinámico con corales blandos y pendientes rocosas. Un buceo de deriva emocionante con rica vida marina en Santa Marta."
+    },
+
+    "elRemanso": {
+      "name": "El Remanso - PNN Tayrona",
+      "desc": "Aguas tranquilas y protegidas de 5 a 12 metros, perfectas para bautismos y buceo nocturno. Un refugio sereno en el Tayrona."
+    },
+
+    "elTorin": {
+      "name": "El Torín - PNN Tayrona",
+      "desc": "Arrecife prístino con aguas claras y corales saludables. Un buceo tranquilo y bello en el corazón del Caribe colombiano."
+    },
+
+    "incaInca": {
+      "name": "Inca Inca",
+      "desc": "Frente a la playa de Inca Inca se encuentra un arrecife en forma de micro barrera, con profundidades entre 4 y 12 metros, ideal para principiantes. La zona poco profunda está dominada por corales ramificados, mientras que en áreas más profundas destacan corales masivos de gran tamaño. Sus aguas tranquilas, sin corrientes ni oleaje, lo convierten en un sitio seguro y perfecto para iniciar en el buceo."
+    },
+
+    "laAntena": {
+      "name": "La Antena",
+      "desc": "Arrecifes rocosos convertidos en refugio de nudibranquios y vida macro. Aguas calmadas para exploración relajada."
+    },
+
+    "laPecera": {
+      "name": "La Pecera - PNN Tayrona",
+      "desc": "La Pecera es un arrecife somero ideal para principiantes y para quienes buscan una inmersión tranquila. Con aguas calmadas, poca profundidad y fácil acceso, es un sitio perfecto para dar los primeros pasos en el buceo o disfrutar de una experiencia relajada entre peces y corales."
+    },
+
+    "laPiedraDelChivo": {
+      "name": "La Piedra del Chivo - PNN Tayrona",
+      "desc": "Arrecife rocoso sereno a 15 metros, ideal para explorar peces, nudibranquios y pequeños invertebrados en aguas calmadas."
+    },
+
+    "laPiedraDelMedio": {
+      "name": "La Piedra del Medio - PNN Tayrona",
+      "desc": "Pináculo tapizado de corales que atrae barracudas y jureles. Biodiversidad intensa en un sitio dinámico hasta 25 metros de profundidad."
+    },
+
+    "laTravesia": {
+      "name": "La Travesía - PNN Tayrona",
+      "desc": "Ubicada dentro del Parque Tayrona, cerca de Taganga e Isla Aguja, La Travesía es un punto de buceo versátil en Santa Marta, apto tanto para principiantes como para buzos experimentados. Ofrece arrecifes, formaciones rocosas y una gran diversidad de peces y corales. La temperatura del agua varía entre 21°C y 26°C según la temporada, lo que permite disfrutar de inmersiones únicas durante todo el año."
+    },
+
+    "langostas": {
+      "name": "Langostas - PNN Tayrona",
+      "desc": "Arrecife rocoso lleno de grietas y cuevas habitadas por langostas y peces de arrecife. Una inmersión cómoda y fascinante."
+    },
+
+    "lasBarcazas": {
+      "name": "Las Barcazas (Punta Betín)",
+      "desc": "Ubicado en la bahía de Santa Marta, este sitio de buceo se formó tras el hundimiento intencional de un pequeño barco dividido en varias secciones. Las fracciones del pecio descansan entre los 2 y 16 metros de profundidad, lo que lo convierte en un lugar ideal para principiantes. El recorrido suele comenzar en la parte más superficial y continuar hasta los 18 metros, rodeado de arrecifes y vida marina como peces loro, cirujanos, mariposa y carángidos. Con fácil acceso en barco y aguas tranquilas, las Barcazas son una excelente opción para descubrir la biodiversidad submarina de Santa Marta."
+    },
+
+    "losCarros": {
+      "name": "Los Carros - PNN Tayrona",
+      "desc": "Formaciones rocosas que simulan calles submarinas, hogar de peces y vida macro. Tranquilo y perfecto para observar detalles."
+    },
+
+    "sisiguaca": {
+      "name": "Sisiguaca",
+      "desc": "Laberinto de rocas y cañones a 20 metros, cubierto de corales y cardúmenes. Corrientes moderadas lo hacen emocionante y fotogénico."
+    },
+
+    "morritoLargo": {
+      "name": "Morrito Largo - PNN Tayrona",
+      "desc": "Pináculo profundo y desafiante con corrientes fuertes y corales negros. Un sitio épico para buzos avanzados y fotografía profunda."
+    },
+
+    "morroGaira": {
+      "name": "Morro de Gaira",
+      "desc": "Frente al balneario El Rodadero se encuentra este islote con un arrecife coralino franjeante que rodea todo su contorno. El fondo está dominado por cabezas de corales masivos y colonias de corales ramificados en tonos rosa y naranja. Su fácil acceso y aguas tranquilas lo convierten en un punto ideal para buceadores principiantes que deseen explorar la biodiversidad de Santa Marta."
+    },
+
+    "morroSantaMarta": {
+      "name": "Morro de Santa Marta",
+      "desc": "Pendientes profundas y fuertes corrientes que atraen atunes y barracudas. Un sitio cargado de historia y biodiversidad."
+    },
+
+    "oceano": {
+      "name": "Océano - PNN Tayrona",
+      "desc": "Buceo avanzado con corrientes intensas y fauna pelágica como tiburones y barracudas. Una experiencia de pura adrenalina."
+    },
+
+    "paneles": {
+      "name": "Panelés (Dos Morritos) - PNN Tayrona",
+      "desc": "Pináculos azotados por corrientes oceánicas que atraen vida pelágica abundante. Un reto extremo para buzos experimentados."
+    },
+
+    "paraiso": {
+      "name": "Paraíso - PNN Tayrona",
+      "desc": "Arrecife colorido y sereno con excelente visibilidad y corales saludables. Un refugio vibrante y relajado para todos los niveles."
+    },
+
+    "pasoDelAngel": {
+      "name": "Paso del Ángel - PNN Tayrona",
+      "desc": "Considerado uno de los mejores sitios para bucear en Santa Marta, ofrece una pendiente que desciende hasta los 40 metros, con una gran diversidad de peces, esponjas y corales duros y blandos. Es hogar del emblemático pez ángel, así como morenas, langostas de gran tamaño y caballitos de mar. La inmersión se realiza en la corriente, lo que añade emoción y exige experiencia. Hacia Morrito Largo se conecta con La Travesía, un trayecto con fuertes corrientes reservado para buzos avanzados."
+    },
+
+    "playaca": {
+      "name": "Playaca",
+      "desc": "Aguas calmadas y corales sanos que albergan peces tropicales y vida macro. Perfecta para una inmersión tranquila y segura."
+    },
+
+    "puntaAguja": {
+      "name": "Punta Aguja - PNN Tayrona",
+      "desc": "Pináculo rocoso emblemático con paredes y cañones. Biodiversidad abundante con posibilidad de ver barracudas y tortugas."
+    },
+
+    "puntaCabezaNegros": {
+      "name": "Punta Cabeza de Negros - PNN Tayrona",
+      "desc": "Formaciones rocosas que bajan a 25 metros con corales vibrantes y vida diversa. Corrientes moderadas enriquecen la experiencia."
+    },
+
+    "puntaGaira": {
+      "name": "Punta Gaira / Playa Blanca",
+      "desc": "Arrecife tranquilo de hasta 15 metros con corales saludables y vida macro. Un sitio ideal para principiantes y snorkelistas."
+    },
+
+    "puntaGranate": {
+      "name": "Punta Granate - PNN Tayrona",
+      "desc": "Zonas tranquilas y áreas con corrientes moderadas. Parches de coral llenos de peces, langostas y bancos de jureles."
+    },
+
+    "puntaVenado": {
+      "name": "Punta Venado - PNN Tayrona",
+      "desc": "Famoso por su buceo nocturno, revela crustáceos y peces enigmáticos al anochecer. De día ofrece un arrecife somero y sereno."
+    },
+
+    "salichan": {
+      "name": "Salichán - PNN Tayrona",
+      "desc": "Pendiente arrecifal que desciende hasta 35 metros con corales profundos y fauna pelágica. Una inmersión avanzada y memorable."
+    },
+
+    "salidero": {
+      "name": "Salidero - PNN Tayrona",
+      "desc": "Canal de corriente intenso que atrae barracudas y cardúmenes. Arrecife con corales impresionantes en una experiencia llena de adrenalina."
+    },
+
+    "elNatalia": {
+      "name": "Yate Hundido “El Natalia”",
+      "desc": "Pecio a 32 metros cubierto de esponjas y vida macro. Un sitio exclusivo y casi virgen, perfecto para exploración avanzada."
+    }
+  },
+
+  "providencia": {
+    "turtleRock": {
+      "name": "Turtle Rock (Piedra de la Tortuga)",
+      "desc": "Una imponente roca de 12 m cuya cima recuerda la cabeza de una tortuga. Rodeada por grietas profundas cubiertas de corales, esponjas y algas, desciende hasta 42 m en un cantil espectacular. Con buena visibilidad y corrientes variables, es un buceo avanzado que combina belleza natural y vida marina en cada pared."
+    },
+
+    "mantasCity": {
+      "name": "Manta’s City",
+      "desc": "Un sitio amplio de arenas blancas donde destacan grandes cabezas de coral estrella (Montastrea), corales blandos y esponjas. El nombre proviene de las imponentes rayas que suelen encontrarse aquí, confundidas a menudo con mantarrayas. Con aguas tranquilas y buena visibilidad, es un buceo ideal para principiantes y para quienes disfrutan la fotografía marina."
+    },
+
+    "planchon": {
+      "name": "Planchón",
+      "desc": "Un pecio histórico: un enorme barco petrolero que abastecía a submarinos alemanes durante la Segunda Guerra Mundial. Descansa invertido entre 18 y 24 metros, completamente recubierto de corales y vida marina. Con buena visibilidad y corrientes variables, es un sitio accesible y fascinante tanto para principiantes como para buzos más experimentados."
+    },
+
+    "felipesPlace": {
+      "name": "Felipe’s Place",
+      "desc": "Un recorrido único que inicia a 10 metros entre corales blandos, pilares y esponjas. A medida que avanzas, un canal arenoso se abre paso entre colinas cubiertas de corales estrella con forma de tejado. En el fondo, a 24 metros, te espera la estatua del Cristo submarino, convirtiendo esta inmersión en una experiencia especial que combina belleza natural y un toque cultural."
+    },
+
+    "nicksPlace": {
+      "name": "Nick’s Place",
+      "desc": "Un sitio legendario para buzos avanzados, con profundidades de hasta 30 metros y una visibilidad excepcional. Destaca por su valle de esponjas y una imponente pared atravesada por una grieta donde habitan chernas, pargos, peces de arrecife y tiburones. Un escenario vibrante y desafiante que combina biodiversidad y emoción en cada inmersión."
+    },
+
+    "tetesPlace": {
+      "name": "Teté’s Place",
+      "desc": "Un sitio somero y accesible en Providencia, perfecto para principiantes y snorkelistas. Sus fondos rocosos y arenosos se entrelazan con corales de pilar y octocorales, creando un arrecife lleno de vida. Grandes cardúmenes de roncos, pardos y carajuelos nadan junto a morenas, ofreciendo un espectáculo vibrante en aguas claras y tranquilas."
+    },
+
+    "bajoDeLosPargos": {
+      "name": "Bajo de los Pargos",
+      "desc": "Ubicado a 2,9 km de Agua Dulce, este arrecife combina corales duros y blandos que se extienden sobre una amplia plataforma de arena. Un sitio ideal para explorar la vida típica del Caribe en aguas claras y tranquilas, perfecto para buzos Open Water."
+    },
+
+    "snaperShoal": {
+      "name": "Snapper Shoal",
+      "desc": "Arrecife extenso con una profundidad entre 14 y 20 m, rodeado de arena y con alta complejidad estructural en su pared. Presenta grietas y pequeñas cuevas con gran diversidad de organismos crípticos, además de tiburones nodriza de gran tamaño. Es común encontrar pargos, roncos, peces loro, ángel, trompeta y pez león. Para buzos más experimentados, existe acceso a una cueva estrecha que conecta diferentes niveles de la pared."
+    },
+
+    "laCueva": {
+      "name": "The Cave (La Cueva)",
+      "desc": "Sitio de buceo multinivel que alcanza profundidades de hasta 43 m (140 pies). Se compone de una plataforma con formaciones de cuevas, hendiduras y un canal submarino tipo cañón. Es un lugar ideal para buzos avanzados que buscan explorar estructuras complejas con gran biodiversidad."
     }
   }
 }

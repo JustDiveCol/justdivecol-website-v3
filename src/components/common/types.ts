@@ -18,6 +18,7 @@ import {
   type ButtonVariant,
   type I18NNamespace,
 } from '../../constants';
+import { IconComponentSchema } from '../ui';
 
 // ––– AccordionItemSchema –––
 export const AccordionItemPropsSchema = z.object({
@@ -25,6 +26,24 @@ export const AccordionItemPropsSchema = z.object({
   answer: z.string(),
 });
 export type AccordionItemProps = z.infer<typeof AccordionItemPropsSchema>;
+
+// ––– ActionButtonComponent –––
+
+export const ActionButtonComponentPropsSchema = z.object({
+  text: z.string(),
+  icon: IconComponentSchema,
+  onClick: z.function({ input: [], output: z.void() }),
+  isLink: z.boolean().optional(),
+  href: z.string().optional(),
+});
+
+export type ActionButtonComponentProps = {
+  text: string;
+  icon: ReactNode;
+  onClick?: () => void;
+  isLink?: boolean;
+  href?: string;
+};
 
 // ––– Button –––
 export const ButtonVariantsSchema = z.enum(BUTTON_VARIANTS_SAFE);

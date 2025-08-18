@@ -92,12 +92,10 @@ export const DiveTypeIconSchema = z.enum(
 
 // ––– DiveConditions –––
 export const DIVE_CONDITIONS = [
-  { id: 'current', translationKey: 'currentConditionKey' },
   { id: 'mild-current', translationKey: 'mildCurrentConditionKey' },
   { id: 'moderate-current', translationKey: 'moderateCurrentConditionKey' },
   { id: 'strong-current', translationKey: 'strongCurrentConditionKey' },
   { id: 'deep', translationKey: 'deepConditionKey' },
-  { id: 'visibility', translationKey: 'visibilityConditionKey' },
   {
     id: 'variable-visibility',
     translationKey: 'variableVisibilityConditionKey',
@@ -106,10 +104,8 @@ export const DIVE_CONDITIONS = [
   { id: 'limited-visibility', translationKey: 'limitedVisibilityConditionKey' },
   { id: 'thermocline', translationKey: 'thermoclineConditionKey' },
   { id: 'surge', translationKey: 'surgeConditionKey' },
-  { id: 'surface', translationKey: 'surfaceConditionKey' },
   { id: 'rough-surface', translationKey: 'roughSurfaceConditionKey' },
   { id: 'calm-surface', translationKey: 'calmSurfaceConditionKey' },
-  { id: 'entry', translationKey: 'entryConditionKey' },
   { id: 'boat-entry', translationKey: 'boatEntryConditionKey' },
   { id: 'shore-entry', translationKey: 'shoreEntryConditionKey' },
   { id: 'night', translationKey: 'nightConditionKey' },
@@ -166,6 +162,31 @@ export const DIVE_TAG_CATEGORIES = [
       { id: 'conservation-area', translationKey: 'conservationAreaTag' },
       { id: 'cold-water', translationKey: 'coldWaterTag' },
       { id: 'warm-water', translationKey: 'warmWaterTag' },
+    ],
+  },
+  {
+    id: 'features',
+    translationKey: 'featuresTagCategory',
+    tags: [
+      { id: 'swim-throughs', translationKey: 'swimThroughsTag' },
+      { id: 'canyons', translationKey: 'canyonsTag' },
+      { id: 'caves', translationKey: 'cavesTag' },
+      { id: 'overhangs', translationKey: 'overhangsTag' },
+      { id: 'soft-corals', translationKey: 'softCoralsTag' },
+      { id: 'hard-corals', translationKey: 'hardCoralsTag' },
+      { id: 'anemones', translationKey: 'anemonesTag' },
+    ],
+  },
+  {
+    id: 'location',
+    translationKey: 'locationTagCategory',
+    tags: [
+      { id: 'caribbean', translationKey: 'caribbeanTag' },
+      { id: 'pacific', translationKey: 'pacificTag' },
+      { id: 'red-sea', translationKey: 'redSeaTag' },
+      { id: 'indian-ocean', translationKey: 'indianOceanTag' },
+      { id: 'tropical', translationKey: 'tropicalTag' },
+      { id: 'temperate', translationKey: 'temperateTag' },
     ],
   },
 ] as const;

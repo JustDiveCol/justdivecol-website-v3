@@ -13,7 +13,7 @@ const rawSantaMartaExp: ExperienceContent = {
     titleKey: 'experiences.santaMartaExp.seo.title',
     descriptionKey: 'experiences.santaMartaExp.seo.desc',
     keywordsKey: 'experiences.santaMartaExp.seo.keywords',
-    urlPath: toUrlPath(ROUTES.diveExperiences),
+    urlPath: toUrlPath(ROUTES['dive-experiences']),
     imageUrl: toAssetUrl('/images/experiences/santa-marta/social-card.webp'),
     translationNS: 'experiences',
   },

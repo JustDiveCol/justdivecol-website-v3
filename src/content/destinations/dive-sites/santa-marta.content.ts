@@ -1,74 +1,123 @@
 // src/content/destinations/dive-sites/santa-marta.content.ts
 // import { toAssetUrl } from '../../../constants/assets.schema';
+import { toAssetUrl } from '../../../constants';
 import type { DiveSiteContent } from './types';
 
 export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
   'bajo-del-pescador': {
     id: 'bajo-del-pescador',
-    nameKey: 'bajoDelPescadorName',
+    nameKey: 'santa-marta.bajoDelPescador.name',
+    descriptionKey: 'santa-marta.bajoDelPescador.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19631, 11.31663],
-    maxDepthMeter: 18,
-    maxDepthFt: 60,
+    maxDepthMeter: 12, // aprox. poco profundo
+    maxDepthFt: 40,
     levelRequiredId: 'open-water-diver',
     difficultyId: 'easy',
-    typeIds: ['reef'],
-    conditionsIds: ['boat-entry'],
-    descriptionKey: 'bajoDelPescadorDesc',
-    tagsIds: ['reef-fish'],
-    photos: [], // /images/destinations/santa-marta/dive-sites/
+    typeIds: ['reef', 'pinnacle'],
+    conditionsIds: ['calm-surface', 'good-visibility', 'boat-entry'],
+    tagsIds: [
+      'reef-fish',
+      'biodiversity-hotspot',
+      'beginner-friendly',
+      'caribbean',
+      'warm-water',
+      'hard-corals',
+      'soft-corals',
+    ],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ], // /images/destinations/santa-marta/dive-sites/
   },
 
-  'barcaza-profunda-sm': {
-    id: 'barcaza-profunda-sm',
-    nameKey: 'barcazaProfundaSmName',
+  'barcaza-profunda': {
+    id: 'barcaza-profunda',
+    nameKey: 'santa-marta.barcazaProfunda.name',
+    descriptionKey: 'santa-marta.barcazaProfunda.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.22322, 11.25151],
     maxDepthMeter: 40,
     maxDepthFt: 130,
-    levelRequiredId: 'advanced-open-water-diver',
-    difficultyId: 'hard',
-    typeIds: ['wreck'],
-    conditionsIds: ['boat-entry', 'deep', 'good-visibility'],
-    descriptionKey: 'barcazaProfundaSmDesc',
-    tagsIds: [
-      'historical',
-      'technical-dive',
-      'reef-fish',
-      'warm-water',
-      'advanced-only',
+    levelRequiredId: 'technical-diver',
+    difficultyId: 'expert',
+    typeIds: ['wreck', 'artificial-reef'],
+    conditionsIds: [
+      'deep',
+      'variable-visibility',
+      'moderate-current',
+      'boat-entry',
     ],
-    photos: [],
+    tagsIds: [
+      'advanced-only',
+      'technical-dive',
+      'biodiversity-hotspot',
+      'caribbean',
+      'warm-water',
+      'hard-corals',
+      'soft-corals',
+      'reef-fish',
+    ],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'barco-hundido-sm': {
-    id: 'barco-hundido-sm',
-    nameKey: 'barcoHundidoSmName',
+  'barco-hundido': {
+    id: 'barco-hundido',
+    nameKey: 'santa-marta.barcoHundido.name',
+    descriptionKey: 'santa-marta.barcoHundido.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.238819, 11.21381],
     maxDepthMeter: 30,
     maxDepthFt: 100,
-    levelRequiredId: 'advanced-open-water-diver',
+    levelRequiredId: 'open-water-diver',
     difficultyId: 'medium',
     typeIds: ['wreck'],
-    conditionsIds: ['boat-entry', 'variable-visibility', 'moderate-current'],
-    descriptionKey: 'barcoHundidoSmDesc',
+    conditionsIds: [
+      'moderate-current',
+      'good-visibility',
+      'boat-entry',
+      'deep',
+    ],
     tagsIds: [
       'reef-fish',
-      'historical',
-      'advanced-only',
-      'warm-water',
       'biodiversity-hotspot',
+      'photography',
+      'caribbean',
+      'warm-water',
+      'hard-corals',
+      'soft-corals',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'caga-pajaro-sm': {
-    id: 'caga-pajaro-sm',
-    nameKey: 'cagaPajaroSmName',
+  'caga-pajaro': {
+    id: 'caga-pajaro',
+    nameKey: 'santa-marta.cagaPajaro.name',
+    descriptionKey: 'santa-marta.cagaPajaro.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.20035, 11.32104],
@@ -83,7 +132,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'moderate-current',
       'deep',
     ],
-    descriptionKey: 'cagaPajaroSmDescr',
     tagsIds: [
       'reef-fish',
       'turtles',
@@ -95,119 +143,160 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'deep-dive',
       'historical',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'calderon-sm': {
-    id: 'calderon-sm',
-    nameKey: 'calderonSmName',
+  calderon: {
+    id: 'calderon',
+    nameKey: 'santa-marta.calderon.name',
+    descriptionKey: 'santa-marta.calderon.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.235234, 11.212113],
-    maxDepthMeter: 18,
-    maxDepthFt: 60,
+    maxDepthMeter: 12,
+    maxDepthFt: 40,
     levelRequiredId: 'none',
     difficultyId: 'easy',
     typeIds: ['reef'],
-    conditionsIds: ['boat-entry', 'shore-entry', 'good-visibility'],
-    descriptionKey: 'calderonSmDesc',
+    conditionsIds: ['calm-surface', 'good-visibility', 'shore-entry'],
     tagsIds: [
-      'reef-fish',
-      'nudibranchs',
-      'macro-life',
       'beginner-friendly',
+      'reef-fish',
+      'biodiversity-hotspot',
       'warm-water',
-      'photography',
+      'caribbean',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'calichan-sm': {
-    id: 'calichan-sm',
-    nameKey: 'calichanSmName',
+  calichan: {
+    id: 'calichan',
+    nameKey: 'santa-marta.calichan.name',
+    descriptionKey: 'santa-marta.calichan.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.20035, 11.32104],
-    maxDepthMeter: 40,
-    maxDepthFt: 130,
-    levelRequiredId: 'none',
+    maxDepthMeter: 18,
+    maxDepthFt: 60,
+    levelRequiredId: 'any',
     difficultyId: 'easy',
     typeIds: ['reef'],
-    conditionsIds: [
-      'shore-entry',
-      'boat-entry',
-      'variable-visibility',
-      'mild-current',
-      'calm-surface',
-      'deep',
-    ],
-    descriptionKey: 'calichanSmDesc',
+    conditionsIds: ['calm-surface', 'good-visibility', 'mild-current'],
     tagsIds: [
-      'reef-fish',
-      'macro-life',
       'beginner-friendly',
-      'advanced-only',
-      'deep-dive',
+      'reef-fish',
       'warm-water',
+      'caribbean',
       'biodiversity-hotspot',
-      'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'cantil-granate-sm': {
-    id: 'cantil-granate-sm',
-    nameKey: 'cantilGranateSmName',
+  'cantil-granate': {
+    id: 'cantil-granate',
+    nameKey: 'santa-marta.cantilGranate.name',
+    descriptionKey: 'santa-marta.cantilGranate.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19468, 11.30207],
     maxDepthMeter: 30,
     maxDepthFt: 100,
-    levelRequiredId: 'open-water-diver',
+    levelRequiredId: 'any',
     difficultyId: 'medium',
-    typeIds: ['wall'],
-    conditionsIds: ['boat-entry', 'variable-visibility', 'moderate-current'],
-    descriptionKey: 'cantilGranateSmDesc',
+    typeIds: ['wall', 'reef', 'cavern'],
+    conditionsIds: [
+      'moderate-current',
+      'good-visibility',
+      'boat-entry',
+      'night',
+    ],
     tagsIds: [
       'reef-fish',
-      'macro-life',
-      'night-dive',
-      'warm-water',
+      'soft-corals',
+      'hard-corals',
+      'caves',
       'biodiversity-hotspot',
-      'photography',
+      'night-dive',
+      'caribbean',
+      'warm-water',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'el-coro-sm': {
-    id: 'el-coro-sm',
-    nameKey: 'elCoroSmName',
+  'el-coro': {
+    id: 'el-coro',
+    nameKey: 'santa-marta.elCoro.name',
+    descriptionKey: 'santa-marta.elCoro.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19128, 11.3159],
     maxDepthMeter: 40,
-    maxDepthFt: 130,
+    maxDepthFt: 131,
     levelRequiredId: 'advanced-open-water-diver',
     difficultyId: 'hard',
-    typeIds: ['pinnacle'],
-    conditionsIds: ['boat-entry', 'moderate-current', 'strong-current', 'deep'],
-    descriptionKey: 'elCoroSmDesc',
-    tagsIds: [
-      'reef-fish',
-      'sharks',
-      'macro-life',
-      'advanced-only',
-      'deep-dive',
-      'warm-water',
-      'biodiversity-hotspot',
-      'pelagics',
+    typeIds: ['reef'],
+    conditionsIds: [
+      'moderate-current',
+      'good-visibility',
+      'boat-entry',
+      'deep',
     ],
-    photos: [],
+    tagsIds: [
+      'sharks',
+      'reef-fish',
+      'caves',
+      'biodiversity-hotspot',
+      'caribbean',
+      'warm-water',
+      'photography',
+    ],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'el-morro-chico-sm': {
-    id: 'el-morro-chico-sm',
-    nameKey: 'elMorroChicoSmName',
+  'el-morro-chico': {
+    id: 'el-morro-chico',
+    nameKey: 'santa-marta.elMorroChico.name',
+    descriptionKey: 'santa-marta.elMorroChico.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.22273, 11.25143],
@@ -222,7 +311,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'moderate-current',
       'surge',
     ],
-    descriptionKey: 'elMorroChicoSmDesc',
     tagsIds: [
       'reef-fish',
       'drift-dive',
@@ -230,12 +318,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'el-remanso-sm': {
-    id: 'el-remanso-sm',
-    nameKey: 'elRemansoSmName',
+  'el-remanso': {
+    id: 'el-remanso',
+    nameKey: 'santa-marta.elRemanso.name',
+    descriptionKey: 'santa-marta.elRemanso.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.20528, 11.27109],
@@ -250,7 +347,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'mild-current',
       'good-visibility',
     ],
-    descriptionKey: 'elRemansoSmDesc',
     tagsIds: [
       'reef-fish',
       'macro-life',
@@ -259,12 +355,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'night-dive',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'el-torin-sm': {
-    id: 'el-torin-sm',
-    nameKey: 'elTorinSmName',
+  'el-torin': {
+    id: 'el-torin',
+    nameKey: 'santa-marta.elTorin.name',
+    descriptionKey: 'santa-marta.elTorin.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19078, 11.31103],
@@ -274,7 +379,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
     difficultyId: 'medium',
     typeIds: ['reef'],
     conditionsIds: ['boat-entry', 'good-visibility', 'calm-surface'],
-    descriptionKey: 'elTorinSmDesc',
     tagsIds: [
       'reef-fish',
       'biodiversity-hotspot',
@@ -282,12 +386,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'photography',
       'beginner-friendly',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'inca-inca-sm': {
-    id: 'inca-inca-sm',
-    nameKey: 'incaIncaSmName',
+  'inca-inca': {
+    id: 'inca-inca',
+    nameKey: 'santa-marta.incaInca.name',
+    descriptionKey: 'santa-marta.incaInca.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.23471, 11.21601],
@@ -296,21 +409,29 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
     levelRequiredId: 'none',
     difficultyId: 'easy',
     typeIds: ['reef'],
-    conditionsIds: ['shore-entry', 'calm-surface', 'good-visibility'],
-    descriptionKey: 'incaIncaSmDesc',
+    conditionsIds: ['calm-surface', 'good-visibility', 'shore-entry'],
     tagsIds: [
       'reef-fish',
-      'macro-life',
       'beginner-friendly',
+      'caribbean',
       'warm-water',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'la-antena-sm': {
-    id: 'la-antena-sm',
-    nameKey: 'laAntenaSmName',
+  'la-antena': {
+    id: 'la-antena',
+    nameKey: 'santa-marta.laAntena.name',
+    descriptionKey: 'santa-marta.laAntena.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.2, 11.261171],
@@ -320,7 +441,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
     difficultyId: 'medium',
     typeIds: ['reef'],
     conditionsIds: ['boat-entry', 'variable-visibility', 'mild-current'],
-    descriptionKey: 'laAntenaSmDesc',
     tagsIds: [
       'reef-fish',
       'macro-life',
@@ -329,41 +449,52 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'beginner-friendly',
       'warm-water',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'la-pecera-sm': {
-    id: 'la-pecera-sm',
-    nameKey: 'laPeceraSmName',
+  'la-pecera': {
+    id: 'la-pecera',
+    nameKey: 'santa-marta.laPecera.name',
+    descriptionKey: 'santa-marta.laPecera.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.1917, 11.29571],
-    maxDepthMeter: 18,
-    maxDepthFt: 60,
-    levelRequiredId: 'open-water-diver',
+    maxDepthMeter: 8,
+    maxDepthFt: 26,
+    levelRequiredId: 'none',
     difficultyId: 'easy',
     typeIds: ['reef'],
-    conditionsIds: [
-      'boat-entry',
-      'calm-surface',
-      'good-visibility',
-      'mild-current',
-    ],
-    descriptionKey: 'laPeceraSmDesc',
+    conditionsIds: ['calm-surface', 'good-visibility', 'shore-entry'],
     tagsIds: [
-      'reef-fish',
-      'turtles',
       'beginner-friendly',
+      'reef-fish',
+      'caribbean',
       'warm-water',
-      'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'la-piedra-del-chivo-sm': {
-    id: 'la-piedra-del-chivo-sm',
-    nameKey: 'laPiedraDelChivoSmName',
+  'la-piedra-del-chivo': {
+    id: 'la-piedra-del-chivo',
+    nameKey: 'santa-marta.laPiedraDelChivo.name',
+    descriptionKey: 'santa-marta.laPiedraDelChivo.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19479, 11.32248],
@@ -378,7 +509,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'good-visibility',
       'mild-current',
     ],
-    descriptionKey: 'laPiedraDelChivoSmDesc',
     tagsIds: [
       'reef-fish',
       'macro-life',
@@ -386,12 +516,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'warm-water',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'la-piedra-del-medio-sm': {
-    id: 'la-piedra-del-medio-sm',
-    nameKey: 'laPiedraDelMedioSmName',
+  'la-piedra-del-medio': {
+    id: 'la-piedra-del-medio',
+    nameKey: 'santa-marta.laPiedraDelMedio.name',
+    descriptionKey: 'santa-marta.laPiedraDelMedio.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19446, 11.29695],
@@ -401,7 +540,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
     difficultyId: 'medium',
     typeIds: ['reef'],
     conditionsIds: ['boat-entry', 'variable-visibility', 'moderate-current'],
-    descriptionKey: 'laPiedraDelMedioSmDesc',
     tagsIds: [
       'reef-fish',
       'schooling-fish',
@@ -412,61 +550,53 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'la-travesia-sm': {
-    id: 'la-travesia-sm',
-    nameKey: 'laTravesiaSmName',
+  'la-travesia': {
+    id: 'la-travesia',
+    nameKey: 'santa-marta.laTravesia.name',
+    descriptionKey: 'santa-marta.laTravesia.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19256, 11.30703],
-    maxDepthMeter: 25,
-    maxDepthFt: 80,
-    levelRequiredId: 'advanced-open-water-diver',
+    maxDepthMeter: 18,
+    maxDepthFt: 60,
+    levelRequiredId: 'any',
     difficultyId: 'medium',
-    typeIds: ['wall'],
-    conditionsIds: ['boat-entry', 'variable-visibility', 'moderate-current'],
-    descriptionKey: 'laTravesiaSmDesc',
+    typeIds: ['reef'],
+    conditionsIds: ['good-visibility', 'calm-surface', 'boat-entry'],
     tagsIds: [
+      'beginner-friendly',
       'reef-fish',
-      'schooling-fish',
-      'barracuda',
-      'pelagics',
-      'drift-dive',
+      'caribbean',
       'warm-water',
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
-  },
-
-  'la-vuelta-negra-sm': {
-    id: 'la-vuelta-negra-sm',
-    nameKey: 'laVueltaNegraSmName',
-    destinationId: 'santa-marta',
-    isTopSite: false,
-    coordinates: [-74.1905, 11.31878],
-    maxDepthMeter: 25,
-    maxDepthFt: 80,
-    levelRequiredId: 'open-water-diver',
-    difficultyId: 'medium',
-    typeIds: ['wall'],
-    conditionsIds: ['boat-entry', 'variable-visibility', 'moderate-current'],
-    descriptionKey: 'laVueltaNegraSmDesc',
-    tagsIds: [
-      'reef-fish',
-      'schooling-fish',
-      'warm-water',
-      'biodiversity-hotspot',
-      'photography',
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
     ],
-    photos: [],
   },
 
-  'langostas-sm': {
-    id: 'langostas-sm',
-    nameKey: 'langostasSmName',
+  langostas: {
+    id: 'langostas',
+    nameKey: 'santa-marta.langostas.name',
+    descriptionKey: 'santa-marta.langostas.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19552, 11.285358],
@@ -476,7 +606,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
     difficultyId: 'medium',
     typeIds: ['reef'],
     conditionsIds: ['boat-entry', 'variable-visibility', 'mild-current'],
-    descriptionKey: 'langostasSmDesc',
     tagsIds: [
       'reef-fish',
       'macro-life',
@@ -484,36 +613,53 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'las-barcazas-sm': {
-    id: 'las-barcazas-sm',
-    nameKey: 'lasBarcazasSmName',
+  'las-barcazas': {
+    id: 'las-barcazas',
+    nameKey: 'santa-marta.lasBarcazas.name',
+    descriptionKey: 'santa-marta.lasBarcazas.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.221257, 11.251176],
-    maxDepthMeter: 35,
-    maxDepthFt: 115,
-    levelRequiredId: 'open-water-diver',
-    difficultyId: 'medium',
-    typeIds: ['wreck'],
-    conditionsIds: ['boat-entry', 'variable-visibility', 'mild-current'],
-    descriptionKey: 'lasBarcazasSmDesc',
+    maxDepthMeter: 18,
+    maxDepthFt: 60,
+    levelRequiredId: 'none',
+    difficultyId: 'easy',
+    typeIds: ['wreck', 'reef'],
+    conditionsIds: ['good-visibility', 'calm-surface', 'boat-entry'],
     tagsIds: [
+      'beginner-friendly',
       'reef-fish',
-      'historical',
-      'advanced-only',
+      'caribbean',
       'warm-water',
-      'biodiversity-hotspot',
       'photography',
+      'biodiversity-hotspot',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'los-carros-sm': {
-    id: 'los-carros-sm',
-    nameKey: 'losCarrosSmName',
+  'los-carros': {
+    id: 'los-carros',
+    nameKey: 'santa-marta.losCarros.name',
+    descriptionKey: 'santa-marta.losCarros.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19123, 11.2917],
@@ -522,15 +668,23 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
     levelRequiredId: 'any',
     difficultyId: 'easy',
     typeIds: ['reef'],
-    conditionsIds: ['visibility'],
-    descriptionKey: 'losCarrosSmDesc',
+    conditionsIds: ['calm-surface'],
     tagsIds: ['schooling-fish'],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'sisiguaca-sm': {
-    id: 'sisiguaca-sm',
-    nameKey: 'sisiguacaSmName',
+  sisiguaca: {
+    id: 'sisiguaca',
+    nameKey: 'santa-marta.sisiguaca.name',
+    descriptionKey: 'santa-marta.sisiguaca.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.203385, 11.270821],
@@ -540,7 +694,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
     difficultyId: 'medium',
     typeIds: ['reef'],
     conditionsIds: ['boat-entry', 'variable-visibility', 'moderate-current'],
-    descriptionKey: 'sisiguacaSmDesc',
     tagsIds: [
       'reef-fish',
       'schooling-fish',
@@ -549,12 +702,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'morrito-largo-sm': {
-    id: 'morrito-largo-sm',
-    nameKey: 'morritoLargoSmName',
+  'morrito-largo': {
+    id: 'morrito-largo',
+    nameKey: 'santa-marta.morritoLargo.name',
+    descriptionKey: 'santa-marta.morritoLargo.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.20299, 11.31734],
@@ -569,7 +731,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'strong-current',
       'deep',
     ],
-    descriptionKey: 'morritoLargoSmDesc',
     tagsIds: [
       'reef-fish',
       'advanced-only',
@@ -581,41 +742,54 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'photography',
       'pelagics',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'morro-gaira-sm': {
-    id: 'morro-gaira-sm',
-    nameKey: 'morroGairaSmName',
+  'morro-gaira': {
+    id: 'morro-gaira',
+    nameKey: 'santa-marta.morroGaira.name',
+    descriptionKey: 'santa-marta.morroGaira.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.23959, 11.20806],
-    maxDepthMeter: 25,
-    maxDepthFt: 80,
-    levelRequiredId: 'open-water-diver',
-    difficultyId: 'medium',
+    maxDepthMeter: 18,
+    maxDepthFt: 60,
+    levelRequiredId: 'none',
+    difficultyId: 'easy',
     typeIds: ['reef'],
-    conditionsIds: [
-      'boat-entry',
-      'variable-visibility',
-      'mild-current',
-      'moderate-current',
-    ],
-    descriptionKey: 'morroGairaSmDesc',
+    conditionsIds: ['good-visibility', 'calm-surface', 'boat-entry'],
     tagsIds: [
-      'reef-fish',
-      'schooling-fish',
       'beginner-friendly',
+      'reef-fish',
+      'hard-corals',
+      'soft-corals',
+      'caribbean',
       'warm-water',
-      'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'morro-santa-marta-sm': {
-    id: 'morro-santa-marta-sm',
-    nameKey: 'morroSantaMartaSmName',
+  'morro-santa-marta': {
+    id: 'morro-santa-marta',
+    nameKey: 'santa-marta.morroSantaMarta.name',
+    descriptionKey: 'santa-marta.morroSantaMarta.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.23193, 11.24918],
@@ -630,7 +804,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'strong-current',
       'surge',
     ],
-    descriptionKey: 'morroSantaMartaSmDesc',
     tagsIds: [
       'reef-fish',
       'schooling-fish',
@@ -642,12 +815,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'photography',
       'historical',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'oceano-sm': {
-    id: 'oceano-sm',
-    nameKey: 'oceanoSmName',
+  oceano: {
+    id: 'oceano',
+    nameKey: 'santa-marta.oceano.name',
+    descriptionKey: 'santa-marta.oceano.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19279, 11.29691],
@@ -662,7 +844,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'strong-current',
       'deep',
     ],
-    descriptionKey: 'oceanoSmDesc',
     tagsIds: [
       'reef-fish',
       'schooling-fish',
@@ -675,12 +856,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'paneles-sm': {
-    id: 'paneles-sm',
-    nameKey: 'panelesSmName',
+  paneles: {
+    id: 'paneles',
+    nameKey: 'santa-marta.paneles.name',
+    descriptionKey: 'santa-marta.paneles.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.20007, 11.32509],
@@ -690,7 +880,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
     difficultyId: 'expert',
     typeIds: ['pinnacle'],
     conditionsIds: ['boat-entry', 'strong-current', 'good-visibility', 'deep'],
-    descriptionKey: 'panelesSmDesc',
     tagsIds: [
       'reef-fish',
       'schooling-fish',
@@ -705,12 +894,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'paraiso-sm': {
-    id: 'paraiso-sm',
-    nameKey: 'paraisoSmName',
+  paraiso: {
+    id: 'paraiso',
+    nameKey: 'santa-marta.paraiso.name',
+    descriptionKey: 'santa-marta.paraiso.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.1956, 11.28902],
@@ -725,7 +923,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'good-visibility',
       'mild-current',
     ],
-    descriptionKey: 'paraisoSmDesc',
     tagsIds: [
       'reef-fish',
       'macro-life',
@@ -734,46 +931,63 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'paso-del-angel-sm': {
-    id: 'paso-del-angel-sm',
-    nameKey: 'pasoDelAngelSmName',
+  'paso-del-angel': {
+    id: 'paso-del-angel',
+    nameKey: 'santa-marta.pasoDelAngel.name',
+    descriptionKey: 'santa-marta.pasoDelAngel.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.20135, 11.31801],
     maxDepthMeter: 40,
     maxDepthFt: 130,
     levelRequiredId: 'advanced-open-water-diver',
-    difficultyId: 'medium',
-    typeIds: ['drift'],
+    difficultyId: 'hard',
+    typeIds: ['reef', 'drift', 'wall'],
     conditionsIds: [
-      'boat-entry',
       'variable-visibility',
       'moderate-current',
       'strong-current',
       'deep',
+      'boat-entry',
     ],
-    descriptionKey: 'pasoDelAngelSmDesc',
     tagsIds: [
       'reef-fish',
+      'hard-corals',
+      'soft-corals',
       'seahorses',
-      'schooling-fish',
-      'pelagics',
+      'biodiversity-hotspot',
+      'caribbean',
+      'warm-water',
       'drift-dive',
       'advanced-only',
-      'deep-dive',
-      'warm-water',
-      'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'playaca-sm': {
-    id: 'playaca-sm',
-    nameKey: 'playacaSmName',
+  playaca: {
+    id: 'playaca',
+    nameKey: 'santa-marta.playaca.name',
+    descriptionKey: 'santa-marta.playaca.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.197457, 11.26182],
@@ -789,7 +1003,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'good-visibility',
       'mild-current',
     ],
-    descriptionKey: 'playacaSmDesc',
     tagsIds: [
       'reef-fish',
       'macro-life',
@@ -798,12 +1011,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'punta-aguja-sm': {
-    id: 'punta-aguja-sm',
-    nameKey: 'puntaAgujaSmName',
+  'punta-aguja': {
+    id: 'punta-aguja',
+    nameKey: 'santa-marta.puntaAguja.name',
+    descriptionKey: 'santa-marta.puntaAguja.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19941, 11.31844],
@@ -818,7 +1040,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'moderate-current',
       'calm-surface',
     ],
-    descriptionKey: 'puntaAgujaSmDesc',
     tagsIds: [
       'reef-fish',
       'schooling-fish',
@@ -831,12 +1052,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'punta-cabeza-de-negros-sm': {
-    id: 'punta-cabeza-de-negros-sm',
-    nameKey: 'puntaCabezaNegrosSmName',
+  'punta-cabeza-de-negros': {
+    id: 'punta-cabeza-de-negros',
+    nameKey: 'santa-marta.puntaCabezaNegros.name',
+    descriptionKey: 'santa-marta.puntaCabezaNegros.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.2369, 11.20972],
@@ -846,7 +1076,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
     difficultyId: 'medium',
     typeIds: ['reef'],
     conditionsIds: ['boat-entry', 'variable-visibility', 'moderate-current'],
-    descriptionKey: 'puntaCabezaNegrosSmDesc',
     tagsIds: [
       'reef-fish',
       'schooling-fish',
@@ -854,12 +1083,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'punta-gaira-sm': {
-    id: 'punta-gaira-sm',
-    nameKey: 'puntaGairaSmName',
+  'punta-gaira': {
+    id: 'punta-gaira',
+    nameKey: 'santa-marta.puntaGaira.name',
+    descriptionKey: 'santa-marta.puntaGaira.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.24067, 11.21908],
@@ -874,7 +1112,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'good-visibility',
       'mild-current',
     ],
-    descriptionKey: 'puntaGairaSmDesc',
     tagsIds: [
       'reef-fish',
       'macro-life',
@@ -882,12 +1119,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'warm-water',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'punta-granate-sm': {
-    id: 'punta-granate-sm',
-    nameKey: 'puntaGranateSmName',
+  'punta-granate': {
+    id: 'punta-granate',
+    nameKey: 'santa-marta.puntaGranate.name',
+    descriptionKey: 'santa-marta.puntaGranate.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19361, 11.29087],
@@ -902,7 +1148,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'variable-visibility',
       'mild-current',
     ],
-    descriptionKey: 'puntaGranateSmDesc',
     tagsIds: [
       'reef-fish',
       'nudibranchs',
@@ -913,12 +1158,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'punta-venado-sm': {
-    id: 'punta-venado-sm',
-    nameKey: 'puntaVenadoSmName',
+  'punta-venado': {
+    id: 'punta-venado',
+    nameKey: 'santa-marta.puntaVenado.name',
+    descriptionKey: 'santa-marta.puntaVenado.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.206387, 11.272809],
@@ -933,7 +1187,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'good-visibility',
       'mild-current',
     ],
-    descriptionKey: 'puntaVenadoSmDesc',
     tagsIds: [
       'reef-fish',
       'octopus',
@@ -944,12 +1197,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'salichan-sm': {
-    id: 'salichan-sm',
-    nameKey: 'salichanSmName',
+  salichan: {
+    id: 'salichan',
+    nameKey: 'santa-marta.salichan.name',
+    descriptionKey: 'santa-marta.salichan.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19327, 11.31067],
@@ -964,7 +1226,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'moderate-current',
       'deep',
     ],
-    descriptionKey: 'salichanSmDesc',
     tagsIds: [
       'reef-fish',
       'schooling-fish',
@@ -976,12 +1237,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'salidero-sm': {
-    id: 'salidero-sm',
-    nameKey: 'salideroSmName',
+  salidero: {
+    id: 'salidero',
+    nameKey: 'santa-marta.salidero.name',
+    descriptionKey: 'santa-marta.salidero.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19248, 11.30899],
@@ -991,7 +1261,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
     difficultyId: 'hard',
     typeIds: ['drift'],
     conditionsIds: ['boat-entry', 'variable-visibility', 'strong-current'],
-    descriptionKey: 'salideroSmDesc',
     tagsIds: [
       'reef-fish',
       'schooling-fish',
@@ -1003,12 +1272,21 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 
-  'el-natalia-sm': {
-    id: 'el-natalia-sm',
-    nameKey: 'elNataliaSmName',
+  'el-natalia': {
+    id: 'el-natalia',
+    nameKey: 'santa-marta.elNatalia.name',
+    descriptionKey: 'santa-marta.elNatalia.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.238627, 11.205035],
@@ -1018,7 +1296,6 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
     difficultyId: 'medium',
     typeIds: ['wreck'],
     conditionsIds: ['boat-entry', 'good-visibility', 'mild-current', 'deep'],
-    descriptionKey: 'elNataliaSmDesc',
     tagsIds: [
       'reef-fish',
       'schooling-fish',
@@ -1029,6 +1306,14 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
       'biodiversity-hotspot',
       'photography',
     ],
-    photos: [],
+    photos: [
+      {
+        backgroundImage: toAssetUrl(
+          '/images/dive-sites/default-dive-site.webp'
+        ),
+        photoCredit: 'XYZ',
+        variant: 'horizontal',
+      },
+    ],
   },
 } as const;

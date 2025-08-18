@@ -1,76 +1,19 @@
 {
-  "padiLogoAlt": "Logo PADI",
   "mainLogoAlt": "JustDiveCol Logo",
+  "padiLogoAlt": "Logo PADI",
+  "allyLogoAlt": "Logo de aliado",
+  "creyentesTripSealAlt": "Logo Creyentes",
   "photoCreditPrefix": "Foto por:",
 
   "lang.es": "ES",
   "lang.en": "EN",
-
-  "stickyCta": "Call to action button",
-
-  "allies_marquee": "Nuestros aliados",
-  "galleryTitle": "Galeria de imagenes",
-  "maxDepthLabel": "Profundidad maxima",
-  "tagsLabel": "Tags",
-  "viewMoreLabel": "Ver más",
-  "enable_js_to_view_form": "Activa JavaScript para ver el formulario.",
-  "contact_via_whatsapp": "Contactar por WhatsApp",
-  "contact_via_email": "Contactar por correo",
-
-  "allyLogoAlt": "Logo de aliado",
-  "back_to_top": "Volver arriba",
-  "carousel": "Carrusel",
-  "contact_us": "Contáctanos",
-  "footerAria": "Pie de página",
-  "home": "Inicio",
   "language": "Idioma",
-  "next": "Siguiente",
-  "previous": "Anterior",
-  "rating": "Calificación",
-  "skip_to_content": "Saltar al contenido",
-  "testimonials": "Testimonios",
-  "toggle_menu": "Abrir o cerrar menú",
-  "visitAlly": "Visitar aliado",
-  "visit_social": "Visitar {{name}}",
-  "ratingLabel": "Calificación: {{rating}} de 5",
-
-  "conditionsLabel": "Condiciones",
-  "difficultyLabel": "Dificultad",
-
-  "important_links": "Enlaces importantes",
-
-  "more_label": "Más",
-  "creyentesTripSealAlt": "Logo Creyentes",
-
-  "seatsAvailableText": "{{count}} de {{total}} cupos disponibles",
-
-  "durationDays": "Días",
-  "durationNights": "Noches",
-
-  "years": "años",
-  "duration": "duración",
-  "days": "días",
-  "day": "día",
-  "elearning": "eLearning",
-  "hours": "horas",
-
-  "availability": "Disponibilidad",
-  "pricesFrom": "Precios",
-  "paymentDueDate": "Fecha de pago",
-
-  "seeDetailsButton": "Ver detalles",
-
-  "statusAvailable": "Cupos disponibles",
-  "statusFewSpots": "Pocos cupos",
-  "statusSoldOut": "Sin cupos",
-
-  "generalWhatsappMessage": "Hola, estoy interesado en las experiencias de buceo.",
 
   "nav": {
     "home": "Inicio",
-    "diveExperiences": "Experiencias de buceo",
+    "dive-experiences": "Experiencias de buceo",
     "dive-sites": "Sitios de Buceo",
-    "aboutUs": "Nosotros",
+    "about-us": "Nosotros",
     "principles": "Principios",
     "contact": "Contacto",
     "policy": "Política",
@@ -78,6 +21,56 @@
     "privacy": "Privacidad",
     "faq": "Preguntas Frecuentes"
   },
+
+  "home": "Inicio",
+  "back_to_top": "Volver arriba",
+  "skip_to_content": "Saltar al contenido",
+  "toggle_menu": "Abrir o cerrar menú",
+  "footerAria": "Pie de página",
+
+  "stickyCta": "Call to action button",
+  "seeDetailsButton": "Ver detalles",
+  "next": "Siguiente",
+  "previous": "Anterior",
+  "more_label": "Más",
+
+  "allies_marquee": "Nuestros aliados",
+  "visitAlly": "Visitar aliado",
+  "visit_social": "Visitar {{name}}",
+  "galleryTitle": "Galeria de imagenes",
+  "carousel": "Carrusel",
+  "testimonials": "Testimonios",
+
+  "enable_js_to_view_form": "Activa JavaScript para ver el formulario.",
+  "contact_us": "Contáctanos",
+  "contact_via_whatsapp": "Contactar por WhatsApp",
+  "contact_via_email": "Contactar por correo",
+
+  "rating": "Calificación",
+  "ratingLabel": "Calificación: {{rating}} de 5",
+  "important_links": "Enlaces importantes",
+
+  "duration": "duración",
+  "durationDays": "Días",
+  "durationNights": "Noches",
+  "days": "días",
+  "day": "día",
+  "hours": "horas",
+  "years": "años",
+  "elearning": "eLearning",
+
+  "availability": "Disponibilidad",
+  "pricesFrom": "Precios",
+  "paymentDueDate": "Fecha de pago",
+  "seatsAvailableText": "{{count}} de {{total}} cupos disponibles",
+
+  "statusAvailable": "Cupos disponibles",
+  "statusFewSpots": "Pocos cupos",
+  "statusSoldOut": "Sin cupos",
+
+  "generalWhatsappMessage": "Hola, estoy interesado en las experiencias de buceo.",
+  "viewCalendar": "Ver calendario",
+  "contactTextButton": "Hablemos por WhatsApp",
 
   "footer": {
     "slogan": "En JustDiveCol, creamos exploradores, no solo turistas. Tu aventura submarina con nosotros trasciende fronteras y expande tu mundo.",
@@ -97,5 +90,37 @@
     "teamBioAndrea": "Con un ojo increíble para los detalles submarinos, Andrea se asegura de que cada inmersión sea una aventura inolvidable.",
     "aboutCtaTitle": "Únete a la Aventura",
     "aboutCtaSubtitle": "Ahora que nos conoces, es tu turno de vivir la experiencia. Explora nuestras inmersiones y encuentra tu próxima gran historia."
+  },
+
+  "not-found": {
+    "seo": {
+      "title": "404 - página no encontrada bajo el mar",
+      "desc": "La página que buscas no existe o se ha sumergido demasiado. En JustDiveCol te ayudamos a volver a la superficie para continuar tu aventura submarina con seguridad y confianza.",
+      "keywords": "404 buceo, página no encontrada, JustDiveCol, error de navegación, buzo perdido, página desaparecida, ruta equivocada, error de enlace, regreso a la superficie, aventura de buceo"
+    },
+
+    "hero": {
+      "title": "404: ruta perdida en las profundidades",
+      "subtitle": "¡Oops! Parece que olvidaste ecualizar y terminaste en un lugar inexplorado de nuestro sitio. Volvamos a la superficie antes de que la presión aumente. Te guiaremos de regreso a la seguridad y a la aventura.",
+      "button": {
+        "text": "Regresar a la superficie"
+      }
+    }
+  },
+
+  "under-construction": {
+    "seo": {
+      "title": "En Mantenimiento - Preparando tu próxima aventura submarina",
+      "desc": "Estamos afinando los últimos detalles para ofrecerte experiencias de buceo excepcionales con los más altos estándares de seguridad. Muy pronto, exploraremos juntos las profundidades. ¡Gracias por tu paciencia y confianza!",
+      "keywords": "justdivecol, página en mantenimiento, aventura de buceo, inmersiones, seguridad en el buceo, viajes de buceo, certificaciones PADI, destinos submarinos"
+    },
+
+    "hero": {
+      "title": "Realizando el chequeo de equipo antes de la inmersión...",
+      "subtitle": "Estamos en nuestra parada de seguridad, revisando cada detalle para ofrecerte una aventura impecable. Esta sección estará lista muy pronto para acompañarte en tu próxima experiencia bajo el agua. Gracias por acompañarnos mientras afinamos el plan de buceo. ¡El azul profundo nos espera!",
+      "button": {
+        "text": "Regresar a la superficie"
+      }
+    }
   }
 }

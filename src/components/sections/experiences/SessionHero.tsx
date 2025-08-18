@@ -5,7 +5,7 @@ import type { SessionHeroProps } from './types';
 import { Button } from '../../common/Button';
 import { CalendarIcon, UserGroupIcon } from '../../ui';
 import { deriveSessionAvailability } from '../../../lib/availability';
-import { AvailabilityBadge } from '../diveExperiences/TripRow';
+import { AvailabilityBadge } from '../dive-experiences/TripRow';
 import { useMotionPresets } from '../../../hooks/animations';
 import { MotionBlock } from '../../motion/MotionBlock';
 

@@ -5,11 +5,12 @@ import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
 import { CloseIcon } from '../../ui';
 import { ImageComponent } from '../../common/ImageComponent';
-import type { DiveSiteModalProps, TagCategoryId } from './types';
+import type { DiveSiteModalProps } from './types';
 import type { ImageComponentData } from '../../common/types';
+import type { DiveTagCategoryId } from '../../../constants';
 
 // Color para pills según categoría
-const getTagColorClass = (categoryId?: TagCategoryId) => {
+const getTagColorClass = (categoryId?: DiveTagCategoryId) => {
   switch (categoryId) {
     case 'marine-life':
       return 'bg-green-100 text-green-800';
@@ -112,7 +113,7 @@ export const DiveSiteModal = ({
           </div>
 
           <div className="p-6 -mt-16 relative z-10 bg-white rounded-t-lg">
-            <h2 className="heading-3 text-brand-primary-dark pr-8">
+            <h2 className="heading-4 text-brand-primary-dark pr-8">
               {t(site.nameKey, { ns: translationNS })}
             </h2>
 
@@ -144,7 +145,7 @@ export const DiveSiteModal = ({
                     className="ml-1 underline text-brand-cta-orange font-bold text-sm"
                     type="button"
                   >
-                    {t('viewMoreLabel', { ns: 'common' })}
+                    {t('viewMoreLabel', { ns: 'dive-sites' })}
                   </button>
                 )}
               </p>
@@ -154,7 +155,7 @@ export const DiveSiteModal = ({
             <ul className="text-sm space-y-2 mt-4 border-t pt-4">
               <li>
                 <span className="font-bold text-brand-primary-dark">
-                  {t('maxDepthLabel', { ns: 'common' })}:
+                  {t('maxDepthLabel', { ns: 'dive-sites' })}:
                 </span>
                 <span className="text-brand-primary-medium">
                   {' '}
@@ -165,7 +166,7 @@ export const DiveSiteModal = ({
               {difficulty && (
                 <li>
                   <span className="font-bold text-brand-primary-dark">
-                    {t('difficultyLabel', { ns: 'common' })}:
+                    {t('difficultyLabel', { ns: 'dive-sites' })}:
                   </span>
                   <span className="text-brand-primary-medium">
                     {' '}
@@ -177,7 +178,7 @@ export const DiveSiteModal = ({
               {site.conditionsIds.length > 0 && (
                 <li>
                   <span className="font-bold text-brand-primary-dark">
-                    {t('conditionsLabel', { ns: 'common' })}:
+                    {t('conditionsLabel', { ns: 'dive-sites' })}:
                   </span>
                   <span className="text-brand-primary-medium">
                     {site.conditionsIds.map((condId, idx) => {
@@ -202,7 +203,7 @@ export const DiveSiteModal = ({
             {site.tagsIds.length > 0 && (
               <div className="mt-6">
                 <h4 className="font-bold text-brand-primary-dark mb-2">
-                  {t('tagsLabel', { ns: 'common' })}
+                  {t('tagsLabel', { ns: 'dive-sites' })}
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {site.tagsIds.map((tagId) => {
@@ -227,7 +228,7 @@ export const DiveSiteModal = ({
             {site.photos?.length ? (
               <div className="mt-6">
                 <h3 className="heading-5 text-brand-primary-dark mb-4">
-                  {t('galleryTitle', { ns: 'common' })}
+                  {t('galleryTitle', { ns: 'dive-sites' })}
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {site.photos.map((photo, idx) => {
@@ -239,7 +240,7 @@ export const DiveSiteModal = ({
                     return (
                       <div
                         key={idx}
-                        className="aspect-video rounded-lg overflow-hidden shadow-md"
+                        className="rounded-lg overflow-hidden shadow-md"
                       >
                         <ImageComponent
                           imageData={img}

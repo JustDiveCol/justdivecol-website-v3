@@ -57,7 +57,7 @@ export const CustomTripsSection = ({
             <ImageComponent
               imageData={imageData}
               className="rounded-2xl drop-shadow-strong"
-              translationNS={'diveExperiences'}
+              translationNS={'dive-experiences'}
             />
           </MotionBlock>
 

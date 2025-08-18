@@ -69,7 +69,7 @@ const rawCards: ReadonlyArray<Omit<CardData, 'link'>> = [
 
 export const featuredCards: CardData[] = rawCards.map((card) => ({
   ...card,
-  link: toUrlPath(`${ROUTES.diveExperiences}#${card.id}`),
+  link: toUrlPath(`${ROUTES['dive-experiences']}#${card.id}`),
 }));
 
 const rawHome: HomePageContent = {
@@ -90,7 +90,7 @@ const rawHome: HomePageContent = {
       textKey: 'home.hero.button.text',
       action: {
         type: 'internal',
-        path: toUrlPath(ROUTES.diveExperiences),
+        path: toUrlPath(ROUTES['dive-experiences']),
       },
       variant: 'primary',
       size: 'default',

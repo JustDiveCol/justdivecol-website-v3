@@ -117,7 +117,9 @@ export const ActiveDestinationCard = ({
               if (!experienceSlug) return null;
 
               const sessionUrl = localizedTo(
-                toUrlPath(`${ROUTES.diveExperiences}/${experienceSlug}/${s.id}`)
+                toUrlPath(
+                  `${ROUTES['dive-experiences']}/${experienceSlug}/${s.id}`
+                )
               );
               const name = tKey(t, s.nameKey, 'experiences');
               const start = toUTCDate(s.startDate);

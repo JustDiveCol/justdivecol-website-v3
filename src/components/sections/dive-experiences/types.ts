@@ -1,4 +1,4 @@
-// src/components/sections/diveExperiences/types.ts
+// src/components/sections/dive-experiences/types.ts
 import { z } from 'zod';
 import {
   I18NNamespaceSchema,

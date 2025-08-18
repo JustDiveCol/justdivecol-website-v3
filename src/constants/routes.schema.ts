@@ -4,10 +4,10 @@ import { z } from 'zod';
 export const ROUTES = {
   // Páginas principales (ESTÁTICAS)
   home: '/',
-  diveExperiences: '/dive-experiences',
+  'dive-experiences': '/dive-experiences',
   certifications: '/certifications',
   'dive-sites': '/dive-sites',
-  aboutUs: '/about-us',
+  'about-us': '/about-us',
   principles: '/principles',
   contact: '/contact',
   destinations: '/destinations',

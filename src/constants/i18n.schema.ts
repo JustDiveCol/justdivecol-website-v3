@@ -2,12 +2,12 @@
 import { z } from 'zod';
 
 export const I18N_NAMESPACES_RAW = [
-  'aboutUs',
+  'about-us',
   'certifications',
   'common',
   'contact',
   'experiences',
-  'diveExperiences',
+  'dive-experiences',
   'faq',
   'home',
   'legal',

@@ -1,11 +1,11 @@
 // src/pages/ExperiencesPage.tsx
 import { SEO } from '../components/common/SEO';
-import { UpcomingTripsSection } from '../components/sections/diveExperiences/UpcomingTripsSection';
+import { UpcomingTripsSection } from '../components/sections/dive-experiences/UpcomingTripsSection';
 
 import { CtaSection } from '../components/sections/shared/CtaSection';
-import { CertificationsSection } from '../components/sections/diveExperiences/CertificationsSection';
-import { DestinationsSection } from '../components/sections/diveExperiences/DestinationsSection';
-import { CustomTripsSection } from '../components/sections/diveExperiences/CustomTripsSection';
+import { CertificationsSection } from '../components/sections/dive-experiences/CertificationsSection';
+import { DestinationsSection } from '../components/sections/dive-experiences/DestinationsSection';
+import { CustomTripsSection } from '../components/sections/dive-experiences/CustomTripsSection';
 
 import { diveExperiencesContent } from '../content/pages/dive-experiences/dive-experiences.content';
 import { homeContent } from '../content/pages/home/home.content';

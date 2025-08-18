@@ -13,10 +13,10 @@ type NavLinkRaw = {
 
 export const NAV_LINKS_RAW = [
   { path: ROUTES.home, nameKey: 'home' },
-  { path: ROUTES.diveExperiences, nameKey: 'diveExperiences' },
+  { path: ROUTES['dive-experiences'], nameKey: 'dive-experiences' },
   { path: ROUTES['dive-sites'], nameKey: 'dive-sites' },
   { path: ROUTES.principles, nameKey: 'principles' },
-  { path: ROUTES.aboutUs, nameKey: 'aboutUs' },
+  { path: ROUTES['about-us'], nameKey: 'about-us' },
   { path: ROUTES.contact, nameKey: 'contact' },
 ] as const satisfies readonly NavLinkRaw[];
 
