@@ -7,7 +7,7 @@ import { CertificationContentSchema, type CertificationContent } from './types';
 const rawAdvancedOpenWaterDiver: CertificationContent = {
   id: 'padi-advanced-open-water-diver',
   slug: 'padi-advanced-open-water-diver',
-  name: 'Advanced Open Water Diver',
+  name: 'PADI Advanced Open Water Diver',
   code: 'AOWD',
   level: 'advanced',
   agency: 'PADI',
@@ -36,7 +36,7 @@ const rawAdvancedOpenWaterDiver: CertificationContent = {
       backgroundImage: toAssetUrl(
         '/images/certifications/aowd/header-background.webp'
       ),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Maël BALLAND @mael_balland',
       variant: 'header',
     },
     translationNS: 'certifications',
@@ -48,7 +48,7 @@ const rawAdvancedOpenWaterDiver: CertificationContent = {
       backgroundImage: toAssetUrl(
         '/images/certifications/aowd/card-image.webp'
       ),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Eriks Abzinovs @pixworthmedia',
       complementaryLogo: BRAND_ASSETS_SAFE.complementaryLogos.padi,
       textOverlayKey: 'certifications.aowd.card.cardTextOverlay',
       variant: 'horizontal',
@@ -148,28 +148,42 @@ const rawAdvancedOpenWaterDiver: CertificationContent = {
         backgroundImage: toAssetUrl(
           '/images/certifications/aowd/gallery-01.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'Maël BALLAND @mael_balland',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/certifications/aowd/gallery-02.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'Maël BALLAND @mael_balland',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/certifications/aowd/gallery-03.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'Harvey Clements @Harv_clements',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/certifications/aowd/gallery-04.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'Max Zaharenkov @maxzaharenkov',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/certifications/aowd/gallery-05.webp'
+        ),
+        photoCredit: 'Harvey Clements @Harv_clements',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/certifications/aowd/gallery-06.webp'
+        ),
+        photoCredit: 'Pia B @pspov',
         variant: 'horizontal',
       },
     ],

@@ -97,7 +97,7 @@ export const UnderConstructionPage = () => {
 
         {/* Logos y créditos */}
         <div className="pointer-events-none absolute inset-0 z-20">
-          <div className="absolute bottom-6 right-6 select-none w-24 h-auto md:w-28 opacity-70 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+          <div className="absolute bottom-6 right-6 select-none w-24 h-auto md:w-28 opacity-70 drop-shadow-strong">
             <img
               src={BRAND_ASSETS_SAFE.mainLogo.url}
               alt={t(BRAND_ASSETS_SAFE.mainLogo.altKey, { ns: 'common' })}

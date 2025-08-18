@@ -30,7 +30,7 @@ const rawSanAndres: DestinationContent = {
       backgroundImage: toAssetUrl(
         '/images/destinations/san-andres/header-background.webp'
       ),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Lukas Medvedevas @majesticlukas',
       variant: 'header',
     },
     translationNS: 'destinations',
@@ -41,7 +41,7 @@ const rawSanAndres: DestinationContent = {
       backgroundImage: toAssetUrl(
         '/images/destinations/san-andres/card-image.webp'
       ),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Tatiana Zanon - Unsplash @tatizanon',
       variant: 'horizontal',
     },
   },
@@ -102,42 +102,42 @@ const rawSanAndres: DestinationContent = {
         backgroundImage: toAssetUrl(
           '/images/destinations/san-andres/gallery-01.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Diego Agudelo @diego.agudelov',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/san-andres/gallery-02.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Beatriz Jurgenfeld - Unsplash @jurgenfeldatelie',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/san-andres/gallery-03.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Nathana Rebouças - Unsplash @nathanareboucas',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/san-andres/gallery-04.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Beatriz Jurgenfeld - Unsplash @jurgenfeldatelie',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/san-andres/gallery-05.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Jasmine Lotto @jasmbl',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/san-andres/gallery-06.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Robot Photo - Unsplash @robotphoto',
         variant: 'horizontal',
       },
     ],

@@ -94,7 +94,7 @@ export const CertificationCard = ({
             </MotionBlock>
 
             <MotionBlock kind="none" variants={fadeIn({ delay: 0.05 })}>
-              <h3 className="heading-5 text-brand-white mt-1 line-clamp-2">
+              <h3 className="heading-7 text-brand-white mt-1 line-clamp-2">
                 {name}
               </h3>
             </MotionBlock>

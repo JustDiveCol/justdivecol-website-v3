@@ -30,20 +30,47 @@ export const ImageComponent = ({
 
   const baseSizeClass =
     fit === 'parent' ? 'h-full w-full' : variantStyles[variant] || 'h-full';
-  const wrapperClass = `relative group select-none bg-cover bg-center ${baseSizeClass} ${className}`;
+
+  // Nota: mantenemos select-none a nivel contenedor
+  const wrapperClass = `relative group select-none overflow-hidden ${baseSizeClass} ${className}`;
 
   const photoCreditOpacityClass =
     variant === 'header' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100';
   const photoCreditBgClass =
     variant === 'header' ? '' : 'bg-brand-primary-dark/50';
 
+  const prevent = (e: React.SyntheticEvent) => e.preventDefault();
+
   return (
-    <div
-      className={wrapperClass}
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
+    <div className={wrapperClass}>
+      {/* Imagen responsive con srcset, sin arrastrar ni menú contextual */}
+      <picture>
+        <source
+          srcSet={`${backgroundImage}?w=800&fm=webp 800w,
+                   ${backgroundImage}?w=1200&fm=webp 1200w,
+                   ${backgroundImage}?w=1600&fm=webp 1600w`}
+          type="image/webp"
+        />
+        <img
+          src={`${backgroundImage}?w=1200`}
+          srcSet={`${backgroundImage}?w=800 800w,
+                   ${backgroundImage}?w=1200 1200w,
+                   ${backgroundImage}?w=1600 1600w`}
+          sizes="(max-width: 768px) 100vw,
+                 (max-width: 1200px) 50vw,
+                 33vw"
+          alt={t(textOverlayKey || 'common:defaultAlt')}
+          className="h-full w-full object-cover pointer-events-none no-callout"
+          loading="lazy"
+          decoding="async"
+          draggable={false}
+          onDragStart={prevent}
+          onContextMenu={prevent}
+        />
+      </picture>
+
       {textOverlayKey && (
-        <div className="absolute top-2 left-2 select-none text-brand-neutral text-sm sm:text-base md:text-lg lg:text-2xl font-bold uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+        <div className="absolute top-2 left-2 select-none text-brand-neutral text-sm sm:text-base md:text-lg lg:text-2xl font-bold uppercase drop-shadow-strong">
           {t(textOverlayKey)}
         </div>
       )}
@@ -53,11 +80,14 @@ export const ImageComponent = ({
           <img
             src={complementaryLogo.url}
             alt={t(complementaryLogo.altKey, { ns: 'common' })}
-            className="h-auto w-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+            className="h-auto w-full drop-shadow-strong pointer-events-none no-callout"
             loading="lazy"
             decoding="async"
             width={96}
             height={96}
+            draggable={false}
+            onDragStart={prevent}
+            onContextMenu={prevent}
           />
         </div>
       )}
@@ -66,11 +96,14 @@ export const ImageComponent = ({
         <img
           src={mainLogo.url}
           alt={t(mainLogo.altKey, { ns: 'common' })}
-          className="h-auto w-full drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+          className="h-auto w-full drop-shadow-strong pointer-events-none no-callout"
           loading="lazy"
           decoding="async"
           width={192}
           height={72}
+          draggable={false}
+          onDragStart={prevent}
+          onContextMenu={prevent}
         />
       </div>
 

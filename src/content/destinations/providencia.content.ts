@@ -30,7 +30,7 @@ const rawProvidencia: DestinationContent = {
       backgroundImage: toAssetUrl(
         '/images/destinations/providencia/header-background.webp'
       ),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Darren Lawrence',
       variant: 'header',
     },
     translationNS: 'destinations',
@@ -41,7 +41,7 @@ const rawProvidencia: DestinationContent = {
       backgroundImage: toAssetUrl(
         '/images/destinations/providencia/card-image.webp'
       ),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Mateo Arteaga',
       variant: 'horizontal',
     },
   },
@@ -102,42 +102,42 @@ const rawProvidencia: DestinationContent = {
         backgroundImage: toAssetUrl(
           '/images/destinations/providencia/gallery-01.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Leonardo Rossatti @leorossatti',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/providencia/gallery-02.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Cristian Sarchy @comaselasopa',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/providencia/gallery-03.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Jorge Alberto Ferro @jorgeaferroj',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/providencia/gallery-04.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Diego Agudelo @diego.agudelov',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/providencia/gallery-05.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Alexandra Nez',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/providencia/gallery-06.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Jorge Alberto Ferro @jorgeaferroj',
         variant: 'horizontal',
       },
     ],

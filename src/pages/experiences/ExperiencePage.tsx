@@ -23,6 +23,7 @@ import { ExperienceItinerary } from '../../components/sections/experiences/Exper
 import { ExperienceInclusions } from '../../components/sections/experiences/ExperienceInclusions';
 import { ExperienceDiveSites } from '../../components/sections/experiences/ExperienceDiveSites';
 import { ExperiencePaymentPlan } from '../../components/sections/experiences/ExperiencePaymentPlan';
+import type { ExperienceItineraryContent } from '../../content/experiences/types';
 
 const ExperiencePage: React.FC = () => {
   const { t } = useTranslation(['experiences', 'destinations', 'common']);
@@ -55,12 +56,25 @@ const ExperiencePage: React.FC = () => {
       };
     }
 
-    const certInclusions =
-      content.session.certificationIds &&
-      content.session.certificationIds.length > 0
-        ? getCertificationById(content.session.certificationIds[0])
-            ?.whatIsIncluded
-        : undefined;
+    const certInclusions = content.session.certificationIds?.length
+      ? content.session.certificationIds
+          .map((id) => {
+            const cert = getCertificationById(id);
+            if (!cert) return undefined;
+            return {
+              nameKey: cert.name,
+              whatIsIncluded: cert.whatIsIncluded,
+            };
+          })
+          .filter(
+            (
+              x
+            ): x is {
+              nameKey: string;
+              whatIsIncluded: { titleKey: string; items: string[] };
+            } => !!x
+          )
+      : undefined;
 
     const destContent = getDestinationById(content.experience.destinationId);
 
@@ -72,11 +86,10 @@ const ExperiencePage: React.FC = () => {
     };
   }, [content]);
 
-  // Nombre a usar: el de la session
   const sessionDisplayName = useMemo(() => {
     const sess = content?.session;
     if (!sess) return '';
-    // Asumimos que `session.name` ya es una key de i18n
+
     return t(sess.nameKey, { ns: 'experiences' });
   }, [content, t]);
 
@@ -88,7 +101,7 @@ const ExperiencePage: React.FC = () => {
 
     if (newAction.type === 'whatsapp' && newAction.whatsAppMessageKey) {
       const translatedMessage = t(newAction.whatsAppMessageKey, {
-        itemName: sessionDisplayName, // 👈 Usamos el nombre de la sesión
+        itemName: sessionDisplayName,
         ns: 'experiences',
       });
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -107,7 +120,6 @@ const ExperiencePage: React.FC = () => {
 
   const { experience, session } = content;
 
-  // Props para el mapa de sitios de buceo
   const diveSitesSectionProps = {
     translationNS: 'dive-sites' as const,
     sites: allDiveSites,
@@ -118,6 +130,13 @@ const ExperiencePage: React.FC = () => {
     minZoom: destinationContent.minZoom,
     maxZoom: destinationContent.maxZoom,
   };
+
+  const overrides = content.session.overrides as
+    | {
+        itinerary?: ExperienceItineraryContent;
+        itineraryByPricingOption?: Record<string, ExperienceItineraryContent>;
+      }
+    | undefined;
 
   return (
     <>
@@ -131,8 +150,15 @@ const ExperiencePage: React.FC = () => {
         />
 
         <ExperienceItinerary
-          itinerary={experience.itinerary}
           translationNS={experience.seo.translationNS}
+          itinerary={overrides?.itinerary ?? experience.itinerary}
+          byPlan={overrides?.itineraryByPricingOption}
+          planLabels={Object.fromEntries(
+            content.session.pricingOptions.map((p) => [
+              p.id,
+              t(p.nameKey, { ns: experience.seo.translationNS }),
+            ])
+          )}
         />
 
         <ExperienceInclusions
@@ -142,28 +168,28 @@ const ExperiencePage: React.FC = () => {
           translationNS={experience.seo.translationNS}
         />
 
-        <PhotoGallery
-          {...experience.gallery}
-          translationNS={experience.seo.translationNS}
-        />
-
         {session.paymentPlan && (
           <ExperiencePaymentPlan
             paymentPlan={session.paymentPlan}
+            pricingOptions={session.pricingOptions}
             translationNS={experience.seo.translationNS}
           />
         )}
 
+        <PhotoGallery
+          {...experience.gallery}
+          translationNS={experience.seo.translationNS}
+          sectionBackgroundColor={'bg-brand-primary-dark'}
+        />
+
         <ExperienceDiveSites
-          // ✅ pasar nombre ya traducido
-          destinationName={t(destinationContent.name, { ns: 'destinations' })}
+          destinationName={destinationContent.name}
           diveSitesSectionProps={diveSitesSectionProps}
         />
 
         <CtaSection {...homeContent.cta} />
       </main>
 
-      {/* ✅ Usa el stickyButtonData con mensaje pretraducido */}
       {stickyButtonData && (
         <StickyCtaBar
           buttonData={stickyButtonData}

@@ -172,6 +172,13 @@
 /* --- Otras utilidades --- */
 img,
 a {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.no-callout {
+  -webkit-touch-callout: none;
   -webkit-user-drag: none;
   user-drag: none;
 }

@@ -41,7 +41,7 @@ const rawCards: ReadonlyArray<Omit<CardData, 'link'>> = [
     subtitleKey: 'home.featured.cards.subtitle2',
     imageData: {
       backgroundImage: toAssetUrl('/images/home/featured-2.webp'),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: '27 1 @qinyi_1125',
       variant: 'vertical',
     },
   },

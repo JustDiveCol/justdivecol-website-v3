@@ -67,13 +67,15 @@ export const ExperienceSessionOverridesSchema = z.object({
   header: PageHeaderPropsSchema.optional(),
   description: ExperienceDescriptionContentSchema.optional(),
   itinerary: ExperienceItineraryContentSchema.optional(),
+  itineraryByPricingOption: z
+    .record(z.string(), ExperienceItineraryContentSchema)
+    .optional(),
   whatIsIncluded: ExperienceWhatIsIncludedSchema.optional(),
   whatIsNotIncluded: ExperienceWhatIsIncludedSchema.optional(),
   gallery: ExperienceGallerySchema.optional(),
   ctaButton: ContentButtonSchema.optional(),
   cta: CtaSectionPropsSchema.optional(),
 });
-
 export type ExperienceSessionOverrides = z.infer<
   typeof ExperienceSessionOverridesSchema
 >;

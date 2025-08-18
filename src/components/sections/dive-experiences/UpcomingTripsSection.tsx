@@ -12,6 +12,7 @@ import { listSessions } from '../../../content/experiences';
 import { ChevronDownIcon } from '../../ui';
 import { useReducedMotion, motion } from 'framer-motion';
 import { MotionBlock } from '../../motion/MotionBlock';
+import { BRAND_ASSETS_SAFE } from '../../../constants';
 
 const ITEMS_PER_PAGE = 10;
 
@@ -19,6 +20,7 @@ export const UpcomingTripsSection = ({
   titleKey,
   subtitleKey,
   backgroundImageUrl,
+  photoCredit,
   translationNS,
   filtersAllDestinationsKey,
   filtersAllMonthsKey,
@@ -126,10 +128,23 @@ export const UpcomingTripsSection = ({
         decoding="async"
       />
       {/* Overlay */}
-      <div
-        className="absolute inset-0 bg-brand-primary-dark/80"
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
+      {/* Logos y créditos */}
+      <div className="pointer-events-none absolute inset-0 z-20">
+        <div className="absolute bottom-6 right-6 select-none w-24 h-auto md:w-28 opacity-70 drop-shadow-strong">
+          <img
+            src={BRAND_ASSETS_SAFE.mainLogo.url}
+            alt={t(BRAND_ASSETS_SAFE.mainLogo.altKey, { ns: 'common' })}
+            className="h-auto w-full"
+            loading="lazy"
+          />
+        </div>
+        {photoCredit && (
+          <div className="absolute bottom-2 left-2 select-none text-xs text-white/70">
+            {t('common:photoCreditPrefix')} {photoCredit}
+          </div>
+        )}
+      </div>
 
       {/* Contenido */}
       <div className="section relative z-10 py-16 md:py-20">
@@ -178,7 +193,7 @@ export const UpcomingTripsSection = ({
           </div>
         </MotionBlock>
 
-        <div className="mx-auto flex max-w-max flex-col gap-4 drop-shadow-strong">
+        <div className="mx-auto flex max-w-max flex-col gap-4">
           {paginatedSessions.length > 0 ? (
             paginatedSessions.map((session) => {
               const experience = experiences.find(

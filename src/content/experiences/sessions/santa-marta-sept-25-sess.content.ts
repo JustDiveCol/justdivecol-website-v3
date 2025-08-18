@@ -1,5 +1,4 @@
 // src/content/sessions/santa-marta-sept-25-sess.content.ts
-
 import { toAssetUrl } from '../../../constants';
 import {
   ExperienceSessionContentSchema,
@@ -20,13 +19,13 @@ const rawSantaMartaSept25Sess: ExperienceSessionContent = {
 
   pricingOptions: [
     {
-      id: 'certification',
+      id: 'open-water',
       nameKey: 'experiences.santaMartaExp.sessions.sept25.pricingOptions.opt1',
       price: 3500000,
       currency: 'COP',
     },
     {
-      id: 'certified',
+      id: 'fun-dive',
       nameKey: 'experiences.santaMartaExp.sessions.sept25.pricingOptions.opt2',
       price: 2600000,
       currency: 'COP',
@@ -68,6 +67,96 @@ const rawSantaMartaSept25Sess: ExperienceSessionContent = {
   },
 
   certificationIds: ['padi-open-water-diver'],
+
+  overrides: {
+    whatIsIncluded: {
+      titleKey: 'experiences.whatIsIncludedTitle',
+      items: [
+        'experiences.santaMartaExp.whatIsIncluded.items.item1',
+        'experiences.santaMartaExp.whatIsIncluded.items.item2',
+        'experiences.santaMartaExp.whatIsIncluded.items.item4',
+      ],
+    },
+
+    whatIsNotIncluded: {
+      titleKey: 'experiences.whatIsNotIncludedTitle',
+      items: [
+        'experiences.santaMartaExp.whatIsNotIncluded.items.item1',
+        'experiences.santaMartaExp.whatIsIncluded.items.item3',
+        'experiences.santaMartaExp.whatIsNotIncluded.items.item2',
+        'experiences.santaMartaExp.whatIsNotIncluded.items.item3',
+        'experiences.santaMartaExp.whatIsNotIncluded.items.item4',
+      ],
+    },
+
+    itineraryByPricingOption: {
+      'open-water': {
+        titleKey: 'experiences.itineraryTitle',
+        days: [
+          {
+            day: 1,
+            titleKey:
+              'experiences.santaMartaExp.itinerary.open-water.day1.title',
+            descriptionKey:
+              'experiences.santaMartaExp.itinerary.open-water.day1.desc',
+          },
+          {
+            day: 2,
+            titleKey:
+              'experiences.santaMartaExp.itinerary.open-water.day2.title',
+            descriptionKey:
+              'experiences.santaMartaExp.itinerary.open-water.day2.desc',
+          },
+          {
+            day: 3,
+            titleKey:
+              'experiences.santaMartaExp.itinerary.open-water.day3.title',
+            descriptionKey:
+              'experiences.santaMartaExp.itinerary.open-water.day3.desc',
+          },
+          {
+            day: 4,
+            titleKey:
+              'experiences.santaMartaExp.itinerary.open-water.day4.title',
+            descriptionKey:
+              'experiences.santaMartaExp.itinerary.open-water.day4.desc',
+          },
+        ],
+        notes: ['experiences.santaMartaExp.itinerary.notes.note1'],
+      },
+
+      'fun-dive': {
+        titleKey: 'experiences.itineraryTitle',
+        days: [
+          {
+            day: 1,
+            titleKey: 'experiences.santaMartaExp.itinerary.fun-dive.day1.title',
+            descriptionKey:
+              'experiences.santaMartaExp.itinerary.fun-dive.day1.desc',
+          },
+          {
+            day: 2,
+            titleKey: 'experiences.santaMartaExp.itinerary.fun-dive.day2.title',
+            descriptionKey:
+              'experiences.santaMartaExp.itinerary.fun-dive.day2.desc',
+          },
+          {
+            day: 3,
+            titleKey: 'experiences.santaMartaExp.itinerary.fun-dive.day3.title',
+            descriptionKey:
+              'experiences.santaMartaExp.itinerary.fun-dive.day3.desc',
+          },
+          {
+            day: 4,
+            titleKey: 'experiences.santaMartaExp.itinerary.fun-dive.day4.title',
+            descriptionKey:
+              'experiences.santaMartaExp.itinerary.fun-dive.day4.desc',
+          },
+        ],
+        notes: ['experiences.santaMartaExp.itinerary.notes.note1'],
+      },
+    },
+  },
 };
 
 export const santaMartaSept25SessContent = ExperienceSessionContentSchema.parse(

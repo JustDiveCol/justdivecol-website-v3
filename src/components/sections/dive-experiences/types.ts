@@ -14,6 +14,7 @@ export const UpcomingTripsSectionPropsSchema = z.object({
   titleKey: z.string(),
   subtitleKey: z.string(),
   backgroundImageUrl: AssetURLSchema,
+  photoCredit: z.string(),
   translationNS: I18NNamespaceSchema,
   filtersAllDestinationsKey: z.string(),
   filtersAllMonthsKey: z.string(),

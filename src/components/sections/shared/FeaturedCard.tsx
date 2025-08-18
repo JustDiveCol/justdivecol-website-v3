@@ -49,7 +49,7 @@ export const FeaturedCard = ({
         {/* Logos y créditos */}
         <div className="absolute inset-0 z-20">
           {/* Main Logo */}
-          <div className="absolute top-4 right-4 opacity-80 w-14 md:w-20 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+          <div className="absolute top-4 right-4 opacity-80 w-14 md:w-20 drop-shadow-strong">
             <img
               src={mainLogo.url}
               alt={t(mainLogo.altKey, { ns: 'common' })}
@@ -62,7 +62,7 @@ export const FeaturedCard = ({
 
           {/* Logo complementario */}
           {imageData.complementaryLogo && (
-            <div className="absolute top-4 left-4 opacity-80 w-8 md:w-12 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            <div className="absolute top-4 left-4 opacity-80 w-8 md:w-12 drop-shadow-strong">
               <img
                 src={imageData.complementaryLogo.url}
                 alt={t(imageData.complementaryLogo.altKey, { ns: 'common' })}
@@ -77,7 +77,7 @@ export const FeaturedCard = ({
           {/* Créditos de foto (aparecen al hover si no hay reduce) */}
           {imageData.photoCredit && (
             <div
-              className={`pointer-events-none absolute bottom-0 left-0 z-30 w-full select-none bg-brand-primary-dark/70 px-4 py-2 text-left text-base-xs text-brand-white ${
+              className={`pointer-events-none absolute bottom-0 left-0 z-30 w-full select-none bg-brand-primary-dark/70 px-4 py-2 text-left text-xs text-brand-white ${
                 reduce
                   ? ''
                   : 'opacity-0 transition-opacity duration-300 group-hover:opacity-100'

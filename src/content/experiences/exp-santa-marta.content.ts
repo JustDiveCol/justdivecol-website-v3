@@ -26,7 +26,7 @@ const rawSantaMartaExp: ExperienceContent = {
       backgroundImage: toAssetUrl(
         '/images/experiences/santa-marta/header-background.webp'
       ),
-      photoCredit: 'PADI®',
+      photoCredit: 'Cristhian David Duarte @duartefotografia.ph',
       variant: 'header',
     },
   },
@@ -93,7 +93,7 @@ const rawSantaMartaExp: ExperienceContent = {
         backgroundImage: toAssetUrl(
           '/images/experiences/santa-marta/gallery-01.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'Oscar Ivan Esquivel Arteaga @oscaresquivelfotografia',
         variant: 'horizontal',
       },
       {
@@ -128,7 +128,35 @@ const rawSantaMartaExp: ExperienceContent = {
         backgroundImage: toAssetUrl(
           '/images/experiences/santa-marta/gallery-06.webp'
         ),
+        photoCredit: 'Carlos Jamaica @krlosjamaica',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/experiences/santa-marta/gallery-07.webp'
+        ),
         photoCredit: 'Camilo Beltran @JustDiveCol',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/experiences/santa-marta/gallery-08.webp'
+        ),
+        photoCredit: 'Hotel Karaya @karaya.hotel',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/experiences/santa-marta/gallery-09.webp'
+        ),
+        photoCredit: 'Hotel Karaya @karaya.hotel',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/experiences/santa-marta/gallery-09.webp'
+        ),
+        photoCredit: 'Hotel Karaya @karaya.hotel',
         variant: 'horizontal',
       },
     ],

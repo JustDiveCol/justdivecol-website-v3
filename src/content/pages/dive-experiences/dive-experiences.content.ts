@@ -21,6 +21,7 @@ const rawDiveExperiences: DiveExperiencesPageContent = {
     backgroundImageUrl: toAssetUrl(
       '/images/dive-experiences/upcoming-trips-background.webp'
     ),
+    photoCredit: 'Maël BALLAND @mael_balland',
     translationNS: 'dive-experiences',
     filtersAllDestinationsKey:
       'dive-experiences.filters.filtersAllDestinations',

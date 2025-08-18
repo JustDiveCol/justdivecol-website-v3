@@ -64,6 +64,53 @@ export const BankTransferIcon = (props: IconProps) => (
   </svg>
 );
 
+export const CreditCardIcon = (props: IconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    viewBox="0 0 20 20"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M18 6V4H2v2h16zm0 4H2v6h16v-6zM0 4c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm4 8h4v2H4v-2z"
+    ></path>
+  </svg>
+);
+
+export const CashIcon = (props: IconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    viewBox="0 0 16 16"
+    {...props}
+  >
+    <path fill="currentColor" d="M16 14H2v-1h13V6h1v8z"></path>
+    <path fill="currentColor" d="M13 4v7H1V4h12zm1-1H0v9h14V3z"></path>
+    <path
+      fill="currentColor"
+      d="M3 6H2v3h1v1h4a2.5 2.5 0 1 1 0-5H3v1zm8 0V5H7a2.5 2.5 0 1 1 0 5h4V9h1V6h-1z"
+    ></path>
+  </svg>
+);
+
+export const QrCodeIcon = (props: IconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M3 11h8V3H3zm2-6h4v4H5zM3 21h8v-8H3zm2-6h4v4H5zm8-12v8h8V3zm6 6h-4V5h4zm-5.99 4h2v2h-2zm2 2h2v2h-2zm-2 2h2v2h-2zm4 0h2v2h-2zm2 2h2v2h-2zm-4 0h2v2h-2zm2-6h2v2h-2zm2 2h2v2h-2z"
+    ></path>
+  </svg>
+);
+
 export const CalendarIcon = (props: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

@@ -22,7 +22,7 @@ const rawPolicy: LegalPageContent = {
       backgroundImage: toAssetUrl(
         '/images/legal/policy/header-background.webp'
       ),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Pixabay',
       variant: 'header',
     },
   },

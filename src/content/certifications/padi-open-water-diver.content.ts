@@ -7,7 +7,7 @@ import { CertificationContentSchema, type CertificationContent } from './types';
 const rawOpenWaterDiver: CertificationContent = {
   id: 'padi-open-water-diver',
   slug: 'padi-open-water-diver',
-  name: 'Open Water Diver',
+  name: 'PADI Open Water Diver',
   code: 'OWD',
   level: 'entry',
   agency: 'PADI',
@@ -36,7 +36,7 @@ const rawOpenWaterDiver: CertificationContent = {
       backgroundImage: toAssetUrl(
         '/images/certifications/owd/header-background.webp'
       ),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Maël BALLAND @mael_balland',
       variant: 'header',
     },
     translationNS: 'certifications',
@@ -46,7 +46,7 @@ const rawOpenWaterDiver: CertificationContent = {
     descriptionKey: 'certifications.owd.card.desc',
     imageData: {
       backgroundImage: toAssetUrl('/images/certifications/owd/card-image.webp'),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Dajana Reçi @d.reci',
       complementaryLogo: BRAND_ASSETS_SAFE.complementaryLogos.padi,
       textOverlayKey: 'certifications.owd.card.cardTextOverlay',
       variant: 'horizontal',
@@ -146,28 +146,42 @@ const rawOpenWaterDiver: CertificationContent = {
         backgroundImage: toAssetUrl(
           '/images/certifications/owd/gallery-01.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: '27 1 @qinyi_1125',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/certifications/owd/gallery-02.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'Alex P @tenerifeambience',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/certifications/owd/gallery-03.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'Pia B @pspov',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/certifications/owd/gallery-04.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'Francesco Ungaro @ungarophrancesco',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/certifications/owd/gallery-05.webp'
+        ),
+        photoCredit: 'Maël BALLAND @mael_balland',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/certifications/owd/gallery-06.webp'
+        ),
+        photoCredit: 'Carlos Jamaica @krlosjamaica',
         variant: 'horizontal',
       },
     ],

@@ -32,7 +32,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       aria-label={t(titleKey)}
     >
       {/* Overlay oscuro */}
-      <div className="absolute inset-0 bg-black/60 z-10" />
+      <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* Contenido */}
       <MotionBlock
@@ -102,7 +102,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
       {/* Logos y créditos */}
       <div className="pointer-events-none absolute inset-0 z-20">
-        <div className="absolute bottom-6 right-6 select-none w-24 h-auto md:w-28 opacity-70 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+        <div className="absolute bottom-6 right-6 select-none w-24 h-auto md:w-28 opacity-70 drop-shadow-strong">
           <img
             src={BRAND_ASSETS_SAFE.mainLogo.url}
             alt={t(BRAND_ASSETS_SAFE.mainLogo.altKey, { ns: 'common' })}
@@ -111,7 +111,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           />
         </div>
         {imageData.photoCredit && (
-          <div className="absolute bottom-2 left-2 select-none text-base-xs text-white/70">
+          <div className="absolute bottom-2 left-2 select-none text-xs text-white/70">
             {t('common:photoCreditPrefix')} {imageData.photoCredit}
           </div>
         )}

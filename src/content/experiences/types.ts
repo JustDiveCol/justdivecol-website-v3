@@ -72,3 +72,18 @@ export type ExperienceContent = z.infer<typeof ExperienceContentSchema>;
 export type ResolvedExperienceContent = ExperienceContent & {
   session: ExperienceSessionContent;
 };
+
+// ––– PaymentMethods –––
+export const MethodsContentSchema = z.object({
+  id: z.string(),
+  nameKey: z.string(),
+  descriptionKey: z.string(),
+  icon: z.string(),
+});
+export type MethodsContent = z.infer<typeof MethodsContentSchema>;
+
+export const PaymentMethodsContentSchema = z.object({
+  titleKey: z.string(),
+  methods: z.array(MethodsContentSchema),
+});
+export type PaymentMethodsContent = z.infer<typeof PaymentMethodsContentSchema>;

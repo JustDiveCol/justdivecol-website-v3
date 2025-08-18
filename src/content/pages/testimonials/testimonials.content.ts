@@ -17,7 +17,7 @@ const rawTestimonials: TestimonialsSectionContent = {
       rating: 5,
       dateISO: '2024-11-07',
       avatarUrl: toAssetUrl('/images/testimonials/avatar-1.webp'),
-      certificationId: 'padi-open-water-diver',
+      // certificationId: 'padi-open-water-diver',
       featured: true,
       verified: true,
     },

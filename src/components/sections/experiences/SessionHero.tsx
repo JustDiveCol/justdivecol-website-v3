@@ -2,7 +2,6 @@
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
 import type { SessionHeroProps } from './types';
-import { Button } from '../../common/Button';
 import { CalendarIcon, UserGroupIcon } from '../../ui';
 import { deriveSessionAvailability } from '../../../lib/availability';
 import { AvailabilityBadge } from '../dive-experiences/TripRow';
@@ -45,25 +44,6 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
     return { formattedDateRange: dateRange, durationText: duration };
   }, [session.startDate, session.endDate, i18n.language, t]);
 
-  const renderCtaButton = () => {
-    const commonProps = {
-      className: 'w-full',
-      size: 'lg' as const,
-      children: t(experience.ctaButton.textKey),
-    };
-
-    switch (experience.ctaButton.action.type) {
-      case 'internal':
-        return <Button {...commonProps} action={experience.ctaButton.action} />;
-      case 'external':
-        return <Button {...commonProps} action={experience.ctaButton.action} />;
-      case 'whatsapp':
-        return <Button {...commonProps} action={experience.ctaButton.action} />;
-      default:
-        return null;
-    }
-  };
-
   return (
     <section className="bg-brand-primary-dark">
       <MotionBlock
@@ -78,7 +58,10 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
           </h2>
           <div className="prose prose-invert prose-lg text-brand-neutral/90 max-w-none">
             {experience.description.paragraphs.map((pKey, i) => (
-              <p key={i} className="text-base-sm whitespace-pre-line">
+              <p
+                key={i}
+                className="text-base-sm whitespace-pre-line text-justify"
+              >
                 {t(pKey)}
               </p>
             ))}
@@ -88,6 +71,18 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
         {/* Columna Derecha: Panel de Detalles */}
         <MotionBlock kind="none" variants={fadeIn()} className="lg:col-span-1">
           <div className="sticky top-28 bg-brand-primary-medium/30 border border-white/10 rounded-lg p-6 drop-shadow-strong">
+            {/* Sello Creyentes (flotante) */}
+            {session.creyentes && (
+              <img
+                src="/images/logos/creyentes-logo.png"
+                alt={t('common:creyentesTripSealAlt')}
+                className="absolute -top-3 -right-3 w-16 h-16 pointer-events-none drop-shadow-strong"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+
             {/* Fechas */}
             <div className="flex items-center gap-4 border-b border-white/10 pb-4">
               <CalendarIcon className="h-8 w-8 text-brand-cta-orange flex-shrink-0" />
@@ -143,9 +138,6 @@ export const SessionHero = ({ content, translationNS }: SessionHeroProps) => {
                 </p>
               )}
             </div>
-
-            {/* CTA */}
-            <div className="mt-6">{renderCtaButton()}</div>
           </div>
         </MotionBlock>
       </MotionBlock>

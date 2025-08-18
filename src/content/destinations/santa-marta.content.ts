@@ -30,7 +30,7 @@ const rawSantaMarta: DestinationContent = {
       backgroundImage: toAssetUrl(
         '/images/destinations/santa-marta/header-background.webp'
       ),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Luis Quintero @jibarocards',
       variant: 'header',
     },
     translationNS: 'destinations',
@@ -41,7 +41,7 @@ const rawSantaMarta: DestinationContent = {
       backgroundImage: toAssetUrl(
         '/images/destinations/santa-marta/card-image.webp'
       ),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Juan Manuel Rivera Gómez @jumriver',
       variant: 'horizontal',
     },
   },
@@ -102,42 +102,42 @@ const rawSantaMarta: DestinationContent = {
         backgroundImage: toAssetUrl(
           '/images/destinations/santa-marta/gallery-01.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'Juan Segmentado',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/santa-marta/gallery-02.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'Oscar Ivan Esquivel Arteaga @oscaresquivelfotografia',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/santa-marta/gallery-03.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'Catalina Herrera @catalinac29',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/santa-marta/gallery-04.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'Christian Forero',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/santa-marta/gallery-05.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'HAROLD PRODUCTIONS @harold_productions',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/santa-marta/gallery-06.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'JohnEGo! @johnego7',
         variant: 'horizontal',
       },
     ],

@@ -20,7 +20,7 @@ const rawAboutUs: AboutUsPageContent = {
     translationNS: 'about-us',
     imageData: {
       backgroundImage: toAssetUrl('/images/about-us/header-background.webp'),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Mica Asato @asatomica',
       variant: 'header',
     },
   },
@@ -31,7 +31,7 @@ const rawAboutUs: AboutUsPageContent = {
     translationNS: 'about-us',
     imageData: {
       backgroundImage: toAssetUrl('/images/about-us/mission-image.webp'),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Bayu jefri @bayu_jefri',
       variant: 'horizontal',
     },
   },

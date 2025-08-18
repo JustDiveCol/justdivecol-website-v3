@@ -104,7 +104,7 @@ const AppRoutes = () => (
     <RouteScrollManager />
     <LanguageHandler />
     <Routes>
-      <Route path="" element={<HomePage />} />
+      <Route index element={<HomePage />} />
       <Route path="about-us" element={<AboutUsPage />} />
       <Route path="principles" element={<PrinciplesPage />} />
       <Route path="contact" element={<ContactPage />} />
@@ -136,7 +136,15 @@ function App() {
       <I18nReadyGate>
         <BrowserRouter>
           <Routes>
+            <Route
+              path="/"
+              element={
+                <Navigate to={`/${ensureSafeLang(i18n.language)}`} replace />
+              }
+            />
+
             <Route path="/:lang/*" element={<AppRoutes />} />
+
             <Route
               path="*"
               element={

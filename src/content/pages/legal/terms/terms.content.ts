@@ -21,7 +21,7 @@ const rawTerms: LegalPageContent = {
     translationNS: 'legal',
     imageData: {
       backgroundImage: toAssetUrl('/images/legal/terms/header-background.webp'),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Fabian Wiktor',
       variant: 'header',
     },
   },

@@ -26,8 +26,7 @@ const rawPrinciples: PrinciplesPageContent = {
     translationNS: 'principles',
     imageData: {
       backgroundImage: toAssetUrl('/images/principles/header-background.webp'),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
-      complementaryLogo: BRAND_ASSETS_SAFE.complementaryLogos.padi,
+      photoCredit: 'Min An @minan1398',
       variant: 'header',
     },
   },

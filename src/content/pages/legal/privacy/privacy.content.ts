@@ -23,7 +23,7 @@ const rawPrivacy: LegalPageContent = {
       backgroundImage: toAssetUrl(
         '/images/legal/privacy/header-background.webp'
       ),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Sebastian Voortman @SebastianVoortman',
       variant: 'header',
     },
   },

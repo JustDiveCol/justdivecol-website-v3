@@ -1,4 +1,31 @@
 {
+  "payments": {
+    "title": "Métodos de pago disponibles",
+
+    "methods": {
+      "link": {
+        "name": "Pago en línea",
+        "desc": "Realiza tu pago de forma rápida y segura a través de un enlace de pago."
+      },
+      "transfer": {
+        "name": "Transferencia bancaria",
+        "desc": "Envía tu pago directamente a nuestra cuenta bancaria autorizada."
+      },
+      "card": {
+        "name": "Tarjeta de crédito o débito",
+        "desc": "Aceptamos pagos con las principales tarjetas de crédito y débito."
+      },
+      "cash": {
+        "name": "Pago en efectivo",
+        "desc": "Coordina con nuestro equipo para realizar el pago en efectivo de manera segura."
+      },
+      "qr": {
+        "name": "Código QR",
+        "desc": "Escanea el código QR para completar tu pago desde tu dispositivo móvil."
+      }
+    }
+  },
+
   "experiences": {
     "descriptionTitle": "Descripción de la experiencia",
     "itineraryTitle": "Itinerario de tu aventura",
@@ -49,6 +76,63 @@
 
         "notes": {
           "note1": "Recomendamos programar tu vuelo de regreso para después del mediodía del último día, respetando el margen de seguridad post-buceo (mínimo 18-24 horas sin volar)."
+        },
+
+        "open-water": {
+          "day1": {
+            "title": "Llegada y fundamentos en aguas confinadas",
+            "desc": "Arriba a Santa Marta, tu puerta de entrada al Caribe. Tras acomodarte, iniciaremos con la primera sesión de habilidades en un entorno controlado, donde aprenderás a manejar el equipo y dar tus primeras respiraciones bajo el agua con seguridad."
+          },
+          "day2": {
+            "title": "Primeras inmersiones en el Parque Tayrona",
+            "desc": "Vive tus dos primeras inmersiones en aguas abiertas explorando arrecifes llenos de vida marina. La tarde quedará libre para descansar y asimilar lo aprendido."
+          },
+          "day3": {
+            "title": "Inmersiones finales y certificación",
+            "desc": "Completarás las inmersiones restantes necesarias para tu certificación PADI Open Water. Por la noche celebraremos tu logro con una ceremonia especial, marcando el inicio de tu vida como buzo."
+          },
+          "day4": {
+            "title": "Despedida de tu experiencia en Tayrona",
+            "desc": "Disfruta de un último desayuno con el grupo. Ahora eres un buzo certificado y llevas contigo la pasión por explorar el mundo submarino en cualquier rincón del planeta."
+          }
+        },
+
+        "advanced-open-water": {
+          "day1": {
+            "title": "Llegada y preparación avanzada",
+            "desc": "Arriba a Santa Marta y acomódate antes de iniciar la experiencia. Dedicaremos la tarde a un repaso de teoría y al briefing de tus inmersiones de aventura, asegurando que estés listo para sacar el máximo provecho de este curso avanzado."
+          },
+          "day2": {
+            "title": "Triple inmersión: navegación y aventuras",
+            "desc": "Hoy vivirás un día intenso con tres inmersiones. Comenzarás con la obligatoria de Navegación Subacuática, seguida de dos inmersiones de aventura que podrás elegir entre opciones como flotabilidad avanzada, naturalista o incluso una inmersión nocturna si las condiciones lo permiten."
+          },
+          "day3": {
+            "title": "Inmersión profunda y cierre de aventuras",
+            "desc": "Completarás tus últimas dos inmersiones: la obligatoria de Inmersión Profunda y una aventura final a elección, como pecio, búsqueda y recuperación o flotabilidad avanzada. Con esto cumplirás los requisitos para tu certificación Advanced Open Water."
+          },
+          "day4": {
+            "title": "Despedida y certificación",
+            "desc": "Disfruta de un desayuno con el grupo mientras celebramos tu logro. Recibirás tu certificación Advanced Open Water, un nuevo paso en tu camino como buzo certificado."
+          }
+        },
+
+        "fun-dive": {
+          "day1": {
+            "title": "Llegada y repaso de equipo",
+            "desc": "Bienvenido a Santa Marta. Tras instalarte, realizaremos el check-in, repasaremos tu equipo y tendrás la opción de un refresco de habilidades (sin costo) o un programa Reactivate (con costo adicional) para actualizar tu entrenamiento."
+          },
+          "day2": {
+            "title": "Exploración de arrecifes en Tayrona",
+            "desc": "Sumérgete en tres inmersiones recreativas en distintos arrecifes del Parque Tayrona, rodeado de corales y vida marina. Un día perfecto para reconectar con la pasión por el buceo."
+          },
+          "day3": {
+            "title": "Nuevos sitios y pecios",
+            "desc": "Explorarás dos nuevos puntos de buceo, que pueden incluir un emocionante pecio o zonas especiales dentro del parque. Una jornada ideal para ampliar tu experiencia subacuática."
+          },
+          "day4": {
+            "title": "Cierre y despedida",
+            "desc": "Desayuno con el grupo y despedida en Santa Marta. Te llevas contigo recuerdos únicos de las inmersiones y la experiencia de buceo en el Caribe colombiano."
+          }
         }
       },
 
@@ -57,7 +141,8 @@
           "item1": "Alojamiento por 3 noches y 4 días en hotel seleccionado en Santa Marta (habitaciones compartidas).",
           "item2": "Plan de alimentación: 3 desayunos, 3 cenas y snacks diarios.",
           "item3": "Traslados terrestres: aeropuerto-hotel-aeropuerto y hacia las actividades programadas.",
-          "item4": "Cobertura fotográfica de tus inmersiones y momentos destacados de la experiencia."
+          "item4": "Cobertura fotográfica de tus inmersiones y momentos destacados de la experiencia.",
+          "item5": "Traslados terrestres hacia las actividades programadas."
         }
       },
 
@@ -66,7 +151,8 @@
           "item1": "Tiquetes aéreos nacionales o internacionales hacia y desde Santa Marta.",
           "item2": "Bebidas alcohólicas, consumos no especificados y comidas adicionales fuera del plan.",
           "item3": "Propinas voluntarias para instructores, guías o personal de apoyo.",
-          "item4": "Gastos personales no mencionados explícitamente en la experiencia."
+          "item4": "Gastos personales no mencionados explícitamente en la experiencia.",
+          "item5": "Traslados terrestres: aeropuerto-hotel-aeropuerto."
         }
       },
 
@@ -75,9 +161,9 @@
           "name": "Certificación PADI Open Water en Tayrona - Septiembre 2025",
 
           "pricingOptions": {
-            "opt1": "Participante principal: incluye certificación PADI Open Water",
-            "opt2": "Buzo certificado acompañante: solo inmersiones recreativas",
-            "opt3": "Acompañante no buzo: alojamiento y actividades fuera del agua"
+            "opt1": "PADI Open Water",
+            "opt2": "Buzo certificado acompañante",
+            "opt3": "Acompañante no buzo"
           },
 
           "pricingOptionsNotes": {
@@ -97,9 +183,9 @@
           "name": "Certificación PADI Open Water en Tayrona - Noviembre 2025",
 
           "pricingOptions": {
-            "opt1": "Participante principal: incluye certificación PADI Open Water",
-            "opt2": "Buzo certificado acompañante: solo inmersiones recreativas",
-            "opt3": "Acompañante no buzo: alojamiento y actividades fuera del agua"
+            "opt1": "PADI Open Water",
+            "opt2": "Buzo certificado acompañante",
+            "opt3": "Acompañante no buzo"
           },
 
           "pricingOptionsNotes": {
@@ -119,9 +205,10 @@
           "name": "Certificación PADI Open Water en Tayrona - Febrero 2026",
 
           "pricingOptions": {
-            "opt1": "Participante principal: incluye certificación PADI Open Water",
-            "opt2": "Buzo certificado acompañante: solo inmersiones recreativas",
-            "opt3": "Acompañante no buzo: alojamiento y actividades fuera del agua"
+            "opt1": "PADI Open Water",
+            "opt2": "PADI Advanced Open Water",
+            "opt3": "Buzo certificado acompañante",
+            "opt4": "Acompañante no buzo"
           },
 
           "pricingOptionsNotes": {

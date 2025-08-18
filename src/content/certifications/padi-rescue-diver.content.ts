@@ -7,7 +7,7 @@ import { CertificationContentSchema, type CertificationContent } from './types';
 const rawRescueDiver: CertificationContent = {
   id: 'padi-rescue-diver',
   slug: 'padi-rescue-diver',
-  name: 'Rescue Diver',
+  name: 'PADI Rescue Diver',
   code: 'RD',
   level: 'rescue',
   agency: 'PADI',
@@ -46,7 +46,7 @@ const rawRescueDiver: CertificationContent = {
     descriptionKey: 'certifications.rd.card.desc',
     imageData: {
       backgroundImage: toAssetUrl('/images/certifications/rd/card-image.webp'),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Mateusz Popek @mateuszpopek',
       complementaryLogo: BRAND_ASSETS_SAFE.complementaryLogos.padi,
       textOverlayKey: 'certifications.rd.card.cardTextOverlay',
       variant: 'horizontal',
@@ -146,21 +146,21 @@ const rawRescueDiver: CertificationContent = {
         backgroundImage: toAssetUrl(
           '/images/certifications/rd/gallery-01.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'Pixabay',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/certifications/rd/gallery-02.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'Bombeiros MT @cbmmt',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/certifications/rd/gallery-03.webp'
         ),
-        photoCredit: 'Camilo Beltran @JustDiveCol',
+        photoCredit: 'PADI®',
         variant: 'horizontal',
       },
       {
@@ -168,6 +168,20 @@ const rawRescueDiver: CertificationContent = {
           '/images/certifications/rd/gallery-04.webp'
         ),
         photoCredit: 'PADI®',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/certifications/rd/gallery-05.webp'
+        ),
+        photoCredit: 'Raven Domingo @ravendomingo_',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/certifications/rd/gallery-06.webp'
+        ),
+        photoCredit: 'Pia B @pspov',
         variant: 'horizontal',
       },
     ],

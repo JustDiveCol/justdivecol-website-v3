@@ -18,9 +18,8 @@ const rawDiveSitesPage: DiveSitesPageContent = {
     subtitleKey: 'dive-sites.header.subtitle',
     translationNS: 'dive-sites',
     imageData: {
-      // Asegúrate de crear esta imagen o usar una existente
       backgroundImage: toAssetUrl('/images/dive-sites/header-background.webp'),
-      photoCredit: '© OpenStreetMap',
+      photoCredit: 'ArtHouse Studio',
       variant: 'header',
     },
   },

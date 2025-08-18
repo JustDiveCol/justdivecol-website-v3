@@ -21,7 +21,7 @@ export const ExperienceInclusions = ({
         variants={container}
         className="section grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto drop-shadow-strong"
       >
-        {/* Columna: Qué Incluye */}
+        {/* Qué incluye */}
         <MotionBlock
           kind="none"
           variants={fadeIn()}
@@ -32,7 +32,6 @@ export const ExperienceInclusions = ({
               {t(whatIsIncluded.titleKey)}
             </h3>
 
-            {/* Lista con micro-stagger */}
             <MotionBlock kind="none" variants={container}>
               <ul className="space-y-3">
                 {whatIsIncluded.items.map((itemKey, i) => (
@@ -43,7 +42,7 @@ export const ExperienceInclusions = ({
                   >
                     <li className="flex items-start gap-3">
                       <CheckIcon className="h-5 w-5 text-brand-cta-green flex-shrink-0 mt-1" />
-                      <span className="text-brand-neutral/90">
+                      <span className="text-brand-neutral/90 text-justify">
                         {t(itemKey)}
                       </span>
                     </li>
@@ -53,36 +52,46 @@ export const ExperienceInclusions = ({
             </MotionBlock>
           </div>
 
-          {/* Bloque Condicional para la Certificación */}
-          {certificationInclusions && (
+          {/* Inclusiones de certificaciones (si hay) */}
+          {certificationInclusions && certificationInclusions.length > 0 && (
             <div className="mt-8 pt-6 border-t border-white/10">
               <h4 className="font-bold text-subtitle text-brand-cta-orange mb-4">
                 {t('certifications:certificationInclusionsTitle')}
               </h4>
 
-              <MotionBlock kind="none" variants={container}>
-                <ul className="space-y-3">
-                  {certificationInclusions.items.map((itemKey, i) => (
-                    <MotionBlock
-                      key={i}
-                      kind="none"
-                      variants={fadeIn({ delay: i * 0.03 })}
-                    >
-                      <li className="flex items-start gap-3">
-                        <CheckIcon className="h-5 w-5 text-brand-cta-green flex-shrink-0 mt-1" />
-                        <span className="text-brand-neutral/90 text-sm">
-                          {t(itemKey, { ns: 'certifications' })}
-                        </span>
-                      </li>
-                    </MotionBlock>
-                  ))}
-                </ul>
-              </MotionBlock>
+              {certificationInclusions.map((inclusion, idx) => (
+                <div key={idx} className="mb-6">
+                  {inclusion.nameKey && (
+                    <p className="text-white/80 font-semibold mb-2">
+                      {inclusion.nameKey}
+                    </p>
+                  )}
+
+                  <MotionBlock kind="none" variants={container}>
+                    <ul className="space-y-3">
+                      {inclusion.whatIsIncluded.items.map((itemKey, i) => (
+                        <MotionBlock
+                          key={i}
+                          kind="none"
+                          variants={fadeIn({ delay: i * 0.03 })}
+                        >
+                          <li className="flex items-start gap-3">
+                            <CheckIcon className="h-5 w-5 text-brand-cta-green flex-shrink-0 mt-1" />
+                            <span className="text-brand-neutral/90 text-sm text-justify">
+                              {t(itemKey, { ns: 'certifications' })}
+                            </span>
+                          </li>
+                        </MotionBlock>
+                      ))}
+                    </ul>
+                  </MotionBlock>
+                </div>
+              ))}
             </div>
           )}
         </MotionBlock>
 
-        {/* Columna: Qué NO Incluye */}
+        {/* Qué NO incluye */}
         <MotionBlock
           kind="none"
           variants={fadeIn()}
@@ -102,7 +111,9 @@ export const ExperienceInclusions = ({
                 >
                   <li className="flex items-start gap-3">
                     <CloseIcon className="h-5 w-5 text-red-400 flex-shrink-0 mt-1" />
-                    <span className="text-brand-neutral/90">{t(itemKey)}</span>
+                    <span className="text-brand-neutral/90 text-justify">
+                      {t(itemKey)}
+                    </span>
                   </li>
                 </MotionBlock>
               ))}

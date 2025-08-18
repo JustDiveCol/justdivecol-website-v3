@@ -2,13 +2,15 @@
 import { z } from 'zod';
 import { I18NNamespaceSchema, type I18NNamespace } from '../../../constants';
 import { type ResolvedExperienceForSession } from '../../../content/experiences';
-import type {
-  ExperienceItineraryContent,
-  ExperienceWhatIsIncluded,
+import {
+  ExperienceItineraryContentSchema,
+  type ExperienceWhatIsIncluded,
 } from '../../../content/experiences/types';
-import type { CertificationWhatIsIncluded } from '../../../content/certifications/types';
 import type { DiveSitesSectionProps } from '../divesites/types';
-import type { PaymentPlanSchema } from '../../../content/experiences/sessions/types';
+import type {
+  PaymentPlanSchema,
+  PricingOptionSchema,
+} from '../../../content/experiences/sessions/types';
 
 export const SessionHeroPropsSchema = z.object({
   content: z.custom<ResolvedExperienceForSession>(),
@@ -23,7 +25,9 @@ export type SessionHeroProps = Omit<
 };
 
 export const ExperienceItineraryPropsSchema = z.object({
-  itinerary: z.custom<ExperienceItineraryContent>(),
+  itinerary: ExperienceItineraryContentSchema.optional(),
+  byPlan: z.record(z.string(), ExperienceItineraryContentSchema).optional(),
+  planLabels: z.record(z.string(), z.string()).optional(),
   translationNS: I18NNamespaceSchema,
 });
 
@@ -34,13 +38,25 @@ export type ExperienceItineraryProps = Omit<
   translationNS: I18NNamespace;
 };
 
+export const CertificationInclusionsForUISchema = z.object({
+  nameKey: z.string(), // p.ej. cert.details.titleKey
+  whatIsIncluded: z.object({
+    titleKey: z.string(),
+    items: z.array(z.string()),
+  }),
+});
+export type CertificationInclusionsForUI = z.infer<
+  typeof CertificationInclusionsForUISchema
+>;
+
 export const ExperienceInclusionsPropsSchema = z.object({
   whatIsIncluded: z.custom<ExperienceWhatIsIncluded>(),
   whatIsNotIncluded: z.custom<ExperienceWhatIsIncluded>(),
-  certificationInclusions: z.custom<CertificationWhatIsIncluded>().optional(),
+  certificationInclusions: z
+    .array(CertificationInclusionsForUISchema)
+    .optional(),
   translationNS: I18NNamespaceSchema,
 });
-
 export type ExperienceInclusionsProps = Omit<
   z.infer<typeof ExperienceInclusionsPropsSchema>,
   'translationNS'
@@ -59,6 +75,7 @@ export type ExperienceDiveSitesProps = z.infer<
 
 export const ExperiencePaymentPlanPropsSchema = z.object({
   paymentPlan: z.custom<z.infer<typeof PaymentPlanSchema>>(),
+  pricingOptions: z.array(z.custom<z.infer<typeof PricingOptionSchema>>()),
   translationNS: I18NNamespaceSchema,
 });
 
