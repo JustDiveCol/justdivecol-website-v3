@@ -48,7 +48,7 @@ export type ExperienceWhatIsIncluded = z.infer<
 
 export const ExperienceGallerySchema = z.object({
   titleKey: z.string(),
-  images: z.array(ImageComponentDataSchema).min(1),
+  images: z.array(ImageComponentDataSchema),
 });
 export type ExperienceGallery = z.infer<typeof ExperienceGallerySchema>;
 
@@ -60,7 +60,7 @@ export const ExperienceContentSchema = z.object({
   seo: SEOPropsSchema,
   header: PageHeaderPropsSchema,
   description: ExperienceDescriptionContentSchema,
-  itinerary: ExperienceItineraryContentSchema,
+  itinerary: ExperienceItineraryContentSchema.optional(),
   whatIsIncluded: ExperienceWhatIsIncludedSchema,
   whatIsNotIncluded: ExperienceWhatIsIncludedSchema,
   gallery: ExperienceGallerySchema,

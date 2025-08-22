@@ -11,7 +11,7 @@ const rawFaq: FaqPageContent = {
     descriptionKey: 'faq.seo.desc',
     keywordsKey: 'faq.seo.keywords',
     urlPath: toUrlPath(ROUTES.faq),
-    imageUrl: toAssetUrl('/images/faq/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     translationNS: 'faq',
   },
 

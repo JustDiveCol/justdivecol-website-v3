@@ -106,6 +106,7 @@ export const CertificationContentSchema = z.object({
   name: z.string(),
   code: CertificationCodeSchema,
   level: CertificationLevelSchema,
+  published: z.boolean(),
   agency: AgencyIdSchema,
   minAge: z.number().int().min(8),
   maxDepthMeter: z.number().int(),

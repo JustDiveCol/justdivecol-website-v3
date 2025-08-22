@@ -11,7 +11,7 @@ const rawDiveExperiences: DiveExperiencesPageContent = {
     descriptionKey: 'dive-experiences.seo.desc',
     keywordsKey: 'dive-experiences.seo.keywords',
     urlPath: toUrlPath(ROUTES['dive-experiences']),
-    imageUrl: toAssetUrl('/images/dive-experiences/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     translationNS: 'dive-experiences',
   },
 

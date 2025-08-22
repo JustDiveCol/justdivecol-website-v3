@@ -39,25 +39,51 @@ export const UpcomingTripsSection = ({
   const sessions = useMemo(() => listSessions(), []);
 
   const destinationOptions = useMemo(() => {
-    const destinationIds = new Set(experiences.map((exp) => exp.destinationId));
-    return destinations.filter((dest) => destinationIds.has(dest.id));
+    const ids = new Set(experiences.map((e) => e.destinationId));
+    return destinations
+      .filter((d) => ids.has(d.id))
+      .sort((a, b) => a.name.localeCompare(b.name));
   }, [experiences, destinations]);
 
   const monthOptions = useMemo(() => {
-    const months = new Set(
-      sessions.map((session) => {
-        const date = new Date(session.startDate);
-        date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
-        return date.toLocaleString(i18n.language, {
+    const monthMap = new Map<string, Date>();
+
+    sessions.forEach((s) => {
+      const d = new Date(s.startDate);
+      const monthStartUTC = new Date(
+        Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1)
+      );
+      const key = `${monthStartUTC.getUTCFullYear()}-${String(
+        monthStartUTC.getUTCMonth() + 1
+      ).padStart(2, '0')}`;
+      if (!monthMap.has(key)) monthMap.set(key, monthStartUTC);
+    });
+
+    const now = new Date();
+    const nowMonthStartUTC = new Date(
+      Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1)
+    );
+
+    const items = Array.from(monthMap.values())
+      .sort((a, b) => a.getTime() - b.getTime())
+      .map((date) => ({
+        date,
+        label: new Intl.DateTimeFormat(i18n.language, {
           month: 'long',
           year: 'numeric',
-        });
-      })
+          timeZone: 'UTC',
+        }).format(date),
+      }));
+
+    const future = items.filter(
+      (it) => it.date.getTime() >= nowMonthStartUTC.getTime()
     );
-    return Array.from(months).sort(
-      (a, b) => new Date(a).getTime() - new Date(b).getTime()
+    const past = items.filter(
+      (it) => it.date.getTime() < nowMonthStartUTC.getTime()
     );
-  }, [i18n.language, sessions]);
+
+    return [...future, ...past].map((it) => it.label);
+  }, [sessions, i18n.language]);
 
   const toUTC = (iso: string) => {
     const [y, m, d] = iso.split('-').map(Number);

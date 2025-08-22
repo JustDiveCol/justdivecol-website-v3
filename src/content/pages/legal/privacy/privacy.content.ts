@@ -11,7 +11,7 @@ const rawPrivacy: LegalPageContent = {
     descriptionKey: 'legal.privacy.seo.desc',
     keywordsKey: 'legal.privacy.seo.keywords',
     urlPath: toUrlPath(ROUTES.privacy),
-    imageUrl: toAssetUrl('/images/legal/privacy/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     translationNS: 'legal',
   },
 

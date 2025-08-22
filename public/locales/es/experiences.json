@@ -40,6 +40,147 @@
 
     "paymentPlanTitle": "Plan de pagos",
 
+    "islaFuerteExp": {
+      "seo": {
+        "title": "Buceo en Isla Fuerte, Colombia | Inmersiones y Certificación PADI",
+        "desc": "Explora los arrecifes de coral mejor conservados de Colombia en Isla Fuerte. Inmersiones únicas como Bajo Bushnell y Burbujas. Ideal para buzos certificados y quienes desean obtener su certificación PADI Open Water.",
+        "keywords": "Isla Fuerte buceo, buceo Colombia, certificación PADI Isla Fuerte, Open Water Diver Colombia, buceo Bajo Bushnell, buceo Burbujas, buceo Caribe colombiano, viajes de buceo Colombia"
+      },
+
+      "header": {
+        "title": "Viaje de Buceo a Isla Fuerte",
+        "subtitle": "Explora arrecifes prístinos, vive inmersiones icónicas como Bajo Bushnell y disfruta del Caribe colombiano con opción de certificación PADI."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Sumérgete en las aguas cristalinas de Isla Fuerte y descubre uno de los arrecifes de coral mejor conservados de Colombia. Tortugas, peces tropicales y espectaculares paisajes submarinos te esperan en un paraíso del Caribe ideal para el buceo.",
+          "p2": "Esta experiencia está diseñada para buzos certificados que buscan nuevas aventuras en sitios icónicos como Bajo Bushnell y Burbujas, pero también abre la puerta a quienes deseen iniciar su camino con la certificación PADI Open Water Diver. Una combinación perfecta entre exploración y formación en un destino único."
+        }
+      },
+
+      "itinerary": {
+        "open-water": {
+          "day1": {
+            "title": "Viaje y llegada a Isla Fuerte",
+            "desc": "Iniciamos temprano con el traslado en lancha desde Paso Nuevo hacia Isla Fuerte. Al llegar, haremos el check-in en el resort de buceo, conocerás a tu instructor y realizaremos la inducción general junto con una sesión introductoria de teoría del curso Open Water Diver PADI."
+          },
+          "day2": {
+            "title": "Sesiones en aguas confinadas y teoría",
+            "desc": "Realizarás tus primeras prácticas en aguas poco profundas para familiarizarte con el equipo y dominar las destrezas básicas de buceo. Complementaremos con sesiones teóricas guiadas y repasos interactivos con tu instructor."
+          },
+          "day3": {
+            "title": "Inmersiones iniciales en mar abierto",
+            "desc": "Hoy tendrás tus dos primeras inmersiones en mar abierto en los arrecifes de Isla Fuerte. Pondrás en práctica lo aprendido y disfrutarás de la biodiversidad marina mientras avanzas en tu proceso de certificación."
+          },
+          "day4": {
+            "title": "Inmersiones finales y evaluación",
+            "desc": "Completaremos las dos inmersiones restantes del curso, incluyendo ejercicios de seguridad y navegación. Al final del día, revisaremos tus progresos y cerramos la parte práctica de tu certificación."
+          },
+          "day5": {
+            "title": "Despedida y regreso",
+            "desc": "Disfruta de la mañana libre en la isla para descansar y compartir con el grupo. Después del desayuno iniciaremos el regreso en lancha hacia Paso Nuevo y el traslado a Montería para tu vuelo de regreso."
+          }
+        },
+
+        "advanced-open-water": {
+          "day1": {
+            "title": "Viaje y llegada a Isla Fuerte",
+            "desc": "Salida temprana en lancha desde Paso Nuevo hacia Isla Fuerte. Al llegar, haremos el check-in en el resort de buceo, conocerás a tu instructor y tendremos una inducción sobre el curso Advanced Open Water Diver PADI."
+          },
+          "day2": {
+            "title": "Navegación subacuática y opción de buceo nocturno",
+            "desc": "Iniciaremos con la inmersión obligatoria de Navegación Subacuática y una inmersión de aventura diurna (como flotabilidad avanzada o naturalista). Opcionalmente, podrás realizar un buceo nocturno (con costo adicional y sujeto a condiciones) para descubrir la vida marina bajo una nueva perspectiva."
+          },
+          "day3": {
+            "title": "Inmersiones de aventura",
+            "desc": "Día de dos inmersiones de aventura a elección junto con tu instructor. Podrás realizar buceo en corrientes, explorar arrecifes icónicos como Burbujas o visitar otros sitios especiales de Isla Fuerte, consolidando tus destrezas avanzadas."
+          },
+          "day4": {
+            "title": "Inmersión profunda y cierre del curso",
+            "desc": "Realizaremos la inmersión obligatoria de Profundidad (hasta 30 metros), complementada con otra inmersión de aventura según condiciones. Al finalizar, revisaremos tu progreso y completaremos la certificación Advanced Open Water Diver PADI."
+          },
+          "day5": {
+            "title": "Despedida y regreso",
+            "desc": "Mañana libre para disfrutar la isla, descansar en la playa o compartir con tus compañeros de buceo. Después del desayuno, iniciaremos el regreso en lancha hacia Paso Nuevo y el traslado a Montería para tu vuelo de regreso."
+          }
+        },
+
+        "fun-dive": {
+          "day1": {
+            "title": "Viaje, llegada y sesión de refresco",
+            "desc": "Salida temprana en lancha desde Paso Nuevo hacia Isla Fuerte. Al llegar, haremos el check-in en el resort de buceo, conocerás a tu guía y tendrás la inducción general sobre el plan de inmersiones. En la tarde, si lo requieres, podrás realizar un Refresh (sin costo adicional) o un programa ReActivate PADI (con costo adicional) para retomar tus habilidades de buceo antes de iniciar las inmersiones en mar abierto."
+          },
+          "day2": {
+            "title": "Inmersiones en arrecifes locales y opción de nocturno",
+            "desc": "Realizarás dos inmersiones en distintos arrecifes alrededor de Isla Fuerte, explorando corales y vida marina en un ambiente seguro y relajado. Opcionalmente, podrás realizar un buceo nocturno (con costo adicional y sujeto a condiciones) para vivir la magia del océano de noche."
+          },
+          "day3": {
+            "title": "Exploración de sitios icónicos",
+            "desc": "Día de dos inmersiones en puntos estrella como Burbujas o arrecifes especiales de la zona. Aquí tendrás la oportunidad de vivir la riqueza de la biodiversidad marina y observar especies únicas en su hábitat natural."
+          },
+          "day4": {
+            "title": "Inmersiones de aventura en Bajo Bushnell",
+            "desc": "Realizaremos dos inmersiones en uno de los mejores sitios del Caribe continental: el Bajo Bushnell. Gracias a su ubicación remota, ofrece paisajes submarinos prístinos y abundante vida marina, siendo uno de los highlights del viaje."
+          },
+          "day5": {
+            "title": "Despedida y regreso",
+            "desc": "Mañana libre para disfrutar la isla, descansar en la playa o compartir con el grupo. Después del desayuno, iniciaremos el regreso en lancha hacia Paso Nuevo y el traslado a Montería para tu vuelo de regreso."
+          }
+        },
+
+        "notes": {
+          "note1": "Recomendamos programar tu vuelo de regreso para después del mediodía del último día, respetando el margen de seguridad post-buceo (mínimo 18-24 horas sin volar).",
+          "note2": "El buceo nocturno es opcional, sujeto a condiciones y tiene un costo adicional.",
+          "note3": "Refresco de habilidades: ofrecemos dos alternativas. (a) Refresh: recomendado si llevas aprox. 6–12 meses sin bucear, te sientes cómodo con lo básico y solo necesitas retomar destrezas en aguas confinadas (sin costo). (b) ReActivate PADI: recomendado si llevas >18–24 meses sin bucear, deseas actualizar conocimientos teóricos con eLearning y/o revalidar tu certificación digital; incluye teoría guiada y práctica adicional (con costo). La decisión final se hace tras una breve evaluación del instructor."
+        }
+      },
+
+      "whatIsIncluded": {
+        "items": {
+          "item1": "Traslados en lancha desde Paso Nuevo a Isla Fuerte (ida y regreso).",
+          "item2": "Alojamiento por 4 noches y 5 días en hotel seleccionado en Isla Fuerte (habitaciones compartidas).",
+          "item3": "Pensión completa en la isla (desayuno, almuerzo y cena).",
+          "item4": "Paquete de inmersiones guiadas según el itinerario elegido.",
+          "item5": "Seguro de buceo durante toda la experiencia."
+        }
+      },
+
+      "whatIsNotIncluded": {
+        "items": {
+          "item1": "Tiquetes aéreos o transporte terrestre hasta Paso Nuevo.",
+          "item2": "Actividades opcionales como buceo nocturno o programa ReActivate PADI.",
+          "item3": "Bebidas alcohólicas, snacks y consumos adicionales no mencionados en el plan.",
+          "item4": "Gastos personales y propinas."
+        }
+      },
+
+      "sessions": {
+        "apr26": {
+          "name": "Expedición de Buceo Isla Fuerte - Abril 26",
+
+          "pricingOptions": {
+            "opt1": "PADI Open Water",
+            "opt2": "PADI Advanced Open Water",
+            "opt3": "Buzo certificado acompañante",
+            "opt4": "Acompañante no buzo"
+          },
+
+          "pricingOptionsNotes": {
+            "note1": "Las habitaciones son compartidas. La opción de habitación individual tiene un costo adicional y está sujeta a disponibilidad."
+          },
+
+          "paymentPlan": {
+            "installments": {
+              "desc1": "Separar cupo y recibir material de estudio PADI",
+              "desc2": "Segundo abono del plan de pagos",
+              "desc3": "Saldo final antes de la salida"
+            }
+          }
+        }
+      }
+    },
+
     "santaMartaExp": {
       "seo": {
         "title": "Certificación PADI Open Water en Tayrona",
@@ -119,7 +260,7 @@
         "fun-dive": {
           "day1": {
             "title": "Llegada y repaso de equipo",
-            "desc": "Bienvenido a Santa Marta. Tras instalarte, realizaremos el check-in, repasaremos tu equipo y tendrás la opción de un refresco de habilidades (sin costo) o un programa Reactivate (con costo adicional) para actualizar tu entrenamiento."
+            "desc": "Bienvenido a Santa Marta. Tras instalarte, realizaremos el check-in, repasaremos tu equipo y tendrás la opción de un Refresh de habilidades (sin costo adicional) o un programa Reactivate PADI (con costo adicional) para actualizar tu entrenamiento."
           },
           "day2": {
             "title": "Exploración de arrecifes en Tayrona",

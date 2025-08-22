@@ -11,7 +11,7 @@ const rawTerms: LegalPageContent = {
     descriptionKey: 'legal.terms.seo.desc',
     keywordsKey: 'legal.terms.seo.keywords',
     urlPath: toUrlPath(ROUTES.terms),
-    imageUrl: toAssetUrl('/images/legal/terms/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     translationNS: 'legal',
   },
 

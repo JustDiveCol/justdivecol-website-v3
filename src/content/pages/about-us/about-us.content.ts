@@ -10,7 +10,7 @@ const rawAboutUs: AboutUsPageContent = {
     descriptionKey: 'about-us.seo.desc',
     keywordsKey: 'about-us.seo.keywords',
     urlPath: toUrlPath(ROUTES['about-us']),
-    imageUrl: toAssetUrl('/images/about-us/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     translationNS: 'about-us',
   },
 

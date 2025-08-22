@@ -78,7 +78,7 @@ export const CertificationCard = ({
         className="group flex flex-col flex-1 min-h-0 overflow-hidden rounded-lg bg-brand-primary-medium shadow-xl transition-transform duration-300 hover:-translate-y-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-orange/70"
         aria-label={name}
       >
-        <div className="overflow-hidden aspect-video relative">
+        <div className="aspect-video relative">
           <ImageComponent
             imageData={imageData}
             translationNS="certifications"

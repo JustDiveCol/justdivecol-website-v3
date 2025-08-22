@@ -89,21 +89,23 @@ export const CertificationsSection = ({
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-stretch gap-8 max-w-6xl mx-auto">
-          {certifications.map((cert, idx) => {
-            const status = getCertificationStatus(cert.id, sessions);
-            const isLast = idx === total - 1;
-            const extraPos =
-              isLast && hasSingleInLastRowLg ? ' lg:col-start-2' : '';
+          {certifications
+            .filter((cert) => cert.published)
+            .map((cert, idx) => {
+              const status = getCertificationStatus(cert.id, sessions);
+              const isLast = idx === total - 1;
+              const extraPos =
+                isLast && hasSingleInLastRowLg ? ' lg:col-start-2' : '';
 
-            return (
-              <CertificationCard
-                key={cert.id}
-                certificationData={cert}
-                availabilityStatus={status}
-                className={`h-full drop-shadow-strong${extraPos}`}
-              />
-            );
-          })}
+              return (
+                <CertificationCard
+                  key={cert.id}
+                  certificationData={cert}
+                  availabilityStatus={status}
+                  className={`h-full drop-shadow-strong${extraPos}`}
+                />
+              );
+            })}
         </div>
       </div>
     </section>

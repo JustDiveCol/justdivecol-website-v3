@@ -77,7 +77,7 @@ const rawHome: HomePageContent = {
     titleKey: 'home.seo.title',
     descriptionKey: 'home.seo.desc',
     keywordsKey: 'home.seo.keywords',
-    imageUrl: toAssetUrl('/images/home/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     urlPath: toUrlPath(ROUTES.home),
     translationNS: 'home',
   },

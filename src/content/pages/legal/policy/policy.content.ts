@@ -10,7 +10,7 @@ const rawPolicy: LegalPageContent = {
     descriptionKey: 'legal.policy.seo.desc',
     keywordsKey: 'legal.policy.seo.keywords',
     urlPath: toUrlPath(ROUTES.policy),
-    imageUrl: toAssetUrl('/images/legal/policy/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     translationNS: 'legal',
   },
 

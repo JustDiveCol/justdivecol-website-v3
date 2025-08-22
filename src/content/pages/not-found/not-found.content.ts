@@ -7,7 +7,7 @@ const rawNotFound: NotFoundPageContent = {
     titleKey: 'not-found.seo.title',
     descriptionKey: 'not-found.seo.desc',
     keywordsKey: 'not-found.seo.keywords',
-    imageUrl: toAssetUrl('/images/not-found/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     urlPath: toUrlPath(ROUTES.notFound),
     translationNS: 'common',
   },

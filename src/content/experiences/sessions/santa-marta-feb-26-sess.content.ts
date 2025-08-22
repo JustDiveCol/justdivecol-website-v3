@@ -1,4 +1,4 @@
-// src/content/sessions/santa-marta-sept-25-sess.content.ts
+// src/content/experiences/sessions/santa-marta-feb-26-sess.content.ts
 
 import { toAssetUrl } from '../../../constants';
 import {
@@ -7,7 +7,7 @@ import {
 } from './types';
 
 const rawSantaMartaFeb26Sess: ExperienceSessionContent = {
-  id: 'santa-marta-feb-26',
+  id: 'santa-marta-feb-26-sess',
   nameKey: 'experiences.santaMartaExp.sessions.feb26.name',
   experienceId: 'exp-santa-marta',
   imageUrl: toAssetUrl('/images/experiences/santa-marta/icon.webp'),

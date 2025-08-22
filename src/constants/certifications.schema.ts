@@ -3,6 +3,7 @@ import { z } from 'zod';
 
 // ——— Certifications ———
 export const CERTIFICATION = [
+  { id: 'fun-dive', code: 'FD', level: 'recreative' },
   { id: 'padi-open-water-diver', code: 'OWD', level: 'entry' },
   { id: 'padi-advanced-open-water-diver', code: 'AOWD', level: 'advanced' },
   { id: 'padi-rescue-diver', code: 'RD', level: 'rescue' },
@@ -31,6 +32,7 @@ export const CertificationLevelSchema = z.enum(
 
 // ——— Agencies ———
 export const AGENCY = [
+  { id: 'None', name: 'None' },
   { id: 'PADI', name: 'Professional Association of Diving Instructors' },
   { id: 'SSI', name: 'Scuba Schools International (SSI)' },
 ] as const;

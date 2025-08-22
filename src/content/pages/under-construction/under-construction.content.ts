@@ -10,7 +10,7 @@ const rawUnderConstruction: UnderConstructionPageContent = {
     titleKey: 'under-construction.seo.title',
     descriptionKey: 'under-construction.seo.desc',
     keywordsKey: 'under-construction.seo.keywords',
-    imageUrl: toAssetUrl('/images/under-construction/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     urlPath: toUrlPath(ROUTES.underConstruction),
     translationNS: 'common',
   },

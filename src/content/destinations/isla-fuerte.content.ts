@@ -18,7 +18,7 @@ const rawIslaFuerte: DestinationContent = {
     titleKey: 'destinations.ifi.seo.title',
     descriptionKey: 'destinations.ifi.seo.desc',
     keywordsKey: 'destinations.ifi.seo.keywords',
-    imageUrl: toAssetUrl('/images/destinations/isla-fuerte/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     urlPath: toUrlPath(ROUTES.destinations),
     translationNS: 'destinations',
   },
@@ -30,7 +30,7 @@ const rawIslaFuerte: DestinationContent = {
       backgroundImage: toAssetUrl(
         '/images/destinations/isla-fuerte/header-background.webp'
       ),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Awake Travel',
       variant: 'header',
     },
     translationNS: 'destinations',
@@ -41,7 +41,7 @@ const rawIslaFuerte: DestinationContent = {
       backgroundImage: toAssetUrl(
         '/images/destinations/isla-fuerte/card-image.webp'
       ),
-      photoCredit: 'Camilo Beltran @JustDiveCol',
+      photoCredit: 'Civitatis',
       variant: 'horizontal',
     },
   },
@@ -98,42 +98,35 @@ const rawIslaFuerte: DestinationContent = {
         backgroundImage: toAssetUrl(
           '/images/destinations/isla-fuerte/gallery-01.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Isla Fuerte Eco House',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/isla-fuerte/gallery-02.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Mascaron de Proa',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/isla-fuerte/gallery-03.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Mascaron de Proa',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/isla-fuerte/gallery-04.webp'
         ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Mascaron de Proa',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/isla-fuerte/gallery-05.webp'
         ),
-        photoCredit: 'XYZ',
-        variant: 'horizontal',
-      },
-      {
-        backgroundImage: toAssetUrl(
-          '/images/destinations/isla-fuerte/gallery-06.webp'
-        ),
-        photoCredit: 'XYZ',
+        photoCredit: 'Mascaron de Proa',
         variant: 'horizontal',
       },
     ],

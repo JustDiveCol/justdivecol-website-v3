@@ -169,7 +169,6 @@ export const DestinationsSection = ({
             </MotionBlock>
           </div>
 
-          {/* Cada pill es in-view owner; el padre no anima la grilla */}
           <div className="flex flex-wrap justify-center items-center gap-4 max-w-max mx-auto drop-shadow-strong">
             {otherDestinations.map((dest) => (
               <DestinationPill key={dest.id} destination={dest} />

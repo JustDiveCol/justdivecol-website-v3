@@ -55,6 +55,7 @@ export type CertificationCardProjection = {
   code: CertificationContent['code'];
   level: CertificationContent['level'];
   agency: CertificationContent['agency'];
+  published: CertificationContent['published'];
   minAge: number;
   maxDepthMeter: number;
   maxDepthFt: number;
@@ -76,6 +77,7 @@ export function projectCertificationToCard(
     code: c.code,
     level: c.level,
     agency: c.agency,
+    published: c.published,
     minAge: c.minAge,
     maxDepthMeter: c.maxDepthMeter,
     maxDepthFt: c.maxDepthFt,

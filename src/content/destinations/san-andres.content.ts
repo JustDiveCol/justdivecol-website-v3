@@ -18,7 +18,7 @@ const rawSanAndres: DestinationContent = {
     titleKey: 'destinations.sai.seo.title',
     descriptionKey: 'destinations.sai.seo.desc',
     keywordsKey: 'destinations.sai.seo.keywords',
-    imageUrl: toAssetUrl('/images/destinations/san-andres/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     urlPath: toUrlPath(ROUTES.destinations),
     translationNS: 'destinations',
   },

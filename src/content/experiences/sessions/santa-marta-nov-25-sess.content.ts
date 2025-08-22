@@ -7,7 +7,7 @@ import {
 } from './types';
 
 const rawSantaMartaNov25Sess: ExperienceSessionContent = {
-  id: 'santa-marta-nov-25',
+  id: 'santa-marta-nov-25-sess',
   nameKey: 'experiences.santaMartaExp.sessions.nov25.name',
   experienceId: 'exp-santa-marta',
   imageUrl: toAssetUrl('/images/experiences/santa-marta/icon.webp'),

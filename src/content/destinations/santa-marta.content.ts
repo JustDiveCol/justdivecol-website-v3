@@ -18,7 +18,7 @@ const rawSantaMarta: DestinationContent = {
     titleKey: 'destinations.sm.seo.title',
     descriptionKey: 'destinations.sm.seo.desc',
     keywordsKey: 'destinations.sm.seo.keywords',
-    imageUrl: toAssetUrl('/images/destinations/santa-marta/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     urlPath: toUrlPath(ROUTES.destinations),
     translationNS: 'destinations',
   },

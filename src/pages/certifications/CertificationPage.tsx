@@ -58,7 +58,7 @@ const CertificationPage: React.FC = () => {
     const newAction = { ...content.ctaButton.action };
 
     if (newAction.type === 'whatsapp' && newAction.whatsAppMessageKey) {
-      const itemName = t(content.name, { ns: 'certifications' });
+      const itemName = content.name;
 
       const translatedMessage = t(newAction.whatsAppMessageKey, { itemName });
 

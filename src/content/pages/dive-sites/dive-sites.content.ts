@@ -10,7 +10,7 @@ const rawDiveSitesPage: DiveSitesPageContent = {
     descriptionKey: 'dive-sites.seo.desc',
     keywordsKey: 'dive-sites.seo.keywords',
     urlPath: toUrlPath(ROUTES['dive-sites']),
-    imageUrl: toAssetUrl('/images/dive-sites/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     translationNS: 'dive-sites',
   },
   header: {

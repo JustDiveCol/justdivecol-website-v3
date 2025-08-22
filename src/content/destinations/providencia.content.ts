@@ -18,7 +18,7 @@ const rawProvidencia: DestinationContent = {
     titleKey: 'destinations.provi.seo.title',
     descriptionKey: 'destinations.provi.seo.desc',
     keywordsKey: 'destinations.provi.seo.keywords',
-    imageUrl: toAssetUrl('/images/destinations/providencia/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     urlPath: toUrlPath(ROUTES.destinations),
     translationNS: 'destinations',
   },

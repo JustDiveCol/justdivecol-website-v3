@@ -11,7 +11,7 @@ const rawContact: ContactPageContent = {
     descriptionKey: 'contact.seo.desc',
     keywordsKey: 'contact.seo.keywords',
     urlPath: toUrlPath(ROUTES.contact),
-    imageUrl: toAssetUrl('/images/contact/social-card.webp'),
+    imageUrl: toAssetUrl('/images/social/social-card.webp'),
     translationNS: 'contact',
   },
 

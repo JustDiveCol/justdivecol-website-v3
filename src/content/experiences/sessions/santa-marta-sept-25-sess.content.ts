@@ -6,7 +6,7 @@ import {
 } from './types';
 
 const rawSantaMartaSept25Sess: ExperienceSessionContent = {
-  id: 'santa-marta-sept-25',
+  id: 'santa-marta-sept-25-sess',
   nameKey: 'experiences.santaMartaExp.sessions.sept25.name',
   experienceId: 'exp-santa-marta',
   imageUrl: toAssetUrl('/images/experiences/santa-marta/icon.webp'),
@@ -66,7 +66,7 @@ const rawSantaMartaSept25Sess: ExperienceSessionContent = {
     ],
   },
 
-  certificationIds: ['padi-open-water-diver'],
+  certificationIds: ['padi-open-water-diver', 'fun-dive'],
 
   overrides: {
     whatIsIncluded: {

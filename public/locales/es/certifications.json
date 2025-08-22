@@ -3,6 +3,8 @@
   "statusComingSoon": "Proximamente",
   "certificationInclusionsTitle": "Qué incluye tu certificación",
 
+  "keyMetrics": "Metricas",
+
   "padi-open-water-diver": "PADI Open Water Diver",
 
   "certifications": {
@@ -22,6 +24,97 @@
     "details": {
       "maxDepth": "Profundidad máxima",
       "minAge": "Edad minima"
+    },
+
+    "fd": {
+      "seo": {
+        "title": "Fun Dive: Inmersiones recreativas para buzos certificados",
+        "desc": "Explora los mejores sitios de buceo con nuestras experiencias de fun dive. Inmersiones guiadas para buzos certificados, equipo incluido y grupos reducidos.",
+        "keywords": "fun dive, buceo recreativo, buzos certificados, inmersiones guiadas, sitios de buceo, JustDiveCol"
+      },
+
+      "header": {
+        "title": "Explora sin límites",
+        "subtitle": "Vive inmersiones recreativas inolvidables en los mejores sitios de buceo."
+      },
+
+      "card": {
+        "desc": "Sumérgete en un día lleno de aventuras bajo el agua. Nuestros fun dives están diseñados para buzos certificados que quieren disfrutar de arrecifes vibrantes, naufragios misteriosos y la vida marina más espectacular.",
+        "cardTextOverlay": "Vive la experiencia"
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Imagina descender lentamente hasta encontrarte rodeado de corales llenos de color, tortugas que nadan tranquilamente y bancos de peces que se mueven en perfecta sincronía. Un fun dive es la forma ideal de reconectar con el océano y disfrutar del buceo sin preocuparte por nada más que vivir el momento.",
+          "p2": "Nuestros guías locales conocen cada detalle de los sitios de buceo y se asegurarán de que disfrutes una experiencia segura, divertida y llena de descubrimientos. Con grupos reducidos y equipo en perfecto estado, tu única tarea será relajarte y explorar."
+        }
+      },
+
+      "prerequisites": {
+        "item1": "Certificación previa: Debes contar con una certificación mínima de Open Water Diver o equivalente.",
+        "item2": "Condición física básica: Estar en buen estado de salud para realizar actividades acuáticas.",
+        "item3": "Última inmersión reciente: Recomendamos haber buceado en los últimos 12 meses. Si no, ofrecemos un refresher opcional."
+      },
+
+      "details": {
+        "items": {
+          "label1": "Número de inmersiones",
+          "value1": "Elige entre medio día (2 inmersiones) o día completo (3 a 4 inmersiones, según condiciones).",
+
+          "label2": "Certificación requerida",
+          "value2": "Se requiere ser buzo certificado (mínimo Open Water Diver o equivalente).",
+
+          "label3": "Equipo de buceo",
+          "value3": "Incluye alquiler de equipo completo (chaleco, regulador, traje, máscara, aletas, tanques y lastre).",
+
+          "label4": "Guías expertos",
+          "value4": "Inmersiones siempre acompañadas por un Divemaster o Instructor local con amplia experiencia."
+        }
+      },
+
+      "curriculum": {
+        "modules": {
+          "name1": "Briefing de buceo",
+          "desc1": "Antes de cada inmersión, tu guía repasará el plan de buceo, condiciones del sitio y puntos de interés para que aproveches al máximo tu tiempo bajo el agua.",
+
+          "name2": "Inmersiones guiadas",
+          "desc2": "Explora arrecifes, naufragios y paisajes submarinos de Colombia en grupos pequeños. Cada inmersión tiene una duración aproximada de 45-60 minutos, dependiendo de tu consumo de aire y las condiciones.",
+
+          "name3": "Superficie y relax",
+          "desc3": "Entre inmersiones, disfruta de descansos cómodos en la lancha o en la playa, hidratación y snacks incluidos para mantener tu energía."
+        }
+      },
+
+      "whatIsIncluded": {
+        "items": {
+          "item1": "2 a 4 inmersiones guiadas por día.",
+          "item2": "Equipo de buceo completo: Alquiler de todo el equipo SCUBA que necesitarás (chaleco, regulador, traje de neopreno, máscara, aletas, tanques y lastre).",
+          "item3": "Acompañamiento de Divemaster o Instructor certificado."
+        }
+      },
+
+      "bookingProcess": {
+        "steps": {
+          "name1": "Paso 1: Reserva tu lugar",
+          "desc1": "Contáctanos para elegir tu fecha y el paquete de inmersiones (medio día o día completo).",
+
+          "name2": "Paso 2: Verificación de certificación",
+          "desc2": "Te pediremos una copia digital de tu certificación de buceo para confirmar que cumples con el requisito mínimo.",
+
+          "name3": "Paso 3: ¡Disfruta del buceo!",
+          "desc3": "Preséntate en nuestro centro de buceo el día acordado, trae tu traje de baño y protector solar ecológico. Nosotros nos encargamos de todo lo demás."
+        }
+      },
+
+      "testimonials": {
+        "items": {
+          "quote1": "¡Qué experiencia tan increíble! Los arrecifes estaban llenos de vida y el guía nos mostró lugares que nunca hubiera encontrado por mi cuenta. Muy recomendado para buzos certificados.",
+          "author1": "Laura M., Medellín",
+
+          "quote2": "He buceado en varios lugares del mundo y lo que viví en Colombia con JustDiveCol está en mi top 3. Excelente organización, equipo en muy buen estado y un ambiente relajado. ¡Volveré sin duda!",
+          "author2": "James R., Londres, Reino Unido"
+        }
+      }
     },
 
     "owd": {

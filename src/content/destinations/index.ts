@@ -43,18 +43,15 @@ function loadAllDiveSites(): LoadedDiveSite[] {
     for (const value of Object.values(mod)) {
       if (!isObj(value)) continue;
 
-      // Caso 1: objeto que parece 1 DiveSiteContent
       const single = DiveSiteContentSchema.safeParse(value);
       if (single.success) {
         results.push({
           ...(single.data as DiveSiteContent),
           __filePath: filePath,
         });
-        continue; // seguimos, por si hay más en el mismo módulo
+        continue;
       }
 
-      // Caso 2: objeto-mapa de DiveSiteContent
-      // Iteramos valores y validamos cada uno
       let addedAny = false;
       for (const siteCandidate of Object.values(value)) {
         if (!isObj(siteCandidate)) continue;
