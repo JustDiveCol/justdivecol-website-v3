@@ -219,6 +219,172 @@
           "find5": "Ambiente tranquilo y auténtico, alejado del turismo masivo."
         }
       }
+    },
+
+    "cw": {
+      "seo": {
+        "title": "Buceo en Curazao | Playas, cultura y vida marina en el Caribe",
+        "desc": "Explora Curazao, una isla única del Caribe neerlandés. Bucea entre arrecifes coloridos, visita Klein Curazao, disfruta de la vibrante Willemstad y sumérgete en su cultura diversa.",
+        "keywords": "Curazao, buceo en Curazao, playas del Caribe, Willemstad UNESCO, Klein Curazao, buceo Caribe neerlandés, snorkel Curazao, cultura Curazao, viajes de buceo"
+      },
+
+      "header": {
+        "title": "Curazao: buceo, playas y cultura caribeña",
+        "subtitle": "Una isla que combina arrecifes coloridos, paisajes únicos y una herencia cultural reconocida por la UNESCO."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Curazao, ubicada en el sur del Caribe y parte de las islas ABC (Aruba, Bonaire y Curazao), es un destino que cautiva a buzos y viajeros con su combinación de naturaleza, historia y diversidad cultural. Sus aguas cristalinas albergan arrecifes de coral, pecios y una sorprendente vida marina que incluye tortugas, rayas y bancos de peces tropicales.",
+          "p2": "Más allá del buceo, la isla invita a descubrir la colorida Willemstad —capital Patrimonio de la Humanidad por la UNESCO—, disfrutar de su gastronomía multicultural y explorar rincones únicos como el Parque Nacional Shete Boka o el islote paradisíaco de Klein Curazao. Con un clima estable todo el año y una atmósfera vibrante, Curazao es ideal para quienes buscan una experiencia completa en el Caribe."
+        }
+      },
+
+      "details": {
+        "items": {
+          "label1": "Ubicación",
+          "value1": "Caribe neerlandés, al sur de las Antillas Menores",
+
+          "label2": "Mejor época para bucear",
+          "value2": "Todo el año, fuera del cinturón de huracanes; visibilidad óptima entre abril y noviembre",
+
+          "label3": "Nivel de buceo",
+          "value3": "Apto para principiantes, avanzados y buzos técnicos",
+
+          "label4": "Tipo de buceo",
+          "value4": "Arrecifes de coral, buceo desde costa, naufragios, Klein Curazao y parques nacionales",
+
+          "label5": "Visibilidad promedio",
+          "value5": "20 a 30 metros en condiciones óptimas",
+
+          "label6": "Idioma",
+          "value6": "Papiamento, neerlandés, inglés y español",
+
+          "label7": "Moneda",
+          "value7": "Florín de las Antillas Neerlandesas (ANG), ampliamente aceptado el dólar estadounidense"
+        }
+      },
+
+      "uniqueFinds": {
+        "items": {
+          "find1": "Buceo desde la orilla: Curazao es uno de los pocos destinos del Caribe donde puedes acceder a arrecifes directamente desde la playa.",
+          "find2": "Klein Curazao: un islote deshabitado con aguas turquesa y uno de los mejores sitios para buceo y snorkel.",
+          "find3": "Willemstad: ciudad declarada Patrimonio de la Humanidad por la UNESCO, famosa por su arquitectura colonial holandesa de colores vibrantes.",
+          "find4": "Parque Nacional Christoffel y Shete Boka: experiencias de naturaleza y paisajes que combinan montañas, acantilados y cuevas marinas.",
+          "find5": "Diversidad cultural única: más de 55 nacionalidades conviven en la isla, lo que se refleja en su gastronomía, festivales y tradiciones.",
+          "find6": "Vida marina excepcional: posibilidad de avistar tortugas marinas, caballitos de mar, rayas y peces de arrecife en un mismo buceo."
+        }
+      }
+    },
+
+    "mx": {
+      "cancun": {
+        "seo": {
+          "title": "Buceo en Cancún y Cozumel | Arrecifes, cenotes y cultura maya",
+          "desc": "Explora Cancún y Cozumel en el Caribe mexicano. Sumérgete en el Gran Arrecife Mesoamericano, descubre cenotes únicos y vive la mezcla perfecta de naturaleza y cultura maya.",
+          "keywords": "Cancún buceo, Cozumel buceo, arrecife mesoamericano, cenotes México, buceo Caribe mexicano, MUSA Cancún, snorkel Cozumel, viajes de buceo México"
+        },
+
+        "header": {
+          "title": "Cancún & Cozumel: arrecifes, cenotes y cultura maya",
+          "subtitle": "Dos destinos icónicos que combinan buceo de clase mundial, paisajes únicos y experiencias culturales inolvidables."
+        },
+
+        "description": {
+          "paragraphs": {
+            "p1": "En Cancún y Cozumel, el Caribe mexicano despliega todo su esplendor. Aquí se encuentra el Gran Arrecife Mesoamericano, el segundo más grande del mundo, donde buzos de todos los niveles descubren paredes coralinas, jardines submarinos y vida marina diversa: tortugas, tiburones nodriza, rayas águila y delfines.",
+            "p2": "Cozumel es famoso por su buceo a la deriva en paredes verticales, mientras que Cancún sorprende con el Museo Subacuático de Arte (MUSA), un arrecife artificial de más de 500 esculturas. Además, la región ofrece la experiencia única de los cenotes, cavernas de agua dulce con visibilidad inigualable y formaciones geológicas impresionantes.",
+            "p3": "Fuera del agua, Cancún y la Riviera Maya invitan a disfrutar de playas paradisíacas, gastronomía mexicana y la riqueza cultural de la civilización maya en sitios como Tulum y Chichén Itzá. Un destino donde cada día es una combinación perfecta de aventura, cultura y relax."
+          }
+        },
+
+        "details": {
+          "items": {
+            "label1": "Ubicación",
+            "value1": "Caribe mexicano, Península de Yucatán",
+
+            "label2": "Mejor época para bucear",
+            "value2": "Todo el año; condiciones ideales entre noviembre y mayo",
+
+            "label3": "Nivel de buceo",
+            "value3": "Principiantes, avanzados y buzos técnicos",
+
+            "label4": "Tipo de buceo",
+            "value4": "Arrecifes, buceo a la deriva, cenotes y naufragios",
+
+            "label5": "Visibilidad promedio",
+            "value5": "15 a 30 metros en mar Caribe, hasta 100 metros en cenotes",
+
+            "label6": "Moneda",
+            "value6": "Peso mexicano (MXN); aceptado el dólar estadounidense"
+          }
+        },
+
+        "uniqueFinds": {
+          "items": {
+            "find1": "Gran Arrecife Mesoamericano: el segundo sistema arrecifal más grande del mundo.",
+            "find2": "Buceo a la deriva en Cozumel: paredes verticales y corrientes que ofrecen adrenalina y visibilidad increíble.",
+            "find3": "Cenotes de la Riviera Maya: cavernas y cuevas inundadas únicas en el mundo.",
+            "find4": "MUSA - Museo Subacuático de Arte en Cancún: esculturas sumergidas que unen conservación y arte.",
+            "find5": "Ruinas mayas cercanas: Tulum, Cobá y Chichén Itzá para combinar cultura y aventura."
+          }
+        }
+      }
+    },
+
+    "us": {
+      "miami": {
+        "seo": {
+          "title": "Buceo en Miami y los Cayos de Florida | Arrecifes, naufragios y vida marina",
+          "desc": "Explora Miami y los Cayos de Florida, uno de los destinos de buceo más famosos de Estados Unidos. Sumérgete en arrecifes de coral, naufragios históricos y aguas cristalinas en el corazón del Caribe americano.",
+          "keywords": "Miami buceo, Florida Keys buceo, naufragios Miami, arrecifes Florida, Key Largo, Islamorada, buceo Estados Unidos, viajes de buceo Miami"
+        },
+
+        "header": {
+          "title": "Miami & Florida Keys: arrecifes y naufragios en aguas cristalinas",
+          "subtitle": "Un destino que combina la energía urbana de Miami con la belleza natural de los cayos."
+        },
+
+        "description": {
+          "paragraphs": {
+            "p1": "Miami es la puerta de entrada al buceo en Florida, pero el verdadero paraíso subacuático se encuentra más al sur: los Florida Keys. Desde Key Largo hasta Key West, se despliega un ecosistema marino único con arrecifes protegidos, naufragios impresionantes y aguas cálidas todo el año.",
+            "p2": "Key Largo es conocido como la 'Capital Mundial del Buceo', hogar del Parque Nacional Marino John Pennekamp y del Santuario Marino Nacional de los Cayos de Florida. Aquí se encuentran arrecifes coloridos y sitios icónicos como la estatua del Cristo del Abismo.",
+            "p3": "Islamorada y Marathon ofrecen experiencias de buceo con tiburones y arrecifes vibrantes, mientras que Key West sorprende con naufragios históricos como el Vandenberg, uno de los más grandes hundidos para buceo en el mundo. Un destino donde cada inmersión combina historia, biodiversidad y aventura."
+          }
+        },
+
+        "details": {
+          "items": {
+            "label1": "Ubicación",
+            "value1": "Sur de Florida, Estados Unidos",
+
+            "label2": "Mejor época para bucear",
+            "value2": "Todo el año; mejores condiciones entre abril y octubre",
+
+            "label3": "Nivel de buceo",
+            "value3": "Principiantes, avanzados y buzos de naufragios",
+
+            "label4": "Tipo de buceo",
+            "value4": "Arrecifes, naufragios, buceo en santuario marino",
+
+            "label5": "Visibilidad promedio",
+            "value5": "15 a 30 metros según la temporada",
+
+            "label6": "Moneda",
+            "value6": "Dólar estadounidense (USD)"
+          }
+        },
+
+        "uniqueFinds": {
+          "items": {
+            "find1": "Parque Marino John Pennekamp: el primer parque submarino de EE. UU., con arrecifes y vida marina protegida.",
+            "find2": "Cristo del Abismo en Key Largo: estatua sumergida icónica para buzos y snorkelistas.",
+            "find3": "Naufragio del USS Vandenberg en Key West: uno de los barcos hundidos más grandes del mundo para buceo.",
+            "find4": "Santuario Marino Nacional de los Cayos de Florida: hogar de arrecifes, tortugas marinas y delfines.",
+            "find5": "Ambiente único de los Keys: mezcla de cultura isleña, atardeceres espectaculares y vida marina diversa."
+          }
+        }
+      }
     }
   }
 }

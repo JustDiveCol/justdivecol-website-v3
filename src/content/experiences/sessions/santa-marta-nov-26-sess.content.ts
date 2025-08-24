@@ -1,6 +1,5 @@
 // src/content/experiences/sessions/santa-marta-nov-26-sess.content.ts
 
-import { toAssetUrl } from '../../../constants';
 import {
   ExperienceSessionContentSchema,
   type ExperienceSessionContent,
@@ -10,9 +9,8 @@ const rawSantaMartaNov26Sess: ExperienceSessionContent = {
   id: 'santa-marta-nov-26-sess',
   nameKey: 'experiences.santaMartaExp.sessions.nov26.name',
   experienceId: 'exp-santa-marta',
-  imageUrl: toAssetUrl('/images/experiences/santa-marta/icon.webp'),
-  startDate: '2026-11-20',
-  endDate: '2026-11-23',
+  startDate: '2026-11-13',
+  endDate: '2026-11-16',
   capacity: 10,
   seatsAvailable: 10,
   availability: 'available',
@@ -21,50 +19,49 @@ const rawSantaMartaNov26Sess: ExperienceSessionContent = {
   pricingOptions: [
     {
       id: 'open-water',
-      nameKey: 'experiences.santaMartaExp.sessions.nov26.pricingOptions.opt1',
-      price: 4600000,
+      nameKey: 'experiences.pricingOptions.OWD',
+      price: 0,
       currency: 'COP',
     },
     {
       id: 'advanced-open-water',
-      nameKey: 'experiences.santaMartaExp.sessions.nov26.pricingOptions.opt2',
-      price: 4600000,
+      nameKey: 'experiences.pricingOptions.AOWD',
+      price: 0,
       currency: 'COP',
     },
     {
       id: 'fun-dive',
-      nameKey: 'experiences.santaMartaExp.sessions.nov26.pricingOptions.opt3',
-      price: 3700000,
+      nameKey: 'experiences.pricingOptions.FD',
+      price: 0,
       currency: 'COP',
     },
     {
       id: 'companion',
-      nameKey: 'experiences.santaMartaExp.sessions.nov26.pricingOptions.opt4',
-      price: 2300000,
+      nameKey: 'experiences.pricingOptions.AC',
+      price: 0,
       currency: 'COP',
     },
   ],
+
+  pricingOptionsNotes: ['experiences.pricingOptionsNotes.note1'],
 
   paymentPlan: {
     titleKey: 'experiences.paymentPlanTitle',
     installments: [
       {
-        date: '2025-12-20',
+        date: '2026-08-30',
         percentage: 50,
-        descriptionKey:
-          'experiences.santaMartaExp.sessions.nov26.paymentPlan.installments.desc1',
+        descriptionKey: 'experiences.paymentPlan.installments.desc1',
       },
       {
-        date: '2026-01-20',
+        date: '2026-09-30',
         percentage: 25,
-        descriptionKey:
-          'experiences.santaMartaExp.sessions.nov26.paymentPlan.installments.desc2',
+        descriptionKey: 'experiences.paymentPlan.installments.desc2',
       },
       {
-        date: '2026-02-06',
+        date: '2026-10-30',
         percentage: 25,
-        descriptionKey:
-          'experiences.santaMartaExp.sessions.nov26.paymentPlan.installments.desc3',
+        descriptionKey: 'experiences.paymentPlan.installments.desc3',
       },
     ],
   },
@@ -72,27 +69,6 @@ const rawSantaMartaNov26Sess: ExperienceSessionContent = {
   certificationIds: ['padi-open-water-diver', 'padi-advanced-open-water-diver'],
 
   overrides: {
-    whatIsIncluded: {
-      titleKey: 'experiences.whatIsIncludedTitle',
-      items: [
-        'experiences.santaMartaExp.whatIsIncluded.items.item1',
-        'experiences.santaMartaExp.whatIsIncluded.items.item2',
-        'experiences.santaMartaExp.whatIsIncluded.items.item4',
-        'experiences.santaMartaExp.whatIsIncluded.items.item5',
-      ],
-    },
-
-    whatIsNotIncluded: {
-      titleKey: 'experiences.whatIsNotIncludedTitle',
-      items: [
-        'experiences.santaMartaExp.whatIsNotIncluded.items.item1',
-        'experiences.santaMartaExp.whatIsNotIncluded.items.item5',
-        'experiences.santaMartaExp.whatIsNotIncluded.items.item2',
-        'experiences.santaMartaExp.whatIsNotIncluded.items.item3',
-        'experiences.santaMartaExp.whatIsNotIncluded.items.item4',
-      ],
-    },
-
     itineraryByPricingOption: {
       'open-water': {
         titleKey: 'experiences.itineraryTitle',
@@ -126,7 +102,11 @@ const rawSantaMartaNov26Sess: ExperienceSessionContent = {
               'experiences.santaMartaExp.itinerary.open-water.day4.desc',
           },
         ],
-        notes: ['experiences.santaMartaExp.itinerary.notes.note1'],
+        notes: [
+          'experiences.itineraryNotes.note1',
+          'experiences.itineraryNotes.note2',
+          'experiences.itineraryNotes.note3',
+        ],
       },
 
       'advanced-open-water': {
@@ -161,7 +141,11 @@ const rawSantaMartaNov26Sess: ExperienceSessionContent = {
               'experiences.santaMartaExp.itinerary.advanced-open-water.day4.desc',
           },
         ],
-        notes: ['experiences.santaMartaExp.itinerary.notes.note1'],
+        notes: [
+          'experiences.itineraryNotes.note1',
+          'experiences.itineraryNotes.note2',
+          'experiences.itineraryNotes.note3',
+        ],
       },
 
       'fun-dive': {
@@ -192,7 +176,11 @@ const rawSantaMartaNov26Sess: ExperienceSessionContent = {
               'experiences.santaMartaExp.itinerary.fun-dive.day4.desc',
           },
         ],
-        notes: ['experiences.santaMartaExp.itinerary.notes.note1'],
+        notes: [
+          'experiences.itineraryNotes.note1',
+          'experiences.itineraryNotes.note2',
+          'experiences.itineraryNotes.note3',
+        ],
       },
     },
   },

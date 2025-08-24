@@ -243,7 +243,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                 aria-controls="more-menu"
                 type="button"
               >
-                {t('more_label')}
+                {t('common:more_label')}
                 <ChevronDownIcon
                   className={`ml-1 h-5 w-5 transition-transform ${
                     isMoreMenuOpen ? 'rotate-180' : ''

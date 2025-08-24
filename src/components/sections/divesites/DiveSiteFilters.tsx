@@ -127,7 +127,7 @@ export const DiveSiteFilters = ({
           id="max-depth"
           type="range"
           min={10}
-          max={50}
+          max={60}
           step={5}
           value={filters.maxDepth}
           onChange={(e) =>

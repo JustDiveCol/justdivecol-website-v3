@@ -89,7 +89,6 @@ const ExperiencePage: React.FC = () => {
   const sessionDisplayName = useMemo(() => {
     const sess = content?.session;
     if (!sess) return '';
-
     return t(sess.nameKey, { ns: 'experiences' });
   }, [content, t]);
 
@@ -110,6 +109,19 @@ const ExperiencePage: React.FC = () => {
 
     return { ...exp.ctaButton, action: newAction };
   }, [content, t, sessionDisplayName]);
+
+  const endDate = content?.session?.endDate ?? null;
+  const isPastSession = useMemo(() => {
+    if (!endDate) return false;
+    const end = new Date(`${endDate}T00:00:00Z`);
+    const today = new Date();
+    const todayUTC = Date.UTC(
+      today.getUTCFullYear(),
+      today.getUTCMonth(),
+      today.getUTCDate()
+    );
+    return end.getTime() < todayUTC;
+  }, [endDate]);
 
   if (!experienceSlug || !sessionSlug) {
     return <div>Experiencia no encontrada.</div>;
@@ -149,17 +161,19 @@ const ExperiencePage: React.FC = () => {
           translationNS={experience.seo.translationNS}
         />
 
-        <ExperienceItinerary
-          translationNS={experience.seo.translationNS}
-          itinerary={overrides?.itinerary ?? experience.itinerary}
-          byPlan={overrides?.itineraryByPricingOption}
-          planLabels={Object.fromEntries(
-            content.session.pricingOptions.map((p) => [
-              p.id,
-              t(p.nameKey, { ns: experience.seo.translationNS }),
-            ])
-          )}
-        />
+        {!isPastSession && (
+          <ExperienceItinerary
+            translationNS={experience.seo.translationNS}
+            itinerary={overrides?.itinerary ?? experience.itinerary}
+            byPlan={overrides?.itineraryByPricingOption}
+            planLabels={Object.fromEntries(
+              content.session.pricingOptions.map((p) => [
+                p.id,
+                t(p.nameKey, { ns: experience.seo.translationNS }),
+              ])
+            )}
+          />
+        )}
 
         <ExperienceInclusions
           whatIsIncluded={experience.whatIsIncluded}
@@ -168,7 +182,7 @@ const ExperiencePage: React.FC = () => {
           translationNS={experience.seo.translationNS}
         />
 
-        {session.paymentPlan && (
+        {!isPastSession && session.paymentPlan && (
           <ExperiencePaymentPlan
             paymentPlan={session.paymentPlan}
             pricingOptions={session.pricingOptions}
@@ -190,7 +204,7 @@ const ExperiencePage: React.FC = () => {
         <CtaSection {...homeContent.cta} />
       </main>
 
-      {stickyButtonData && (
+      {!isPastSession && stickyButtonData && (
         <StickyCtaBar
           buttonData={stickyButtonData}
           translationNS={'experiences'}

@@ -42,7 +42,7 @@ const initialFilters: FiltersData = {
   destinationId: 'all',
   difficulty: 'all',
   types: [],
-  maxDepth: 40,
+  maxDepth: 60,
   conditions: [],
   tags: [],
 };

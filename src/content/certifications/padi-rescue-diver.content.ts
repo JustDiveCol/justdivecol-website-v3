@@ -116,6 +116,7 @@ const rawRescueDiver: CertificationContent = {
       'certifications.rd.whatIsIncluded.items.item1',
       'certifications.rd.whatIsIncluded.items.item2',
       'certifications.rd.whatIsIncluded.items.item3',
+      'certifications.rd.whatIsIncluded.items.item4',
     ],
   },
 

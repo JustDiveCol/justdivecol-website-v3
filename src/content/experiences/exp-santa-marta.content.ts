@@ -36,34 +36,8 @@ const rawSantaMartaExp: ExperienceContent = {
     paragraphs: [
       'experiences.santaMartaExp.description.paragraphs.p1',
       'experiences.santaMartaExp.description.paragraphs.p2',
+      'experiences.santaMartaExp.description.paragraphs.p3',
     ],
-  },
-
-  itinerary: {
-    titleKey: 'experiences.itineraryTitle',
-    days: [
-      {
-        day: 1,
-        titleKey: 'experiences.santaMartaExp.itinerary.days.title1',
-        descriptionKey: 'experiences.santaMartaExp.itinerary.days.desc1',
-      },
-      {
-        day: 2,
-        titleKey: 'experiences.santaMartaExp.itinerary.days.title2',
-        descriptionKey: 'experiences.santaMartaExp.itinerary.days.desc2',
-      },
-      {
-        day: 3,
-        titleKey: 'experiences.santaMartaExp.itinerary.days.title3',
-        descriptionKey: 'experiences.santaMartaExp.itinerary.days.desc3',
-      },
-      {
-        day: 4,
-        titleKey: 'experiences.santaMartaExp.itinerary.days.title4',
-        descriptionKey: 'experiences.santaMartaExp.itinerary.days.desc4',
-      },
-    ],
-    notes: ['experiences.santaMartaExp.itinerary.notes.note1'],
   },
 
   whatIsIncluded: {
@@ -73,6 +47,9 @@ const rawSantaMartaExp: ExperienceContent = {
       'experiences.santaMartaExp.whatIsIncluded.items.item2',
       'experiences.santaMartaExp.whatIsIncluded.items.item3',
       'experiences.santaMartaExp.whatIsIncluded.items.item4',
+      'experiences.santaMartaExp.whatIsIncluded.items.item5',
+      'experiences.santaMartaExp.whatIsIncluded.items.item6',
+      'experiences.santaMartaExp.whatIsIncluded.items.item7',
     ],
   },
 
@@ -83,6 +60,7 @@ const rawSantaMartaExp: ExperienceContent = {
       'experiences.santaMartaExp.whatIsNotIncluded.items.item2',
       'experiences.santaMartaExp.whatIsNotIncluded.items.item3',
       'experiences.santaMartaExp.whatIsNotIncluded.items.item4',
+      'experiences.santaMartaExp.whatIsNotIncluded.items.item5',
     ],
   },
 
@@ -154,7 +132,7 @@ const rawSantaMartaExp: ExperienceContent = {
       },
       {
         backgroundImage: toAssetUrl(
-          '/images/experiences/santa-marta/gallery-09.webp'
+          '/images/experiences/santa-marta/gallery-10.webp'
         ),
         photoCredit: 'Hotel Karaya @karaya.hotel',
         variant: 'horizontal',

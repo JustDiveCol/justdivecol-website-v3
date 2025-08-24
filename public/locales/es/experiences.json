@@ -1,4 +1,5 @@
 {
+  "pastTripsTitle": "Viajes pasados",
   "payments": {
     "title": "Métodos de pago disponibles",
 
@@ -40,329 +41,739 @@
 
     "paymentPlanTitle": "Plan de pagos",
 
+    "itineraryNotes": {
+      "note1": "Recomendamos programar tu vuelo de regreso para después del mediodía del último día, respetando el margen de seguridad post-buceo (18-24 h sin volar).",
+      "note2": "Actividades opcionales como buceo nocturno, kayak, snorkel, paddle o masajes se ofrecen como add-ons y están sujetas a condiciones climáticas y operativas.",
+      "note3": "El orden de las inmersiones y actividades puede ajustarse según condiciones climáticas u operativas, priorizando siempre la seguridad."
+    },
+
+    "pricingOptions": {
+      "OWD": "PADI Open Water Diver",
+      "AOWD": "PADI Advanced Open Water Diver",
+      "FD": "Buzo certificado",
+      "AC": "Acompañante no buzo"
+    },
+    "pricingOptionsNotes": {
+      "note1": "Las habitaciones son compartidas. La opción de habitación individual tiene un costo adicional y está sujeta a disponibilidad."
+    },
+
+    "paymentPlan": {
+      "installments": {
+        "desc1": "Reserva de cupo (incluye material de estudio PADI si aplica)",
+        "desc2": "Segundo abono del plan de pagos",
+        "desc3": "Saldo final antes de la salida"
+      }
+    },
+
     "islaFuerteExp": {
       "seo": {
-        "title": "Buceo en Isla Fuerte, Colombia | Inmersiones y Certificación PADI",
-        "desc": "Explora los arrecifes de coral mejor conservados de Colombia en Isla Fuerte. Inmersiones únicas como Bajo Bushnell y Burbujas. Ideal para buzos certificados y quienes desean obtener su certificación PADI Open Water.",
-        "keywords": "Isla Fuerte buceo, buceo Colombia, certificación PADI Isla Fuerte, Open Water Diver Colombia, buceo Bajo Bushnell, buceo Burbujas, buceo Caribe colombiano, viajes de buceo Colombia"
+        "title": "Isla Fuerte: Buceo y Certificación PADI Open Water",
+        "desc": "Explora los arrecifes mejor conservados de Colombia en Isla Fuerte. Fun dives en Bajo Bushnell y Burbujas, o certifícate PADI Open Water.",
+        "keywords": "Isla Fuerte buceo, certificación PADI Open Water Isla Fuerte, fun dive Isla Fuerte, Bajo Bushnell, Burbujas, Caribe colombiano"
       },
 
       "header": {
-        "title": "Viaje de Buceo a Isla Fuerte",
-        "subtitle": "Explora arrecifes prístinos, vive inmersiones icónicas como Bajo Bushnell y disfruta del Caribe colombiano con opción de certificación PADI."
+        "title": "Isla Fuerte: Viaje de Buceo en el Caribe Colombiano",
+        "subtitle": "Explora arrecifes prístinos e icónicos como Bajo Bushnell y Burbujas, con opción de certificación PADI Open Water."
       },
 
       "description": {
         "paragraphs": {
           "p1": "Sumérgete en las aguas cristalinas de Isla Fuerte y descubre uno de los arrecifes de coral mejor conservados de Colombia. Tortugas, peces tropicales y espectaculares paisajes submarinos te esperan en un paraíso del Caribe ideal para el buceo.",
-          "p2": "Esta experiencia está diseñada para buzos certificados que buscan nuevas aventuras en sitios icónicos como Bajo Bushnell y Burbujas, pero también abre la puerta a quienes deseen iniciar su camino con la certificación PADI Open Water Diver. Una combinación perfecta entre exploración y formación en un destino único."
+          "p2": "Esta experiencia está diseñada para buzos certificados que buscan nuevas aventuras en sitios icónicos como Bajo Bushnell y Burbujas, pero también abre la puerta a quienes deseen iniciar su camino con la certificación PADI Open Water Diver.",
+          "p3": "Más que un viaje de buceo, es la oportunidad de explorar la magia del Caribe colombiano con seguridad, acompañamiento profesional y el sello JustDiveCol."
         }
       },
 
       "itinerary": {
-        "open-water": {
-          "day1": {
-            "title": "Viaje y llegada a Isla Fuerte",
-            "desc": "Iniciamos temprano con el traslado en lancha desde Paso Nuevo hacia Isla Fuerte. Al llegar, haremos el check-in en el resort de buceo, conocerás a tu instructor y realizaremos la inducción general junto con una sesión introductoria de teoría del curso Open Water Diver PADI."
-          },
-          "day2": {
-            "title": "Sesiones en aguas confinadas y teoría",
-            "desc": "Realizarás tus primeras prácticas en aguas poco profundas para familiarizarte con el equipo y dominar las destrezas básicas de buceo. Complementaremos con sesiones teóricas guiadas y repasos interactivos con tu instructor."
-          },
-          "day3": {
-            "title": "Inmersiones iniciales en mar abierto",
-            "desc": "Hoy tendrás tus dos primeras inmersiones en mar abierto en los arrecifes de Isla Fuerte. Pondrás en práctica lo aprendido y disfrutarás de la biodiversidad marina mientras avanzas en tu proceso de certificación."
-          },
-          "day4": {
-            "title": "Inmersiones finales y evaluación",
-            "desc": "Completaremos las dos inmersiones restantes del curso, incluyendo ejercicios de seguridad y navegación. Al final del día, revisaremos tus progresos y cerramos la parte práctica de tu certificación."
-          },
-          "day5": {
-            "title": "Despedida y regreso",
-            "desc": "Disfruta de la mañana libre en la isla para descansar y compartir con el grupo. Después del desayuno iniciaremos el regreso en lancha hacia Paso Nuevo y el traslado a Montería para tu vuelo de regreso."
-          }
-        },
-
         "advanced-open-water": {
           "day1": {
-            "title": "Viaje y llegada a Isla Fuerte",
-            "desc": "Salida temprana en lancha desde Paso Nuevo hacia Isla Fuerte. Al llegar, haremos el check-in en el resort de buceo, conocerás a tu instructor y tendremos una inducción sobre el curso Advanced Open Water Diver PADI."
+            "title": "Llegada y bienvenida",
+            "desc": "Salida en la mañana desde Montería hacia Paso Nuevo, donde tomaremos la lancha a Isla Fuerte. Check-in en el hotel, almuerzo libre y caminata opcional al árbol gigante de higuillo. En la noche, cena de bienvenida grupal."
           },
           "day2": {
-            "title": "Navegación subacuática y opción de buceo nocturno",
-            "desc": "Iniciaremos con la inmersión obligatoria de Navegación Subacuática y una inmersión de aventura diurna (como flotabilidad avanzada o naturalista). Opcionalmente, podrás realizar un buceo nocturno (con costo adicional y sujeto a condiciones) para descubrir la vida marina bajo una nueva perspectiva."
+            "title": "Navegación y buceo de aventura",
+            "desc": "Tras el desayuno, refrescaremos habilidades con un Refresh o ReActivate según necesidad. Luego realizaremos la inmersión obligatoria de Navegación Subacuática más una aventura a elección (fotografía digital, identificación de peces, flotabilidad avanzada o naufragio). En la tarde, actividad opcional como kayak o snorkel. Por la noche, opción de buceo nocturno (add-on) y cena grupal."
           },
           "day3": {
-            "title": "Inmersiones de aventura",
-            "desc": "Día de dos inmersiones de aventura a elección junto con tu instructor. Podrás realizar buceo en corrientes, explorar arrecifes icónicos como Burbujas o visitar otros sitios especiales de Isla Fuerte, consolidando tus destrezas avanzadas."
+            "title": "Inmersiones profundas y electivas",
+            "desc": "Tras el desayuno, realizaremos la inmersión obligatoria de Buceo Profundo (30 m) y una electiva a tu elección. En la tarde, tiempo libre. En la noche, opción de buceo nocturno (add-on) y cena grupal en ambiente relajado."
           },
           "day4": {
-            "title": "Inmersión profunda y cierre del curso",
-            "desc": "Realizaremos la inmersión obligatoria de Profundidad (hasta 30 metros), complementada con otra inmersión de aventura según condiciones. Al finalizar, revisaremos tu progreso y completaremos la certificación Advanced Open Water Diver PADI."
+            "title": "Exploración en el Bajo Bushnell",
+            "desc": "Exploraremos el Bajo Bushnell con 2 inmersiones en uno de los sitios más espectaculares del Caribe continental. En la tarde, yoga o meditación opcional (add-on). En la noche, cena cultural con música local y premiación especial."
           },
           "day5": {
-            "title": "Despedida y regreso",
-            "desc": "Mañana libre para disfrutar la isla, descansar en la playa o compartir con tus compañeros de buceo. Después del desayuno, iniciaremos el regreso en lancha hacia Paso Nuevo y el traslado a Montería para tu vuelo de regreso."
+            "title": "Cierre y despedida",
+            "desc": "Desayuno incluido y mañana libre antes del check-out. Traslado en lancha a Paso Nuevo y regreso terrestre a Montería. Recomendamos programar vuelos después de las 6:00 p.m. para respetar el margen de seguridad post-buceo (18-24 h sin volar)."
           }
         },
-
         "fun-dive": {
           "day1": {
-            "title": "Viaje, llegada y sesión de refresco",
-            "desc": "Salida temprana en lancha desde Paso Nuevo hacia Isla Fuerte. Al llegar, haremos el check-in en el resort de buceo, conocerás a tu guía y tendrás la inducción general sobre el plan de inmersiones. En la tarde, si lo requieres, podrás realizar un Refresh (sin costo adicional) o un programa ReActivate PADI (con costo adicional) para retomar tus habilidades de buceo antes de iniciar las inmersiones en mar abierto."
+            "title": "Llegada y bienvenida",
+            "desc": "Traslado terrestre desde Montería a Paso Nuevo y lancha a Isla Fuerte. Check-in en el hotel, almuerzo libre y caminata opcional al árbol gigante de higuillo. En la noche, cena de bienvenida grupal."
           },
           "day2": {
-            "title": "Inmersiones en arrecifes locales y opción de nocturno",
-            "desc": "Realizarás dos inmersiones en distintos arrecifes alrededor de Isla Fuerte, explorando corales y vida marina en un ambiente seguro y relajado. Opcionalmente, podrás realizar un buceo nocturno (con costo adicional y sujeto a condiciones) para vivir la magia del océano de noche."
+            "title": "Inmersiones en arrecifes locales",
+            "desc": "Tras el desayuno, realizaremos 2 inmersiones en arrecifes cercanos. En la tarde, actividad opcional como kayak o snorkel. En la noche, opción de buceo nocturno (add-on) y cena grupal."
           },
           "day3": {
-            "title": "Exploración de sitios icónicos",
-            "desc": "Día de dos inmersiones en puntos estrella como Burbujas o arrecifes especiales de la zona. Aquí tendrás la oportunidad de vivir la riqueza de la biodiversidad marina y observar especies únicas en su hábitat natural."
+            "title": "Exploración de arrecifes",
+            "desc": "Tras el desayuno, 2 inmersiones en sitios icónicos como Burbujas. En la tarde, tiempo libre. En la noche, opción de buceo nocturno (add-on) y cena grupal."
           },
           "day4": {
-            "title": "Inmersiones de aventura en Bajo Bushnell",
-            "desc": "Realizaremos dos inmersiones en uno de los mejores sitios del Caribe continental: el Bajo Bushnell. Gracias a su ubicación remota, ofrece paisajes submarinos prístinos y abundante vida marina, siendo uno de los highlights del viaje."
+            "title": "Inmersiones en el Bajo Bushnell",
+            "desc": "2 inmersiones en el Bajo Bushnell, considerado uno de los mejores sitios del Caribe continental. En la tarde, yoga o meditación opcional (add-on). En la noche, cena cultural con música tradicional y premiación."
           },
           "day5": {
-            "title": "Despedida y regreso",
-            "desc": "Mañana libre para disfrutar la isla, descansar en la playa o compartir con el grupo. Después del desayuno, iniciaremos el regreso en lancha hacia Paso Nuevo y el traslado a Montería para tu vuelo de regreso."
+            "title": "Cierre y despedida",
+            "desc": "Desayuno incluido, mañana libre y check-out. Traslado en lancha a Paso Nuevo y regreso terrestre a Montería. Recomendamos programar vuelos después de las 6:00 p.m."
           }
-        },
-
-        "notes": {
-          "note1": "Recomendamos programar tu vuelo de regreso para después del mediodía del último día, respetando el margen de seguridad post-buceo (mínimo 18-24 horas sin volar).",
-          "note2": "El buceo nocturno es opcional, sujeto a condiciones y tiene un costo adicional.",
-          "note3": "Refresco de habilidades: ofrecemos dos alternativas. (a) Refresh: recomendado si llevas aprox. 6–12 meses sin bucear, te sientes cómodo con lo básico y solo necesitas retomar destrezas en aguas confinadas (sin costo). (b) ReActivate PADI: recomendado si llevas >18–24 meses sin bucear, deseas actualizar conocimientos teóricos con eLearning y/o revalidar tu certificación digital; incluye teoría guiada y práctica adicional (con costo). La decisión final se hace tras una breve evaluación del instructor."
         }
       },
 
       "whatIsIncluded": {
         "items": {
-          "item1": "Traslados en lancha desde Paso Nuevo a Isla Fuerte (ida y regreso).",
-          "item2": "Alojamiento por 4 noches y 5 días en hotel seleccionado en Isla Fuerte (habitaciones compartidas).",
-          "item3": "Pensión completa en la isla (desayuno, almuerzo y cena).",
-          "item4": "Paquete de inmersiones guiadas según el itinerario elegido.",
-          "item5": "Seguro de buceo durante toda la experiencia."
+          "item1": "Alojamiento por 4 noches en hotel seleccionado en Isla Fuerte (habitaciones compartidas).",
+          "item2": "Plan de alimentación según programa (desayunos, almuerzos y cenas).",
+          "item3": "Programa de buceo según perfil: Fun Dive (6 inmersiones) / PADI Open Water Diver (5 sesiones en aguas confinadas + 4 inmersiones en aguas abiertas) / PADI Advanced Open Water Diver (5 inmersiones: 2 obligatorias + 3 electivas).",
+          "item4": "Traslados terrestres Montería ↔ Paso Nuevo y en lancha Paso Nuevo ↔ Isla Fuerte (ida y regreso).",
+          "item5": "Staff JustDiveCol, kit de bienvenida y acompañamiento logístico.",
+          "item6": "Seguro especializado para actividades de buceo durante toda la experiencia.",
+          "item7": "Caminata ecológica guiada al árbol gigante de higuillo (opcional, incluida).",
+          "item8": "Cobertura fotográfica básica de la experiencia."
         }
       },
-
       "whatIsNotIncluded": {
         "items": {
-          "item1": "Tiquetes aéreos o transporte terrestre hasta Paso Nuevo.",
-          "item2": "Actividades opcionales como buceo nocturno o programa ReActivate PADI.",
-          "item3": "Bebidas alcohólicas, snacks y consumos adicionales no mencionados en el plan.",
-          "item4": "Gastos personales y propinas."
+          "item1": "Tiquetes aéreos hacia/desde Montería.",
+          "item2": "Traslados no especificados fuera del itinerario.",
+          "item3": "Comidas marcadas como libres, bebidas alcohólicas y consumos no especificados.",
+          "item4": "Actividades opcionales y add-ons como buceo nocturno, kayak, snorkel o yoga.",
+          "item5": "Gastos personales y propinas."
         }
       },
 
       "sessions": {
         "apr26": {
-          "name": "Expedición de Buceo Isla Fuerte - Abril 26",
+          "name": "Expedición de buceo Isla Fuerte - Abril 2026"
+        },
+        "oct26": {
+          "name": "Expedición de buceo Isla Fuerte - Octubre 2026"
+        }
+      }
+    },
+    "islaFuerteCustomExp": {
+      "seo": {
+        "title": "Isla Fuerte: Viaje Personalizado de Buceo",
+        "desc": "Disfruta de un programa de buceo personalizado en Isla Fuerte. Incluye certificaciones, fun dives y actividades adaptadas a tus necesidades.",
+        "keywords": "Isla Fuerte buceo, viaje personalizado buceo Isla Fuerte, certificación PADI, fun dive Isla Fuerte, Caribe colombiano"
+      },
 
-          "pricingOptions": {
-            "opt1": "PADI Open Water",
-            "opt2": "PADI Advanced Open Water",
-            "opt3": "Buzo certificado acompañante",
-            "opt4": "Acompañante no buzo"
-          },
+      "header": {
+        "title": "Isla Fuerte: Viaje Personalizado de Buceo",
+        "subtitle": "Programa flexible que incluye certificaciones, fun dives y actividades adaptadas a tus necesidades."
+      },
 
-          "pricingOptionsNotes": {
-            "note1": "Las habitaciones son compartidas. La opción de habitación individual tiene un costo adicional y está sujeta a disponibilidad."
-          },
-
-          "paymentPlan": {
-            "installments": {
-              "desc1": "Separar cupo y recibir material de estudio PADI",
-              "desc2": "Segundo abono del plan de pagos",
-              "desc3": "Saldo final antes de la salida"
-            }
-          }
+      "description": {
+        "paragraphs": {
+          "p1": "Isla Fuerte es un destino único para quienes desean un viaje de buceo diseñado a su medida, con arrecifes prístinos y paisajes submarinos llenos de vida.",
+          "p2": "Un programa flexible que puede incluir certificaciones, fun dives y actividades complementarias, siempre adaptado a tus necesidades y nivel de experiencia.",
+          "p3": "Con JustDiveCol, tu viaje personalizado a Isla Fuerte se convierte en una experiencia inolvidable que combina aventura, aprendizaje y disfrute del Caribe colombiano."
         }
       }
     },
 
     "santaMartaExp": {
       "seo": {
-        "title": "Certificación PADI Open Water en Tayrona",
-        "desc": "Iníciate en el buceo y obtén tu certificación PADI Open Water en el Parque Tayrona, Santa Marta. Entrenamiento seguro, aguas cristalinas y vida marina del Caribe.",
-        "keywords": "certificación de buceo, PADI Open Water, Tayrona, Santa Marta, buceo principiantes, experiencia de buceo, Caribe colombiano, JustDiveCol, licencia de buceo, aguas abiertas"
+        "title": "Santa Marta Tayrona: Certificación PADI Open Water y Buceo Caribe",
+        "desc": "Iníciate en el buceo y obtén tu certificación PADI Open Water en el Parque Tayrona. Entrenamiento seguro, arrecifes llenos de vida y aguas cristalinas.",
+        "keywords": "Santa Marta buceo, Tayrona buceo, certificación PADI Open Water Santa Marta, buceo principiantes, Caribe colombiano"
       },
 
       "header": {
-        "title": "Certifícate como PADI Open Water en Tayrona",
-        "subtitle": "Descubre el Caribe colombiano desde una nueva perspectiva y conviértete en buzo en las aguas cristalinas de Santa Marta."
+        "title": "Santa Marta Tayrona: Certificación PADI Open Water",
+        "subtitle": "Descubre el Caribe colombiano desde una nueva perspectiva y conviértete en buzo en aguas cristalinas."
       },
 
       "description": {
         "paragraphs": {
-          "p1": "El Parque Tayrona, en Santa Marta, ofrece el escenario perfecto para dar tus primeras respiraciones bajo el agua. Con aguas cristalinas y una biodiversidad fascinante, este destino del Caribe colombiano es ideal para obtener tu certificación PADI Open Water y abrir las puertas a un mundo lleno de aventuras submarinas.",
-          "p2": "Con la guía de instructores profesionales y el respaldo de JustDiveCol, aprenderás a bucear de manera segura y divertida mientras disfrutas de arrecifes, peces tropicales y playas de ensueño. Esta certificación es más que un logro, es el inicio de una pasión que te permitirá explorar el 70% del planeta que se esconde bajo la superficie."
+          "p1": "El Parque Tayrona, en Santa Marta, ofrece el escenario perfecto para dar tus primeras respiraciones bajo el agua. Sus aguas cristalinas y biodiversidad lo convierten en un destino ideal para el buceo.",
+          "p2": "Aquí podrás obtener tu certificación PADI Open Water con instructores profesionales y el respaldo de JustDiveCol, mientras disfrutas de arrecifes llenos de vida y playas de ensueño.",
+          "p3": "Una certificación que no solo es un logro personal, sino el inicio de una pasión que te permitirá explorar gran parte del planeta bajo la superficie."
         }
       },
 
       "itinerary": {
-        "days": {
-          "title1": "Llegada y fundamentos en aguas confinadas",
-          "desc1": "Arriba a Santa Marta, tu puerta de entrada al Caribe. Tras acomodarte, iniciaremos con la primera sesión de habilidades en un entorno controlado, donde aprenderás a manejar el equipo y dar tus primeras respiraciones bajo el agua con seguridad.",
-
-          "title2": "Primeras inmersiones en el Parque Tayrona",
-          "desc2": "Vive tus dos primeras inmersiones en aguas abiertas explorando arrecifes llenos de vida marina. La tarde quedará libre para descansar y asimilar lo aprendido.",
-
-          "title3": "Inmersiones finales y certificación",
-          "desc3": "Completarás las inmersiones restantes necesarias para tu certificación PADI Open Water. Por la noche celebraremos tu logro con una ceremonia especial, marcando el inicio de tu vida como buzo.",
-
-          "title4": "Despedida de tu experiencia en Tayrona",
-          "desc4": "Disfruta de un último desayuno con el grupo. Ahora eres un buzo certificado y llevas contigo la pasión por explorar el mundo submarino en cualquier rincón del planeta."
-        },
-
-        "notes": {
-          "note1": "Recomendamos programar tu vuelo de regreso para después del mediodía del último día, respetando el margen de seguridad post-buceo (mínimo 18-24 horas sin volar)."
-        },
-
         "open-water": {
           "day1": {
-            "title": "Llegada y fundamentos en aguas confinadas",
-            "desc": "Arriba a Santa Marta, tu puerta de entrada al Caribe. Tras acomodarte, iniciaremos con la primera sesión de habilidades en un entorno controlado, donde aprenderás a manejar el equipo y dar tus primeras respiraciones bajo el agua con seguridad."
+            "title": "Llegada y aguas confinadas",
+            "desc": "Llegada a Santa Marta, check-in en el hotel y almuerzo libre. En la tarde, primera sesión de aguas confinadas en piscina para aprender a usar el equipo y dar tus primeras respiraciones bajo el agua. En la noche, cena de bienvenida incluida."
           },
           "day2": {
-            "title": "Primeras inmersiones en el Parque Tayrona",
-            "desc": "Vive tus dos primeras inmersiones en aguas abiertas explorando arrecifes llenos de vida marina. La tarde quedará libre para descansar y asimilar lo aprendido."
+            "title": "Primeras inmersiones en aguas abiertas",
+            "desc": "Tras el desayuno, mañana de playa y primeras 2 inmersiones en aguas abiertas desde la orilla. Almuerzo libre y cena incluida en la noche."
           },
           "day3": {
             "title": "Inmersiones finales y certificación",
-            "desc": "Completarás las inmersiones restantes necesarias para tu certificación PADI Open Water. Por la noche celebraremos tu logro con una ceremonia especial, marcando el inicio de tu vida como buzo."
-          },
-          "day4": {
-            "title": "Despedida de tu experiencia en Tayrona",
-            "desc": "Disfruta de un último desayuno con el grupo. Ahora eres un buzo certificado y llevas contigo la pasión por explorar el mundo submarino en cualquier rincón del planeta."
-          }
-        },
-
-        "advanced-open-water": {
-          "day1": {
-            "title": "Llegada y preparación avanzada",
-            "desc": "Arriba a Santa Marta y acomódate antes de iniciar la experiencia. Dedicaremos la tarde a un repaso de teoría y al briefing de tus inmersiones de aventura, asegurando que estés listo para sacar el máximo provecho de este curso avanzado."
-          },
-          "day2": {
-            "title": "Triple inmersión: navegación y aventuras",
-            "desc": "Hoy vivirás un día intenso con tres inmersiones. Comenzarás con la obligatoria de Navegación Subacuática, seguida de dos inmersiones de aventura que podrás elegir entre opciones como flotabilidad avanzada, naturalista o incluso una inmersión nocturna si las condiciones lo permiten."
-          },
-          "day3": {
-            "title": "Inmersión profunda y cierre de aventuras",
-            "desc": "Completarás tus últimas dos inmersiones: la obligatoria de Inmersión Profunda y una aventura final a elección, como pecio, búsqueda y recuperación o flotabilidad avanzada. Con esto cumplirás los requisitos para tu certificación Advanced Open Water."
-          },
-          "day4": {
-            "title": "Despedida y certificación",
-            "desc": "Disfruta de un desayuno con el grupo mientras celebramos tu logro. Recibirás tu certificación Advanced Open Water, un nuevo paso en tu camino como buzo certificado."
-          }
-        },
-
-        "fun-dive": {
-          "day1": {
-            "title": "Llegada y repaso de equipo",
-            "desc": "Bienvenido a Santa Marta. Tras instalarte, realizaremos el check-in, repasaremos tu equipo y tendrás la opción de un Refresh de habilidades (sin costo adicional) o un programa Reactivate PADI (con costo adicional) para actualizar tu entrenamiento."
-          },
-          "day2": {
-            "title": "Exploración de arrecifes en Tayrona",
-            "desc": "Sumérgete en tres inmersiones recreativas en distintos arrecifes del Parque Tayrona, rodeado de corales y vida marina. Un día perfecto para reconectar con la pasión por el buceo."
-          },
-          "day3": {
-            "title": "Nuevos sitios y pecios",
-            "desc": "Explorarás dos nuevos puntos de buceo, que pueden incluir un emocionante pecio o zonas especiales dentro del parque. Una jornada ideal para ampliar tu experiencia subacuática."
+            "desc": "Tras el desayuno, salida en bote para completar las 2 últimas inmersiones requeridas. En la noche, cena especial y entrega de tu certificación PADI Open Water Diver."
           },
           "day4": {
             "title": "Cierre y despedida",
-            "desc": "Desayuno con el grupo y despedida en Santa Marta. Te llevas contigo recuerdos únicos de las inmersiones y la experiencia de buceo en el Caribe colombiano."
+            "desc": "Desayuno incluido y check-out a las 11:00 a.m. Ahora eres un buzo certificado, listo para explorar el mundo submarino."
+          }
+        },
+        "advanced-open-water": {
+          "day1": {
+            "title": "Llegada y preparación",
+            "desc": "Llegada a Santa Marta, check-in en el hotel y almuerzo libre. En la tarde, Refresh (incluido) o Reactivate (add-on). Cena de bienvenida incluida."
+          },
+          "day2": {
+            "title": "Navegación y aventuras",
+            "desc": "Tras el desayuno, inmersión obligatoria de Navegación Subacuática y 2 electivas a elegir (fotografía digital, identificación de peces, flotabilidad avanzada, búsqueda y recuperación o buceo en basuras). En la noche, opción de buceo nocturno (add-on) y cena incluida."
+          },
+          "day3": {
+            "title": "Buceo profundo y electiva",
+            "desc": "Tras el desayuno, inmersión obligatoria de Buceo Profundo (30 m) y una electiva adicional (pecio, flotabilidad avanzada o búsqueda y recuperación). En la noche, cena de premiación y entrega de certificación PADI Advanced Open Water Diver."
+          },
+          "day4": {
+            "title": "Cierre y despedida",
+            "desc": "Desayuno incluido y check-out a las 11:00 a.m. Eres Advanced Open Water Diver, listo para nuevos retos."
+          }
+        },
+        "fun-dive": {
+          "day1": {
+            "title": "Llegada y bienvenida",
+            "desc": "Llegada a Santa Marta, check-in en el hotel y almuerzo libre. En la tarde, Refresh (incluido) o Reactivate (add-on). En la noche, cena de bienvenida incluida."
+          },
+          "day2": {
+            "title": "Inmersiones desde la orilla",
+            "desc": "Tras el desayuno, 2 inmersiones desde la orilla. En la tarde, almuerzo libre y tiempo de descanso. En la noche, opción de buceo nocturno (add-on) y cena incluida."
+          },
+          "day3": {
+            "title": "Exploración en bote",
+            "desc": "Tras el desayuno, salida en bote para 2 inmersiones, con opción de una tercera (add-on). En la noche, cena de premiación incluida."
+          },
+          "day4": {
+            "title": "Cierre y despedida",
+            "desc": "Desayuno incluido y check-out a las 11:00 a.m. Te llevas recuerdos únicos del Caribe colombiano."
           }
         }
       },
 
       "whatIsIncluded": {
         "items": {
-          "item1": "Alojamiento por 3 noches y 4 días en hotel seleccionado en Santa Marta (habitaciones compartidas).",
-          "item2": "Plan de alimentación: 3 desayunos, 3 cenas y snacks diarios.",
-          "item3": "Traslados terrestres: aeropuerto-hotel-aeropuerto y hacia las actividades programadas.",
-          "item4": "Cobertura fotográfica de tus inmersiones y momentos destacados de la experiencia.",
-          "item5": "Traslados terrestres hacia las actividades programadas."
+          "item1": "Alojamiento por 3 noches en hotel seleccionado en Santa Marta (habitaciones compartidas).",
+          "item2": "Plan de alimentación según programa (desayunos, cenas y snacks diarios).",
+          "item3": "Programa de buceo según perfil: PADI Open Water Diver (5 sesiones en aguas confinadas + 4 inmersiones en aguas abiertas) / PADI Advanced Open Water Diver (5 inmersiones: 2 obligatorias + 3 electivas) / Fun Dive (6 inmersiones).",
+          "item4": "Traslados terrestres a las actividades programadas.",
+          "item5": "Staff JustDiveCol, kit de bienvenida y acompañamiento logístico.",
+          "item6": "Seguro especializado para actividades de buceo durante toda la experiencia.",
+          "item7": "Cobertura fotográfica básica de la experiencia."
         }
       },
-
       "whatIsNotIncluded": {
         "items": {
-          "item1": "Tiquetes aéreos nacionales o internacionales hacia y desde Santa Marta.",
-          "item2": "Bebidas alcohólicas, consumos no especificados y comidas adicionales fuera del plan.",
-          "item3": "Propinas voluntarias para instructores, guías o personal de apoyo.",
-          "item4": "Gastos personales no mencionados explícitamente en la experiencia.",
-          "item5": "Traslados terrestres: aeropuerto-hotel-aeropuerto."
+          "item1": "Tiquetes aéreos nacionales o internacionales hacia/desde Santa Marta.",
+          "item2": "Traslados no especificados fuera del itinerario.",
+          "item3": "Comidas marcadas como libres, bebidas alcohólicas y consumos no especificados.",
+          "item4": "Actividades opcionales y add-ons como buceo nocturno o talleres culturales.",
+          "item5": "Gastos personales y propinas."
         }
       },
 
       "sessions": {
         "sept25": {
-          "name": "Certificación PADI Open Water en Tayrona - Septiembre 2025",
-
-          "pricingOptions": {
-            "opt1": "PADI Open Water",
-            "opt2": "Buzo certificado acompañante",
-            "opt3": "Acompañante no buzo"
-          },
-
-          "pricingOptionsNotes": {
-            "note1": "Las habitaciones son compartidas. La opción de habitación individual tiene un costo adicional y está sujeta a disponibilidad."
-          },
-
-          "paymentPlan": {
-            "installments": {
-              "desc1": "Separar cupo y recibir material de estudio PADI",
-              "desc2": "Segundo abono del plan de pagos",
-              "desc3": "Saldo final antes de la salida"
-            }
-          }
+          "name": "Certificación PADI Open Water en Tayrona - Septiembre 2025"
         },
-
-        "nov25": {
-          "name": "Certificación PADI Open Water en Tayrona - Noviembre 2025",
-
-          "pricingOptions": {
-            "opt1": "PADI Open Water",
-            "opt2": "Buzo certificado acompañante",
-            "opt3": "Acompañante no buzo"
-          },
-
-          "pricingOptionsNotes": {
-            "note1": "Las habitaciones son compartidas. La opción de habitación individual tiene un costo adicional y está sujeta a disponibilidad."
-          },
-
-          "paymentPlan": {
-            "installments": {
-              "desc1": "Separar cupo y recibir material de estudio PADI",
-              "desc2": "Segundo abono del plan de pagos",
-              "desc3": "Saldo final antes de la salida"
-            }
-          }
-        },
-
         "feb26": {
-          "name": "Certificación PADI Open Water en Tayrona - Febrero 2026",
+          "name": "Certificación PADI Open Water en Tayrona - Febrero 2026"
+        },
+        "nov26": {
+          "name": "Certificación PADI Open Water en Tayrona - Noviembre 2026"
+        }
+      }
+    },
+    "santaMartaCustomExp": {
+      "seo": {
+        "title": "Santa Marta Tayrona: Viaje Personalizado de Buceo",
+        "desc": "Disfruta de un programa de buceo personalizado en Santa Marta y el Parque Tayrona. Incluye certificaciones, fun dives y actividades adaptadas a tus necesidades.",
+        "keywords": "Santa Marta buceo, Tayrona buceo, viaje personalizado buceo Santa Marta, certificación PADI, fun dive Tayrona, Caribe colombiano"
+      },
 
-          "pricingOptions": {
-            "opt1": "PADI Open Water",
-            "opt2": "PADI Advanced Open Water",
-            "opt3": "Buzo certificado acompañante",
-            "opt4": "Acompañante no buzo"
+      "header": {
+        "title": "Santa Marta Tayrona: Viaje Personalizado de Buceo",
+        "subtitle": "Flexibilidad total con certificaciones, fun dives y actividades diseñadas a tu medida en el Parque Tayrona."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Santa Marta y el Parque Tayrona son destinos privilegiados del Caribe colombiano, donde la naturaleza y el mar se combinan en un escenario ideal para el buceo.",
+          "p2": "Con un viaje personalizado podrás definir si deseas certificarte como PADI Open Water, avanzar con el nivel Advanced Open Water o simplemente disfrutar de fun dives guiados.",
+          "p3": "La flexibilidad de un programa hecho a tu medida te asegura vivir una experiencia auténtica y exclusiva en el corazón del Tayrona."
+        }
+      },
+
+      "sessions": {
+        "apr25": {
+          "name": "Expedición personalizada de buceo - Abril 2025",
+
+          "whatIsIncluded": {
+            "items": {
+              "item1": "Entrenamiento completo PADI Open Water Diver y Advanced Open Water Diver",
+              "item2": "Certificación digital PADI en ambos niveles",
+              "item3": "Acompañamiento permanente de instructores PADI y divemasters JustDiveCol",
+              "item4": "Equipo básico de buceo incluido (tanque, lastre, máscara, aletas, chaleco, regulador)",
+              "item5": "Alquiler de equipo especializado extra (computadora de buceo, cámara subacuática, linterna)",
+              "item6": "Seguro de buceo y asistencia básica durante la experiencia",
+              "item7": "Alojamiento en Santa Marta durante 8 días y 7 noches",
+              "item8": "Plan todo incluido: desayunos, almuerzos, cenas y bebidas",
+              "item9": "Traslados en lancha hacia los puntos de buceo en el Parque Tayrona",
+              "item10": "Actividades de integración y convivencia entre los participantes",
+              "item11": "Encuentros sociales y culturales en Santa Marta (cenas grupales, recorridos locales)",
+              "item12": "Espacios de networking y comunidad entre buzos de diferentes niveles",
+              "item13": "Registro fotográfico y recuerdos digitales de la experiencia"
+            }
           },
-
-          "pricingOptionsNotes": {
-            "note1": "Las habitaciones son compartidas. La opción de habitación individual tiene un costo adicional y está sujeta a disponibilidad."
-          },
-
-          "paymentPlan": {
-            "installments": {
-              "desc1": "Separar cupo y recibir material de estudio PADI",
-              "desc2": "Segundo abono del plan de pagos",
-              "desc3": "Saldo final antes de la salida"
+          "whatIsNotIncluded": {
+            "items": {
+              "item1": "Tiquetes aéreos hacia/desde Santa Marta",
+              "item2": "Gastos personales no especificados (souvenirs, compras locales)",
+              "item3": "Propinas opcionales"
             }
           }
+        }
+      }
+    },
+
+    "curacaoExp": {
+      "seo": {
+        "title": "Curazao: Buceo y Certificación PADI",
+        "desc": "Explora arrecifes vibrantes y aguas cristalinas en Curazao. Opción de certificación PADI o fun dives guiados en el Caribe.",
+        "keywords": "Curazao buceo, certificación PADI Curazao, fun dive Curazao, shore diving, Caribe"
+      },
+
+      "header": {
+        "title": "Curazao: Buceo y Certificación PADI en el Caribe",
+        "subtitle": "Explora arrecifes vibrantes y aguas cristalinas con certificaciones o fun dives guiados."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Curazao es reconocido por sus arrecifes vibrantes y aguas de gran visibilidad, ideales tanto para buzos certificados como para quienes desean entrenarse.",
+          "p2": "Durante el programa podrás combinar certificaciones PADI o fun dives en sitios icónicos de la isla, disfrutando también de su ambiente cultural y caribeño.",
+          "p3": "Un viaje de buceo que une independencia, confort y la posibilidad de descubrir la riqueza submarina del Caribe holandés."
+        }
+      }
+    },
+    "curacaoCustomExp": {
+      "seo": {
+        "title": "Curazao: Viaje Personalizado de Buceo",
+        "desc": "Disfruta de un programa de buceo personalizado en Curazao. Incluye certificaciones, fun dives y actividades adaptadas a tus necesidades.",
+        "keywords": "Curazao buceo, viaje personalizado buceo Curazao, certificación PADI, fun dive Curazao, Caribe"
+      },
+
+      "header": {
+        "title": "Curazao: Viaje Personalizado de Buceo",
+        "subtitle": "Disfruta de un programa adaptable con certificaciones, fun dives y logística a medida."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Curazao es un destino perfecto para organizar un viaje de buceo personalizado, con arrecifes accesibles desde la orilla y una logística flexible.",
+          "p2": "Este tipo de experiencia puede adaptarse a quienes buscan certificarse, realizar fun dives ilimitados o simplemente combinar el buceo con el disfrute de la isla.",
+          "p3": "Con un programa a medida, Curazao se convierte en una experiencia de buceo inolvidable, marcada por la libertad y el estilo JustDiveCol."
+        }
+      },
+
+      "sessions": {
+        "nov24": {
+          "name": "Viaje personalizado de buceo en familia - Noviembre 2024",
+
+          "whatIsIncluded": {
+            "items": {
+              "item1": "Hospedaje en cabaña privada en Dream of the Green Flamingo (5 días / 4 noches).",
+              "item2": "Transporte terrestre en camioneta privada de último modelo, con recogida y regreso al aeropuerto.",
+              "item3": "Traslados diarios a playas y puntos de buceo en la isla.",
+              "item4": "Buceo ilimitado durante 3 días desde la orilla, acompañado por divemaster local.",
+              "item5": "Certificación PADI Advanced Open Water Diver para quienes optaron por continuar su entrenamiento.",
+              "item6": "Alquiler de equipo completo, mapas de buceo y entrenamiento en habilidades de navegación subacuática.",
+              "item7": "Aire estándar y Nitrox incluidos (requiere certificación previa).",
+              "item8": "Todas las comidas incluidas: desayunos, almuerzos y cenas en diferentes restaurantes locales y spots de la isla.",
+              "item9": "Seguro de buceo y seguro de viaje durante toda la experiencia.",
+              "item10": "Servicio de fotografía y video submarino para capturar los mejores momentos.",
+              "item11": "Actividades de integración y convivencia entre participantes en los tiempos libres.",
+              "item12": "Asistencia personalizada y acompañamiento 24/7 por parte del staff JustDiveCol."
+            }
+          },
+          "whatIsNotIncluded": {
+            "items": {
+              "item1": "Tiquetes aéreos hacia/desde Curaçao.",
+              "item2": "Bebidas alcohólicas.",
+              "item3": "Propinas para guías, divemaster o personal local.",
+              "item4": "Gastos personales y compras no especificadas en el programa."
+            }
+          }
+        }
+      }
+    },
+
+    "cancunExp": {
+      "seo": {
+        "title": "Cancún & Cozumel: Buceo y Certificación PADI",
+        "desc": "Explora arrecifes y cenotes en Cancún y Cozumel. Opción de certificación PADI Open Water o fun dives en el Caribe mexicano.",
+        "keywords": "Cancún buceo, Cozumel buceo, certificación PADI Open Water Cancún, cenotes Riviera Maya, Caribe mexicano"
+      },
+
+      "header": {
+        "title": "Cancún & Cozumel: Buceo y Certificación PADI",
+        "subtitle": "Sumérgete en arrecifes y cenotes del Caribe mexicano con certificación PADI o fun dives."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Cancún y Cozumel son referentes del Caribe mexicano, con arrecifes espectaculares y cenotes únicos de aguas cristalinas.",
+          "p2": "Aquí podrás completar tu certificación PADI Open Water, avanzar tu entrenamiento o disfrutar de fun dives en algunos de los sitios más reconocidos del mundo.",
+          "p3": "Una experiencia que combina buceo, cultura y naturaleza en un solo destino caribeño."
+        }
+      }
+    },
+    "cancunCustomExp": {
+      "seo": {
+        "title": "Cancún & Cozumel: Viaje Personalizado de Buceo",
+        "desc": "Disfruta de un programa de buceo personalizado en Cancún y Cozumel. Incluye certificaciones, fun dives y actividades adaptadas a tus necesidades.",
+        "keywords": "Cancún buceo, Cozumel buceo, viaje personalizado buceo Cancún, certificación PADI, fun dive Cancún, Caribe mexicano"
+      },
+
+      "header": {
+        "title": "Cancún & Cozumel: Viaje Personalizado de Buceo",
+        "subtitle": "Un programa a medida que integra certificaciones, fun dives y experiencias en arrecifes y cenotes."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Un viaje de buceo personalizado en Cancún y Cozumel te permite disfrutar de arrecifes de clase mundial y la magia de los cenotes en la Riviera Maya.",
+          "p2": "Este programa flexible puede incluir certificaciones, fun dives y excursiones adaptadas a tus intereses, asegurando comodidad y calidad en cada detalle.",
+          "p3": "Con JustDiveCol, cada experiencia en el Caribe mexicano se transforma en un recuerdo único de buceo, exploración y cultura."
+        }
+      },
+
+      "sessions": {
+        "oct24": {
+          "name": "Expedición personalizada de buceo - Octubre 2024",
+
+          "whatIsIncluded": {
+            "items": {
+              "item1": "7 noches de alojamiento en Cancún con plan todo incluido (comidas y bebidas).",
+              "item2": "Traslados terrestres privados aeropuerto-hotel-aeropuerto y hacia actividades programadas.",
+              "item3": "Curso PADI Open Water Diver para los participantes que iniciaban su certificación.",
+              "item4": "Excursión de buceo en Cozumel con arrecifes de clase mundial.",
+              "item5": "Buceo en cenotes de la Riviera Maya (aguas cristalinas con visibilidad inigualable).",
+              "item6": "Equipo básico de buceo incluido para todas las inmersiones.",
+              "item7": "Acompañamiento de instructores PADI y staff JustDiveCol durante toda la experiencia.",
+              "item8": "Seguro especializado para actividades de buceo y viajes.",
+              "item9": "Registro fotográfico y de video de los momentos más destacados.",
+              "item10": "Actividades de integración y convivencia en Cancún y Cozumel."
+            }
+          },
+          "whatIsNotIncluded": {
+            "items": {
+              "item1": "Tiquetes aéreos internacionales hacia/desde Cancún, México.",
+              "item2": "Propinas voluntarias para guías, tripulación o personal local.",
+              "item3": "Gastos personales y compras no especificadas en el programa.",
+              "item4": "Actividades opcionales fuera del plan establecido."
+            }
+          }
+        }
+      }
+    },
+
+    "miamiExp": {
+      "seo": {
+        "title": "Miami & Cayos de Florida: Buceo y Certificación PADI",
+        "desc": "Explora los cayos de Florida con buceo en arrecifes y naufragios. Opción de certificación PADI o fun dives guiados.",
+        "keywords": "Miami buceo, Florida Keys buceo, certificación PADI Florida, fun dive Miami, cayos de Florida"
+      },
+
+      "header": {
+        "title": "Miami & Florida Keys: Buceo en Arrecifes y Naufragios",
+        "subtitle": "Explora los cayos de Florida con certificaciones PADI o fun dives en arrecifes y pecios."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Miami y los Cayos de Florida ofrecen una mezcla única de buceo en arrecifes, naufragios y experiencias urbanas.",
+          "p2": "Podrás realizar certificaciones PADI o fun dives en diferentes puntos del archipiélago, mientras disfrutas también de la ciudad y sus actividades culturales.",
+          "p3": "Un viaje que combina mar y ciudad en una propuesta integral para buzos y acompañantes."
+        }
+      }
+    },
+    "miamiCustomExp": {
+      "seo": {
+        "title": "Miami & Cayos de Florida: Viaje Personalizado de Buceo",
+        "desc": "Disfruta de un programa de buceo personalizado en Miami y los Cayos de Florida. Incluye certificaciones, fun dives y actividades adaptadas a tus necesidades.",
+        "keywords": "Miami buceo, Florida Keys buceo, viaje personalizado buceo Miami, certificación PADI, fun dive Miami, cayos de Florida"
+      },
+
+      "header": {
+        "title": "Miami & Florida Keys: Viaje Personalizado de Buceo",
+        "subtitle": "Combina certificaciones, fun dives y experiencias urbanas en un programa flexible en el sur de Florida."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Un viaje personalizado en Miami y los Cayos de Florida te brinda la posibilidad de diseñar tu propio plan de buceo y turismo.",
+          "p2": "Puedes optar por certificaciones, fun dives en arrecifes o naufragios, y combinarlo con actividades urbanas según tus preferencias.",
+          "p3": "La flexibilidad y el acompañamiento de JustDiveCol aseguran que tu experiencia en Florida sea completa y memorable."
+        }
+      },
+
+      "sessions": {
+        "oct24": {
+          "name": "Viaje personalizado de buceo - Octubre 2024",
+
+          "whatIsIncluded": {
+            "items": {
+              "item1": "5 noches de hospedaje en apartamentos privados en Miami.",
+              "item2": "Traslados organizados hacia diferentes puntos de buceo en los Cayos de Florida.",
+              "item3": "Inmersiones guiadas en arrecifes y naufragios característicos de la zona.",
+              "item4": "Equipo básico de buceo incluido para todas las salidas programadas.",
+              "item5": "Acompañamiento de staff JustDiveCol durante toda la experiencia.",
+              "item6": "Seguro especializado para actividades de buceo y viajes.",
+              "item7": "Actividades de turismo y compras en outlets de Miami.",
+              "item8": "Registro fotográfico de momentos destacados del viaje."
+            }
+          },
+          "whatIsNotIncluded": {
+            "items": {
+              "item1": "Tiquetes aéreos internacionales hacia/desde Miami, Florida.",
+              "item2": "Propinas voluntarias para guías, tripulación o personal local.",
+              "item3": "Gastos personales y compras adicionales no especificadas en el programa.",
+              "item4": "Actividades opcionales fuera del plan establecido."
+            }
+          }
+        }
+      }
+    },
+
+    "sanAndresExp": {
+      "seo": {
+        "title": "San Andrés: Fun Dive y Certificación PADI Advanced Open Water",
+        "desc": "Explora el mar de siete colores en San Andrés con buceos para certificados, certificación PADI Advanced Open Water y actividades en la isla.",
+        "keywords": "San Andrés buceo, certificación PADI Advanced Open Water, fun dive San Andrés, naufragio Blue Diamond, drift dive, Caribe colombiano"
+      },
+
+      "header": {
+        "title": "San Andrés: Bucea el Mar de Siete Colores",
+        "subtitle": "Una experiencia para buzos certificados, en certificación Advanced Open Water y acompañantes."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "San Andrés enamora con su mar de siete colores, arrecifes vibrantes y naufragios icónicos.",
+          "p2": "Es el escenario perfecto para buzos certificados o quienes buscan avanzar con la certificación PADI Advanced Open Water, además de disfrutar actividades en la isla.",
+          "p3": "Un viaje donde la aventura submarina se complementa con cultura, integración y paisajes inolvidables."
+        }
+      },
+
+      "itinerary": {
+        "fun-dive": {
+          "day1": {
+            "title": "Llegada y bienvenida",
+            "desc": "Check-in en el hotel y almuerzo libre. Briefing general y entrega de kits. En la tarde, playa en Spratt Bight. En la noche, cena de bienvenida grupal."
+          },
+          "day2": {
+            "title": "Primer día de buceo",
+            "desc": "Tras el desayuno, 2 inmersiones en arrecifes cercanos. Almuerzo frente al mar. En la tarde, descanso en playa. En la noche, cena libre y experiencia cultural opcional (add-on)."
+          },
+          "day3": {
+            "title": "Naufragio y arrecife",
+            "desc": "Tras el desayuno, 2 inmersiones incluyendo el naufragio Blue Diamond y un arrecife. Almuerzo típico isleño. En la tarde, tiempo libre. En la noche, cena grupal."
+          },
+          "day4": {
+            "title": "Drift y jardines de coral",
+            "desc": "Tras el desayuno, drift dive y buceo en arrecife icónico como La Pirámide o Blue Hole. Almuerzo libre. En la tarde, visita a Rocky Cay. En la noche, experiencia premium grupal como catamarán o cena especial (add-on)."
+          },
+          "day5": {
+            "title": "Cierre y despedida",
+            "desc": "Desayuno incluido, fotos grupales y check-out a las 11:00 a.m. Traslado al aeropuerto. Recomendamos respetar el margen de seguridad post-buceo (18-24 h sin volar)."
+          }
+        },
+        "advanced-open-water": {
+          "day1": {
+            "title": "Llegada y bienvenida",
+            "desc": "Check-in en el hotel y almuerzo libre. Briefing general y entrega de kits. En la noche, cena de bienvenida grupal."
+          },
+          "day2": {
+            "title": "Navegación y electiva",
+            "desc": "Tras el desayuno, inmersión obligatoria de Navegación Subacuática más una electiva (fotografía, identificación de peces, flotabilidad, búsqueda y recuperación o basuras). Almuerzo frente al mar. En la tarde, repaso teórico. En la noche, opción de buceo nocturno (add-on) y cena incluida."
+          },
+          "day3": {
+            "title": "Buceo profundo y electiva",
+            "desc": "Tras el desayuno, inmersión obligatoria de Buceo Profundo (30 m) más una electiva adicional. En la tarde, práctica opcional en piscina. En la noche, cena grupal."
+          },
+          "day4": {
+            "title": "Cierre de certificación",
+            "desc": "Tras el desayuno, última inmersión de orientación y cierre de skills. Entrega de certificaciones y experiencia premium grupal como catamarán o cena especial (add-on)."
+          },
+          "day5": {
+            "title": "Cierre y despedida",
+            "desc": "Desayuno incluido, fotos grupales y check-out a las 11:00 a.m. Traslado al aeropuerto. Recomendamos respetar el margen de seguridad post-buceo (18-24 h sin volar)."
+          }
+        }
+      },
+
+      "whatIsIncluded": {
+        "items": {
+          "item1": "Alojamiento por 4 noches en hotel seleccionado en San Andrés (habitaciones compartidas).",
+          "item2": "Plan de alimentación según programa (desayunos, almuerzos y cenas).",
+          "item3": "Programa de buceo según perfil: Fun Dive (6 inmersiones) / PADI Advanced Open Water Diver (5 inmersiones: 2 obligatorias + 3 electivas).",
+          "item4": "Staff JustDiveCol, kit de bienvenida y acompañamiento logístico.",
+          "item5": "Seguro especializado para actividades de buceo durante toda la experiencia.",
+          "item6": "Traslados locales a las actividades programadas (centro de buceo / muelle).",
+          "item7": "Cobertura fotográfica básica de la experiencia."
+        }
+      },
+      "whatIsNotIncluded": {
+        "items": {
+          "item1": "Tiquetes aéreos hacia/desde San Andrés.",
+          "item2": "Traslados no especificados fuera del itinerario.",
+          "item3": "Comidas marcadas como libres, bebidas alcohólicas y consumos no especificados.",
+          "item4": "Actividades opcionales y add-ons como buceo nocturno, catamarán, kayak, paddle o masajes.",
+          "item5": "Gastos personales y propinas."
+        }
+      },
+
+      "sessions": {
+        "jun26": {
+          "name": "Expedición de buceo San Andrés - Junio 2026"
+        }
+      }
+    },
+    "sanAndresCustomExp": {
+      "seo": {
+        "title": "San Andrés: Viaje Personalizado de Buceo",
+        "desc": "Disfruta de un programa de buceo personalizado en San Andrés. Incluye certificaciones, fun dives y actividades adaptadas a tus necesidades.",
+        "keywords": "San Andrés buceo, viaje personalizado buceo San Andrés, certificación PADI, fun dive San Andrés, Caribe colombiano"
+      },
+
+      "header": {
+        "title": "San Andrés: Viaje Personalizado de Buceo",
+        "subtitle": "Programa adaptable con certificaciones, fun dives y actividades en el mar de siete colores."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "San Andrés ofrece el escenario ideal para un viaje de buceo personalizado en el mar de siete colores.",
+          "p2": "Este programa flexible incluye opciones de certificaciones PADI, fun dives y actividades adaptadas a tu grupo o preferencias individuales.",
+          "p3": "Una propuesta diseñada para vivir el Caribe insular con la libertad y seguridad de JustDiveCol."
+        }
+      }
+    },
+
+    "providenciaExp": {
+      "seo": {
+        "title": "Providencia: Fun Dive y Certificación PADI Advanced Open Water",
+        "desc": "Descubre arrecifes intactos, naufragios y cultura isleña en Providencia. Programa para buzos certificados, en certificación Advanced Open Water y acompañantes.",
+        "keywords": "Providencia buceo, certificación PADI Advanced Open Water, fun dive Providencia, pecio Planchón, Cayo Cangrejo, Caribe colombiano"
+      },
+
+      "header": {
+        "title": "Providencia: Buceo, Naturaleza y Cultura Isleña",
+        "subtitle": "Una experiencia exclusiva para buzos certificados, en certificación Advanced Open Water y acompañantes."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Providencia es un tesoro del Caribe colombiano, con arrecifes intactos, cultura raizal auténtica y biodiversidad única bajo el agua.",
+          "p2": "Es el destino perfecto para buzos certificados o quienes deseen avanzar con la certificación PADI Advanced Open Water, disfrutando además de la tranquilidad isleña.",
+          "p3": "Una experiencia de buceo profunda, exclusiva y conectada con la naturaleza y la cultura local."
+        }
+      },
+
+      "itinerary": {
+        "fun-dive": {
+          "day1": {
+            "title": "Llegada y bienvenida",
+            "desc": "Check-in en el hotel y almuerzo libre. Briefing de bienvenida y entrega de kits. En la tarde, caminata ligera opcional por Manzanillo o South West Bay. En la noche, cena de bienvenida grupal."
+          },
+          "day2": {
+            "title": "Primer día de buceo",
+            "desc": "Tras el desayuno, Refresh en bahía protegida y 2 inmersiones en arrecifes como Tete’s Place o Mantas Place. En la tarde, tiempo libre o actividad opcional como kayak/paddle (add-on). En la noche, cena de integración grupal. Opción de buceo nocturno (add-on)."
+          },
+          "day3": {
+            "title": "Pecio y arrecife",
+            "desc": "Tras el desayuno, 2 inmersiones incluyendo el pecio Planchón y un arrecife. En la tarde, descanso en hotel o piscina. En la noche, cena BBQ en la playa. Opción de buceo nocturno (add-on)."
+          },
+          "day4": {
+            "title": "Cierre y despedida",
+            "desc": "Desayuno incluido, caminata ligera y fotos grupales. Tiempo libre para empacar y check-out a las 11:00 a.m. Traslado al aeropuerto. Recomendamos respetar el margen de seguridad post-buceo (18-24 h sin volar)."
+          }
+        },
+        "advanced-open-water": {
+          "day1": {
+            "title": "Llegada y bienvenida",
+            "desc": "Check-in en el hotel y almuerzo libre. Briefing inicial, entrega de kits y revisión de agenda AOWD. En la noche, cena de bienvenida grupal."
+          },
+          "day2": {
+            "title": "Navegación y electiva",
+            "desc": "Tras el desayuno, inmersión obligatoria de Navegación Subacuática más una electiva (flotabilidad o identificación de peces). En la tarde, repaso teórico AOWD. En la noche, opción de buceo nocturno (add-on) y cena incluida."
+          },
+          "day3": {
+            "title": "Buceo profundo y electiva",
+            "desc": "Tras el desayuno, inmersión obligatoria de Buceo Profundo (30 m) más una electiva (fotografía o búsqueda y recuperación). En la tarde, repaso final. En la noche, cena BBQ en playa incluida."
+          },
+          "day4": {
+            "title": "Cierre de certificación",
+            "desc": "Desayuno incluido, última actividad suave y entrega de certificaciones. Fotos grupales y check-out a las 11:00 a.m. Traslado al aeropuerto. Recomendamos respetar el margen de seguridad post-buceo (18-24 h sin volar)."
+          }
+        }
+      },
+
+      "whatIsIncluded": {
+        "items": {
+          "item1": "Alojamiento por 3 noches en hotel seleccionado en Providencia (habitaciones compartidas).",
+          "item2": "Plan de alimentación según programa (desayunos y cenas según itinerario).",
+          "item3": "Programa de buceo según perfil: Fun Dive (4 inmersiones) / PADI Advanced Open Water Diver (5 inmersiones: 2 obligatorias + 3 electivas).",
+          "item4": "Staff JustDiveCol, kit de bienvenida y acompañamiento logístico.",
+          "item5": "Seguro especializado para actividades de buceo durante toda la experiencia.",
+          "item6": "Traslados locales a las actividades programadas (centro de buceo / muelle).",
+          "item7": "Cobertura fotográfica básica de la experiencia."
+        }
+      },
+      "whatIsNotIncluded": {
+        "items": {
+          "item1": "Tiquetes aéreos hacia/desde Providencia.",
+          "item2": "Traslados no especificados fuera del itinerario.",
+          "item3": "Comidas marcadas como libres, bebidas alcohólicas y consumos no especificados.",
+          "item4": "Actividades opcionales y add-ons como buceo nocturno, kayak, paddle, masajes o talleres culturales.",
+          "item5": "Gastos personales y propinas."
+        }
+      },
+
+      "sessions": {
+        "aug26": {
+          "name": "Expedición de buceo Providencia - Agosto 2026"
+        }
+      }
+    },
+    "providenciaCustomExp": {
+      "seo": {
+        "title": "Providencia: Viaje Personalizado de Buceo",
+        "desc": "Disfruta de un programa de buceo personalizado en Providencia. Incluye certificaciones, fun dives y actividades adaptadas a tus necesidades.",
+        "keywords": "Providencia buceo, viaje personalizado buceo Providencia, certificación PADI, fun dive Providencia, Caribe colombiano"
+      },
+
+      "header": {
+        "title": "Providencia: Viaje Personalizado de Buceo",
+        "subtitle": "Un programa flexible con certificaciones, fun dives y actividades en arrecifes y naufragios de la isla."
+      },
+
+      "description": {
+        "paragraphs": {
+          "p1": "Un viaje personalizado a Providencia te acerca a un Caribe auténtico, con arrecifes prístinos y una atmósfera tranquila e inigualable.",
+          "p2": "El programa puede adaptarse a certificaciones PADI, fun dives y actividades culturales, siempre con un enfoque flexible y a medida.",
+          "p3": "Con JustDiveCol, la experiencia personalizada en Providencia combina naturaleza, cultura y buceo en un destino único."
         }
       }
     }

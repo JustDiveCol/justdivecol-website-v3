@@ -87,9 +87,10 @@
 
       "whatIsIncluded": {
         "items": {
-          "item1": "2 a 4 inmersiones guiadas por día.",
-          "item2": "Equipo de buceo completo: Alquiler de todo el equipo SCUBA que necesitarás (chaleco, regulador, traje de neopreno, máscara, aletas, tanques y lastre).",
-          "item3": "Acompañamiento de Divemaster o Instructor certificado."
+          "item1": "2 a 4 inmersiones guiadas por día en sitios seleccionados.",
+          "item2": "Equipo de buceo completo: Alquiler de todo el equipo SCUBA necesario (chaleco, regulador, traje de neopreno, máscara, aletas, tanques y lastre), en caso de no contar con equipo propio.",
+          "item3": "Acompañamiento y guía de un Divemaster o Instructor PADI certificado y en estatus activo.",
+          "item4": "Logística de buceo: Transporte (terrestre o en lancha), tanques de aire, lastre y refrigerios durante las salidas."
         }
       },
 
@@ -178,10 +179,10 @@
 
       "whatIsIncluded": {
         "items": {
-          "item1": "Certificación y materiales PADI: Acceso completo a la plataforma PADI eLearning® para la teoría y la tarifa de emisión de tu licencia final PADI Open Water Diver, válida de por vida.",
-          "item2": "Instrucción profesional y personalizada: Todas las clases teóricas, 5 sesiones en piscina y 4 inmersiones en el mar guiadas por un instructor PADI certificado y en estatus de enseñanza activo.",
-          "item3": "Equipo de buceo completo: Alquiler de todo el equipo SCUBA que necesitarás durante el curso (chaleco, regulador, traje de neopreno, máscara, aletas, tanques y lastre).",
-          "item4": "Logística de buceo: Todos los transportes en lancha a nuestros increíbles sitios de buceo y los tanques de aire necesarios para todas tus inmersiones."
+          "item1": "Certificación y materiales PADI: Acceso a la plataforma PADI eLearning® y tarifa de emisión de tu licencia digital Open Water Diver, válida de por vida.",
+          "item2": "Instrucción profesional: Clases teóricas, 5 sesiones en piscina y 4 inmersiones en el mar con un Instructor PADI certificado y en estatus de enseñanza activo.",
+          "item3": "Equipo de buceo completo: Alquiler de todo el equipo SCUBA necesario durante el curso (chaleco, regulador, traje de neopreno, máscara, aletas, tanques y lastre).",
+          "item4": "Logística de buceo: Transporte (terrestre o en lancha) a los sitios de práctica y tanques de aire para todas tus inmersiones."
         }
       },
 
@@ -286,10 +287,10 @@
 
       "whatIsIncluded": {
         "items": {
-          "item1": "Certificación y materiales PADI: Acceso a la plataforma PADI Advanced Open Water eLearning® y la tarifa de emisión de tu certificación final, reconocida en todo el mundo.",
-          "item2": "5 Inmersiones de aventura: La instrucción y supervisión de un Profesional PADI para tus 5 inmersiones (2 obligatorias y 3 electivas), diseñadas para expandir tus habilidades y confianza.",
-          "item3": "Equipo completo y especializado: Alquiler de tu equipo de buceo estándar y todo el equipo adicional necesario para tus inmersiones de aventura, como brújula, linternas para buceo nocturno, etc.",
-          "item4": "Logística y comodidad: Transporte en lancha a los diferentes puntos de buceo, tanques, lastre y, por supuesto, refrigerios a bordo para que disfrutes al máximo la experiencia."
+          "item1": "Certificación y materiales PADI: Acceso a la plataforma PADI Advanced Open Water eLearning® y la tarifa de emisión de tu certificación final, reconocida a nivel mundial.",
+          "item2": "5 Inmersiones de aventura: Instrucción y supervisión de un Profesional PADI para tus 5 inmersiones (2 obligatorias y 3 electivas).",
+          "item3": "Equipo completo y especializado: Alquiler de tu equipo SCUBA estándar y el equipo adicional necesario (brújula, linterna de buceo nocturno, etc.), en caso de no contar con equipo propio.",
+          "item4": "Logística de buceo: Transporte (terrestre o en lancha), tanques de aire, lastre y refrigerios durante las salidas."
         }
       },
 
@@ -394,10 +395,10 @@
 
       "whatIsIncluded": {
         "items": {
-          "item1": "Certificación y materiales PADI: Acceso completo a la plataforma PADI Rescue Diver eLearning® y la tarifa de emisión de tu certificación final, una de las más respetadas en el mundo del buceo.",
-          "item2": "Entrenamiento práctico intensivo: Toda la instrucción y supervisión por un Profesional PADI para los 10 ejercicios de rescate y los 2 escenarios finales en aguas abiertas.",
-          "item3": "Equipo completo y especializado de rescate: Alquiler de tu equipo de buceo estándar, además de todo el material de entrenamiento para emergencias, como máscaras de reanimación y kits de oxígeno.",
-          "item4": "Logística y soporte en el agua: Transporte en lancha a los sitios de entrenamiento, tanques de aire, lastre y refrigerios a bordo para mantenerte con energía durante este curso demandante."
+          "item1": "Certificación y materiales PADI: Acceso a la plataforma PADI Rescue Diver eLearning® y la tarifa de emisión de tu certificación digital final.",
+          "item2": "Entrenamiento práctico intensivo: Instrucción y supervisión por un Instructor PADI certificado para los 10 ejercicios de rescate y los 2 escenarios en aguas abiertas.",
+          "item3": "Equipo completo y especializado: Alquiler de equipo SCUBA estándar y materiales de entrenamiento para emergencias (máscaras de reanimación, kits de oxígeno, etc.), en caso de no contar con equipo propio.",
+          "item4": "Logística y soporte: Transporte (terrestre o en lancha) a los sitios de entrenamiento, tanques de aire, lastre y refrigerios durante las prácticas."
         }
       },
 

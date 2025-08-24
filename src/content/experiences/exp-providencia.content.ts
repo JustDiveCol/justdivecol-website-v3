@@ -39,33 +39,6 @@ const rawProvidenciaExp: ExperienceContent = {
     ],
   },
 
-  itinerary: {
-    titleKey: 'experiences.itineraryTitle',
-    days: [
-      {
-        day: 1,
-        titleKey: 'experiences.providenciaExp.itinerary.days.title1',
-        descriptionKey: 'experiences.providenciaExp.itinerary.days.desc1',
-      },
-      {
-        day: 2,
-        titleKey: 'experiences.providenciaExp.itinerary.days.title2',
-        descriptionKey: 'experiences.providenciaExp.itinerary.days.desc2',
-      },
-      {
-        day: 3,
-        titleKey: 'experiences.providenciaExp.itinerary.days.title3',
-        descriptionKey: 'experiences.providenciaExp.itinerary.days.desc3',
-      },
-      {
-        day: 4,
-        titleKey: 'experiences.providenciaExp.itinerary.days.title4',
-        descriptionKey: 'experiences.providenciaExp.itinerary.days.desc4',
-      },
-    ],
-    notes: ['experiences.providenciaExp.itinerary.notes.note1'],
-  },
-
   whatIsIncluded: {
     titleKey: 'experiences.whatIsIncludedTitle',
     items: [
@@ -73,6 +46,9 @@ const rawProvidenciaExp: ExperienceContent = {
       'experiences.providenciaExp.whatIsIncluded.items.item2',
       'experiences.providenciaExp.whatIsIncluded.items.item3',
       'experiences.providenciaExp.whatIsIncluded.items.item4',
+      'experiences.providenciaExp.whatIsIncluded.items.item5',
+      'experiences.providenciaExp.whatIsIncluded.items.item6',
+      'experiences.providenciaExp.whatIsIncluded.items.item7',
     ],
   },
 
@@ -83,6 +59,7 @@ const rawProvidenciaExp: ExperienceContent = {
       'experiences.providenciaExp.whatIsNotIncluded.items.item2',
       'experiences.providenciaExp.whatIsNotIncluded.items.item3',
       'experiences.providenciaExp.whatIsNotIncluded.items.item4',
+      'experiences.providenciaExp.whatIsNotIncluded.items.item5',
     ],
   },
 

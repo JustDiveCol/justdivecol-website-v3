@@ -118,6 +118,7 @@ const rawAdvancedOpenWaterDiver: CertificationContent = {
       'certifications.aowd.whatIsIncluded.items.item1',
       'certifications.aowd.whatIsIncluded.items.item2',
       'certifications.aowd.whatIsIncluded.items.item3',
+      'certifications.aowd.whatIsIncluded.items.item4',
     ],
   },
 

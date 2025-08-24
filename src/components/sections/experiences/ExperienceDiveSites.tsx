@@ -16,7 +16,7 @@ export const ExperienceDiveSites = ({
     <section className="bg-brand-primary-medium">
       <div className="section">
         <MotionBlock kind="inView" variants={fadeIn()} className="text-center">
-          <h2 className="heading-2 text-white mb-4">
+          <h2 className="heading-3 text-white mb-4">
             {t('experiences.diveSitesSectionTitle')}
           </h2>
           <p className="text-subtitle text-brand-neutral/80">

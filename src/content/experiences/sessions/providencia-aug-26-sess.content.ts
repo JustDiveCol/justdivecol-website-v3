@@ -1,6 +1,5 @@
 // src/content/experiences/sessions/providencia-aug-26-sess.content.ts
 
-import { toAssetUrl } from '../../../constants';
 import {
   ExperienceSessionContentSchema,
   type ExperienceSessionContent,
@@ -10,9 +9,8 @@ const rawProvidenciaAug26Sess: ExperienceSessionContent = {
   id: 'providencia-aug-26-sess',
   nameKey: 'experiences.providenciaExp.sessions.aug26.name',
   experienceId: 'exp-providencia',
-  imageUrl: toAssetUrl('/images/experiences/santa-marta/icon.webp'),
   startDate: '2026-08-06',
-  endDate: '2026-08-10',
+  endDate: '2026-08-09',
   capacity: 12,
   seatsAvailable: 12,
   availability: 'available',
@@ -20,51 +18,44 @@ const rawProvidenciaAug26Sess: ExperienceSessionContent = {
 
   pricingOptions: [
     {
-      id: 'open-water',
-      nameKey: 'experiences.providenciaExp.sessions.aug26.pricingOptions.opt1',
-      price: 4600000,
+      id: 'fun-dive',
+      nameKey: 'experiences.pricingOptions.FD',
+      price: 0,
       currency: 'COP',
     },
     {
       id: 'advanced-open-water',
-      nameKey: 'experiences.providenciaExp.sessions.aug26.pricingOptions.opt2',
-      price: 4600000,
-      currency: 'COP',
-    },
-    {
-      id: 'fun-dive',
-      nameKey: 'experiences.providenciaExp.sessions.aug26.pricingOptions.opt3',
-      price: 3700000,
+      nameKey: 'experiences.pricingOptions.AOWD',
+      price: 0,
       currency: 'COP',
     },
     {
       id: 'companion',
-      nameKey: 'experiences.providenciaExp.sessions.aug26.pricingOptions.opt4',
-      price: 2300000,
+      nameKey: 'experiences.pricingOptions.AC',
+      price: 0,
       currency: 'COP',
     },
   ],
+
+  pricingOptionsNotes: ['experiences.pricingOptionsNotes.note1'],
 
   paymentPlan: {
     titleKey: 'experiences.paymentPlanTitle',
     installments: [
       {
-        date: '2025-12-20',
+        date: '2026-05-24',
         percentage: 50,
-        descriptionKey:
-          'experiences.providenciaExp.sessions.aug26.paymentPlan.installments.desc1',
+        descriptionKey: 'experiences.paymentPlan.installments.desc1',
       },
       {
-        date: '2026-01-20',
+        date: '2026-06-24',
         percentage: 25,
-        descriptionKey:
-          'experiences.providenciaExp.sessions.aug26.paymentPlan.installments.desc2',
+        descriptionKey: 'experiences.paymentPlan.installments.desc2',
       },
       {
-        date: '2026-02-06',
+        date: '2026-07-24',
         percentage: 25,
-        descriptionKey:
-          'experiences.providenciaExp.sessions.aug26.paymentPlan.installments.desc3',
+        descriptionKey: 'experiences.paymentPlan.installments.desc3',
       },
     ],
   },
@@ -72,61 +63,44 @@ const rawProvidenciaAug26Sess: ExperienceSessionContent = {
   certificationIds: ['padi-open-water-diver', 'padi-advanced-open-water-diver'],
 
   overrides: {
-    whatIsIncluded: {
-      titleKey: 'experiences.whatIsIncludedTitle',
-      items: [
-        'experiences.providenciaExp.whatIsIncluded.items.item1',
-        'experiences.providenciaExp.whatIsIncluded.items.item2',
-        'experiences.providenciaExp.whatIsIncluded.items.item4',
-        'experiences.providenciaExp.whatIsIncluded.items.item5',
-      ],
-    },
-
-    whatIsNotIncluded: {
-      titleKey: 'experiences.whatIsNotIncludedTitle',
-      items: [
-        'experiences.providenciaExp.whatIsNotIncluded.items.item1',
-        'experiences.providenciaExp.whatIsNotIncluded.items.item5',
-        'experiences.providenciaExp.whatIsNotIncluded.items.item2',
-        'experiences.providenciaExp.whatIsNotIncluded.items.item3',
-        'experiences.providenciaExp.whatIsNotIncluded.items.item4',
-      ],
-    },
-
     itineraryByPricingOption: {
-      'open-water': {
+      'fun-dive': {
         titleKey: 'experiences.itineraryTitle',
         days: [
           {
             day: 1,
             titleKey:
-              'experiences.providenciaExp.itinerary.open-water.day1.title',
+              'experiences.providenciaExp.itinerary.fun-dive.day1.title',
             descriptionKey:
-              'experiences.providenciaExp.itinerary.open-water.day1.desc',
+              'experiences.providenciaExp.itinerary.fun-dive.day1.desc',
           },
           {
             day: 2,
             titleKey:
-              'experiences.providenciaExp.itinerary.open-water.day2.title',
+              'experiences.providenciaExp.itinerary.fun-dive.day2.title',
             descriptionKey:
-              'experiences.providenciaExp.itinerary.open-water.day2.desc',
+              'experiences.providenciaExp.itinerary.fun-dive.day2.desc',
           },
           {
             day: 3,
             titleKey:
-              'experiences.providenciaExp.itinerary.open-water.day3.title',
+              'experiences.providenciaExp.itinerary.fun-dive.day3.title',
             descriptionKey:
-              'experiences.providenciaExp.itinerary.open-water.day3.desc',
+              'experiences.providenciaExp.itinerary.fun-dive.day3.desc',
           },
           {
             day: 4,
             titleKey:
-              'experiences.providenciaExp.itinerary.open-water.day4.title',
+              'experiences.providenciaExp.itinerary.fun-dive.day4.title',
             descriptionKey:
-              'experiences.providenciaExp.itinerary.open-water.day4.desc',
+              'experiences.providenciaExp.itinerary.fun-dive.day4.desc',
           },
         ],
-        notes: ['experiences.providenciaExp.itinerary.notes.note1'],
+        notes: [
+          'experiences.itineraryNotes.note1',
+          'experiences.itineraryNotes.note2',
+          'experiences.itineraryNotes.note3',
+        ],
       },
 
       'advanced-open-water': {
@@ -161,42 +135,11 @@ const rawProvidenciaAug26Sess: ExperienceSessionContent = {
               'experiences.providenciaExp.itinerary.advanced-open-water.day4.desc',
           },
         ],
-        notes: ['experiences.providenciaExp.itinerary.notes.note1'],
-      },
-
-      'fun-dive': {
-        titleKey: 'experiences.itineraryTitle',
-        days: [
-          {
-            day: 1,
-            titleKey:
-              'experiences.providenciaExp.itinerary.fun-dive.day1.title',
-            descriptionKey:
-              'experiences.providenciaExp.itinerary.fun-dive.day1.desc',
-          },
-          {
-            day: 2,
-            titleKey:
-              'experiences.providenciaExp.itinerary.fun-dive.day2.title',
-            descriptionKey:
-              'experiences.providenciaExp.itinerary.fun-dive.day2.desc',
-          },
-          {
-            day: 3,
-            titleKey:
-              'experiences.providenciaExp.itinerary.fun-dive.day3.title',
-            descriptionKey:
-              'experiences.providenciaExp.itinerary.fun-dive.day3.desc',
-          },
-          {
-            day: 4,
-            titleKey:
-              'experiences.providenciaExp.itinerary.fun-dive.day4.title',
-            descriptionKey:
-              'experiences.providenciaExp.itinerary.fun-dive.day4.desc',
-          },
+        notes: [
+          'experiences.itineraryNotes.note1',
+          'experiences.itineraryNotes.note2',
+          'experiences.itineraryNotes.note3',
         ],
-        notes: ['experiences.providenciaExp.itinerary.notes.note1'],
       },
     },
   },

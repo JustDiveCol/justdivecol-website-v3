@@ -4,6 +4,7 @@ import { useMotionPresets } from '../../../hooks/animations';
 import type { ExperienceInclusionsProps } from './types';
 import { CheckIcon, CloseIcon } from '../../ui';
 import { MotionBlock } from '../../motion/MotionBlock';
+import React from 'react';
 
 export const ExperienceInclusions = ({
   whatIsIncluded,
@@ -13,6 +14,21 @@ export const ExperienceInclusions = ({
 }: ExperienceInclusionsProps) => {
   const { t } = useTranslation([translationNS, 'common', 'certifications']);
   const { container, fadeIn } = useMotionPresets();
+
+  const hasCertInclusions =
+    Array.isArray(certificationInclusions) &&
+    certificationInclusions.length > 0;
+
+  const [activeInclusionIdx, setActiveInclusionIdx] = React.useState(0);
+
+  // seguridad por si cambia la longitud
+  const safeActiveIdx = hasCertInclusions
+    ? Math.min(activeInclusionIdx, certificationInclusions.length - 1)
+    : 0;
+
+  const activeInclusion = hasCertInclusions
+    ? certificationInclusions[safeActiveIdx]
+    : undefined;
 
   return (
     <section className="bg-brand-primary-dark">
@@ -53,40 +69,78 @@ export const ExperienceInclusions = ({
           </div>
 
           {/* Inclusiones de certificaciones (si hay) */}
-          {certificationInclusions && certificationInclusions.length > 0 && (
+          {hasCertInclusions && (
             <div className="mt-8 pt-6 border-t border-white/10">
               <h4 className="font-bold text-subtitle text-brand-cta-orange mb-4">
                 {t('certifications:certificationInclusionsTitle')}
               </h4>
 
-              {certificationInclusions.map((inclusion, idx) => (
-                <div key={idx} className="mb-6">
-                  {inclusion.nameKey && (
-                    <p className="text-white/80 font-semibold mb-2">
-                      {inclusion.nameKey}
-                    </p>
-                  )}
+              {/* Botones arriba (estilo como Itinerary) */}
+              {certificationInclusions.length > 1 && (
+                <div className="mb-6 flex flex-wrap items-center justify-start gap-2">
+                  {certificationInclusions.map((inc, idx) => {
+                    const isActive = idx === safeActiveIdx;
+                    const label =
+                      (inc.nameKey && inc.nameKey) ||
+                      `${t('common:option', { defaultValue: 'Opción' })} ${
+                        idx + 1
+                      }`;
 
-                  <MotionBlock kind="none" variants={container}>
-                    <ul className="space-y-3">
-                      {inclusion.whatIsIncluded.items.map((itemKey, i) => (
-                        <MotionBlock
-                          key={i}
-                          kind="none"
-                          variants={fadeIn({ delay: i * 0.03 })}
-                        >
-                          <li className="flex items-start gap-3">
-                            <CheckIcon className="h-5 w-5 text-brand-cta-green flex-shrink-0 mt-1" />
-                            <span className="text-brand-neutral/90 text-sm text-justify">
-                              {t(itemKey, { ns: 'certifications' })}
-                            </span>
-                          </li>
-                        </MotionBlock>
-                      ))}
-                    </ul>
-                  </MotionBlock>
+                    return (
+                      <button
+                        key={`cert-inc-tab-${idx}`}
+                        type="button"
+                        onClick={() => setActiveInclusionIdx(idx)}
+                        className={[
+                          'px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-colors',
+                          isActive
+                            ? 'bg-brand-cta-orange text-white'
+                            : 'bg-white/10 text-white hover:bg-white/20',
+                        ].join(' ')}
+                        aria-pressed={isActive}
+                      >
+                        {label}
+                      </button>
+                    );
+                  })}
                 </div>
-              ))}
+              )}
+
+              {/* Contenido abajo (solo la inclusión activa) */}
+              {activeInclusion &&
+                (() => {
+                  const items = activeInclusion?.whatIsIncluded?.items ?? [];
+                  if (!items.length) return null;
+
+                  return (
+                    <div className="mb-6">
+                      {certificationInclusions.length === 1 &&
+                        activeInclusion.nameKey && (
+                          <p className="text-white/80 font-semibold mb-2">
+                            {activeInclusion.nameKey}
+                          </p>
+                        )}
+                      <MotionBlock kind="none" variants={container}>
+                        <ul className="space-y-3">
+                          {items.map((itemKey: string, i: number) => (
+                            <MotionBlock
+                              key={`${itemKey}-${i}`}
+                              kind="none"
+                              variants={fadeIn({ delay: i * 0.03 })}
+                            >
+                              <li className="flex items-start gap-3">
+                                <CheckIcon className="h-5 w-5 text-brand-cta-green flex-shrink-0 mt-1" />
+                                <span className="text-brand-neutral/90 text-sm text-justify">
+                                  {t(itemKey, { ns: 'certifications' })}
+                                </span>
+                              </li>
+                            </MotionBlock>
+                          ))}
+                        </ul>
+                      </MotionBlock>
+                    </div>
+                  );
+                })()}
             </div>
           )}
         </MotionBlock>

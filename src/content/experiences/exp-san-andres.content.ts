@@ -36,6 +36,7 @@ const rawSanAndresExp: ExperienceContent = {
     paragraphs: [
       'experiences.sanAndresExp.description.paragraphs.p1',
       'experiences.sanAndresExp.description.paragraphs.p2',
+      'experiences.sanAndresExp.description.paragraphs.p3',
     ],
   },
 
@@ -62,8 +63,17 @@ const rawSanAndresExp: ExperienceContent = {
         titleKey: 'experiences.sanAndresExp.itinerary.days.title4',
         descriptionKey: 'experiences.sanAndresExp.itinerary.days.desc4',
       },
+      {
+        day: 5,
+        titleKey: 'experiences.sanAndresExp.itinerary.days.title5',
+        descriptionKey: 'experiences.sanAndresExp.itinerary.days.desc5',
+      },
     ],
-    notes: ['experiences.sanAndresExp.itinerary.notes.note1'],
+    notes: [
+      'experiences.sanAndresExp.itinerary.notes.note1',
+      'experiences.sanAndresExp.itinerary.notes.note2',
+      'experiences.sanAndresExp.itinerary.notes.note3',
+    ],
   },
 
   whatIsIncluded: {
@@ -73,6 +83,9 @@ const rawSanAndresExp: ExperienceContent = {
       'experiences.sanAndresExp.whatIsIncluded.items.item2',
       'experiences.sanAndresExp.whatIsIncluded.items.item3',
       'experiences.sanAndresExp.whatIsIncluded.items.item4',
+      'experiences.sanAndresExp.whatIsIncluded.items.item5',
+      'experiences.sanAndresExp.whatIsIncluded.items.item6',
+      'experiences.sanAndresExp.whatIsIncluded.items.item7',
     ],
   },
 
@@ -83,6 +96,7 @@ const rawSanAndresExp: ExperienceContent = {
       'experiences.sanAndresExp.whatIsNotIncluded.items.item2',
       'experiences.sanAndresExp.whatIsNotIncluded.items.item3',
       'experiences.sanAndresExp.whatIsNotIncluded.items.item4',
+      'experiences.sanAndresExp.whatIsNotIncluded.items.item5',
     ],
   },
 

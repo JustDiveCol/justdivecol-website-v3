@@ -15,7 +15,6 @@ import {
   ExperienceWhatIsIncludedSchema,
 } from '../types';
 import {
-  AssetURLSchema,
   AvailableTypeSchema,
   CertificationIdSchema,
   CurrencyIdSchema,
@@ -44,16 +43,16 @@ const isoDate = z
 export const PricingOptionSchema = z.object({
   id: z.string(),
   nameKey: z.string(),
-  price: z.number().positive(),
+  price: z.number(),
   currency: CurrencyIdSchema,
 });
 export type PricingOption = z.infer<typeof PricingOptionSchema>;
 
 export const PaymentInstallmentSchema = z.object({
-  date: z.string().optional(), // Fecha límite del pago (YYYY-MM-DD)
-  percentage: z.number().min(0).max(100).optional(), // Porcentaje del total
-  amount: z.number().positive().optional(), // O un monto fijo
-  descriptionKey: z.string(), // Ej: "Reserva tu cupo", "Segundo pago", etc.
+  date: z.string().optional(),
+  percentage: z.number().min(0).max(100).optional(),
+  amount: z.number().optional(),
+  descriptionKey: z.string(),
 });
 
 export const PaymentPlanSchema = z.object({
@@ -84,7 +83,6 @@ export const ExperienceSessionContentSchema = z.object({
   id: z.string(),
   nameKey: z.string(),
   experienceId: ExperienceIdSchema,
-  imageUrl: AssetURLSchema,
   startDate: isoDate,
   endDate: isoDate,
   capacity: z.number().int().positive(),
@@ -93,9 +91,10 @@ export const ExperienceSessionContentSchema = z.object({
     'DERIVED at runtime; omit in content'
   ),
   creyentes: z.boolean().default(false),
+  custom: z.boolean().default(false).optional(),
   pricingOptions: z.array(PricingOptionSchema),
   pricingOptionsNotes: z.array(z.string()).optional(),
-  paymentPlan: PaymentPlanSchema,
+  paymentPlan: PaymentPlanSchema.optional(),
   certificationIds: z.array(CertificationIdSchema).optional(),
   overrides: ExperienceSessionOverridesSchema.optional(),
 });

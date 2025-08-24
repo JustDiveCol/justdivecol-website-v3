@@ -105,28 +105,28 @@ const rawIslaFuerte: DestinationContent = {
         backgroundImage: toAssetUrl(
           '/images/destinations/isla-fuerte/gallery-02.webp'
         ),
-        photoCredit: 'Mascaron de Proa',
+        photoCredit: 'Isla Fuerte',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/isla-fuerte/gallery-03.webp'
         ),
-        photoCredit: 'Mascaron de Proa',
+        photoCredit: 'Isla Fuerte',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/isla-fuerte/gallery-04.webp'
         ),
-        photoCredit: 'Mascaron de Proa',
+        photoCredit: 'Isla Fuerte',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/isla-fuerte/gallery-05.webp'
         ),
-        photoCredit: 'Mascaron de Proa',
+        photoCredit: 'La Playita',
         variant: 'horizontal',
       },
     ],

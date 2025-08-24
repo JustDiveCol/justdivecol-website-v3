@@ -47,6 +47,13 @@ export const ExperiencePaymentPlan = ({
       maximumFractionDigits: 0,
     }).format(value);
 
+  // 🔹 Helpers de precios (similar a SessionHero)
+  const opts = pricingOptions ?? [];
+  const isPriceDefined = (p?: number) => typeof p === 'number' && p > 0;
+  const someMissing = opts.some((opt) => !isPriceDefined(opt.price));
+  const allMissing =
+    opts.length > 0 && opts.every((opt) => !isPriceDefined(opt.price));
+
   return (
     <section className="bg-brand-primary-medium">
       <div className="section max-w-4xl mx-auto">
@@ -111,21 +118,26 @@ export const ExperiencePaymentPlan = ({
                 )}
 
                 {/* Montos por cada plan (si existen) */}
-                {pricingOptions && pricingOptions.length > 0 && (
+                {opts.length > 0 && (
                   <div className="mt-4 rounded-lg border border-white/10 bg-white/5 p-4">
                     <p className="text-xs uppercase tracking-wider text-brand-neutral/70 mb-2">
-                      {t('common:pricesFrom')}
+                      {allMissing
+                        ? t('common:paymentPlanAmountsTBDTitle')
+                        : t('common:pricesFrom')}
                     </p>
 
                     <ul className="space-y-2">
-                      {pricingOptions.map((opt) => {
+                      {opts.map((opt) => {
+                        const hasPrice = isPriceDefined(opt.price);
                         const computedAmount =
-                          installment.amount ??
-                          (installment.percentage
+                          installment.amount !== undefined
+                            ? installment.amount
+                            : installment.percentage !== undefined && hasPrice
                             ? Math.round(
-                                opt.price * (installment.percentage / 100)
+                                (opt.price as number) *
+                                  (installment.percentage / 100)
                               )
-                            : undefined);
+                            : undefined;
 
                         return (
                           <li
@@ -135,15 +147,30 @@ export const ExperiencePaymentPlan = ({
                             <span className="text-brand-neutral/90 font-semibold">
                               {t(opt.nameKey)}
                             </span>
-                            <span className="text-white font-bold">
-                              {computedAmount !== undefined
-                                ? formatMoney(computedAmount, opt.currency)
-                                : '—'}
-                            </span>
+                            {computedAmount !== undefined ? (
+                              <span className="text-white font-bold">
+                                {formatMoney(computedAmount, opt.currency)}
+                              </span>
+                            ) : (
+                              <span className="text-yellow-300/90 border border-yellow-300/30 bg-yellow-500/10 px-2 py-0.5 rounded font-semibold">
+                                {t('common:amountTBD')}
+                              </span>
+                            )}
                           </li>
                         );
                       })}
                     </ul>
+
+                    {(() => {
+                      if (someMissing) {
+                        return (
+                          <p className="text-xs text-brand-neutral/70 italic pt-2">
+                            {t('common:paymentPlanAmountsTBDNote')}
+                          </p>
+                        );
+                      }
+                      return null;
+                    })()}
                   </div>
                 )}
               </MotionBlock>

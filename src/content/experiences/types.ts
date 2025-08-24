@@ -31,7 +31,7 @@ export type ExperienceItineraryDayContent = z.infer<
 
 export const ExperienceItineraryContentSchema = z.object({
   titleKey: z.string(),
-  days: z.array(ExperienceItineraryDayContentSchema).min(1),
+  days: z.array(ExperienceItineraryDayContentSchema),
   notes: z.array(z.string()).optional(),
 });
 export type ExperienceItineraryContent = z.infer<
@@ -40,7 +40,7 @@ export type ExperienceItineraryContent = z.infer<
 
 export const ExperienceWhatIsIncludedSchema = z.object({
   titleKey: z.string(),
-  items: z.array(z.string()).min(1),
+  items: z.array(z.string()),
 });
 export type ExperienceWhatIsIncluded = z.infer<
   typeof ExperienceWhatIsIncludedSchema

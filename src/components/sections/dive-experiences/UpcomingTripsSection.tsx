@@ -1,5 +1,5 @@
 // src/components/sections/dive-experiences/UpcomingTripsSection.tsx
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TripRow } from './TripRow';
 import { PaginationControls } from '../../common/PaginationControls';
@@ -12,9 +12,21 @@ import { listSessions } from '../../../content/experiences';
 import { ChevronDownIcon } from '../../ui';
 import { useReducedMotion, motion } from 'framer-motion';
 import { MotionBlock } from '../../motion/MotionBlock';
-import { BRAND_ASSETS_SAFE } from '../../../constants';
+import { BRAND_ASSETS_SAFE, type DestinationId } from '../../../constants';
 
 const ITEMS_PER_PAGE = 10;
+
+// Normaliza una fecha ISO (YYYY-MM-DD) a medianoche UTC en ms epoch
+const toUTC = (iso: string) => {
+  const [y, m, d] = iso.split('-').map(Number);
+  return Date.UTC(y, m - 1, d);
+};
+
+// Devuelve medianoche UTC de "hoy"
+const todayUTC = () => {
+  const now = new Date();
+  return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+};
 
 export const UpcomingTripsSection = ({
   titleKey,
@@ -26,7 +38,7 @@ export const UpcomingTripsSection = ({
   filtersAllMonthsKey,
   filtersNoResultsKey,
 }: UpcomingTripsSectionProps) => {
-  const { t, i18n } = useTranslation([translationNS, 'common']);
+  const { t, i18n } = useTranslation([translationNS, 'common', 'experiences']);
   const { fadeIn } = useMotionPresets();
   const reduce = useReducedMotion();
 
@@ -39,14 +51,29 @@ export const UpcomingTripsSection = ({
   const sessions = useMemo(() => listSessions(), []);
 
   const destinationOptions = useMemo(() => {
-    const ids = new Set(experiences.map((e) => e.destinationId));
+    const now = todayUTC();
+
+    const upcomingDestIds = new Set(
+      sessions
+        .filter((s) => toUTC(s.startDate) >= now)
+        .map((s) => {
+          const exp = experiences.find((e) => e.id === s.experienceId);
+          return exp?.destinationId;
+        })
+        .filter((id): id is DestinationId => Boolean(id))
+    );
+
     return destinations
-      .filter((d) => ids.has(d.id))
+      .filter((d) => upcomingDestIds.has(d.id))
       .sort((a, b) => a.name.localeCompare(b.name));
-  }, [experiences, destinations]);
+  }, [sessions, experiences, destinations]);
 
   const monthOptions = useMemo(() => {
-    const monthMap = new Map<string, Date>();
+    const now = todayUTC();
+    const monthBuckets = new Map<
+      string,
+      { date: Date; hasUpcoming: boolean }
+    >();
 
     sessions.forEach((s) => {
       const d = new Date(s.startDate);
@@ -56,39 +83,42 @@ export const UpcomingTripsSection = ({
       const key = `${monthStartUTC.getUTCFullYear()}-${String(
         monthStartUTC.getUTCMonth() + 1
       ).padStart(2, '0')}`;
-      if (!monthMap.has(key)) monthMap.set(key, monthStartUTC);
+
+      const hasUpcoming = toUTC(s.startDate) >= now;
+
+      if (!monthBuckets.has(key)) {
+        monthBuckets.set(key, { date: monthStartUTC, hasUpcoming });
+      } else if (hasUpcoming) {
+        monthBuckets.get(key)!.hasUpcoming = true;
+      }
     });
 
-    const now = new Date();
-    const nowMonthStartUTC = new Date(
-      Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1)
-    );
-
-    const items = Array.from(monthMap.values())
-      .sort((a, b) => a.getTime() - b.getTime())
-      .map((date) => ({
-        date,
-        label: new Intl.DateTimeFormat(i18n.language, {
+    const items = Array.from(monthBuckets.values())
+      .filter((b) => b.hasUpcoming)
+      .sort((a, b) => a.date.getTime() - b.date.getTime())
+      .map((b) =>
+        new Intl.DateTimeFormat(i18n.language, {
           month: 'long',
           year: 'numeric',
           timeZone: 'UTC',
-        }).format(date),
-      }));
+        }).format(b.date)
+      );
 
-    const future = items.filter(
-      (it) => it.date.getTime() >= nowMonthStartUTC.getTime()
-    );
-    const past = items.filter(
-      (it) => it.date.getTime() < nowMonthStartUTC.getTime()
-    );
-
-    return [...future, ...past].map((it) => it.label);
+    return items;
   }, [sessions, i18n.language]);
 
-  const toUTC = (iso: string) => {
-    const [y, m, d] = iso.split('-').map(Number);
-    return Date.UTC(y, m - 1, d);
-  };
+  useEffect(() => {
+    if (
+      selectedDestination !== 'all' &&
+      !destinationOptions.some((d) => d.id === selectedDestination)
+    ) {
+      setSelectedDestination('all');
+    }
+
+    if (selectedMonth !== 'all' && !monthOptions.includes(selectedMonth)) {
+      setSelectedMonth('all');
+    }
+  }, [destinationOptions, monthOptions, selectedDestination, selectedMonth]);
 
   const filteredSessions = useMemo(() => {
     setCurrentPage(1);
@@ -115,8 +145,21 @@ export const UpcomingTripsSection = ({
       return matchesDestination && matchesMonth;
     });
 
+    // Orden cronológico ascendente
     filtered.sort((a, b) => toUTC(a.startDate) - toUTC(b.startDate));
-    return filtered;
+
+    // Reordenar: primero futuras/activas, luego pasadas (usabilidad)
+    const nowUTC = todayUTC();
+    const upcoming: typeof filtered = [];
+    const past: typeof filtered = [];
+
+    for (const s of filtered) {
+      (toUTC(s.startDate) >= nowUTC ? upcoming : past).push(s);
+    }
+
+    past.sort((a, b) => toUTC(b.startDate) - toUTC(a.startDate));
+
+    return [...upcoming, ...past];
   }, [
     selectedDestination,
     selectedMonth,
@@ -153,8 +196,10 @@ export const UpcomingTripsSection = ({
         loading="lazy"
         decoding="async"
       />
+
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
+
       {/* Logos y créditos */}
       <div className="pointer-events-none absolute inset-0 z-20">
         <div className="absolute bottom-6 right-6 select-none w-24 h-auto md:w-28 opacity-70 drop-shadow-strong">
@@ -185,6 +230,7 @@ export const UpcomingTripsSection = ({
           <p className="text-subtitle mt-4">{t(subtitleKey)}</p>
         </MotionBlock>
 
+        {/* Filtros */}
         <MotionBlock
           kind="eager"
           variants={fadeIn({ delay: 0.06 })}
@@ -219,22 +265,56 @@ export const UpcomingTripsSection = ({
           </div>
         </MotionBlock>
 
+        {/* Lista de viajes (activas arriba, pasadas abajo con estilo atenuado) */}
         <div className="mx-auto flex max-w-max flex-col gap-4">
           {paginatedSessions.length > 0 ? (
-            paginatedSessions.map((session) => {
-              const experience = experiences.find(
-                (exp) => exp.id === session.experienceId
-              );
-              if (!experience) return null;
+            (() => {
+              let pastSeparatorInserted = false;
+              const now = todayUTC();
 
-              return (
-                <TripRow
-                  key={session.id}
-                  session={session}
-                  translationNS={'experiences'}
-                />
-              );
-            })
+              return paginatedSessions.map((session) => {
+                const experience = experiences.find(
+                  (exp) => exp.id === session.experienceId
+                );
+                if (!experience) return null;
+
+                const isPast = toUTC(session.startDate) < now;
+
+                const maybeSeparator =
+                  isPast && !pastSeparatorInserted ? (
+                    <div
+                      key={`sep-${session.id}-${currentPage}`}
+                      className="mt-6 mb-1 border-t border-white/20 pt-4"
+                      aria-label={t(
+                        'experiences:pastTripsTitle',
+                        'Viajes pasados'
+                      )}
+                    >
+                      <p className="text-sm uppercase tracking-wide text-white/70">
+                        {t('experiences:pastTripsTitle', 'Viajes pasados')}
+                      </p>
+                    </div>
+                  ) : null;
+
+                if (isPast && !pastSeparatorInserted)
+                  pastSeparatorInserted = true;
+
+                return (
+                  <div
+                    key={session.id}
+                    className={isPast ? 'opacity-60' : ''}
+                    aria-disabled={isPast}
+                  >
+                    {maybeSeparator}
+                    <TripRow
+                      session={session}
+                      translationNS={'experiences'}
+                      isPast={isPast}
+                    />
+                  </div>
+                );
+              });
+            })()
           ) : (
             <div className="flex items-center justify-center pt-12">
               <p className="text-center font-serif text-brand-neutral/80">
@@ -244,6 +324,7 @@ export const UpcomingTripsSection = ({
           )}
         </div>
 
+        {/* Paginación */}
         <div className="mt-8 border-t border-white/10 pt-6">
           <PaginationControls
             currentPage={currentPage}
@@ -253,6 +334,7 @@ export const UpcomingTripsSection = ({
         </div>
       </div>
 
+      {/* Indicador scroll */}
       <div className="absolute bottom-8 left-1/2 z-40 hidden -translate-x-1/2 md:block">
         {reduce ? (
           <ChevronDownIcon className="h-12 w-12 select-none text-brand-cta-orange" />

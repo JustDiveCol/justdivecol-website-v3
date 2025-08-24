@@ -24,9 +24,9 @@ const rawIslaFuerteExp: ExperienceContent = {
     translationNS: 'experiences',
     imageData: {
       backgroundImage: toAssetUrl(
-        '/images/experiences/isla-fuerte/header-background.webp'
+        '/images/destinations/isla-fuerte/header-background.webp'
       ),
-      photoCredit: 'Cristhian David Duarte @duartefotografia.ph',
+      photoCredit: 'Awake Travel',
       variant: 'header',
     },
   },
@@ -36,6 +36,7 @@ const rawIslaFuerteExp: ExperienceContent = {
     paragraphs: [
       'experiences.islaFuerteExp.description.paragraphs.p1',
       'experiences.islaFuerteExp.description.paragraphs.p2',
+      'experiences.islaFuerteExp.description.paragraphs.p3',
     ],
   },
 
@@ -47,6 +48,9 @@ const rawIslaFuerteExp: ExperienceContent = {
       'experiences.islaFuerteExp.whatIsIncluded.items.item3',
       'experiences.islaFuerteExp.whatIsIncluded.items.item4',
       'experiences.islaFuerteExp.whatIsIncluded.items.item5',
+      'experiences.islaFuerteExp.whatIsIncluded.items.item6',
+      'experiences.islaFuerteExp.whatIsIncluded.items.item7',
+      'experiences.islaFuerteExp.whatIsIncluded.items.item8',
     ],
   },
 
@@ -57,19 +61,48 @@ const rawIslaFuerteExp: ExperienceContent = {
       'experiences.islaFuerteExp.whatIsNotIncluded.items.item2',
       'experiences.islaFuerteExp.whatIsNotIncluded.items.item3',
       'experiences.islaFuerteExp.whatIsNotIncluded.items.item4',
+      'experiences.islaFuerteExp.whatIsNotIncluded.items.item5',
     ],
   },
 
   gallery: {
     titleKey: 'experiences.galleryTitle',
     images: [
-      // {
-      //   backgroundImage: toAssetUrl(
-      //     '/images/experiences/isla-fuerte/gallery-01.webp'
-      //   ),
-      //   photoCredit: 'Oscar Ivan Esquivel Arteaga @oscaresquivelfotografia',
-      //   variant: 'horizontal',
-      // },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/isla-fuerte/gallery-01.webp'
+        ),
+        photoCredit: 'Isla Fuerte Eco House',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/isla-fuerte/gallery-02.webp'
+        ),
+        photoCredit: 'Isla Fuerte',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/isla-fuerte/gallery-03.webp'
+        ),
+        photoCredit: 'Isla Fuerte',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/isla-fuerte/gallery-04.webp'
+        ),
+        photoCredit: 'Isla Fuerte',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/isla-fuerte/gallery-05.webp'
+        ),
+        photoCredit: 'La Playita',
+        variant: 'horizontal',
+      },
     ],
   },
 

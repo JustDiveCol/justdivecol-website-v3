@@ -44,7 +44,7 @@ export const providenciaDiveSitesContent: Record<string, DiveSiteContent> = {
         photoCredit: 'XYZ',
         variant: 'horizontal',
       },
-    ], // /images/destinations/providencia/dive-sites/
+    ],
   },
 
   'mantas-city': {

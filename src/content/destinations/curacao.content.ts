@@ -11,7 +11,7 @@ const rawCuracao: DestinationContent = {
   name: 'Curaçao',
   country: 'CW',
   coords: [-68.981691, 12.178205],
-  minZoom: 10.5,
+  minZoom: 9.5,
   maxZoom: 16,
 
   seo: {
@@ -30,7 +30,7 @@ const rawCuracao: DestinationContent = {
       backgroundImage: toAssetUrl(
         '/images/destinations/curacao/header-background.webp'
       ),
-      photoCredit: 'Luis Quintero @jibarocards',
+      photoCredit: 'ClickerHappy',
       variant: 'header',
     },
     translationNS: 'destinations',
@@ -41,7 +41,7 @@ const rawCuracao: DestinationContent = {
       backgroundImage: toAssetUrl(
         '/images/destinations/curacao/card-image.webp'
       ),
-      photoCredit: 'Juan Manuel Rivera Gómez @jumriver',
+      photoCredit: 'thiago japyassu @thiagojapyassu',
       variant: 'horizontal',
     },
   },
@@ -81,6 +81,10 @@ const rawCuracao: DestinationContent = {
         labelKey: 'destinations.cw.details.items.label6',
         valueKey: 'destinations.cw.details.items.value6',
       },
+      {
+        labelKey: 'destinations.cw.details.items.label7',
+        valueKey: 'destinations.cw.details.items.value7',
+      },
     ],
   },
 
@@ -92,6 +96,7 @@ const rawCuracao: DestinationContent = {
       'destinations.cw.uniqueFinds.items.find3',
       'destinations.cw.uniqueFinds.items.find4',
       'destinations.cw.uniqueFinds.items.find5',
+      'destinations.cw.uniqueFinds.items.find6',
     ],
   },
 
@@ -102,42 +107,42 @@ const rawCuracao: DestinationContent = {
         backgroundImage: toAssetUrl(
           '/images/destinations/curacao/gallery-01.webp'
         ),
-        photoCredit: 'Juan Segmentado',
+        photoCredit: 'Jeffrey Czum @JeffreyCzum',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/curacao/gallery-02.webp'
         ),
-        photoCredit: 'Oscar Ivan Esquivel Arteaga @oscaresquivelfotografia',
+        photoCredit: 'Jeffrey Czum @JeffreyCzum',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/curacao/gallery-03.webp'
         ),
-        photoCredit: 'Catalina Herrera @catalinac29',
+        photoCredit: 'thiago japyassu @thiagojapyassu',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/curacao/gallery-04.webp'
         ),
-        photoCredit: 'Christian Forero',
+        photoCredit: 'Wijs (Wise) @wijs_photo',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/curacao/gallery-05.webp'
         ),
-        photoCredit: 'HAROLD PRODUCTIONS @harold_productions',
+        photoCredit: 'Wijs (Wise) @wijs_photo',
         variant: 'horizontal',
       },
       {
         backgroundImage: toAssetUrl(
           '/images/destinations/curacao/gallery-06.webp'
         ),
-        photoCredit: 'JohnEGo! @johnego7',
+        photoCredit: 'RITRATTO VISUAL @ritrattovisual',
         variant: 'horizontal',
       },
     ],

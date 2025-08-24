@@ -6,6 +6,12 @@ export const EXPERIENCES_IDS = [
   'exp-isla-fuerte',
   'exp-san-andres',
   'exp-providencia',
+  'custom-exp-curacao',
+  'exp-cancun',
+  'exp-miami',
+  'custom-exp-cancun',
+  'custom-exp-santa-marta',
+  'custom-exp-miami',
 ] as const;
 
 export type ExperienceId = (typeof EXPERIENCES_IDS)[number];

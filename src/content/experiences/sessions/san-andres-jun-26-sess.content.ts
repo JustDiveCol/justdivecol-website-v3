@@ -1,6 +1,5 @@
 // src/content/experiences/sessions/san-andres-jun-26-sess.content.ts
 
-import { toAssetUrl } from '../../../constants';
 import {
   ExperienceSessionContentSchema,
   type ExperienceSessionContent,
@@ -8,125 +7,102 @@ import {
 
 const rawSanAndresJun26Sess: ExperienceSessionContent = {
   id: 'san-andres-jun-26-sess',
-  nameKey: 'experiences.sanAndresExp.sessions.feb26.name',
+  nameKey: 'experiences.sanAndresExp.sessions.jun26.name',
   experienceId: 'exp-san-andres',
-  imageUrl: toAssetUrl('/images/experiences/san-andres/icon.webp'),
-  startDate: '2026-06-05',
+  startDate: '2026-06-04',
   endDate: '2026-06-08',
   capacity: 12,
   seatsAvailable: 12,
   availability: 'available',
   creyentes: true,
 
+  certificationIds: ['fun-dive', 'padi-advanced-open-water-diver'],
+
   pricingOptions: [
     {
-      id: 'open-water',
-      nameKey: 'experiences.sanAndresExp.sessions.feb26.pricingOptions.opt1',
-      price: 4600000,
+      id: 'fun-dive',
+      nameKey: 'experiences.pricingOptions.FD',
+      price: 0,
       currency: 'COP',
     },
     {
       id: 'advanced-open-water',
-      nameKey: 'experiences.sanAndresExp.sessions.feb26.pricingOptions.opt2',
-      price: 4600000,
-      currency: 'COP',
-    },
-    {
-      id: 'fun-dive',
-      nameKey: 'experiences.sanAndresExp.sessions.feb26.pricingOptions.opt3',
-      price: 3700000,
+      nameKey: 'experiences.pricingOptions.AOWD',
+      price: 0,
       currency: 'COP',
     },
     {
       id: 'companion',
-      nameKey: 'experiences.sanAndresExp.sessions.feb26.pricingOptions.opt4',
-      price: 2300000,
+      nameKey: 'experiences.pricingOptions.AC',
+      price: 0,
       currency: 'COP',
     },
   ],
+
+  pricingOptionsNotes: ['experiences.pricingOptionsNotes.note1'],
 
   paymentPlan: {
     titleKey: 'experiences.paymentPlanTitle',
     installments: [
       {
-        date: '2025-12-20',
+        date: '2026-03-21',
         percentage: 50,
-        descriptionKey:
-          'experiences.sanAndresExp.sessions.feb26.paymentPlan.installments.desc1',
+        descriptionKey: 'experiences.paymentPlan.installments.desc1',
       },
       {
-        date: '2026-01-20',
+        date: '2026-04-21',
         percentage: 25,
-        descriptionKey:
-          'experiences.sanAndresExp.sessions.feb26.paymentPlan.installments.desc2',
+        descriptionKey: 'experiences.paymentPlan.installments.desc2',
       },
       {
-        date: '2026-02-06',
+        date: '2026-05-21',
         percentage: 25,
-        descriptionKey:
-          'experiences.sanAndresExp.sessions.feb26.paymentPlan.installments.desc3',
+        descriptionKey: 'experiences.paymentPlan.installments.desc3',
       },
     ],
   },
 
-  certificationIds: ['padi-open-water-diver', 'padi-advanced-open-water-diver'],
-
   overrides: {
-    whatIsIncluded: {
-      titleKey: 'experiences.whatIsIncludedTitle',
-      items: [
-        'experiences.sanAndresExp.whatIsIncluded.items.item1',
-        'experiences.sanAndresExp.whatIsIncluded.items.item2',
-        'experiences.sanAndresExp.whatIsIncluded.items.item4',
-        'experiences.sanAndresExp.whatIsIncluded.items.item5',
-      ],
-    },
-
-    whatIsNotIncluded: {
-      titleKey: 'experiences.whatIsNotIncludedTitle',
-      items: [
-        'experiences.sanAndresExp.whatIsNotIncluded.items.item1',
-        'experiences.sanAndresExp.whatIsNotIncluded.items.item5',
-        'experiences.sanAndresExp.whatIsNotIncluded.items.item2',
-        'experiences.sanAndresExp.whatIsNotIncluded.items.item3',
-        'experiences.sanAndresExp.whatIsNotIncluded.items.item4',
-      ],
-    },
-
     itineraryByPricingOption: {
-      'open-water': {
+      'fun-dive': {
         titleKey: 'experiences.itineraryTitle',
         days: [
           {
             day: 1,
-            titleKey:
-              'experiences.sanAndresExp.itinerary.open-water.day1.title',
+            titleKey: 'experiences.sanAndresExp.itinerary.fun-dive.day1.title',
             descriptionKey:
-              'experiences.sanAndresExp.itinerary.open-water.day1.desc',
+              'experiences.sanAndresExp.itinerary.fun-dive.day1.desc',
           },
           {
             day: 2,
-            titleKey:
-              'experiences.sanAndresExp.itinerary.open-water.day2.title',
+            titleKey: 'experiences.sanAndresExp.itinerary.fun-dive.day2.title',
             descriptionKey:
-              'experiences.sanAndresExp.itinerary.open-water.day2.desc',
+              'experiences.sanAndresExp.itinerary.fun-dive.day2.desc',
           },
           {
             day: 3,
-            titleKey:
-              'experiences.sanAndresExp.itinerary.open-water.day3.title',
+            titleKey: 'experiences.sanAndresExp.itinerary.fun-dive.day3.title',
             descriptionKey:
-              'experiences.sanAndresExp.itinerary.open-water.day3.desc',
+              'experiences.sanAndresExp.itinerary.fun-dive.day3.desc',
           },
           {
             day: 4,
-            titleKey:
-              'experiences.sanAndresExp.itinerary.open-water.day4.title',
+            titleKey: 'experiences.sanAndresExp.itinerary.fun-dive.day4.title',
             descriptionKey:
-              'experiences.sanAndresExp.itinerary.open-water.day4.desc',
+              'experiences.sanAndresExp.itinerary.fun-dive.day4.desc',
+          },
+          {
+            day: 5,
+            titleKey: 'experiences.sanAndresExp.itinerary.fun-dive.day5.title',
+            descriptionKey:
+              'experiences.sanAndresExp.itinerary.fun-dive.day5.desc',
           },
         ],
-        notes: ['experiences.sanAndresExp.itinerary.notes.note1'],
+        notes: [
+          'experiences.itineraryNotes.note1',
+          'experiences.itineraryNotes.note2',
+          'experiences.itineraryNotes.note3',
+        ],
       },
 
       'advanced-open-water': {
@@ -160,39 +136,19 @@ const rawSanAndresJun26Sess: ExperienceSessionContent = {
             descriptionKey:
               'experiences.sanAndresExp.itinerary.advanced-open-water.day4.desc',
           },
-        ],
-        notes: ['experiences.sanAndresExp.itinerary.notes.note1'],
-      },
-
-      'fun-dive': {
-        titleKey: 'experiences.itineraryTitle',
-        days: [
           {
-            day: 1,
-            titleKey: 'experiences.sanAndresExp.itinerary.fun-dive.day1.title',
+            day: 5,
+            titleKey:
+              'experiences.sanAndresExp.itinerary.advanced-open-water.day5.title',
             descriptionKey:
-              'experiences.sanAndresExp.itinerary.fun-dive.day1.desc',
-          },
-          {
-            day: 2,
-            titleKey: 'experiences.sanAndresExp.itinerary.fun-dive.day2.title',
-            descriptionKey:
-              'experiences.sanAndresExp.itinerary.fun-dive.day2.desc',
-          },
-          {
-            day: 3,
-            titleKey: 'experiences.sanAndresExp.itinerary.fun-dive.day3.title',
-            descriptionKey:
-              'experiences.sanAndresExp.itinerary.fun-dive.day3.desc',
-          },
-          {
-            day: 4,
-            titleKey: 'experiences.sanAndresExp.itinerary.fun-dive.day4.title',
-            descriptionKey:
-              'experiences.sanAndresExp.itinerary.fun-dive.day4.desc',
+              'experiences.sanAndresExp.itinerary.advanced-open-water.day5.desc',
           },
         ],
-        notes: ['experiences.sanAndresExp.itinerary.notes.note1'],
+        notes: [
+          'experiences.itineraryNotes.note1',
+          'experiences.itineraryNotes.note2',
+          'experiences.itineraryNotes.note3',
+        ],
       },
     },
   },

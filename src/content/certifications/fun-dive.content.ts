@@ -119,6 +119,7 @@ const rawFunDive: CertificationContent = {
       'certifications.fd.whatIsIncluded.items.item1',
       'certifications.fd.whatIsIncluded.items.item2',
       'certifications.fd.whatIsIncluded.items.item3',
+      'certifications.fd.whatIsIncluded.items.item4',
     ],
   },
 

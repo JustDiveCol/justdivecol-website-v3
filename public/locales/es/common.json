@@ -3,6 +3,7 @@
   "padiLogoAlt": "Logo PADI",
   "allyLogoAlt": "Logo de aliado",
   "creyentesTripSealAlt": "Logo Creyentes",
+  "customTripSealAlt": "Logo viajes personalizados",
   "photoCreditPrefix": "Foto por:",
   "defaultAlt": "Texto de imagen",
 
@@ -38,7 +39,6 @@
   "allies_marquee": "Nuestros aliados",
   "visitAlly": "Visitar aliado",
   "visit_social": "Visitar {{name}}",
-  "galleryTitle": "Galeria de imagenes",
   "carousel": "Carrusel",
   "testimonials": "Testimonios",
 
@@ -60,8 +60,17 @@
   "years": "años",
   "elearning": "eLearning",
 
+  "pastSessionTitle": "Esta experiencia ya finalizó",
+  "pastSessionSubtitle": "Explora nuestras próximas fechas y destinos disponibles.",
+  "pricesTBDTitle": "Precios por definir",
+  "pricesFrom": "Planes y tarifas",
+  "priceTBD": "Consultar",
+  "pricesTBDNote": "Estamos ajustando este plan. Contáctanos para una cotización personalizada.",
+  "paymentPlanAmountsTBDTitle": "Montos por definir",
+  "amountTBD": "Por definir",
+  "paymentPlanAmountsTBDNote": "Algunos montos están en ajuste. Contáctanos para una cotización personalizada.",
+
   "availability": "Disponibilidad",
-  "pricesFrom": "Precios",
   "paymentDueDate": "Fecha de pago",
   "seatsAvailableText": "{{count}} de {{total}} cupos disponibles",
 

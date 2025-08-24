@@ -30,38 +30,35 @@ export const AvailabilityBadge = ({ status }: { status: AvailableType }) => {
     {
       available: {
         textKey: 'statusAvailable',
-        classes: 'bg-green-500/20 text-green-300',
+        classes: 'bg-green-500/50 text-green-100',
       },
       few_spots: {
         textKey: 'statusFewSpots',
-        classes: 'bg-yellow-500/20 text-yellow-300',
+        classes: 'bg-yellow-500/50 text-yellow-100',
       },
       sold_out: {
         textKey: 'statusSoldOut',
-        classes: 'bg-red-500/20 text-red-400',
+        classes: 'bg-red-500/50 text-red-100',
       },
       coming_soon: {
         textKey: 'statusComingSoon',
-        classes: 'bg-yellow-500/20 text-yellow-300',
+        classes: 'bg-yellow-500/50 text-yellow-100',
       },
     };
 
   const current = statusMap[status] ?? {
     textKey: 'statusUnknown',
-    classes: 'bg-gray-500/20 text-gray-300',
+    classes: 'bg-gray-500/40 text-gray-100',
   };
 
   const shouldPulse =
-    !reduce &&
-    (status === 'available' ||
-      status === 'few_spots' ||
-      status === 'coming_soon');
+    !reduce && (status === 'few_spots' || status === 'coming_soon');
 
   return (
     <div
       className={`${baseClasses} ${current.classes} ${
         shouldPulse ? 'animate-pulse' : ''
-      }`}
+      } z-50`}
     >
       {t(current.textKey)}
     </div>
@@ -78,6 +75,7 @@ type TripRowSession = {
   availability?: AvailableType;
   derivedAvailability?: AvailableType;
   creyentes?: boolean;
+  custom?: boolean;
   nameKey?: string;
   subtitleKey?: string;
   imageUrl?: string;
@@ -86,6 +84,7 @@ type TripRowSession = {
 type TripRowProps = {
   session: TripRowSession;
   translationNS: string;
+  isPast?: boolean;
 };
 
 type ExperienceHeaderWithSubtitle = ExperienceContent['header'] & {
@@ -103,7 +102,11 @@ function tKey(
 
 const toUTCDate = (isoDate: string) => new Date(`${isoDate}T00:00:00Z`);
 
-export const TripRow = ({ session, translationNS }: TripRowProps) => {
+export const TripRow = ({
+  session,
+  translationNS,
+  isPast = false,
+}: TripRowProps) => {
   const { t, i18n } = useTranslation([translationNS, 'common']);
   const { slideIn } = useMotionPresets();
   const soldOutLogo = BRAND_ASSETS_SAFE.seals.soldOut;
@@ -183,30 +186,47 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
 
   const isSoldOut = derivedStatus === 'sold_out';
 
+  const containerClasses = [
+    'relative flex flex-col md:flex-row items-center gap-6 p-4 border rounded-lg transition-colors duration-300 transform-gpu will-change-transform',
+    isPast
+      ? 'opacity-60 border-white/10 bg-white/5'
+      : isSoldOut
+      ? 'opacity-60 border-red-500/20 bg-red-900/10'
+      : 'border-white/10 bg-white/5 hover:bg-white/10',
+  ].join(' ');
+
   return (
     <MotionBlock
       kind="eager"
       variants={slideIn('up', { distance: 32 })}
-      className={`relative flex flex-col md:flex-row items-center gap-6 p-4 border rounded-lg transition-colors duration-300 transform-gpu will-change-transform ${
-        isSoldOut
-          ? 'border-red-500/20 bg-red-900/10'
-          : 'border-white/10 bg-white/5 hover:bg-white/10'
-      }`}
+      className={containerClasses}
     >
       {/* Sello Creyentes (flotante) */}
       {session.creyentes && (
         <img
           src="/images/logos/creyentes-logo.png"
           alt={t('common:creyentesTripSealAlt')}
-          className="absolute -top-3 -right-3 w-16 h-16 pointer-events-none drop-shadow-strong"
+          className="absolute -top-3 -right-3 w-16 h-16 pointer-events-none drop-shadow-strong opacity-80"
           aria-hidden="true"
           loading="lazy"
           decoding="async"
         />
       )}
 
-      {/* Texto */}
-      <div className="flex-grow text-center md:text-left">
+      {/* Sello Custom (flotante) */}
+      {session.custom && (
+        <img
+          src="/images/logos/custom-logo.png"
+          alt={t('common:customTripSealAlt')}
+          className="absolute -top-3 -right-3 w-16 h-16 pointer-events-none drop-shadow-strong opacity-80"
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        />
+      )}
+
+      {/* Texto (atenuado cuando sold out) */}
+      <div className={`flex-grow text-center md:text-left`}>
         <h3 className="text-xl font-bold text-brand-white">
           {tKey(t, titleKey, translationNS)}
         </h3>
@@ -228,7 +248,17 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
 
       {/* Acciones */}
       <div className="w-full md:w-auto flex-shrink-0 flex flex-col items-center md:items-end justify-center gap-2">
-        {isSoldOut ? (
+        {isPast ? (
+          <div className="mt-1 cursor-pointer">
+            <Button
+              action={{ type: 'internal', path: sessionUrl }}
+              variant="outline"
+              size="sm"
+            >
+              {t('common:seeDetailsButton')}
+            </Button>
+          </div>
+        ) : isSoldOut ? (
           <div className="flex flex-col items-center">
             <img
               src={soldOutLogo.url}
@@ -237,6 +267,15 @@ export const TripRow = ({ session, translationNS }: TripRowProps) => {
               loading="lazy"
               decoding="async"
             />
+            <div className="mt-1 cursor-pointer">
+              <Button
+                action={{ type: 'internal', path: sessionUrl }}
+                variant="outline"
+                size="sm"
+              >
+                {t('common:seeDetailsButton')}
+              </Button>
+            </div>
           </div>
         ) : (
           <>

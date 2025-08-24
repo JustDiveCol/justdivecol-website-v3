@@ -356,5 +356,407 @@
       "name": "The Cave (La Cueva)",
       "desc": "Sitio de buceo multinivel que alcanza profundidades de hasta 43 m (140 pies). Se compone de una plataforma con formaciones de cuevas, hendiduras y un canal submarino tipo cañón. Es un lugar ideal para buzos avanzados que buscan explorar estructuras complejas con gran biodiversidad."
     }
+  },
+
+  "curacao": {
+    "playa-piskado": {
+      "name": "Playa Piskadó / Playa Grandi",
+      "desc": "Ubicada en Westpunt, Playa Piskadó —también llamada Playa Grandi o Turtle Bay— es un sitio icónico de Curaçao. Famosa por sus tortugas residentes, su estatua de Neptuno bajo el agua y un vibrante arrecife de corales duros, ofrece buceo y snorkel inolvidables. Es un punto de entrada desde costa muy popular tanto para locales como para visitantes, pero requiere responsabilidad: no tocar, alimentar ni acosar a las tortugas. Con profundidades de 12 a 36 metros, es accesible para buzos Open Water y un paraíso para fotógrafos submarinos."
+    },
+
+    "klein-curacao": {
+      "name": "Klein Curaçao",
+      "desc": "A unas 6,5 millas de la costa este de Curaçao, Klein Curaçao es una isla deshabitada reconocida como sitio Ramsar (no. 2355) por su importancia ecológica. Sus arrecifes rodean la isla con un espectáculo de corales y peces tropicales, ofreciendo encuentros frecuentes con tortugas marinas y una visibilidad excepcional. El acceso es exclusivamente en bote (aprox. 1,5 horas), ideal para buzos avanzados en inmersiones de deriva y también un paraíso para snorkelers y amantes de la naturaleza."
+    },
+
+    "eastpoint-oostpunt": {
+      "name": "Eastpoint (Oostpunt)",
+      "desc": "Situado en el extremo sureste de Curaçao, dentro del Parque Nacional Marino, Eastpoint es considerado uno de los arrecifes más prístinos del Caribe. Solo accesible en bote, ofrece arrecifes vírgenes cubiertos de gorgonias, corales duros y esponjas. Aquí es común encontrar grandes cardúmenes de sábalos en el famoso Tarpon Bridge, además de tiburones, rayas águila, barracudas y tortugas marinas. Con corrientes fuertes y condiciones exigentes, es un sitio recomendado para buzos avanzados."
+    },
+
+    "directors-bay": {
+      "name": "Director’s Bay",
+      "desc": "Ubicado en la península de Caracasbaai, dentro del Parque Nacional Marino de Curaçao, Director’s Bay combina historia y biodiversidad. Famoso por sus paredes cubiertas de corales y esponjas, es hogar de caballitos de mar, frogfish, pulpos y una gran variedad de vida macro, lo que lo convierte en un paraíso para la fotografía submarina. Con acceso desde costa o en bote, y situado entre Tugboat y Small Wall, ofrece inmersiones de 6 a 36 metros para buzos de nivel Open Water en adelante."
+    },
+
+    "tugboat": {
+      "name": "Tugboat Wreck",
+      "desc": "A solo 3 metros de profundidad en Caracasbaai, el Tugboat es el pecio más famoso de Curaçao. Sumergido hace décadas en circunstancias misteriosas, hoy yace cubierto de corales y esponjas, rodeado de peces de arrecife y vida marina. Gracias a su poca profundidad, es perfecto tanto para snorkelers como para buzos principiantes y fotógrafos submarinos. Situado junto a Director’s Bay y dentro del Parque Nacional Marino de Curaçao, es una visita obligada para cualquier amante del mar."
+    },
+
+    "kathys-paradise": {
+      "name": "Kathy’s Paradise",
+      "desc": "Entre Fuikbaai y Eastpoint, dentro del Parque Marino de Curaçao, Kathy’s Paradise es un sitio de buceo ideal para los amantes de las inmersiones a la deriva. Accesible solo en bote, ofrece arrecifes saludables repletos de corales duros y blandos, además de abundante vida marina que incluye peces loro, morenas y peces ángel. Con visibilidad que supera los 30 metros y corrientes suaves a moderadas, es un sitio recomendado para buzos avanzados que buscan una experiencia dinámica y vibrante."
+    },
+
+    "smokeys": {
+      "name": "Smokeys (Punt’i Sanchi)",
+      "desc": "Ubicado en el extremo sureste de Curaçao, dentro del Parque Marino, Smokeys —conocido localmente como Punt’i Sanchi— es uno de los mejores sitios de buceo del Caribe. Accesible solo en bote, es famoso por sus impresionantes jardines de coral, paredes cubiertas de vida y fuertes corrientes que lo convierten en un drift dive espectacular. La inmersión suele comenzar en Smokeys y terminar en Kathy’s Paradise, ofreciendo un recorrido inolvidable entre cardúmenes, pelágicos y formaciones coralinas vírgenes. Recomendado para buzos avanzados."
+    },
+
+    "booby-trap": {
+      "name": "Booby Trap",
+      "desc": "Ubicado fuera del rompeolas de Fuikbaai y Nieuwpoort, Booby Trap combina características de sitios vecinos como Eel Valley, Newport y Kathy’s Paradise. Es un lugar perfecto para identificar esponjas: desde rope sponges hasta elephant ear sponges, cubren el arrecife inclinado en gran diversidad. Con acceso solo en bote, es posible encontrarse con tiburones nodriza, rayas y, ocasionalmente, tortugas. Con profundidades entre 12 y 36 metros y corrientes moderadas, es un drift dive ideal para buzos avanzados."
+    },
+
+    "eel-valley": {
+      "name": "Eel Valley",
+      "desc": "Situado dentro del Parque Marino de Curaçao, Eel Valley combina un extenso arenal ideal para observar criaturas pequeñas y rayas con impresionantes formaciones de coral duro que conducen a un abrupto drop-off y una majestuosa pared. Accesible únicamente en bote y recomendado como drift dive, ofrece profundidades de 12 a 36 metros y una experiencia llena de vida marina en aguas claras y cálidas."
+    },
+
+    "barracuda-point": {
+      "name": "Barracuda Point (Punt’i Piku)",
+      "desc": "Ubicado frente al Sandals Royal Curaçao, en la entrada de Spanish Water y dentro del Parque Marino, Barracuda Point es un sitio famoso por sus densos campos de coral, gorgonias y corales de gran tamaño. Ideal para drift dives hacia Small Wall o Director’s Bay, combina descensos graduales hasta los 15 metros y caídas más pronunciadas. Como su nombre lo indica, aquí es común ver cardúmenes de barracudas, junto con tortugas, jureles y abundante vida de arrecife, lo que lo convierte en un favorito de los fotógrafos submarinos."
+    },
+
+    "small-wall": {
+      "name": "Small Wall",
+      "desc": "Situado en la península de Caracasbaai, dentro del Parque Nacional Marino de Curaçao, Small Wall ofrece un arrecife vibrante y una pared submarina impresionante entre Director’s Bay y Barracuda Point. Con profundidades entre 12 y 36 metros, es ideal para buzos Open Water en adelante. Sus canales de arena y grietas albergan morenas, camarones y langostas, mientras que los corales duros y blandos crean un hábitat rico en vida marina. Es un sitio muy recomendado para fotografía submarina y un clásico de la zona de Caracasbaai."
+    },
+
+    "lost-anchor": {
+      "name": "Lost Anchor",
+      "desc": "En la península de Caracasbaai, dentro del Parque Marino de Curaçao y bajo los acantilados de Jan Thiel, Lost Anchor debe su nombre a una cadena de ancla que se pierde hacia las profundidades. Tras un breve plató arenoso, aparece una pared cubierta de gorgonias y abanicos de mar que forma un jardín submarino espectacular. La inmersión suele terminar en un somero donde se avistan caballitos de mar, ideal para macro y fotografía. Acceso en bote recomendado, corrientes moderadas y profundidad entre 12 y 36 m."
+    },
+
+    "beacon-point": {
+      "name": "Beacon Point (Kabes di Baranka)",
+      "desc": "Ubicado en la punta occidental de Caracasbaai, dentro del Parque Marino de Curaçao, Beacon Point es uno de los sitios de buceo en bote más espectaculares de la isla. Conocido localmente como Kabes di Baranka, destaca por su pared vertical que desciende más de 30 m y por sus impresionantes formaciones de coral pilar. Durante esta inmersión de nivel intermedio a avanzado es común ver jureles, meros e incluso barracudas cazando en aguas azules. Acceso únicamente por bote, profundidad entre 12 y 36 m."
+    },
+
+    "divers-leap": {
+      "name": "Divers Leap",
+      "desc": "Situado frente al Papagayo Beach Resort, entre Jan Thiel Bay y Beacon Point, Divers Leap es un espectacular sitio de pared vertical ideal para buceos profundos y drift dives. El muro desciende hasta los 36 m con gran cobertura de corales, esponjas y abundante vida marina como barracudas, sábalos y lubinas. En la meseta poco profunda suelen avistarse caballitos de mar cerca de la boya. Acceso únicamente por bote, recomendado para buzos con certificación Open Water o superior."
+    },
+
+    "jan-thiel": {
+      "name": "Jan Thiel Bay",
+      "desc": "Ubicada en la costa sur de Curaçao, Jan Thiel Bay es uno de los sitios de buceo y snorkel más populares de la isla. Conocida como el ‘house reef’ del centro de buceo Scuba Do, ofrece un entorno accesible tanto desde la playa como en bote. Sus jardines de coral, paredes y fondos arenosos están llenos de vida: peces loro, ángeles, mariposas, morenas, tiburones nodriza y tortugas marinas. Con aguas claras y cálidas todo el año, es un lugar ideal para buzos Open Water en adelante y un paraíso para la fotografía submarina."
+    },
+
+    "sweet-bottom": {
+      "name": "Sweet Bottom",
+      "desc": "Sweet Bottom es un sitio de buceo escondido entre Sandy’s Plateau y Jan Thiel Beach. Además de su belleza natural y su ambiente tranquilo, es un punto clave de restauración de corales liderado por Reef Renewal Curaçao. Como buzo aquí no solo disfrutas de un arrecife saludable y lleno de vida —corales vibrantes, peces de arrecife y esponjas— sino que también apoyas la conservación marina participando en iniciativas como ‘Adopta un coral’. Es un lugar perfecto para buzos Open Water que deseen combinar exploración y compromiso con el futuro de los arrecifes de Curaçao."
+    },
+
+    "sandys-plateau": {
+      "name": "Sandy’s Plateau",
+      "desc": "Sandy’s Plateau se encuentra al este de la entrada de las salinas de Jan Thiel, entre el famoso pecio del Saba Tugboat y la bahía de Jan Thiel. Este extenso y poco profundo arrecife desciende suavemente hacia un muro cubierto de corales y majestuosas gorgonias. Es un sitio perfecto tanto para buzos Open Water como para snorkelers, gracias a su gran biodiversidad: peces de arrecife, esponjas, langostas caribeñas y cangrejos que se esconden entre los corales y barriles de esponja. Una inmersión en Sandy’s Plateau combina la tranquilidad del fondo arenoso con la espectacularidad del paredón, convirtiéndolo en una experiencia inolvidable."
+    },
+
+    "saba-wreck": {
+      "name": "Saba Tugboat Wreck",
+      "desc": "El pecio del Saba Tugboat, ubicado en la entrada de las salinas de Jan Thiel, es uno de los sitios de buceo más icónicos de Curazao. El remolcador descansa a tan solo 12 metros de profundidad, lo que lo convierte en un lugar ideal tanto para buzos Open Water como para snorkelers. Aunque el puente y la cubierta muestran el paso del tiempo, el pecio se ha transformado en un arrecife artificial lleno de vida: bancos de peces tropicales, morenas, peces loro e incluso caballitos de mar pueden encontrarse aquí. Muy cerca, un espectacular paredón cubierto de corales y esponjas añade aún más atractivo. Explorar el Saba Tugboat es sumergirse en historia marítima y biodiversidad caribeña en un solo buceo."
+    },
+
+    "cornelius-bay": {
+      "name": "Cornelius Bay",
+      "desc": "Cornelius Bay, situada en la zona de Bapor Kibra junto al Curaçao Sea Aquarium Park, es un sitio de buceo de arrecife y pared dentro del Parque Marino de Curazao. Este rincón ha permanecido casi intacto por más de 50 años, ofreciendo un ecosistema rico y prístino. Aquí encontrarás grandes colonias de coral, incluidas especies actualmente amenazadas en el Caribe, así como caballitos de mar escondidos entre los gorgonáceos de la pared. Con profundidades que alcanzan los 36 metros y una biodiversidad única, Cornelius Bay es un buceo imprescindible para quienes buscan naturaleza intacta y un contacto directo con la historia marítima de Curazao."
+    },
+
+    "shipwreck-point": {
+      "name": "Shipwreck Point",
+      "desc": "Shipwreck Point, ubicado en el extremo este del Curaçao Sea Aquarium y frente al LionsDive Beach Resort, es un sitio de buceo que combina historia marítima y biodiversidad. Este arrecife de franja ofrece anclas, ejes y hélices como testigos de naufragios pasados, además de una abundante vida marina en aguas cristalinas. Se puede acceder tanto en bote como desde la orilla (a través de la playa de Hemingway’s en LionsDive). Con profundidades de hasta 36 metros, buena visibilidad y la emoción de explorar vestigios históricos bajo el mar, Shipwreck Point es una experiencia imprescindible en Curazao."
+    },
+
+    "stella-maris-shipwreck": {
+      "name": "Stella Maris Reef",
+      "desc": "Stella Maris, el arrecife de casa de Ocean Encounters en LionsDive Beach Resort, combina un histórico naufragio en aguas profundas con un arrecife de franja vibrante y viveros de coral gestionados por Reef Renewal Curaçao. Gracias a las corrientes del este, el arrecife recibe nutrientes constantes que alimentan una gran diversidad de vida marina. Este sitio accesible desde la orilla ofrece una experiencia única: bucear junto a viveros de coral de cuerno de alce y cuerno de ciervo, descubrir abundante fauna tropical y apoyar activamente la restauración de arrecifes en Curazao."
+    },
+
+    "oswaldos-drop-off": {
+      "name": "Oswaldo’s Drop Off",
+      "desc": "Oswaldo’s Drop Off es el arrecife de casa del Sunscape Curaçao Resort y Ocean Encounters. Este sitio de buceo accesible desde la orilla ofrece aguas cristalinas, corales vibrantes y abundante vida marina. Es ideal tanto para buceadores certificados como para quienes deseen hacer snorkel. Aquí encontrarás viveros de coral de cuerno de alce y cuerno de ciervo gestionados por Reef Renewal Curaçao, sumergiéndote en un espacio donde la recreación y la conservación se encuentran. Debido al tráfico de embarcaciones, es obligatorio el uso de boya de señalización en superficie."
+    },
+
+    "car-pile": {
+      "name": "Car Pile",
+      "desc": "El Car Pile, ubicado frente al Sunscape Curaçao Resort, es uno de los pecios más extraños de la isla. Este sitio comienza a unos 14 m (45 ft), donde una barcaza descansa a 30 m (100 ft), y desde allí se extiende una sorprendente pila de autos y camiones que descienden a mayores profundidades. El sitio se encuentra entre Oswaldo’s Drop Off y Pierbaai, y es reconocido por su ambiente surrealista, como un arrecife artificial cargado de vida marina. Debido al tráfico de embarcaciones, es obligatorio el uso de boya de señalización en superficie."
+    },
+
+    "superior-producer": {
+      "name": "MV Superior Producer",
+      "desc": "El pecio más icónico de Curazao. Descansa erguido sobre su quilla a ~30 m entre Double Reef y la entrada de St. Annabaai, a unos 150 m de la costa frente a los mega muelles. Se puede bucear desde orilla o en bote y es recomendado para buzos Advanced por la profundidad y las condiciones. La superestructura está cubierta de corales y esponjas, con abundantes peces de arrecife, barracudas y excelente macro. Importante: verifica el horario de atraque del Mega‑pier; el buceo está prohibido cuando hay cruceros atracados."
+    },
+
+    "double-reef": {
+      "name": "Double Reef",
+      "desc": "Ubicado junto al Mangrove Beach Resort en Otrobanda, este sitio ofrece dos arrecifes distintos separados por un fondo arenoso. El primero desciende hasta ~14 m, mientras que el segundo comienza en ~18 m y baja más allá de los límites recreativos. Hogar de grandes colonias de corales duros y blandos, tortugas verdes y carey, morenas, gobios, blénidos y abundante vida macro. Se puede acceder tanto en bote como desde la orilla. Atención: las corrientes pueden ser fuertes y tienden hacia el oeste, por lo que se recomienda boya de superficie al bucear desde costa."
+    },
+
+    "snake-bay": {
+      "name": "Snake Bay (Playa Wachi, Boca Sami)",
+      "desc": "Ubicado en el pintoresco pueblo de Boca Sami, Snake Bay —también conocido como Playa Wachi— es un sitio de buceo desde costa muy popular entre locales. Ofrece una entrada arenosa y un arrecife inclinado con abundantes corales duros y esponjas que desciende hasta 36 m. Ideal para buceo diurno y nocturno, y un punto clave para presenciar el desove de corales en septiembre y octubre. Perfecto para buzos Open Water en adelante, con buena visibilidad y vida marina diversa."
+    },
+
+    "porto-mari": {
+      "name": "Playa Porto Mari (The Valley)",
+      "desc": "Ubicada en la histórica Plantation Porto Mari, esta playa cuenta con un arrecife doble único conocido como 'The Valley'. De fácil acceso desde la costa, ofrece aguas tranquilas y excelente visibilidad, con abundante vida marina que incluye peces ángel, meros, peces loro, rayas águila y tortugas marinas. Con corales sanos y un ecosistema vibrante, Playa Porto Mari es considerada uno de los 10 mejores sitios de buceo de Curaçao y un paraíso tanto para principiantes como para buzos experimentados."
+    },
+
+    "cas-abou": {
+      "name": "Cas Abao",
+      "desc": "Ubicado en la costa suroeste de Curaçao, Cas Abao es un sitio de buceo icónico reconocido por su arrecife prístino, aguas cristalinas y abundante biodiversidad marina. Con fácil acceso desde la playa, ofrece encuentros con rayas águila, tortugas, morenas, caballitos de mar, peces rana y una gran variedad de corales duros y blandos. Gracias a sus aguas tranquilas y excelente visibilidad, es ideal para buzos de todos los niveles y un referente en conservación marina."
+    },
+
+    "santa-martha": {
+      "name": "Playa Santa Martha",
+      "desc": "Ubicada cerca del tranquilo pueblo de Soto, Santa Martha Bay es un tesoro escondido que combina belleza natural y buceo variado. Desde la costa se puede acceder a sitios como Mako’s Mountain y el Airplane Wreck, ideales para fotografía macro. En sus alrededores, excursiones en bote llevan a joyas como Mushroom Forest y Blue Room. Con aguas calmadas, buena visibilidad y un ambiente poco concurrido, Playa Santa Martha ofrece una experiencia única para buzos y snorkelers que buscan explorar la biodiversidad marina y la historia submarina de Curaçao."
+    },
+
+    "blue-room": {
+      "name": "Blue Room",
+      "desc": "Ubicada en la plantación de Santa Cruz, la Blue Room es una caverna submarina mágica y uno de los sitios más icónicos de Curaçao. A poca profundidad y accesible en bote o snorkel, este lugar deslumbra con un juego único de luces y sombras donde bancos de peces plateados y coloridos corales crean un espectáculo natural inolvidable. Popular entre fotógrafos y buzos recreativos, es ideal para quienes buscan una experiencia diferente y accesible en el Caribe."
+    },
+
+    "mushroom-forest": {
+      "name": "Mushroom Forest",
+      "desc": "Mushroom Forest es uno de los sitios de buceo más emblemáticos de Curaçao, ubicado en la plantación de Santa Cruz. Su paisaje submarino está dominado por corales en forma de hongo que crean un verdadero bosque bajo el mar. La excelente visibilidad y abundante vida marina –incluyendo tortugas, peces de arrecife y caballitos de mar– convierten este lugar en un paraíso para fotógrafos y buzos avanzados. Generalmente se bucea en bote y, debido a sus corrientes y profundidad, se recomienda para buzos con experiencia."
+    },
+
+    "black-sand-beach": {
+      "name": "Black Sand Beach (Santu Pretu)",
+      "desc": "Black Sand Beach, también conocida como Santu Prétu, es un sitio único dentro de la plantación de Santa Cruz en Curaçao. Allí reposa el Catherine, un barco de 120 pies que yace boca abajo a poca profundidad, cubierto de corales y esponjas, y rodeado de colonias de anguilas de jardín. La playa, de arena negra y aislada, ofrece un entorno singular tanto para el buceo como para el snorkel. Tras explorar el naufragio, muchos buzos continúan hacia Mushroom Forest o aprovechan para visitar la cercana Blue Room, convirtiéndolo en un punto imprescindible para quienes buscan una experiencia fuera de lo común."
+    },
+
+    "north-point-of-klein-curacao": {
+      "name": "Klein Curaçao - North Point",
+      "desc": "Ubicado en el extremo norte de Klein Curaçao, este sitio es un buceo a la deriva retador incluso para buzos experimentados. Las corrientes aquí pueden ser fuertes e impredecibles, por lo que se recomienda máxima precaución, planificación y soporte en superficie. Bajo el agua encontrarás un arrecife vibrante con tortugas, meros y cardúmenes en aguas abiertas, en un entorno que combina espectacular biodiversidad con adrenalina. Es una inmersión imprescindible para buzos avanzados que buscan un desafío auténtico en el Caribe."
+    },
+
+    "eastside-of-klein-curacao": {
+      "name": "Klein Curaçao - Eastside",
+      "desc": "El Eastside de Klein Curaçao es conocido por ser un buceo a la deriva exigente incluso para los buzos más experimentados. Las corrientes aquí son fuertes e impredecibles, por lo que se requiere máxima precaución y siempre contar con soporte en superficie. Bajo el agua, este sitio revela arrecifes prístinos llenos de tortugas, peces ballesta oceánicos, meros de gran tamaño y cardúmenes vibrantes. Es un punto impresionante y salvaje que ofrece una experiencia única en el Caribe, ideal solo para buzos avanzados que buscan adrenalina y biodiversidad."
+    },
+
+    "south-point-of-klein-curacao": {
+      "name": "Klein Curaçao - South Point",
+      "desc": "El South Point de Klein Curaçao es un sitio de buceo a la deriva desafiante, recomendado solo para buzos avanzados. Las corrientes en este extremo sur pueden ser intensas y variables, lo que exige experiencia, precaución y siempre contar con soporte en superficie. Bajo sus aguas cristalinas se encuentran arrecifes prístinos repletos de tortugas, meros de gran tamaño, peces ballesta oceánicos y abundantes cardúmenes. Este punto remoto ofrece una experiencia salvaje y auténtica del Caribe, ideal para quienes buscan adrenalina y biodiversidad en estado puro."
+    },
+
+    "playa-kanoa": {
+      "name": "Playa Kanoa",
+      "desc": "Playa Kanoa, ubicada en la costa norte de Curaçao, es un sitio de buceo a la deriva desafiante, incluso para los buzos más experimentados. Las corrientes aquí pueden ser fuertes y cambiantes, por lo que se requiere experiencia, precaución y soporte en superficie. El extenso y poco profundo plateau norte ofrece menor cobertura coralina, pero su carácter salvaje y expuesto lo convierte en una experiencia única. Es un punto ideal para quienes buscan adrenalina y aventura en un entorno natural y auténtico del Caribe."
+    },
+
+    "north-point": {
+      "name": "North Point",
+      "desc": "North Point, ubicado en el extremo norte de Curaçao, es un sitio de buceo a la deriva desafiante reservado para buzos experimentados. Las corrientes aquí pueden ser extremadamente fuertes y cambiantes, por lo que se recomienda máxima precaución, planificación previa y soporte en superficie. Este punto ofrece paredes coralinas expuestas al océano abierto, vida marina abundante y la emoción de un buceo en condiciones exigentes, ideal para quienes buscan aventura y adrenalina en el Caribe."
+    },
+
+    "black-rock": {
+      "name": "Black Rock (Piedra Pretu)",
+      "desc": "Ubicado al oeste de Eastpoint en la costa sur de Curaçao, Black Rock es un sitio de buceo accesible únicamente en barco que combina paredes coralinas espectaculares, abundante vida marina y aguas cristalinas. Con corrientes que lo convierten en un buceo de deriva avanzado, ofrece encuentros con cardúmenes de pargos, roncos, barracudas y rayas águila, además de corales duros, gorgonias y esponjas en perfecto estado. Es un destino imprescindible para buzos avanzados que buscan aventura, biodiversidad y fotografía submarina en uno de los entornos más prístinos de la isla."
+    },
+
+    "awa-blancu": {
+      "name": "Awa Blancu",
+      "desc": "Awa Blancu es un sitio remoto y espectacular al este de Curaçao que ofrece una de las experiencias de deriva más intensas de la isla. Con paredes cubiertas de corales y gorgonias, cardúmenes de peces de arrecife y la posibilidad de encuentros con especies pelágicas, este buceo avanzado combina corrientes fuertes y profundidad con una biodiversidad sorprendente. Solo accesible en barco, es un destino imprescindible para buzos experimentados en busca de aventura y fotografía submarina en aguas prístinas del Caribe."
+    },
+
+    "playa-santa-cruz": {
+      "name": "Playa Santa Cruz",
+      "desc": "Puerta de entrada a joyas como Mushroom Forest, Blue Room y Black Sand Beach, el sitio de buceo “Santa Cruz” (a ~5 min en barco al oeste de la bahía) ofrece arrecife franjeante con pared, gorgonias y mucha vida: juveniles en el plato arenoso, cardúmenes en el borde y frecuentes avistamientos de delfín tornillo. Acceso solo en barco para buceo; Blue Room y Santu Pretu son accesibles a pie para snorkel. Profundidad 12–36 m, visibilidad generalmente buena y corriente leve: ideal desde Open Water con buena flotabilidad."
+    },
+
+    "playa-lagun": {
+      "name": "Playa Lagun",
+      "desc": "Playa Lagun es un sitio icónico de buceo y snorkel en la costa noroeste de Curazao. La pequeña bahía rodeada de acantilados rocosos crea un canal protegido con aguas tranquilas y excelente visibilidad. Hogar de abundante vida marina y frecuentes tortugas, es ideal tanto para buceadores principiantes como experimentados. Acceso directo desde la playa, con un arrecife franjeante que desciende hasta los 36 m (120 pies)."
+    },
+
+    "playa-jeremi": {
+      "name": "Playa Jeremi",
+      "desc": "Playa Jeremi es un sitio de buceo desde costa ubicado cerca del pueblo de Lagun. Esta ensenada tranquila y apartada ofrece un arrecife con grandes corales pétreos y aguas cristalinas. Es hogar de calamares, jawfish de cabeza amarilla y elegantes rayas. Con acceso mediante escalones de roca, es un lugar ideal tanto para snorkel como para buceo, combinando naturaleza, vida marina diversa y espectaculares atardeceres en el noroeste de Curazao."
+    },
+
+    "paradise": {
+      "name": "Paradise",
+      "desc": "Ubicado entre Playa Jeremi y Playa Kenepa, el sitio de buceo Paradise es un verdadero tesoro submarino. Sus aguas cristalinas revelan colonias masivas de corales duros, esponjas coloridas y una gran diversidad marina que incluye barracudas, morenas verdes y langostas. En días de calma, se puede explorar una pequeña cueva con bancos de peces cristal y cangrejos ocultos. Es un lugar vibrante y biodiverso que hace honor a su nombre: el paraíso del buceo en Curazao."
+    },
+
+    "kleine-knip-kenepa-chikitu": {
+      "name": "Playa Kenepa Chikitu (Kleine Knip)",
+      "desc": "Playa Kenepa Chikitu, también conocida como Kleine Knip o Little Knip, es una de las playas más hermosas de Curazao. Su acceso sencillo desde la orilla la convierte en un sitio ideal tanto para el buceo como para el snorkel. Bajo sus aguas cristalinas encontrarás gorgonias vibrantes, corales naranjas en copa, bancos de peces y la posibilidad de avistar tortugas. Es un lugar perfecto para disfrutar de la biodiversidad marina en un entorno protegido, con excelente visibilidad y ambiente relajado. Una joya caribeña imprescindible para todo visitante."
+    },
+
+    "grote-knip-kenepa-grandi": {
+      "name": "Playa Kenepa Grandi (Grote Knip)",
+      "desc": "Playa Kenepa Grandi, también conocida como Grote Knip o Big Knip, es una de las playas más populares y emblemáticas de Curazao. Su acceso desde la orilla es sencillo, ideal tanto para buceo como para snorkel. Bajo sus aguas encontrarás un extenso plateau arenoso que desciende hacia un arrecife lleno de corales vibrantes, esponjas y vida marina diversa. Este sitio es perfecto para avistar peces de arrecife, tortugas, macro vida y ocasionalmente delfines o rayas en el azul profundo. Muy frecuentada por locales y visitantes, es un destino imprescindible para combinar playa, buceo y la auténtica experiencia caribeña."
+    },
+
+    "kortape": {
+      "name": "Kortape",
+      "desc": "Kortape es un sitio de buceo poco frecuentado en la zona de Westpunt, frente al Marazul Dive Resort. Este arrecife accesible en bote ofrece un paisaje submarino lleno de corales duros y blandos, además de grandes esponjas que atraen a macro vida y peces de arrecife. La visibilidad suele superar los 30 metros, lo que lo convierte en un lugar ideal para la fotografía submarina. Sus corrientes generalmente suaves permiten una experiencia cómoda para buzos de nivel Open Water en adelante, en un entorno tranquilo y lleno de biodiversidad caribeña."
+    },
+
+    "sweet-alice-at-playa-forti": {
+      "name": "Sweet Alice (Playa Forti, Westpunt)",
+      "desc": "Sweet Alice, ubicado en Playa Forti en la zona de Westpunt, combina historia, belleza natural y un buceo relajante. Se accede desde la playa, tras descender las escaleras desde el acantilado, y a unos 150 metros nadando se alcanza el arrecife. El sitio comienza alrededor de los 10 metros y desciende suavemente hasta los 36m, con buena visibilidad y corrientes ligeras. Su arrecife está poblado por corales de látigo, corales de copa, gorgonias y esponjas, hogar de morenas, hamlets, spotted drums y tortugas marinas. Además, Playa Forti es famosa por sus espectaculares atardeceres, lo que hace que Sweet Alice sea un destino especial tanto dentro como fuera del agua."
+    },
+
+    "alice-in-wonderland-at-playa-kalki": {
+      "name": "Alice in Wonderland (Playa Kalki, Westpunt)",
+      "desc": "Alice in Wonderland, ubicada en Playa Kalki en Westpunt, es considerada la mejor inmersión desde costa en Curaçao y el arrecife de casa de GO WEST Diving. Con aguas cristalinas, arrecifes vibrantes y biodiversidad excepcional, este sitio ofrece descensos graduales hasta los 36 metros. Sus formaciones de coral duro pueden alcanzar hasta 18m de altura, creando hábitats para criaturas como peces sapo residentes, pulpos, tortugas carey y rayas águila. Escuelas de peces, bogas cazadas por atunes y vida macro abundante hacen de este sitio un paraíso para fotógrafos submarinos. Además, cuenta con la escultura submarina de una Chichi, símbolo cultural caribeño. Perfecto para buzos principiantes y avanzados, Alice in Wonderland es un imprescindible de los 'Top 10' de Curaçao."
+    },
+
+    "elvins-plane-wreck": {
+      "name": "Elvin’s Plane Wreck (Westpunt)",
+      "desc": "Elvin’s Plane Wreck, al oeste de Playa Kalki en Westpunt, es un sitio de buceo que combina historia y vida marina. En 2006 se hundió un Fokker Fairchild 27 como atracción para buzos, pero en 2008 el huracán Omar lo dispersó en múltiples secciones de escombros. Hoy, los restos reposan sobre parches arenosos rodeados de corales duros, ofreciendo un entorno único para la vida marina. Es común ver tortugas, barracudas, morenas verdes, bogas, peces puercoespín y langostas. Usualmente se realiza como una inmersión de deriva, con posibilidad de finalizar en Watamula. Ideal para buzos avanzados que disfrutan explorar naufragios y biodiversidad en el Caribe."
+    },
+
+    "watamula": {
+      "name": "Watamula (Westpunt)",
+      "desc": "Watamula, ubicado al norte de Playa Kalki en Westpunt, es considerado el mejor sitio de buceo en bote de Curazao. Su nombre proviene de la palabra holandesa 'watermolen' (molino de agua), en referencia a las corrientes que dan vida al lugar. Este espectacular arrecife combina campos de corales duros con jardines de corales blandos, creando un ecosistema vibrante y diverso. Es común observar peces globo, cardúmenes de chubs, ocean triggerfish y gran variedad de macro vida. Debido a sus corrientes cambiantes, se recomienda realizarlo como buceo en bote con guías experimentados. Watamula es un sitio esencial para cualquier buceador que visite Curazao."
+    },
+
+    "pierbaai-at-marie-pampoen": {
+      "name": "Pierbaai (Playa Marie Pampoen)",
+      "desc": "Pierbaai, en Playa Marie Pampoen, es el arrecife casa de The Dive Bus y uno de los sitios de buceo desde costa más reconocidos de Curazao. Con una entrada sencilla y un corto nado hacia el arrecife, los buzos encuentran jardines de corales vibrantes, gran diversidad de macro vida y frecuentes encuentros con tortugas. De noche, el sitio cobra vida con pulpos y tarpones cazando, convirtiéndolo en un lugar ideal para buceos nocturnos. Pierbaai es también un sitio adoptado por PADI AWARE, donde se realizan limpiezas regulares para la conservación del ecosistema. Es un destino imperdible tanto para principiantes como para buzos experimentados."
+    },
+
+    "tarpon-city": {
+      "name": "Tarpon City (Willemstad, Punda)",
+      "desc": "Tarpon City, ubicado frente a las murallas históricas del Waterfort en Punda, combina historia y vida marina en una inmersión única. Este sitio de buceo desde costa permite recorrer los muros defensivos del siglo XVII mientras se nada junto a majestuosos tarpones plateados que se acercan con curiosidad. Con profundidades de hasta 36 metros y corrientes variables, es ideal para buzos con experiencia intermedia. Además de los tarpones residentes, se pueden observar cardúmenes de peces, macro vida y corales. Su cercanía al emblemático MV Superior Producer lo convierte en una parada imperdible para quienes desean vivir el contraste entre patrimonio histórico y naturaleza caribeña."
+    },
+
+    "water-factory": {
+      "name": "Water Factory (Fisherman’s Wharf, Koredor)",
+      "desc": "Water Factory, ubicado en Fisherman’s Wharf en Koredor, combina un acceso pintoresco desde un pequeño pueblo de pescadores con un espectacular paisaje submarino. Este sitio de buceo ofrece paredes verticales con grandes cavidades que sirven de hábitat para morenas verdes, esponjas y corales blandos. A partir de los 10 metros, la densidad coralina aumenta, creando un entorno vibrante repleto de peces de arrecife y vida macro. Con profundidades de hasta 36 metros y opciones de buceo desde la costa o en bote, es una experiencia ideal para buzos de nivel Open Water en adelante que buscan variedad topográfica y biodiversidad en pleno corazón de Willemstad."
+    },
+
+    "piscadera-bay": {
+      "name": "Piscadera Bay (Dreams Curaçao Resort)",
+      "desc": "Piscadera Bay, ubicada entre el Dreams Curaçao Resort y la estación de investigación marina CARMABI, es un sitio de buceo accesible y lleno de vida. Con una entrada sencilla desde la playa y arrecifes saludables a pocos metros de la orilla, ofrece un entorno ideal para buzos principiantes y avanzados. Sus aguas claras revelan jardines de coral, peces de arrecife y vida macro, mientras que su cercanía a CARMABI lo convierte también en un lugar de relevancia científica para la conservación y restauración de corales en el Caribe."
+    },
+
+    "long-beach-piscadera": {
+      "name": "Long Beach (Playa Largu – Piscadera Bay)",
+      "desc": "Long Beach, también conocido como Playa Largu, se ubica en la entrada de la Bahía de Piscadera. Es un sitio de buceo caracterizado por un amplio arrecife con canales de arena, colonias de coral negro y paredes con espectaculares voladizos que descienden hasta 36 metros. Aunque es posible acceder desde la costa, se recomienda explorarlo en bote para disfrutar al máximo su belleza. En sus aguas abiertas habitan barracudas y abundante vida marina, convirtiéndolo en un lugar ideal para buzos certificados que buscan un paisaje diverso y con interés científico gracias a los estudios de CARMABI."
+    },
+
+    "blue-bay-beach": {
+      "name": "Blue Bay Beach",
+      "desc": "Blue Bay Beach es uno de los sitios de buceo más accesibles y populares de Curazao. Ubicado dentro del resort Blue Bay Golf and Beach, ofrece entrada directa desde la playa hacia un arrecife vibrante con corales duros y blandos, peces de arrecife y gran biodiversidad marina. Es ideal tanto para buzos principiantes como experimentados, así como para snorkelers, gracias a sus aguas tranquilas y claras. El sitio incluye puntos destacados como Blue Bay Wall y Blue Bay Garden, convirtiéndolo en una experiencia imperdible en el Caribe."
+    },
+
+    "blue-bay-garden": {
+      "name": "Blue Bay Garden",
+      "desc": "Blue Bay Garden, ubicado dentro del Blue Bay Golf and Beach Resort, es un sitio de buceo y snorkel de fácil acceso que ofrece aguas cristalinas, corales coloridos y abundante vida marina. Aquí podrás encontrarte con tortugas, barracudas y una gran diversidad de peces de arrecife. Con condiciones tranquilas y entrada desde la orilla, es ideal tanto para buzos principiantes como experimentados, y uno de los lugares más recomendados para disfrutar del ecosistema marino de Curazao."
+    },
+
+    "blue-bay-wall": {
+      "name": "Blue Bay Wall",
+      "desc": "Blue Bay Wall, situado dentro del Blue Bay Golf and Beach Resort, ofrece un impresionante descenso vertical desde los 10 metros hasta más de 30 metros de profundidad. Con aguas claras, corales duros y blandos, grandes abanicos de mar y abundante vida marina como tortugas y barracudas, este sitio es ideal para buzos certificados que buscan explorar una pared vibrante y llena de biodiversidad. Accesible tanto desde la orilla como en bote, es una de las experiencias más recomendadas en la zona de Blue Bay."
+    },
+
+    "boca-sami": {
+      "name": "Playa Boca Sami",
+      "desc": "Playa Boca Sami, ubicada en el pintoresco pueblo pesquero de Sint Michiel, ofrece un buceo tranquilo y accesible desde la orilla. Tras un nado inicial en la amplia bahía, el arrecife desciende con una pendiente de 45 grados donde la densidad de coral y esponjas aumenta progresivamente. Es ideal para buzos Open Water que disfrutan de un ambiente auténtico, con historia local, un arrecife saludable y la posibilidad de ver tortugas y peces de arrecife. Además, Boca Sami es hogar de la primera escuela de buceo de Curazao, Dive Wederfoort, fundada en 1955."
+    },
+
+    "kokomo-beach": {
+      "name": "Kokomo Beach (Vaersenbaai)",
+      "desc": "Kokomo Beach, en Vaersenbaai, es un sitio de buceo y snorkel accesible desde la orilla, ideal para principiantes y buzos avanzados. El paisaje submarino combina jardines de coral poco profundos con arrecifes más profundos donde habitan tortugas, rayas, nudibranquios y cardúmenes de peces tropicales. La visibilidad suele superar los 30 metros, con aguas cálidas y tranquilas que permiten disfrutar cómodamente del arrecife y, para quienes buscan más aventura, explorar los famosos Car Wrecks ubicados en las cercanías."
+    },
+
+    "vaesenbaai-car-wrecks": {
+      "name": "Car Wrecks (Vaersenbaai, Kokomo Beach)",
+      "desc": "El sitio Car Wrecks, ubicado al este de Kokomo Beach en Vaersenbaai, es un emocionante buceo profundo recomendado para buzos avanzados. Decenas de autos, camiones y barcazas fueron hundidos intencionalmente como parte de un proyecto de restauración de arrecifes, creando un arrecife artificial lleno de vida marina y corales negros. A profundidades de hasta 40 metros, este sitio combina historia, aventura y biodiversidad, siendo ideal para amantes de la fotografía submarina y la exploración de pecios."
+    },
+
+    "pestbaai": {
+      "name": "Pestbaai (Bullenbaai)",
+      "desc": "Ubicado entre Kokomo Beach y los terminales de almacenamiento de Bullenbaai, Pestbaai ofrece un buceo fascinante en un arrecife en forma de terraza. Este sitio combina formaciones de coral como coral cerebro y coral mostaza, con un ambiente ideal para la fotografía macro y la observación de vida marina diversa. El acceso se realiza por un sendero rocoso que desciende hasta la costa, con un ingreso que lleva desde un fondo arenoso hacia jardines coralinos. Es apto para buceadores con certificación Open Water, teniendo en cuenta las condiciones abiertas al mar que pueden generar oleaje y corrientes cambiantes."
+    },
+
+    "seldom": {
+      "name": "Seldom Reef (Coral Estates)",
+      "desc": "Ubicado al este del Coral Estate Luxury Resort en Bullenbaai, Seldom Reef es un sitio de buceo accesible únicamente en bote y famoso por sus inmersiones a la deriva. Este arrecife ofrece un espectacular muro que desciende a más de 27 metros de profundidad, donde abundan los corales vibrantes y la vida marina diversa. Debido a sus corrientes fuertes y condiciones abiertas, es un sitio recomendado para buceadores avanzados que buscan una experiencia desafiante y fuera de lo común en Curaçao."
+    },
+
+    "seldom-west": {
+      "name": "Seldom Reef (Coral Estates)",
+      "desc": "Seldom Reef, ubicado al este de Coral Estate en Bullenbaai, es un sitio de buceo accesible únicamente en bote y reconocido por sus emocionantes inmersiones a la deriva. El arrecife ofrece un muro imponente que desciende a más de 27 metros, adornado con corales vibrantes y una rica biodiversidad marina. Debido a las corrientes fuertes y condiciones abiertas, este sitio está recomendado para buzos avanzados que buscan una experiencia desafiante y única en Curaçao."
+    },
+
+    "rif-sint-marie": {
+      "name": "Rif Sint Marie (Coral Estates)",
+      "desc": "Rif Sint Marie, el arrecife principal del Coral Estate Luxury Resort, es un sitio de buceo y snorkel de fácil acceso desde la orilla. Este arrecife vibrante alberga una gran biodiversidad con peces loro, peces trompeta, barracudas y tortugas marinas. Su topografía de arrecife saludable y accesible lo convierte en una opción ideal tanto para buzos certificados de nivel Open Water como para snorkelers que buscan explorar un ecosistema marino lleno de vida en Curaçao."
+    },
+
+    "daaibooi": {
+      "name": "Daaibooi Beach",
+      "desc": "Daaibooi Beach, una bahía tranquila cerca de Sint Willibrordus, es ideal para buceo desde la orilla, snorkel o un refrescante baño. Aunque el arrecife está alejado de la costa, el nado superficial vale la pena gracias a la abundancia de corales duros y blandos, esponjas Elephant Ear y corales cerebro. Con su ambiente relajado y la biodiversidad saludable, es un sitio perfecto para buzos Open Water y snorkelers que buscan explorar un rincón auténtico de Curaçao."
+    },
+
+    "playa-largu-at-san-juan": {
+      "name": "Playa Largu",
+      "desc": "Playa Largu, ubicada dentro de la histórica Hacienda San Juan, ofrece una inmersión desde la orilla tranquila y fascinante. Su entrada es sencilla y permite un rápido acceso al arrecife, donde el desnivel desciende de forma pronunciada. Entre sus atractivos destacan la gran diversidad de esponjas —como las Elephant Ear, barril y tubo— y la abundancia de corales blandos que colorean el paisaje submarino. Es un sitio ideal para buzos Open Water en adelante que buscan un ambiente natural, silencioso y alejado de multitudes."
+    },
+
+    "shon-mosa-at-san-juan": {
+      "name": "Playa Shon Mosa",
+      "desc": "Playa Shon Mosa, ubicada en la Hacienda San Juan, es un sitio de buceo desde la orilla tranquilo y escondido. Su entrada arenosa y suave pendiente submarina ofrecen una inmersión relajada entre corales, esponjas y zonas de arena que dan gran diversidad al paisaje marino. Aunque carece de facilidades, su ambiente aislado y la claridad de sus aguas lo convierten en un lugar ideal para quienes buscan calma y naturaleza. Requiere buena orientación bajo el agua para evitar desviarse hacia playas vecinas."
+    },
+
+    "playa-manzalina-at-san-juan": {
+      "name": "Playa Manzaliña",
+      "desc": "Playa Manzaliña, ubicada en la Hacienda San Juan, es un sitio de buceo desde la orilla poco concurrido y rodeado de belleza natural. Su entrada con escombros de coral y arena da acceso rápido a un arrecife con un desnivel cercano a la costa, donde abundan esponjas y corales saludables de gran tamaño gracias a su baja afluencia de visitantes. Ofrece un entorno tranquilo ideal para quienes buscan inmersiones relajadas en un ambiente prístino."
+    },
+
+    "playa-chiki-at-san-juan": {
+      "name": "Playa Chiki",
+      "desc": "Playa Chiki, ubicada dentro de la Hacienda San Juan, es un pequeño y aislado sitio de buceo desde la orilla, poco conocido en las guías tradicionales de Curaçao. Su bahía ofrece aguas cristalinas, un arrecife con formaciones de coral que crean un paisaje de valles y elevaciones, y gran abundancia de esponjas. Este rincón tranquilo es perfecto para quienes buscan una experiencia de buceo relajada en un entorno natural y prístino."
+    },
+
+    "playa-hundu": {
+      "name": "Playa Hundu",
+      "desc": "Playa Hundu, ubicada cerca del pueblo de Soto y de la Bahía de Santa Martha, es un sitio de buceo accesible tanto desde la orilla como en bote. Con un arrecife inclinado a poca distancia de la costa, ofrece esponjas, gorgonias y corales duros en abundancia, además de vida marina variada en aguas cristalinas. Su entrada es sencilla y la navegación se facilita por valles arenosos que conducen hacia el mar. Ideal para buceadores de nivel Open Water en adelante, Playa Hundu combina paisajes submarinos vibrantes con la tranquilidad de un entorno natural prístino."
+    },
+
+    "san-nicolas": {
+      "name": "San Nicolas",
+      "desc": "Ubicado cerca del pueblo de Soto, San Nicolas es un espectacular sitio de buceo accesible únicamente por barco. Con un impresionante muro coralino y paisajes submarinos dramáticos, ofrece encuentros con tiburones, rayas, peces pelágicos y una abundancia de corales blandos y duros. Por sus corrientes y profundidad, es un sitio recomendado para buceadores avanzados que buscan una experiencia intensa y diversa en el Caribe de Curaçao."
+    },
+
+    "makos-mountain": {
+      "name": "Makos Mountain",
+      "desc": "Makos Mountain, ubicado cerca de la bahía de Santa Martha en Soto, Curaçao, es un espectacular sitio de buceo accesible únicamente por barco. Reconocido por sus impresionantes paredes coralinas, abundancia de corales blandos y duros, y la posibilidad de encuentros con tiburones mako y martillo, ofrece una experiencia intensa para buceadores avanzados. Su topografía dramática, rayas, morenas, peces pelágicos y esponjas coloridas lo convierten en un sitio inolvidable del Caribe."
+    },
+
+    "hells-corner": {
+      "name": "Hells Corner",
+      "desc": "Hells Corner, ubicado en Soto cerca de la bahía de Santa Martha, es un espectacular sitio de buceo en pared accesible en barco. Nombrado por las fuertes corrientes que suelen encontrarse en el punto, ofrece un jardín submarino con abundantes corales cerebrales, esponjas tubo, gorgonias y formaciones coralinas. Es frecuente ver cardúmenes de jureles, barracudas, tortugas, langostas y morenas. Un sitio intenso y desafiante para buceadores avanzados que buscan la esencia del Caribe."
+    },
+
+    "black-coral-garden": {
+      "name": "Black Coral Garden",
+      "desc": "Ubicado en la zona de Soto, entre Hells Corner y Rediho, Black Coral Garden es un sitio único que debe su nombre al raro y casi extinto coral negro. En sus aguas cristalinas se despliega un espectacular jardín submarino de abanicos de mar, corales botella y una gran diversidad de vida marina. Con acceso únicamente en barco y corrientes suaves, ofrece una inmersión en pared con excelente visibilidad, ideal para buzos avanzados que deseen admirar estas joyas naturales centenarias en un entorno caribeño prístino."
+    },
+
+    "rediho": {
+      "name": "REDIHO",
+      "desc": "Ubicado cerca de la plantación Santa Cruz, entre Black Coral Garden y Playa Hulu, REDIHO es un espectacular sitio de buceo accesible solo en barco. Sus corrientes generan un efecto de limpieza constante que mantiene los corales blandos y duros en excelente estado, ofreciendo una visibilidad excepcional. Este lugar es famoso por su abundante vida macro —como caballitos de mar y peces rana— y frecuentes avistamientos de rayas águila, tortugas y barracudas. Con un perfil de profundidad entre 12 y 36 metros, REDIHO es ideal para buzos avanzados en busca de un paisaje submarino vibrante y diverso."
+    },
+
+    "duanes-release-aka-scooter": {
+      "name": "Duane’s Release (Scooter)",
+      "desc": "Ubicado entre REDIHO y Playa Hulu, cerca de la Bahía Santa Martha, Duane’s Release —conocido localmente como Scooter— es un espectacular sitio de buceo en barco. Este arrecife se distingue por sus corales cerebro, gorgonias, esponjas oreja de elefante y poblaciones densas de peces ángel. También alberga abundante vida macro: pulpos, rayas águila, anguilas, camarones y cangrejos flecha. Nombrado en memoria del joven buzo Duane Hendrix, este lugar combina una experiencia marina vibrante con un profundo significado conmemorativo."
+    },
+
+    "playa-hulu": {
+      "name": "Playa Hulu (Boca Hula)",
+      "desc": "Ubicado cerca de Santa Cruz, entre sitios icónicos como Mushroom Forest y The Blue Room, Playa Hulu —también conocido como Boca Hula— es un sitio de buceo accesible en barco y, en ocasiones, desde la costa privada. Sus paredes cubiertas de corales estrella y gorgonias crean un paisaje submarino vibrante, hogar de caballitos de mar, peces rana y abundante vida macro. Este rincón escondido es perfecto para quienes buscan una experiencia de buceo colorida, diversa y única en Curaçao."
+    },
+
+    "sponge-forest": {
+      "name": "Sponge Forest",
+      "desc": "Ubicado cerca de Playa Santa Cruz, entre los sitios icónicos Mushroom Forest y The Blue Room, Sponge Forest es un sitio de buceo en barco reconocido por su abundancia de esponjas gigantes y coloridas. Aquí podrás encontrar barriles monumentales, esponjas de tubo púrpura y esponjas oreja de elefante que crean un paisaje único. Este bosque submarino es perfecto para la fotografía de gran angular, además de ofrecer un hábitat diverso para peces arrecifales y vida macro. Una experiencia imprescindible en Curaçao para los amantes de la naturaleza marina."
+    },
+
+    "newport": {
+      "name": "Newport (Nieuwpoort)",
+      "desc": "Ubicado al este de Fuikbaai y cerca de Kathy’s Paradise, Newport (Nieuwpoort) es un espectacular sitio de buceo accesible solo en barco. Su arrecife inclinado desciende hasta una pared dramática que se desploma en el azul profundo, ofreciendo un escenario vibrante de esponjas barril gigantes, corales coloridos y abundante vida marina. Aquí es común encontrar tortugas, rayas águila, cardúmenes de peces arrecifales, barracudas e incluso, ocasionalmente, tiburones martillo. Los amantes de la fotografía submarina disfrutarán de sus paisajes llenos de contrastes, mientras que los buscadores de macro podrán observar caballitos de mar, peces sapo y nudibranquios. Un imperdible de Curaçao para buzos avanzados."
+    }
   }
 }

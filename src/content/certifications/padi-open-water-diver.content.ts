@@ -116,6 +116,7 @@ const rawOpenWaterDiver: CertificationContent = {
       'certifications.owd.whatIsIncluded.items.item1',
       'certifications.owd.whatIsIncluded.items.item2',
       'certifications.owd.whatIsIncluded.items.item3',
+      'certifications.owd.whatIsIncluded.items.item4',
     ],
   },
 
