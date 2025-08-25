@@ -6,8 +6,8 @@ import type { DiveSiteContent } from './types';
 export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
   'bajo-del-pescador': {
     id: 'bajo-del-pescador',
-    nameKey: 'santa-marta.bajoDelPescador.name',
-    descriptionKey: 'santa-marta.bajoDelPescador.desc',
+    nameKey: 'santa-marta.bajo-del-pescador.name',
+    descriptionKey: 'santa-marta.bajo-del-pescador.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19631, 11.31663],
@@ -39,8 +39,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'barcaza-profunda': {
     id: 'barcaza-profunda',
-    nameKey: 'santa-marta.barcazaProfunda.name',
-    descriptionKey: 'santa-marta.barcazaProfunda.desc',
+    nameKey: 'santa-marta.barcaza-profunda.name',
+    descriptionKey: 'santa-marta.barcaza-profunda.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.22322, 11.25151],
@@ -116,8 +116,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'caga-pajaro': {
     id: 'caga-pajaro',
-    nameKey: 'santa-marta.cagaPajaro.name',
-    descriptionKey: 'santa-marta.cagaPajaro.desc',
+    nameKey: 'santa-marta.caga-pajaro.name',
+    descriptionKey: 'santa-marta.caga-pajaro.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.20035, 11.32104],
@@ -218,8 +218,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'cantil-granate': {
     id: 'cantil-granate',
-    nameKey: 'santa-marta.cantilGranate.name',
-    descriptionKey: 'santa-marta.cantilGranate.desc',
+    nameKey: 'santa-marta.cantil-granate.name',
+    descriptionKey: 'santa-marta.cantil-granate.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19468, 11.30207],
@@ -257,8 +257,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'el-coro': {
     id: 'el-coro',
-    nameKey: 'santa-marta.elCoro.name',
-    descriptionKey: 'santa-marta.elCoro.desc',
+    nameKey: 'santa-marta.el-coro.name',
+    descriptionKey: 'santa-marta.el-coro.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19128, 11.3159],
@@ -295,8 +295,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'el-morro-chico': {
     id: 'el-morro-chico',
-    nameKey: 'santa-marta.elMorroChico.name',
-    descriptionKey: 'santa-marta.elMorroChico.desc',
+    nameKey: 'santa-marta.el-morro-chico.name',
+    descriptionKey: 'santa-marta.el-morro-chico.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.22273, 11.25143],
@@ -331,8 +331,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'el-remanso': {
     id: 'el-remanso',
-    nameKey: 'santa-marta.elRemanso.name',
-    descriptionKey: 'santa-marta.elRemanso.desc',
+    nameKey: 'santa-marta.el-remanso.name',
+    descriptionKey: 'santa-marta.el-remanso.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.20528, 11.27109],
@@ -368,8 +368,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'el-torin': {
     id: 'el-torin',
-    nameKey: 'santa-marta.elTorin.name',
-    descriptionKey: 'santa-marta.elTorin.desc',
+    nameKey: 'santa-marta.el-torin.name',
+    descriptionKey: 'santa-marta.el-torin.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19078, 11.31103],
@@ -399,8 +399,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'inca-inca': {
     id: 'inca-inca',
-    nameKey: 'santa-marta.incaInca.name',
-    descriptionKey: 'santa-marta.incaInca.desc',
+    nameKey: 'santa-marta.inca-inca.name',
+    descriptionKey: 'santa-marta.inca-inca.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.23471, 11.21601],
@@ -430,8 +430,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'la-antena': {
     id: 'la-antena',
-    nameKey: 'santa-marta.laAntena.name',
-    descriptionKey: 'santa-marta.laAntena.desc',
+    nameKey: 'santa-marta.la-antena.name',
+    descriptionKey: 'santa-marta.la-antena.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.2, 11.261171],
@@ -462,8 +462,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'la-pecera': {
     id: 'la-pecera',
-    nameKey: 'santa-marta.laPecera.name',
-    descriptionKey: 'santa-marta.laPecera.desc',
+    nameKey: 'santa-marta.la-pecera.name',
+    descriptionKey: 'santa-marta.la-pecera.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.1917, 11.29571],
@@ -493,8 +493,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'la-piedra-del-chivo': {
     id: 'la-piedra-del-chivo',
-    nameKey: 'santa-marta.laPiedraDelChivo.name',
-    descriptionKey: 'santa-marta.laPiedraDelChivo.desc',
+    nameKey: 'santa-marta.la-piedra-del-chivo.name',
+    descriptionKey: 'santa-marta.la-piedra-del-chivo.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19479, 11.32248],
@@ -529,8 +529,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'la-piedra-del-medio': {
     id: 'la-piedra-del-medio',
-    nameKey: 'santa-marta.laPiedraDelMedio.name',
-    descriptionKey: 'santa-marta.laPiedraDelMedio.desc',
+    nameKey: 'santa-marta.la-piedra-del-medio.name',
+    descriptionKey: 'santa-marta.la-piedra-del-medio.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19446, 11.29695],
@@ -563,8 +563,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'la-travesia': {
     id: 'la-travesia',
-    nameKey: 'santa-marta.laTravesia.name',
-    descriptionKey: 'santa-marta.laTravesia.desc',
+    nameKey: 'santa-marta.la-travesia.name',
+    descriptionKey: 'santa-marta.la-travesia.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19256, 11.30703],
@@ -626,8 +626,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'las-barcazas': {
     id: 'las-barcazas',
-    nameKey: 'santa-marta.lasBarcazas.name',
-    descriptionKey: 'santa-marta.lasBarcazas.desc',
+    nameKey: 'santa-marta.las-barcazas.name',
+    descriptionKey: 'santa-marta.las-barcazas.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.221257, 11.251176],
@@ -658,8 +658,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'los-carros': {
     id: 'los-carros',
-    nameKey: 'santa-marta.losCarros.name',
-    descriptionKey: 'santa-marta.losCarros.desc',
+    nameKey: 'santa-marta.los-carros.name',
+    descriptionKey: 'santa-marta.los-carros.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19123, 11.2917],
@@ -715,8 +715,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'morrito-largo': {
     id: 'morrito-largo',
-    nameKey: 'santa-marta.morritoLargo.name',
-    descriptionKey: 'santa-marta.morritoLargo.desc',
+    nameKey: 'santa-marta.morrito-largo.name',
+    descriptionKey: 'santa-marta.morrito-largo.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.20299, 11.31734],
@@ -755,8 +755,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'morro-gaira': {
     id: 'morro-gaira',
-    nameKey: 'santa-marta.morroGaira.name',
-    descriptionKey: 'santa-marta.morroGaira.desc',
+    nameKey: 'santa-marta.morro-gaira.name',
+    descriptionKey: 'santa-marta.morro-gaira.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.23959, 11.20806],
@@ -788,8 +788,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'morro-santa-marta': {
     id: 'morro-santa-marta',
-    nameKey: 'santa-marta.morroSantaMarta.name',
-    descriptionKey: 'santa-marta.morroSantaMarta.desc',
+    nameKey: 'santa-marta.morro-santa-marta.name',
+    descriptionKey: 'santa-marta.morro-santa-marta.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.23193, 11.24918],
@@ -944,8 +944,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'paso-del-angel': {
     id: 'paso-del-angel',
-    nameKey: 'santa-marta.pasoDelAngel.name',
-    descriptionKey: 'santa-marta.pasoDelAngel.desc',
+    nameKey: 'santa-marta.paso-del-angel.name',
+    descriptionKey: 'santa-marta.paso-del-angel.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.20135, 11.31801],
@@ -1024,8 +1024,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'punta-aguja': {
     id: 'punta-aguja',
-    nameKey: 'santa-marta.puntaAguja.name',
-    descriptionKey: 'santa-marta.puntaAguja.desc',
+    nameKey: 'santa-marta.punta-aguja.name',
+    descriptionKey: 'santa-marta.punta-aguja.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19941, 11.31844],
@@ -1065,8 +1065,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'punta-cabeza-de-negros': {
     id: 'punta-cabeza-de-negros',
-    nameKey: 'santa-marta.puntaCabezaNegros.name',
-    descriptionKey: 'santa-marta.puntaCabezaNegros.desc',
+    nameKey: 'santa-marta.punta-cabeza-de-negros.name',
+    descriptionKey: 'santa-marta.punta-cabeza-de-negros.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.2369, 11.20972],
@@ -1096,8 +1096,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'punta-gaira': {
     id: 'punta-gaira',
-    nameKey: 'santa-marta.puntaGaira.name',
-    descriptionKey: 'santa-marta.puntaGaira.desc',
+    nameKey: 'santa-marta.punta-gaira.name',
+    descriptionKey: 'santa-marta.punta-gaira.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.24067, 11.21908],
@@ -1132,8 +1132,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'punta-granate': {
     id: 'punta-granate',
-    nameKey: 'santa-marta.puntaGranate.name',
-    descriptionKey: 'santa-marta.puntaGranate.desc',
+    nameKey: 'santa-marta.punta-granate.name',
+    descriptionKey: 'santa-marta.punta-granate.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.19361, 11.29087],
@@ -1171,8 +1171,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'punta-venado': {
     id: 'punta-venado',
-    nameKey: 'santa-marta.puntaVenado.name',
-    descriptionKey: 'santa-marta.puntaVenado.desc',
+    nameKey: 'santa-marta.punta-venado.name',
+    descriptionKey: 'santa-marta.punta-venado.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.206387, 11.272809],
@@ -1285,8 +1285,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'el-natalia': {
     id: 'el-natalia',
-    nameKey: 'santa-marta.elNatalia.name',
-    descriptionKey: 'santa-marta.elNatalia.desc',
+    nameKey: 'santa-marta.el-natalia.name',
+    descriptionKey: 'santa-marta.el-natalia.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.238627, 11.205035],

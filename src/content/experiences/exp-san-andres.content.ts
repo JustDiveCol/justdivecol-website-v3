@@ -24,9 +24,9 @@ const rawSanAndresExp: ExperienceContent = {
     translationNS: 'experiences',
     imageData: {
       backgroundImage: toAssetUrl(
-        '/images/experiences/san-andres/header-background.webp'
+        '/images/destinations/san-andres/header-background.webp'
       ),
-      photoCredit: 'Cristhian David Duarte @duartefotografia.ph',
+      photoCredit: 'Lukas Medvedevas @majesticlukas',
       variant: 'header',
     },
   },
@@ -103,13 +103,48 @@ const rawSanAndresExp: ExperienceContent = {
   gallery: {
     titleKey: 'experiences.galleryTitle',
     images: [
-      // {
-      //   backgroundImage: toAssetUrl(
-      //     '/images/experiences/san-andres/gallery-01.webp'
-      //   ),
-      //   photoCredit: 'Oscar Ivan Esquivel Arteaga @oscaresquivelfotografia',
-      //   variant: 'horizontal',
-      // },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/san-andres/gallery-01.webp'
+        ),
+        photoCredit: 'Diego Agudelo @diego.agudelov',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/san-andres/gallery-02.webp'
+        ),
+        photoCredit: 'Beatriz Jurgenfeld - Unsplash @jurgenfeldatelie',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/san-andres/gallery-03.webp'
+        ),
+        photoCredit: 'Nathana Rebouças - Unsplash @nathanareboucas',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/san-andres/gallery-04.webp'
+        ),
+        photoCredit: 'Beatriz Jurgenfeld - Unsplash @jurgenfeldatelie',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/san-andres/gallery-05.webp'
+        ),
+        photoCredit: 'Jasmine Lotto @jasmbl',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/san-andres/gallery-06.webp'
+        ),
+        photoCredit: 'Robot Photo - Unsplash @robotphoto',
+        variant: 'horizontal',
+      },
     ],
   },
 

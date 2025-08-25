@@ -6,8 +6,8 @@ import type { DiveSiteContent } from './types';
 export const providenciaDiveSitesContent: Record<string, DiveSiteContent> = {
   'turtle-rock': {
     id: 'turtle-rock',
-    nameKey: 'providencia.turtleRock.name',
-    descriptionKey: 'providencia.turtleRock.desc',
+    nameKey: 'providencia.turtle-rock.name',
+    descriptionKey: 'providencia.turtle-rock.desc',
     destinationId: 'providencia',
     isTopSite: false,
     coordinates: [-81.405374, 13.389974],
@@ -49,8 +49,8 @@ export const providenciaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'mantas-city': {
     id: 'mantas-city',
-    nameKey: 'providencia.mantasCity.name',
-    descriptionKey: 'providencia.mantasCity.desc',
+    nameKey: 'providencia.mantas-city.name',
+    descriptionKey: 'providencia.mantas-city.desc',
     destinationId: 'providencia',
     isTopSite: false,
     coordinates: [-81.378536, 13.312914],
@@ -117,8 +117,8 @@ export const providenciaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'felipes-place': {
     id: 'felipes-place',
-    nameKey: 'providencia.felipesPlace.name',
-    descriptionKey: 'providencia.felipesPlace.desc',
+    nameKey: 'providencia.felipes-place.name',
+    descriptionKey: 'providencia.felipes-place.desc',
     destinationId: 'providencia',
     isTopSite: false,
     coordinates: [-81.40304, 13.365],
@@ -156,8 +156,8 @@ export const providenciaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'nicks-place': {
     id: 'nicks-place',
-    nameKey: 'providencia.nicksPlace.name',
-    descriptionKey: 'providencia.nicksPlace.desc',
+    nameKey: 'providencia.nicks-place.name',
+    descriptionKey: 'providencia.nicks-place.desc',
     destinationId: 'providencia',
     isTopSite: false,
     coordinates: [-81.404936, 13.380893],
@@ -192,8 +192,8 @@ export const providenciaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'tetes-place': {
     id: 'tetes-place',
-    nameKey: 'providencia.tetesPlace.name',
-    descriptionKey: 'providencia.tetesPlace.desc',
+    nameKey: 'providencia.tetes-place.name',
+    descriptionKey: 'providencia.tetes-place.desc',
     destinationId: 'providencia',
     isTopSite: false,
     coordinates: [-81.406978, 13.33321],
@@ -231,8 +231,8 @@ export const providenciaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'bajo-de-los-pargos': {
     id: 'bajo-de-los-pargos',
-    nameKey: 'providencia.bajoDeLosPargos.name',
-    descriptionKey: 'providencia.bajoDeLosPargos.desc',
+    nameKey: 'providencia.bajo-de-los-pargos.name',
+    descriptionKey: 'providencia.bajo-de-los-pargos.desc',
     destinationId: 'providencia',
     isTopSite: false,
     coordinates: [-81.368909, 13.308088],
@@ -264,8 +264,8 @@ export const providenciaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'snaper-shoal': {
     id: 'snaper-shoal',
-    nameKey: 'providencia.snaperShoal.name',
-    descriptionKey: 'providencia.snaperShoal.desc',
+    nameKey: 'providencia.snaper-shoal.name',
+    descriptionKey: 'providencia.snaper-shoal.desc',
     destinationId: 'providencia',
     isTopSite: false,
     coordinates: [-81.401873, 13.318449],

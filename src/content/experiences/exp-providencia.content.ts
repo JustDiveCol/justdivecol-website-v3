@@ -24,9 +24,9 @@ const rawProvidenciaExp: ExperienceContent = {
     translationNS: 'experiences',
     imageData: {
       backgroundImage: toAssetUrl(
-        '/images/experiences/providencia/header-background.webp'
+        '/images/destinations/providencia/header-background.webp'
       ),
-      photoCredit: 'Cristhian David Duarte @duartefotografia.ph',
+      photoCredit: 'Darren Lawrence',
       variant: 'header',
     },
   },
@@ -66,13 +66,48 @@ const rawProvidenciaExp: ExperienceContent = {
   gallery: {
     titleKey: 'experiences.galleryTitle',
     images: [
-      // {
-      //   backgroundImage: toAssetUrl(
-      //     '/images/experiences/providencia/gallery-01.webp'
-      //   ),
-      //   photoCredit: 'Oscar Ivan Esquivel Arteaga @oscaresquivelfotografia',
-      //   variant: 'horizontal',
-      // },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/providencia/gallery-01.webp'
+        ),
+        photoCredit: 'Leonardo Rossatti @leorossatti',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/providencia/gallery-02.webp'
+        ),
+        photoCredit: 'Cristian Sarchy @comaselasopa',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/providencia/gallery-03.webp'
+        ),
+        photoCredit: 'Jorge Alberto Ferro @jorgeaferroj',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/providencia/gallery-04.webp'
+        ),
+        photoCredit: 'Diego Agudelo @diego.agudelov',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/providencia/gallery-05.webp'
+        ),
+        photoCredit: 'Alexandra Nez',
+        variant: 'horizontal',
+      },
+      {
+        backgroundImage: toAssetUrl(
+          '/images/destinations/providencia/gallery-06.webp'
+        ),
+        photoCredit: 'Jorge Alberto Ferro @jorgeaferroj',
+        variant: 'horizontal',
+      },
     ],
   },
 
