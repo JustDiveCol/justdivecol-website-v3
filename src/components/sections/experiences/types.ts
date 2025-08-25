@@ -39,11 +39,12 @@ export type ExperienceItineraryProps = Omit<
 };
 
 export const CertificationInclusionsForUISchema = z.object({
-  nameKey: z.string(), // p.ej. cert.details.titleKey
+  nameKey: z.string(),
   whatIsIncluded: z.object({
     titleKey: z.string(),
     items: z.array(z.string()),
   }),
+  url: z.url().optional(),
 });
 export type CertificationInclusionsForUI = z.infer<
   typeof CertificationInclusionsForUISchema

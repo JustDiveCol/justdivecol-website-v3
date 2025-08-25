@@ -111,6 +111,8 @@
   "tropicalTag": "Tropical",
   "temperateTag": "Templado",
 
+  "noDesc": "Sin información disponible",
+
   "dive-sites": {
     "seo": {
       "title": "Puntos de Buceo",
@@ -312,7 +314,7 @@
   },
 
   "providencia": {
-    "turtleRock": {
+    "turtle-rock": {
       "name": "Turtle Rock (Piedra de la Tortuga)",
       "desc": "Una imponente roca de 12 m cuya cima recuerda la cabeza de una tortuga. Rodeada por grietas profundas cubiertas de corales, esponjas y algas, desciende hasta 42 m en un cantil espectacular. Con buena visibilidad y corrientes variables, es un buceo avanzado que combina belleza natural y vida marina en cada pared."
     },
@@ -757,6 +759,178 @@
     "newport": {
       "name": "Newport (Nieuwpoort)",
       "desc": "Ubicado al este de Fuikbaai y cerca de Kathy’s Paradise, Newport (Nieuwpoort) es un espectacular sitio de buceo accesible solo en barco. Su arrecife inclinado desciende hasta una pared dramática que se desploma en el azul profundo, ofreciendo un escenario vibrante de esponjas barril gigantes, corales coloridos y abundante vida marina. Aquí es común encontrar tortugas, rayas águila, cardúmenes de peces arrecifales, barracudas e incluso, ocasionalmente, tiburones martillo. Los amantes de la fotografía submarina disfrutarán de sus paisajes llenos de contrastes, mientras que los buscadores de macro podrán observar caballitos de mar, peces sapo y nudibranquios. Un imperdible de Curaçao para buzos avanzados."
+    }
+  },
+
+  "cancun": {
+    "molas-shallow": {
+      "name": "Molas Shallow",
+      "desc": ""
+    },
+
+    "barracuda": {
+      "name": "Barracuda",
+      "desc": ""
+    },
+
+    "cantarell": {
+      "name": "Cantarell (Eagle Ray Wall)",
+      "desc": "Ubicado al norte de San Miguel de Cozumel, Cantarell —también conocido como Eagle Ray Wall— es un sitio emblemático donde las rayas águila se congregan en invierno (noviembre a marzo). Con profundidades que van de 12 a 30 metros y corrientes fuertes a extremadamente fuertes, es un reto reservado para buzos avanzados en buena condición física. A cambio, recompensa con espectaculares avistamientos de rayas águila en grupos de hasta 20 individuos, acompañados de una vibrante vida pelágica."
+    },
+
+    "san-juan": {
+      "name": "San Juan",
+      "desc": ""
+    },
+
+    "villa-blanca": {
+      "name": "Villa Blanca",
+      "desc": ""
+    },
+
+    "paraiso-can": {
+      "name": "Paraíso",
+      "desc": ""
+    },
+
+    "las-palmas": {
+      "name": "Las Palmas",
+      "desc": ""
+    },
+
+    "chankanaab-shallow": {
+      "name": "Chankanaab Shallow",
+      "desc": ""
+    },
+
+    "chankanaab-bolones": {
+      "name": "Chankanaab Bolones",
+      "desc": ""
+    },
+
+    "wreck-c53": {
+      "name": "Wreck C-53 (Felipe Xicoténcatl)",
+      "desc": "Hundido en 1999 frente al Parque Chankanaab, este imponente pecio de 56 metros sirvió primero como buque militar estadounidense y luego como cañonero de la Armada de México. Hoy yace en posición vertical entre los 15 y 25 metros, cubierto de vida marina como meros y morenas. Con corrientes moderadas a fuertes, es un sitio histórico y vibrante para buceadores avanzados."
+    },
+
+    "tormentos": {
+      "name": "Tormentos",
+      "desc": "Un arrecife dinámico con corrientes suaves a moderadas, ideal para dejarse llevar mientras disfrutas de esponjas coloridas y abundante vida marina. Entre sus habitantes destacan morenas, peces globo y rayas, convirtiéndolo en uno de los sitios más vibrantes de Cozumel."
+    },
+
+    "yucab": {
+      "name": "Yucab",
+      "desc": "Un arrecife colorido con corrientes leves a moderadas, famoso por su abundante vida marina y atractivo fotográfico. Aquí se encuentran peces de arrecife tropical, esponjas y corales, además de langostas, camarones y peces pipa. También es común ver tiburones nodriza y distintas especies de tortugas alimentándose en la zona."
+    },
+
+    "punta-tunich": {
+      "name": "Punta Tunich",
+      "desc": ""
+    },
+
+    "san-francisco": {
+      "name": "Arrecife San Francisco",
+      "desc": "Si buscas el lugar perfecto para buceadores principiantes en Cozumel, no busques más que el Arrecife San Francisco. Con una profundidad moderada de 12 m, aguas tranquilas y sin corrientes fuertes, es ideal para quienes se inician en el buceo. Corales vibrantes, peces tropicales como loros y damiselas, además de rayas y bancos plateados, ofrecen un espectáculo inolvidable bajo el agua."
+    },
+
+    "santa-rosa-wall": {
+      "name": "Muralla de Santa Rosa",
+      "desc": "La famosa Muralla de Santa Rosa comienza a unos 15 metros y cae hasta más de 40 metros en un impresionante abismo azul. Con corrientes moderadas a fuertes, túneles, cuevas y voladizos, es un sitio lleno de adrenalina para buzos intermedios y avanzados. Tiburones nodriza, rayas águila, tortugas y ocasionalmente tiburones martillo hacen de este un buceo de clase mundial y una parada obligatoria en Cozumel."
+    },
+
+    "paseo-del-cedral": {
+      "name": "Paseo del Cedral",
+      "desc": "Un clásico drift dive de Cozumel, Paseo del Cedral combina acción y biodiversidad. Con profundidades de 12 a 18 metros y corrientes moderadas a fuertes, es ideal para buzos intermedios. Bancos de roncadores y pargos, grandes morenas, rayas, tiburones nodriza y tortugas hacen de este sitio un paraíso para fotógrafos y amantes de la vida marina."
+    },
+
+    "la-francesa": {
+      "name": "La Francesa (Punta Francesa)",
+      "desc": "Un sitio tranquilo y colorido en Cozumel, ideal para principiantes. Con una profundidad promedio de 15 metros y aguas calmadas, La Francesa permite practicar la flotabilidad mientras se disfruta de corales vibrantes y peces tropicales. Es el lugar perfecto para un buceo relajado que muestra la belleza del Caribe sin exigencias físicas."
+    },
+
+    "punta-dalila": {
+      "name": "Punta Dalila",
+      "desc": "Con una profundidad de 17 metros y corrientes suaves, Punta Dalila es un arrecife vibrante de Cozumel ideal para buzos intermedios. Entre sus corales se esconden langostas y peces globo, mientras que en aguas abiertas pueden aparecer tiburones nodriza y mantarrayas. Su excelente visibilidad lo convierte en un sitio emocionante y perfecto para la fotografía submarina."
+    },
+
+    "palancar-gardens": {
+      "name": "Palancar Gardens",
+      "desc": "El sitio de buceo que hizo famoso a Cozumel en el mundo. Sus jardines de corales multicolor y esponjas naranjas y moradas forman un escenario vibrante lleno de peces tropicales. A mayores profundidades, enormes túneles invitan a atravesarlos con asombro. Durante el invierno, las rayas águila frecuentan la zona y no es raro encontrar tiburones de arrecife nadando en las aguas profundas."
+    },
+
+    "palancar-horseshoe": {
+      "name": "Palancar Horseshoe",
+      "desc": "Con sus formaciones de coral en forma de herradura que evocan un anfiteatro natural, este arrecife es uno de los más icónicos de Cozumel. Las corrientes moderadas y la excelente visibilidad ofrecen encuentros con tortugas, tiburones nodriza y bancos de peces de arrecife, convirtiéndolo en un sitio ideal para la fotografía submarina."
+    },
+
+    "palancar-caves": {
+      "name": "Palancar Caves",
+      "desc": "Un laberinto de túneles y pasadizos de coral con visibilidad excelente que invita a la exploración pausada. A 22 m de profundidad, la navegación es parte del encanto: peces de arrecife, antiguas formaciones y swim‑throughs crean una inmersión inmersiva para buzos intermedios y avanzados."
+    },
+
+    "colombia-shallow": {
+      "name": "Colombia Shallow",
+      "desc": ""
+    },
+
+    "palancar-bricks": {
+      "name": "Palancar Bricks",
+      "desc": ""
+    },
+
+    "colombia-deep": {
+      "name": "Colombia Deep",
+      "desc": "Colombia Deep es uno de los sitios de buceo profundo más espectaculares de Cozumel. Entre pináculos de coral gigantes, paredes que caen al azul infinito y una visibilidad cristalina, este sitio ofrece encuentros con meros enormes, tiburones de arrecife, rayas águila y tortugas. Las corrientes fuertes y el relieve dramático lo convierten en una experiencia exigente pero inolvidable para buzos avanzados."
+    },
+
+    "punta-sur-devils-throat": {
+      "name": "Punta Sur - The Devil's Throat (Garganta del Diablo)",
+      "desc": "La Garganta del Diablo es uno de los buceos más legendarios y desafiantes de Cozumel. A 28 metros comienza un túnel oscuro de coral que conduce hasta los 40 metros, donde se abre a un abismo iluminado por el sol. Con corrientes fuertes e impredecibles, este sitio es exclusivo para buzos experimentados en busca de adrenalina. Rayas águila, tiburones martillo y tiburones toro ocasionalmente patrullan sus aguas, convirtiéndolo en una experiencia única."
+    },
+
+    "punta-sur-cathedral": {
+      "name": "Punta Sur - Cathedral",
+      "desc": ""
+    },
+
+    "chun-chacab": {
+      "name": "Chun Chacab",
+      "desc": ""
+    },
+
+    "maracaibo": {
+      "name": "Maracaibo",
+      "desc": ""
+    },
+
+    "el-islote": {
+      "name": "El Islote",
+      "desc": ""
+    },
+
+    "playa-bosh": {
+      "name": "Playa Bosh",
+      "desc": ""
+    },
+
+    "el-mirador": {
+      "name": "El Mirador",
+      "desc": ""
+    },
+
+    "chen-rio": {
+      "name": "Chen Rio",
+      "desc": ""
+    },
+
+    "punta-morena": {
+      "name": "Punta Morena",
+      "desc": ""
+    },
+
+    "los-atolones": {
+      "name": "Los Atolones",
+      "desc": ""
     }
   }
 }

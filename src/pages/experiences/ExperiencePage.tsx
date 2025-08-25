@@ -24,9 +24,13 @@ import { ExperienceInclusions } from '../../components/sections/experiences/Expe
 import { ExperienceDiveSites } from '../../components/sections/experiences/ExperienceDiveSites';
 import { ExperiencePaymentPlan } from '../../components/sections/experiences/ExperiencePaymentPlan';
 import type { ExperienceItineraryContent } from '../../content/experiences/types';
+import { useLocalizedRoutes } from '../../hooks/useLocalizedRoutes';
 
 const ExperiencePage: React.FC = () => {
   const { t } = useTranslation(['experiences', 'destinations', 'common']);
+
+  const { to: localizedTo } = useLocalizedRoutes();
+
   const { experienceSlug, sessionSlug } = useParams<{
     experienceSlug: string;
     sessionSlug: string;
@@ -45,7 +49,13 @@ const ExperiencePage: React.FC = () => {
   } = useMemo(() => {
     if (!content) {
       return {
-        certificationInclusions: undefined,
+        certificationInclusions: undefined as
+          | Array<{
+              nameKey: string;
+              whatIsIncluded: { titleKey: string; items: string[] };
+              url: string;
+            }>
+          | undefined,
         destinationContent: null as ReturnType<
           typeof getDestinationById
         > | null,
@@ -56,25 +66,34 @@ const ExperiencePage: React.FC = () => {
       };
     }
 
-    const certInclusions = content.session.certificationIds?.length
-      ? content.session.certificationIds
-          .map((id) => {
-            const cert = getCertificationById(id);
-            if (!cert) return undefined;
-            return {
-              nameKey: cert.name,
-              whatIsIncluded: cert.whatIsIncluded,
-            };
-          })
-          .filter(
-            (
-              x
-            ): x is {
-              nameKey: string;
-              whatIsIncluded: { titleKey: string; items: string[] };
-            } => !!x
-          )
-      : undefined;
+    type CertIncUI = {
+      nameKey: string;
+      whatIsIncluded: { titleKey: string; items: string[] };
+      url: string;
+    };
+
+    const certInclusions: CertIncUI[] | undefined =
+      content.session.certificationIds &&
+      content.session.certificationIds.length > 0
+        ? content.session.certificationIds
+            .map((id): CertIncUI | undefined => {
+              const cert = getCertificationById(id);
+              if (!cert) return undefined;
+
+              let slug: string | undefined;
+              const maybeSlug = cert as { slug?: unknown };
+              if (typeof maybeSlug.slug === 'string') slug = maybeSlug.slug;
+
+              const url = localizedTo(`/certifications/${slug ?? id}`);
+
+              return {
+                nameKey: cert.name,
+                whatIsIncluded: cert.whatIsIncluded,
+                url,
+              };
+            })
+            .filter((x): x is CertIncUI => Boolean(x))
+        : undefined;
 
     const destContent = getDestinationById(content.experience.destinationId);
 

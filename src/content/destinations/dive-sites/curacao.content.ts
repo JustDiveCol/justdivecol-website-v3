@@ -11,7 +11,7 @@ export const curacaoDiveSitesContent: Record<string, DiveSiteContent> = {
     destinationId: 'curacao',
     isTopSite: true,
     coordinates: [-69.1545, 12.3694],
-    maxDepthMeter: 36, // info real: 12–36m (40–120ft)
+    maxDepthMeter: 36,
     maxDepthFt: 120,
     levelRequiredId: 'open-water-diver',
     difficultyId: 'medium',
@@ -50,9 +50,9 @@ export const curacaoDiveSitesContent: Record<string, DiveSiteContent> = {
     destinationId: 'curacao',
     isTopSite: true,
     coordinates: [-68.64565, 11.9852],
-    maxDepthMeter: 36, // info real: 12–36m (40–120ft)
+    maxDepthMeter: 36,
     maxDepthFt: 120,
-    levelRequiredId: 'advanced-open-water-diver', // recomendado por ser drift/boat dive
+    levelRequiredId: 'advanced-open-water-diver',
     difficultyId: 'medium',
     typeIds: ['drift', 'reef'],
     conditionsIds: ['good-visibility', 'boat-entry', 'moderate-current'],
@@ -128,7 +128,7 @@ export const curacaoDiveSitesContent: Record<string, DiveSiteContent> = {
     destinationId: 'curacao',
     isTopSite: true,
     coordinates: [-68.86009, 12.06569],
-    maxDepthMeter: 36, // 6–36m / 20–120ft
+    maxDepthMeter: 36,
     maxDepthFt: 120,
     levelRequiredId: 'open-water-diver',
     difficultyId: 'medium',

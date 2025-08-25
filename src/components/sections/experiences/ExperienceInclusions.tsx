@@ -21,7 +21,6 @@ export const ExperienceInclusions = ({
 
   const [activeInclusionIdx, setActiveInclusionIdx] = React.useState(0);
 
-  // seguridad por si cambia la longitud
   const safeActiveIdx = hasCertInclusions
     ? Math.min(activeInclusionIdx, certificationInclusions.length - 1)
     : 0;
@@ -80,6 +79,7 @@ export const ExperienceInclusions = ({
                 <div className="mb-6 flex flex-wrap items-center justify-start gap-2">
                   {certificationInclusions.map((inc, idx) => {
                     const isActive = idx === safeActiveIdx;
+
                     const label =
                       (inc.nameKey && inc.nameKey) ||
                       `${t('common:option', { defaultValue: 'Opción' })} ${
@@ -112,14 +112,19 @@ export const ExperienceInclusions = ({
                   const items = activeInclusion?.whatIsIncluded?.items ?? [];
                   if (!items.length) return null;
 
+                  const certHref = activeInclusion.url;
+
                   return (
                     <div className="mb-6">
                       {certificationInclusions.length === 1 &&
                         activeInclusion.nameKey && (
                           <p className="text-white/80 font-semibold mb-2">
-                            {activeInclusion.nameKey}
+                            {t(activeInclusion.nameKey, {
+                              ns: 'certifications',
+                            })}
                           </p>
                         )}
+
                       <MotionBlock kind="none" variants={container}>
                         <ul className="space-y-3">
                           {items.map((itemKey: string, i: number) => (
@@ -138,6 +143,20 @@ export const ExperienceInclusions = ({
                           ))}
                         </ul>
                       </MotionBlock>
+
+                      {/* CTA hacia la certificación (solo si hay URL) */}
+                      {certHref && (
+                        <div className="mt-6">
+                          <a
+                            href={certHref}
+                            className="inline-flex items-center px-5 py-3 rounded-full bg-brand-cta-orange text-white font-bold uppercase tracking-wider text-xs hover:bg-brand-cta-orange/90 transition-colors"
+                          >
+                            {t('certifications:seeDetailsCta', {
+                              defaultValue: 'Ver detalles de la certificación',
+                            })}
+                          </a>
+                        </div>
+                      )}
                     </div>
                   );
                 })()}

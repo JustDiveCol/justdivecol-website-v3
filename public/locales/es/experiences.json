@@ -89,45 +89,45 @@
         "advanced-open-water": {
           "day1": {
             "title": "Llegada y bienvenida",
-            "desc": "Salida en la mañana desde Montería hacia Paso Nuevo, donde tomaremos la lancha a Isla Fuerte. Check-in en el hotel, almuerzo libre y caminata opcional al árbol gigante de higuillo. En la noche, cena de bienvenida grupal."
+            "desc": "Nuestra travesía inicia en Montería, desde donde nos dirigimos a Paso Nuevo para tomar la lancha a Isla Fuerte. El mar Caribe nos recibe con su brisa cálida. Tras el check-in en el hotel, tendrás un almuerzo relajado y la posibilidad de una caminata hasta el árbol gigante de higuillo. Al caer la noche, compartiremos una cena de bienvenida frente al mar."
           },
           "day2": {
             "title": "Navegación y buceo de aventura",
-            "desc": "Tras el desayuno, refrescaremos habilidades con un Refresh o ReActivate según necesidad. Luego realizaremos la inmersión obligatoria de Navegación Subacuática más una aventura a elección (fotografía digital, identificación de peces, flotabilidad avanzada o naufragio). En la tarde, actividad opcional como kayak o snorkel. Por la noche, opción de buceo nocturno (add-on) y cena grupal."
+            "desc": "El día arranca con un desayuno reconfortante y una inmersión para refrescar habilidades. Luego nos adentramos en la Navegación Subacuática, antes de elegir tu aventura favorita: flotabilidad avanzada, fotografía submarina, identificación de peces o naufragio. La tarde invita a explorar en kayak o snorkel. Quienes busquen aún más emoción podrán sumarse a un buceo nocturno bajo las estrellas."
           },
           "day3": {
-            "title": "Inmersiones profundas y electivas",
-            "desc": "Tras el desayuno, realizaremos la inmersión obligatoria de Buceo Profundo (30 m) y una electiva a tu elección. En la tarde, tiempo libre. En la noche, opción de buceo nocturno (add-on) y cena grupal en ambiente relajado."
+            "title": "Buceo profundo y exploración",
+            "desc": "Hoy descenderemos hasta 30 metros en la inmersión de Buceo Profundo, una experiencia que amplía horizontes y confianza. Más tarde tendrás la oportunidad de una inmersión electiva adicional. El resto del día queda libre para descansar y en la noche nos reencontramos en una cena grupal en ambiente relajado."
           },
           "day4": {
-            "title": "Exploración en el Bajo Bushnell",
-            "desc": "Exploraremos el Bajo Bushnell con 2 inmersiones en uno de los sitios más espectaculares del Caribe continental. En la tarde, yoga o meditación opcional (add-on). En la noche, cena cultural con música local y premiación especial."
+            "title": "El mítico Bajo Bushnell",
+            "desc": "Este día lo dedicamos a descubrir el legendario Bajo Bushnell, considerado uno de los tesoros del Caribe continental. Sus formaciones coralinas y abundante vida marina hacen de cada inmersión una postal inolvidable. La tarde ofrece la opción de relajarte o sumarte a yoga/meditación al atardecer. La jornada culmina con una cena cultural animada por música local y una premiación especial."
           },
           "day5": {
             "title": "Cierre y despedida",
-            "desc": "Desayuno incluido y mañana libre antes del check-out. Traslado en lancha a Paso Nuevo y regreso terrestre a Montería. Recomendamos programar vuelos después de las 6:00 p.m. para respetar el margen de seguridad post-buceo (18-24 h sin volar)."
+            "desc": "Tras un último desayuno frente al mar, nos preparamos para regresar en lancha a Paso Nuevo y continuar por tierra a Montería. Llévate contigo recuerdos imborrables de este viaje. Recomendamos programar tu vuelo después de las 6:00 p.m. para respetar el margen de seguridad post-buceo."
           }
         },
         "fun-dive": {
           "day1": {
             "title": "Llegada y bienvenida",
-            "desc": "Traslado terrestre desde Montería a Paso Nuevo y lancha a Isla Fuerte. Check-in en el hotel, almuerzo libre y caminata opcional al árbol gigante de higuillo. En la noche, cena de bienvenida grupal."
+            "desc": "Partimos de Montería rumbo a Paso Nuevo para tomar la lancha que nos llevará a Isla Fuerte. Tras el check-in en el hotel, la tarde queda abierta para una caminata opcional hasta el árbol de higuillo. La jornada cierra con una cena de bienvenida grupal bajo las estrellas."
           },
           "day2": {
-            "title": "Inmersiones en arrecifes locales",
-            "desc": "Tras el desayuno, realizaremos 2 inmersiones en arrecifes cercanos. En la tarde, actividad opcional como kayak o snorkel. En la noche, opción de buceo nocturno (add-on) y cena grupal."
+            "title": "Arrecifes locales",
+            "desc": "Después del desayuno, exploraremos dos arrecifes cercanos llenos de vida marina y corales vibrantes. La tarde es ideal para descansar o disfrutar de un paseo en kayak o snorkel. Al caer la noche, la opción de un buceo nocturno transformará tu visión del arrecife antes de la cena grupal."
           },
           "day3": {
-            "title": "Exploración de arrecifes",
-            "desc": "Tras el desayuno, 2 inmersiones en sitios icónicos como Burbujas. En la tarde, tiempo libre. En la noche, opción de buceo nocturno (add-on) y cena grupal."
+            "title": "Inmersiones icónicas",
+            "desc": "Hoy nos sumergimos en lugares legendarios como Burbujas. Dos inmersiones que combinan aventura y calma. La tarde queda libre para relajarte y, si quieres más, un buceo nocturno te espera como add-on. La noche finaliza con cena en compañía del grupo."
           },
           "day4": {
-            "title": "Inmersiones en el Bajo Bushnell",
-            "desc": "2 inmersiones en el Bajo Bushnell, considerado uno de los mejores sitios del Caribe continental. En la tarde, yoga o meditación opcional (add-on). En la noche, cena cultural con música tradicional y premiación."
+            "title": "El Bajo Bushnell",
+            "desc": "Llegó el turno de uno de los grandes tesoros del Caribe continental. El Bajo Bushnell nos recibe con aguas claras y paisajes submarinos únicos. Tras dos inmersiones inolvidables, la tarde ofrece yoga o meditación opcional. La noche vibra con una cena cultural y celebración grupal."
           },
           "day5": {
             "title": "Cierre y despedida",
-            "desc": "Desayuno incluido, mañana libre y check-out. Traslado en lancha a Paso Nuevo y regreso terrestre a Montería. Recomendamos programar vuelos después de las 6:00 p.m."
+            "desc": "Un último desayuno frente al mar y un rato libre para disfrutar de la isla antes del retorno en lancha a Paso Nuevo y el viaje terrestre a Montería. Sugerimos vuelos después de las 6:00 p.m. para respetar la seguridad post-buceo."
           }
         }
       },
@@ -207,65 +207,64 @@
       "itinerary": {
         "open-water": {
           "day1": {
-            "title": "Llegada y aguas confinadas",
-            "desc": "Llegada a Santa Marta, check-in en el hotel y almuerzo libre. En la tarde, primera sesión de aguas confinadas en piscina para aprender a usar el equipo y dar tus primeras respiraciones bajo el agua. En la noche, cena de bienvenida incluida."
+            "title": "Bienvenida y primeras burbujas",
+            "desc": "Llegada a Santa Marta, check-in en el hotel y almuerzo libre. En la tarde comienza tu primera experiencia en piscina: aprenderás a manejar el equipo y darás tus primeras respiraciones bajo el agua en un ambiente controlado. La noche la compartimos en una cena de bienvenida."
           },
           "day2": {
-            "title": "Primeras inmersiones en aguas abiertas",
-            "desc": "Tras el desayuno, mañana de playa y primeras 2 inmersiones en aguas abiertas desde la orilla. Almuerzo libre y cena incluida en la noche."
+            "title": "Primeras inmersiones abiertas",
+            "desc": "Con el mar como compañero, iniciamos las dos primeras inmersiones en aguas abiertas desde la orilla. Corales y peces tropicales serán tus aliados en este nuevo mundo. La tarde invita al descanso y en la noche compartimos una cena grupal."
           },
           "day3": {
-            "title": "Inmersiones finales y certificación",
-            "desc": "Tras el desayuno, salida en bote para completar las 2 últimas inmersiones requeridas. En la noche, cena especial y entrega de tu certificación PADI Open Water Diver."
+            "title": "Certificación y celebración",
+            "desc": "El día comienza con salida en bote para completar las últimas inmersiones del curso. Al caer la noche, una cena especial marcará la entrega oficial de tu certificación PADI Open Water Diver."
           },
           "day4": {
-            "title": "Cierre y despedida",
-            "desc": "Desayuno incluido y check-out a las 11:00 a.m. Ahora eres un buzo certificado, listo para explorar el mundo submarino."
+            "title": "Despedida",
+            "desc": "Tras un desayuno final, llega el momento del check-out. Te despides del Tayrona como un buzo certificado, listo para explorar océanos alrededor del mundo."
           }
         },
         "advanced-open-water": {
           "day1": {
             "title": "Llegada y preparación",
-            "desc": "Llegada a Santa Marta, check-in en el hotel y almuerzo libre. En la tarde, Refresh (incluido) o Reactivate (add-on). Cena de bienvenida incluida."
+            "desc": "Recepción en Santa Marta, check-in en el hotel y almuerzo libre. En la tarde podrás realizar un Refresh incluido o un Reactivate opcional. La noche cierra con cena de bienvenida."
           },
           "day2": {
             "title": "Navegación y aventuras",
-            "desc": "Tras el desayuno, inmersión obligatoria de Navegación Subacuática y 2 electivas a elegir (fotografía digital, identificación de peces, flotabilidad avanzada, búsqueda y recuperación o buceo en basuras). En la noche, opción de buceo nocturno (add-on) y cena incluida."
+            "desc": "Comenzamos con la Navegación Subacuática, seguida de dos inmersiones electivas a tu elección: fotografía, identificación de peces, flotabilidad, búsqueda y recuperación o buceo en basuras. La jornada termina con la posibilidad de un buceo nocturno antes de la cena grupal."
           },
           "day3": {
-            "title": "Buceo profundo y electiva",
-            "desc": "Tras el desayuno, inmersión obligatoria de Buceo Profundo (30 m) y una electiva adicional (pecio, flotabilidad avanzada o búsqueda y recuperación). En la noche, cena de premiación y entrega de certificación PADI Advanced Open Water Diver."
+            "title": "Buceo profundo y certificación",
+            "desc": "El reto sube de nivel con la inmersión de Buceo Profundo a 30 metros, complementada con otra electiva. La noche nos reúne en una cena de premiación y la entrega de tu certificación PADI Advanced Open Water Diver."
           },
           "day4": {
-            "title": "Cierre y despedida",
-            "desc": "Desayuno incluido y check-out a las 11:00 a.m. Eres Advanced Open Water Diver, listo para nuevos retos."
+            "title": "Despedida",
+            "desc": "Desayuno compartido y check-out. Te llevas contigo nuevas habilidades y recuerdos que marcarán tu camino como buzo avanzado."
           }
         },
         "fun-dive": {
           "day1": {
             "title": "Llegada y bienvenida",
-            "desc": "Llegada a Santa Marta, check-in en el hotel y almuerzo libre. En la tarde, Refresh (incluido) o Reactivate (add-on). En la noche, cena de bienvenida incluida."
+            "desc": "Arribo a Santa Marta y check-in en el hotel. La tarde ofrece la opción de un Refresh o Reactivate según tu necesidad. En la noche nos encontramos en una cena grupal de bienvenida."
           },
           "day2": {
-            "title": "Inmersiones desde la orilla",
-            "desc": "Tras el desayuno, 2 inmersiones desde la orilla. En la tarde, almuerzo libre y tiempo de descanso. En la noche, opción de buceo nocturno (add-on) y cena incluida."
+            "title": "Arrecifes cercanos",
+            "desc": "Hoy exploramos arrecifes desde la orilla, descubriendo la biodiversidad del Tayrona. Tras el almuerzo libre, la tarde es perfecta para descansar antes de la cena. Para los más aventureros, hay opción de buceo nocturno."
           },
           "day3": {
             "title": "Exploración en bote",
-            "desc": "Tras el desayuno, salida en bote para 2 inmersiones, con opción de una tercera (add-on). En la noche, cena de premiación incluida."
+            "desc": "El mar nos lleva en bote hacia nuevos puntos de buceo, con dos inmersiones programadas y la posibilidad de una tercera opcional. La noche concluye con una cena de celebración."
           },
           "day4": {
-            "title": "Cierre y despedida",
-            "desc": "Desayuno incluido y check-out a las 11:00 a.m. Te llevas recuerdos únicos del Caribe colombiano."
+            "title": "Despedida",
+            "desc": "Último desayuno y check-out. Te despides del Caribe colombiano con recuerdos únicos de sus aguas y arrecifes."
           }
         }
       },
-
       "whatIsIncluded": {
         "items": {
           "item1": "Alojamiento por 3 noches en hotel seleccionado en Santa Marta (habitaciones compartidas).",
           "item2": "Plan de alimentación según programa (desayunos, cenas y snacks diarios).",
-          "item3": "Programa de buceo según perfil: PADI Open Water Diver (5 sesiones en aguas confinadas + 4 inmersiones en aguas abiertas) / PADI Advanced Open Water Diver (5 inmersiones: 2 obligatorias + 3 electivas) / Fun Dive (6 inmersiones).",
+          "item3": "Programa de buceo según perfil: PADI Open Water Diver (5 sesiones en aguas confinadas + 4 inmersiones en aguas abiertas) / PADI Advanced Open Water Diver (5 inmersiones: 2 obligatorias + 3 electivas) / Fun Dive (4 inmersiones).",
           "item4": "Traslados terrestres a las actividades programadas.",
           "item5": "Staff JustDiveCol, kit de bienvenida y acompañamiento logístico.",
           "item6": "Seguro especializado para actividades de buceo durante toda la experiencia.",
@@ -580,45 +579,45 @@
         "fun-dive": {
           "day1": {
             "title": "Llegada y bienvenida",
-            "desc": "Check-in en el hotel y almuerzo libre. Briefing general y entrega de kits. En la tarde, playa en Spratt Bight. En la noche, cena de bienvenida grupal."
+            "desc": "Check-in en el hotel y almuerzo libre. Tras un breve briefing y la entrega de kits, la tarde nos lleva a disfrutar de la playa en Spratt Bight. La jornada culmina con una cena grupal de bienvenida."
           },
           "day2": {
-            "title": "Primer día de buceo",
-            "desc": "Tras el desayuno, 2 inmersiones en arrecifes cercanos. Almuerzo frente al mar. En la tarde, descanso en playa. En la noche, cena libre y experiencia cultural opcional (add-on)."
+            "title": "Primer encuentro con el mar",
+            "desc": "Día de dos inmersiones en arrecifes llenos de color y vida. Tras el almuerzo frente al mar, tendrás la tarde para descansar. La noche abre la posibilidad de una experiencia cultural local o un paseo adicional."
           },
           "day3": {
             "title": "Naufragio y arrecife",
-            "desc": "Tras el desayuno, 2 inmersiones incluyendo el naufragio Blue Diamond y un arrecife. Almuerzo típico isleño. En la tarde, tiempo libre. En la noche, cena grupal."
+            "desc": "La jornada nos lleva al icónico naufragio Blue Diamond y a un arrecife cercano. Después de un almuerzo típico isleño, la tarde queda libre para explorar o descansar. La noche nos reúne en una cena grupal."
           },
           "day4": {
             "title": "Drift y jardines de coral",
-            "desc": "Tras el desayuno, drift dive y buceo en arrecife icónico como La Pirámide o Blue Hole. Almuerzo libre. En la tarde, visita a Rocky Cay. En la noche, experiencia premium grupal como catamarán o cena especial (add-on)."
+            "desc": "Un día para sentir la fuerza del mar con un drift dive y una inmersión en arrecifes como La Pirámide o Blue Hole. Por la tarde, visita a Rocky Cay y, al caer la noche, una experiencia premium como un paseo en catamarán o cena especial."
           },
           "day5": {
             "title": "Cierre y despedida",
-            "desc": "Desayuno incluido, fotos grupales y check-out a las 11:00 a.m. Traslado al aeropuerto. Recomendamos respetar el margen de seguridad post-buceo (18-24 h sin volar)."
+            "desc": "Un desayuno final, fotos grupales y check-out. Traslado al aeropuerto y recomendaciones de seguridad antes de volar (18-24 h post-buceo)."
           }
         },
         "advanced-open-water": {
           "day1": {
             "title": "Llegada y bienvenida",
-            "desc": "Check-in en el hotel y almuerzo libre. Briefing general y entrega de kits. En la noche, cena de bienvenida grupal."
+            "desc": "El viaje inicia con check-in, entrega de kits y briefing general. La noche abre con una cena de bienvenida grupal."
           },
           "day2": {
-            "title": "Navegación y electiva",
-            "desc": "Tras el desayuno, inmersión obligatoria de Navegación Subacuática más una electiva (fotografía, identificación de peces, flotabilidad, búsqueda y recuperación o basuras). Almuerzo frente al mar. En la tarde, repaso teórico. En la noche, opción de buceo nocturno (add-on) y cena incluida."
+            "title": "Navegación y aventura",
+            "desc": "Comenzamos con la Navegación Subacuática, seguida de una inmersión electiva de tu preferencia. Tras el almuerzo frente al mar, la tarde se dedica al repaso teórico. La noche ofrece la opción de un buceo nocturno y cena incluida."
           },
           "day3": {
-            "title": "Buceo profundo y electiva",
-            "desc": "Tras el desayuno, inmersión obligatoria de Buceo Profundo (30 m) más una electiva adicional. En la tarde, práctica opcional en piscina. En la noche, cena grupal."
+            "title": "Buceo profundo y exploración",
+            "desc": "Hoy toca descender hasta 30 metros en la inmersión de Buceo Profundo, acompañada de otra electiva adicional. La tarde puede incluir práctica en piscina, y cerramos con una cena grupal."
           },
           "day4": {
-            "title": "Cierre de certificación",
-            "desc": "Tras el desayuno, última inmersión de orientación y cierre de skills. Entrega de certificaciones y experiencia premium grupal como catamarán o cena especial (add-on)."
+            "title": "Certificación y celebración",
+            "desc": "La última inmersión de orientación completa tu certificación. En la tarde celebramos con una experiencia premium grupal como un paseo en catamarán. La noche se llena de logros y camaradería."
           },
           "day5": {
-            "title": "Cierre y despedida",
-            "desc": "Desayuno incluido, fotos grupales y check-out a las 11:00 a.m. Traslado al aeropuerto. Recomendamos respetar el margen de seguridad post-buceo (18-24 h sin volar)."
+            "title": "Despedida",
+            "desc": "Desayuno final, fotos de grupo y check-out. Traslado al aeropuerto con las recomendaciones de seguridad para tu vuelo."
           }
         }
       },
@@ -695,37 +694,37 @@
         "fun-dive": {
           "day1": {
             "title": "Llegada y bienvenida",
-            "desc": "Check-in en el hotel y almuerzo libre. Briefing de bienvenida y entrega de kits. En la tarde, caminata ligera opcional por Manzanillo o South West Bay. En la noche, cena de bienvenida grupal."
+            "desc": "Tras el check-in y un almuerzo relajado, la tarde ofrece una caminata ligera opcional por Manzanillo o South West Bay. Al caer la noche, disfrutamos de una cena grupal frente al mar."
           },
           "day2": {
-            "title": "Primer día de buceo",
-            "desc": "Tras el desayuno, Refresh en bahía protegida y 2 inmersiones en arrecifes como Tete’s Place o Mantas Place. En la tarde, tiempo libre o actividad opcional como kayak/paddle (add-on). En la noche, cena de integración grupal. Opción de buceo nocturno (add-on)."
+            "title": "Arrecifes vivos",
+            "desc": "Comenzamos con un Refresh en bahía protegida y seguimos con dos inmersiones en lugares como Tete’s Place o Mantas Place. La tarde es para descansar o unirte a actividades opcionales como kayak o paddle. En la noche, cena de integración grupal, con la posibilidad de un buceo nocturno."
           },
           "day3": {
             "title": "Pecio y arrecife",
-            "desc": "Tras el desayuno, 2 inmersiones incluyendo el pecio Planchón y un arrecife. En la tarde, descanso en hotel o piscina. En la noche, cena BBQ en la playa. Opción de buceo nocturno (add-on)."
+            "desc": "El día nos lleva al histórico pecio Planchón y a un arrecife cercano. Tras un almuerzo libre, podrás descansar en el hotel o junto a la piscina. La noche se enciende con una cena BBQ en la playa."
           },
           "day4": {
-            "title": "Cierre y despedida",
-            "desc": "Desayuno incluido, caminata ligera y fotos grupales. Tiempo libre para empacar y check-out a las 11:00 a.m. Traslado al aeropuerto. Recomendamos respetar el margen de seguridad post-buceo (18-24 h sin volar)."
+            "title": "Despedida",
+            "desc": "Un desayuno compartido y una caminata ligera abren el día. Luego llega el momento de empacar, hacer check-out y partir hacia el aeropuerto, con la recomendación de respetar los tiempos de seguridad antes de volar."
           }
         },
         "advanced-open-water": {
           "day1": {
             "title": "Llegada y bienvenida",
-            "desc": "Check-in en el hotel y almuerzo libre. Briefing inicial, entrega de kits y revisión de agenda AOWD. En la noche, cena de bienvenida grupal."
+            "desc": "Tras el check-in y un almuerzo libre, tendremos briefing inicial, entrega de kits y revisión de agenda AOWD. La noche cierra con una cena grupal frente al mar."
           },
           "day2": {
             "title": "Navegación y electiva",
-            "desc": "Tras el desayuno, inmersión obligatoria de Navegación Subacuática más una electiva (flotabilidad o identificación de peces). En la tarde, repaso teórico AOWD. En la noche, opción de buceo nocturno (add-on) y cena incluida."
+            "desc": "Después del desayuno, realizamos la Navegación Subacuática y una inmersión electiva entre flotabilidad o identificación de peces. La tarde se dedica al repaso teórico y la noche ofrece la opción de un buceo nocturno antes de la cena."
           },
           "day3": {
-            "title": "Buceo profundo y electiva",
-            "desc": "Tras el desayuno, inmersión obligatoria de Buceo Profundo (30 m) más una electiva (fotografía o búsqueda y recuperación). En la tarde, repaso final. En la noche, cena BBQ en playa incluida."
+            "title": "Buceo profundo y práctica",
+            "desc": "La mañana inicia con el reto del Buceo Profundo a 30 metros, acompañado de una electiva como fotografía o búsqueda y recuperación. Tras el repaso final, cerramos la jornada con una cena BBQ en la playa."
           },
           "day4": {
-            "title": "Cierre de certificación",
-            "desc": "Desayuno incluido, última actividad suave y entrega de certificaciones. Fotos grupales y check-out a las 11:00 a.m. Traslado al aeropuerto. Recomendamos respetar el margen de seguridad post-buceo (18-24 h sin volar)."
+            "title": "Certificación y despedida",
+            "desc": "El día comienza con desayuno y una última actividad suave antes de la entrega de certificaciones. Con fotos grupales y check-out, nos despedimos de Providencia con el corazón lleno de mar."
           }
         }
       },
