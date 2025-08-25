@@ -78,8 +78,8 @@ export const santaMartaDiveSitesContent: Record<string, DiveSiteContent> = {
 
   'barco-hundido': {
     id: 'barco-hundido',
-    nameKey: 'santa-marta.barcoHundido.name',
-    descriptionKey: 'santa-marta.barcoHundido.desc',
+    nameKey: 'santa-marta.barco-hundido.name',
+    descriptionKey: 'santa-marta.barco-hundido.desc',
     destinationId: 'santa-marta',
     isTopSite: false,
     coordinates: [-74.238819, 11.21381],
